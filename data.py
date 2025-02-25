@@ -48,6 +48,7 @@ def extract_methods_from_java(code):
     except Exception as e:
         print(f"Error parsing Java code: {e}")
 
+    return methods
 
 def extract_methods_to_csv_from_master(repo_path, output_csv):
     """
