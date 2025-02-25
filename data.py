@@ -34,7 +34,7 @@ def extract_methods_from_java(code):
             end_line = None
 
             if node.body:
-                last_statement = node.boyd[-1]
+                last_statement = node.body[-1]
                 if hasattr(last_statement, 'position') and last_statement.position:
                     end_line = last_statement.position.line
             
