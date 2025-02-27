@@ -94,7 +94,7 @@ def extract_methods_to_csv(repo_path, output_csv):
 
             for modified_file in commit.modified_files:
                 if modified_file.filename.endswith(".java") and modified_file.source_code:
-                    method = extract_methods_from_java(modified_file.source_code)
+                    methods = extract_methods_from_java(modified_file.source_code)
 
                     for method_name, method_code in methods:
                         commit_link = f"{repo_path}/commit/{commit.hash}"
@@ -107,7 +107,7 @@ for repo in repoList[0:1]:
     fileNameToSave = ''.join(repo.split('github.com')[1:])
     fileNameToSave = fileNameToSave.replace('/', '_')
 
-    output_csv_file = "extracted_methods_{}.csv".format(fileNameToSave)
+    output_csv_file = os.path.join("data", "extracted_methods_{}.csv".format(fileNameToSave))
 
     extract_methods_to_csv_from_master(repo, output_csv_file)
 
