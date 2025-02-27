@@ -4,21 +4,22 @@ import pandas as pd
 from pygments.lexers.jvm import JavaLexer
 from pygments.lexers import get_lexer_by_name
 from pygments.token import Token
+import os
 
 # Removal of Type 1 Clones (Exact clones with identical code apart from differences in whitespace, comments, and formatting)
 def remove_duplicates(data):
     """Remove duplicate methods based on method content
         Almost Type-1 with the exception of comments
     """
-    return data.drop_duplicates(subset="Method Java",keep = 'first')
+    return data.drop_duplicates(subset="Method Code",keep = 'first')
 
 def filter_ascii_methods(data):
     """Filter out methods that contain non-ASCII characters"""
-    return data[data['Method Java'].apply(lambda x: all(ord(char) < 128 for char in x))]
+    return data[data['Method Code'].apply(lambda x: all(ord(char) < 128 for char in x))]
 
 def remove_outliers(data, lower_percentile=5, upper_percentile=95):
     """Remove outliers based on method length"""
-    method_lengths = data['Method Java'].apply(len)
+    method_lengths = data['Method Code'].apply(len)
     lower_bound = method_lengths.quantile(lower_percentile/100)
     upper_bound = method_lengths.quantile(upper_percentile/100)
     return data[(method_lengths >= lower_bound) & (method_lengths <= upper_bound)]
@@ -32,7 +33,7 @@ def remove_boilerplate_methods(data):
         r"\bset[A-Z][a-zA-Z0-9_]*\(.*\)\s*{"
     ]
     boilerplate_regex = re.compile("|".join(boilerplate_patterns))
-    data = data[~data['Method Java'].apply(lambda x: bool(boilerplate_regex.search(x)))]
+    data = data[~data['Method Code'].apply(lambda x: bool(boilerplate_regex.search(x)))]
     return data
 
 def remove_comments_from_dataframe(df: pd.DataFrame, method_column: str, language: str) -> pd.DataFrame:
@@ -54,6 +55,41 @@ def remove_comments_from_dataframe(df: pd.DataFrame, method_column: str, languag
 
         return clean_code
     
-    df["Method Java No Comments"] = df[method_column].apply(remove_comments)
+    df["Method Code No Comments"] = df[method_column].apply(remove_comments)
     return df
 
+def process_files_in_folder(folder_path):
+    for filename in os.listdir(folder_path):
+        if filename.endswith(".csv"):
+            file_path = os.path.join(folder_path, filename)
+            data = pd.read_csv(file_path)
+            
+            print("Initial dataset size:", len(data))
+
+            # Remove duplicates
+            data = remove_duplicates(data)
+            print("After removing duplicates:", len(data))
+            
+            # Filter out non-ASCII methods
+            data = filter_ascii_methods(data)
+            print("After filtering non-ASCII methods:", len(data))
+            
+            # Remove outliers
+            data = remove_outliers(data)
+            print("After removing outliers:", len(data))
+            
+            # Remove boilerplate methods
+            data = remove_boilerplate_methods(data)
+            print("After removing boilerplate methods:", len(data))
+            
+            # Remove comments from methods
+            data = remove_comments_from_dataframe(data, 'Method Code', 'java')
+            print("After removing comments:", len(data))
+
+            print(data.head())
+            data.to_csv(file_path, index=False)
+
+
+# Example usage
+folder_path = 'data/'
+process_files_in_folder(folder_path)
