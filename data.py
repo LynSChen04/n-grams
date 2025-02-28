@@ -112,3 +112,73 @@ for repo in repoList[0:1]:
     extract_methods_to_csv_from_master(repo, output_csv_file)
 
     print(repo)
+
+#N-grams pseudocode (creation of probability model)
+
+#tokenize the corpus
+
+#creating the n-gram model (pseudocode for just n)
+
+#generate_ngram(corpus, N):
+#	tokens = array of tokens in corpus
+#	result = []
+#	for every consecutive n tokens:
+#		add the n consecutive tokens to result
+#	return result
+
+#ngram = generate_ngram(corpus, N)
+
+#build a n-gram model using the ngram - may use lambda method?
+
+#build a dictionary from ngram
+#in the dictionary count the number of repeated occurrences of #token 1 - token n-1, and for each repetition add one to #dictionary entry dictionary[token 1 - token n-1][token n]
+#transform the dictionary of raw counts / frequencies to #probabilities by:
+#	for token 1 to token n-1 in dictionary:
+#		occurrences = sum of dictionary[token 1 to token n-1]
+#		values
+#		for token n in dictionary[token 1 to token n-1]:
+#			dictionary[token 1 to n-1][token n] /=
+#occurrences
+
+#function for predicting the next token
+#predict_token(token 1 - token n - 1):
+#	next_token = dictionary[token 1 - token n-1]
+#	if next_token is maximum value from the different entries
+#above:
+#	return next_token
+#else find maximum value and return
+#else end prediction or return “no prediction available”
+
+
+
+
+
+#Evaluation method: 
+
+#Def next_word(Dictionary)
+
+#take n last tokens from given data set
+#search dictionary for most predicted next word. 
+#if next predicted token is nothing, stop function
+#else rerun next_word
+#returns fully completed line of code
+
+#predicts the next word given n preceding words. Outputs #expected next word
+
+#we need a token for the end of a line...
+
+
+#Def accuracy(training data (dictionary/list?), probabilities (dictionary))
+#(assuming training data is ready to use) for each line in the training data
+#   call next_word to finish the sentence
+#   put finished sentence in var
+#   compare finished sentence to training data's sentence
+#   store accuracy of sentence in list
+#Add up all the accuracies in list, divide by len of list
+# return accuracy
+
+#using assigned training data (dictionary), test the accuracy of the n-gram #model, returns accuracy as value out of 100
+
+
+
+#use general code to produce accuracy of 1-k n-grams, and pick #the one with the best accuracy. 
