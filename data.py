@@ -115,15 +115,22 @@ for repo in repoList[0:1]:
 
 #N-grams pseudocode (creation of probability model)
 
-#tokenize the corpus
+#tokenize the corpus (above)
 
 #creating the n-gram model (pseudocode for just n)
 
 #generate_ngram(corpus, N):
-#	tokens = array of tokens in corpus
-#	result = []
-#	for every consecutive n tokens:
-#		add the n consecutive tokens to result
+#	#corpus is an array of all the consecutive tokens in the corpus
+#	result = [] #2D array
+#   ngram = []
+#   idx = 0
+#	for token in corpus:
+#      if idx % N != 0:
+#         ngram.append(token)
+#      else:
+#         result.append(ngram)
+#         ngram.clear()
+#         ngram.append(token)
 #	return result
 
 #ngram = generate_ngram(corpus, N)
