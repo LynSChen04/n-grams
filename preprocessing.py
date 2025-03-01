@@ -15,26 +15,38 @@ def remove_duplicates(data):
 
 def filter_ascii_methods(data):
     """Filter out methods that contain non-ASCII characters"""
-    return data[data['Method Code'].apply(lambda x: all(ord(char) < 128 for char in x))]
+    try:
+        return data[data['Method Code'].apply(lambda x: all(ord(char) < 128 for char in x))]
+    except KeyError:
+        print("KeyError: 'Method Code' column not found.")
+        return data
 
 def remove_outliers(data, lower_percentile=5, upper_percentile=95):
     """Remove outliers based on method length"""
-    method_lengths = data['Method Code'].apply(len)
-    lower_bound = method_lengths.quantile(lower_percentile/100)
-    upper_bound = method_lengths.quantile(upper_percentile/100)
-    return data[(method_lengths >= lower_bound) & (method_lengths <= upper_bound)]
+    try:
+        method_lengths = data['Method Code'].apply(len)
+        lower_bound = method_lengths.quantile(lower_percentile/100)
+        upper_bound = method_lengths.quantile(upper_percentile/100)
+        return data[(method_lengths >= lower_bound) & (method_lengths <= upper_bound)]
+    except KeyError:
+        print("KeyError: 'Method Code' column not found.")
+        return data
 
 #Tokenization with Pygments
 
 def remove_boilerplate_methods(data):
     """Remove boilerplate methods like getters and setters"""
-    boilerplate_patterns = [
-        r"\bset[A-Z][a-zA-Z0-9_]*\(.*\)\s*{",
-        r"\bset[A-Z][a-zA-Z0-9_]*\(.*\)\s*{"
-    ]
-    boilerplate_regex = re.compile("|".join(boilerplate_patterns))
-    data = data[~data['Method Code'].apply(lambda x: bool(boilerplate_regex.search(x)))]
-    return data
+    try:
+        boilerplate_patterns = [
+            r"\bset[A-Z][a-zA-Z0-9_]*\(.*\)\s*{",
+            r"\bget[A-Z][a-zA-Z0-9_]*\(.*\)\s*{"
+        ]
+        boilerplate_regex = re.compile("|".join(boilerplate_patterns))
+        data = data[~data['Method Code'].apply(lambda x: bool(boilerplate_regex.search(x)))]
+        return data
+    except KeyError:
+        print("KeyError: 'Method Code' column not found.")
+        return data
 
 def remove_comments_from_dataframe(df: pd.DataFrame, method_column: str, language: str) -> pd.DataFrame:
     """
@@ -54,8 +66,10 @@ def remove_comments_from_dataframe(df: pd.DataFrame, method_column: str, languag
         clean_code = ''.join(token[1] for token in tokens if not (lambda t: t[0] in Token.Comment)(token))
 
         return clean_code
-    
-    df["Method Code No Comments"] = df[method_column].apply(remove_comments)
+    try:
+        df["Method Code No Comments"] = df[method_column].apply(remove_comments)
+    except KeyError:
+        print(f"KeyError: '{method_column}' column not found.")
     return df
 
 def process_files_in_folder(folder_path):
