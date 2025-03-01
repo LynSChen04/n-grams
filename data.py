@@ -12,6 +12,8 @@ from pygments.lexers.jvm import JavaLexer
 from pygments.lexers import get_lexer_by_name
 from pygments.token import Token
 
+from nltk import ngrams
+
 df_res = pd.read_csv('results.csv')
 
 repoList = []
@@ -246,18 +248,9 @@ directory_path = 'data/'
 add_tokens_to_csv_files(directory_path)
 #N-grams pseudocode (creation of probability model)
 
-#tokenize the corpus
-
 #creating the n-gram model (pseudocode for just n)
 
-#generate_ngram(corpus, N):
-#	tokens = array of tokens in corpus
-#	result = []
-#	for every consecutive n tokens:
-#		add the n consecutive tokens to result
-#	return result
-
-#ngram = generate_ngram(corpus, N)
+#ngram = pd.Series(ngrams(corpus, N)).valueCounts()
 
 #build a n-gram model using the ngram - may use lambda method?
 
