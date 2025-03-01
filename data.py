@@ -104,7 +104,7 @@ def extract_methods_to_csv(repo_path, output_csv):
                     print(f"Extracted methods from {modified_file.filename} in commit {commit.hash}")
 
 #problems in row 9 spring-cloud/spring-cloud-config
-for repo in repoList[0:45]:
+for repo in repoList[0:40]:
     fileNameToSave = ''.join(repo.split('github.com')[1:])
     fileNameToSave = fileNameToSave.replace('/', '_')
 
