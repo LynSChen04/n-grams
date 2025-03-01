@@ -1,0 +1,2401 @@
+Branch Name,Commit Hash,File Name,Method Name,Method Code,Commit Link,Method Code No Comments,Tokens
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,DummyReadWriteLock.java,readLock,"    public Lock readLock() {
+        return lock;
+    }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"    public Lock readLock() {
+        return lock;
+    }
+","['    ', 'public', ' ', 'Lock', ' ', 'readLock', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'lock', ';', '\n', '    ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,DummyReadWriteLock.java,writeLock,"    public Lock writeLock() {
+        return lock;
+    }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"    public Lock writeLock() {
+        return lock;
+    }
+","['    ', 'public', ' ', 'Lock', ' ', 'writeLock', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'lock', ';', '\n', '    ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,DummyReadWriteLock.java,lock,"        public void lock() {
+            // Not implemented
+        }
+
+        public void lockInterruptibly() throws InterruptedException {
+            // Not implemented
+        }
+
+        public boolean tryLock() {
+            return true;
+        }
+
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        public void unlock() {
+           // Not implemented
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"        public void lock() {
+            
+        }
+
+        public void lockInterruptibly() throws InterruptedException {
+            
+        }
+
+        public boolean tryLock() {
+            return true;
+        }
+
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        public void unlock() {
+           
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'lock', '(', ')', ' ', '{', '\n', '            ', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'void', ' ', 'lockInterruptibly', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '           ', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,DummyReadWriteLock.java,lockInterruptibly,"        public void lockInterruptibly() throws InterruptedException {
+            // Not implemented
+        }
+
+        public boolean tryLock() {
+            return true;
+        }
+
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        public void unlock() {
+           // Not implemented
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"        public void lockInterruptibly() throws InterruptedException {
+            
+        }
+
+        public boolean tryLock() {
+            return true;
+        }
+
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        public void unlock() {
+           
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'lockInterruptibly', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '           ', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,DummyReadWriteLock.java,tryLock,"        public boolean tryLock() {
+            return true;
+        }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"        public boolean tryLock() {
+            return true;
+        }
+","['        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,DummyReadWriteLock.java,tryLock,"        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+","['        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,DummyReadWriteLock.java,unlock,"        public void unlock() {
+           // Not implemented
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"        public void unlock() {
+           
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '           ', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,DummyReadWriteLock.java,newCondition,"        public Condition newCondition() {
+            return null;
+        }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"        public Condition newCondition() {
+            return null;
+        }
+","['        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisCache.java,execute,"	private Object execute(RedisCallback callback) {
+		Jedis jedis = pool.getResource();
+		try {
+			return callback.doWithRedis(jedis);",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"	private Object execute(RedisCallback callback) {
+		Jedis jedis = pool.getResource();
+		try {
+			return callback.doWithRedis(jedis);
+","['\t', 'private', ' ', 'Object', ' ', 'execute', '(', 'RedisCallback', ' ', 'callback', ')', ' ', '{', '\n', '\t\t', 'Jedis', ' ', 'jedis', ' ', '=', ' ', 'pool', '.', 'getResource', '(', ')', ';', '\n', '\t\t', 'try', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'callback', '.', 'doWithRedis', '(', 'jedis', ')', ';', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisCache.java,putObject,"	public void putObject(final Object key, final Object value) {
+		execute(new RedisCallback() {
+			public Object doWithRedis(Jedis jedis) {",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"	public void putObject(final Object key, final Object value) {
+		execute(new RedisCallback() {
+			public Object doWithRedis(Jedis jedis) {
+","['\t', 'public', ' ', 'void', ' ', 'putObject', '(', 'final', ' ', 'Object', ' ', 'key', ',', ' ', 'final', ' ', 'Object', ' ', 'value', ')', ' ', '{', '\n', '\t\t', 'execute', '(', 'new', ' ', 'RedisCallback', '(', ')', ' ', '{', '\n', '\t\t\t', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisCache.java,doWithRedis,"			public Object doWithRedis(Jedis jedis) {
+				jedis.hset(id.toString().getBytes(), key.toString().getBytes(), SerializeUtil.serialize(value));
+				return null;
+			}",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"			public Object doWithRedis(Jedis jedis) {
+				jedis.hset(id.toString().getBytes(), key.toString().getBytes(), SerializeUtil.serialize(value));
+				return null;
+			}
+","['\t\t\t', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '\t\t\t\t', 'jedis', '.', 'hset', '(', 'id', '.', 'toString', '(', ')', '.', 'getBytes', '(', ')', ',', ' ', 'key', '.', 'toString', '(', ')', '.', 'getBytes', '(', ')', ',', ' ', 'SerializeUtil', '.', 'serialize', '(', 'value', ')', ')', ';', '\n', '\t\t\t\t', 'return', ' ', 'null', ';', '\n', '\t\t\t', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisCache.java,doWithRedis,"			public Object doWithRedis(Jedis jedis) {
+				return SerializeUtil.unserialize(jedis.hget(id.toString().getBytes(), key.toString().getBytes()));
+			}",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"			public Object doWithRedis(Jedis jedis) {
+				return SerializeUtil.unserialize(jedis.hget(id.toString().getBytes(), key.toString().getBytes()));
+			}
+","['\t\t\t', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '\t\t\t\t', 'return', ' ', 'SerializeUtil', '.', 'unserialize', '(', 'jedis', '.', 'hget', '(', 'id', '.', 'toString', '(', ')', '.', 'getBytes', '(', ')', ',', ' ', 'key', '.', 'toString', '(', ')', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '\t\t\t', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisCache.java,removeObject,"	public Object removeObject(final Object key) {
+		return execute(new RedisCallback() {
+			public Object doWithRedis(Jedis jedis) {",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"	public Object removeObject(final Object key) {
+		return execute(new RedisCallback() {
+			public Object doWithRedis(Jedis jedis) {
+","['\t', 'public', ' ', 'Object', ' ', 'removeObject', '(', 'final', ' ', 'Object', ' ', 'key', ')', ' ', '{', '\n', '\t\t', 'return', ' ', 'execute', '(', 'new', ' ', 'RedisCallback', '(', ')', ' ', '{', '\n', '\t\t\t', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisCache.java,doWithRedis,"			public Object doWithRedis(Jedis jedis) {
+				return jedis.hdel(id.toString(), key.toString());
+			}",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"			public Object doWithRedis(Jedis jedis) {
+				return jedis.hdel(id.toString(), key.toString());
+			}
+","['\t\t\t', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '\t\t\t\t', 'return', ' ', 'jedis', '.', 'hdel', '(', 'id', '.', 'toString', '(', ')', ',', ' ', 'key', '.', 'toString', '(', ')', ')', ';', '\n', '\t\t\t', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisCache.java,clear,"	public void clear() {
+		execute(new RedisCallback() {
+			public Object doWithRedis(Jedis jedis) {",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"	public void clear() {
+		execute(new RedisCallback() {
+			public Object doWithRedis(Jedis jedis) {
+","['\t', 'public', ' ', 'void', ' ', 'clear', '(', ')', ' ', '{', '\n', '\t\t', 'execute', '(', 'new', ' ', 'RedisCallback', '(', ')', ' ', '{', '\n', '\t\t\t', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisCache.java,doWithRedis,"			public Object doWithRedis(Jedis jedis) {
+				jedis.del(id.toString());
+				return null;
+			}",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"			public Object doWithRedis(Jedis jedis) {
+				jedis.del(id.toString());
+				return null;
+			}
+","['\t\t\t', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '\t\t\t\t', 'jedis', '.', 'del', '(', 'id', '.', 'toString', '(', ')', ')', ';', '\n', '\t\t\t\t', 'return', ' ', 'null', ';', '\n', '\t\t\t', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisCache.java,toString,"    public String toString() {
+        return ""Redis {""
+                + id",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"    public String toString() {
+        return ""Redis {""
+                + id
+","['    ', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', '""', 'Redis {', '""', '\n', '                ', '+', ' ', 'id', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisCache.java,finalize,"	protected void finalize() throws Throwable {
+		pool.destroy();
+		super.finalize();
+	}",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"	protected void finalize() throws Throwable {
+		pool.destroy();
+		super.finalize();
+	}
+","['\t', 'protected', ' ', 'void', ' ', 'finalize', '(', ')', ' ', 'throws', ' ', 'Throwable', ' ', '{', '\n', '\t\t', 'pool', '.', 'destroy', '(', ')', ';', '\n', '\t\t', 'super', '.', 'finalize', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisConfigurationBuilder.java,parseConfiguration,"	public ConfigWithHost parseConfiguration() {
+		return parseConfiguration(getClass().getClassLoader());
+	}",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"	public ConfigWithHost parseConfiguration() {
+		return parseConfiguration(getClass().getClassLoader());
+	}
+","['\t', 'public', ' ', 'ConfigWithHost', ' ', 'parseConfiguration', '(', ')', ' ', '{', '\n', '\t\t', 'return', ' ', 'parseConfiguration', '(', 'getClass', '(', ')', '.', 'getClassLoader', '(', ')', ')', ';', '\n', '\t', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisConfigurationBuilder.java,setConfigProperties,"	private void setConfigProperties(Properties properties,
+			ConfigWithHost jedisConfig) {
+		if (properties != null) {
+			MetaObject metaCache = SystemMetaObject.forObject(jedisConfig);",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"	private void setConfigProperties(Properties properties,
+			ConfigWithHost jedisConfig) {
+		if (properties != null) {
+			MetaObject metaCache = SystemMetaObject.forObject(jedisConfig);
+","['\t', 'private', ' ', 'void', ' ', 'setConfigProperties', '(', 'Properties', ' ', 'properties', ',', '\n', '\t\t\t', 'ConfigWithHost', ' ', 'jedisConfig', ')', ' ', '{', '\n', '\t\t', 'if', ' ', '(', 'properties', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '\t\t\t', 'MetaObject', ' ', 'metaCache', ' ', '=', ' ', 'SystemMetaObject', '.', 'forObject', '(', 'jedisConfig', ')', ';', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,SerializeUtil.java,serialize,"	public static byte[] serialize(Object object) {
+		ObjectOutputStream oos = null;
+		ByteArrayOutputStream baos = null;
+		try {
+			baos = new ByteArrayOutputStream();",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"	public static byte[] serialize(Object object) {
+		ObjectOutputStream oos = null;
+		ByteArrayOutputStream baos = null;
+		try {
+			baos = new ByteArrayOutputStream();
+","['\t', 'public', ' ', 'static', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ' ', '{', '\n', '\t\t', 'ObjectOutputStream', ' ', 'oos', ' ', '=', ' ', 'null', ';', '\n', '\t\t', 'ByteArrayOutputStream', ' ', 'baos', ' ', '=', ' ', 'null', ';', '\n', '\t\t', 'try', ' ', '{', '\n', '\t\t\t', 'baos', ' ', '=', ' ', 'new', ' ', 'ByteArrayOutputStream', '(', ')', ';', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,SerializeUtil.java,unserialize,"	public static Object unserialize(byte[] bytes) {
+		if (bytes == null) {
+			return null;
+		}
+		ByteArrayInputStream bais = null;
+		try {
+			bais = new ByteArrayInputStream(bytes);",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"	public static Object unserialize(byte[] bytes) {
+		if (bytes == null) {
+			return null;
+		}
+		ByteArrayInputStream bais = null;
+		try {
+			bais = new ByteArrayInputStream(bytes);
+","['\t', 'public', ' ', 'static', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '\t\t', 'if', ' ', '(', 'bytes', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'null', ';', '\n', '\t\t', '}', '\n', '\t\t', 'ByteArrayInputStream', ' ', 'bais', ' ', '=', ' ', 'null', ';', '\n', '\t\t', 'try', ' ', '{', '\n', '\t\t\t', 'bais', ' ', '=', ' ', 'new', ' ', 'ByteArrayInputStream', '(', 'bytes', ')', ';', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,StringUtils.java,sha1Hex,"    public static String sha1Hex(String data) {
+        if (data == null) {
+            throw new IllegalArgumentException(""data must not be null"");
+        }
+
+        byte[] bytes = digest(""SHA1"", data);
+
+        return toHexString(bytes);
+    }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"    public static String sha1Hex(String data) {
+        if (data == null) {
+            throw new IllegalArgumentException(""data must not be null"");
+        }
+
+        byte[] bytes = digest(""SHA1"", data);
+
+        return toHexString(bytes);
+    }
+","['    ', 'public', ' ', 'static', ' ', 'String', ' ', 'sha1Hex', '(', 'String', ' ', 'data', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'data', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'throw', ' ', 'new', ' ', 'IllegalArgumentException', '(', '""', 'data must not be null', '""', ')', ';', '\n', '        ', '}', '\n', '\n', '        ', 'byte', '[', ']', ' ', 'bytes', ' ', '=', ' ', 'digest', '(', '""', 'SHA1', '""', ',', ' ', 'data', ')', ';', '\n', '\n', '        ', 'return', ' ', 'toHexString', '(', 'bytes', ')', ';', '\n', '    ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,StringUtils.java,toHexString,"    private static String toHexString(byte[] bytes) {
+        int l = bytes.length;
+
+        char[] out = new char[l << 1];
+
+        for (int i = 0, j = 0; i < l; i++) {
+            out[j++] = DIGITS[(0xF0 & bytes[i]) >>> 4];
+            out[j++] = DIGITS[0x0F & bytes[i]];
+        }
+
+        return new String(out);
+    }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"    private static String toHexString(byte[] bytes) {
+        int l = bytes.length;
+
+        char[] out = new char[l << 1];
+
+        for (int i = 0, j = 0; i < l; i++) {
+            out[j++] = DIGITS[(0xF0 & bytes[i]) >>> 4];
+            out[j++] = DIGITS[0x0F & bytes[i]];
+        }
+
+        return new String(out);
+    }
+","['    ', 'private', ' ', 'static', ' ', 'String', ' ', 'toHexString', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '        ', 'int', ' ', 'l', ' ', '=', ' ', 'bytes', '.', 'length', ';', '\n', '\n', '        ', 'char', '[', ']', ' ', 'out', ' ', '=', ' ', 'new', ' ', 'char', '[', 'l', ' ', '<', '<', ' ', '1', ']', ';', '\n', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ',', ' ', 'j', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', 'l', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'out', '[', 'j', '+', '+', ']', ' ', '=', ' ', 'DIGITS', '[', '(', '0xF0', ' ', '&', ' ', 'bytes', '[', 'i', ']', ')', ' ', '>', '>', '>', ' ', '4', ']', ';', '\n', '            ', 'out', '[', 'j', '+', '+', ']', ' ', '=', ' ', 'DIGITS', '[', '0x0F', ' ', '&', ' ', 'bytes', '[', 'i', ']', ']', ';', '\n', '        ', '}', '\n', '\n', '        ', 'return', ' ', 'new', ' ', 'String', '(', 'out', ')', ';', '\n', '    ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,StringUtils.java,digest,"    private static byte[] digest(String algorithm, String data) {
+        MessageDigest digest;
+        try {
+            digest = MessageDigest.getInstance(algorithm);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+
+        return digest.digest(data.getBytes());
+    }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"    private static byte[] digest(String algorithm, String data) {
+        MessageDigest digest;
+        try {
+            digest = MessageDigest.getInstance(algorithm);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+
+        return digest.digest(data.getBytes());
+    }
+","['    ', 'private', ' ', 'static', ' ', 'byte', '[', ']', ' ', 'digest', '(', 'String', ' ', 'algorithm', ',', ' ', 'String', ' ', 'data', ')', ' ', '{', '\n', '        ', 'MessageDigest', ' ', 'digest', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'digest', ' ', '=', ' ', 'MessageDigest', '.', 'getInstance', '(', 'algorithm', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'NoSuchAlgorithmException', ' ', 'e', ')', ' ', '{', '\n', '            ', 'throw', ' ', 'new', ' ', 'RuntimeException', '(', 'e', ')', ';', '\n', '        ', '}', '\n', '\n', '        ', 'return', ' ', 'digest', '.', 'digest', '(', 'data', '.', 'getBytes', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,LoggingEhcacheTestCase.java,newCache,"    public void newCache() {
+        cache = new LoggingRedisCache(DEFAULT_ID);
+    }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"    public void newCache() {
+        cache = new LoggingRedisCache(DEFAULT_ID);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'newCache', '(', ')', ' ', '{', '\n', '        ', 'cache', ' ', '=', ' ', 'new', ' ', 'LoggingRedisCache', '(', 'DEFAULT_ID', ')', ';', '\n', '    ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,LoggingEhcacheTestCase.java,shouldDemonstrateHowAllObjectsAreKept,"    public void shouldDemonstrateHowAllObjectsAreKept() {
+        for (int i = 0; i < 100000; i++) {
+            cache.putObject(i, i);
+            assertEquals(i, cache.getObject(i));
+        }
+        assertEquals(100000, cache.getSize());
+    }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"    public void shouldDemonstrateHowAllObjectsAreKept() {
+        for (int i = 0; i < 100000; i++) {
+            cache.putObject(i, i);
+            assertEquals(i, cache.getObject(i));
+        }
+        assertEquals(100000, cache.getSize());
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldDemonstrateHowAllObjectsAreKept', '(', ')', ' ', '{', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '100000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n', '            ', 'assertEquals', '(', 'i', ',', ' ', 'cache', '.', 'getObject', '(', 'i', ')', ')', ';', '\n', '        ', '}', '\n', '        ', 'assertEquals', '(', '100000', ',', ' ', 'cache', '.', 'getSize', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,LoggingEhcacheTestCase.java,shouldDemonstrateCopiesAreEqual,"    public void shouldDemonstrateCopiesAreEqual() {
+        for (int i = 0; i < 1000; i++) {
+            cache.putObject(i, i);",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"    public void shouldDemonstrateCopiesAreEqual() {
+        for (int i = 0; i < 1000; i++) {
+            cache.putObject(i, i);
+","['    ', 'public', ' ', 'void', ' ', 'shouldDemonstrateCopiesAreEqual', '(', ')', ' ', '{', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '1000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,LoggingEhcacheTestCase.java,shouldRemoveItemOnDemand,"    public void shouldRemoveItemOnDemand() {
+        cache.putObject(0, 0);
+        assertNotNull(cache.getObject(0));
+        cache.removeObject(0);
+        assertNull(cache.getObject(0));
+    }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"    public void shouldRemoveItemOnDemand() {
+        cache.putObject(0, 0);
+        assertNotNull(cache.getObject(0));
+        cache.removeObject(0);
+        assertNull(cache.getObject(0));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldRemoveItemOnDemand', '(', ')', ' ', '{', '\n', '        ', 'cache', '.', 'putObject', '(', '0', ',', ' ', '0', ')', ';', '\n', '        ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '        ', 'cache', '.', 'removeObject', '(', '0', ')', ';', '\n', '        ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,LoggingEhcacheTestCase.java,shouldFlushAllItemsOnDemand,"    public void shouldFlushAllItemsOnDemand() {
+        for (int i = 0; i < 5; i++) {
+            cache.putObject(i, i);
+        }
+        assertNotNull(cache.getObject(0));
+        assertNotNull(cache.getObject(4));
+        cache.clear();
+        assertNull(cache.getObject(0));
+        assertNull(cache.getObject(4));
+    }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"    public void shouldFlushAllItemsOnDemand() {
+        for (int i = 0; i < 5; i++) {
+            cache.putObject(i, i);
+        }
+        assertNotNull(cache.getObject(0));
+        assertNotNull(cache.getObject(4));
+        cache.clear();
+        assertNull(cache.getObject(0));
+        assertNull(cache.getObject(4));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldFlushAllItemsOnDemand', '(', ')', ' ', '{', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '5', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n', '        ', '}', '\n', '        ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '        ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '4', ')', ')', ';', '\n', '        ', 'cache', '.', 'clear', '(', ')', ';', '\n', '        ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '        ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '4', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisTestCase.java,newCache,"  public void newCache() {
+    cache = new RedisCache(DEFAULT_ID);
+  }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"  public void newCache() {
+    cache = new RedisCache(DEFAULT_ID);
+  }
+","['  ', 'public', ' ', 'void', ' ', 'newCache', '(', ')', ' ', '{', '\n', '    ', 'cache', ' ', '=', ' ', 'new', ' ', 'RedisCache', '(', 'DEFAULT_ID', ')', ';', '\n', '  ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisTestCase.java,shouldDemonstrateHowAllObjectsAreKept,"  public void shouldDemonstrateHowAllObjectsAreKept() {
+    for (int i = 0; i < 100000; i++) {
+      cache.putObject(i, i);",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"  public void shouldDemonstrateHowAllObjectsAreKept() {
+    for (int i = 0; i < 100000; i++) {
+      cache.putObject(i, i);
+","['  ', 'public', ' ', 'void', ' ', 'shouldDemonstrateHowAllObjectsAreKept', '(', ')', ' ', '{', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '100000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '      ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisTestCase.java,shouldDemonstrateCopiesAreEqual,"  public void shouldDemonstrateCopiesAreEqual() {
+    for (int i = 0; i < 1000; i++) {
+      cache.putObject(i, i);",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"  public void shouldDemonstrateCopiesAreEqual() {
+    for (int i = 0; i < 1000; i++) {
+      cache.putObject(i, i);
+","['  ', 'public', ' ', 'void', ' ', 'shouldDemonstrateCopiesAreEqual', '(', ')', ' ', '{', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '1000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '      ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisTestCase.java,shouldRemoveItemOnDemand,"  public void shouldRemoveItemOnDemand() {
+    cache.putObject(0, 0);
+    assertNotNull(cache.getObject(0));
+    cache.removeObject(0);
+    assertNull(cache.getObject(0));
+  }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"  public void shouldRemoveItemOnDemand() {
+    cache.putObject(0, 0);
+    assertNotNull(cache.getObject(0));
+    cache.removeObject(0);
+    assertNull(cache.getObject(0));
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldRemoveItemOnDemand', '(', ')', ' ', '{', '\n', '    ', 'cache', '.', 'putObject', '(', '0', ',', ' ', '0', ')', ';', '\n', '    ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', 'cache', '.', 'removeObject', '(', '0', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisTestCase.java,shouldFlushAllItemsOnDemand,"  public void shouldFlushAllItemsOnDemand() {
+    for (int i = 0; i < 5; i++) {
+      cache.putObject(i, i);
+    }
+    assertNotNull(cache.getObject(0));
+    assertNotNull(cache.getObject(4));
+    cache.clear();
+    assertNull(cache.getObject(0));
+    assertNull(cache.getObject(4));
+  }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"  public void shouldFlushAllItemsOnDemand() {
+    for (int i = 0; i < 5; i++) {
+      cache.putObject(i, i);
+    }
+    assertNotNull(cache.getObject(0));
+    assertNotNull(cache.getObject(4));
+    cache.clear();
+    assertNull(cache.getObject(0));
+    assertNull(cache.getObject(4));
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldFlushAllItemsOnDemand', '(', ')', ' ', '{', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '5', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '      ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n', '    ', '}', '\n', '    ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '4', ')', ')', ';', '\n', '    ', 'cache', '.', 'clear', '(', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '4', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisTestCase.java,shouldNotCreateCache,"  public void shouldNotCreateCache() {
+    cache = new RedisCache(null);
+  }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"  public void shouldNotCreateCache() {
+    cache = new RedisCache(null);
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldNotCreateCache', '(', ')', ' ', '{', '\n', '    ', 'cache', ' ', '=', ' ', 'new', ' ', 'RedisCache', '(', 'null', ')', ';', '\n', '  ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisTestCase.java,shouldVerifyCacheId,"  public void shouldVerifyCacheId() {
+    assertEquals(""REDIS"", cache.getId());
+  }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"  public void shouldVerifyCacheId() {
+    assertEquals(""REDIS"", cache.getId());
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldVerifyCacheId', '(', ')', ' ', '{', '\n', '    ', 'assertEquals', '(', '""', 'REDIS', '""', ',', ' ', 'cache', '.', 'getId', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,RedisTestCase.java,shouldVerifyToString,"  public void shouldVerifyToString() {
+    assertEquals(""Redis {REDIS}"", cache.toString());
+  }",https://www.github.com/mybatis/redis-cache/commit/fcf5a1ccf39a0f9c074616c1de27b47d76ca5b2b,"  public void shouldVerifyToString() {
+    assertEquals(""Redis {REDIS}"", cache.toString());
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldVerifyToString', '(', ')', ' ', '{', '\n', '    ', 'assertEquals', '(', '""', 'Redis {REDIS}', '""', ',', ' ', 'cache', '.', 'toString', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,49572e722011e0320a633624fc2abb5e43d1d760,RedisTestCase.java,newCache,"  public static void newCache() {
+    cache = new RedisCache(DEFAULT_ID);
+  }",https://www.github.com/mybatis/redis-cache/commit/49572e722011e0320a633624fc2abb5e43d1d760,"  public static void newCache() {
+    cache = new RedisCache(DEFAULT_ID);
+  }
+","['  ', 'public', ' ', 'static', ' ', 'void', ' ', 'newCache', '(', ')', ' ', '{', '\n', '    ', 'cache', ' ', '=', ' ', 'new', ' ', 'RedisCache', '(', 'DEFAULT_ID', ')', ';', '\n', '  ', '}', '\n']"
+master,8e99b2f74c9e81c6c60f6411c64133f33b1c4d3f,RedisCache.java,doWithRedis,"      public Object doWithRedis(Jedis jedis) {
+        Map<byte[], byte[]> result = jedis.hgetAll(id.toString().getBytes());
+        return result.size();
+      }",https://www.github.com/mybatis/redis-cache/commit/8e99b2f74c9e81c6c60f6411c64133f33b1c4d3f,"      public Object doWithRedis(Jedis jedis) {
+        Map<byte[], byte[]> result = jedis.hgetAll(id.toString().getBytes());
+        return result.size();
+      }
+","['      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '        ', 'Map', '<', 'byte', '[', ']', ',', ' ', 'byte', '[', ']', '>', ' ', 'result', ' ', '=', ' ', 'jedis', '.', 'hgetAll', '(', 'id', '.', 'toString', '(', ')', '.', 'getBytes', '(', ')', ')', ';', '\n', '        ', 'return', ' ', 'result', '.', 'size', '(', ')', ';', '\n', '      ', '}', '\n']"
+master,ed78f236734dd3d2f24b127a996af97538cdce5f,RedisCache.java,execute,"  private Object execute(RedisCallback callback) {
+    Jedis jedis = pool.getResource();
+    try {
+      return callback.doWithRedis(jedis);",https://www.github.com/mybatis/redis-cache/commit/ed78f236734dd3d2f24b127a996af97538cdce5f,"  private Object execute(RedisCallback callback) {
+    Jedis jedis = pool.getResource();
+    try {
+      return callback.doWithRedis(jedis);
+","['  ', 'private', ' ', 'Object', ' ', 'execute', '(', 'RedisCallback', ' ', 'callback', ')', ' ', '{', '\n', '    ', 'Jedis', ' ', 'jedis', ' ', '=', ' ', 'pool', '.', 'getResource', '(', ')', ';', '\n', '    ', 'try', ' ', '{', '\n', '      ', 'return', ' ', 'callback', '.', 'doWithRedis', '(', 'jedis', ')', ';', '\n']"
+master,ed78f236734dd3d2f24b127a996af97538cdce5f,RedisCache.java,putObject,"  public void putObject(final Object key, final Object value) {
+    execute(new RedisCallback() {
+      public Object doWithRedis(Jedis jedis) {",https://www.github.com/mybatis/redis-cache/commit/ed78f236734dd3d2f24b127a996af97538cdce5f,"  public void putObject(final Object key, final Object value) {
+    execute(new RedisCallback() {
+      public Object doWithRedis(Jedis jedis) {
+","['  ', 'public', ' ', 'void', ' ', 'putObject', '(', 'final', ' ', 'Object', ' ', 'key', ',', ' ', 'final', ' ', 'Object', ' ', 'value', ')', ' ', '{', '\n', '    ', 'execute', '(', 'new', ' ', 'RedisCallback', '(', ')', ' ', '{', '\n', '      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n']"
+master,ed78f236734dd3d2f24b127a996af97538cdce5f,RedisCache.java,doWithRedis,"      public Object doWithRedis(Jedis jedis) {
+        jedis.hset(id.toString().getBytes(), key.toString().getBytes(), SerializeUtil.serialize(value));
+        return null;
+      }",https://www.github.com/mybatis/redis-cache/commit/ed78f236734dd3d2f24b127a996af97538cdce5f,"      public Object doWithRedis(Jedis jedis) {
+        jedis.hset(id.toString().getBytes(), key.toString().getBytes(), SerializeUtil.serialize(value));
+        return null;
+      }
+","['      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '        ', 'jedis', '.', 'hset', '(', 'id', '.', 'toString', '(', ')', '.', 'getBytes', '(', ')', ',', ' ', 'key', '.', 'toString', '(', ')', '.', 'getBytes', '(', ')', ',', ' ', 'SerializeUtil', '.', 'serialize', '(', 'value', ')', ')', ';', '\n', '        ', 'return', ' ', 'null', ';', '\n', '      ', '}', '\n']"
+master,ed78f236734dd3d2f24b127a996af97538cdce5f,RedisCache.java,doWithRedis,"      public Object doWithRedis(Jedis jedis) {
+        return SerializeUtil.unserialize(jedis.hget(id.toString().getBytes(), key.toString().getBytes()));
+      }",https://www.github.com/mybatis/redis-cache/commit/ed78f236734dd3d2f24b127a996af97538cdce5f,"      public Object doWithRedis(Jedis jedis) {
+        return SerializeUtil.unserialize(jedis.hget(id.toString().getBytes(), key.toString().getBytes()));
+      }
+","['      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '        ', 'return', ' ', 'SerializeUtil', '.', 'unserialize', '(', 'jedis', '.', 'hget', '(', 'id', '.', 'toString', '(', ')', '.', 'getBytes', '(', ')', ',', ' ', 'key', '.', 'toString', '(', ')', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '      ', '}', '\n']"
+master,ed78f236734dd3d2f24b127a996af97538cdce5f,RedisCache.java,removeObject,"  public Object removeObject(final Object key) {
+    return execute(new RedisCallback() {
+      public Object doWithRedis(Jedis jedis) {",https://www.github.com/mybatis/redis-cache/commit/ed78f236734dd3d2f24b127a996af97538cdce5f,"  public Object removeObject(final Object key) {
+    return execute(new RedisCallback() {
+      public Object doWithRedis(Jedis jedis) {
+","['  ', 'public', ' ', 'Object', ' ', 'removeObject', '(', 'final', ' ', 'Object', ' ', 'key', ')', ' ', '{', '\n', '    ', 'return', ' ', 'execute', '(', 'new', ' ', 'RedisCallback', '(', ')', ' ', '{', '\n', '      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n']"
+master,ed78f236734dd3d2f24b127a996af97538cdce5f,RedisCache.java,doWithRedis,"      public Object doWithRedis(Jedis jedis) {
+        return jedis.hdel(id.toString(), key.toString());
+      }",https://www.github.com/mybatis/redis-cache/commit/ed78f236734dd3d2f24b127a996af97538cdce5f,"      public Object doWithRedis(Jedis jedis) {
+        return jedis.hdel(id.toString(), key.toString());
+      }
+","['      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '        ', 'return', ' ', 'jedis', '.', 'hdel', '(', 'id', '.', 'toString', '(', ')', ',', ' ', 'key', '.', 'toString', '(', ')', ')', ';', '\n', '      ', '}', '\n']"
+master,ed78f236734dd3d2f24b127a996af97538cdce5f,RedisCache.java,clear,"  public void clear() {
+    execute(new RedisCallback() {
+      public Object doWithRedis(Jedis jedis) {",https://www.github.com/mybatis/redis-cache/commit/ed78f236734dd3d2f24b127a996af97538cdce5f,"  public void clear() {
+    execute(new RedisCallback() {
+      public Object doWithRedis(Jedis jedis) {
+","['  ', 'public', ' ', 'void', ' ', 'clear', '(', ')', ' ', '{', '\n', '    ', 'execute', '(', 'new', ' ', 'RedisCallback', '(', ')', ' ', '{', '\n', '      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n']"
+master,ed78f236734dd3d2f24b127a996af97538cdce5f,RedisCache.java,doWithRedis,"      public Object doWithRedis(Jedis jedis) {
+        jedis.del(id.toString());
+        return null;
+      }",https://www.github.com/mybatis/redis-cache/commit/ed78f236734dd3d2f24b127a996af97538cdce5f,"      public Object doWithRedis(Jedis jedis) {
+        jedis.del(id.toString());
+        return null;
+      }
+","['      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '        ', 'jedis', '.', 'del', '(', 'id', '.', 'toString', '(', ')', ')', ';', '\n', '        ', 'return', ' ', 'null', ';', '\n', '      ', '}', '\n']"
+master,ed78f236734dd3d2f24b127a996af97538cdce5f,RedisCache.java,toString,"  public String toString() {
+    return ""Redis {"" + id + ""}"";
+  }",https://www.github.com/mybatis/redis-cache/commit/ed78f236734dd3d2f24b127a996af97538cdce5f,"  public String toString() {
+    return ""Redis {"" + id + ""}"";
+  }
+","['  ', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', '""', 'Redis {', '""', ' ', '+', ' ', 'id', ' ', '+', ' ', '""', '}', '""', ';', '\n', '  ', '}', '\n']"
+master,17eca066b63e6bc30007862109ffb0eac73c0e77,DummyReadWriteLock.java,lock,"        public void lock() {
+            // Not implemented
+        }
+
+        @Override
+        public void lockInterruptibly() throws InterruptedException {
+            // Not implemented
+        }
+
+        @Override
+        public boolean tryLock() {
+            return true;
+        }
+
+        @Override
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        @Override
+        public void unlock() {
+           // Not implemented
+        }
+
+        @Override
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/redis-cache/commit/17eca066b63e6bc30007862109ffb0eac73c0e77,"        public void lock() {
+            
+        }
+
+        @Override
+        public void lockInterruptibly() throws InterruptedException {
+            
+        }
+
+        @Override
+        public boolean tryLock() {
+            return true;
+        }
+
+        @Override
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        @Override
+        public void unlock() {
+           
+        }
+
+        @Override
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'lock', '(', ')', ' ', '{', '\n', '            ', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'lockInterruptibly', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '           ', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,17eca066b63e6bc30007862109ffb0eac73c0e77,DummyReadWriteLock.java,lockInterruptibly,"        public void lockInterruptibly() throws InterruptedException {
+            // Not implemented
+        }
+
+        @Override
+        public boolean tryLock() {
+            return true;
+        }
+
+        @Override
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        @Override
+        public void unlock() {
+           // Not implemented
+        }
+
+        @Override
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/redis-cache/commit/17eca066b63e6bc30007862109ffb0eac73c0e77,"        public void lockInterruptibly() throws InterruptedException {
+            
+        }
+
+        @Override
+        public boolean tryLock() {
+            return true;
+        }
+
+        @Override
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        @Override
+        public void unlock() {
+           
+        }
+
+        @Override
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'lockInterruptibly', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '           ', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,17eca066b63e6bc30007862109ffb0eac73c0e77,DummyReadWriteLock.java,unlock,"        public void unlock() {
+           // Not implemented
+        }
+
+        @Override
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/redis-cache/commit/17eca066b63e6bc30007862109ffb0eac73c0e77,"        public void unlock() {
+           
+        }
+
+        @Override
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '           ', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,17eca066b63e6bc30007862109ffb0eac73c0e77,RedisCache.java,putObject,"  public void putObject(final Object key, final Object value) {
+    execute(new RedisCallback() {
+      @Override",https://www.github.com/mybatis/redis-cache/commit/17eca066b63e6bc30007862109ffb0eac73c0e77,"  public void putObject(final Object key, final Object value) {
+    execute(new RedisCallback() {
+      @Override
+","['  ', 'public', ' ', 'void', ' ', 'putObject', '(', 'final', ' ', 'Object', ' ', 'key', ',', ' ', 'final', ' ', 'Object', ' ', 'value', ')', ' ', '{', '\n', '    ', 'execute', '(', 'new', ' ', 'RedisCallback', '(', ')', ' ', '{', '\n', '      ', '@Override', '\n']"
+master,17eca066b63e6bc30007862109ffb0eac73c0e77,RedisCache.java,removeObject,"  public Object removeObject(final Object key) {
+    return execute(new RedisCallback() {
+      @Override",https://www.github.com/mybatis/redis-cache/commit/17eca066b63e6bc30007862109ffb0eac73c0e77,"  public Object removeObject(final Object key) {
+    return execute(new RedisCallback() {
+      @Override
+","['  ', 'public', ' ', 'Object', ' ', 'removeObject', '(', 'final', ' ', 'Object', ' ', 'key', ')', ' ', '{', '\n', '    ', 'return', ' ', 'execute', '(', 'new', ' ', 'RedisCallback', '(', ')', ' ', '{', '\n', '      ', '@Override', '\n']"
+master,17eca066b63e6bc30007862109ffb0eac73c0e77,RedisCache.java,clear,"  public void clear() {
+    execute(new RedisCallback() {
+      @Override",https://www.github.com/mybatis/redis-cache/commit/17eca066b63e6bc30007862109ffb0eac73c0e77,"  public void clear() {
+    execute(new RedisCallback() {
+      @Override
+","['  ', 'public', ' ', 'void', ' ', 'clear', '(', ')', ' ', '{', '\n', '    ', 'execute', '(', 'new', ' ', 'RedisCallback', '(', ')', ' ', '{', '\n', '      ', '@Override', '\n']"
+master,53edda5332bf94da414c97aedb9bb0274452ae1e,RedisConfigurationBuilder.java,parseConfiguration,"	public RedisConfig parseConfiguration() {
+		return parseConfiguration(getClass().getClassLoader());
+	}",https://www.github.com/mybatis/redis-cache/commit/53edda5332bf94da414c97aedb9bb0274452ae1e,"	public RedisConfig parseConfiguration() {
+		return parseConfiguration(getClass().getClassLoader());
+	}
+","['\t', 'public', ' ', 'RedisConfig', ' ', 'parseConfiguration', '(', ')', ' ', '{', '\n', '\t\t', 'return', ' ', 'parseConfiguration', '(', 'getClass', '(', ')', '.', 'getClassLoader', '(', ')', ')', ';', '\n', '\t', '}', '\n']"
+master,53edda5332bf94da414c97aedb9bb0274452ae1e,RedisConfigurationBuilder.java,parseConfiguration,"	public RedisConfig parseConfiguration(ClassLoader classLoader) {
+		Properties config = new Properties();
+
+		InputStream input = classLoader.getResourceAsStream(redisPropertiesFilename);
+		if (input != null) {
+			try {
+				config.load(input);
+			} catch (IOException e) {
+				throw new RuntimeException(
+						""An error occurred while reading classpath property '""
+								+ redisPropertiesFilename
+								+ ""', see nested exceptions"", e);
+			} finally {
+				try {
+					input.close();
+				} catch (IOException e) {
+					// close quietly
+				}
+			}
+		}
+
+		RedisConfig jedisConfig = new RedisConfig();
+		jedisConfig.setHost(""localhost"");
+		setConfigProperties(config, jedisConfig);
+		return jedisConfig;
+	}",https://www.github.com/mybatis/redis-cache/commit/53edda5332bf94da414c97aedb9bb0274452ae1e,"	public RedisConfig parseConfiguration(ClassLoader classLoader) {
+		Properties config = new Properties();
+
+		InputStream input = classLoader.getResourceAsStream(redisPropertiesFilename);
+		if (input != null) {
+			try {
+				config.load(input);
+			} catch (IOException e) {
+				throw new RuntimeException(
+						""An error occurred while reading classpath property '""
+								+ redisPropertiesFilename
+								+ ""', see nested exceptions"", e);
+			} finally {
+				try {
+					input.close();
+				} catch (IOException e) {
+					
+				}
+			}
+		}
+
+		RedisConfig jedisConfig = new RedisConfig();
+		jedisConfig.setHost(""localhost"");
+		setConfigProperties(config, jedisConfig);
+		return jedisConfig;
+	}
+","['\t', 'public', ' ', 'RedisConfig', ' ', 'parseConfiguration', '(', 'ClassLoader', ' ', 'classLoader', ')', ' ', '{', '\n', '\t\t', 'Properties', ' ', 'config', ' ', '=', ' ', 'new', ' ', 'Properties', '(', ')', ';', '\n', '\n', '\t\t', 'InputStream', ' ', 'input', ' ', '=', ' ', 'classLoader', '.', 'getResourceAsStream', '(', 'redisPropertiesFilename', ')', ';', '\n', '\t\t', 'if', ' ', '(', 'input', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '\t\t\t', 'try', ' ', '{', '\n', '\t\t\t\t', 'config', '.', 'load', '(', 'input', ')', ';', '\n', '\t\t\t', '}', ' ', 'catch', ' ', '(', 'IOException', ' ', 'e', ')', ' ', '{', '\n', '\t\t\t\t', 'throw', ' ', 'new', ' ', 'RuntimeException', '(', '\n', '\t\t\t\t\t\t', '""', ""An error occurred while reading classpath property '"", '""', '\n', '\t\t\t\t\t\t\t\t', '+', ' ', 'redisPropertiesFilename', '\n', '\t\t\t\t\t\t\t\t', '+', ' ', '""', ""', see nested exceptions"", '""', ',', ' ', 'e', ')', ';', '\n', '\t\t\t', '}', ' ', 'finally', ' ', '{', '\n', '\t\t\t\t', 'try', ' ', '{', '\n', '\t\t\t\t\t', 'input', '.', 'close', '(', ')', ';', '\n', '\t\t\t\t', '}', ' ', 'catch', ' ', '(', 'IOException', ' ', 'e', ')', ' ', '{', '\n', '\t\t\t\t\t', '\n', '\t\t\t\t', '}', '\n', '\t\t\t', '}', '\n', '\t\t', '}', '\n', '\n', '\t\t', 'RedisConfig', ' ', 'jedisConfig', ' ', '=', ' ', 'new', ' ', 'RedisConfig', '(', ')', ';', '\n', '\t\t', 'jedisConfig', '.', 'setHost', '(', '""', 'localhost', '""', ')', ';', '\n', '\t\t', 'setConfigProperties', '(', 'config', ',', ' ', 'jedisConfig', ')', ';', '\n', '\t\t', 'return', ' ', 'jedisConfig', ';', '\n', '\t', '}', '\n']"
+master,53edda5332bf94da414c97aedb9bb0274452ae1e,RedisConfigurationBuilder.java,setConfigProperties,"	private void setConfigProperties(Properties properties,
+			RedisConfig jedisConfig) {
+		if (properties != null) {
+			MetaObject metaCache = SystemMetaObject.forObject(jedisConfig);",https://www.github.com/mybatis/redis-cache/commit/53edda5332bf94da414c97aedb9bb0274452ae1e,"	private void setConfigProperties(Properties properties,
+			RedisConfig jedisConfig) {
+		if (properties != null) {
+			MetaObject metaCache = SystemMetaObject.forObject(jedisConfig);
+","['\t', 'private', ' ', 'void', ' ', 'setConfigProperties', '(', 'Properties', ' ', 'properties', ',', '\n', '\t\t\t', 'RedisConfig', ' ', 'jedisConfig', ')', ' ', '{', '\n', '\t\t', 'if', ' ', '(', 'properties', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '\t\t\t', 'MetaObject', ' ', 'metaCache', ' ', '=', ' ', 'SystemMetaObject', '.', 'forObject', '(', 'jedisConfig', ')', ';', '\n']"
+master,ddfea03d663fded645ef73842fbc70473fcebc82,RedisConfigurationBuilder.java,parseConfiguration,"	public RedisConfig parseConfiguration(ClassLoader classLoader) {
+		Properties config = new Properties();
+
+		InputStream input = classLoader.getResourceAsStream(redisPropertiesFilename);
+		if (input != null) {
+			try {
+				config.load(input);
+			} catch (IOException e) {
+				throw new RuntimeException(
+						""An error occurred while reading classpath property '""
+								+ redisPropertiesFilename
+								+ ""', see nested exceptions"", e);
+			} finally {
+				try {
+					input.close();
+				} catch (IOException e) {
+					// close quietly
+				}
+			}
+		}
+
+		RedisConfig jedisConfig = new RedisConfig();
+		setConfigProperties(config, jedisConfig);
+		return jedisConfig;
+	}",https://www.github.com/mybatis/redis-cache/commit/ddfea03d663fded645ef73842fbc70473fcebc82,"	public RedisConfig parseConfiguration(ClassLoader classLoader) {
+		Properties config = new Properties();
+
+		InputStream input = classLoader.getResourceAsStream(redisPropertiesFilename);
+		if (input != null) {
+			try {
+				config.load(input);
+			} catch (IOException e) {
+				throw new RuntimeException(
+						""An error occurred while reading classpath property '""
+								+ redisPropertiesFilename
+								+ ""', see nested exceptions"", e);
+			} finally {
+				try {
+					input.close();
+				} catch (IOException e) {
+					
+				}
+			}
+		}
+
+		RedisConfig jedisConfig = new RedisConfig();
+		setConfigProperties(config, jedisConfig);
+		return jedisConfig;
+	}
+","['\t', 'public', ' ', 'RedisConfig', ' ', 'parseConfiguration', '(', 'ClassLoader', ' ', 'classLoader', ')', ' ', '{', '\n', '\t\t', 'Properties', ' ', 'config', ' ', '=', ' ', 'new', ' ', 'Properties', '(', ')', ';', '\n', '\n', '\t\t', 'InputStream', ' ', 'input', ' ', '=', ' ', 'classLoader', '.', 'getResourceAsStream', '(', 'redisPropertiesFilename', ')', ';', '\n', '\t\t', 'if', ' ', '(', 'input', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '\t\t\t', 'try', ' ', '{', '\n', '\t\t\t\t', 'config', '.', 'load', '(', 'input', ')', ';', '\n', '\t\t\t', '}', ' ', 'catch', ' ', '(', 'IOException', ' ', 'e', ')', ' ', '{', '\n', '\t\t\t\t', 'throw', ' ', 'new', ' ', 'RuntimeException', '(', '\n', '\t\t\t\t\t\t', '""', ""An error occurred while reading classpath property '"", '""', '\n', '\t\t\t\t\t\t\t\t', '+', ' ', 'redisPropertiesFilename', '\n', '\t\t\t\t\t\t\t\t', '+', ' ', '""', ""', see nested exceptions"", '""', ',', ' ', 'e', ')', ';', '\n', '\t\t\t', '}', ' ', 'finally', ' ', '{', '\n', '\t\t\t\t', 'try', ' ', '{', '\n', '\t\t\t\t\t', 'input', '.', 'close', '(', ')', ';', '\n', '\t\t\t\t', '}', ' ', 'catch', ' ', '(', 'IOException', ' ', 'e', ')', ' ', '{', '\n', '\t\t\t\t\t', '\n', '\t\t\t\t', '}', '\n', '\t\t\t', '}', '\n', '\t\t', '}', '\n', '\n', '\t\t', 'RedisConfig', ' ', 'jedisConfig', ' ', '=', ' ', 'new', ' ', 'RedisConfig', '(', ')', ';', '\n', '\t\t', 'setConfigProperties', '(', 'config', ',', ' ', 'jedisConfig', ')', ';', '\n', '\t\t', 'return', ' ', 'jedisConfig', ';', '\n', '\t', '}', '\n']"
+master,e7d4f07fc029ad11e54c3d581ecf681d3f14f7c2,RedisConfig.java,isSsl,"    public boolean isSsl() {
+        return ssl;
+    }",https://www.github.com/mybatis/redis-cache/commit/e7d4f07fc029ad11e54c3d581ecf681d3f14f7c2,"    public boolean isSsl() {
+        return ssl;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isSsl', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'ssl', ';', '\n', '    ', '}', '\n']"
+master,e7d4f07fc029ad11e54c3d581ecf681d3f14f7c2,RedisConfigurationBuilder.java,parseConfiguration,"    public RedisConfig parseConfiguration() {
+        return parseConfiguration(getClass().getClassLoader());
+    }",https://www.github.com/mybatis/redis-cache/commit/e7d4f07fc029ad11e54c3d581ecf681d3f14f7c2,"    public RedisConfig parseConfiguration() {
+        return parseConfiguration(getClass().getClassLoader());
+    }
+","['    ', 'public', ' ', 'RedisConfig', ' ', 'parseConfiguration', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'parseConfiguration', '(', 'getClass', '(', ')', '.', 'getClassLoader', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,e7d4f07fc029ad11e54c3d581ecf681d3f14f7c2,RedisConfigurationBuilder.java,setConfigProperties,"    private void setConfigProperties(Properties properties,
+            RedisConfig jedisConfig) {
+        if (properties != null) {
+            MetaObject metaCache = SystemMetaObject.forObject(jedisConfig);",https://www.github.com/mybatis/redis-cache/commit/e7d4f07fc029ad11e54c3d581ecf681d3f14f7c2,"    private void setConfigProperties(Properties properties,
+            RedisConfig jedisConfig) {
+        if (properties != null) {
+            MetaObject metaCache = SystemMetaObject.forObject(jedisConfig);
+","['    ', 'private', ' ', 'void', ' ', 'setConfigProperties', '(', 'Properties', ' ', 'properties', ',', '\n', '            ', 'RedisConfig', ' ', 'jedisConfig', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'properties', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'MetaObject', ' ', 'metaCache', ' ', '=', ' ', 'SystemMetaObject', '.', 'forObject', '(', 'jedisConfig', ')', ';', '\n']"
+master,e7d4f07fc029ad11e54c3d581ecf681d3f14f7c2,SerializeUtil.java,serialize,"    public static byte[] serialize(Object object) {
+        ObjectOutputStream oos = null;
+        ByteArrayOutputStream baos = null;
+        try {
+            baos = new ByteArrayOutputStream();",https://www.github.com/mybatis/redis-cache/commit/e7d4f07fc029ad11e54c3d581ecf681d3f14f7c2,"    public static byte[] serialize(Object object) {
+        ObjectOutputStream oos = null;
+        ByteArrayOutputStream baos = null;
+        try {
+            baos = new ByteArrayOutputStream();
+","['    ', 'public', ' ', 'static', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ' ', '{', '\n', '        ', 'ObjectOutputStream', ' ', 'oos', ' ', '=', ' ', 'null', ';', '\n', '        ', 'ByteArrayOutputStream', ' ', 'baos', ' ', '=', ' ', 'null', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'baos', ' ', '=', ' ', 'new', ' ', 'ByteArrayOutputStream', '(', ')', ';', '\n']"
+master,e7d4f07fc029ad11e54c3d581ecf681d3f14f7c2,SerializeUtil.java,unserialize,"    public static Object unserialize(byte[] bytes) {
+        if (bytes == null) {
+            return null;
+        }
+        ByteArrayInputStream bais = null;
+        try {
+            bais = new ByteArrayInputStream(bytes);",https://www.github.com/mybatis/redis-cache/commit/e7d4f07fc029ad11e54c3d581ecf681d3f14f7c2,"    public static Object unserialize(byte[] bytes) {
+        if (bytes == null) {
+            return null;
+        }
+        ByteArrayInputStream bais = null;
+        try {
+            bais = new ByteArrayInputStream(bytes);
+","['    ', 'public', ' ', 'static', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'bytes', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '        ', 'ByteArrayInputStream', ' ', 'bais', ' ', '=', ' ', 'null', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'bais', ' ', '=', ' ', 'new', ' ', 'ByteArrayInputStream', '(', 'bytes', ')', ';', '\n']"
+master,157f0a20a4d6880246069d826405ac5cc8ac4e5e,RedisCache.java,doWithRedis,"      public Object doWithRedis(Jedis jedis) {
+        Map<byte[], byte[]> result = jedis.hgetAll(id.getBytes());
+        return result.size();
+      }",https://www.github.com/mybatis/redis-cache/commit/157f0a20a4d6880246069d826405ac5cc8ac4e5e,"      public Object doWithRedis(Jedis jedis) {
+        Map<byte[], byte[]> result = jedis.hgetAll(id.getBytes());
+        return result.size();
+      }
+","['      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '        ', 'Map', '<', 'byte', '[', ']', ',', ' ', 'byte', '[', ']', '>', ' ', 'result', ' ', '=', ' ', 'jedis', '.', 'hgetAll', '(', 'id', '.', 'getBytes', '(', ')', ')', ';', '\n', '        ', 'return', ' ', 'result', '.', 'size', '(', ')', ';', '\n', '      ', '}', '\n']"
+master,157f0a20a4d6880246069d826405ac5cc8ac4e5e,RedisCache.java,doWithRedis,"      public Object doWithRedis(Jedis jedis) {
+        jedis.hset(id.getBytes(), key.toString().getBytes(), SerializeUtil.serialize(value));
+        return null;
+      }",https://www.github.com/mybatis/redis-cache/commit/157f0a20a4d6880246069d826405ac5cc8ac4e5e,"      public Object doWithRedis(Jedis jedis) {
+        jedis.hset(id.getBytes(), key.toString().getBytes(), SerializeUtil.serialize(value));
+        return null;
+      }
+","['      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '        ', 'jedis', '.', 'hset', '(', 'id', '.', 'getBytes', '(', ')', ',', ' ', 'key', '.', 'toString', '(', ')', '.', 'getBytes', '(', ')', ',', ' ', 'SerializeUtil', '.', 'serialize', '(', 'value', ')', ')', ';', '\n', '        ', 'return', ' ', 'null', ';', '\n', '      ', '}', '\n']"
+master,157f0a20a4d6880246069d826405ac5cc8ac4e5e,RedisCache.java,doWithRedis,"      public Object doWithRedis(Jedis jedis) {
+        return SerializeUtil.unserialize(jedis.hget(id.getBytes(), key.toString().getBytes()));
+      }",https://www.github.com/mybatis/redis-cache/commit/157f0a20a4d6880246069d826405ac5cc8ac4e5e,"      public Object doWithRedis(Jedis jedis) {
+        return SerializeUtil.unserialize(jedis.hget(id.getBytes(), key.toString().getBytes()));
+      }
+","['      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '        ', 'return', ' ', 'SerializeUtil', '.', 'unserialize', '(', 'jedis', '.', 'hget', '(', 'id', '.', 'getBytes', '(', ')', ',', ' ', 'key', '.', 'toString', '(', ')', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '      ', '}', '\n']"
+master,157f0a20a4d6880246069d826405ac5cc8ac4e5e,RedisCache.java,doWithRedis,"      public Object doWithRedis(Jedis jedis) {
+        return jedis.hdel(id, key.toString());
+      }",https://www.github.com/mybatis/redis-cache/commit/157f0a20a4d6880246069d826405ac5cc8ac4e5e,"      public Object doWithRedis(Jedis jedis) {
+        return jedis.hdel(id, key.toString());
+      }
+","['      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '        ', 'return', ' ', 'jedis', '.', 'hdel', '(', 'id', ',', ' ', 'key', '.', 'toString', '(', ')', ')', ';', '\n', '      ', '}', '\n']"
+master,157f0a20a4d6880246069d826405ac5cc8ac4e5e,RedisCache.java,doWithRedis,"      public Object doWithRedis(Jedis jedis) {
+        jedis.del(id);
+        return null;
+      }",https://www.github.com/mybatis/redis-cache/commit/157f0a20a4d6880246069d826405ac5cc8ac4e5e,"      public Object doWithRedis(Jedis jedis) {
+        jedis.del(id);
+        return null;
+      }
+","['      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '        ', 'jedis', '.', 'del', '(', 'id', ')', ';', '\n', '        ', 'return', ' ', 'null', ';', '\n', '      ', '}', '\n']"
+master,7a54599b37c022b58771caf1025413853e576d22,JDKSerializer.java,serialize,"	public static byte[] serialize(Object object) {
+        ObjectOutputStream oos = null;
+        ByteArrayOutputStream baos = null;
+        try {
+            baos = new ByteArrayOutputStream();",https://www.github.com/mybatis/redis-cache/commit/7a54599b37c022b58771caf1025413853e576d22,"	public static byte[] serialize(Object object) {
+        ObjectOutputStream oos = null;
+        ByteArrayOutputStream baos = null;
+        try {
+            baos = new ByteArrayOutputStream();
+","['\t', 'public', ' ', 'static', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ' ', '{', '\n', '        ', 'ObjectOutputStream', ' ', 'oos', ' ', '=', ' ', 'null', ';', '\n', '        ', 'ByteArrayOutputStream', ' ', 'baos', ' ', '=', ' ', 'null', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'baos', ' ', '=', ' ', 'new', ' ', 'ByteArrayOutputStream', '(', ')', ';', '\n']"
+master,7a54599b37c022b58771caf1025413853e576d22,KryoSerializer.java,serialize,"    public static byte[] serialize(Object object) {
+		kryo.register(object.getClass());
+    	output.clear();
+    	kryo.writeClassAndObject(output, object);
+        return output.toBytes();
+    }",https://www.github.com/mybatis/redis-cache/commit/7a54599b37c022b58771caf1025413853e576d22,"    public static byte[] serialize(Object object) {
+		kryo.register(object.getClass());
+    	output.clear();
+    	kryo.writeClassAndObject(output, object);
+        return output.toBytes();
+    }
+","['    ', 'public', ' ', 'static', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ' ', '{', '\n', '\t\t', 'kryo', '.', 'register', '(', 'object', '.', 'getClass', '(', ')', ')', ';', '\n', '    \t', 'output', '.', 'clear', '(', ')', ';', '\n', '    \t', 'kryo', '.', 'writeClassAndObject', '(', 'output', ',', ' ', 'object', ')', ';', '\n', '        ', 'return', ' ', 'output', '.', 'toBytes', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,7a54599b37c022b58771caf1025413853e576d22,KryoSerializer.java,unserialize,"    public static Object unserialize(byte[] bytes) {
+    	input.setBuffer(bytes);
+        return kryo.readClassAndObject(input);
+    }",https://www.github.com/mybatis/redis-cache/commit/7a54599b37c022b58771caf1025413853e576d22,"    public static Object unserialize(byte[] bytes) {
+    	input.setBuffer(bytes);
+        return kryo.readClassAndObject(input);
+    }
+","['    ', 'public', ' ', 'static', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '    \t', 'input', '.', 'setBuffer', '(', 'bytes', ')', ';', '\n', '        ', 'return', ' ', 'kryo', '.', 'readClassAndObject', '(', 'input', ')', ';', '\n', '    ', '}', '\n']"
+master,7a54599b37c022b58771caf1025413853e576d22,SerializeUtil.java,serialize,"    public static byte[] serialize(Object object) {
+    	 try {
+    		//use kryo serialize first",https://www.github.com/mybatis/redis-cache/commit/7a54599b37c022b58771caf1025413853e576d22,"    public static byte[] serialize(Object object) {
+    	 try {
+    		
+","['    ', 'public', ' ', 'static', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ' ', '{', '\n', '    \t ', 'try', ' ', '{', '\n', '    \t\t', '\n']"
+master,7a54599b37c022b58771caf1025413853e576d22,SerializeUtil.java,unserialize,"    public static Object unserialize(byte[] bytes) {
+        if (bytes == null) {
+            return null;
+        }
+        try {
+        	//use kryo unserialize first",https://www.github.com/mybatis/redis-cache/commit/7a54599b37c022b58771caf1025413853e576d22,"    public static Object unserialize(byte[] bytes) {
+        if (bytes == null) {
+            return null;
+        }
+        try {
+        	
+","['    ', 'public', ' ', 'static', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'bytes', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '        ', 'try', ' ', '{', '\n', '        \t', '\n']"
+master,7a54599b37c022b58771caf1025413853e576d22,SerializerTestCase.java,testKryoSerialize,"	public void testKryoSerialize() {
+		SimpleBean rawSimpleBean=new SimpleBean();
+		
+		for(int i=0;i!=max;++i)
+		{
+			KryoSerializer.serialize(rawSimpleBean);
+		}
+			
+		byte[] serialBytes=KryoSerializer.serialize(rawSimpleBean);
+		System.out.println(""Byte size after kryo serialize ""+serialBytes.length);
+		SimpleBean unserializeSimpleBean=(SimpleBean) KryoSerializer.unserialize(serialBytes);
+		
+		for(int i=0;i!=max;++i)
+		{
+			KryoSerializer.unserialize(serialBytes);
+		}
+		
+		assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/7a54599b37c022b58771caf1025413853e576d22,"	public void testKryoSerialize() {
+		SimpleBean rawSimpleBean=new SimpleBean();
+		
+		for(int i=0;i!=max;++i)
+		{
+			KryoSerializer.serialize(rawSimpleBean);
+		}
+			
+		byte[] serialBytes=KryoSerializer.serialize(rawSimpleBean);
+		System.out.println(""Byte size after kryo serialize ""+serialBytes.length);
+		SimpleBean unserializeSimpleBean=(SimpleBean) KryoSerializer.unserialize(serialBytes);
+		
+		for(int i=0;i!=max;++i)
+		{
+			KryoSerializer.unserialize(serialBytes);
+		}
+		
+		assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['\t', 'public', ' ', 'void', ' ', 'testKryoSerialize', '(', ')', ' ', '{', '\n', '\t\t', 'SimpleBean', ' ', 'rawSimpleBean', '=', 'new', ' ', 'SimpleBean', '(', ')', ';', '\n', '\t\t', '\n', '\t\t', 'for', '(', 'int', ' ', 'i', '=', '0', ';', 'i', '!', '=', 'max', ';', '+', '+', 'i', ')', '\n', '\t\t', '{', '\n', '\t\t\t', 'KryoSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '\t\t', '}', '\n', '\t\t\t', '\n', '\t\t', 'byte', '[', ']', ' ', 'serialBytes', '=', 'KryoSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '\t\t', 'System', '.', 'out', '.', 'println', '(', '""', 'Byte size after kryo serialize ', '""', '+', 'serialBytes', '.', 'length', ')', ';', '\n', '\t\t', 'SimpleBean', ' ', 'unserializeSimpleBean', '=', '(', 'SimpleBean', ')', ' ', 'KryoSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\t\t', '\n', '\t\t', 'for', '(', 'int', ' ', 'i', '=', '0', ';', 'i', '!', '=', 'max', ';', '+', '+', 'i', ')', '\n', '\t\t', '{', '\n', '\t\t\t', 'KryoSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\t\t', '}', '\n', '\t\t', '\n', '\t\t', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,7a54599b37c022b58771caf1025413853e576d22,SerializerTestCase.java,testJDKSerialize,"	public void testJDKSerialize() {
+		SimpleBean rawSimpleBean=new SimpleBean();
+		
+		for(int i=0;i!=max;++i)
+		{
+			JDKSerializer.serialize(rawSimpleBean);
+		}
+			
+		byte[] serialBytes=JDKSerializer.serialize(rawSimpleBean);
+		System.out.println(""Byte size after jdk serialize ""+serialBytes.length);
+		SimpleBean unserializeSimpleBean=(SimpleBean) JDKSerializer.unserialize(serialBytes);
+		
+		for(int i=0;i!=max;++i)
+		{
+			JDKSerializer.unserialize(serialBytes);
+		}
+		
+		assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/7a54599b37c022b58771caf1025413853e576d22,"	public void testJDKSerialize() {
+		SimpleBean rawSimpleBean=new SimpleBean();
+		
+		for(int i=0;i!=max;++i)
+		{
+			JDKSerializer.serialize(rawSimpleBean);
+		}
+			
+		byte[] serialBytes=JDKSerializer.serialize(rawSimpleBean);
+		System.out.println(""Byte size after jdk serialize ""+serialBytes.length);
+		SimpleBean unserializeSimpleBean=(SimpleBean) JDKSerializer.unserialize(serialBytes);
+		
+		for(int i=0;i!=max;++i)
+		{
+			JDKSerializer.unserialize(serialBytes);
+		}
+		
+		assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['\t', 'public', ' ', 'void', ' ', 'testJDKSerialize', '(', ')', ' ', '{', '\n', '\t\t', 'SimpleBean', ' ', 'rawSimpleBean', '=', 'new', ' ', 'SimpleBean', '(', ')', ';', '\n', '\t\t', '\n', '\t\t', 'for', '(', 'int', ' ', 'i', '=', '0', ';', 'i', '!', '=', 'max', ';', '+', '+', 'i', ')', '\n', '\t\t', '{', '\n', '\t\t\t', 'JDKSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '\t\t', '}', '\n', '\t\t\t', '\n', '\t\t', 'byte', '[', ']', ' ', 'serialBytes', '=', 'JDKSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '\t\t', 'System', '.', 'out', '.', 'println', '(', '""', 'Byte size after jdk serialize ', '""', '+', 'serialBytes', '.', 'length', ')', ';', '\n', '\t\t', 'SimpleBean', ' ', 'unserializeSimpleBean', '=', '(', 'SimpleBean', ')', ' ', 'JDKSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\t\t', '\n', '\t\t', 'for', '(', 'int', ' ', 'i', '=', '0', ';', 'i', '!', '=', 'max', ';', '+', '+', 'i', ')', '\n', '\t\t', '{', '\n', '\t\t\t', 'JDKSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\t\t', '}', '\n', '\t\t', '\n', '\t\t', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,7a54599b37c022b58771caf1025413853e576d22,SerializerTestCase.java,testSerializeUtil,"	public void testSerializeUtil() {
+		SimpleBean rawSimpleBean=new SimpleBean();
+	
+		byte[] serialBytes=SerializeUtil.serialize(rawSimpleBean);
+		SimpleBean unserializeSimpleBean=(SimpleBean) SerializeUtil.unserialize(serialBytes);
+		
+		assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/7a54599b37c022b58771caf1025413853e576d22,"	public void testSerializeUtil() {
+		SimpleBean rawSimpleBean=new SimpleBean();
+	
+		byte[] serialBytes=SerializeUtil.serialize(rawSimpleBean);
+		SimpleBean unserializeSimpleBean=(SimpleBean) SerializeUtil.unserialize(serialBytes);
+		
+		assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['\t', 'public', ' ', 'void', ' ', 'testSerializeUtil', '(', ')', ' ', '{', '\n', '\t\t', 'SimpleBean', ' ', 'rawSimpleBean', '=', 'new', ' ', 'SimpleBean', '(', ')', ';', '\n', '\t', '\n', '\t\t', 'byte', '[', ']', ' ', 'serialBytes', '=', 'SerializeUtil', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '\t\t', 'SimpleBean', ' ', 'unserializeSimpleBean', '=', '(', 'SimpleBean', ')', ' ', 'SerializeUtil', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\t\t', '\n', '\t\t', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,7a54599b37c022b58771caf1025413853e576d22,SimpleBean.java,toString,"	public String toString() {
+		return ""StudentInfo [name="" + name + "", age="" + age + "", grade=""
+				+ grade + "", sex="" + sex + ""]"";",https://www.github.com/mybatis/redis-cache/commit/7a54599b37c022b58771caf1025413853e576d22,"	public String toString() {
+		return ""StudentInfo [name="" + name + "", age="" + age + "", grade=""
+				+ grade + "", sex="" + sex + ""]"";
+","['\t', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '\t\t', 'return', ' ', '""', 'StudentInfo [name=', '""', ' ', '+', ' ', 'name', ' ', '+', ' ', '""', ', age=', '""', ' ', '+', ' ', 'age', ' ', '+', ' ', '""', ', grade=', '""', '\n', '\t\t\t\t', '+', ' ', 'grade', ' ', '+', ' ', '""', ', sex=', '""', ' ', '+', ' ', 'sex', ' ', '+', ' ', '""', ']', '""', ';', '\n']"
+master,7a54599b37c022b58771caf1025413853e576d22,SimpleBean.java,equals,"	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if(obj==null)
+			return false;
+		if(!obj.getClass().equals(SimpleBean.class))
+			return false;
+		return this.toString().equals(obj.toString());
+	}",https://www.github.com/mybatis/redis-cache/commit/7a54599b37c022b58771caf1025413853e576d22,"	public boolean equals(Object obj) {
+		
+		if(obj==null)
+			return false;
+		if(!obj.getClass().equals(SimpleBean.class))
+			return false;
+		return this.toString().equals(obj.toString());
+	}
+","['\t', 'public', ' ', 'boolean', ' ', 'equals', '(', 'Object', ' ', 'obj', ')', ' ', '{', '\n', '\t\t', '\n', '\t\t', 'if', '(', 'obj', '=', '=', 'null', ')', '\n', '\t\t\t', 'return', ' ', 'false', ';', '\n', '\t\t', 'if', '(', '!', 'obj', '.', 'getClass', '(', ')', '.', 'equals', '(', 'SimpleBean', '.', 'class', ')', ')', '\n', '\t\t\t', 'return', ' ', 'false', ';', '\n', '\t\t', 'return', ' ', 'this', '.', 'toString', '(', ')', '.', 'equals', '(', 'obj', '.', 'toString', '(', ')', ')', ';', '\n', '\t', '}', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,DummyReadWriteLock.java,readLock,"  public Lock readLock() {
+    return lock;
+  }",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public Lock readLock() {
+    return lock;
+  }
+","['  ', 'public', ' ', 'Lock', ' ', 'readLock', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', 'lock', ';', '\n', '  ', '}', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,DummyReadWriteLock.java,writeLock,"  public Lock writeLock() {
+    return lock;
+  }",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public Lock writeLock() {
+    return lock;
+  }
+","['  ', 'public', ' ', 'Lock', ' ', 'writeLock', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', 'lock', ';', '\n', '  ', '}', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,DummyReadWriteLock.java,lock,"    public void lock() {
+      // Not implemented
+    }
+
+    @Override
+    public void lockInterruptibly() throws InterruptedException {
+      // Not implemented
+    }
+
+    @Override
+    public boolean tryLock() {
+      return true;
+    }
+
+    @Override
+    public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+      return true;
+    }
+
+    @Override
+    public void unlock() {
+      // Not implemented
+    }
+
+    @Override
+    public Condition newCondition() {
+      return null;
+    }
+  }
+
+}",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"    public void lock() {
+      
+    }
+
+    @Override
+    public void lockInterruptibly() throws InterruptedException {
+      
+    }
+
+    @Override
+    public boolean tryLock() {
+      return true;
+    }
+
+    @Override
+    public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+      return true;
+    }
+
+    @Override
+    public void unlock() {
+      
+    }
+
+    @Override
+    public Condition newCondition() {
+      return null;
+    }
+  }
+
+}
+","['    ', 'public', ' ', 'void', ' ', 'lock', '(', ')', ' ', '{', '\n', '      ', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'void', ' ', 'lockInterruptibly', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '      ', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '      ', 'return', ' ', 'true', ';', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '      ', 'return', ' ', 'true', ';', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '      ', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '  ', '}', '\n', '\n', '}', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,DummyReadWriteLock.java,lockInterruptibly,"    public void lockInterruptibly() throws InterruptedException {
+      // Not implemented
+    }
+
+    @Override
+    public boolean tryLock() {
+      return true;
+    }
+
+    @Override
+    public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+      return true;
+    }
+
+    @Override
+    public void unlock() {
+      // Not implemented
+    }
+
+    @Override
+    public Condition newCondition() {
+      return null;
+    }
+  }
+
+}",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"    public void lockInterruptibly() throws InterruptedException {
+      
+    }
+
+    @Override
+    public boolean tryLock() {
+      return true;
+    }
+
+    @Override
+    public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+      return true;
+    }
+
+    @Override
+    public void unlock() {
+      
+    }
+
+    @Override
+    public Condition newCondition() {
+      return null;
+    }
+  }
+
+}
+","['    ', 'public', ' ', 'void', ' ', 'lockInterruptibly', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '      ', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '      ', 'return', ' ', 'true', ';', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '      ', 'return', ' ', 'true', ';', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '      ', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '  ', '}', '\n', '\n', '}', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,DummyReadWriteLock.java,tryLock,"    public boolean tryLock() {
+      return true;
+    }",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"    public boolean tryLock() {
+      return true;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '      ', 'return', ' ', 'true', ';', '\n', '    ', '}', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,DummyReadWriteLock.java,tryLock,"    public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+      return true;
+    }",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"    public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+      return true;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '      ', 'return', ' ', 'true', ';', '\n', '    ', '}', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,DummyReadWriteLock.java,unlock,"    public void unlock() {
+      // Not implemented
+    }
+
+    @Override
+    public Condition newCondition() {
+      return null;
+    }
+  }
+
+}",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"    public void unlock() {
+      
+    }
+
+    @Override
+    public Condition newCondition() {
+      return null;
+    }
+  }
+
+}
+","['    ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '      ', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '  ', '}', '\n', '\n', '}', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,DummyReadWriteLock.java,newCondition,"    public Condition newCondition() {
+      return null;
+    }",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"    public Condition newCondition() {
+      return null;
+    }
+","['    ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,JDKSerializer.java,serialize,"  public static byte[] serialize(Object object) {
+    ObjectOutputStream oos = null;
+    ByteArrayOutputStream baos = null;
+    try {
+      baos = new ByteArrayOutputStream();",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public static byte[] serialize(Object object) {
+    ObjectOutputStream oos = null;
+    ByteArrayOutputStream baos = null;
+    try {
+      baos = new ByteArrayOutputStream();
+","['  ', 'public', ' ', 'static', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ' ', '{', '\n', '    ', 'ObjectOutputStream', ' ', 'oos', ' ', '=', ' ', 'null', ';', '\n', '    ', 'ByteArrayOutputStream', ' ', 'baos', ' ', '=', ' ', 'null', ';', '\n', '    ', 'try', ' ', '{', '\n', '      ', 'baos', ' ', '=', ' ', 'new', ' ', 'ByteArrayOutputStream', '(', ')', ';', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,JDKSerializer.java,unserialize,"  public static Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    ByteArrayInputStream bais = null;
+    try {
+      bais = new ByteArrayInputStream(bytes);",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public static Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    ByteArrayInputStream bais = null;
+    try {
+      bais = new ByteArrayInputStream(bytes);
+","['  ', 'public', ' ', 'static', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '    ', 'if', ' ', '(', 'bytes', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '    ', 'ByteArrayInputStream', ' ', 'bais', ' ', '=', ' ', 'null', ';', '\n', '    ', 'try', ' ', '{', '\n', '      ', 'bais', ' ', '=', ' ', 'new', ' ', 'ByteArrayInputStream', '(', 'bytes', ')', ';', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,KryoSerializer.java,serialize,"  public static byte[] serialize(Object object) {
+    kryo.register(object.getClass());
+    output.clear();
+    kryo.writeClassAndObject(output, object);
+    return output.toBytes();
+  }",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public static byte[] serialize(Object object) {
+    kryo.register(object.getClass());
+    output.clear();
+    kryo.writeClassAndObject(output, object);
+    return output.toBytes();
+  }
+","['  ', 'public', ' ', 'static', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ' ', '{', '\n', '    ', 'kryo', '.', 'register', '(', 'object', '.', 'getClass', '(', ')', ')', ';', '\n', '    ', 'output', '.', 'clear', '(', ')', ';', '\n', '    ', 'kryo', '.', 'writeClassAndObject', '(', 'output', ',', ' ', 'object', ')', ';', '\n', '    ', 'return', ' ', 'output', '.', 'toBytes', '(', ')', ';', '\n', '  ', '}', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,KryoSerializer.java,unserialize,"  public static Object unserialize(byte[] bytes) {
+    input.setBuffer(bytes);
+    return kryo.readClassAndObject(input);
+  }",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public static Object unserialize(byte[] bytes) {
+    input.setBuffer(bytes);
+    return kryo.readClassAndObject(input);
+  }
+","['  ', 'public', ' ', 'static', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '    ', 'input', '.', 'setBuffer', '(', 'bytes', ')', ';', '\n', '    ', 'return', ' ', 'kryo', '.', 'readClassAndObject', '(', 'input', ')', ';', '\n', '  ', '}', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,RedisConfig.java,isSsl,"  public boolean isSsl() {
+    return ssl;
+  }",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public boolean isSsl() {
+    return ssl;
+  }
+","['  ', 'public', ' ', 'boolean', ' ', 'isSsl', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', 'ssl', ';', '\n', '  ', '}', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,RedisConfigurationBuilder.java,parseConfiguration,"  public RedisConfig parseConfiguration() {
+    return parseConfiguration(getClass().getClassLoader());
+  }",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public RedisConfig parseConfiguration() {
+    return parseConfiguration(getClass().getClassLoader());
+  }
+","['  ', 'public', ' ', 'RedisConfig', ' ', 'parseConfiguration', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', 'parseConfiguration', '(', 'getClass', '(', ')', '.', 'getClassLoader', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,SerializeUtil.java,serialize,"  public static byte[] serialize(Object object) {
+    try {
+      //use kryo serialize first",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public static byte[] serialize(Object object) {
+    try {
+      
+","['  ', 'public', ' ', 'static', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ' ', '{', '\n', '    ', 'try', ' ', '{', '\n', '      ', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,SerializeUtil.java,unserialize,"  public static Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    try {
+      //use kryo unserialize first",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public static Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    try {
+      
+","['  ', 'public', ' ', 'static', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '    ', 'if', ' ', '(', 'bytes', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '    ', 'try', ' ', '{', '\n', '      ', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,SerializerTestCase.java,testKryoSerialize,"  public void testKryoSerialize() {
+    SimpleBean rawSimpleBean = new SimpleBean();
+
+    for (int i = 0; i != max; ++i) {
+      KryoSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = KryoSerializer.serialize(rawSimpleBean);
+    System.out.println(""Byte size after kryo serialize "" + serialBytes.length);
+    SimpleBean unserializeSimpleBean = (SimpleBean) KryoSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      KryoSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public void testKryoSerialize() {
+    SimpleBean rawSimpleBean = new SimpleBean();
+
+    for (int i = 0; i != max; ++i) {
+      KryoSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = KryoSerializer.serialize(rawSimpleBean);
+    System.out.println(""Byte size after kryo serialize "" + serialBytes.length);
+    SimpleBean unserializeSimpleBean = (SimpleBean) KryoSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      KryoSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['  ', 'public', ' ', 'void', ' ', 'testKryoSerialize', '(', ')', ' ', '{', '\n', '    ', 'SimpleBean', ' ', 'rawSimpleBean', ' ', '=', ' ', 'new', ' ', 'SimpleBean', '(', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'KryoSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'byte', '[', ']', ' ', 'serialBytes', ' ', '=', ' ', 'KryoSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', 'System', '.', 'out', '.', 'println', '(', '""', 'Byte size after kryo serialize ', '""', ' ', '+', ' ', 'serialBytes', '.', 'length', ')', ';', '\n', '    ', 'SimpleBean', ' ', 'unserializeSimpleBean', ' ', '=', ' ', '(', 'SimpleBean', ')', ' ', 'KryoSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'KryoSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,SerializerTestCase.java,testJDKSerialize,"  public void testJDKSerialize() {
+    SimpleBean rawSimpleBean = new SimpleBean();
+
+    for (int i = 0; i != max; ++i) {
+      JDKSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = JDKSerializer.serialize(rawSimpleBean);
+    System.out.println(""Byte size after jdk serialize "" + serialBytes.length);
+    SimpleBean unserializeSimpleBean = (SimpleBean) JDKSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      JDKSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public void testJDKSerialize() {
+    SimpleBean rawSimpleBean = new SimpleBean();
+
+    for (int i = 0; i != max; ++i) {
+      JDKSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = JDKSerializer.serialize(rawSimpleBean);
+    System.out.println(""Byte size after jdk serialize "" + serialBytes.length);
+    SimpleBean unserializeSimpleBean = (SimpleBean) JDKSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      JDKSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['  ', 'public', ' ', 'void', ' ', 'testJDKSerialize', '(', ')', ' ', '{', '\n', '    ', 'SimpleBean', ' ', 'rawSimpleBean', ' ', '=', ' ', 'new', ' ', 'SimpleBean', '(', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'JDKSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'byte', '[', ']', ' ', 'serialBytes', ' ', '=', ' ', 'JDKSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', 'System', '.', 'out', '.', 'println', '(', '""', 'Byte size after jdk serialize ', '""', ' ', '+', ' ', 'serialBytes', '.', 'length', ')', ';', '\n', '    ', 'SimpleBean', ' ', 'unserializeSimpleBean', ' ', '=', ' ', '(', 'SimpleBean', ')', ' ', 'JDKSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'JDKSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,SerializerTestCase.java,testSerializeUtil,"  public void testSerializeUtil() {
+    SimpleBean rawSimpleBean = new SimpleBean();
+
+    byte[] serialBytes = SerializeUtil.serialize(rawSimpleBean);
+    SimpleBean unserializeSimpleBean = (SimpleBean) SerializeUtil.unserialize(serialBytes);
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public void testSerializeUtil() {
+    SimpleBean rawSimpleBean = new SimpleBean();
+
+    byte[] serialBytes = SerializeUtil.serialize(rawSimpleBean);
+    SimpleBean unserializeSimpleBean = (SimpleBean) SerializeUtil.unserialize(serialBytes);
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['  ', 'public', ' ', 'void', ' ', 'testSerializeUtil', '(', ')', ' ', '{', '\n', '    ', 'SimpleBean', ' ', 'rawSimpleBean', ' ', '=', ' ', 'new', ' ', 'SimpleBean', '(', ')', ';', '\n', '\n', '    ', 'byte', '[', ']', ' ', 'serialBytes', ' ', '=', ' ', 'SerializeUtil', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', 'SimpleBean', ' ', 'unserializeSimpleBean', ' ', '=', ' ', '(', 'SimpleBean', ')', ' ', 'SerializeUtil', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\n', '    ', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,SimpleBean.java,toString,"  public String toString() {
+    return ""StudentInfo [name="" + name + "", age="" + age + "", grade="" + grade + "", sex="" + sex + ""]"";
+  }",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public String toString() {
+    return ""StudentInfo [name="" + name + "", age="" + age + "", grade="" + grade + "", sex="" + sex + ""]"";
+  }
+","['  ', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', '""', 'StudentInfo [name=', '""', ' ', '+', ' ', 'name', ' ', '+', ' ', '""', ', age=', '""', ' ', '+', ' ', 'age', ' ', '+', ' ', '""', ', grade=', '""', ' ', '+', ' ', 'grade', ' ', '+', ' ', '""', ', sex=', '""', ' ', '+', ' ', 'sex', ' ', '+', ' ', '""', ']', '""', ';', '\n', '  ', '}', '\n']"
+master,cf0de3cb5f8d0e641561fcbdcded299767d98ec5,SimpleBean.java,equals,"  public boolean equals(Object obj) {
+    // TODO Auto-generated method stub
+    if (obj == null)
+      return false;
+    if (!obj.getClass().equals(SimpleBean.class))
+      return false;
+    return this.toString().equals(obj.toString());
+  }",https://www.github.com/mybatis/redis-cache/commit/cf0de3cb5f8d0e641561fcbdcded299767d98ec5,"  public boolean equals(Object obj) {
+    
+    if (obj == null)
+      return false;
+    if (!obj.getClass().equals(SimpleBean.class))
+      return false;
+    return this.toString().equals(obj.toString());
+  }
+","['  ', 'public', ' ', 'boolean', ' ', 'equals', '(', 'Object', ' ', 'obj', ')', ' ', '{', '\n', '    ', '\n', '    ', 'if', ' ', '(', 'obj', ' ', '=', '=', ' ', 'null', ')', '\n', '      ', 'return', ' ', 'false', ';', '\n', '    ', 'if', ' ', '(', '!', 'obj', '.', 'getClass', '(', ')', '.', 'equals', '(', 'SimpleBean', '.', 'class', ')', ')', '\n', '      ', 'return', ' ', 'false', ';', '\n', '    ', 'return', ' ', 'this', '.', 'toString', '(', ')', '.', 'equals', '(', 'obj', '.', 'toString', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,JDKSerializer.java,serialize,"  public byte[] serialize(Object object) {
+    ObjectOutputStream oos = null;
+    ByteArrayOutputStream baos = null;
+    try {
+      baos = new ByteArrayOutputStream();",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public byte[] serialize(Object object) {
+    ObjectOutputStream oos = null;
+    ByteArrayOutputStream baos = null;
+    try {
+      baos = new ByteArrayOutputStream();
+","['  ', 'public', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ' ', '{', '\n', '    ', 'ObjectOutputStream', ' ', 'oos', ' ', '=', ' ', 'null', ';', '\n', '    ', 'ByteArrayOutputStream', ' ', 'baos', ' ', '=', ' ', 'null', ';', '\n', '    ', 'try', ' ', '{', '\n', '      ', 'baos', ' ', '=', ' ', 'new', ' ', 'ByteArrayOutputStream', '(', ')', ';', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,JDKSerializer.java,unserialize,"  public Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    ByteArrayInputStream bais = null;
+    try {
+      bais = new ByteArrayInputStream(bytes);",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    ByteArrayInputStream bais = null;
+    try {
+      bais = new ByteArrayInputStream(bytes);
+","['  ', 'public', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '    ', 'if', ' ', '(', 'bytes', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '    ', 'ByteArrayInputStream', ' ', 'bais', ' ', '=', ' ', 'null', ';', '\n', '    ', 'try', ' ', '{', '\n', '      ', 'bais', ' ', '=', ' ', 'new', ' ', 'ByteArrayInputStream', '(', 'bytes', ')', ';', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,KryoSerializer.java,unserialize,"  public Object unserialize(byte[] bytes) {
+    int hashCode = Arrays.hashCode(bytes);
+    if (!unnormalBytesHashCodeSet.contains(hashCode)) {
+      /**",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public Object unserialize(byte[] bytes) {
+    int hashCode = Arrays.hashCode(bytes);
+    if (!unnormalBytesHashCodeSet.contains(hashCode)) {
+      /**
+","['  ', 'public', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '    ', 'int', ' ', 'hashCode', ' ', '=', ' ', 'Arrays', '.', 'hashCode', '(', 'bytes', ')', ';', '\n', '    ', 'if', ' ', '(', '!', 'unnormalBytesHashCodeSet', '.', 'contains', '(', 'hashCode', ')', ')', ' ', '{', '\n', '      ', '/', '*', '*', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,SerializeUtil.java,serialize,"  public static byte[] serialize(Object object) {
+    return serializer.serialize(object);
+  }",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public static byte[] serialize(Object object) {
+    return serializer.serialize(object);
+  }
+","['  ', 'public', ' ', 'static', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ' ', '{', '\n', '    ', 'return', ' ', 'serializer', '.', 'serialize', '(', 'object', ')', ';', '\n', '  ', '}', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,SerializeUtil.java,unserialize,"  public static Object unserialize(byte[] bytes) {
+    if (bytes == null || bytes.length == 0) {
+      return null;
+    }
+    return serializer.unserialize(bytes);
+  }",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public static Object unserialize(byte[] bytes) {
+    if (bytes == null || bytes.length == 0) {
+      return null;
+    }
+    return serializer.unserialize(bytes);
+  }
+","['  ', 'public', ' ', 'static', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '    ', 'if', ' ', '(', 'bytes', ' ', '=', '=', ' ', 'null', ' ', '|', '|', ' ', 'bytes', '.', 'length', ' ', '=', '=', ' ', '0', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '    ', 'return', ' ', 'serializer', '.', 'unserialize', '(', 'bytes', ')', ';', '\n', '  ', '}', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,Serializer.java,serialize,"  public byte[] serialize(Object object);
+
+  /**
+   * Unserialize method
+   * @param bytes
+   * @return unserialized object
+   */
+  public Object unserialize(byte[] bytes);
+
+}",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public byte[] serialize(Object object);
+
+  
+  public Object unserialize(byte[] bytes);
+
+}
+","['  ', 'public', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ';', '\n', '\n', '  ', '\n', '  ', 'public', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ';', '\n', '\n', '}', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,SerializerTestCase.java,setup,"  public void setup() {
+    kryoSerializer = KryoSerializer.INSTANCE;
+    jdkSerializer = JDKSerializer.INSTANCE;
+  }",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public void setup() {
+    kryoSerializer = KryoSerializer.INSTANCE;
+    jdkSerializer = JDKSerializer.INSTANCE;
+  }
+","['  ', 'public', ' ', 'void', ' ', 'setup', '(', ')', ' ', '{', '\n', '    ', 'kryoSerializer', ' ', '=', ' ', 'KryoSerializer', '.', 'INSTANCE', ';', '\n', '    ', 'jdkSerializer', ' ', '=', ' ', 'JDKSerializer', '.', 'INSTANCE', ';', '\n', '  ', '}', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,SerializerTestCase.java,testKryoSerialize,"  public void testKryoSerialize() {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    for (int i = 0; i != max; ++i) {
+      kryoSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = kryoSerializer.serialize(rawSimpleBean);
+    System.out.println(""Byte size after kryo serialize "" + serialBytes.length);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) kryoSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      kryoSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public void testKryoSerialize() {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    for (int i = 0; i != max; ++i) {
+      kryoSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = kryoSerializer.serialize(rawSimpleBean);
+    System.out.println(""Byte size after kryo serialize "" + serialBytes.length);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) kryoSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      kryoSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['  ', 'public', ' ', 'void', ' ', 'testKryoSerialize', '(', ')', ' ', '{', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'rawSimpleBean', ' ', '=', ' ', 'new', ' ', 'SimpleBeanStudentInfo', '(', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'kryoSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'byte', '[', ']', ' ', 'serialBytes', ' ', '=', ' ', 'kryoSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', 'System', '.', 'out', '.', 'println', '(', '""', 'Byte size after kryo serialize ', '""', ' ', '+', ' ', 'serialBytes', '.', 'length', ')', ';', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'unserializeSimpleBean', ' ', '=', ' ', '(', 'SimpleBeanStudentInfo', ')', ' ', 'kryoSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'kryoSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,SerializerTestCase.java,testKryoFallbackSerialize,"  public void testKryoFallbackSerialize() throws IOException {
+
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+    byte[] serialBytes = jdkSerializer.serialize(rawSimpleBean);
+
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) kryoSerializer.unserialize(serialBytes);
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public void testKryoFallbackSerialize() throws IOException {
+
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+    byte[] serialBytes = jdkSerializer.serialize(rawSimpleBean);
+
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) kryoSerializer.unserialize(serialBytes);
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['  ', 'public', ' ', 'void', ' ', 'testKryoFallbackSerialize', '(', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'rawSimpleBean', ' ', '=', ' ', 'new', ' ', 'SimpleBeanStudentInfo', '(', ')', ';', '\n', '    ', 'byte', '[', ']', ' ', 'serialBytes', ' ', '=', ' ', 'jdkSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'unserializeSimpleBean', ' ', '=', ' ', '(', 'SimpleBeanStudentInfo', ')', ' ', 'kryoSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '    ', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,SerializerTestCase.java,testKryoUnserializeWithoutRegistry,"  public void testKryoUnserializeWithoutRegistry() throws IOException {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    byte[] serialBytes = kryoSerializer.serialize(rawSimpleBean);
+
+    Kryo kryoWithoutRegisty = new Kryo();
+    Input input = new Input(serialBytes);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) kryoWithoutRegisty.readClassAndObject(input);
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public void testKryoUnserializeWithoutRegistry() throws IOException {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    byte[] serialBytes = kryoSerializer.serialize(rawSimpleBean);
+
+    Kryo kryoWithoutRegisty = new Kryo();
+    Input input = new Input(serialBytes);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) kryoWithoutRegisty.readClassAndObject(input);
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['  ', 'public', ' ', 'void', ' ', 'testKryoUnserializeWithoutRegistry', '(', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'rawSimpleBean', ' ', '=', ' ', 'new', ' ', 'SimpleBeanStudentInfo', '(', ')', ';', '\n', '\n', '    ', 'byte', '[', ']', ' ', 'serialBytes', ' ', '=', ' ', 'kryoSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '\n', '    ', 'Kryo', ' ', 'kryoWithoutRegisty', ' ', '=', ' ', 'new', ' ', 'Kryo', '(', ')', ';', '\n', '    ', 'Input', ' ', 'input', ' ', '=', ' ', 'new', ' ', 'Input', '(', 'serialBytes', ')', ';', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'unserializeSimpleBean', ' ', '=', ' ', '(', 'SimpleBeanStudentInfo', ')', ' ', 'kryoWithoutRegisty', '.', 'readClassAndObject', '(', 'input', ')', ';', '\n', '    ', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,SerializerTestCase.java,testJDKSerialize,"  public void testJDKSerialize() {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    for (int i = 0; i != max; ++i) {
+      jdkSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = jdkSerializer.serialize(rawSimpleBean);
+    System.out.println(""Byte size after jdk serialize "" + serialBytes.length);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) jdkSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      jdkSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public void testJDKSerialize() {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    for (int i = 0; i != max; ++i) {
+      jdkSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = jdkSerializer.serialize(rawSimpleBean);
+    System.out.println(""Byte size after jdk serialize "" + serialBytes.length);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) jdkSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      jdkSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['  ', 'public', ' ', 'void', ' ', 'testJDKSerialize', '(', ')', ' ', '{', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'rawSimpleBean', ' ', '=', ' ', 'new', ' ', 'SimpleBeanStudentInfo', '(', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'jdkSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'byte', '[', ']', ' ', 'serialBytes', ' ', '=', ' ', 'jdkSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', 'System', '.', 'out', '.', 'println', '(', '""', 'Byte size after jdk serialize ', '""', ' ', '+', ' ', 'serialBytes', '.', 'length', ')', ';', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'unserializeSimpleBean', ' ', '=', ' ', '(', 'SimpleBeanStudentInfo', ')', ' ', 'jdkSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'jdkSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,SerializerTestCase.java,testSerializeUtil,"  public void testSerializeUtil() {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    byte[] serialBytes = SerializeUtil.serialize(rawSimpleBean);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) SerializeUtil.unserialize(serialBytes);
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public void testSerializeUtil() {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    byte[] serialBytes = SerializeUtil.serialize(rawSimpleBean);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) SerializeUtil.unserialize(serialBytes);
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['  ', 'public', ' ', 'void', ' ', 'testSerializeUtil', '(', ')', ' ', '{', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'rawSimpleBean', ' ', '=', ' ', 'new', ' ', 'SimpleBeanStudentInfo', '(', ')', ';', '\n', '\n', '    ', 'byte', '[', ']', ' ', 'serialBytes', ' ', '=', ' ', 'SerializeUtil', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'unserializeSimpleBean', ' ', '=', ' ', '(', 'SimpleBeanStudentInfo', ')', ' ', 'SerializeUtil', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\n', '    ', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,SerializerTestCase.java,testSerializeCofig,"  public void testSerializeCofig() {
+    RedisConfig redisConfig = RedisConfigurationBuilder.getInstance().parseConfiguration();
+    assertTrue(redisConfig.getSerializer().equals(""jdk""));
+  }",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public void testSerializeCofig() {
+    RedisConfig redisConfig = RedisConfigurationBuilder.getInstance().parseConfiguration();
+    assertTrue(redisConfig.getSerializer().equals(""jdk""));
+  }
+","['  ', 'public', ' ', 'void', ' ', 'testSerializeCofig', '(', ')', ' ', '{', '\n', '    ', 'RedisConfig', ' ', 'redisConfig', ' ', '=', ' ', 'RedisConfigurationBuilder', '.', 'getInstance', '(', ')', '.', 'parseConfiguration', '(', ')', ';', '\n', '    ', 'assertTrue', '(', 'redisConfig', '.', 'getSerializer', '(', ')', '.', 'equals', '(', '""', 'jdk', '""', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,SimpleBeanCourseInfo.java,toString,"  public String toString() {
+    return ""CourseInfo [name="" + name + "", id="" + id + ""]"";
+  }",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public String toString() {
+    return ""CourseInfo [name="" + name + "", id="" + id + ""]"";
+  }
+","['  ', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', '""', 'CourseInfo [name=', '""', ' ', '+', ' ', 'name', ' ', '+', ' ', '""', ', id=', '""', ' ', '+', ' ', 'id', ' ', '+', ' ', '""', ']', '""', ';', '\n', '  ', '}', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,SimpleBeanCourseInfo.java,equals,"  public boolean equals(Object obj) {
+    // TODO Auto-generated method stub
+    if (obj == null)
+      return false;
+    if (!obj.getClass().equals(SimpleBeanCourseInfo.class))
+      return false;
+    return this.toString().equals(obj.toString());
+  }",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public boolean equals(Object obj) {
+    
+    if (obj == null)
+      return false;
+    if (!obj.getClass().equals(SimpleBeanCourseInfo.class))
+      return false;
+    return this.toString().equals(obj.toString());
+  }
+","['  ', 'public', ' ', 'boolean', ' ', 'equals', '(', 'Object', ' ', 'obj', ')', ' ', '{', '\n', '    ', '\n', '    ', 'if', ' ', '(', 'obj', ' ', '=', '=', ' ', 'null', ')', '\n', '      ', 'return', ' ', 'false', ';', '\n', '    ', 'if', ' ', '(', '!', 'obj', '.', 'getClass', '(', ')', '.', 'equals', '(', 'SimpleBeanCourseInfo', '.', 'class', ')', ')', '\n', '      ', 'return', ' ', 'false', ';', '\n', '    ', 'return', ' ', 'this', '.', 'toString', '(', ')', '.', 'equals', '(', 'obj', '.', 'toString', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,SimpleBeanStudentInfo.java,equals,"  public boolean equals(Object obj) {
+    // TODO Auto-generated method stub
+    if (obj == null)
+      return false;
+    if (!obj.getClass().equals(SimpleBeanStudentInfo.class))
+      return false;
+    return this.toString().equals(obj.toString());
+  }",https://www.github.com/mybatis/redis-cache/commit/8ad3e118b6ea9ce82941d3a2b9bc206e0c791e70,"  public boolean equals(Object obj) {
+    
+    if (obj == null)
+      return false;
+    if (!obj.getClass().equals(SimpleBeanStudentInfo.class))
+      return false;
+    return this.toString().equals(obj.toString());
+  }
+","['  ', 'public', ' ', 'boolean', ' ', 'equals', '(', 'Object', ' ', 'obj', ')', ' ', '{', '\n', '    ', '\n', '    ', 'if', ' ', '(', 'obj', ' ', '=', '=', ' ', 'null', ')', '\n', '      ', 'return', ' ', 'false', ';', '\n', '    ', 'if', ' ', '(', '!', 'obj', '.', 'getClass', '(', ')', '.', 'equals', '(', 'SimpleBeanStudentInfo', '.', 'class', ')', ')', '\n', '      ', 'return', ' ', 'false', ';', '\n', '    ', 'return', ' ', 'this', '.', 'toString', '(', ')', '.', 'equals', '(', 'obj', '.', 'toString', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,2897ef0b746139329fd1c0f3907d2441c1b22474,KryoSerializer.java,unserialize,"  public Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    int hashCode = Arrays.hashCode(bytes);
+    if (!unnormalBytesHashCodeSet.contains(hashCode)) {
+      /**",https://www.github.com/mybatis/redis-cache/commit/2897ef0b746139329fd1c0f3907d2441c1b22474,"  public Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    int hashCode = Arrays.hashCode(bytes);
+    if (!unnormalBytesHashCodeSet.contains(hashCode)) {
+      /**
+","['  ', 'public', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '    ', 'if', ' ', '(', 'bytes', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '    ', 'int', ' ', 'hashCode', ' ', '=', ' ', 'Arrays', '.', 'hashCode', '(', 'bytes', ')', ';', '\n', '    ', 'if', ' ', '(', '!', 'unnormalBytesHashCodeSet', '.', 'contains', '(', 'hashCode', ')', ')', ' ', '{', '\n', '      ', '/', '*', '*', '\n']"
+master,2897ef0b746139329fd1c0f3907d2441c1b22474,RedisCache.java,doWithRedis,"      public Object doWithRedis(Jedis jedis) {
+        jedis.hset(id.getBytes(), key.toString().getBytes(), redisConfig.getSerializer().serialize(value));
+        return null;
+      }",https://www.github.com/mybatis/redis-cache/commit/2897ef0b746139329fd1c0f3907d2441c1b22474,"      public Object doWithRedis(Jedis jedis) {
+        jedis.hset(id.getBytes(), key.toString().getBytes(), redisConfig.getSerializer().serialize(value));
+        return null;
+      }
+","['      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '        ', 'jedis', '.', 'hset', '(', 'id', '.', 'getBytes', '(', ')', ',', ' ', 'key', '.', 'toString', '(', ')', '.', 'getBytes', '(', ')', ',', ' ', 'redisConfig', '.', 'getSerializer', '(', ')', '.', 'serialize', '(', 'value', ')', ')', ';', '\n', '        ', 'return', ' ', 'null', ';', '\n', '      ', '}', '\n']"
+master,2897ef0b746139329fd1c0f3907d2441c1b22474,RedisCache.java,doWithRedis,"      public Object doWithRedis(Jedis jedis) {
+        return redisConfig.getSerializer().unserialize(jedis.hget(id.getBytes(), key.toString().getBytes()));
+      }",https://www.github.com/mybatis/redis-cache/commit/2897ef0b746139329fd1c0f3907d2441c1b22474,"      public Object doWithRedis(Jedis jedis) {
+        return redisConfig.getSerializer().unserialize(jedis.hget(id.getBytes(), key.toString().getBytes()));
+      }
+","['      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '        ', 'return', ' ', 'redisConfig', '.', 'getSerializer', '(', ')', '.', 'unserialize', '(', 'jedis', '.', 'hget', '(', 'id', '.', 'getBytes', '(', ')', ',', ' ', 'key', '.', 'toString', '(', ')', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '      ', '}', '\n']"
+master,2897ef0b746139329fd1c0f3907d2441c1b22474,SerializerTestCase.java,testKryoUnserializeNull,"  public void testKryoUnserializeNull() {
+    Object obj = kryoSerializer.unserialize(null);
+    assertNull(obj);
+  }",https://www.github.com/mybatis/redis-cache/commit/2897ef0b746139329fd1c0f3907d2441c1b22474,"  public void testKryoUnserializeNull() {
+    Object obj = kryoSerializer.unserialize(null);
+    assertNull(obj);
+  }
+","['  ', 'public', ' ', 'void', ' ', 'testKryoUnserializeNull', '(', ')', ' ', '{', '\n', '    ', 'Object', ' ', 'obj', ' ', '=', ' ', 'kryoSerializer', '.', 'unserialize', '(', 'null', ')', ';', '\n', '    ', 'assertNull', '(', 'obj', ')', ';', '\n', '  ', '}', '\n']"
+master,2897ef0b746139329fd1c0f3907d2441c1b22474,SerializerTestCase.java,testJDKUnserializeNull,"  public void testJDKUnserializeNull() {
+    Object obj = jdkSerializer.unserialize(null);
+    assertNull(obj);
+  }",https://www.github.com/mybatis/redis-cache/commit/2897ef0b746139329fd1c0f3907d2441c1b22474,"  public void testJDKUnserializeNull() {
+    Object obj = jdkSerializer.unserialize(null);
+    assertNull(obj);
+  }
+","['  ', 'public', ' ', 'void', ' ', 'testJDKUnserializeNull', '(', ')', ' ', '{', '\n', '    ', 'Object', ' ', 'obj', ' ', '=', ' ', 'jdkSerializer', '.', 'unserialize', '(', 'null', ')', ';', '\n', '    ', 'assertNull', '(', 'obj', ')', ';', '\n', '  ', '}', '\n']"
+master,2897ef0b746139329fd1c0f3907d2441c1b22474,SerializerTestCase.java,testKryoSerialize,"  public void testKryoSerialize() {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    for (int i = 0; i != max; ++i) {
+      kryoSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = kryoSerializer.serialize(rawSimpleBean);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) kryoSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      kryoSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/2897ef0b746139329fd1c0f3907d2441c1b22474,"  public void testKryoSerialize() {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    for (int i = 0; i != max; ++i) {
+      kryoSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = kryoSerializer.serialize(rawSimpleBean);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) kryoSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      kryoSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['  ', 'public', ' ', 'void', ' ', 'testKryoSerialize', '(', ')', ' ', '{', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'rawSimpleBean', ' ', '=', ' ', 'new', ' ', 'SimpleBeanStudentInfo', '(', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'kryoSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'byte', '[', ']', ' ', 'serialBytes', ' ', '=', ' ', 'kryoSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'unserializeSimpleBean', ' ', '=', ' ', '(', 'SimpleBeanStudentInfo', ')', ' ', 'kryoSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'kryoSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,2897ef0b746139329fd1c0f3907d2441c1b22474,SerializerTestCase.java,testJDKSerialize,"  public void testJDKSerialize() {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    for (int i = 0; i != max; ++i) {
+      jdkSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = jdkSerializer.serialize(rawSimpleBean);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) jdkSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      jdkSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/2897ef0b746139329fd1c0f3907d2441c1b22474,"  public void testJDKSerialize() {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    for (int i = 0; i != max; ++i) {
+      jdkSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = jdkSerializer.serialize(rawSimpleBean);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) jdkSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      jdkSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['  ', 'public', ' ', 'void', ' ', 'testJDKSerialize', '(', ')', ' ', '{', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'rawSimpleBean', ' ', '=', ' ', 'new', ' ', 'SimpleBeanStudentInfo', '(', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'jdkSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'byte', '[', ']', ' ', 'serialBytes', ' ', '=', ' ', 'jdkSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'unserializeSimpleBean', ' ', '=', ' ', '(', 'SimpleBeanStudentInfo', ')', ' ', 'jdkSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'jdkSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,2897ef0b746139329fd1c0f3907d2441c1b22474,SerializerTestCase.java,testSerializeCofig,"  public void testSerializeCofig() {
+    RedisConfig redisConfig = RedisConfigurationBuilder.getInstance().parseConfiguration();
+    assertEquals(JDKSerializer.class, redisConfig.getSerializer().getClass());
+  }",https://www.github.com/mybatis/redis-cache/commit/2897ef0b746139329fd1c0f3907d2441c1b22474,"  public void testSerializeCofig() {
+    RedisConfig redisConfig = RedisConfigurationBuilder.getInstance().parseConfiguration();
+    assertEquals(JDKSerializer.class, redisConfig.getSerializer().getClass());
+  }
+","['  ', 'public', ' ', 'void', ' ', 'testSerializeCofig', '(', ')', ' ', '{', '\n', '    ', 'RedisConfig', ' ', 'redisConfig', ' ', '=', ' ', 'RedisConfigurationBuilder', '.', 'getInstance', '(', ')', '.', 'parseConfiguration', '(', ')', ';', '\n', '    ', 'assertEquals', '(', 'JDKSerializer', '.', 'class', ',', ' ', 'redisConfig', '.', 'getSerializer', '(', ')', '.', 'getClass', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,e5f255004a0cac71666a74a7dec5872e5511dab4,RedisConfigurationBuilderTest.java,testDefaults,"  public void testDefaults() throws Exception {
+    System.setProperty(RedisConfigurationBuilder.SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME, ""no-such-file.properties"");
+    RedisConfig redisConfig = RedisConfigurationBuilder.getInstance()
+        .parseConfiguration(this.getClass().getClassLoader());
+    assertEquals(JDKSerializer.class, redisConfig.getSerializer().getClass());
+    assertFalse(redisConfig.isSsl());
+    assertNull(redisConfig.getSslSocketFactory());
+    assertNull(redisConfig.getSslParameters());
+    assertNull(redisConfig.getHostnameVerifier());
+  }",https://www.github.com/mybatis/redis-cache/commit/e5f255004a0cac71666a74a7dec5872e5511dab4,"  public void testDefaults() throws Exception {
+    System.setProperty(RedisConfigurationBuilder.SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME, ""no-such-file.properties"");
+    RedisConfig redisConfig = RedisConfigurationBuilder.getInstance()
+        .parseConfiguration(this.getClass().getClassLoader());
+    assertEquals(JDKSerializer.class, redisConfig.getSerializer().getClass());
+    assertFalse(redisConfig.isSsl());
+    assertNull(redisConfig.getSslSocketFactory());
+    assertNull(redisConfig.getSslParameters());
+    assertNull(redisConfig.getHostnameVerifier());
+  }
+","['  ', 'public', ' ', 'void', ' ', 'testDefaults', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '    ', 'System', '.', 'setProperty', '(', 'RedisConfigurationBuilder', '.', 'SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME', ',', ' ', '""', 'no-such-file.properties', '""', ')', ';', '\n', '    ', 'RedisConfig', ' ', 'redisConfig', ' ', '=', ' ', 'RedisConfigurationBuilder', '.', 'getInstance', '(', ')', '\n', '        ', '.', 'parseConfiguration', '(', 'this', '.', 'getClass', '(', ')', '.', 'getClassLoader', '(', ')', ')', ';', '\n', '    ', 'assertEquals', '(', 'JDKSerializer', '.', 'class', ',', ' ', 'redisConfig', '.', 'getSerializer', '(', ')', '.', 'getClass', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'redisConfig', '.', 'isSsl', '(', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'redisConfig', '.', 'getSslSocketFactory', '(', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'redisConfig', '.', 'getSslParameters', '(', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'redisConfig', '.', 'getHostnameVerifier', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,e5f255004a0cac71666a74a7dec5872e5511dab4,RedisConfigurationBuilderTest.java,test1,"  public void test1() throws Exception {
+    System.setProperty(RedisConfigurationBuilder.SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME, ""test1.properties"");
+    RedisConfig redisConfig = RedisConfigurationBuilder.getInstance()
+        .parseConfiguration(this.getClass().getClassLoader());
+    assertEquals(KryoSerializer.class, redisConfig.getSerializer().getClass());
+    assertTrue(redisConfig.isSsl());
+    assertEquals(TestSSLSocketFactory.class, redisConfig.getSslSocketFactory().getClass());
+    assertEquals(TestSSLParameters.class, redisConfig.getSslParameters().getClass());
+    assertEquals(TestHostnameVerifier.class, redisConfig.getHostnameVerifier().getClass());
+  }",https://www.github.com/mybatis/redis-cache/commit/e5f255004a0cac71666a74a7dec5872e5511dab4,"  public void test1() throws Exception {
+    System.setProperty(RedisConfigurationBuilder.SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME, ""test1.properties"");
+    RedisConfig redisConfig = RedisConfigurationBuilder.getInstance()
+        .parseConfiguration(this.getClass().getClassLoader());
+    assertEquals(KryoSerializer.class, redisConfig.getSerializer().getClass());
+    assertTrue(redisConfig.isSsl());
+    assertEquals(TestSSLSocketFactory.class, redisConfig.getSslSocketFactory().getClass());
+    assertEquals(TestSSLParameters.class, redisConfig.getSslParameters().getClass());
+    assertEquals(TestHostnameVerifier.class, redisConfig.getHostnameVerifier().getClass());
+  }
+","['  ', 'public', ' ', 'void', ' ', 'test1', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '    ', 'System', '.', 'setProperty', '(', 'RedisConfigurationBuilder', '.', 'SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME', ',', ' ', '""', 'test1.properties', '""', ')', ';', '\n', '    ', 'RedisConfig', ' ', 'redisConfig', ' ', '=', ' ', 'RedisConfigurationBuilder', '.', 'getInstance', '(', ')', '\n', '        ', '.', 'parseConfiguration', '(', 'this', '.', 'getClass', '(', ')', '.', 'getClassLoader', '(', ')', ')', ';', '\n', '    ', 'assertEquals', '(', 'KryoSerializer', '.', 'class', ',', ' ', 'redisConfig', '.', 'getSerializer', '(', ')', '.', 'getClass', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'redisConfig', '.', 'isSsl', '(', ')', ')', ';', '\n', '    ', 'assertEquals', '(', 'TestSSLSocketFactory', '.', 'class', ',', ' ', 'redisConfig', '.', 'getSslSocketFactory', '(', ')', '.', 'getClass', '(', ')', ')', ';', '\n', '    ', 'assertEquals', '(', 'TestSSLParameters', '.', 'class', ',', ' ', 'redisConfig', '.', 'getSslParameters', '(', ')', '.', 'getClass', '(', ')', ')', ';', '\n', '    ', 'assertEquals', '(', 'TestHostnameVerifier', '.', 'class', ',', ' ', 'redisConfig', '.', 'getHostnameVerifier', '(', ')', '.', 'getClass', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,e5f255004a0cac71666a74a7dec5872e5511dab4,RedisConfigurationBuilderTest.java,after,"  public void after() {
+    System.setProperty(RedisConfigurationBuilder.SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME,
+        RedisConfigurationBuilder.REDIS_RESOURCE);",https://www.github.com/mybatis/redis-cache/commit/e5f255004a0cac71666a74a7dec5872e5511dab4,"  public void after() {
+    System.setProperty(RedisConfigurationBuilder.SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME,
+        RedisConfigurationBuilder.REDIS_RESOURCE);
+","['  ', 'public', ' ', 'void', ' ', 'after', '(', ')', ' ', '{', '\n', '    ', 'System', '.', 'setProperty', '(', 'RedisConfigurationBuilder', '.', 'SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME', ',', '\n', '        ', 'RedisConfigurationBuilder', '.', 'REDIS_RESOURCE', ')', ';', '\n']"
+master,e5f255004a0cac71666a74a7dec5872e5511dab4,TestHostnameVerifier.java,verify,"  public boolean verify(String hostname, SSLSession session) {
+    return false;
+  }",https://www.github.com/mybatis/redis-cache/commit/e5f255004a0cac71666a74a7dec5872e5511dab4,"  public boolean verify(String hostname, SSLSession session) {
+    return false;
+  }
+","['  ', 'public', ' ', 'boolean', ' ', 'verify', '(', 'String', ' ', 'hostname', ',', ' ', 'SSLSession', ' ', 'session', ')', ' ', '{', '\n', '    ', 'return', ' ', 'false', ';', '\n', '  ', '}', '\n']"
+master,e5f255004a0cac71666a74a7dec5872e5511dab4,TestSSLSocketFactory.java,createSocket,"  public Socket createSocket(Socket s, String host, int port, boolean autoClose) throws IOException {
+    return null;
+  }",https://www.github.com/mybatis/redis-cache/commit/e5f255004a0cac71666a74a7dec5872e5511dab4,"  public Socket createSocket(Socket s, String host, int port, boolean autoClose) throws IOException {
+    return null;
+  }
+","['  ', 'public', ' ', 'Socket', ' ', 'createSocket', '(', 'Socket', ' ', 's', ',', ' ', 'String', ' ', 'host', ',', ' ', 'int', ' ', 'port', ',', ' ', 'boolean', ' ', 'autoClose', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '    ', 'return', ' ', 'null', ';', '\n', '  ', '}', '\n']"
+master,e5f255004a0cac71666a74a7dec5872e5511dab4,TestSSLSocketFactory.java,createSocket,"  public Socket createSocket(String arg0, int arg1) throws IOException, UnknownHostException {
+    return null;
+  }",https://www.github.com/mybatis/redis-cache/commit/e5f255004a0cac71666a74a7dec5872e5511dab4,"  public Socket createSocket(String arg0, int arg1) throws IOException, UnknownHostException {
+    return null;
+  }
+","['  ', 'public', ' ', 'Socket', ' ', 'createSocket', '(', 'String', ' ', 'arg0', ',', ' ', 'int', ' ', 'arg1', ')', ' ', 'throws', ' ', 'IOException', ',', ' ', 'UnknownHostException', ' ', '{', '\n', '    ', 'return', ' ', 'null', ';', '\n', '  ', '}', '\n']"
+master,e5f255004a0cac71666a74a7dec5872e5511dab4,TestSSLSocketFactory.java,createSocket,"  public Socket createSocket(InetAddress arg0, int arg1) throws IOException {
+    return null;
+  }",https://www.github.com/mybatis/redis-cache/commit/e5f255004a0cac71666a74a7dec5872e5511dab4,"  public Socket createSocket(InetAddress arg0, int arg1) throws IOException {
+    return null;
+  }
+","['  ', 'public', ' ', 'Socket', ' ', 'createSocket', '(', 'InetAddress', ' ', 'arg0', ',', ' ', 'int', ' ', 'arg1', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '    ', 'return', ' ', 'null', ';', '\n', '  ', '}', '\n']"
+master,e5f255004a0cac71666a74a7dec5872e5511dab4,TestSSLSocketFactory.java,createSocket,"  public Socket createSocket(String arg0, int arg1, InetAddress arg2, int arg3)
+      throws IOException, UnknownHostException {
+    return null;
+  }",https://www.github.com/mybatis/redis-cache/commit/e5f255004a0cac71666a74a7dec5872e5511dab4,"  public Socket createSocket(String arg0, int arg1, InetAddress arg2, int arg3)
+      throws IOException, UnknownHostException {
+    return null;
+  }
+","['  ', 'public', ' ', 'Socket', ' ', 'createSocket', '(', 'String', ' ', 'arg0', ',', ' ', 'int', ' ', 'arg1', ',', ' ', 'InetAddress', ' ', 'arg2', ',', ' ', 'int', ' ', 'arg3', ')', '\n', '      ', 'throws', ' ', 'IOException', ',', ' ', 'UnknownHostException', ' ', '{', '\n', '    ', 'return', ' ', 'null', ';', '\n', '  ', '}', '\n']"
+master,e5f255004a0cac71666a74a7dec5872e5511dab4,TestSSLSocketFactory.java,createSocket,"  public Socket createSocket(InetAddress arg0, int arg1, InetAddress arg2, int arg3) throws IOException {
+    return null;
+  }",https://www.github.com/mybatis/redis-cache/commit/e5f255004a0cac71666a74a7dec5872e5511dab4,"  public Socket createSocket(InetAddress arg0, int arg1, InetAddress arg2, int arg3) throws IOException {
+    return null;
+  }
+","['  ', 'public', ' ', 'Socket', ' ', 'createSocket', '(', 'InetAddress', ' ', 'arg0', ',', ' ', 'int', ' ', 'arg1', ',', ' ', 'InetAddress', ' ', 'arg2', ',', ' ', 'int', ' ', 'arg3', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '    ', 'return', ' ', 'null', ';', '\n', '  ', '}', '\n']"
+master,f9a2ac472ffddfd1885193eae490416305be9555,RedisCache.java,doWithRedis,"      public Object doWithRedis(Jedis jedis) {
+        final byte[] idBytes = id.getBytes();
+        jedis.hset(idBytes, key.toString().getBytes(), redisConfig.getSerializer().serialize(value));
+        if (timeout != null && jedis.ttl(idBytes) == -1) {
+          jedis.expire(idBytes, timeout);
+        }
+        return null;
+      }",https://www.github.com/mybatis/redis-cache/commit/f9a2ac472ffddfd1885193eae490416305be9555,"      public Object doWithRedis(Jedis jedis) {
+        final byte[] idBytes = id.getBytes();
+        jedis.hset(idBytes, key.toString().getBytes(), redisConfig.getSerializer().serialize(value));
+        if (timeout != null && jedis.ttl(idBytes) == -1) {
+          jedis.expire(idBytes, timeout);
+        }
+        return null;
+      }
+","['      ', 'public', ' ', 'Object', ' ', 'doWithRedis', '(', 'Jedis', ' ', 'jedis', ')', ' ', '{', '\n', '        ', 'final', ' ', 'byte', '[', ']', ' ', 'idBytes', ' ', '=', ' ', 'id', '.', 'getBytes', '(', ')', ';', '\n', '        ', 'jedis', '.', 'hset', '(', 'idBytes', ',', ' ', 'key', '.', 'toString', '(', ')', '.', 'getBytes', '(', ')', ',', ' ', 'redisConfig', '.', 'getSerializer', '(', ')', '.', 'serialize', '(', 'value', ')', ')', ';', '\n', '        ', 'if', ' ', '(', 'timeout', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'jedis', '.', 'ttl', '(', 'idBytes', ')', ' ', '=', '=', ' ', '-', '1', ')', ' ', '{', '\n', '          ', 'jedis', '.', 'expire', '(', 'idBytes', ',', ' ', 'timeout', ')', ';', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'null', ';', '\n', '      ', '}', '\n']"
+master,82084b7a5a31482d4508649c81e0aaa2cbb96e07,MavenWrapperDownloader.java,downloadFileFromURL,"    private static void downloadFileFromURL(String urlString, File destination) throws Exception {
+        URL website = new URL(urlString);
+        ReadableByteChannel rbc;
+        rbc = Channels.newChannel(website.openStream());
+        FileOutputStream fos = new FileOutputStream(destination);
+        fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+        fos.close();
+        rbc.close();
+    }",https://www.github.com/mybatis/redis-cache/commit/82084b7a5a31482d4508649c81e0aaa2cbb96e07,"    private static void downloadFileFromURL(String urlString, File destination) throws Exception {
+        URL website = new URL(urlString);
+        ReadableByteChannel rbc;
+        rbc = Channels.newChannel(website.openStream());
+        FileOutputStream fos = new FileOutputStream(destination);
+        fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+        fos.close();
+        rbc.close();
+    }
+","['    ', 'private', ' ', 'static', ' ', 'void', ' ', 'downloadFileFromURL', '(', 'String', ' ', 'urlString', ',', ' ', 'File', ' ', 'destination', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'URL', ' ', 'website', ' ', '=', ' ', 'new', ' ', 'URL', '(', 'urlString', ')', ';', '\n', '        ', 'ReadableByteChannel', ' ', 'rbc', ';', '\n', '        ', 'rbc', ' ', '=', ' ', 'Channels', '.', 'newChannel', '(', 'website', '.', 'openStream', '(', ')', ')', ';', '\n', '        ', 'FileOutputStream', ' ', 'fos', ' ', '=', ' ', 'new', ' ', 'FileOutputStream', '(', 'destination', ')', ';', '\n', '        ', 'fos', '.', 'getChannel', '(', ')', '.', 'transferFrom', '(', 'rbc', ',', ' ', '0', ',', ' ', 'Long', '.', 'MAX_VALUE', ')', ';', '\n', '        ', 'fos', '.', 'close', '(', ')', ';', '\n', '        ', 'rbc', '.', 'close', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,29ef2655cf03faefde53e4e0b182d792ade55dde,JDKSerializer.java,serialize,"  public byte[] serialize(Object object) {
+    ObjectOutputStream oos = null;
+    ByteArrayOutputStream baos = null;
+    try {
+      try {",https://www.github.com/mybatis/redis-cache/commit/29ef2655cf03faefde53e4e0b182d792ade55dde,"  public byte[] serialize(Object object) {
+    ObjectOutputStream oos = null;
+    ByteArrayOutputStream baos = null;
+    try {
+      try {
+","['  ', 'public', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ' ', '{', '\n', '    ', 'ObjectOutputStream', ' ', 'oos', ' ', '=', ' ', 'null', ';', '\n', '    ', 'ByteArrayOutputStream', ' ', 'baos', ' ', '=', ' ', 'null', ';', '\n', '    ', 'try', ' ', '{', '\n', '      ', 'try', ' ', '{', '\n']"
+master,88f82f3b3fd26a82b66bcaf8601f89a8920ac658,JDKSerializer.java,unserialize,"  public Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    ByteArrayInputStream bais = null;
+    ObjectInputStream ois = null;
+    try {
+      bais = new ByteArrayInputStream(bytes);",https://www.github.com/mybatis/redis-cache/commit/88f82f3b3fd26a82b66bcaf8601f89a8920ac658,"  public Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    ByteArrayInputStream bais = null;
+    ObjectInputStream ois = null;
+    try {
+      bais = new ByteArrayInputStream(bytes);
+","['  ', 'public', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '    ', 'if', ' ', '(', 'bytes', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '    ', 'ByteArrayInputStream', ' ', 'bais', ' ', '=', ' ', 'null', ';', '\n', '    ', 'ObjectInputStream', ' ', 'ois', ' ', '=', ' ', 'null', ';', '\n', '    ', 'try', ' ', '{', '\n', '      ', 'bais', ' ', '=', ' ', 'new', ' ', 'ByteArrayInputStream', '(', 'bytes', ')', ';', '\n']"
+master,292c533337cbafae2c82d50e2ed520f1fc3f7e52,Serializer.java,serialize,"  public byte[] serialize(Object object);
+
+  /**
+   * Unserialize method
+   * 
+   * @param bytes
+   * @return unserialized object
+   */
+  public Object unserialize(byte[] bytes);
+
+}",https://www.github.com/mybatis/redis-cache/commit/292c533337cbafae2c82d50e2ed520f1fc3f7e52,"  public byte[] serialize(Object object);
+
+  
+  public Object unserialize(byte[] bytes);
+
+}
+","['  ', 'public', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ';', '\n', '\n', '  ', '\n', '  ', 'public', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ';', '\n', '\n', '}', '\n']"
+master,3c665ac97cbb7e9351c8af063acd614a81dddd91,RedisTestCase.java,shouldNotCreateCache,"  public void shouldNotCreateCache() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      cache = new RedisCache(null);",https://www.github.com/mybatis/redis-cache/commit/3c665ac97cbb7e9351c8af063acd614a81dddd91,"  public void shouldNotCreateCache() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      cache = new RedisCache(null);
+","['  ', 'public', ' ', 'void', ' ', 'shouldNotCreateCache', '(', ')', ' ', '{', '\n', '    ', 'assertThrows', '(', 'IllegalArgumentException', '.', 'class', ',', ' ', '(', ')', ' ', '-', '>', ' ', '{', '\n', '      ', 'cache', ' ', '=', ' ', 'new', ' ', 'RedisCache', '(', 'null', ')', ';', '\n']"
+master,173fd26fcf3e5b1bf44c4b3acb3ad62bd3817269,JDKSerializer.java,serialize,"  public byte[] serialize(Object object) {
+    try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos)) {",https://www.github.com/mybatis/redis-cache/commit/173fd26fcf3e5b1bf44c4b3acb3ad62bd3817269,"  public byte[] serialize(Object object) {
+    try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+","['  ', 'public', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ' ', '{', '\n', '    ', 'try', ' ', '(', 'ByteArrayOutputStream', ' ', 'baos', ' ', '=', ' ', 'new', ' ', 'ByteArrayOutputStream', '(', ')', ';', '\n', '        ', 'ObjectOutputStream', ' ', 'oos', ' ', '=', ' ', 'new', ' ', 'ObjectOutputStream', '(', 'baos', ')', ')', ' ', '{', '\n']"
+master,173fd26fcf3e5b1bf44c4b3acb3ad62bd3817269,JDKSerializer.java,unserialize,"  public Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    try (ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
+        ObjectInputStream ois = new ObjectInputStream(bais)) {",https://www.github.com/mybatis/redis-cache/commit/173fd26fcf3e5b1bf44c4b3acb3ad62bd3817269,"  public Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    try (ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
+        ObjectInputStream ois = new ObjectInputStream(bais)) {
+","['  ', 'public', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '    ', 'if', ' ', '(', 'bytes', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '    ', 'try', ' ', '(', 'ByteArrayInputStream', ' ', 'bais', ' ', '=', ' ', 'new', ' ', 'ByteArrayInputStream', '(', 'bytes', ')', ';', '\n', '        ', 'ObjectInputStream', ' ', 'ois', ' ', '=', ' ', 'new', ' ', 'ObjectInputStream', '(', 'bais', ')', ')', ' ', '{', '\n']"
+master,e508f1cd1e98def279ac9a4d86450a7c0a2806dc,Serializer.java,serialize,"  public byte[] serialize(Object object);
+
+  /**
+   * Unserialize method
+   *
+   * @param bytes
+   * @return unserialized object
+   */
+  public Object unserialize(byte[] bytes);
+
+}",https://www.github.com/mybatis/redis-cache/commit/e508f1cd1e98def279ac9a4d86450a7c0a2806dc,"  public byte[] serialize(Object object);
+
+  
+  public Object unserialize(byte[] bytes);
+
+}
+","['  ', 'public', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ';', '\n', '\n', '  ', '\n', '  ', 'public', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ';', '\n', '\n', '}', '\n']"
+master,f140379e63d41edc1d3e1bccc6c933f4b037c7ff,KryoSerializer.java,unserialize,"  public Object unserialize(byte[] bytes) {
+    Input input = new Input();
+    if (bytes == null) {
+      return null;
+    }
+    int hashCode = Arrays.hashCode(bytes);
+    if (!unnormalBytesHashCodeSet.contains(hashCode)) {
+      /**",https://www.github.com/mybatis/redis-cache/commit/f140379e63d41edc1d3e1bccc6c933f4b037c7ff,"  public Object unserialize(byte[] bytes) {
+    Input input = new Input();
+    if (bytes == null) {
+      return null;
+    }
+    int hashCode = Arrays.hashCode(bytes);
+    if (!unnormalBytesHashCodeSet.contains(hashCode)) {
+      /**
+","['  ', 'public', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '    ', 'Input', ' ', 'input', ' ', '=', ' ', 'new', ' ', 'Input', '(', ')', ';', '\n', '    ', 'if', ' ', '(', 'bytes', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '    ', 'int', ' ', 'hashCode', ' ', '=', ' ', 'Arrays', '.', 'hashCode', '(', 'bytes', ')', ';', '\n', '    ', 'if', ' ', '(', '!', 'unnormalBytesHashCodeSet', '.', 'contains', '(', 'hashCode', ')', ')', ' ', '{', '\n', '      ', '/', '*', '*', '\n']"
+master,f140379e63d41edc1d3e1bccc6c933f4b037c7ff,SerializerTestCase.java,testKryoSerializeMultiThread,"  public void testKryoSerializeMultiThread() throws IOException {
+    for (int i = 0; i < 10000; i++) {
+      new Thread(() -> {",https://www.github.com/mybatis/redis-cache/commit/f140379e63d41edc1d3e1bccc6c933f4b037c7ff,"  public void testKryoSerializeMultiThread() throws IOException {
+    for (int i = 0; i < 10000; i++) {
+      new Thread(() -> {
+","['  ', 'public', ' ', 'void', ' ', 'testKryoSerializeMultiThread', '(', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '10000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '      ', 'new', ' ', 'Thread', '(', '(', ')', ' ', '-', '>', ' ', '{', '\n']"
+master,9ec8ff32b393518fe61c37544cdf250545e174b9,KryoSerializer.java,unserialize,"  public Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    Input input = new Input();
+    int hashCode = Arrays.hashCode(bytes);
+    if (!unnormalBytesHashCodeSet.contains(hashCode)) {
+      /**",https://www.github.com/mybatis/redis-cache/commit/9ec8ff32b393518fe61c37544cdf250545e174b9,"  public Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    Input input = new Input();
+    int hashCode = Arrays.hashCode(bytes);
+    if (!unnormalBytesHashCodeSet.contains(hashCode)) {
+      /**
+","['  ', 'public', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '    ', 'if', ' ', '(', 'bytes', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '    ', 'Input', ' ', 'input', ' ', '=', ' ', 'new', ' ', 'Input', '(', ')', ';', '\n', '    ', 'int', ' ', 'hashCode', ' ', '=', ' ', 'Arrays', '.', 'hashCode', '(', 'bytes', ')', ';', '\n', '    ', 'if', ' ', '(', '!', 'unnormalBytesHashCodeSet', '.', 'contains', '(', 'hashCode', ')', ')', ' ', '{', '\n', '      ', '/', '*', '*', '\n']"
+master,e2ac1daa0506f8a2270394023f3e2cff3988bd7f,MavenWrapperDownloader.java,createDirectories,"    private static void createDirectories(Path outputPath) throws IOException
+    {
+        if ( !Files.isDirectory( outputPath, LinkOption.NOFOLLOW_LINKS ) ) {
+            Path createDirectories = Files.createDirectories( outputPath );",https://www.github.com/mybatis/redis-cache/commit/e2ac1daa0506f8a2270394023f3e2cff3988bd7f,"    private static void createDirectories(Path outputPath) throws IOException
+    {
+        if ( !Files.isDirectory( outputPath, LinkOption.NOFOLLOW_LINKS ) ) {
+            Path createDirectories = Files.createDirectories( outputPath );
+","['    ', 'private', ' ', 'static', ' ', 'void', ' ', 'createDirectories', '(', 'Path', ' ', 'outputPath', ')', ' ', 'throws', ' ', 'IOException', '\n', '    ', '{', '\n', '        ', 'if', ' ', '(', ' ', '!', 'Files', '.', 'isDirectory', '(', ' ', 'outputPath', ',', ' ', 'LinkOption', '.', 'NOFOLLOW_LINKS', ' ', ')', ' ', ')', ' ', '{', '\n', '            ', 'Path', ' ', 'createDirectories', ' ', '=', ' ', 'Files', '.', 'createDirectories', '(', ' ', 'outputPath', ' ', ')', ';', '\n']"
+master,e2ac1daa0506f8a2270394023f3e2cff3988bd7f,MavenWrapperDownloader.java,log,"    private static void log( String msg )
+    {
+        if ( VERBOSE )
+        {",https://www.github.com/mybatis/redis-cache/commit/e2ac1daa0506f8a2270394023f3e2cff3988bd7f,"    private static void log( String msg )
+    {
+        if ( VERBOSE )
+        {
+","['    ', 'private', ' ', 'static', ' ', 'void', ' ', 'log', '(', ' ', 'String', ' ', 'msg', ' ', ')', '\n', '    ', '{', '\n', '        ', 'if', ' ', '(', ' ', 'VERBOSE', ' ', ')', '\n', '        ', '{', '\n']"
+master,1d341a167001848bd5b6386574ce1abb38126c15,Serializer.java,serialize,"  public byte[] serialize(Object object);
+
+  /**
+   * Unserialize method
+   *
+   * @param bytes
+   *
+   * @return unserialized object
+   */
+  public Object unserialize(byte[] bytes);
+
+}",https://www.github.com/mybatis/redis-cache/commit/1d341a167001848bd5b6386574ce1abb38126c15,"  public byte[] serialize(Object object);
+
+  
+  public Object unserialize(byte[] bytes);
+
+}
+","['  ', 'public', ' ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ';', '\n', '\n', '  ', '\n', '  ', 'public', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ';', '\n', '\n', '}', '\n']"
+master,10d5e9811018f7069035c0d57fdb9f57c043d448,MavenWrapperDownloader.java,main,"    public static void main( String[] args )
+    {
+        log( ""Apache Maven Wrapper Downloader "" + WRAPPER_VERSION );
+
+        if ( args.length != 2 )
+        {
+            System.err.println( "" - ERROR wrapperUrl or wrapperJarPath parameter missing"" );
+            System.exit( 1 );
+        }
+
+        try
+        {",https://www.github.com/mybatis/redis-cache/commit/10d5e9811018f7069035c0d57fdb9f57c043d448,"    public static void main( String[] args )
+    {
+        log( ""Apache Maven Wrapper Downloader "" + WRAPPER_VERSION );
+
+        if ( args.length != 2 )
+        {
+            System.err.println( "" - ERROR wrapperUrl or wrapperJarPath parameter missing"" );
+            System.exit( 1 );
+        }
+
+        try
+        {
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', ' ', 'String', '[', ']', ' ', 'args', ' ', ')', '\n', '    ', '{', '\n', '        ', 'log', '(', ' ', '""', 'Apache Maven Wrapper Downloader ', '""', ' ', '+', ' ', 'WRAPPER_VERSION', ' ', ')', ';', '\n', '\n', '        ', 'if', ' ', '(', ' ', 'args', '.', 'length', ' ', '!', '=', ' ', '2', ' ', ')', '\n', '        ', '{', '\n', '            ', 'System', '.', 'err', '.', 'println', '(', ' ', '""', ' - ERROR wrapperUrl or wrapperJarPath parameter missing', '""', ' ', ')', ';', '\n', '            ', 'System', '.', 'exit', '(', ' ', '1', ' ', ')', ';', '\n', '        ', '}', '\n', '\n', '        ', 'try', '\n', '        ', '{', '\n']"
+master,315e0b03feff7dce9251393c0dcc832c11bb3d03,SimpleBeanStudentInfo.java,equals,"  public boolean equals(Object obj) {
+    if (obj == null)
+      return false;
+    if (!obj.getClass().equals(SimpleBeanStudentInfo.class))
+      return false;
+    return this.toString().equals(obj.toString());
+  }",https://www.github.com/mybatis/redis-cache/commit/315e0b03feff7dce9251393c0dcc832c11bb3d03,"  public boolean equals(Object obj) {
+    if (obj == null)
+      return false;
+    if (!obj.getClass().equals(SimpleBeanStudentInfo.class))
+      return false;
+    return this.toString().equals(obj.toString());
+  }
+","['  ', 'public', ' ', 'boolean', ' ', 'equals', '(', 'Object', ' ', 'obj', ')', ' ', '{', '\n', '    ', 'if', ' ', '(', 'obj', ' ', '=', '=', ' ', 'null', ')', '\n', '      ', 'return', ' ', 'false', ';', '\n', '    ', 'if', ' ', '(', '!', 'obj', '.', 'getClass', '(', ')', '.', 'equals', '(', 'SimpleBeanStudentInfo', '.', 'class', ')', ')', '\n', '      ', 'return', ' ', 'false', ';', '\n', '    ', 'return', ' ', 'this', '.', 'toString', '(', ')', '.', 'equals', '(', 'obj', '.', 'toString', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,KryoSerializer.java,unserialize,"  public Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    int hashCode = Arrays.hashCode(bytes);
+    if (unnormalBytesHashCodeSet.contains(hashCode)) {
+      // For unnormal bytes
+      return fallbackSerializer.unserialize(bytes);
+    }
+
+    /**
+     * In the following cases: 1. This bytes occurs for the first time. 2. This bytes have occurred and can be resolved
+     * by default kryo serializer
+     */
+    try (Input input = new Input()) {
+      input.setBuffer(bytes);",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  public Object unserialize(byte[] bytes) {
+    if (bytes == null) {
+      return null;
+    }
+    int hashCode = Arrays.hashCode(bytes);
+    if (unnormalBytesHashCodeSet.contains(hashCode)) {
+      
+      return fallbackSerializer.unserialize(bytes);
+    }
+
+    
+    try (Input input = new Input()) {
+      input.setBuffer(bytes);
+","['  ', 'public', ' ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ' ', '{', '\n', '    ', 'if', ' ', '(', 'bytes', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '    ', 'int', ' ', 'hashCode', ' ', '=', ' ', 'Arrays', '.', 'hashCode', '(', 'bytes', ')', ';', '\n', '    ', 'if', ' ', '(', 'unnormalBytesHashCodeSet', '.', 'contains', '(', 'hashCode', ')', ')', ' ', '{', '\n', '      ', '\n', '      ', 'return', ' ', 'fallbackSerializer', '.', 'unserialize', '(', 'bytes', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', '\n', '    ', 'try', ' ', '(', 'Input', ' ', 'input', ' ', '=', ' ', 'new', ' ', 'Input', '(', ')', ')', ' ', '{', '\n', '      ', 'input', '.', 'setBuffer', '(', 'bytes', ')', ';', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,RedisCache.java,putObject,"  public void putObject(final Object key, final Object value) {
+    execute(jedis -> {
+      final byte[] idBytes = id.getBytes();",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  public void putObject(final Object key, final Object value) {
+    execute(jedis -> {
+      final byte[] idBytes = id.getBytes();
+","['  ', 'public', ' ', 'void', ' ', 'putObject', '(', 'final', ' ', 'Object', ' ', 'key', ',', ' ', 'final', ' ', 'Object', ' ', 'value', ')', ' ', '{', '\n', '    ', 'execute', '(', 'jedis', ' ', '-', '>', ' ', '{', '\n', '      ', 'final', ' ', 'byte', '[', ']', ' ', 'idBytes', ' ', '=', ' ', 'id', '.', 'getBytes', '(', ')', ';', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,RedisCache.java,removeObject,"  public Object removeObject(final Object key) {
+    return execute(jedis -> jedis.hdel(id, key.toString()));
+  }",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  public Object removeObject(final Object key) {
+    return execute(jedis -> jedis.hdel(id, key.toString()));
+  }
+","['  ', 'public', ' ', 'Object', ' ', 'removeObject', '(', 'final', ' ', 'Object', ' ', 'key', ')', ' ', '{', '\n', '    ', 'return', ' ', 'execute', '(', 'jedis', ' ', '-', '>', ' ', 'jedis', '.', 'hdel', '(', 'id', ',', ' ', 'key', '.', 'toString', '(', ')', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,RedisCache.java,clear,"  public void clear() {
+    execute(jedis -> {
+      jedis.del(id);",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  public void clear() {
+    execute(jedis -> {
+      jedis.del(id);
+","['  ', 'public', ' ', 'void', ' ', 'clear', '(', ')', ' ', '{', '\n', '    ', 'execute', '(', 'jedis', ' ', '-', '>', ' ', '{', '\n', '      ', 'jedis', '.', 'del', '(', 'id', ')', ';', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,RedisConfigurationBuilderTest.java,testDefaults,"  void testDefaults() throws Exception {
+    System.setProperty(RedisConfigurationBuilder.SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME, ""no-such-file.properties"");
+    RedisConfig redisConfig = RedisConfigurationBuilder.getInstance()
+        .parseConfiguration(this.getClass().getClassLoader());
+    assertEquals(JDKSerializer.class, redisConfig.getSerializer().getClass());
+    assertFalse(redisConfig.isSsl());
+    assertNull(redisConfig.getSslSocketFactory());
+    assertNull(redisConfig.getSslParameters());
+    assertNull(redisConfig.getHostnameVerifier());
+  }",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void testDefaults() throws Exception {
+    System.setProperty(RedisConfigurationBuilder.SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME, ""no-such-file.properties"");
+    RedisConfig redisConfig = RedisConfigurationBuilder.getInstance()
+        .parseConfiguration(this.getClass().getClassLoader());
+    assertEquals(JDKSerializer.class, redisConfig.getSerializer().getClass());
+    assertFalse(redisConfig.isSsl());
+    assertNull(redisConfig.getSslSocketFactory());
+    assertNull(redisConfig.getSslParameters());
+    assertNull(redisConfig.getHostnameVerifier());
+  }
+","['  ', 'void', ' ', 'testDefaults', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '    ', 'System', '.', 'setProperty', '(', 'RedisConfigurationBuilder', '.', 'SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME', ',', ' ', '""', 'no-such-file.properties', '""', ')', ';', '\n', '    ', 'RedisConfig', ' ', 'redisConfig', ' ', '=', ' ', 'RedisConfigurationBuilder', '.', 'getInstance', '(', ')', '\n', '        ', '.', 'parseConfiguration', '(', 'this', '.', 'getClass', '(', ')', '.', 'getClassLoader', '(', ')', ')', ';', '\n', '    ', 'assertEquals', '(', 'JDKSerializer', '.', 'class', ',', ' ', 'redisConfig', '.', 'getSerializer', '(', ')', '.', 'getClass', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'redisConfig', '.', 'isSsl', '(', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'redisConfig', '.', 'getSslSocketFactory', '(', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'redisConfig', '.', 'getSslParameters', '(', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'redisConfig', '.', 'getHostnameVerifier', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,RedisConfigurationBuilderTest.java,test1,"  void test1() throws Exception {
+    System.setProperty(RedisConfigurationBuilder.SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME, ""test1.properties"");
+    RedisConfig redisConfig = RedisConfigurationBuilder.getInstance()
+        .parseConfiguration(this.getClass().getClassLoader());
+    assertEquals(KryoSerializer.class, redisConfig.getSerializer().getClass());
+    assertTrue(redisConfig.isSsl());
+    assertEquals(TestSSLSocketFactory.class, redisConfig.getSslSocketFactory().getClass());
+    assertEquals(TestSSLParameters.class, redisConfig.getSslParameters().getClass());
+    assertEquals(TestHostnameVerifier.class, redisConfig.getHostnameVerifier().getClass());
+  }",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void test1() throws Exception {
+    System.setProperty(RedisConfigurationBuilder.SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME, ""test1.properties"");
+    RedisConfig redisConfig = RedisConfigurationBuilder.getInstance()
+        .parseConfiguration(this.getClass().getClassLoader());
+    assertEquals(KryoSerializer.class, redisConfig.getSerializer().getClass());
+    assertTrue(redisConfig.isSsl());
+    assertEquals(TestSSLSocketFactory.class, redisConfig.getSslSocketFactory().getClass());
+    assertEquals(TestSSLParameters.class, redisConfig.getSslParameters().getClass());
+    assertEquals(TestHostnameVerifier.class, redisConfig.getHostnameVerifier().getClass());
+  }
+","['  ', 'void', ' ', 'test1', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '    ', 'System', '.', 'setProperty', '(', 'RedisConfigurationBuilder', '.', 'SYSTEM_PROPERTY_REDIS_PROPERTIES_FILENAME', ',', ' ', '""', 'test1.properties', '""', ')', ';', '\n', '    ', 'RedisConfig', ' ', 'redisConfig', ' ', '=', ' ', 'RedisConfigurationBuilder', '.', 'getInstance', '(', ')', '\n', '        ', '.', 'parseConfiguration', '(', 'this', '.', 'getClass', '(', ')', '.', 'getClassLoader', '(', ')', ')', ';', '\n', '    ', 'assertEquals', '(', 'KryoSerializer', '.', 'class', ',', ' ', 'redisConfig', '.', 'getSerializer', '(', ')', '.', 'getClass', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'redisConfig', '.', 'isSsl', '(', ')', ')', ';', '\n', '    ', 'assertEquals', '(', 'TestSSLSocketFactory', '.', 'class', ',', ' ', 'redisConfig', '.', 'getSslSocketFactory', '(', ')', '.', 'getClass', '(', ')', ')', ';', '\n', '    ', 'assertEquals', '(', 'TestSSLParameters', '.', 'class', ',', ' ', 'redisConfig', '.', 'getSslParameters', '(', ')', '.', 'getClass', '(', ')', ')', ';', '\n', '    ', 'assertEquals', '(', 'TestHostnameVerifier', '.', 'class', ',', ' ', 'redisConfig', '.', 'getHostnameVerifier', '(', ')', '.', 'getClass', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,RedisTestCase.java,newCache,"  static void newCache() {
+    cache = new RedisCache(DEFAULT_ID);
+  }",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  static void newCache() {
+    cache = new RedisCache(DEFAULT_ID);
+  }
+","['  ', 'static', ' ', 'void', ' ', 'newCache', '(', ')', ' ', '{', '\n', '    ', 'cache', ' ', '=', ' ', 'new', ' ', 'RedisCache', '(', 'DEFAULT_ID', ')', ';', '\n', '  ', '}', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,RedisTestCase.java,shouldDemonstrateCopiesAreEqual,"  void shouldDemonstrateCopiesAreEqual() {
+    for (int i = 0; i < 1000; i++) {
+      cache.putObject(i, i);",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void shouldDemonstrateCopiesAreEqual() {
+    for (int i = 0; i < 1000; i++) {
+      cache.putObject(i, i);
+","['  ', 'void', ' ', 'shouldDemonstrateCopiesAreEqual', '(', ')', ' ', '{', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '1000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '      ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,RedisTestCase.java,shouldRemoveItemOnDemand,"  void shouldRemoveItemOnDemand() {
+    cache.putObject(0, 0);
+    assertNotNull(cache.getObject(0));
+    cache.removeObject(0);
+    assertNull(cache.getObject(0));
+  }",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void shouldRemoveItemOnDemand() {
+    cache.putObject(0, 0);
+    assertNotNull(cache.getObject(0));
+    cache.removeObject(0);
+    assertNull(cache.getObject(0));
+  }
+","['  ', 'void', ' ', 'shouldRemoveItemOnDemand', '(', ')', ' ', '{', '\n', '    ', 'cache', '.', 'putObject', '(', '0', ',', ' ', '0', ')', ';', '\n', '    ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', 'cache', '.', 'removeObject', '(', '0', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,RedisTestCase.java,shouldFlushAllItemsOnDemand,"  void shouldFlushAllItemsOnDemand() {
+    for (int i = 0; i < 5; i++) {
+      cache.putObject(i, i);
+    }
+    assertNotNull(cache.getObject(0));
+    assertNotNull(cache.getObject(4));
+    cache.clear();
+    assertNull(cache.getObject(0));
+    assertNull(cache.getObject(4));
+  }",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void shouldFlushAllItemsOnDemand() {
+    for (int i = 0; i < 5; i++) {
+      cache.putObject(i, i);
+    }
+    assertNotNull(cache.getObject(0));
+    assertNotNull(cache.getObject(4));
+    cache.clear();
+    assertNull(cache.getObject(0));
+    assertNull(cache.getObject(4));
+  }
+","['  ', 'void', ' ', 'shouldFlushAllItemsOnDemand', '(', ')', ' ', '{', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '5', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '      ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n', '    ', '}', '\n', '    ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '4', ')', ')', ';', '\n', '    ', 'cache', '.', 'clear', '(', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '4', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,RedisTestCase.java,shouldNotCreateCache,"  void shouldNotCreateCache() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      cache = new RedisCache(null);",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void shouldNotCreateCache() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      cache = new RedisCache(null);
+","['  ', 'void', ' ', 'shouldNotCreateCache', '(', ')', ' ', '{', '\n', '    ', 'assertThrows', '(', 'IllegalArgumentException', '.', 'class', ',', ' ', '(', ')', ' ', '-', '>', ' ', '{', '\n', '      ', 'cache', ' ', '=', ' ', 'new', ' ', 'RedisCache', '(', 'null', ')', ';', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,RedisTestCase.java,shouldVerifyCacheId,"  void shouldVerifyCacheId() {
+    assertEquals(""REDIS"", cache.getId());
+  }",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void shouldVerifyCacheId() {
+    assertEquals(""REDIS"", cache.getId());
+  }
+","['  ', 'void', ' ', 'shouldVerifyCacheId', '(', ')', ' ', '{', '\n', '    ', 'assertEquals', '(', '""', 'REDIS', '""', ',', ' ', 'cache', '.', 'getId', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,RedisTestCase.java,shouldVerifyToString,"  void shouldVerifyToString() {
+    assertEquals(""Redis {REDIS}"", cache.toString());
+  }",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void shouldVerifyToString() {
+    assertEquals(""Redis {REDIS}"", cache.toString());
+  }
+","['  ', 'void', ' ', 'shouldVerifyToString', '(', ')', ' ', '{', '\n', '    ', 'assertEquals', '(', '""', 'Redis {REDIS}', '""', ',', ' ', 'cache', '.', 'toString', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,RedisTestCase.java,shouldDeleteExpiredCache,"  void shouldDeleteExpiredCache() throws Exception {
+    // set timeout to 3 secs
+    cache.setTimeout(3);
+    cache.putObject(0, 0);
+    Thread.sleep(2000);
+    cache.putObject(1, 1);
+    // 2 secs : not expired yet
+    assertEquals(0, cache.getObject(0));
+    Thread.sleep(2000);
+    // 4 secs : should be expired
+    assertNull(cache.getObject(0));
+    assertNull(cache.getObject(1));
+    // Make sure timeout is re-set
+    cache.putObject(2, 2);
+    Thread.sleep(2000);
+    // 2 secs : not expired yet
+    cache.putObject(3, 3);
+    assertEquals(2, cache.getObject(2));
+    Thread.sleep(2000);
+    // 4 secs : should be expired
+    assertNull(cache.getObject(2));
+    assertNull(cache.getObject(3));
+  }",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void shouldDeleteExpiredCache() throws Exception {
+    
+    cache.setTimeout(3);
+    cache.putObject(0, 0);
+    Thread.sleep(2000);
+    cache.putObject(1, 1);
+    
+    assertEquals(0, cache.getObject(0));
+    Thread.sleep(2000);
+    
+    assertNull(cache.getObject(0));
+    assertNull(cache.getObject(1));
+    
+    cache.putObject(2, 2);
+    Thread.sleep(2000);
+    
+    cache.putObject(3, 3);
+    assertEquals(2, cache.getObject(2));
+    Thread.sleep(2000);
+    
+    assertNull(cache.getObject(2));
+    assertNull(cache.getObject(3));
+  }
+","['  ', 'void', ' ', 'shouldDeleteExpiredCache', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '    ', '\n', '    ', 'cache', '.', 'setTimeout', '(', '3', ')', ';', '\n', '    ', 'cache', '.', 'putObject', '(', '0', ',', ' ', '0', ')', ';', '\n', '    ', 'Thread', '.', 'sleep', '(', '2000', ')', ';', '\n', '    ', 'cache', '.', 'putObject', '(', '1', ',', ' ', '1', ')', ';', '\n', '    ', '\n', '    ', 'assertEquals', '(', '0', ',', ' ', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', 'Thread', '.', 'sleep', '(', '2000', ')', ';', '\n', '    ', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '1', ')', ')', ';', '\n', '    ', '\n', '    ', 'cache', '.', 'putObject', '(', '2', ',', ' ', '2', ')', ';', '\n', '    ', 'Thread', '.', 'sleep', '(', '2000', ')', ';', '\n', '    ', '\n', '    ', 'cache', '.', 'putObject', '(', '3', ',', ' ', '3', ')', ';', '\n', '    ', 'assertEquals', '(', '2', ',', ' ', 'cache', '.', 'getObject', '(', '2', ')', ')', ';', '\n', '    ', 'Thread', '.', 'sleep', '(', '2000', ')', ';', '\n', '    ', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '2', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '3', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,SerializerTestCase.java,setup,"  void setup() {
+    kryoSerializer = KryoSerializer.INSTANCE;
+    jdkSerializer = JDKSerializer.INSTANCE;
+  }",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void setup() {
+    kryoSerializer = KryoSerializer.INSTANCE;
+    jdkSerializer = JDKSerializer.INSTANCE;
+  }
+","['  ', 'void', ' ', 'setup', '(', ')', ' ', '{', '\n', '    ', 'kryoSerializer', ' ', '=', ' ', 'KryoSerializer', '.', 'INSTANCE', ';', '\n', '    ', 'jdkSerializer', ' ', '=', ' ', 'JDKSerializer', '.', 'INSTANCE', ';', '\n', '  ', '}', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,SerializerTestCase.java,testKryoUnserializeNull,"  void testKryoUnserializeNull() {
+    Object obj = kryoSerializer.unserialize(null);
+    assertNull(obj);
+  }",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void testKryoUnserializeNull() {
+    Object obj = kryoSerializer.unserialize(null);
+    assertNull(obj);
+  }
+","['  ', 'void', ' ', 'testKryoUnserializeNull', '(', ')', ' ', '{', '\n', '    ', 'Object', ' ', 'obj', ' ', '=', ' ', 'kryoSerializer', '.', 'unserialize', '(', 'null', ')', ';', '\n', '    ', 'assertNull', '(', 'obj', ')', ';', '\n', '  ', '}', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,SerializerTestCase.java,testJDKUnserializeNull,"  void testJDKUnserializeNull() {
+    Object obj = jdkSerializer.unserialize(null);
+    assertNull(obj);
+  }",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void testJDKUnserializeNull() {
+    Object obj = jdkSerializer.unserialize(null);
+    assertNull(obj);
+  }
+","['  ', 'void', ' ', 'testJDKUnserializeNull', '(', ')', ' ', '{', '\n', '    ', 'Object', ' ', 'obj', ' ', '=', ' ', 'jdkSerializer', '.', 'unserialize', '(', 'null', ')', ';', '\n', '    ', 'assertNull', '(', 'obj', ')', ';', '\n', '  ', '}', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,SerializerTestCase.java,testKryoSerialize,"  void testKryoSerialize() {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    for (int i = 0; i != max; ++i) {
+      kryoSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = kryoSerializer.serialize(rawSimpleBean);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) kryoSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      kryoSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void testKryoSerialize() {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    for (int i = 0; i != max; ++i) {
+      kryoSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = kryoSerializer.serialize(rawSimpleBean);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) kryoSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      kryoSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['  ', 'void', ' ', 'testKryoSerialize', '(', ')', ' ', '{', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'rawSimpleBean', ' ', '=', ' ', 'new', ' ', 'SimpleBeanStudentInfo', '(', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'kryoSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'byte', '[', ']', ' ', 'serialBytes', ' ', '=', ' ', 'kryoSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'unserializeSimpleBean', ' ', '=', ' ', '(', 'SimpleBeanStudentInfo', ')', ' ', 'kryoSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'kryoSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,SerializerTestCase.java,testKryoFallbackSerialize,"  void testKryoFallbackSerialize() throws IOException {
+
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+    byte[] serialBytes = jdkSerializer.serialize(rawSimpleBean);
+
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) kryoSerializer.unserialize(serialBytes);
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void testKryoFallbackSerialize() throws IOException {
+
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+    byte[] serialBytes = jdkSerializer.serialize(rawSimpleBean);
+
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) kryoSerializer.unserialize(serialBytes);
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['  ', 'void', ' ', 'testKryoFallbackSerialize', '(', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'rawSimpleBean', ' ', '=', ' ', 'new', ' ', 'SimpleBeanStudentInfo', '(', ')', ';', '\n', '    ', 'byte', '[', ']', ' ', 'serialBytes', ' ', '=', ' ', 'jdkSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'unserializeSimpleBean', ' ', '=', ' ', '(', 'SimpleBeanStudentInfo', ')', ' ', 'kryoSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '    ', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,SerializerTestCase.java,testKryoSerializeMultiThread,"  void testKryoSerializeMultiThread() throws IOException {
+    for (int i = 0; i < 10000; i++) {
+      new Thread(() -> {",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void testKryoSerializeMultiThread() throws IOException {
+    for (int i = 0; i < 10000; i++) {
+      new Thread(() -> {
+","['  ', 'void', ' ', 'testKryoSerializeMultiThread', '(', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '10000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '      ', 'new', ' ', 'Thread', '(', '(', ')', ' ', '-', '>', ' ', '{', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,SerializerTestCase.java,testKryoUnserializeWithoutRegistry,"  void testKryoUnserializeWithoutRegistry() throws IOException {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    byte[] serialBytes = kryoSerializer.serialize(rawSimpleBean);
+
+    Kryo kryoWithoutRegisty = new Kryo();
+    Input input = new Input(serialBytes);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) kryoWithoutRegisty.readClassAndObject(input);
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void testKryoUnserializeWithoutRegistry() throws IOException {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    byte[] serialBytes = kryoSerializer.serialize(rawSimpleBean);
+
+    Kryo kryoWithoutRegisty = new Kryo();
+    Input input = new Input(serialBytes);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) kryoWithoutRegisty.readClassAndObject(input);
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['  ', 'void', ' ', 'testKryoUnserializeWithoutRegistry', '(', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'rawSimpleBean', ' ', '=', ' ', 'new', ' ', 'SimpleBeanStudentInfo', '(', ')', ';', '\n', '\n', '    ', 'byte', '[', ']', ' ', 'serialBytes', ' ', '=', ' ', 'kryoSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '\n', '    ', 'Kryo', ' ', 'kryoWithoutRegisty', ' ', '=', ' ', 'new', ' ', 'Kryo', '(', ')', ';', '\n', '    ', 'Input', ' ', 'input', ' ', '=', ' ', 'new', ' ', 'Input', '(', 'serialBytes', ')', ';', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'unserializeSimpleBean', ' ', '=', ' ', '(', 'SimpleBeanStudentInfo', ')', ' ', 'kryoWithoutRegisty', '.', 'readClassAndObject', '(', 'input', ')', ';', '\n', '    ', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,SerializerTestCase.java,testJDKSerialize,"  void testJDKSerialize() {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    for (int i = 0; i != max; ++i) {
+      jdkSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = jdkSerializer.serialize(rawSimpleBean);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) jdkSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      jdkSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void testJDKSerialize() {
+    SimpleBeanStudentInfo rawSimpleBean = new SimpleBeanStudentInfo();
+
+    for (int i = 0; i != max; ++i) {
+      jdkSerializer.serialize(rawSimpleBean);
+    }
+
+    byte[] serialBytes = jdkSerializer.serialize(rawSimpleBean);
+    SimpleBeanStudentInfo unserializeSimpleBean = (SimpleBeanStudentInfo) jdkSerializer.unserialize(serialBytes);
+
+    for (int i = 0; i != max; ++i) {
+      jdkSerializer.unserialize(serialBytes);
+    }
+
+    assertEquals(rawSimpleBean, unserializeSimpleBean);
+","['  ', 'void', ' ', 'testJDKSerialize', '(', ')', ' ', '{', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'rawSimpleBean', ' ', '=', ' ', 'new', ' ', 'SimpleBeanStudentInfo', '(', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'jdkSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'byte', '[', ']', ' ', 'serialBytes', ' ', '=', ' ', 'jdkSerializer', '.', 'serialize', '(', 'rawSimpleBean', ')', ';', '\n', '    ', 'SimpleBeanStudentInfo', ' ', 'unserializeSimpleBean', ' ', '=', ' ', '(', 'SimpleBeanStudentInfo', ')', ' ', 'jdkSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '!', '=', ' ', 'max', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '      ', 'jdkSerializer', '.', 'unserialize', '(', 'serialBytes', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'assertEquals', '(', 'rawSimpleBean', ',', ' ', 'unserializeSimpleBean', ')', ';', '\n']"
+master,ad1cd02f5f48c10c69f17836ced249de8f27bf09,SerializerTestCase.java,testSerializeCofig,"  void testSerializeCofig() {
+    RedisConfig redisConfig = RedisConfigurationBuilder.getInstance().parseConfiguration();
+    assertEquals(JDKSerializer.class, redisConfig.getSerializer().getClass());
+  }",https://www.github.com/mybatis/redis-cache/commit/ad1cd02f5f48c10c69f17836ced249de8f27bf09,"  void testSerializeCofig() {
+    RedisConfig redisConfig = RedisConfigurationBuilder.getInstance().parseConfiguration();
+    assertEquals(JDKSerializer.class, redisConfig.getSerializer().getClass());
+  }
+","['  ', 'void', ' ', 'testSerializeCofig', '(', ')', ' ', '{', '\n', '    ', 'RedisConfig', ' ', 'redisConfig', ' ', '=', ' ', 'RedisConfigurationBuilder', '.', 'getInstance', '(', ')', '.', 'parseConfiguration', '(', ')', ';', '\n', '    ', 'assertEquals', '(', 'JDKSerializer', '.', 'class', ',', ' ', 'redisConfig', '.', 'getSerializer', '(', ')', '.', 'getClass', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,6e6316c97912edca09ab1660f08b9989757222f2,Serializer.java,serialize,"  byte[] serialize(Object object);
+
+  /**
+   * Unserialize method
+   *
+   * @param bytes
+   *
+   * @return unserialized object
+   */
+  Object unserialize(byte[] bytes);
+
+}",https://www.github.com/mybatis/redis-cache/commit/6e6316c97912edca09ab1660f08b9989757222f2,"  byte[] serialize(Object object);
+
+  
+  Object unserialize(byte[] bytes);
+
+}
+","['  ', 'byte', '[', ']', ' ', 'serialize', '(', 'Object', ' ', 'object', ')', ';', '\n', '\n', '  ', '\n', '  ', 'Object', ' ', 'unserialize', '(', 'byte', '[', ']', ' ', 'bytes', ')', ';', '\n', '\n', '}', '\n']"
+master,4e7cce26842e2139d82f61ccda3d75637b985c5d,MavenWrapperDownloader.java,main,"    public static void main(String[] args) {
+        log(""Apache Maven Wrapper Downloader "" + WRAPPER_VERSION);
+
+        if (args.length != 2) {
+            System.err.println("" - ERROR wrapperUrl or wrapperJarPath parameter missing"");
+            System.exit(1);
+        }
+
+        try {
+            log("" - Downloader started"");",https://www.github.com/mybatis/redis-cache/commit/4e7cce26842e2139d82f61ccda3d75637b985c5d,"    public static void main(String[] args) {
+        log(""Apache Maven Wrapper Downloader "" + WRAPPER_VERSION);
+
+        if (args.length != 2) {
+            System.err.println("" - ERROR wrapperUrl or wrapperJarPath parameter missing"");
+            System.exit(1);
+        }
+
+        try {
+            log("" - Downloader started"");
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'log', '(', '""', 'Apache Maven Wrapper Downloader ', '""', ' ', '+', ' ', 'WRAPPER_VERSION', ')', ';', '\n', '\n', '        ', 'if', ' ', '(', 'args', '.', 'length', ' ', '!', '=', ' ', '2', ')', ' ', '{', '\n', '            ', 'System', '.', 'err', '.', 'println', '(', '""', ' - ERROR wrapperUrl or wrapperJarPath parameter missing', '""', ')', ';', '\n', '            ', 'System', '.', 'exit', '(', '1', ')', ';', '\n', '        ', '}', '\n', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'log', '(', '""', ' - Downloader started', '""', ')', ';', '\n']"
+master,4e7cce26842e2139d82f61ccda3d75637b985c5d,MavenWrapperDownloader.java,log,"    private static void log(String msg) {
+        if (VERBOSE) {
+            System.out.println(msg);",https://www.github.com/mybatis/redis-cache/commit/4e7cce26842e2139d82f61ccda3d75637b985c5d,"    private static void log(String msg) {
+        if (VERBOSE) {
+            System.out.println(msg);
+","['    ', 'private', ' ', 'static', ' ', 'void', ' ', 'log', '(', 'String', ' ', 'msg', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'VERBOSE', ')', ' ', '{', '\n', '            ', 'System', '.', 'out', '.', 'println', '(', 'msg', ')', ';', '\n']"

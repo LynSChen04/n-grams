@@ -1,0 +1,1609 @@
+Branch Name,Commit Hash,File Name,Method Name,Method Code,Commit Link,Method Code No Comments,Tokens
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,fromJarToFs,"   private void fromJarToFs(String jarPath, String filePath) throws IOException {
+      File file = new File(filePath);
+      if (file.exists()) {
+         boolean success = file.delete();
+         if (!success) {
+            throw new IOException(""couldn't delete "" + filePath);
+         }
+      }
+      InputStream is = null;
+      OutputStream os = null;
+      try {
+         is = ClassLoader.getSystemClassLoader().getResourceAsStream(jarPath);",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   private void fromJarToFs(String jarPath, String filePath) throws IOException {
+      File file = new File(filePath);
+      if (file.exists()) {
+         boolean success = file.delete();
+         if (!success) {
+            throw new IOException(""couldn't delete "" + filePath);
+         }
+      }
+      InputStream is = null;
+      OutputStream os = null;
+      try {
+         is = ClassLoader.getSystemClassLoader().getResourceAsStream(jarPath);
+","['   ', 'private', ' ', 'void', ' ', 'fromJarToFs', '(', 'String', ' ', 'jarPath', ',', ' ', 'String', ' ', 'filePath', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '      ', 'File', ' ', 'file', ' ', '=', ' ', 'new', ' ', 'File', '(', 'filePath', ')', ';', '\n', '      ', 'if', ' ', '(', 'file', '.', 'exists', '(', ')', ')', ' ', '{', '\n', '         ', 'boolean', ' ', 'success', ' ', '=', ' ', 'file', '.', 'delete', '(', ')', ';', '\n', '         ', 'if', ' ', '(', '!', 'success', ')', ' ', '{', '\n', '            ', 'throw', ' ', 'new', ' ', 'IOException', '(', '""', ""couldn't delete "", '""', ' ', '+', ' ', 'filePath', ')', ';', '\n', '         ', '}', '\n', '      ', '}', '\n', '      ', 'InputStream', ' ', 'is', ' ', '=', ' ', 'null', ';', '\n', '      ', 'OutputStream', ' ', 'os', ' ', '=', ' ', 'null', ';', '\n', '      ', 'try', ' ', '{', '\n', '         ', 'is', ' ', '=', ' ', 'ClassLoader', '.', 'getSystemClassLoader', '(', ')', '.', 'getResourceAsStream', '(', 'jarPath', ')', ';', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,addHotKeyListener,"   public void addHotKeyListener(HotkeyListener listener) {
+      hotkeyListeners.add(listener);
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   public void addHotKeyListener(HotkeyListener listener) {
+      hotkeyListeners.add(listener);
+   }
+","['   ', 'public', ' ', 'void', ' ', 'addHotKeyListener', '(', 'HotkeyListener', ' ', 'listener', ')', ' ', '{', '\n', '      ', 'hotkeyListeners', '.', 'add', '(', 'listener', ')', ';', '\n', '   ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,addIntellitypeListener,"   public void addIntellitypeListener(IntellitypeListener listener) {
+      intellitypeListeners.add(listener);
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   public void addIntellitypeListener(IntellitypeListener listener) {
+      intellitypeListeners.add(listener);
+   }
+","['   ', 'public', ' ', 'void', ' ', 'addIntellitypeListener', '(', 'IntellitypeListener', ' ', 'listener', ')', ' ', '{', '\n', '      ', 'intellitypeListeners', '.', 'add', '(', 'listener', ')', ';', '\n', '   ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,registerHotKey,"   public void registerHotKey(int identifier, int modifier, int keycode) {
+      try {
+         int modifiers = swingToIntelliType(modifier);",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   public void registerHotKey(int identifier, int modifier, int keycode) {
+      try {
+         int modifiers = swingToIntelliType(modifier);
+","['   ', 'public', ' ', 'void', ' ', 'registerHotKey', '(', 'int', ' ', 'identifier', ',', ' ', 'int', ' ', 'modifier', ',', ' ', 'int', ' ', 'keycode', ')', ' ', '{', '\n', '      ', 'try', ' ', '{', '\n', '         ', 'int', ' ', 'modifiers', ' ', '=', ' ', 'swingToIntelliType', '(', 'modifier', ')', ';', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,registerSwingHotKey,"   public void registerSwingHotKey(int identifier, int modifier, int keycode) {
+      try {
+         regHotKey(identifier, swingToIntelliType(modifier), keycode);",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   public void registerSwingHotKey(int identifier, int modifier, int keycode) {
+      try {
+         regHotKey(identifier, swingToIntelliType(modifier), keycode);
+","['   ', 'public', ' ', 'void', ' ', 'registerSwingHotKey', '(', 'int', ' ', 'identifier', ',', ' ', 'int', ' ', 'modifier', ',', ' ', 'int', ' ', 'keycode', ')', ' ', '{', '\n', '      ', 'try', ' ', '{', '\n', '         ', 'regHotKey', '(', 'identifier', ',', ' ', 'swingToIntelliType', '(', 'modifier', ')', ',', ' ', 'keycode', ')', ';', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,registerHotKey,"   public void registerHotKey(int identifier, String modifierAndKeyCode) {
+      String[] split = modifierAndKeyCode.split(""\\+"");
+      int mask = 0;
+      int keycode = 0;
+
+      for (int i = 0; i < split.length; i++) {
+         if (""ALT"".equalsIgnoreCase(split[i])) {
+            mask += JIntellitype.MOD_ALT;
+         } else if (""CTRL"".equalsIgnoreCase(split[i]) || ""CONTROL"".equalsIgnoreCase(split[i])) {
+            mask += JIntellitype.MOD_CONTROL;
+         } else if (""SHIFT"".equalsIgnoreCase(split[i])) {
+            mask += JIntellitype.MOD_SHIFT;
+         } else if (""WIN"".equalsIgnoreCase(split[i])) {
+            mask += JIntellitype.MOD_WIN;
+         } else if (keycodeMap.containsKey(split[i].toLowerCase())) {
+            keycode = keycodeMap.get(split[i].toLowerCase());
+         }
+      }
+      registerHotKey(identifier, mask, keycode);
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   public void registerHotKey(int identifier, String modifierAndKeyCode) {
+      String[] split = modifierAndKeyCode.split(""\\+"");
+      int mask = 0;
+      int keycode = 0;
+
+      for (int i = 0; i < split.length; i++) {
+         if (""ALT"".equalsIgnoreCase(split[i])) {
+            mask += JIntellitype.MOD_ALT;
+         } else if (""CTRL"".equalsIgnoreCase(split[i]) || ""CONTROL"".equalsIgnoreCase(split[i])) {
+            mask += JIntellitype.MOD_CONTROL;
+         } else if (""SHIFT"".equalsIgnoreCase(split[i])) {
+            mask += JIntellitype.MOD_SHIFT;
+         } else if (""WIN"".equalsIgnoreCase(split[i])) {
+            mask += JIntellitype.MOD_WIN;
+         } else if (keycodeMap.containsKey(split[i].toLowerCase())) {
+            keycode = keycodeMap.get(split[i].toLowerCase());
+         }
+      }
+      registerHotKey(identifier, mask, keycode);
+   }
+","['   ', 'public', ' ', 'void', ' ', 'registerHotKey', '(', 'int', ' ', 'identifier', ',', ' ', 'String', ' ', 'modifierAndKeyCode', ')', ' ', '{', '\n', '      ', 'String', '[', ']', ' ', 'split', ' ', '=', ' ', 'modifierAndKeyCode', '.', 'split', '(', '""', '\\\\', '+', '""', ')', ';', '\n', '      ', 'int', ' ', 'mask', ' ', '=', ' ', '0', ';', '\n', '      ', 'int', ' ', 'keycode', ' ', '=', ' ', '0', ';', '\n', '\n', '      ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', 'split', '.', 'length', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '         ', 'if', ' ', '(', '""', 'ALT', '""', '.', 'equalsIgnoreCase', '(', 'split', '[', 'i', ']', ')', ')', ' ', '{', '\n', '            ', 'mask', ' ', '+', '=', ' ', 'JIntellitype', '.', 'MOD_ALT', ';', '\n', '         ', '}', ' ', 'else', ' ', 'if', ' ', '(', '""', 'CTRL', '""', '.', 'equalsIgnoreCase', '(', 'split', '[', 'i', ']', ')', ' ', '|', '|', ' ', '""', 'CONTROL', '""', '.', 'equalsIgnoreCase', '(', 'split', '[', 'i', ']', ')', ')', ' ', '{', '\n', '            ', 'mask', ' ', '+', '=', ' ', 'JIntellitype', '.', 'MOD_CONTROL', ';', '\n', '         ', '}', ' ', 'else', ' ', 'if', ' ', '(', '""', 'SHIFT', '""', '.', 'equalsIgnoreCase', '(', 'split', '[', 'i', ']', ')', ')', ' ', '{', '\n', '            ', 'mask', ' ', '+', '=', ' ', 'JIntellitype', '.', 'MOD_SHIFT', ';', '\n', '         ', '}', ' ', 'else', ' ', 'if', ' ', '(', '""', 'WIN', '""', '.', 'equalsIgnoreCase', '(', 'split', '[', 'i', ']', ')', ')', ' ', '{', '\n', '            ', 'mask', ' ', '+', '=', ' ', 'JIntellitype', '.', 'MOD_WIN', ';', '\n', '         ', '}', ' ', 'else', ' ', 'if', ' ', '(', 'keycodeMap', '.', 'containsKey', '(', 'split', '[', 'i', ']', '.', 'toLowerCase', '(', ')', ')', ')', ' ', '{', '\n', '            ', 'keycode', ' ', '=', ' ', 'keycodeMap', '.', 'get', '(', 'split', '[', 'i', ']', '.', 'toLowerCase', '(', ')', ')', ';', '\n', '         ', '}', '\n', '      ', '}', '\n', '      ', 'registerHotKey', '(', 'identifier', ',', ' ', 'mask', ',', ' ', 'keycode', ')', ';', '\n', '   ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,removeHotKeyListener,"   public void removeHotKeyListener(HotkeyListener listener) {
+      hotkeyListeners.remove(listener);
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   public void removeHotKeyListener(HotkeyListener listener) {
+      hotkeyListeners.remove(listener);
+   }
+","['   ', 'public', ' ', 'void', ' ', 'removeHotKeyListener', '(', 'HotkeyListener', ' ', 'listener', ')', ' ', '{', '\n', '      ', 'hotkeyListeners', '.', 'remove', '(', 'listener', ')', ';', '\n', '   ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,removeIntellitypeListener,"   public void removeIntellitypeListener(IntellitypeListener listener) {
+      intellitypeListeners.remove(listener);
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   public void removeIntellitypeListener(IntellitypeListener listener) {
+      intellitypeListeners.remove(listener);
+   }
+","['   ', 'public', ' ', 'void', ' ', 'removeIntellitypeListener', '(', 'IntellitypeListener', ' ', 'listener', ')', ' ', '{', '\n', '      ', 'intellitypeListeners', '.', 'remove', '(', 'listener', ')', ';', '\n', '   ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,unregisterHotKey,"   public void unregisterHotKey(int identifier) {
+      try {
+         unregHotKey(identifier);",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   public void unregisterHotKey(int identifier) {
+      try {
+         unregHotKey(identifier);
+","['   ', 'public', ' ', 'void', ' ', 'unregisterHotKey', '(', 'int', ' ', 'identifier', ')', ' ', '{', '\n', '      ', 'try', ' ', '{', '\n', '         ', 'unregHotKey', '(', 'identifier', ')', ';', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,checkInstanceAlreadyRunning,"   public static boolean checkInstanceAlreadyRunning(String appTitle) {
+      return getInstance().isRunning(appTitle);
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   public static boolean checkInstanceAlreadyRunning(String appTitle) {
+      return getInstance().isRunning(appTitle);
+   }
+","['   ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'checkInstanceAlreadyRunning', '(', 'String', ' ', 'appTitle', ')', ' ', '{', '\n', '      ', 'return', ' ', 'getInstance', '(', ')', '.', 'isRunning', '(', 'appTitle', ')', ';', '\n', '   ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,isJIntellitypeSupported,"   public static boolean isJIntellitypeSupported() {
+      boolean result = false;
+      String os = ""none"";
+
+      try {
+         os = System.getProperty(""os.name"").toLowerCase();
+      } catch (SecurityException ex) {
+         // we are not allowed to look at this property
+         System.err.println(""Caught a SecurityException reading the system property ""
+                  + ""'os.name'; the SystemUtils property value will default to null."");
+      }
+
+      // only works on Windows OS currently
+      if (os.startsWith(""windows"")) {
+         // try an get the instance and if it succeeds then return true
+         try {
+            getInstance();
+            result = true;
+         } catch (Exception e) {
+            result = false;
+         }
+      }
+
+      return result;
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   public static boolean isJIntellitypeSupported() {
+      boolean result = false;
+      String os = ""none"";
+
+      try {
+         os = System.getProperty(""os.name"").toLowerCase();
+      } catch (SecurityException ex) {
+         
+         System.err.println(""Caught a SecurityException reading the system property ""
+                  + ""'os.name'; the SystemUtils property value will default to null."");
+      }
+
+      
+      if (os.startsWith(""windows"")) {
+         
+         try {
+            getInstance();
+            result = true;
+         } catch (Exception e) {
+            result = false;
+         }
+      }
+
+      return result;
+   }
+","['   ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isJIntellitypeSupported', '(', ')', ' ', '{', '\n', '      ', 'boolean', ' ', 'result', ' ', '=', ' ', 'false', ';', '\n', '      ', 'String', ' ', 'os', ' ', '=', ' ', '""', 'none', '""', ';', '\n', '\n', '      ', 'try', ' ', '{', '\n', '         ', 'os', ' ', '=', ' ', 'System', '.', 'getProperty', '(', '""', 'os.name', '""', ')', '.', 'toLowerCase', '(', ')', ';', '\n', '      ', '}', ' ', 'catch', ' ', '(', 'SecurityException', ' ', 'ex', ')', ' ', '{', '\n', '         ', '\n', '         ', 'System', '.', 'err', '.', 'println', '(', '""', 'Caught a SecurityException reading the system property ', '""', '\n', '                  ', '+', ' ', '""', ""'os.name'; the SystemUtils property value will default to null."", '""', ')', ';', '\n', '      ', '}', '\n', '\n', '      ', '\n', '      ', 'if', ' ', '(', 'os', '.', 'startsWith', '(', '""', 'windows', '""', ')', ')', ' ', '{', '\n', '         ', '\n', '         ', 'try', ' ', '{', '\n', '            ', 'getInstance', '(', ')', ';', '\n', '            ', 'result', ' ', '=', ' ', 'true', ';', '\n', '         ', '}', ' ', 'catch', ' ', '(', 'Exception', ' ', 'e', ')', ' ', '{', '\n', '            ', 'result', ' ', '=', ' ', 'false', ';', '\n', '         ', '}', '\n', '      ', '}', '\n', '\n', '      ', 'return', ' ', 'result', ';', '\n', '   ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,onHotKey,"   protected void onHotKey(final int identifier) {
+      for (final HotkeyListener hotkeyListener : hotkeyListeners) {
+         SwingUtilities.invokeLater(new Runnable() {",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   protected void onHotKey(final int identifier) {
+      for (final HotkeyListener hotkeyListener : hotkeyListeners) {
+         SwingUtilities.invokeLater(new Runnable() {
+","['   ', 'protected', ' ', 'void', ' ', 'onHotKey', '(', 'final', ' ', 'int', ' ', 'identifier', ')', ' ', '{', '\n', '      ', 'for', ' ', '(', 'final', ' ', 'HotkeyListener', ' ', 'hotkeyListener', ' ', ':', ' ', 'hotkeyListeners', ')', ' ', '{', '\n', '         ', 'SwingUtilities', '.', 'invokeLater', '(', 'new', ' ', 'Runnable', '(', ')', ' ', '{', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,run,"            public void run() {
+               hotkeyListener.onHotKey(identifier);
+            }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"            public void run() {
+               hotkeyListener.onHotKey(identifier);
+            }
+","['            ', 'public', ' ', 'void', ' ', 'run', '(', ')', ' ', '{', '\n', '               ', 'hotkeyListener', '.', 'onHotKey', '(', 'identifier', ')', ';', '\n', '            ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,onIntellitype,"   protected void onIntellitype(final int command) {
+      for (final IntellitypeListener intellitypeListener : intellitypeListeners) {
+         SwingUtilities.invokeLater(new Runnable() {",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   protected void onIntellitype(final int command) {
+      for (final IntellitypeListener intellitypeListener : intellitypeListeners) {
+         SwingUtilities.invokeLater(new Runnable() {
+","['   ', 'protected', ' ', 'void', ' ', 'onIntellitype', '(', 'final', ' ', 'int', ' ', 'command', ')', ' ', '{', '\n', '      ', 'for', ' ', '(', 'final', ' ', 'IntellitypeListener', ' ', 'intellitypeListener', ' ', ':', ' ', 'intellitypeListeners', ')', ' ', '{', '\n', '         ', 'SwingUtilities', '.', 'invokeLater', '(', 'new', ' ', 'Runnable', '(', ')', ' ', '{', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,run,"            public void run() {
+               intellitypeListener.onIntellitype(command);
+            }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"            public void run() {
+               intellitypeListener.onIntellitype(command);
+            }
+","['            ', 'public', ' ', 'void', ' ', 'run', '(', ')', ' ', '{', '\n', '               ', 'intellitypeListener', '.', 'onIntellitype', '(', 'command', ')', ';', '\n', '            ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,swingToIntelliType,"   protected static int swingToIntelliType(int swingKeystrokeModifier) {
+      int mask = 0;
+      if ((swingKeystrokeModifier & InputEvent.SHIFT_MASK) == InputEvent.SHIFT_MASK) {
+         mask += JIntellitype.MOD_SHIFT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.ALT_MASK) == InputEvent.ALT_MASK) {
+         mask += JIntellitype.MOD_ALT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.CTRL_MASK) == InputEvent.CTRL_MASK) {
+         mask += JIntellitype.MOD_CONTROL;
+      }
+      if ((swingKeystrokeModifier & InputEvent.SHIFT_DOWN_MASK) == InputEvent.SHIFT_DOWN_MASK) {
+         mask += JIntellitype.MOD_SHIFT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.ALT_DOWN_MASK) == InputEvent.ALT_DOWN_MASK) {
+         mask += JIntellitype.MOD_ALT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.CTRL_DOWN_MASK) == InputEvent.CTRL_DOWN_MASK) {
+         mask += JIntellitype.MOD_CONTROL;
+      }
+      return mask;
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   protected static int swingToIntelliType(int swingKeystrokeModifier) {
+      int mask = 0;
+      if ((swingKeystrokeModifier & InputEvent.SHIFT_MASK) == InputEvent.SHIFT_MASK) {
+         mask += JIntellitype.MOD_SHIFT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.ALT_MASK) == InputEvent.ALT_MASK) {
+         mask += JIntellitype.MOD_ALT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.CTRL_MASK) == InputEvent.CTRL_MASK) {
+         mask += JIntellitype.MOD_CONTROL;
+      }
+      if ((swingKeystrokeModifier & InputEvent.SHIFT_DOWN_MASK) == InputEvent.SHIFT_DOWN_MASK) {
+         mask += JIntellitype.MOD_SHIFT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.ALT_DOWN_MASK) == InputEvent.ALT_DOWN_MASK) {
+         mask += JIntellitype.MOD_ALT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.CTRL_DOWN_MASK) == InputEvent.CTRL_DOWN_MASK) {
+         mask += JIntellitype.MOD_CONTROL;
+      }
+      return mask;
+   }
+","['   ', 'protected', ' ', 'static', ' ', 'int', ' ', 'swingToIntelliType', '(', 'int', ' ', 'swingKeystrokeModifier', ')', ' ', '{', '\n', '      ', 'int', ' ', 'mask', ' ', '=', ' ', '0', ';', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'SHIFT_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'SHIFT_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '+', '=', ' ', 'JIntellitype', '.', 'MOD_SHIFT', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'ALT_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'ALT_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '+', '=', ' ', 'JIntellitype', '.', 'MOD_ALT', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'CTRL_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'CTRL_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '+', '=', ' ', 'JIntellitype', '.', 'MOD_CONTROL', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'SHIFT_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'SHIFT_DOWN_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '+', '=', ' ', 'JIntellitype', '.', 'MOD_SHIFT', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'ALT_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'ALT_DOWN_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '+', '=', ' ', 'JIntellitype', '.', 'MOD_ALT', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'CTRL_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'CTRL_DOWN_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '+', '=', ' ', 'JIntellitype', '.', 'MOD_CONTROL', ';', '\n', '      ', '}', '\n', '      ', 'return', ' ', 'mask', ';', '\n', '   ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,initializeLibrary,"   private synchronized native void initializeLibrary() throws UnsatisfiedLinkError;
+
+   private synchronized native void regHotKey(int identifier, int modifier, int keycode) throws UnsatisfiedLinkError;
+
+   private synchronized native void terminate() throws UnsatisfiedLinkError;
+
+   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   /**
+    * Checks if there's an instance with hidden window title = appName running
+    * Can be used to detect that another instance of your app is already running
+    * (so exit..)
+    * <p>
+    * @param appName = the title of the hidden window to search for
+    */
+   private synchronized native boolean isRunning(String appName);
+}",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   private synchronized native void initializeLibrary() throws UnsatisfiedLinkError;
+
+   private synchronized native void regHotKey(int identifier, int modifier, int keycode) throws UnsatisfiedLinkError;
+
+   private synchronized native void terminate() throws UnsatisfiedLinkError;
+
+   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   
+   private synchronized native boolean isRunning(String appName);
+}
+","['   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'initializeLibrary', '(', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'regHotKey', '(', 'int', ' ', 'identifier', ',', ' ', 'int', ' ', 'modifier', ',', ' ', 'int', ' ', 'keycode', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'terminate', '(', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'unregHotKey', '(', 'int', ' ', 'identifier', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'boolean', ' ', 'isRunning', '(', 'String', ' ', 'appName', ')', ';', '\n', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,regHotKey,"   private synchronized native void regHotKey(int identifier, int modifier, int keycode) throws UnsatisfiedLinkError;
+
+   private synchronized native void terminate() throws UnsatisfiedLinkError;
+
+   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   /**
+    * Checks if there's an instance with hidden window title = appName running
+    * Can be used to detect that another instance of your app is already running
+    * (so exit..)
+    * <p>
+    * @param appName = the title of the hidden window to search for
+    */
+   private synchronized native boolean isRunning(String appName);
+}",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   private synchronized native void regHotKey(int identifier, int modifier, int keycode) throws UnsatisfiedLinkError;
+
+   private synchronized native void terminate() throws UnsatisfiedLinkError;
+
+   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   
+   private synchronized native boolean isRunning(String appName);
+}
+","['   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'regHotKey', '(', 'int', ' ', 'identifier', ',', ' ', 'int', ' ', 'modifier', ',', ' ', 'int', ' ', 'keycode', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'terminate', '(', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'unregHotKey', '(', 'int', ' ', 'identifier', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'boolean', ' ', 'isRunning', '(', 'String', ' ', 'appName', ')', ';', '\n', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,terminate,"   private synchronized native void terminate() throws UnsatisfiedLinkError;
+
+   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   /**
+    * Checks if there's an instance with hidden window title = appName running
+    * Can be used to detect that another instance of your app is already running
+    * (so exit..)
+    * <p>
+    * @param appName = the title of the hidden window to search for
+    */
+   private synchronized native boolean isRunning(String appName);
+}",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   private synchronized native void terminate() throws UnsatisfiedLinkError;
+
+   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   
+   private synchronized native boolean isRunning(String appName);
+}
+","['   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'terminate', '(', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'unregHotKey', '(', 'int', ' ', 'identifier', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'boolean', ' ', 'isRunning', '(', 'String', ' ', 'appName', ')', ';', '\n', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,unregHotKey,"   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   /**
+    * Checks if there's an instance with hidden window title = appName running
+    * Can be used to detect that another instance of your app is already running
+    * (so exit..)
+    * <p>
+    * @param appName = the title of the hidden window to search for
+    */
+   private synchronized native boolean isRunning(String appName);
+}",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   
+   private synchronized native boolean isRunning(String appName);
+}
+","['   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'unregHotKey', '(', 'int', ' ', 'identifier', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'boolean', ' ', 'isRunning', '(', 'String', ' ', 'appName', ')', ';', '\n', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitype.java,isRunning,"   private synchronized native boolean isRunning(String appName);
+}",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   private synchronized native boolean isRunning(String appName);
+}
+","['   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'boolean', ' ', 'isRunning', '(', 'String', ' ', 'appName', ')', ';', '\n', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,Main.java,main,"    public static void main(String[] argv) {
+        System.out.println(""JIntellitype version \"""" + getProjectVersion() + ""\"""");
+        System.out.println("" "");
+
+        System.out.println(""Running on java version \"""" + System.getProperty(""java.version"") + ""\""""
+                           + "" (build "" + System.getProperty(""java.runtime.version"") + "")""
+                           + "" from "" + System.getProperty(""java.vendor""));
+
+        System.out.println(""Operating environment \"""" + System.getProperty(""os.name"") + ""\""""
+                           + "" version "" + System.getProperty(""os.version"") + "" on "" + System.getProperty(""os.arch""));
+
+        System.out.println(""For more information on JIntellitype please visit http://www.melloware.com"");
+    }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"    public static void main(String[] argv) {
+        System.out.println(""JIntellitype version \"""" + getProjectVersion() + ""\"""");
+        System.out.println("" "");
+
+        System.out.println(""Running on java version \"""" + System.getProperty(""java.version"") + ""\""""
+                           + "" (build "" + System.getProperty(""java.runtime.version"") + "")""
+                           + "" from "" + System.getProperty(""java.vendor""));
+
+        System.out.println(""Operating environment \"""" + System.getProperty(""os.name"") + ""\""""
+                           + "" version "" + System.getProperty(""os.version"") + "" on "" + System.getProperty(""os.arch""));
+
+        System.out.println(""For more information on JIntellitype please visit http://www.melloware.com"");
+    }
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'argv', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'JIntellitype version ', '\\""', '""', ' ', '+', ' ', 'getProjectVersion', '(', ')', ' ', '+', ' ', '""', '\\""', '""', ')', ';', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', ' ', '""', ')', ';', '\n', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'Running on java version ', '\\""', '""', ' ', '+', ' ', 'System', '.', 'getProperty', '(', '""', 'java.version', '""', ')', ' ', '+', ' ', '""', '\\""', '""', '\n', '                           ', '+', ' ', '""', ' (build ', '""', ' ', '+', ' ', 'System', '.', 'getProperty', '(', '""', 'java.runtime.version', '""', ')', ' ', '+', ' ', '""', ')', '""', '\n', '                           ', '+', ' ', '""', ' from ', '""', ' ', '+', ' ', 'System', '.', 'getProperty', '(', '""', 'java.vendor', '""', ')', ')', ';', '\n', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'Operating environment ', '\\""', '""', ' ', '+', ' ', 'System', '.', 'getProperty', '(', '""', 'os.name', '""', ')', ' ', '+', ' ', '""', '\\""', '""', '\n', '                           ', '+', ' ', '""', ' version ', '""', ' ', '+', ' ', 'System', '.', 'getProperty', '(', '""', 'os.version', '""', ')', ' ', '+', ' ', '""', ' on ', '""', ' ', '+', ' ', 'System', '.', 'getProperty', '(', '""', 'os.arch', '""', ')', ')', ';', '\n', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'For more information on JIntellitype please visit http://www.melloware.com', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitypeTester.java,main,"   public static void main(String[] args) {
+      // first check to see if an instance of this application is already
+      // running, use the name of the window title of this JFrame for checking
+      if (JIntellitype.checkInstanceAlreadyRunning(""JIntellitype Test Application"")) {
+         System.exit(1);
+      }
+      
+      // next check to make sure JIntellitype DLL can be found and we are on 
+      // a Windows operating System
+      if (!JIntellitype.isJIntellitypeSupported()) {
+         System.exit(1);
+      }
+
+      mainFrame = new JIntellitypeTester();
+      mainFrame.setTitle(""JIntellitype Test Application"");
+      center(mainFrame);
+      mainFrame.setVisible(true);
+      mainFrame.initJIntellitype();
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   public static void main(String[] args) {
+      
+      
+      if (JIntellitype.checkInstanceAlreadyRunning(""JIntellitype Test Application"")) {
+         System.exit(1);
+      }
+      
+      
+      
+      if (!JIntellitype.isJIntellitypeSupported()) {
+         System.exit(1);
+      }
+
+      mainFrame = new JIntellitypeTester();
+      mainFrame.setTitle(""JIntellitype Test Application"");
+      center(mainFrame);
+      mainFrame.setVisible(true);
+      mainFrame.initJIntellitype();
+   }
+","['   ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '      ', '\n', '      ', '\n', '      ', 'if', ' ', '(', 'JIntellitype', '.', 'checkInstanceAlreadyRunning', '(', '""', 'JIntellitype Test Application', '""', ')', ')', ' ', '{', '\n', '         ', 'System', '.', 'exit', '(', '1', ')', ';', '\n', '      ', '}', '\n', '      ', '\n', '      ', '\n', '      ', '\n', '      ', 'if', ' ', '(', '!', 'JIntellitype', '.', 'isJIntellitypeSupported', '(', ')', ')', ' ', '{', '\n', '         ', 'System', '.', 'exit', '(', '1', ')', ';', '\n', '      ', '}', '\n', '\n', '      ', 'mainFrame', ' ', '=', ' ', 'new', ' ', 'JIntellitypeTester', '(', ')', ';', '\n', '      ', 'mainFrame', '.', 'setTitle', '(', '""', 'JIntellitype Test Application', '""', ')', ';', '\n', '      ', 'center', '(', 'mainFrame', ')', ';', '\n', '      ', 'mainFrame', '.', 'setVisible', '(', 'true', ')', ';', '\n', '      ', 'mainFrame', '.', 'initJIntellitype', '(', ')', ';', '\n', '   ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitypeTester.java,onHotKey,"   public void onHotKey(int aIdentifier) {
+      output(""WM_HOTKEY message received "" + Integer.toString(aIdentifier));
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   public void onHotKey(int aIdentifier) {
+      output(""WM_HOTKEY message received "" + Integer.toString(aIdentifier));
+   }
+","['   ', 'public', ' ', 'void', ' ', 'onHotKey', '(', 'int', ' ', 'aIdentifier', ')', ' ', '{', '\n', '      ', 'output', '(', '""', 'WM_HOTKEY message received ', '""', ' ', '+', ' ', 'Integer', '.', 'toString', '(', 'aIdentifier', ')', ')', ';', '\n', '   ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitypeTester.java,onIntellitype,"   public void onIntellitype(int aCommand) {
+
+      switch (aCommand) {
+      case JIntellitype.APPCOMMAND_BROWSER_BACKWARD:",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   public void onIntellitype(int aCommand) {
+
+      switch (aCommand) {
+      case JIntellitype.APPCOMMAND_BROWSER_BACKWARD:
+","['   ', 'public', ' ', 'void', ' ', 'onIntellitype', '(', 'int', ' ', 'aCommand', ')', ' ', '{', '\n', '\n', '      ', 'switch', ' ', '(', 'aCommand', ')', ' ', '{', '\n', '      ', 'case', ' ', 'JIntellitype', '.', 'APPCOMMAND_BROWSER_BACKWARD', ':', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitypeTester.java,center,"   private static void center(JFrame aFrame) {
+      final GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+      final Point centerPoint = ge.getCenterPoint();
+      final Rectangle bounds = ge.getMaximumWindowBounds();
+      final int w = Math.min(aFrame.getWidth(), bounds.width);
+      final int h = Math.min(aFrame.getHeight(), bounds.height);
+      final int x = centerPoint.x - (w / 2);
+      final int y = centerPoint.y - (h / 2);
+      aFrame.setBounds(x, y, w, h);
+      if ((w == bounds.width) && (h == bounds.height)) {
+         aFrame.setExtendedState(Frame.MAXIMIZED_BOTH);
+      }
+      aFrame.validate();
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   private static void center(JFrame aFrame) {
+      final GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+      final Point centerPoint = ge.getCenterPoint();
+      final Rectangle bounds = ge.getMaximumWindowBounds();
+      final int w = Math.min(aFrame.getWidth(), bounds.width);
+      final int h = Math.min(aFrame.getHeight(), bounds.height);
+      final int x = centerPoint.x - (w / 2);
+      final int y = centerPoint.y - (h / 2);
+      aFrame.setBounds(x, y, w, h);
+      if ((w == bounds.width) && (h == bounds.height)) {
+         aFrame.setExtendedState(Frame.MAXIMIZED_BOTH);
+      }
+      aFrame.validate();
+   }
+","['   ', 'private', ' ', 'static', ' ', 'void', ' ', 'center', '(', 'JFrame', ' ', 'aFrame', ')', ' ', '{', '\n', '      ', 'final', ' ', 'GraphicsEnvironment', ' ', 'ge', ' ', '=', ' ', 'GraphicsEnvironment', '.', 'getLocalGraphicsEnvironment', '(', ')', ';', '\n', '      ', 'final', ' ', 'Point', ' ', 'centerPoint', ' ', '=', ' ', 'ge', '.', 'getCenterPoint', '(', ')', ';', '\n', '      ', 'final', ' ', 'Rectangle', ' ', 'bounds', ' ', '=', ' ', 'ge', '.', 'getMaximumWindowBounds', '(', ')', ';', '\n', '      ', 'final', ' ', 'int', ' ', 'w', ' ', '=', ' ', 'Math', '.', 'min', '(', 'aFrame', '.', 'getWidth', '(', ')', ',', ' ', 'bounds', '.', 'width', ')', ';', '\n', '      ', 'final', ' ', 'int', ' ', 'h', ' ', '=', ' ', 'Math', '.', 'min', '(', 'aFrame', '.', 'getHeight', '(', ')', ',', ' ', 'bounds', '.', 'height', ')', ';', '\n', '      ', 'final', ' ', 'int', ' ', 'x', ' ', '=', ' ', 'centerPoint', '.', 'x', ' ', '-', ' ', '(', 'w', ' ', '/', ' ', '2', ')', ';', '\n', '      ', 'final', ' ', 'int', ' ', 'y', ' ', '=', ' ', 'centerPoint', '.', 'y', ' ', '-', ' ', '(', 'h', ' ', '/', ' ', '2', ')', ';', '\n', '      ', 'aFrame', '.', 'setBounds', '(', 'x', ',', ' ', 'y', ',', ' ', 'w', ',', ' ', 'h', ')', ';', '\n', '      ', 'if', ' ', '(', '(', 'w', ' ', '=', '=', ' ', 'bounds', '.', 'width', ')', ' ', '&', '&', ' ', '(', 'h', ' ', '=', '=', ' ', 'bounds', '.', 'height', ')', ')', ' ', '{', '\n', '         ', 'aFrame', '.', 'setExtendedState', '(', 'Frame', '.', 'MAXIMIZED_BOTH', ')', ';', '\n', '      ', '}', '\n', '      ', 'aFrame', '.', 'validate', '(', ')', ';', '\n', '   ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitypeTester.java,btnRegisterHotKey_actionPerformed,"   private void btnRegisterHotKey_actionPerformed(ActionEvent aEvent) {
+      // assign the WINDOWS+A key to the unique id 88 for identification
+      JIntellitype.getInstance().registerHotKey(WINDOWS_A, JIntellitype.MOD_WIN, (int) 'A');
+      JIntellitype.getInstance().registerHotKey(ALT_SHIFT_B, JIntellitype.MOD_ALT + JIntellitype.MOD_SHIFT, (int) 'B');
+      JIntellitype.getInstance().registerSwingHotKey(CTRL_SHIFT_C, Event.CTRL_MASK + Event.SHIFT_MASK, (int) 'C');
+      
+      // use a 0 for the modifier if you just want a single keystroke to be a hotkey
+      JIntellitype.getInstance().registerHotKey(PRINT_SCREEN, 0, 44);
+      JIntellitype.getInstance().registerHotKey(F9, 0, 120);
+      JIntellitype.getInstance().registerHotKey(F12, JIntellitype.MOD_ALT, 123);
+      JIntellitype.getInstance().registerHotKey(SEMICOLON, 0, 186);
+      // clear the text area
+      textArea.setText("""");
+      output(""RegisterHotKey WINDOWS+A was assigned uniqueID 88"");
+      output(""RegisterHotKey ALT+SHIFT+B was assigned uniqueID 89"");
+      output(""RegisterHotKey CTRL+SHIFT+C was assigned uniqueID 90"");
+      output(""RegisterHotKey PRINT_SCREEN was assigned uniqueID 91"");
+      output(""RegisterHotKey F9 was assigned uniqueID 92"");
+      output(""RegisterHotKey F12 was assigned uniqueID 93"");
+      output(""RegisterHotKey SEMICOLON was assigned uniqueID 94"");
+      output(""Press WINDOWS+A or ALT+SHIFT+B or CTRL+SHIFT+C in another application and you will see the debug output in the textarea."");
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   private void btnRegisterHotKey_actionPerformed(ActionEvent aEvent) {
+      
+      JIntellitype.getInstance().registerHotKey(WINDOWS_A, JIntellitype.MOD_WIN, (int) 'A');
+      JIntellitype.getInstance().registerHotKey(ALT_SHIFT_B, JIntellitype.MOD_ALT + JIntellitype.MOD_SHIFT, (int) 'B');
+      JIntellitype.getInstance().registerSwingHotKey(CTRL_SHIFT_C, Event.CTRL_MASK + Event.SHIFT_MASK, (int) 'C');
+      
+      
+      JIntellitype.getInstance().registerHotKey(PRINT_SCREEN, 0, 44);
+      JIntellitype.getInstance().registerHotKey(F9, 0, 120);
+      JIntellitype.getInstance().registerHotKey(F12, JIntellitype.MOD_ALT, 123);
+      JIntellitype.getInstance().registerHotKey(SEMICOLON, 0, 186);
+      
+      textArea.setText("""");
+      output(""RegisterHotKey WINDOWS+A was assigned uniqueID 88"");
+      output(""RegisterHotKey ALT+SHIFT+B was assigned uniqueID 89"");
+      output(""RegisterHotKey CTRL+SHIFT+C was assigned uniqueID 90"");
+      output(""RegisterHotKey PRINT_SCREEN was assigned uniqueID 91"");
+      output(""RegisterHotKey F9 was assigned uniqueID 92"");
+      output(""RegisterHotKey F12 was assigned uniqueID 93"");
+      output(""RegisterHotKey SEMICOLON was assigned uniqueID 94"");
+      output(""Press WINDOWS+A or ALT+SHIFT+B or CTRL+SHIFT+C in another application and you will see the debug output in the textarea."");
+   }
+","['   ', 'private', ' ', 'void', ' ', 'btnRegisterHotKey_actionPerformed', '(', 'ActionEvent', ' ', 'aEvent', ')', ' ', '{', '\n', '      ', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'WINDOWS_A', ',', ' ', 'JIntellitype', '.', 'MOD_WIN', ',', ' ', '(', 'int', ')', ' ', ""'A'"", ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'ALT_SHIFT_B', ',', ' ', 'JIntellitype', '.', 'MOD_ALT', ' ', '+', ' ', 'JIntellitype', '.', 'MOD_SHIFT', ',', ' ', '(', 'int', ')', ' ', ""'B'"", ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerSwingHotKey', '(', 'CTRL_SHIFT_C', ',', ' ', 'Event', '.', 'CTRL_MASK', ' ', '+', ' ', 'Event', '.', 'SHIFT_MASK', ',', ' ', '(', 'int', ')', ' ', ""'C'"", ')', ';', '\n', '      ', '\n', '      ', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'PRINT_SCREEN', ',', ' ', '0', ',', ' ', '44', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'F9', ',', ' ', '0', ',', ' ', '120', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'F12', ',', ' ', 'JIntellitype', '.', 'MOD_ALT', ',', ' ', '123', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'SEMICOLON', ',', ' ', '0', ',', ' ', '186', ')', ';', '\n', '      ', '\n', '      ', 'textArea', '.', 'setText', '(', '""', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'RegisterHotKey WINDOWS+A was assigned uniqueID 88', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'RegisterHotKey ALT+SHIFT+B was assigned uniqueID 89', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'RegisterHotKey CTRL+SHIFT+C was assigned uniqueID 90', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'RegisterHotKey PRINT_SCREEN was assigned uniqueID 91', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'RegisterHotKey F9 was assigned uniqueID 92', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'RegisterHotKey F12 was assigned uniqueID 93', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'RegisterHotKey SEMICOLON was assigned uniqueID 94', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'Press WINDOWS+A or ALT+SHIFT+B or CTRL+SHIFT+C in another application and you will see the debug output in the textarea.', '""', ')', ';', '\n', '   ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitypeTester.java,btnUnregisterHotKey_actionPerformed,"   private void btnUnregisterHotKey_actionPerformed(ActionEvent aEvent) {
+      JIntellitype.getInstance().unregisterHotKey(WINDOWS_A);
+      JIntellitype.getInstance().unregisterHotKey(ALT_SHIFT_B);
+      JIntellitype.getInstance().unregisterHotKey(CTRL_SHIFT_C);
+      JIntellitype.getInstance().unregisterHotKey(PRINT_SCREEN);
+      JIntellitype.getInstance().unregisterHotKey(F9);
+      JIntellitype.getInstance().unregisterHotKey(F12);
+      JIntellitype.getInstance().unregisterHotKey(SEMICOLON);
+      output(""UnregisterHotKey WINDOWS+A"");
+      output(""UnregisterHotKey ALT+SHIFT+B"");
+      output(""UnregisterHotKey CTRL+SHIFT+C"");
+      output(""UnregisterHotKey PRINT_SCREEN"");
+      output(""UnregisterHotKey F9"");
+      output(""UnregisterHotKey F12"");
+      output(""UnregisterHotKey SEMICOLON"");
+      output(""Press WINDOWS+A or ALT+SHIFT+B in another application and you will NOT see the debug output in the textarea."");
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   private void btnUnregisterHotKey_actionPerformed(ActionEvent aEvent) {
+      JIntellitype.getInstance().unregisterHotKey(WINDOWS_A);
+      JIntellitype.getInstance().unregisterHotKey(ALT_SHIFT_B);
+      JIntellitype.getInstance().unregisterHotKey(CTRL_SHIFT_C);
+      JIntellitype.getInstance().unregisterHotKey(PRINT_SCREEN);
+      JIntellitype.getInstance().unregisterHotKey(F9);
+      JIntellitype.getInstance().unregisterHotKey(F12);
+      JIntellitype.getInstance().unregisterHotKey(SEMICOLON);
+      output(""UnregisterHotKey WINDOWS+A"");
+      output(""UnregisterHotKey ALT+SHIFT+B"");
+      output(""UnregisterHotKey CTRL+SHIFT+C"");
+      output(""UnregisterHotKey PRINT_SCREEN"");
+      output(""UnregisterHotKey F9"");
+      output(""UnregisterHotKey F12"");
+      output(""UnregisterHotKey SEMICOLON"");
+      output(""Press WINDOWS+A or ALT+SHIFT+B in another application and you will NOT see the debug output in the textarea."");
+   }
+","['   ', 'private', ' ', 'void', ' ', 'btnUnregisterHotKey_actionPerformed', '(', 'ActionEvent', ' ', 'aEvent', ')', ' ', '{', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'WINDOWS_A', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'ALT_SHIFT_B', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'CTRL_SHIFT_C', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'PRINT_SCREEN', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'F9', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'F12', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'SEMICOLON', ')', ';', '\n', '      ', 'output', '(', '""', 'UnregisterHotKey WINDOWS+A', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'UnregisterHotKey ALT+SHIFT+B', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'UnregisterHotKey CTRL+SHIFT+C', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'UnregisterHotKey PRINT_SCREEN', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'UnregisterHotKey F9', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'UnregisterHotKey F12', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'UnregisterHotKey SEMICOLON', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'Press WINDOWS+A or ALT+SHIFT+B in another application and you will NOT see the debug output in the textarea.', '""', ')', ';', '\n', '   ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitypeTester.java,initComponents,"   private void initComponents() {
+      mainPanel.setLayout(new BorderLayout());
+      topPanel.setBorder(new EtchedBorder(1));
+      bottomPanel.setLayout(new BorderLayout());
+      bottomPanel.setBorder(new EtchedBorder(1));
+      btnRegisterHotKey.setText(""RegisterHotKey"");
+      btnRegisterHotKey.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            btnRegisterHotKey_actionPerformed(e);
+         }
+      });
+      btnUnregisterHotKey.setText(""UnregisterHotKey"");
+      btnUnregisterHotKey.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            btnUnregisterHotKey_actionPerformed(e);
+         }
+      });
+      topPanel.add(btnRegisterHotKey);
+      topPanel.add(btnUnregisterHotKey);
+      scrollPane.getViewport().add(textArea);
+      bottomPanel.add(scrollPane, BorderLayout.CENTER);
+      mainPanel.add(topPanel, BorderLayout.NORTH);
+      mainPanel.add(bottomPanel, BorderLayout.CENTER);
+
+      this.addWindowListener(new java.awt.event.WindowAdapter() {
+         public void windowClosing(java.awt.event.WindowEvent evt) {
+            // don't forget to clean up any resources before close
+            JIntellitype.getInstance().cleanUp();
+            System.exit(0);
+         }
+      });
+
+      this.getContentPane().add(mainPanel);
+      this.pack();
+      this.setSize(800, 600);
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   private void initComponents() {
+      mainPanel.setLayout(new BorderLayout());
+      topPanel.setBorder(new EtchedBorder(1));
+      bottomPanel.setLayout(new BorderLayout());
+      bottomPanel.setBorder(new EtchedBorder(1));
+      btnRegisterHotKey.setText(""RegisterHotKey"");
+      btnRegisterHotKey.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            btnRegisterHotKey_actionPerformed(e);
+         }
+      });
+      btnUnregisterHotKey.setText(""UnregisterHotKey"");
+      btnUnregisterHotKey.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            btnUnregisterHotKey_actionPerformed(e);
+         }
+      });
+      topPanel.add(btnRegisterHotKey);
+      topPanel.add(btnUnregisterHotKey);
+      scrollPane.getViewport().add(textArea);
+      bottomPanel.add(scrollPane, BorderLayout.CENTER);
+      mainPanel.add(topPanel, BorderLayout.NORTH);
+      mainPanel.add(bottomPanel, BorderLayout.CENTER);
+
+      this.addWindowListener(new java.awt.event.WindowAdapter() {
+         public void windowClosing(java.awt.event.WindowEvent evt) {
+            
+            JIntellitype.getInstance().cleanUp();
+            System.exit(0);
+         }
+      });
+
+      this.getContentPane().add(mainPanel);
+      this.pack();
+      this.setSize(800, 600);
+   }
+","['   ', 'private', ' ', 'void', ' ', 'initComponents', '(', ')', ' ', '{', '\n', '      ', 'mainPanel', '.', 'setLayout', '(', 'new', ' ', 'BorderLayout', '(', ')', ')', ';', '\n', '      ', 'topPanel', '.', 'setBorder', '(', 'new', ' ', 'EtchedBorder', '(', '1', ')', ')', ';', '\n', '      ', 'bottomPanel', '.', 'setLayout', '(', 'new', ' ', 'BorderLayout', '(', ')', ')', ';', '\n', '      ', 'bottomPanel', '.', 'setBorder', '(', 'new', ' ', 'EtchedBorder', '(', '1', ')', ')', ';', '\n', '      ', 'btnRegisterHotKey', '.', 'setText', '(', '""', 'RegisterHotKey', '""', ')', ';', '\n', '      ', 'btnRegisterHotKey', '.', 'addActionListener', '(', 'new', ' ', 'ActionListener', '(', ')', ' ', '{', '\n', '         ', 'public', ' ', 'void', ' ', 'actionPerformed', '(', 'ActionEvent', ' ', 'e', ')', ' ', '{', '\n', '            ', 'btnRegisterHotKey_actionPerformed', '(', 'e', ')', ';', '\n', '         ', '}', '\n', '      ', '}', ')', ';', '\n', '      ', 'btnUnregisterHotKey', '.', 'setText', '(', '""', 'UnregisterHotKey', '""', ')', ';', '\n', '      ', 'btnUnregisterHotKey', '.', 'addActionListener', '(', 'new', ' ', 'ActionListener', '(', ')', ' ', '{', '\n', '         ', 'public', ' ', 'void', ' ', 'actionPerformed', '(', 'ActionEvent', ' ', 'e', ')', ' ', '{', '\n', '            ', 'btnUnregisterHotKey_actionPerformed', '(', 'e', ')', ';', '\n', '         ', '}', '\n', '      ', '}', ')', ';', '\n', '      ', 'topPanel', '.', 'add', '(', 'btnRegisterHotKey', ')', ';', '\n', '      ', 'topPanel', '.', 'add', '(', 'btnUnregisterHotKey', ')', ';', '\n', '      ', 'scrollPane', '.', 'getViewport', '(', ')', '.', 'add', '(', 'textArea', ')', ';', '\n', '      ', 'bottomPanel', '.', 'add', '(', 'scrollPane', ',', ' ', 'BorderLayout', '.', 'CENTER', ')', ';', '\n', '      ', 'mainPanel', '.', 'add', '(', 'topPanel', ',', ' ', 'BorderLayout', '.', 'NORTH', ')', ';', '\n', '      ', 'mainPanel', '.', 'add', '(', 'bottomPanel', ',', ' ', 'BorderLayout', '.', 'CENTER', ')', ';', '\n', '\n', '      ', 'this', '.', 'addWindowListener', '(', 'new', ' ', 'java', '.', 'awt', '.', 'event', '.', 'WindowAdapter', '(', ')', ' ', '{', '\n', '         ', 'public', ' ', 'void', ' ', 'windowClosing', '(', 'java', '.', 'awt', '.', 'event', '.', 'WindowEvent', ' ', 'evt', ')', ' ', '{', '\n', '            ', '\n', '            ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'cleanUp', '(', ')', ';', '\n', '            ', 'System', '.', 'exit', '(', '0', ')', ';', '\n', '         ', '}', '\n', '      ', '}', ')', ';', '\n', '\n', '      ', 'this', '.', 'getContentPane', '(', ')', '.', 'add', '(', 'mainPanel', ')', ';', '\n', '      ', 'this', '.', 'pack', '(', ')', ';', '\n', '      ', 'this', '.', 'setSize', '(', '800', ',', ' ', '600', ')', ';', '\n', '   ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitypeTester.java,actionPerformed,"         public void actionPerformed(ActionEvent e) {
+            btnRegisterHotKey_actionPerformed(e);
+         }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"         public void actionPerformed(ActionEvent e) {
+            btnRegisterHotKey_actionPerformed(e);
+         }
+","['         ', 'public', ' ', 'void', ' ', 'actionPerformed', '(', 'ActionEvent', ' ', 'e', ')', ' ', '{', '\n', '            ', 'btnRegisterHotKey_actionPerformed', '(', 'e', ')', ';', '\n', '         ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitypeTester.java,actionPerformed,"         public void actionPerformed(ActionEvent e) {
+            btnUnregisterHotKey_actionPerformed(e);
+         }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"         public void actionPerformed(ActionEvent e) {
+            btnUnregisterHotKey_actionPerformed(e);
+         }
+","['         ', 'public', ' ', 'void', ' ', 'actionPerformed', '(', 'ActionEvent', ' ', 'e', ')', ' ', '{', '\n', '            ', 'btnUnregisterHotKey_actionPerformed', '(', 'e', ')', ';', '\n', '         ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitypeTester.java,windowClosing,"         public void windowClosing(java.awt.event.WindowEvent evt) {
+            // don't forget to clean up any resources before close
+            JIntellitype.getInstance().cleanUp();
+            System.exit(0);
+         }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"         public void windowClosing(java.awt.event.WindowEvent evt) {
+            
+            JIntellitype.getInstance().cleanUp();
+            System.exit(0);
+         }
+","['         ', 'public', ' ', 'void', ' ', 'windowClosing', '(', 'java', '.', 'awt', '.', 'event', '.', 'WindowEvent', ' ', 'evt', ')', ' ', '{', '\n', '            ', '\n', '            ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'cleanUp', '(', ')', ';', '\n', '            ', 'System', '.', 'exit', '(', '0', ')', ';', '\n', '         ', '}', '\n']"
+master,e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,JIntellitypeTester.java,output,"   private void output(String text) {
+      textArea.append(text);
+      textArea.append(""\n"");
+   }",https://www.github.com/melloware/jintellitype/commit/e84dfb8abf7db08436046e00aed3fd8cc4be3ae3,"   private void output(String text) {
+      textArea.append(text);
+      textArea.append(""\n"");
+   }
+","['   ', 'private', ' ', 'void', ' ', 'output', '(', 'String', ' ', 'text', ')', ' ', '{', '\n', '      ', 'textArea', '.', 'append', '(', 'text', ')', ';', '\n', '      ', 'textArea', '.', 'append', '(', '""', '\\', 'n', '""', ')', ';', '\n', '   ', '}', '\n']"
+master,1a8048e6fabae099aac41cba018425dc8d444bd3,JIntellitypeTester.java,main,"   public static void main(String[] args) {
+      System.out.println(new File(""."").getAbsolutePath());
+      // first check to see if an instance of this application is already
+      // running, use the name of the window title of this JFrame for checking
+      if (JIntellitype.checkInstanceAlreadyRunning(""JIntellitype Test Application"")) {
+         System.exit(1);
+      }
+
+      // next check to make sure JIntellitype DLL can be found and we are on
+      // a Windows operating System
+      if (!JIntellitype.isJIntellitypeSupported()) {
+         System.exit(1);
+      }
+
+      mainFrame = new JIntellitypeTester();
+      mainFrame.setTitle(""JIntellitype Test Application"");
+      center(mainFrame);
+      mainFrame.setVisible(true);
+      mainFrame.initJIntellitype();
+   }",https://www.github.com/melloware/jintellitype/commit/1a8048e6fabae099aac41cba018425dc8d444bd3,"   public static void main(String[] args) {
+      System.out.println(new File(""."").getAbsolutePath());
+      
+      
+      if (JIntellitype.checkInstanceAlreadyRunning(""JIntellitype Test Application"")) {
+         System.exit(1);
+      }
+
+      
+      
+      if (!JIntellitype.isJIntellitypeSupported()) {
+         System.exit(1);
+      }
+
+      mainFrame = new JIntellitypeTester();
+      mainFrame.setTitle(""JIntellitype Test Application"");
+      center(mainFrame);
+      mainFrame.setVisible(true);
+      mainFrame.initJIntellitype();
+   }
+","['   ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '      ', 'System', '.', 'out', '.', 'println', '(', 'new', ' ', 'File', '(', '""', '.', '""', ')', '.', 'getAbsolutePath', '(', ')', ')', ';', '\n', '      ', '\n', '      ', '\n', '      ', 'if', ' ', '(', 'JIntellitype', '.', 'checkInstanceAlreadyRunning', '(', '""', 'JIntellitype Test Application', '""', ')', ')', ' ', '{', '\n', '         ', 'System', '.', 'exit', '(', '1', ')', ';', '\n', '      ', '}', '\n', '\n', '      ', '\n', '      ', '\n', '      ', 'if', ' ', '(', '!', 'JIntellitype', '.', 'isJIntellitypeSupported', '(', ')', ')', ' ', '{', '\n', '         ', 'System', '.', 'exit', '(', '1', ')', ';', '\n', '      ', '}', '\n', '\n', '      ', 'mainFrame', ' ', '=', ' ', 'new', ' ', 'JIntellitypeTester', '(', ')', ';', '\n', '      ', 'mainFrame', '.', 'setTitle', '(', '""', 'JIntellitype Test Application', '""', ')', ';', '\n', '      ', 'center', '(', 'mainFrame', ')', ';', '\n', '      ', 'mainFrame', '.', 'setVisible', '(', 'true', ')', ';', '\n', '      ', 'mainFrame', '.', 'initJIntellitype', '(', ')', ';', '\n', '   ', '}', '\n']"
+master,1a8048e6fabae099aac41cba018425dc8d444bd3,JIntellitypeTester.java,btnRegisterHotKey_actionPerformed,"   private void btnRegisterHotKey_actionPerformed(ActionEvent aEvent) {
+      // assign the WINDOWS+A key to the unique id 88 for identification
+      JIntellitype.getInstance().registerHotKey(WINDOWS_A, JIntellitype.MOD_WIN, 'A');
+      JIntellitype.getInstance().registerHotKey(ALT_SHIFT_B, JIntellitype.MOD_ALT + JIntellitype.MOD_SHIFT, 'B');
+      JIntellitype.getInstance().registerSwingHotKey(CTRL_SHIFT_C, Event.CTRL_MASK + Event.SHIFT_MASK, 'C');
+
+      // use a 0 for the modifier if you just want a single keystroke to be a
+      // hotkey
+      JIntellitype.getInstance().registerHotKey(PRINT_SCREEN, 0, 44);
+      JIntellitype.getInstance().registerHotKey(F11, ""F11"");
+      JIntellitype.getInstance().registerHotKey(F12, JIntellitype.MOD_ALT, 123);
+      JIntellitype.getInstance().registerHotKey(SEMICOLON, 0, 186);
+      // clear the text area
+      textArea.setText("""");
+      output(""RegisterHotKey WINDOWS+A was assigned uniqueID 88"");
+      output(""RegisterHotKey ALT+SHIFT+B was assigned uniqueID 89"");
+      output(""RegisterHotKey CTRL+SHIFT+C was assigned uniqueID 90"");
+      output(""RegisterHotKey PRINT_SCREEN was assigned uniqueID 91"");
+      output(""RegisterHotKey F9 was assigned uniqueID 92"");
+      output(""RegisterHotKey F12 was assigned uniqueID 93"");
+      output(""RegisterHotKey SEMICOLON was assigned uniqueID 94"");
+      output(""Press WINDOWS+A or ALT+SHIFT+B or CTRL+SHIFT+C in another application and you will see the debug output in the textarea."");
+   }",https://www.github.com/melloware/jintellitype/commit/1a8048e6fabae099aac41cba018425dc8d444bd3,"   private void btnRegisterHotKey_actionPerformed(ActionEvent aEvent) {
+      
+      JIntellitype.getInstance().registerHotKey(WINDOWS_A, JIntellitype.MOD_WIN, 'A');
+      JIntellitype.getInstance().registerHotKey(ALT_SHIFT_B, JIntellitype.MOD_ALT + JIntellitype.MOD_SHIFT, 'B');
+      JIntellitype.getInstance().registerSwingHotKey(CTRL_SHIFT_C, Event.CTRL_MASK + Event.SHIFT_MASK, 'C');
+
+      
+      
+      JIntellitype.getInstance().registerHotKey(PRINT_SCREEN, 0, 44);
+      JIntellitype.getInstance().registerHotKey(F11, ""F11"");
+      JIntellitype.getInstance().registerHotKey(F12, JIntellitype.MOD_ALT, 123);
+      JIntellitype.getInstance().registerHotKey(SEMICOLON, 0, 186);
+      
+      textArea.setText("""");
+      output(""RegisterHotKey WINDOWS+A was assigned uniqueID 88"");
+      output(""RegisterHotKey ALT+SHIFT+B was assigned uniqueID 89"");
+      output(""RegisterHotKey CTRL+SHIFT+C was assigned uniqueID 90"");
+      output(""RegisterHotKey PRINT_SCREEN was assigned uniqueID 91"");
+      output(""RegisterHotKey F9 was assigned uniqueID 92"");
+      output(""RegisterHotKey F12 was assigned uniqueID 93"");
+      output(""RegisterHotKey SEMICOLON was assigned uniqueID 94"");
+      output(""Press WINDOWS+A or ALT+SHIFT+B or CTRL+SHIFT+C in another application and you will see the debug output in the textarea."");
+   }
+","['   ', 'private', ' ', 'void', ' ', 'btnRegisterHotKey_actionPerformed', '(', 'ActionEvent', ' ', 'aEvent', ')', ' ', '{', '\n', '      ', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'WINDOWS_A', ',', ' ', 'JIntellitype', '.', 'MOD_WIN', ',', ' ', ""'A'"", ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'ALT_SHIFT_B', ',', ' ', 'JIntellitype', '.', 'MOD_ALT', ' ', '+', ' ', 'JIntellitype', '.', 'MOD_SHIFT', ',', ' ', ""'B'"", ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerSwingHotKey', '(', 'CTRL_SHIFT_C', ',', ' ', 'Event', '.', 'CTRL_MASK', ' ', '+', ' ', 'Event', '.', 'SHIFT_MASK', ',', ' ', ""'C'"", ')', ';', '\n', '\n', '      ', '\n', '      ', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'PRINT_SCREEN', ',', ' ', '0', ',', ' ', '44', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'F11', ',', ' ', '""', 'F11', '""', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'F12', ',', ' ', 'JIntellitype', '.', 'MOD_ALT', ',', ' ', '123', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'SEMICOLON', ',', ' ', '0', ',', ' ', '186', ')', ';', '\n', '      ', '\n', '      ', 'textArea', '.', 'setText', '(', '""', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'RegisterHotKey WINDOWS+A was assigned uniqueID 88', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'RegisterHotKey ALT+SHIFT+B was assigned uniqueID 89', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'RegisterHotKey CTRL+SHIFT+C was assigned uniqueID 90', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'RegisterHotKey PRINT_SCREEN was assigned uniqueID 91', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'RegisterHotKey F9 was assigned uniqueID 92', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'RegisterHotKey F12 was assigned uniqueID 93', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'RegisterHotKey SEMICOLON was assigned uniqueID 94', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'Press WINDOWS+A or ALT+SHIFT+B or CTRL+SHIFT+C in another application and you will see the debug output in the textarea.', '""', ')', ';', '\n', '   ', '}', '\n']"
+master,1a8048e6fabae099aac41cba018425dc8d444bd3,JIntellitypeTester.java,btnUnregisterHotKey_actionPerformed,"   private void btnUnregisterHotKey_actionPerformed(ActionEvent aEvent) {
+      JIntellitype.getInstance().unregisterHotKey(WINDOWS_A);
+      JIntellitype.getInstance().unregisterHotKey(ALT_SHIFT_B);
+      JIntellitype.getInstance().unregisterHotKey(CTRL_SHIFT_C);
+      JIntellitype.getInstance().unregisterHotKey(PRINT_SCREEN);
+      JIntellitype.getInstance().unregisterHotKey(F11);
+      JIntellitype.getInstance().unregisterHotKey(F12);
+      JIntellitype.getInstance().unregisterHotKey(SEMICOLON);
+      output(""UnregisterHotKey WINDOWS+A"");
+      output(""UnregisterHotKey ALT+SHIFT+B"");
+      output(""UnregisterHotKey CTRL+SHIFT+C"");
+      output(""UnregisterHotKey PRINT_SCREEN"");
+      output(""UnregisterHotKey F9"");
+      output(""UnregisterHotKey F12"");
+      output(""UnregisterHotKey SEMICOLON"");
+      output(""Press WINDOWS+A or ALT+SHIFT+B in another application and you will NOT see the debug output in the textarea."");
+   }",https://www.github.com/melloware/jintellitype/commit/1a8048e6fabae099aac41cba018425dc8d444bd3,"   private void btnUnregisterHotKey_actionPerformed(ActionEvent aEvent) {
+      JIntellitype.getInstance().unregisterHotKey(WINDOWS_A);
+      JIntellitype.getInstance().unregisterHotKey(ALT_SHIFT_B);
+      JIntellitype.getInstance().unregisterHotKey(CTRL_SHIFT_C);
+      JIntellitype.getInstance().unregisterHotKey(PRINT_SCREEN);
+      JIntellitype.getInstance().unregisterHotKey(F11);
+      JIntellitype.getInstance().unregisterHotKey(F12);
+      JIntellitype.getInstance().unregisterHotKey(SEMICOLON);
+      output(""UnregisterHotKey WINDOWS+A"");
+      output(""UnregisterHotKey ALT+SHIFT+B"");
+      output(""UnregisterHotKey CTRL+SHIFT+C"");
+      output(""UnregisterHotKey PRINT_SCREEN"");
+      output(""UnregisterHotKey F9"");
+      output(""UnregisterHotKey F12"");
+      output(""UnregisterHotKey SEMICOLON"");
+      output(""Press WINDOWS+A or ALT+SHIFT+B in another application and you will NOT see the debug output in the textarea."");
+   }
+","['   ', 'private', ' ', 'void', ' ', 'btnUnregisterHotKey_actionPerformed', '(', 'ActionEvent', ' ', 'aEvent', ')', ' ', '{', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'WINDOWS_A', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'ALT_SHIFT_B', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'CTRL_SHIFT_C', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'PRINT_SCREEN', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'F11', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'F12', ')', ';', '\n', '      ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'SEMICOLON', ')', ';', '\n', '      ', 'output', '(', '""', 'UnregisterHotKey WINDOWS+A', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'UnregisterHotKey ALT+SHIFT+B', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'UnregisterHotKey CTRL+SHIFT+C', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'UnregisterHotKey PRINT_SCREEN', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'UnregisterHotKey F9', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'UnregisterHotKey F12', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'UnregisterHotKey SEMICOLON', '""', ')', ';', '\n', '      ', 'output', '(', '""', 'Press WINDOWS+A or ALT+SHIFT+B in another application and you will NOT see the debug output in the textarea.', '""', ')', ';', '\n', '   ', '}', '\n']"
+master,1a8048e6fabae099aac41cba018425dc8d444bd3,JIntellitypeTester.java,initComponents,"   private void initComponents() {
+      mainPanel.setLayout(new BorderLayout());
+      topPanel.setBorder(new EtchedBorder(1));
+      bottomPanel.setLayout(new BorderLayout());
+      bottomPanel.setBorder(new EtchedBorder(1));
+      btnRegisterHotKey.setText(""RegisterHotKey"");
+      btnRegisterHotKey.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            btnRegisterHotKey_actionPerformed(e);
+         }
+      });
+      btnUnregisterHotKey.setText(""UnregisterHotKey"");
+      btnUnregisterHotKey.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            btnUnregisterHotKey_actionPerformed(e);
+         }
+      });
+      topPanel.add(btnRegisterHotKey);
+      topPanel.add(btnUnregisterHotKey);
+      scrollPane.getViewport().add(textArea);
+      bottomPanel.add(scrollPane, BorderLayout.CENTER);
+      mainPanel.add(topPanel, BorderLayout.NORTH);
+      mainPanel.add(bottomPanel, BorderLayout.CENTER);
+
+      this.addWindowListener(new java.awt.event.WindowAdapter() {
+         @Override
+         public void windowClosing(java.awt.event.WindowEvent evt) {
+            // don't forget to clean up any resources before close
+            JIntellitype.getInstance().cleanUp();
+            System.exit(0);
+         }
+      });
+
+      this.getContentPane().add(mainPanel);
+      this.pack();
+      this.setSize(800, 600);
+   }",https://www.github.com/melloware/jintellitype/commit/1a8048e6fabae099aac41cba018425dc8d444bd3,"   private void initComponents() {
+      mainPanel.setLayout(new BorderLayout());
+      topPanel.setBorder(new EtchedBorder(1));
+      bottomPanel.setLayout(new BorderLayout());
+      bottomPanel.setBorder(new EtchedBorder(1));
+      btnRegisterHotKey.setText(""RegisterHotKey"");
+      btnRegisterHotKey.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            btnRegisterHotKey_actionPerformed(e);
+         }
+      });
+      btnUnregisterHotKey.setText(""UnregisterHotKey"");
+      btnUnregisterHotKey.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            btnUnregisterHotKey_actionPerformed(e);
+         }
+      });
+      topPanel.add(btnRegisterHotKey);
+      topPanel.add(btnUnregisterHotKey);
+      scrollPane.getViewport().add(textArea);
+      bottomPanel.add(scrollPane, BorderLayout.CENTER);
+      mainPanel.add(topPanel, BorderLayout.NORTH);
+      mainPanel.add(bottomPanel, BorderLayout.CENTER);
+
+      this.addWindowListener(new java.awt.event.WindowAdapter() {
+         @Override
+         public void windowClosing(java.awt.event.WindowEvent evt) {
+            
+            JIntellitype.getInstance().cleanUp();
+            System.exit(0);
+         }
+      });
+
+      this.getContentPane().add(mainPanel);
+      this.pack();
+      this.setSize(800, 600);
+   }
+","['   ', 'private', ' ', 'void', ' ', 'initComponents', '(', ')', ' ', '{', '\n', '      ', 'mainPanel', '.', 'setLayout', '(', 'new', ' ', 'BorderLayout', '(', ')', ')', ';', '\n', '      ', 'topPanel', '.', 'setBorder', '(', 'new', ' ', 'EtchedBorder', '(', '1', ')', ')', ';', '\n', '      ', 'bottomPanel', '.', 'setLayout', '(', 'new', ' ', 'BorderLayout', '(', ')', ')', ';', '\n', '      ', 'bottomPanel', '.', 'setBorder', '(', 'new', ' ', 'EtchedBorder', '(', '1', ')', ')', ';', '\n', '      ', 'btnRegisterHotKey', '.', 'setText', '(', '""', 'RegisterHotKey', '""', ')', ';', '\n', '      ', 'btnRegisterHotKey', '.', 'addActionListener', '(', 'new', ' ', 'ActionListener', '(', ')', ' ', '{', '\n', '         ', 'public', ' ', 'void', ' ', 'actionPerformed', '(', 'ActionEvent', ' ', 'e', ')', ' ', '{', '\n', '            ', 'btnRegisterHotKey_actionPerformed', '(', 'e', ')', ';', '\n', '         ', '}', '\n', '      ', '}', ')', ';', '\n', '      ', 'btnUnregisterHotKey', '.', 'setText', '(', '""', 'UnregisterHotKey', '""', ')', ';', '\n', '      ', 'btnUnregisterHotKey', '.', 'addActionListener', '(', 'new', ' ', 'ActionListener', '(', ')', ' ', '{', '\n', '         ', 'public', ' ', 'void', ' ', 'actionPerformed', '(', 'ActionEvent', ' ', 'e', ')', ' ', '{', '\n', '            ', 'btnUnregisterHotKey_actionPerformed', '(', 'e', ')', ';', '\n', '         ', '}', '\n', '      ', '}', ')', ';', '\n', '      ', 'topPanel', '.', 'add', '(', 'btnRegisterHotKey', ')', ';', '\n', '      ', 'topPanel', '.', 'add', '(', 'btnUnregisterHotKey', ')', ';', '\n', '      ', 'scrollPane', '.', 'getViewport', '(', ')', '.', 'add', '(', 'textArea', ')', ';', '\n', '      ', 'bottomPanel', '.', 'add', '(', 'scrollPane', ',', ' ', 'BorderLayout', '.', 'CENTER', ')', ';', '\n', '      ', 'mainPanel', '.', 'add', '(', 'topPanel', ',', ' ', 'BorderLayout', '.', 'NORTH', ')', ';', '\n', '      ', 'mainPanel', '.', 'add', '(', 'bottomPanel', ',', ' ', 'BorderLayout', '.', 'CENTER', ')', ';', '\n', '\n', '      ', 'this', '.', 'addWindowListener', '(', 'new', ' ', 'java', '.', 'awt', '.', 'event', '.', 'WindowAdapter', '(', ')', ' ', '{', '\n', '         ', '@Override', '\n', '         ', 'public', ' ', 'void', ' ', 'windowClosing', '(', 'java', '.', 'awt', '.', 'event', '.', 'WindowEvent', ' ', 'evt', ')', ' ', '{', '\n', '            ', '\n', '            ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'cleanUp', '(', ')', ';', '\n', '            ', 'System', '.', 'exit', '(', '0', ')', ';', '\n', '         ', '}', '\n', '      ', '}', ')', ';', '\n', '\n', '      ', 'this', '.', 'getContentPane', '(', ')', '.', 'add', '(', 'mainPanel', ')', ';', '\n', '      ', 'this', '.', 'pack', '(', ')', ';', '\n', '      ', 'this', '.', 'setSize', '(', '800', ',', ' ', '600', ')', ';', '\n', '   ', '}', '\n']"
+master,5cfae50f3a285241101566ff5662fa3dc4d9c41f,JIntellitype.java,isJIntellitypeSupported,"   public static boolean isJIntellitypeSupported() {
+      boolean result = false;
+      String os = ""none"";
+
+      try {
+         os = System.getProperty(""os.name"").toLowerCase();
+      } catch (SecurityException ex) {
+         // we are not allowed to look at this property
+         System.err.println(""Caught a SecurityException reading the system property "" + ""'os.name'; the SystemUtils property value will default to null."");
+      }
+
+      // only works on Windows OS currently
+      if (os.startsWith(""windows"")) {
+         // try an get the instance and if it succeeds then return true
+         try {
+            getInstance();
+            result = true;
+         } catch (Exception e) {
+            result = false;
+         }
+      }
+
+      return result;
+   }",https://www.github.com/melloware/jintellitype/commit/5cfae50f3a285241101566ff5662fa3dc4d9c41f,"   public static boolean isJIntellitypeSupported() {
+      boolean result = false;
+      String os = ""none"";
+
+      try {
+         os = System.getProperty(""os.name"").toLowerCase();
+      } catch (SecurityException ex) {
+         
+         System.err.println(""Caught a SecurityException reading the system property "" + ""'os.name'; the SystemUtils property value will default to null."");
+      }
+
+      
+      if (os.startsWith(""windows"")) {
+         
+         try {
+            getInstance();
+            result = true;
+         } catch (Exception e) {
+            result = false;
+         }
+      }
+
+      return result;
+   }
+","['   ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isJIntellitypeSupported', '(', ')', ' ', '{', '\n', '      ', 'boolean', ' ', 'result', ' ', '=', ' ', 'false', ';', '\n', '      ', 'String', ' ', 'os', ' ', '=', ' ', '""', 'none', '""', ';', '\n', '\n', '      ', 'try', ' ', '{', '\n', '         ', 'os', ' ', '=', ' ', 'System', '.', 'getProperty', '(', '""', 'os.name', '""', ')', '.', 'toLowerCase', '(', ')', ';', '\n', '      ', '}', ' ', 'catch', ' ', '(', 'SecurityException', ' ', 'ex', ')', ' ', '{', '\n', '         ', '\n', '         ', 'System', '.', 'err', '.', 'println', '(', '""', 'Caught a SecurityException reading the system property ', '""', ' ', '+', ' ', '""', ""'os.name'; the SystemUtils property value will default to null."", '""', ')', ';', '\n', '      ', '}', '\n', '\n', '      ', '\n', '      ', 'if', ' ', '(', 'os', '.', 'startsWith', '(', '""', 'windows', '""', ')', ')', ' ', '{', '\n', '         ', '\n', '         ', 'try', ' ', '{', '\n', '            ', 'getInstance', '(', ')', ';', '\n', '            ', 'result', ' ', '=', ' ', 'true', ';', '\n', '         ', '}', ' ', 'catch', ' ', '(', 'Exception', ' ', 'e', ')', ' ', '{', '\n', '            ', 'result', ' ', '=', ' ', 'false', ';', '\n', '         ', '}', '\n', '      ', '}', '\n', '\n', '      ', 'return', ' ', 'result', ';', '\n', '   ', '}', '\n']"
+master,5cfae50f3a285241101566ff5662fa3dc4d9c41f,JIntellitype.java,swingToIntelliType,"   protected static int swingToIntelliType(int swingKeystrokeModifier) {
+      int mask = 0;
+      if ((swingKeystrokeModifier & InputEvent.SHIFT_MASK) == InputEvent.SHIFT_MASK) {
+         mask &= JIntellitype.MOD_SHIFT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.ALT_MASK) == InputEvent.ALT_MASK) {
+         mask &= JIntellitype.MOD_ALT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.CTRL_MASK) == InputEvent.CTRL_MASK) {
+         mask &= JIntellitype.MOD_CONTROL;
+      }
+      if ((swingKeystrokeModifier & InputEvent.SHIFT_DOWN_MASK) == InputEvent.SHIFT_DOWN_MASK) {
+         mask &= JIntellitype.MOD_SHIFT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.ALT_DOWN_MASK) == InputEvent.ALT_DOWN_MASK) {
+         mask &= JIntellitype.MOD_ALT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.CTRL_DOWN_MASK) == InputEvent.CTRL_DOWN_MASK) {
+         mask &= JIntellitype.MOD_CONTROL;
+      }
+      return mask;
+   }",https://www.github.com/melloware/jintellitype/commit/5cfae50f3a285241101566ff5662fa3dc4d9c41f,"   protected static int swingToIntelliType(int swingKeystrokeModifier) {
+      int mask = 0;
+      if ((swingKeystrokeModifier & InputEvent.SHIFT_MASK) == InputEvent.SHIFT_MASK) {
+         mask &= JIntellitype.MOD_SHIFT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.ALT_MASK) == InputEvent.ALT_MASK) {
+         mask &= JIntellitype.MOD_ALT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.CTRL_MASK) == InputEvent.CTRL_MASK) {
+         mask &= JIntellitype.MOD_CONTROL;
+      }
+      if ((swingKeystrokeModifier & InputEvent.SHIFT_DOWN_MASK) == InputEvent.SHIFT_DOWN_MASK) {
+         mask &= JIntellitype.MOD_SHIFT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.ALT_DOWN_MASK) == InputEvent.ALT_DOWN_MASK) {
+         mask &= JIntellitype.MOD_ALT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.CTRL_DOWN_MASK) == InputEvent.CTRL_DOWN_MASK) {
+         mask &= JIntellitype.MOD_CONTROL;
+      }
+      return mask;
+   }
+","['   ', 'protected', ' ', 'static', ' ', 'int', ' ', 'swingToIntelliType', '(', 'int', ' ', 'swingKeystrokeModifier', ')', ' ', '{', '\n', '      ', 'int', ' ', 'mask', ' ', '=', ' ', '0', ';', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'SHIFT_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'SHIFT_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '&', '=', ' ', 'JIntellitype', '.', 'MOD_SHIFT', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'ALT_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'ALT_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '&', '=', ' ', 'JIntellitype', '.', 'MOD_ALT', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'CTRL_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'CTRL_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '&', '=', ' ', 'JIntellitype', '.', 'MOD_CONTROL', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'SHIFT_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'SHIFT_DOWN_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '&', '=', ' ', 'JIntellitype', '.', 'MOD_SHIFT', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'ALT_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'ALT_DOWN_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '&', '=', ' ', 'JIntellitype', '.', 'MOD_ALT', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'CTRL_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'CTRL_DOWN_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '&', '=', ' ', 'JIntellitype', '.', 'MOD_CONTROL', ';', '\n', '      ', '}', '\n', '      ', 'return', ' ', 'mask', ';', '\n', '   ', '}', '\n']"
+master,5cfae50f3a285241101566ff5662fa3dc4d9c41f,JIntellitype.java,initializeLibrary,"   private synchronized native void initializeLibrary() throws UnsatisfiedLinkError;
+
+   private synchronized native void regHotKey(int identifier, int modifier, int keycode) throws UnsatisfiedLinkError;
+
+   private synchronized native void terminate() throws UnsatisfiedLinkError;
+
+   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   /**
+    * Checks if there's an instance with hidden window title = appName running Can be used to detect that another
+    * instance of your app is already running (so exit..)
+    * <p>
+    * @param appName = the title of the hidden window to search for
+    */
+   private synchronized native boolean isRunning(String appName);
+}",https://www.github.com/melloware/jintellitype/commit/5cfae50f3a285241101566ff5662fa3dc4d9c41f,"   private synchronized native void initializeLibrary() throws UnsatisfiedLinkError;
+
+   private synchronized native void regHotKey(int identifier, int modifier, int keycode) throws UnsatisfiedLinkError;
+
+   private synchronized native void terminate() throws UnsatisfiedLinkError;
+
+   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   
+   private synchronized native boolean isRunning(String appName);
+}
+","['   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'initializeLibrary', '(', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'regHotKey', '(', 'int', ' ', 'identifier', ',', ' ', 'int', ' ', 'modifier', ',', ' ', 'int', ' ', 'keycode', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'terminate', '(', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'unregHotKey', '(', 'int', ' ', 'identifier', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'boolean', ' ', 'isRunning', '(', 'String', ' ', 'appName', ')', ';', '\n', '}', '\n']"
+master,5cfae50f3a285241101566ff5662fa3dc4d9c41f,JIntellitype.java,regHotKey,"   private synchronized native void regHotKey(int identifier, int modifier, int keycode) throws UnsatisfiedLinkError;
+
+   private synchronized native void terminate() throws UnsatisfiedLinkError;
+
+   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   /**
+    * Checks if there's an instance with hidden window title = appName running Can be used to detect that another
+    * instance of your app is already running (so exit..)
+    * <p>
+    * @param appName = the title of the hidden window to search for
+    */
+   private synchronized native boolean isRunning(String appName);
+}",https://www.github.com/melloware/jintellitype/commit/5cfae50f3a285241101566ff5662fa3dc4d9c41f,"   private synchronized native void regHotKey(int identifier, int modifier, int keycode) throws UnsatisfiedLinkError;
+
+   private synchronized native void terminate() throws UnsatisfiedLinkError;
+
+   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   
+   private synchronized native boolean isRunning(String appName);
+}
+","['   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'regHotKey', '(', 'int', ' ', 'identifier', ',', ' ', 'int', ' ', 'modifier', ',', ' ', 'int', ' ', 'keycode', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'terminate', '(', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'unregHotKey', '(', 'int', ' ', 'identifier', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'boolean', ' ', 'isRunning', '(', 'String', ' ', 'appName', ')', ';', '\n', '}', '\n']"
+master,5cfae50f3a285241101566ff5662fa3dc4d9c41f,JIntellitype.java,terminate,"   private synchronized native void terminate() throws UnsatisfiedLinkError;
+
+   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   /**
+    * Checks if there's an instance with hidden window title = appName running Can be used to detect that another
+    * instance of your app is already running (so exit..)
+    * <p>
+    * @param appName = the title of the hidden window to search for
+    */
+   private synchronized native boolean isRunning(String appName);
+}",https://www.github.com/melloware/jintellitype/commit/5cfae50f3a285241101566ff5662fa3dc4d9c41f,"   private synchronized native void terminate() throws UnsatisfiedLinkError;
+
+   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   
+   private synchronized native boolean isRunning(String appName);
+}
+","['   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'terminate', '(', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'unregHotKey', '(', 'int', ' ', 'identifier', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'boolean', ' ', 'isRunning', '(', 'String', ' ', 'appName', ')', ';', '\n', '}', '\n']"
+master,5cfae50f3a285241101566ff5662fa3dc4d9c41f,JIntellitype.java,unregHotKey,"   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   /**
+    * Checks if there's an instance with hidden window title = appName running Can be used to detect that another
+    * instance of your app is already running (so exit..)
+    * <p>
+    * @param appName = the title of the hidden window to search for
+    */
+   private synchronized native boolean isRunning(String appName);
+}",https://www.github.com/melloware/jintellitype/commit/5cfae50f3a285241101566ff5662fa3dc4d9c41f,"   private synchronized native void unregHotKey(int identifier) throws UnsatisfiedLinkError;
+
+   
+   private synchronized native boolean isRunning(String appName);
+}
+","['   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'void', ' ', 'unregHotKey', '(', 'int', ' ', 'identifier', ')', ' ', 'throws', ' ', 'UnsatisfiedLinkError', ';', '\n', '\n', '   ', '\n', '   ', 'private', ' ', 'synchronized', ' ', 'native', ' ', 'boolean', ' ', 'isRunning', '(', 'String', ' ', 'appName', ')', ';', '\n', '}', '\n']"
+master,8a18cc0951af6a945fb89083eb46b1264c97f68a,JIntellitype.java,swingToIntelliType,"   protected static int swingToIntelliType(int swingKeystrokeModifier) {
+      int mask = 0;
+      if ((swingKeystrokeModifier & InputEvent.SHIFT_MASK) == InputEvent.SHIFT_MASK
+               || (swingKeystrokeModifier & InputEvent.SHIFT_DOWN_MASK) == InputEvent.SHIFT_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_SHIFT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.ALT_MASK) == InputEvent.ALT_MASK
+               || (swingKeystrokeModifier & InputEvent.ALT_DOWN_MASK) == InputEvent.ALT_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_ALT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.CTRL_MASK) == InputEvent.CTRL_MASK
+               || (swingKeystrokeModifier & InputEvent.CTRL_DOWN_MASK) == InputEvent.CTRL_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_CONTROL;
+      }
+      if ((swingKeystrokeModifier & InputEvent.META_MASK) == InputEvent.META_MASK
+               || (swingKeystrokeModifier & InputEvent.META_DOWN_MASK) == InputEvent.META_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_WIN;
+      }
+
+      return mask;
+   }",https://www.github.com/melloware/jintellitype/commit/8a18cc0951af6a945fb89083eb46b1264c97f68a,"   protected static int swingToIntelliType(int swingKeystrokeModifier) {
+      int mask = 0;
+      if ((swingKeystrokeModifier & InputEvent.SHIFT_MASK) == InputEvent.SHIFT_MASK
+               || (swingKeystrokeModifier & InputEvent.SHIFT_DOWN_MASK) == InputEvent.SHIFT_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_SHIFT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.ALT_MASK) == InputEvent.ALT_MASK
+               || (swingKeystrokeModifier & InputEvent.ALT_DOWN_MASK) == InputEvent.ALT_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_ALT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.CTRL_MASK) == InputEvent.CTRL_MASK
+               || (swingKeystrokeModifier & InputEvent.CTRL_DOWN_MASK) == InputEvent.CTRL_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_CONTROL;
+      }
+      if ((swingKeystrokeModifier & InputEvent.META_MASK) == InputEvent.META_MASK
+               || (swingKeystrokeModifier & InputEvent.META_DOWN_MASK) == InputEvent.META_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_WIN;
+      }
+
+      return mask;
+   }
+","['   ', 'protected', ' ', 'static', ' ', 'int', ' ', 'swingToIntelliType', '(', 'int', ' ', 'swingKeystrokeModifier', ')', ' ', '{', '\n', '      ', 'int', ' ', 'mask', ' ', '=', ' ', '0', ';', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'SHIFT_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'SHIFT_MASK', '\n', '               ', '|', '|', ' ', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'SHIFT_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'SHIFT_DOWN_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '|', '=', ' ', 'JIntellitypeConstants', '.', 'MOD_SHIFT', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'ALT_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'ALT_MASK', '\n', '               ', '|', '|', ' ', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'ALT_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'ALT_DOWN_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '|', '=', ' ', 'JIntellitypeConstants', '.', 'MOD_ALT', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'CTRL_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'CTRL_MASK', '\n', '               ', '|', '|', ' ', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'CTRL_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'CTRL_DOWN_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '|', '=', ' ', 'JIntellitypeConstants', '.', 'MOD_CONTROL', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'META_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'META_MASK', '\n', '               ', '|', '|', ' ', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'META_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'META_DOWN_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '|', '=', ' ', 'JIntellitypeConstants', '.', 'MOD_WIN', ';', '\n', '      ', '}', '\n', '\n', '      ', 'return', ' ', 'mask', ';', '\n', '   ', '}', '\n']"
+master,a61d98b1e4b85f79d667d04f7461a6581be32f7a,JIntellitype.java,fromJarToFs,"   private void fromJarToFs(String jarPath, String filePath) throws IOException {
+      InputStream is = null;
+      OutputStream os = null;
+      try {
+         File file = new File(filePath);",https://www.github.com/melloware/jintellitype/commit/a61d98b1e4b85f79d667d04f7461a6581be32f7a,"   private void fromJarToFs(String jarPath, String filePath) throws IOException {
+      InputStream is = null;
+      OutputStream os = null;
+      try {
+         File file = new File(filePath);
+","['   ', 'private', ' ', 'void', ' ', 'fromJarToFs', '(', 'String', ' ', 'jarPath', ',', ' ', 'String', ' ', 'filePath', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '      ', 'InputStream', ' ', 'is', ' ', '=', ' ', 'null', ';', '\n', '      ', 'OutputStream', ' ', 'os', ' ', '=', ' ', 'null', ';', '\n', '      ', 'try', ' ', '{', '\n', '         ', 'File', ' ', 'file', ' ', '=', ' ', 'new', ' ', 'File', '(', 'filePath', ')', ';', '\n']"
+master,691a9c34561654713547483265ea078049057448,JIntellitype.java,fromJarToFs,"   private void fromJarToFs(String jarPath, String filePath) throws IOException {
+      InputStream is = libraryInputStream;
+      OutputStream os = null;
+      try {
+         File file = new File(filePath);",https://www.github.com/melloware/jintellitype/commit/691a9c34561654713547483265ea078049057448,"   private void fromJarToFs(String jarPath, String filePath) throws IOException {
+      InputStream is = libraryInputStream;
+      OutputStream os = null;
+      try {
+         File file = new File(filePath);
+","['   ', 'private', ' ', 'void', ' ', 'fromJarToFs', '(', 'String', ' ', 'jarPath', ',', ' ', 'String', ' ', 'filePath', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '      ', 'InputStream', ' ', 'is', ' ', '=', ' ', 'libraryInputStream', ';', '\n', '      ', 'OutputStream', ' ', 'os', ' ', '=', ' ', 'null', ';', '\n', '      ', 'try', ' ', '{', '\n', '         ', 'File', ' ', 'file', ' ', '=', ' ', 'new', ' ', 'File', '(', 'filePath', ')', ';', '\n']"
+master,37c68086d4180f5d08226b88b4d85a89ed9b351c,JIntellitypeTester.java,main,"	public static void main(String[] args) {
+		System.out.println(new File(""."").getAbsolutePath());
+		// first check to see if an instance of this application is already
+		// running, use the name of the window title of this JFrame for checking
+		if (JIntellitype.checkInstanceAlreadyRunning(""JIntellitype Test Application"")) {
+			System.exit(1);
+		}
+
+		// next check to make sure JIntellitype DLL can be found and we are on
+		// a Windows operating System
+		if (!JIntellitype.isJIntellitypeSupported()) {
+			System.exit(1);
+		}
+
+		mainFrame = new JIntellitypeTester();
+		mainFrame.setTitle(""JIntellitype Test Application"");
+		center(mainFrame);
+		mainFrame.setVisible(true);
+		mainFrame.initJIntellitype();
+	}",https://www.github.com/melloware/jintellitype/commit/37c68086d4180f5d08226b88b4d85a89ed9b351c,"	public static void main(String[] args) {
+		System.out.println(new File(""."").getAbsolutePath());
+		
+		
+		if (JIntellitype.checkInstanceAlreadyRunning(""JIntellitype Test Application"")) {
+			System.exit(1);
+		}
+
+		
+		
+		if (!JIntellitype.isJIntellitypeSupported()) {
+			System.exit(1);
+		}
+
+		mainFrame = new JIntellitypeTester();
+		mainFrame.setTitle(""JIntellitype Test Application"");
+		center(mainFrame);
+		mainFrame.setVisible(true);
+		mainFrame.initJIntellitype();
+	}
+","['\t', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '\t\t', 'System', '.', 'out', '.', 'println', '(', 'new', ' ', 'File', '(', '""', '.', '""', ')', '.', 'getAbsolutePath', '(', ')', ')', ';', '\n', '\t\t', '\n', '\t\t', '\n', '\t\t', 'if', ' ', '(', 'JIntellitype', '.', 'checkInstanceAlreadyRunning', '(', '""', 'JIntellitype Test Application', '""', ')', ')', ' ', '{', '\n', '\t\t\t', 'System', '.', 'exit', '(', '1', ')', ';', '\n', '\t\t', '}', '\n', '\n', '\t\t', '\n', '\t\t', '\n', '\t\t', 'if', ' ', '(', '!', 'JIntellitype', '.', 'isJIntellitypeSupported', '(', ')', ')', ' ', '{', '\n', '\t\t\t', 'System', '.', 'exit', '(', '1', ')', ';', '\n', '\t\t', '}', '\n', '\n', '\t\t', 'mainFrame', ' ', '=', ' ', 'new', ' ', 'JIntellitypeTester', '(', ')', ';', '\n', '\t\t', 'mainFrame', '.', 'setTitle', '(', '""', 'JIntellitype Test Application', '""', ')', ';', '\n', '\t\t', 'center', '(', 'mainFrame', ')', ';', '\n', '\t\t', 'mainFrame', '.', 'setVisible', '(', 'true', ')', ';', '\n', '\t\t', 'mainFrame', '.', 'initJIntellitype', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,37c68086d4180f5d08226b88b4d85a89ed9b351c,JIntellitypeTester.java,onHotKey,"	public void onHotKey(int aIdentifier) {
+		output(""WM_HOTKEY message received "" + Integer.toString(aIdentifier));
+	}",https://www.github.com/melloware/jintellitype/commit/37c68086d4180f5d08226b88b4d85a89ed9b351c,"	public void onHotKey(int aIdentifier) {
+		output(""WM_HOTKEY message received "" + Integer.toString(aIdentifier));
+	}
+","['\t', 'public', ' ', 'void', ' ', 'onHotKey', '(', 'int', ' ', 'aIdentifier', ')', ' ', '{', '\n', '\t\t', 'output', '(', '""', 'WM_HOTKEY message received ', '""', ' ', '+', ' ', 'Integer', '.', 'toString', '(', 'aIdentifier', ')', ')', ';', '\n', '\t', '}', '\n']"
+master,37c68086d4180f5d08226b88b4d85a89ed9b351c,JIntellitypeTester.java,onIntellitype,"	public void onIntellitype(int aCommand) {
+
+		switch (aCommand) {
+		case JIntellitype.APPCOMMAND_BROWSER_BACKWARD:",https://www.github.com/melloware/jintellitype/commit/37c68086d4180f5d08226b88b4d85a89ed9b351c,"	public void onIntellitype(int aCommand) {
+
+		switch (aCommand) {
+		case JIntellitype.APPCOMMAND_BROWSER_BACKWARD:
+","['\t', 'public', ' ', 'void', ' ', 'onIntellitype', '(', 'int', ' ', 'aCommand', ')', ' ', '{', '\n', '\n', '\t\t', 'switch', ' ', '(', 'aCommand', ')', ' ', '{', '\n', '\t\t', 'case', ' ', 'JIntellitype', '.', 'APPCOMMAND_BROWSER_BACKWARD', ':', '\n']"
+master,37c68086d4180f5d08226b88b4d85a89ed9b351c,JIntellitypeTester.java,center,"	private static void center(JFrame aFrame) {
+		final GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		final Point centerPoint = ge.getCenterPoint();
+		final Rectangle bounds = ge.getMaximumWindowBounds();
+		final int w = Math.min(aFrame.getWidth(), bounds.width);
+		final int h = Math.min(aFrame.getHeight(), bounds.height);
+		final int x = centerPoint.x - (w / 2);
+		final int y = centerPoint.y - (h / 2);
+		aFrame.setBounds(x, y, w, h);
+		if ((w == bounds.width) && (h == bounds.height)) {
+			aFrame.setExtendedState(Frame.MAXIMIZED_BOTH);
+		}
+		aFrame.validate();
+	}",https://www.github.com/melloware/jintellitype/commit/37c68086d4180f5d08226b88b4d85a89ed9b351c,"	private static void center(JFrame aFrame) {
+		final GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		final Point centerPoint = ge.getCenterPoint();
+		final Rectangle bounds = ge.getMaximumWindowBounds();
+		final int w = Math.min(aFrame.getWidth(), bounds.width);
+		final int h = Math.min(aFrame.getHeight(), bounds.height);
+		final int x = centerPoint.x - (w / 2);
+		final int y = centerPoint.y - (h / 2);
+		aFrame.setBounds(x, y, w, h);
+		if ((w == bounds.width) && (h == bounds.height)) {
+			aFrame.setExtendedState(Frame.MAXIMIZED_BOTH);
+		}
+		aFrame.validate();
+	}
+","['\t', 'private', ' ', 'static', ' ', 'void', ' ', 'center', '(', 'JFrame', ' ', 'aFrame', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'GraphicsEnvironment', ' ', 'ge', ' ', '=', ' ', 'GraphicsEnvironment', '.', 'getLocalGraphicsEnvironment', '(', ')', ';', '\n', '\t\t', 'final', ' ', 'Point', ' ', 'centerPoint', ' ', '=', ' ', 'ge', '.', 'getCenterPoint', '(', ')', ';', '\n', '\t\t', 'final', ' ', 'Rectangle', ' ', 'bounds', ' ', '=', ' ', 'ge', '.', 'getMaximumWindowBounds', '(', ')', ';', '\n', '\t\t', 'final', ' ', 'int', ' ', 'w', ' ', '=', ' ', 'Math', '.', 'min', '(', 'aFrame', '.', 'getWidth', '(', ')', ',', ' ', 'bounds', '.', 'width', ')', ';', '\n', '\t\t', 'final', ' ', 'int', ' ', 'h', ' ', '=', ' ', 'Math', '.', 'min', '(', 'aFrame', '.', 'getHeight', '(', ')', ',', ' ', 'bounds', '.', 'height', ')', ';', '\n', '\t\t', 'final', ' ', 'int', ' ', 'x', ' ', '=', ' ', 'centerPoint', '.', 'x', ' ', '-', ' ', '(', 'w', ' ', '/', ' ', '2', ')', ';', '\n', '\t\t', 'final', ' ', 'int', ' ', 'y', ' ', '=', ' ', 'centerPoint', '.', 'y', ' ', '-', ' ', '(', 'h', ' ', '/', ' ', '2', ')', ';', '\n', '\t\t', 'aFrame', '.', 'setBounds', '(', 'x', ',', ' ', 'y', ',', ' ', 'w', ',', ' ', 'h', ')', ';', '\n', '\t\t', 'if', ' ', '(', '(', 'w', ' ', '=', '=', ' ', 'bounds', '.', 'width', ')', ' ', '&', '&', ' ', '(', 'h', ' ', '=', '=', ' ', 'bounds', '.', 'height', ')', ')', ' ', '{', '\n', '\t\t\t', 'aFrame', '.', 'setExtendedState', '(', 'Frame', '.', 'MAXIMIZED_BOTH', ')', ';', '\n', '\t\t', '}', '\n', '\t\t', 'aFrame', '.', 'validate', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,37c68086d4180f5d08226b88b4d85a89ed9b351c,JIntellitypeTester.java,btnRegisterHotKey_actionPerformed,"	private void btnRegisterHotKey_actionPerformed(ActionEvent aEvent) {
+		// assign the WINDOWS+A key to the unique id 88 for identification
+		JIntellitype.getInstance().registerHotKey(WINDOWS_A, JIntellitype.MOD_WIN, 'A');
+		JIntellitype.getInstance().registerHotKey(ALT_SHIFT_B, JIntellitype.MOD_ALT + JIntellitype.MOD_SHIFT, 'B');
+		JIntellitype.getInstance().registerSwingHotKey(CTRL_SHIFT_C, Event.CTRL_MASK + Event.SHIFT_MASK, 'C');
+
+		// use a 0 for the modifier if you just want a single keystroke to be a
+		// hotkey
+		JIntellitype.getInstance().registerHotKey(PRINT_SCREEN, 0, 44);
+		JIntellitype.getInstance().registerHotKey(F11, ""F11"");
+		JIntellitype.getInstance().registerHotKey(F12, JIntellitype.MOD_ALT, 123);
+		JIntellitype.getInstance().registerHotKey(SEMICOLON, 0, 186);
+		JIntellitype.getInstance().registerHotKey(TICK, 0, 192);
+		// clear the text area
+		textArea.setText("""");
+		output(""RegisterHotKey WINDOWS+A was assigned uniqueID 88"");
+		output(""RegisterHotKey ALT+SHIFT+B was assigned uniqueID 89"");
+		output(""RegisterHotKey CTRL+SHIFT+C was assigned uniqueID 90"");
+		output(""RegisterHotKey PRINT_SCREEN was assigned uniqueID 91"");
+		output(""RegisterHotKey F9 was assigned uniqueID 92"");
+		output(""RegisterHotKey F12 was assigned uniqueID 93"");
+		output(""RegisterHotKey SEMICOLON was assigned uniqueID 94"");
+		output(""Press WINDOWS+A or ALT+SHIFT+B or CTRL+SHIFT+C in another application and you will see the debug output in the textarea."");
+	}",https://www.github.com/melloware/jintellitype/commit/37c68086d4180f5d08226b88b4d85a89ed9b351c,"	private void btnRegisterHotKey_actionPerformed(ActionEvent aEvent) {
+		
+		JIntellitype.getInstance().registerHotKey(WINDOWS_A, JIntellitype.MOD_WIN, 'A');
+		JIntellitype.getInstance().registerHotKey(ALT_SHIFT_B, JIntellitype.MOD_ALT + JIntellitype.MOD_SHIFT, 'B');
+		JIntellitype.getInstance().registerSwingHotKey(CTRL_SHIFT_C, Event.CTRL_MASK + Event.SHIFT_MASK, 'C');
+
+		
+		
+		JIntellitype.getInstance().registerHotKey(PRINT_SCREEN, 0, 44);
+		JIntellitype.getInstance().registerHotKey(F11, ""F11"");
+		JIntellitype.getInstance().registerHotKey(F12, JIntellitype.MOD_ALT, 123);
+		JIntellitype.getInstance().registerHotKey(SEMICOLON, 0, 186);
+		JIntellitype.getInstance().registerHotKey(TICK, 0, 192);
+		
+		textArea.setText("""");
+		output(""RegisterHotKey WINDOWS+A was assigned uniqueID 88"");
+		output(""RegisterHotKey ALT+SHIFT+B was assigned uniqueID 89"");
+		output(""RegisterHotKey CTRL+SHIFT+C was assigned uniqueID 90"");
+		output(""RegisterHotKey PRINT_SCREEN was assigned uniqueID 91"");
+		output(""RegisterHotKey F9 was assigned uniqueID 92"");
+		output(""RegisterHotKey F12 was assigned uniqueID 93"");
+		output(""RegisterHotKey SEMICOLON was assigned uniqueID 94"");
+		output(""Press WINDOWS+A or ALT+SHIFT+B or CTRL+SHIFT+C in another application and you will see the debug output in the textarea."");
+	}
+","['\t', 'private', ' ', 'void', ' ', 'btnRegisterHotKey_actionPerformed', '(', 'ActionEvent', ' ', 'aEvent', ')', ' ', '{', '\n', '\t\t', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'WINDOWS_A', ',', ' ', 'JIntellitype', '.', 'MOD_WIN', ',', ' ', ""'A'"", ')', ';', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'ALT_SHIFT_B', ',', ' ', 'JIntellitype', '.', 'MOD_ALT', ' ', '+', ' ', 'JIntellitype', '.', 'MOD_SHIFT', ',', ' ', ""'B'"", ')', ';', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerSwingHotKey', '(', 'CTRL_SHIFT_C', ',', ' ', 'Event', '.', 'CTRL_MASK', ' ', '+', ' ', 'Event', '.', 'SHIFT_MASK', ',', ' ', ""'C'"", ')', ';', '\n', '\n', '\t\t', '\n', '\t\t', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'PRINT_SCREEN', ',', ' ', '0', ',', ' ', '44', ')', ';', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'F11', ',', ' ', '""', 'F11', '""', ')', ';', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'F12', ',', ' ', 'JIntellitype', '.', 'MOD_ALT', ',', ' ', '123', ')', ';', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'SEMICOLON', ',', ' ', '0', ',', ' ', '186', ')', ';', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'TICK', ',', ' ', '0', ',', ' ', '192', ')', ';', '\n', '\t\t', '\n', '\t\t', 'textArea', '.', 'setText', '(', '""', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'RegisterHotKey WINDOWS+A was assigned uniqueID 88', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'RegisterHotKey ALT+SHIFT+B was assigned uniqueID 89', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'RegisterHotKey CTRL+SHIFT+C was assigned uniqueID 90', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'RegisterHotKey PRINT_SCREEN was assigned uniqueID 91', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'RegisterHotKey F9 was assigned uniqueID 92', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'RegisterHotKey F12 was assigned uniqueID 93', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'RegisterHotKey SEMICOLON was assigned uniqueID 94', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'Press WINDOWS+A or ALT+SHIFT+B or CTRL+SHIFT+C in another application and you will see the debug output in the textarea.', '""', ')', ';', '\n', '\t', '}', '\n']"
+master,37c68086d4180f5d08226b88b4d85a89ed9b351c,JIntellitypeTester.java,btnUnregisterHotKey_actionPerformed,"	private void btnUnregisterHotKey_actionPerformed(ActionEvent aEvent) {
+		JIntellitype.getInstance().unregisterHotKey(WINDOWS_A);
+		JIntellitype.getInstance().unregisterHotKey(ALT_SHIFT_B);
+		JIntellitype.getInstance().unregisterHotKey(CTRL_SHIFT_C);
+		JIntellitype.getInstance().unregisterHotKey(PRINT_SCREEN);
+		JIntellitype.getInstance().unregisterHotKey(F11);
+		JIntellitype.getInstance().unregisterHotKey(F12);
+		JIntellitype.getInstance().unregisterHotKey(SEMICOLON);
+		output(""UnregisterHotKey WINDOWS+A"");
+		output(""UnregisterHotKey ALT+SHIFT+B"");
+		output(""UnregisterHotKey CTRL+SHIFT+C"");
+		output(""UnregisterHotKey PRINT_SCREEN"");
+		output(""UnregisterHotKey F9"");
+		output(""UnregisterHotKey F12"");
+		output(""UnregisterHotKey SEMICOLON"");
+		output(""Press WINDOWS+A or ALT+SHIFT+B in another application and you will NOT see the debug output in the textarea."");
+	}",https://www.github.com/melloware/jintellitype/commit/37c68086d4180f5d08226b88b4d85a89ed9b351c,"	private void btnUnregisterHotKey_actionPerformed(ActionEvent aEvent) {
+		JIntellitype.getInstance().unregisterHotKey(WINDOWS_A);
+		JIntellitype.getInstance().unregisterHotKey(ALT_SHIFT_B);
+		JIntellitype.getInstance().unregisterHotKey(CTRL_SHIFT_C);
+		JIntellitype.getInstance().unregisterHotKey(PRINT_SCREEN);
+		JIntellitype.getInstance().unregisterHotKey(F11);
+		JIntellitype.getInstance().unregisterHotKey(F12);
+		JIntellitype.getInstance().unregisterHotKey(SEMICOLON);
+		output(""UnregisterHotKey WINDOWS+A"");
+		output(""UnregisterHotKey ALT+SHIFT+B"");
+		output(""UnregisterHotKey CTRL+SHIFT+C"");
+		output(""UnregisterHotKey PRINT_SCREEN"");
+		output(""UnregisterHotKey F9"");
+		output(""UnregisterHotKey F12"");
+		output(""UnregisterHotKey SEMICOLON"");
+		output(""Press WINDOWS+A or ALT+SHIFT+B in another application and you will NOT see the debug output in the textarea."");
+	}
+","['\t', 'private', ' ', 'void', ' ', 'btnUnregisterHotKey_actionPerformed', '(', 'ActionEvent', ' ', 'aEvent', ')', ' ', '{', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'WINDOWS_A', ')', ';', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'ALT_SHIFT_B', ')', ';', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'CTRL_SHIFT_C', ')', ';', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'PRINT_SCREEN', ')', ';', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'F11', ')', ';', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'F12', ')', ';', '\n', '\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'SEMICOLON', ')', ';', '\n', '\t\t', 'output', '(', '""', 'UnregisterHotKey WINDOWS+A', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'UnregisterHotKey ALT+SHIFT+B', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'UnregisterHotKey CTRL+SHIFT+C', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'UnregisterHotKey PRINT_SCREEN', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'UnregisterHotKey F9', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'UnregisterHotKey F12', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'UnregisterHotKey SEMICOLON', '""', ')', ';', '\n', '\t\t', 'output', '(', '""', 'Press WINDOWS+A or ALT+SHIFT+B in another application and you will NOT see the debug output in the textarea.', '""', ')', ';', '\n', '\t', '}', '\n']"
+master,37c68086d4180f5d08226b88b4d85a89ed9b351c,JIntellitypeTester.java,initComponents,"	private void initComponents() {
+		mainPanel.setLayout(new BorderLayout());
+		topPanel.setBorder(new EtchedBorder(1));
+		bottomPanel.setLayout(new BorderLayout());
+		bottomPanel.setBorder(new EtchedBorder(1));
+		btnRegisterHotKey.setText(""RegisterHotKey"");
+		btnRegisterHotKey.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnRegisterHotKey_actionPerformed(e);
+			}
+		});
+		btnUnregisterHotKey.setText(""UnregisterHotKey"");
+		btnUnregisterHotKey.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnUnregisterHotKey_actionPerformed(e);
+			}
+		});
+		topPanel.add(btnRegisterHotKey);
+		topPanel.add(btnUnregisterHotKey);
+		scrollPane.getViewport().add(textArea);
+		bottomPanel.add(scrollPane, BorderLayout.CENTER);
+		mainPanel.add(topPanel, BorderLayout.NORTH);
+		mainPanel.add(bottomPanel, BorderLayout.CENTER);
+
+		this.addWindowListener(new java.awt.event.WindowAdapter() {
+			@Override
+			public void windowClosing(java.awt.event.WindowEvent evt) {
+				// don't forget to clean up any resources before close
+				JIntellitype.getInstance().cleanUp();
+				System.exit(0);
+			}
+		});
+
+		this.getContentPane().add(mainPanel);
+		this.pack();
+		this.setSize(800, 600);
+	}",https://www.github.com/melloware/jintellitype/commit/37c68086d4180f5d08226b88b4d85a89ed9b351c,"	private void initComponents() {
+		mainPanel.setLayout(new BorderLayout());
+		topPanel.setBorder(new EtchedBorder(1));
+		bottomPanel.setLayout(new BorderLayout());
+		bottomPanel.setBorder(new EtchedBorder(1));
+		btnRegisterHotKey.setText(""RegisterHotKey"");
+		btnRegisterHotKey.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnRegisterHotKey_actionPerformed(e);
+			}
+		});
+		btnUnregisterHotKey.setText(""UnregisterHotKey"");
+		btnUnregisterHotKey.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnUnregisterHotKey_actionPerformed(e);
+			}
+		});
+		topPanel.add(btnRegisterHotKey);
+		topPanel.add(btnUnregisterHotKey);
+		scrollPane.getViewport().add(textArea);
+		bottomPanel.add(scrollPane, BorderLayout.CENTER);
+		mainPanel.add(topPanel, BorderLayout.NORTH);
+		mainPanel.add(bottomPanel, BorderLayout.CENTER);
+
+		this.addWindowListener(new java.awt.event.WindowAdapter() {
+			@Override
+			public void windowClosing(java.awt.event.WindowEvent evt) {
+				
+				JIntellitype.getInstance().cleanUp();
+				System.exit(0);
+			}
+		});
+
+		this.getContentPane().add(mainPanel);
+		this.pack();
+		this.setSize(800, 600);
+	}
+","['\t', 'private', ' ', 'void', ' ', 'initComponents', '(', ')', ' ', '{', '\n', '\t\t', 'mainPanel', '.', 'setLayout', '(', 'new', ' ', 'BorderLayout', '(', ')', ')', ';', '\n', '\t\t', 'topPanel', '.', 'setBorder', '(', 'new', ' ', 'EtchedBorder', '(', '1', ')', ')', ';', '\n', '\t\t', 'bottomPanel', '.', 'setLayout', '(', 'new', ' ', 'BorderLayout', '(', ')', ')', ';', '\n', '\t\t', 'bottomPanel', '.', 'setBorder', '(', 'new', ' ', 'EtchedBorder', '(', '1', ')', ')', ';', '\n', '\t\t', 'btnRegisterHotKey', '.', 'setText', '(', '""', 'RegisterHotKey', '""', ')', ';', '\n', '\t\t', 'btnRegisterHotKey', '.', 'addActionListener', '(', 'new', ' ', 'ActionListener', '(', ')', ' ', '{', '\n', '\t\t\t', 'public', ' ', 'void', ' ', 'actionPerformed', '(', 'ActionEvent', ' ', 'e', ')', ' ', '{', '\n', '\t\t\t\t', 'btnRegisterHotKey_actionPerformed', '(', 'e', ')', ';', '\n', '\t\t\t', '}', '\n', '\t\t', '}', ')', ';', '\n', '\t\t', 'btnUnregisterHotKey', '.', 'setText', '(', '""', 'UnregisterHotKey', '""', ')', ';', '\n', '\t\t', 'btnUnregisterHotKey', '.', 'addActionListener', '(', 'new', ' ', 'ActionListener', '(', ')', ' ', '{', '\n', '\t\t\t', 'public', ' ', 'void', ' ', 'actionPerformed', '(', 'ActionEvent', ' ', 'e', ')', ' ', '{', '\n', '\t\t\t\t', 'btnUnregisterHotKey_actionPerformed', '(', 'e', ')', ';', '\n', '\t\t\t', '}', '\n', '\t\t', '}', ')', ';', '\n', '\t\t', 'topPanel', '.', 'add', '(', 'btnRegisterHotKey', ')', ';', '\n', '\t\t', 'topPanel', '.', 'add', '(', 'btnUnregisterHotKey', ')', ';', '\n', '\t\t', 'scrollPane', '.', 'getViewport', '(', ')', '.', 'add', '(', 'textArea', ')', ';', '\n', '\t\t', 'bottomPanel', '.', 'add', '(', 'scrollPane', ',', ' ', 'BorderLayout', '.', 'CENTER', ')', ';', '\n', '\t\t', 'mainPanel', '.', 'add', '(', 'topPanel', ',', ' ', 'BorderLayout', '.', 'NORTH', ')', ';', '\n', '\t\t', 'mainPanel', '.', 'add', '(', 'bottomPanel', ',', ' ', 'BorderLayout', '.', 'CENTER', ')', ';', '\n', '\n', '\t\t', 'this', '.', 'addWindowListener', '(', 'new', ' ', 'java', '.', 'awt', '.', 'event', '.', 'WindowAdapter', '(', ')', ' ', '{', '\n', '\t\t\t', '@Override', '\n', '\t\t\t', 'public', ' ', 'void', ' ', 'windowClosing', '(', 'java', '.', 'awt', '.', 'event', '.', 'WindowEvent', ' ', 'evt', ')', ' ', '{', '\n', '\t\t\t\t', '\n', '\t\t\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'cleanUp', '(', ')', ';', '\n', '\t\t\t\t', 'System', '.', 'exit', '(', '0', ')', ';', '\n', '\t\t\t', '}', '\n', '\t\t', '}', ')', ';', '\n', '\n', '\t\t', 'this', '.', 'getContentPane', '(', ')', '.', 'add', '(', 'mainPanel', ')', ';', '\n', '\t\t', 'this', '.', 'pack', '(', ')', ';', '\n', '\t\t', 'this', '.', 'setSize', '(', '800', ',', ' ', '600', ')', ';', '\n', '\t', '}', '\n']"
+master,37c68086d4180f5d08226b88b4d85a89ed9b351c,JIntellitypeTester.java,actionPerformed,"			public void actionPerformed(ActionEvent e) {
+				btnRegisterHotKey_actionPerformed(e);
+			}",https://www.github.com/melloware/jintellitype/commit/37c68086d4180f5d08226b88b4d85a89ed9b351c,"			public void actionPerformed(ActionEvent e) {
+				btnRegisterHotKey_actionPerformed(e);
+			}
+","['\t\t\t', 'public', ' ', 'void', ' ', 'actionPerformed', '(', 'ActionEvent', ' ', 'e', ')', ' ', '{', '\n', '\t\t\t\t', 'btnRegisterHotKey_actionPerformed', '(', 'e', ')', ';', '\n', '\t\t\t', '}', '\n']"
+master,37c68086d4180f5d08226b88b4d85a89ed9b351c,JIntellitypeTester.java,actionPerformed,"			public void actionPerformed(ActionEvent e) {
+				btnUnregisterHotKey_actionPerformed(e);
+			}",https://www.github.com/melloware/jintellitype/commit/37c68086d4180f5d08226b88b4d85a89ed9b351c,"			public void actionPerformed(ActionEvent e) {
+				btnUnregisterHotKey_actionPerformed(e);
+			}
+","['\t\t\t', 'public', ' ', 'void', ' ', 'actionPerformed', '(', 'ActionEvent', ' ', 'e', ')', ' ', '{', '\n', '\t\t\t\t', 'btnUnregisterHotKey_actionPerformed', '(', 'e', ')', ';', '\n', '\t\t\t', '}', '\n']"
+master,37c68086d4180f5d08226b88b4d85a89ed9b351c,JIntellitypeTester.java,windowClosing,"			public void windowClosing(java.awt.event.WindowEvent evt) {
+				// don't forget to clean up any resources before close
+				JIntellitype.getInstance().cleanUp();
+				System.exit(0);
+			}",https://www.github.com/melloware/jintellitype/commit/37c68086d4180f5d08226b88b4d85a89ed9b351c,"			public void windowClosing(java.awt.event.WindowEvent evt) {
+				
+				JIntellitype.getInstance().cleanUp();
+				System.exit(0);
+			}
+","['\t\t\t', 'public', ' ', 'void', ' ', 'windowClosing', '(', 'java', '.', 'awt', '.', 'event', '.', 'WindowEvent', ' ', 'evt', ')', ' ', '{', '\n', '\t\t\t\t', '\n', '\t\t\t\t', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'cleanUp', '(', ')', ';', '\n', '\t\t\t\t', 'System', '.', 'exit', '(', '0', ')', ';', '\n', '\t\t\t', '}', '\n']"
+master,37c68086d4180f5d08226b88b4d85a89ed9b351c,JIntellitypeTester.java,output,"	private void output(String text) {
+		textArea.append(text);
+		textArea.append(""\n"");
+	}",https://www.github.com/melloware/jintellitype/commit/37c68086d4180f5d08226b88b4d85a89ed9b351c,"	private void output(String text) {
+		textArea.append(text);
+		textArea.append(""\n"");
+	}
+","['\t', 'private', ' ', 'void', ' ', 'output', '(', 'String', ' ', 'text', ')', ' ', '{', '\n', '\t\t', 'textArea', '.', 'append', '(', 'text', ')', ';', '\n', '\t\t', 'textArea', '.', 'append', '(', '""', '\\', 'n', '""', ')', ';', '\n', '\t', '}', '\n']"
+master,8783ce3474c6b8e46ab0342c56cf6baf26bfc4e5,JIntellitype.java,swingToIntelliType,"   protected static int swingToIntelliType(int swingKeystrokeModifier) {
+      int mask = 0;
+      if ((swingKeystrokeModifier & InputEvent.SHIFT_DOWN_MASK) == InputEvent.SHIFT_DOWN_MASK
+               || (swingKeystrokeModifier & InputEvent.SHIFT_DOWN_MASK) == InputEvent.SHIFT_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_SHIFT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.ALT_DOWN_MASK) == InputEvent.ALT_DOWN_MASK
+               || (swingKeystrokeModifier & InputEvent.ALT_DOWN_MASK) == InputEvent.ALT_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_ALT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.CTRL_DOWN_MASK) == InputEvent.CTRL_DOWN_MASK
+               || (swingKeystrokeModifier & InputEvent.CTRL_DOWN_MASK) == InputEvent.CTRL_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_CONTROL;
+      }
+      if ((swingKeystrokeModifier & InputEvent.META_DOWN_MASK) == InputEvent.META_DOWN_MASK
+               || (swingKeystrokeModifier & InputEvent.META_DOWN_MASK) == InputEvent.META_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_WIN;
+      }
+
+      return mask;
+   }",https://www.github.com/melloware/jintellitype/commit/8783ce3474c6b8e46ab0342c56cf6baf26bfc4e5,"   protected static int swingToIntelliType(int swingKeystrokeModifier) {
+      int mask = 0;
+      if ((swingKeystrokeModifier & InputEvent.SHIFT_DOWN_MASK) == InputEvent.SHIFT_DOWN_MASK
+               || (swingKeystrokeModifier & InputEvent.SHIFT_DOWN_MASK) == InputEvent.SHIFT_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_SHIFT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.ALT_DOWN_MASK) == InputEvent.ALT_DOWN_MASK
+               || (swingKeystrokeModifier & InputEvent.ALT_DOWN_MASK) == InputEvent.ALT_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_ALT;
+      }
+      if ((swingKeystrokeModifier & InputEvent.CTRL_DOWN_MASK) == InputEvent.CTRL_DOWN_MASK
+               || (swingKeystrokeModifier & InputEvent.CTRL_DOWN_MASK) == InputEvent.CTRL_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_CONTROL;
+      }
+      if ((swingKeystrokeModifier & InputEvent.META_DOWN_MASK) == InputEvent.META_DOWN_MASK
+               || (swingKeystrokeModifier & InputEvent.META_DOWN_MASK) == InputEvent.META_DOWN_MASK) {
+         mask |= JIntellitypeConstants.MOD_WIN;
+      }
+
+      return mask;
+   }
+","['   ', 'protected', ' ', 'static', ' ', 'int', ' ', 'swingToIntelliType', '(', 'int', ' ', 'swingKeystrokeModifier', ')', ' ', '{', '\n', '      ', 'int', ' ', 'mask', ' ', '=', ' ', '0', ';', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'SHIFT_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'SHIFT_DOWN_MASK', '\n', '               ', '|', '|', ' ', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'SHIFT_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'SHIFT_DOWN_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '|', '=', ' ', 'JIntellitypeConstants', '.', 'MOD_SHIFT', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'ALT_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'ALT_DOWN_MASK', '\n', '               ', '|', '|', ' ', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'ALT_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'ALT_DOWN_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '|', '=', ' ', 'JIntellitypeConstants', '.', 'MOD_ALT', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'CTRL_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'CTRL_DOWN_MASK', '\n', '               ', '|', '|', ' ', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'CTRL_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'CTRL_DOWN_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '|', '=', ' ', 'JIntellitypeConstants', '.', 'MOD_CONTROL', ';', '\n', '      ', '}', '\n', '      ', 'if', ' ', '(', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'META_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'META_DOWN_MASK', '\n', '               ', '|', '|', ' ', '(', 'swingKeystrokeModifier', ' ', '&', ' ', 'InputEvent', '.', 'META_DOWN_MASK', ')', ' ', '=', '=', ' ', 'InputEvent', '.', 'META_DOWN_MASK', ')', ' ', '{', '\n', '         ', 'mask', ' ', '|', '=', ' ', 'JIntellitypeConstants', '.', 'MOD_WIN', ';', '\n', '      ', '}', '\n', '\n', '      ', 'return', ' ', 'mask', ';', '\n', '   ', '}', '\n']"
+master,e15a101a4322346d6275be11bcf6d12cb5241e4f,JIntellitype.java,loadLibrary,"   private static void loadLibrary() {
+       
+       if (!isJIntellitypeSupported()) {
+           return;
+       }
+       
+       boolean is64bit = System.getProperty(""os.arch"", ""unknown"").contains(""64"");
+       String libraryName = is64bit ? ""JIntellitype64.dll"" : ""JIntellitype.dll"";
+       File configDir = Paths.get(System.getProperty(""user.home"", """"), ""AppData"", ""Local"").toFile();
+       if (!configDir.exists()) {
+           configDir = new File(System.getProperty(""java.io.tmpdir"", System.getProperty(""user.dir"", """")));
+       }
+       
+       File extractedLibrary = Paths.get(configDir.getAbsolutePath(), ""jintellitype"", Main.getProjectVersion(),
+           libraryName)
+           .toFile();
+       
+       try {
+           System.load(extractedLibrary.getAbsolutePath());
+       } catch (Throwable throwable) {
+           try {
+               fromJarToFs(""com/melloware/jintellitype/windows/"" + libraryName, extractedLibrary.getAbsolutePath());
+               System.load(extractedLibrary.getAbsolutePath());
+           } catch (Throwable exAllFailed) {
+               throw new JIntellitypeException(
+                        ""Could not load JIntellitype.dll from local file system or from inside JAR"", exAllFailed);
+           }
+       }
+       
+       isDllLoaded = true;
+   }",https://www.github.com/melloware/jintellitype/commit/e15a101a4322346d6275be11bcf6d12cb5241e4f,"   private static void loadLibrary() {
+       
+       if (!isJIntellitypeSupported()) {
+           return;
+       }
+       
+       boolean is64bit = System.getProperty(""os.arch"", ""unknown"").contains(""64"");
+       String libraryName = is64bit ? ""JIntellitype64.dll"" : ""JIntellitype.dll"";
+       File configDir = Paths.get(System.getProperty(""user.home"", """"), ""AppData"", ""Local"").toFile();
+       if (!configDir.exists()) {
+           configDir = new File(System.getProperty(""java.io.tmpdir"", System.getProperty(""user.dir"", """")));
+       }
+       
+       File extractedLibrary = Paths.get(configDir.getAbsolutePath(), ""jintellitype"", Main.getProjectVersion(),
+           libraryName)
+           .toFile();
+       
+       try {
+           System.load(extractedLibrary.getAbsolutePath());
+       } catch (Throwable throwable) {
+           try {
+               fromJarToFs(""com/melloware/jintellitype/windows/"" + libraryName, extractedLibrary.getAbsolutePath());
+               System.load(extractedLibrary.getAbsolutePath());
+           } catch (Throwable exAllFailed) {
+               throw new JIntellitypeException(
+                        ""Could not load JIntellitype.dll from local file system or from inside JAR"", exAllFailed);
+           }
+       }
+       
+       isDllLoaded = true;
+   }
+","['   ', 'private', ' ', 'static', ' ', 'void', ' ', 'loadLibrary', '(', ')', ' ', '{', '\n', '       ', '\n', '       ', 'if', ' ', '(', '!', 'isJIntellitypeSupported', '(', ')', ')', ' ', '{', '\n', '           ', 'return', ';', '\n', '       ', '}', '\n', '       ', '\n', '       ', 'boolean', ' ', 'is64bit', ' ', '=', ' ', 'System', '.', 'getProperty', '(', '""', 'os.arch', '""', ',', ' ', '""', 'unknown', '""', ')', '.', 'contains', '(', '""', '64', '""', ')', ';', '\n', '       ', 'String', ' ', 'libraryName', ' ', '=', ' ', 'is64bit', ' ', '?', ' ', '""', 'JIntellitype64.dll', '""', ' ', ':', ' ', '""', 'JIntellitype.dll', '""', ';', '\n', '       ', 'File', ' ', 'configDir', ' ', '=', ' ', 'Paths', '.', 'get', '(', 'System', '.', 'getProperty', '(', '""', 'user.home', '""', ',', ' ', '""', '""', ')', ',', ' ', '""', 'AppData', '""', ',', ' ', '""', 'Local', '""', ')', '.', 'toFile', '(', ')', ';', '\n', '       ', 'if', ' ', '(', '!', 'configDir', '.', 'exists', '(', ')', ')', ' ', '{', '\n', '           ', 'configDir', ' ', '=', ' ', 'new', ' ', 'File', '(', 'System', '.', 'getProperty', '(', '""', 'java.io.tmpdir', '""', ',', ' ', 'System', '.', 'getProperty', '(', '""', 'user.dir', '""', ',', ' ', '""', '""', ')', ')', ')', ';', '\n', '       ', '}', '\n', '       ', '\n', '       ', 'File', ' ', 'extractedLibrary', ' ', '=', ' ', 'Paths', '.', 'get', '(', 'configDir', '.', 'getAbsolutePath', '(', ')', ',', ' ', '""', 'jintellitype', '""', ',', ' ', 'Main', '.', 'getProjectVersion', '(', ')', ',', '\n', '           ', 'libraryName', ')', '\n', '           ', '.', 'toFile', '(', ')', ';', '\n', '       ', '\n', '       ', 'try', ' ', '{', '\n', '           ', 'System', '.', 'load', '(', 'extractedLibrary', '.', 'getAbsolutePath', '(', ')', ')', ';', '\n', '       ', '}', ' ', 'catch', ' ', '(', 'Throwable', ' ', 'throwable', ')', ' ', '{', '\n', '           ', 'try', ' ', '{', '\n', '               ', 'fromJarToFs', '(', '""', 'com/melloware/jintellitype/windows/', '""', ' ', '+', ' ', 'libraryName', ',', ' ', 'extractedLibrary', '.', 'getAbsolutePath', '(', ')', ')', ';', '\n', '               ', 'System', '.', 'load', '(', 'extractedLibrary', '.', 'getAbsolutePath', '(', ')', ')', ';', '\n', '           ', '}', ' ', 'catch', ' ', '(', 'Throwable', ' ', 'exAllFailed', ')', ' ', '{', '\n', '               ', 'throw', ' ', 'new', ' ', 'JIntellitypeException', '(', '\n', '                        ', '""', 'Could not load JIntellitype.dll from local file system or from inside JAR', '""', ',', ' ', 'exAllFailed', ')', ';', '\n', '           ', '}', '\n', '       ', '}', '\n', '       ', '\n', '       ', 'isDllLoaded', ' ', '=', ' ', 'true', ';', '\n', '   ', '}', '\n']"
+master,e15a101a4322346d6275be11bcf6d12cb5241e4f,JIntellitype.java,fromJarToFs,"   private static void fromJarToFs(String jarPath, String filePath) throws IOException {
+      InputStream is = libraryInputStream;
+      OutputStream os = null;
+      try {
+         File file = new File(filePath);",https://www.github.com/melloware/jintellitype/commit/e15a101a4322346d6275be11bcf6d12cb5241e4f,"   private static void fromJarToFs(String jarPath, String filePath) throws IOException {
+      InputStream is = libraryInputStream;
+      OutputStream os = null;
+      try {
+         File file = new File(filePath);
+","['   ', 'private', ' ', 'static', ' ', 'void', ' ', 'fromJarToFs', '(', 'String', ' ', 'jarPath', ',', ' ', 'String', ' ', 'filePath', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '      ', 'InputStream', ' ', 'is', ' ', '=', ' ', 'libraryInputStream', ';', '\n', '      ', 'OutputStream', ' ', 'os', ' ', '=', ' ', 'null', ';', '\n', '      ', 'try', ' ', '{', '\n', '         ', 'File', ' ', 'file', ' ', '=', ' ', 'new', ' ', 'File', '(', 'filePath', ')', ';', '\n']"
+master,e15a101a4322346d6275be11bcf6d12cb5241e4f,JIntellitype.java,isJIntellitypeSupported,"   public static boolean isJIntellitypeSupported() {
+      boolean result = false;
+      String os = ""none"";
+
+      try {
+         os = System.getProperty(""os.name"").toLowerCase(Locale.ROOT);
+      } catch (SecurityException ex) {
+         // we are not allowed to look at this property
+         System.err.println(""Caught a SecurityException reading the system property ""
+                  + ""'os.name'; the SystemUtils property value will default to null."");
+      }
+
+      return os.startsWith(""windows"");
+   }",https://www.github.com/melloware/jintellitype/commit/e15a101a4322346d6275be11bcf6d12cb5241e4f,"   public static boolean isJIntellitypeSupported() {
+      boolean result = false;
+      String os = ""none"";
+
+      try {
+         os = System.getProperty(""os.name"").toLowerCase(Locale.ROOT);
+      } catch (SecurityException ex) {
+         
+         System.err.println(""Caught a SecurityException reading the system property ""
+                  + ""'os.name'; the SystemUtils property value will default to null."");
+      }
+
+      return os.startsWith(""windows"");
+   }
+","['   ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isJIntellitypeSupported', '(', ')', ' ', '{', '\n', '      ', 'boolean', ' ', 'result', ' ', '=', ' ', 'false', ';', '\n', '      ', 'String', ' ', 'os', ' ', '=', ' ', '""', 'none', '""', ';', '\n', '\n', '      ', 'try', ' ', '{', '\n', '         ', 'os', ' ', '=', ' ', 'System', '.', 'getProperty', '(', '""', 'os.name', '""', ')', '.', 'toLowerCase', '(', 'Locale', '.', 'ROOT', ')', ';', '\n', '      ', '}', ' ', 'catch', ' ', '(', 'SecurityException', ' ', 'ex', ')', ' ', '{', '\n', '         ', '\n', '         ', 'System', '.', 'err', '.', 'println', '(', '""', 'Caught a SecurityException reading the system property ', '""', '\n', '                  ', '+', ' ', '""', ""'os.name'; the SystemUtils property value will default to null."", '""', ')', ';', '\n', '      ', '}', '\n', '\n', '      ', 'return', ' ', 'os', '.', 'startsWith', '(', '""', 'windows', '""', ')', ';', '\n', '   ', '}', '\n']"
+master,e15a101a4322346d6275be11bcf6d12cb5241e4f,JIntellitypeDemo.java,main,"	public static void main(String[] args) {
+		System.out.println(new File(""."").getAbsolutePath());
+		// first check to see if an instance of this application is already
+		// running, use the name of the window title of this JFrame for checking
+		if (JIntellitype.checkInstanceAlreadyRunning(""JIntellitype Test Application"")) {
+			System.exit(1);
+		}
+
+		// next check to make sure JIntellitype DLL can be found and we are on
+		// a Windows operating System
+		if (!JIntellitype.isJIntellitypeSupported()) {
+			System.exit(1);
+		}
+
+		mainFrame = new JIntellitypeDemo();
+		mainFrame.setTitle(""JIntellitype Test Application"");
+		center(mainFrame);
+		mainFrame.setVisible(true);
+		mainFrame.initJIntellitype();
+	}",https://www.github.com/melloware/jintellitype/commit/e15a101a4322346d6275be11bcf6d12cb5241e4f,"	public static void main(String[] args) {
+		System.out.println(new File(""."").getAbsolutePath());
+		
+		
+		if (JIntellitype.checkInstanceAlreadyRunning(""JIntellitype Test Application"")) {
+			System.exit(1);
+		}
+
+		
+		
+		if (!JIntellitype.isJIntellitypeSupported()) {
+			System.exit(1);
+		}
+
+		mainFrame = new JIntellitypeDemo();
+		mainFrame.setTitle(""JIntellitype Test Application"");
+		center(mainFrame);
+		mainFrame.setVisible(true);
+		mainFrame.initJIntellitype();
+	}
+","['\t', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '\t\t', 'System', '.', 'out', '.', 'println', '(', 'new', ' ', 'File', '(', '""', '.', '""', ')', '.', 'getAbsolutePath', '(', ')', ')', ';', '\n', '\t\t', '\n', '\t\t', '\n', '\t\t', 'if', ' ', '(', 'JIntellitype', '.', 'checkInstanceAlreadyRunning', '(', '""', 'JIntellitype Test Application', '""', ')', ')', ' ', '{', '\n', '\t\t\t', 'System', '.', 'exit', '(', '1', ')', ';', '\n', '\t\t', '}', '\n', '\n', '\t\t', '\n', '\t\t', '\n', '\t\t', 'if', ' ', '(', '!', 'JIntellitype', '.', 'isJIntellitypeSupported', '(', ')', ')', ' ', '{', '\n', '\t\t\t', 'System', '.', 'exit', '(', '1', ')', ';', '\n', '\t\t', '}', '\n', '\n', '\t\t', 'mainFrame', ' ', '=', ' ', 'new', ' ', 'JIntellitypeDemo', '(', ')', ';', '\n', '\t\t', 'mainFrame', '.', 'setTitle', '(', '""', 'JIntellitype Test Application', '""', ')', ';', '\n', '\t\t', 'center', '(', 'mainFrame', ')', ';', '\n', '\t\t', 'mainFrame', '.', 'setVisible', '(', 'true', ')', ';', '\n', '\t\t', 'mainFrame', '.', 'initJIntellitype', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,e15a101a4322346d6275be11bcf6d12cb5241e4f,DllLoadingIT.java,testDllLoading,"    public void testDllLoading() {
+        // skip test on non-windows platforms
+        assumeTrue(JIntellitype.isJIntellitypeSupported());
+        
+        assertTrue(JIntellitype.isDllLoaded);
+        
+        JIntellitype.getInstance().registerHotKey(ALT_SHIFT_B, JIntellitype.MOD_ALT + JIntellitype.MOD_SHIFT, 'B');
+        JIntellitype.getInstance().unregisterHotKey(ALT_SHIFT_B);
+    }",https://www.github.com/melloware/jintellitype/commit/e15a101a4322346d6275be11bcf6d12cb5241e4f,"    public void testDllLoading() {
+        
+        assumeTrue(JIntellitype.isJIntellitypeSupported());
+        
+        assertTrue(JIntellitype.isDllLoaded);
+        
+        JIntellitype.getInstance().registerHotKey(ALT_SHIFT_B, JIntellitype.MOD_ALT + JIntellitype.MOD_SHIFT, 'B');
+        JIntellitype.getInstance().unregisterHotKey(ALT_SHIFT_B);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testDllLoading', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', 'assumeTrue', '(', 'JIntellitype', '.', 'isJIntellitypeSupported', '(', ')', ')', ';', '\n', '        ', '\n', '        ', 'assertTrue', '(', 'JIntellitype', '.', 'isDllLoaded', ')', ';', '\n', '        ', '\n', '        ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'registerHotKey', '(', 'ALT_SHIFT_B', ',', ' ', 'JIntellitype', '.', 'MOD_ALT', ' ', '+', ' ', 'JIntellitype', '.', 'MOD_SHIFT', ',', ' ', ""'B'"", ')', ';', '\n', '        ', 'JIntellitype', '.', 'getInstance', '(', ')', '.', 'unregisterHotKey', '(', 'ALT_SHIFT_B', ')', ';', '\n', '    ', '}', '\n']"
+master,1fa4f72693eb4f14fa27335083557efabec1cd86,JIntellitype.java,isJIntellitypeSupported,"   public static boolean isJIntellitypeSupported() {
+      String os = ""none"";
+
+      try {
+         os = System.getProperty(""os.name"").toLowerCase(Locale.ROOT);
+      } catch (SecurityException ex) {
+         // we are not allowed to look at this property
+         System.err.println(""Caught a SecurityException reading the system property ""
+                  + ""'os.name'; the SystemUtils property value will default to null."");
+      }
+
+      return os.startsWith(""windows"");
+   }",https://www.github.com/melloware/jintellitype/commit/1fa4f72693eb4f14fa27335083557efabec1cd86,"   public static boolean isJIntellitypeSupported() {
+      String os = ""none"";
+
+      try {
+         os = System.getProperty(""os.name"").toLowerCase(Locale.ROOT);
+      } catch (SecurityException ex) {
+         
+         System.err.println(""Caught a SecurityException reading the system property ""
+                  + ""'os.name'; the SystemUtils property value will default to null."");
+      }
+
+      return os.startsWith(""windows"");
+   }
+","['   ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isJIntellitypeSupported', '(', ')', ' ', '{', '\n', '      ', 'String', ' ', 'os', ' ', '=', ' ', '""', 'none', '""', ';', '\n', '\n', '      ', 'try', ' ', '{', '\n', '         ', 'os', ' ', '=', ' ', 'System', '.', 'getProperty', '(', '""', 'os.name', '""', ')', '.', 'toLowerCase', '(', 'Locale', '.', 'ROOT', ')', ';', '\n', '      ', '}', ' ', 'catch', ' ', '(', 'SecurityException', ' ', 'ex', ')', ' ', '{', '\n', '         ', '\n', '         ', 'System', '.', 'err', '.', 'println', '(', '""', 'Caught a SecurityException reading the system property ', '""', '\n', '                  ', '+', ' ', '""', ""'os.name'; the SystemUtils property value will default to null."", '""', ')', ';', '\n', '      ', '}', '\n', '\n', '      ', 'return', ' ', 'os', '.', 'startsWith', '(', '""', 'windows', '""', ')', ';', '\n', '   ', '}', '\n']"
+master,75bd2066139d23b4db8a6cd8a6a588749ffbb061,JIntellitype.java,loadLibrary,"   private static void loadLibrary() {
+       
+       if (!isJIntellitypeSupported()) {
+           return;
+       }
+       
+       boolean is64bit = System.getProperty(""os.arch"", ""unknown"").contains(""64"");
+       String libraryName = is64bit ? ""JIntellitype64.dll"" : ""JIntellitype.dll"";
+       File configDir = Paths.get(System.getProperty(""user.home"", """"), ""AppData"", ""Local"").toFile();
+       if (!configDir.exists()) {
+           configDir = new File(System.getProperty(""java.io.tmpdir"", System.getProperty(""user.dir"", """")));
+       }
+       
+       File extractedLibrary = Paths.get(configDir.getAbsolutePath(), ""jintellitype"", Main.getProjectVersion(),
+           libraryName)
+           .toFile();
+       
+       try {
+           System.load(extractedLibrary.getAbsolutePath());
+       } catch (Throwable throwable) {
+           try {
+               fromJarToFs(""com/melloware/jintellitype/windows/"" + libraryName, extractedLibrary.getAbsolutePath());
+               System.load(extractedLibrary.getAbsolutePath());
+           } catch (Throwable exAllFailed) {
+               String message = String.format(""Could not load JIntellitype.dll from local file system (%s) or from inside JAR."", extractedLibrary.getAbsolutePath());
+               throw new JIntellitypeException(message, exAllFailed);
+           }
+       }
+       
+       isDllLoaded = true;
+   }",https://www.github.com/melloware/jintellitype/commit/75bd2066139d23b4db8a6cd8a6a588749ffbb061,"   private static void loadLibrary() {
+       
+       if (!isJIntellitypeSupported()) {
+           return;
+       }
+       
+       boolean is64bit = System.getProperty(""os.arch"", ""unknown"").contains(""64"");
+       String libraryName = is64bit ? ""JIntellitype64.dll"" : ""JIntellitype.dll"";
+       File configDir = Paths.get(System.getProperty(""user.home"", """"), ""AppData"", ""Local"").toFile();
+       if (!configDir.exists()) {
+           configDir = new File(System.getProperty(""java.io.tmpdir"", System.getProperty(""user.dir"", """")));
+       }
+       
+       File extractedLibrary = Paths.get(configDir.getAbsolutePath(), ""jintellitype"", Main.getProjectVersion(),
+           libraryName)
+           .toFile();
+       
+       try {
+           System.load(extractedLibrary.getAbsolutePath());
+       } catch (Throwable throwable) {
+           try {
+               fromJarToFs(""com/melloware/jintellitype/windows/"" + libraryName, extractedLibrary.getAbsolutePath());
+               System.load(extractedLibrary.getAbsolutePath());
+           } catch (Throwable exAllFailed) {
+               String message = String.format(""Could not load JIntellitype.dll from local file system (%s) or from inside JAR."", extractedLibrary.getAbsolutePath());
+               throw new JIntellitypeException(message, exAllFailed);
+           }
+       }
+       
+       isDllLoaded = true;
+   }
+","['   ', 'private', ' ', 'static', ' ', 'void', ' ', 'loadLibrary', '(', ')', ' ', '{', '\n', '       ', '\n', '       ', 'if', ' ', '(', '!', 'isJIntellitypeSupported', '(', ')', ')', ' ', '{', '\n', '           ', 'return', ';', '\n', '       ', '}', '\n', '       ', '\n', '       ', 'boolean', ' ', 'is64bit', ' ', '=', ' ', 'System', '.', 'getProperty', '(', '""', 'os.arch', '""', ',', ' ', '""', 'unknown', '""', ')', '.', 'contains', '(', '""', '64', '""', ')', ';', '\n', '       ', 'String', ' ', 'libraryName', ' ', '=', ' ', 'is64bit', ' ', '?', ' ', '""', 'JIntellitype64.dll', '""', ' ', ':', ' ', '""', 'JIntellitype.dll', '""', ';', '\n', '       ', 'File', ' ', 'configDir', ' ', '=', ' ', 'Paths', '.', 'get', '(', 'System', '.', 'getProperty', '(', '""', 'user.home', '""', ',', ' ', '""', '""', ')', ',', ' ', '""', 'AppData', '""', ',', ' ', '""', 'Local', '""', ')', '.', 'toFile', '(', ')', ';', '\n', '       ', 'if', ' ', '(', '!', 'configDir', '.', 'exists', '(', ')', ')', ' ', '{', '\n', '           ', 'configDir', ' ', '=', ' ', 'new', ' ', 'File', '(', 'System', '.', 'getProperty', '(', '""', 'java.io.tmpdir', '""', ',', ' ', 'System', '.', 'getProperty', '(', '""', 'user.dir', '""', ',', ' ', '""', '""', ')', ')', ')', ';', '\n', '       ', '}', '\n', '       ', '\n', '       ', 'File', ' ', 'extractedLibrary', ' ', '=', ' ', 'Paths', '.', 'get', '(', 'configDir', '.', 'getAbsolutePath', '(', ')', ',', ' ', '""', 'jintellitype', '""', ',', ' ', 'Main', '.', 'getProjectVersion', '(', ')', ',', '\n', '           ', 'libraryName', ')', '\n', '           ', '.', 'toFile', '(', ')', ';', '\n', '       ', '\n', '       ', 'try', ' ', '{', '\n', '           ', 'System', '.', 'load', '(', 'extractedLibrary', '.', 'getAbsolutePath', '(', ')', ')', ';', '\n', '       ', '}', ' ', 'catch', ' ', '(', 'Throwable', ' ', 'throwable', ')', ' ', '{', '\n', '           ', 'try', ' ', '{', '\n', '               ', 'fromJarToFs', '(', '""', 'com/melloware/jintellitype/windows/', '""', ' ', '+', ' ', 'libraryName', ',', ' ', 'extractedLibrary', '.', 'getAbsolutePath', '(', ')', ')', ';', '\n', '               ', 'System', '.', 'load', '(', 'extractedLibrary', '.', 'getAbsolutePath', '(', ')', ')', ';', '\n', '           ', '}', ' ', 'catch', ' ', '(', 'Throwable', ' ', 'exAllFailed', ')', ' ', '{', '\n', '               ', 'String', ' ', 'message', ' ', '=', ' ', 'String', '.', 'format', '(', '""', 'Could not load JIntellitype.dll from local file system (%s) or from inside JAR.', '""', ',', ' ', 'extractedLibrary', '.', 'getAbsolutePath', '(', ')', ')', ';', '\n', '               ', 'throw', ' ', 'new', ' ', 'JIntellitypeException', '(', 'message', ',', ' ', 'exAllFailed', ')', ';', '\n', '           ', '}', '\n', '       ', '}', '\n', '       ', '\n', '       ', 'isDllLoaded', ' ', '=', ' ', 'true', ';', '\n', '   ', '}', '\n']"
+master,75bd2066139d23b4db8a6cd8a6a588749ffbb061,JIntellitype.java,run,"			public void run() {
+               hotkeyListener.onHotKey(identifier);
+            }",https://www.github.com/melloware/jintellitype/commit/75bd2066139d23b4db8a6cd8a6a588749ffbb061,"			public void run() {
+               hotkeyListener.onHotKey(identifier);
+            }
+","['\t\t\t', 'public', ' ', 'void', ' ', 'run', '(', ')', ' ', '{', '\n', '               ', 'hotkeyListener', '.', 'onHotKey', '(', 'identifier', ')', ';', '\n', '            ', '}', '\n']"
+master,75bd2066139d23b4db8a6cd8a6a588749ffbb061,JIntellitype.java,run,"			public void run() {
+               intellitypeListener.onIntellitype(command);
+            }",https://www.github.com/melloware/jintellitype/commit/75bd2066139d23b4db8a6cd8a6a588749ffbb061,"			public void run() {
+               intellitypeListener.onIntellitype(command);
+            }
+","['\t\t\t', 'public', ' ', 'void', ' ', 'run', '(', ')', ' ', '{', '\n', '               ', 'intellitypeListener', '.', 'onIntellitype', '(', 'command', ')', ';', '\n', '            ', '}', '\n']"

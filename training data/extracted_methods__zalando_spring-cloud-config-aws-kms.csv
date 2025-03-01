@@ -1,0 +1,1658 @@
+Branch Name,Commit Hash,File Name,Method Name,Method Code,Commit Link,Method Code No Comments,Tokens
+master,56298e81e7284a0f8ffb67896d438cf16bb65a20,KmsEncryptionConfiguration.java,kmsTextEncryptor,"    TextEncryptor kmsTextEncryptor() {
+        return new KmsTextEncryptor(kmsKeyId, Regions.fromName(regionName));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/56298e81e7284a0f8ffb67896d438cf16bb65a20,"    TextEncryptor kmsTextEncryptor() {
+        return new KmsTextEncryptor(kmsKeyId, Regions.fromName(regionName));
+    }
+","['    ', 'TextEncryptor', ' ', 'kmsTextEncryptor', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'new', ' ', 'KmsTextEncryptor', '(', 'kmsKeyId', ',', ' ', 'Regions', '.', 'fromName', '(', 'regionName', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,56298e81e7284a0f8ffb67896d438cf16bb65a20,KmsEncryptionConfiguration.java,environmentDecryptApplicationListener,"    EnvironmentDecryptApplicationListener environmentDecryptApplicationListener() {
+        return new EnvironmentDecryptApplicationListener(kmsTextEncryptor());
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/56298e81e7284a0f8ffb67896d438cf16bb65a20,"    EnvironmentDecryptApplicationListener environmentDecryptApplicationListener() {
+        return new EnvironmentDecryptApplicationListener(kmsTextEncryptor());
+    }
+","['    ', 'EnvironmentDecryptApplicationListener', ' ', 'environmentDecryptApplicationListener', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'new', ' ', 'EnvironmentDecryptApplicationListener', '(', 'kmsTextEncryptor', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,56298e81e7284a0f8ffb67896d438cf16bb65a20,KmsTextEncryptor.java,encrypt,"    public String encrypt(final String text) {
+        return extractString(Base64.getEncoder().encode(
+                    kms.encrypt(new EncryptRequest().withKeyId(kmsKeyId).withPlaintext(",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/56298e81e7284a0f8ffb67896d438cf16bb65a20,"    public String encrypt(final String text) {
+        return extractString(Base64.getEncoder().encode(
+                    kms.encrypt(new EncryptRequest().withKeyId(kmsKeyId).withPlaintext(
+","['    ', 'public', ' ', 'String', ' ', 'encrypt', '(', 'final', ' ', 'String', ' ', 'text', ')', ' ', '{', '\n', '        ', 'return', ' ', 'extractString', '(', 'Base64', '.', 'getEncoder', '(', ')', '.', 'encode', '(', '\n', '                    ', 'kms', '.', 'encrypt', '(', 'new', ' ', 'EncryptRequest', '(', ')', '.', 'withKeyId', '(', 'kmsKeyId', ')', '.', 'withPlaintext', '(', '\n']"
+master,56298e81e7284a0f8ffb67896d438cf16bb65a20,KmsTextEncryptor.java,decrypt,"    public String decrypt(final String encryptedText) {
+        return extractString(kms.decrypt(new DecryptRequest().withCiphertextBlob(
+                        Base64.getDecoder().decode(ByteBuffer.wrap(encryptedText.getBytes())))).getPlaintext());",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/56298e81e7284a0f8ffb67896d438cf16bb65a20,"    public String decrypt(final String encryptedText) {
+        return extractString(kms.decrypt(new DecryptRequest().withCiphertextBlob(
+                        Base64.getDecoder().decode(ByteBuffer.wrap(encryptedText.getBytes())))).getPlaintext());
+","['    ', 'public', ' ', 'String', ' ', 'decrypt', '(', 'final', ' ', 'String', ' ', 'encryptedText', ')', ' ', '{', '\n', '        ', 'return', ' ', 'extractString', '(', 'kms', '.', 'decrypt', '(', 'new', ' ', 'DecryptRequest', '(', ')', '.', 'withCiphertextBlob', '(', '\n', '                        ', 'Base64', '.', 'getDecoder', '(', ')', '.', 'decode', '(', 'ByteBuffer', '.', 'wrap', '(', 'encryptedText', '.', 'getBytes', '(', ')', ')', ')', ')', ')', '.', 'getPlaintext', '(', ')', ')', ';', '\n']"
+master,56298e81e7284a0f8ffb67896d438cf16bb65a20,KmsTextEncryptor.java,extractString,"    private static String extractString(final ByteBuffer bb) {
+        if (bb.hasRemaining()) {
+            final byte[] bytes = new byte[bb.remaining()];",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/56298e81e7284a0f8ffb67896d438cf16bb65a20,"    private static String extractString(final ByteBuffer bb) {
+        if (bb.hasRemaining()) {
+            final byte[] bytes = new byte[bb.remaining()];
+","['    ', 'private', ' ', 'static', ' ', 'String', ' ', 'extractString', '(', 'final', ' ', 'ByteBuffer', ' ', 'bb', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'bb', '.', 'hasRemaining', '(', ')', ')', ' ', '{', '\n', '            ', 'final', ' ', 'byte', '[', ']', ' ', 'bytes', ' ', '=', ' ', 'new', ' ', 'byte', '[', 'bb', '.', 'remaining', '(', ')', ']', ';', '\n']"
+master,8f66da93499af171c7f4f61c70f2e2c9ce75a6cf,KmsTextEncryptor.java,encrypt,"    public String encrypt(final String text) {
+        return extractString(Base64.getEncoder().encode(
+                    getKms().encrypt(new EncryptRequest().withKeyId(kmsKeyId).withPlaintext(",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/8f66da93499af171c7f4f61c70f2e2c9ce75a6cf,"    public String encrypt(final String text) {
+        return extractString(Base64.getEncoder().encode(
+                    getKms().encrypt(new EncryptRequest().withKeyId(kmsKeyId).withPlaintext(
+","['    ', 'public', ' ', 'String', ' ', 'encrypt', '(', 'final', ' ', 'String', ' ', 'text', ')', ' ', '{', '\n', '        ', 'return', ' ', 'extractString', '(', 'Base64', '.', 'getEncoder', '(', ')', '.', 'encode', '(', '\n', '                    ', 'getKms', '(', ')', '.', 'encrypt', '(', 'new', ' ', 'EncryptRequest', '(', ')', '.', 'withKeyId', '(', 'kmsKeyId', ')', '.', 'withPlaintext', '(', '\n']"
+master,8f66da93499af171c7f4f61c70f2e2c9ce75a6cf,KmsTextEncryptor.java,decrypt,"    public String decrypt(final String encryptedText) {
+        return extractString(getKms().decrypt(new DecryptRequest().withCiphertextBlob(
+                        Base64.getDecoder().decode(ByteBuffer.wrap(encryptedText.getBytes())))).getPlaintext());",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/8f66da93499af171c7f4f61c70f2e2c9ce75a6cf,"    public String decrypt(final String encryptedText) {
+        return extractString(getKms().decrypt(new DecryptRequest().withCiphertextBlob(
+                        Base64.getDecoder().decode(ByteBuffer.wrap(encryptedText.getBytes())))).getPlaintext());
+","['    ', 'public', ' ', 'String', ' ', 'decrypt', '(', 'final', ' ', 'String', ' ', 'encryptedText', ')', ' ', '{', '\n', '        ', 'return', ' ', 'extractString', '(', 'getKms', '(', ')', '.', 'decrypt', '(', 'new', ' ', 'DecryptRequest', '(', ')', '.', 'withCiphertextBlob', '(', '\n', '                        ', 'Base64', '.', 'getDecoder', '(', ')', '.', 'decode', '(', 'ByteBuffer', '.', 'wrap', '(', 'encryptedText', '.', 'getBytes', '(', ')', ')', ')', ')', ')', '.', 'getPlaintext', '(', ')', ')', ';', '\n']"
+master,34e241ec36e36c36ecde7a3cbb4109692dd2478e,EncryptionCLI.java,run,"    public void run(final String... args) {
+        Assert.state(args.length >= 3, ""Too few arguments"");
+
+        final String text = args[1];
+        final String keyId = args[2];
+
+        switch (args[0]) {
+",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/34e241ec36e36c36ecde7a3cbb4109692dd2478e,"    public void run(final String... args) {
+        Assert.state(args.length >= 3, ""Too few arguments"");
+
+        final String text = args[1];
+        final String keyId = args[2];
+
+        switch (args[0]) {
+","['    ', 'public', ' ', 'void', ' ', 'run', '(', 'final', ' ', 'String', '.', '.', '.', ' ', 'args', ')', ' ', '{', '\n', '        ', 'Assert', '.', 'state', '(', 'args', '.', 'length', ' ', '>', '=', ' ', '3', ',', ' ', '""', 'Too few arguments', '""', ')', ';', '\n', '\n', '        ', 'final', ' ', 'String', ' ', 'text', ' ', '=', ' ', 'args', '[', '1', ']', ';', '\n', '        ', 'final', ' ', 'String', ' ', 'keyId', ' ', '=', ' ', 'args', '[', '2', ']', ';', '\n', '\n', '        ', 'switch', ' ', '(', 'args', '[', '0', ']', ')', ' ', '{', '\n']"
+master,34e241ec36e36c36ecde7a3cbb4109692dd2478e,TestApplication.java,main,"    public static void main(final String[] args) {
+        final SpringApplicationBuilder app = new SpringApplicationBuilder(TestApplication.class);
+        app.showBanner(false);
+        app.properties(""spring.cloud.bootstrap.enabled=false"", ""logging.level.ROOT=WARN"");
+        app.run(args);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/34e241ec36e36c36ecde7a3cbb4109692dd2478e,"    public static void main(final String[] args) {
+        final SpringApplicationBuilder app = new SpringApplicationBuilder(TestApplication.class);
+        app.showBanner(false);
+        app.properties(""spring.cloud.bootstrap.enabled=false"", ""logging.level.ROOT=WARN"");
+        app.run(args);
+    }
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'final', ' ', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'final', ' ', 'SpringApplicationBuilder', ' ', 'app', ' ', '=', ' ', 'new', ' ', 'SpringApplicationBuilder', '(', 'TestApplication', '.', 'class', ')', ';', '\n', '        ', 'app', '.', 'showBanner', '(', 'false', ')', ';', '\n', '        ', 'app', '.', 'properties', '(', '""', 'spring.cloud.bootstrap.enabled=false', '""', ',', ' ', '""', 'logging.level.ROOT=WARN', '""', ')', ';', '\n', '        ', 'app', '.', 'run', '(', 'args', ')', ';', '\n', '    ', '}', '\n']"
+master,7d241e45cfc2a891893932e11dc08168059f66f7,KmsTextEncryptor.java,encrypt,"    public String encrypt(final String text) {
+        final EncryptRequest encryptRequest =
+            new EncryptRequest().withKeyId(kmsKeyId) //
+                                .withPlaintext(ByteBuffer.wrap(text.getBytes()));
+
+        final ByteBuffer encryptedBytes = getKms().encrypt(encryptRequest).getCiphertextBlob();
+
+        return extractString(Base64.getEncoder().encode(encryptedBytes));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/7d241e45cfc2a891893932e11dc08168059f66f7,"    public String encrypt(final String text) {
+        final EncryptRequest encryptRequest =
+            new EncryptRequest().withKeyId(kmsKeyId) 
+                                .withPlaintext(ByteBuffer.wrap(text.getBytes()));
+
+        final ByteBuffer encryptedBytes = getKms().encrypt(encryptRequest).getCiphertextBlob();
+
+        return extractString(Base64.getEncoder().encode(encryptedBytes));
+    }
+","['    ', 'public', ' ', 'String', ' ', 'encrypt', '(', 'final', ' ', 'String', ' ', 'text', ')', ' ', '{', '\n', '        ', 'final', ' ', 'EncryptRequest', ' ', 'encryptRequest', ' ', '=', '\n', '            ', 'new', ' ', 'EncryptRequest', '(', ')', '.', 'withKeyId', '(', 'kmsKeyId', ')', ' ', '\n', '                                ', '.', 'withPlaintext', '(', 'ByteBuffer', '.', 'wrap', '(', 'text', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '\n', '        ', 'final', ' ', 'ByteBuffer', ' ', 'encryptedBytes', ' ', '=', ' ', 'getKms', '(', ')', '.', 'encrypt', '(', 'encryptRequest', ')', '.', 'getCiphertextBlob', '(', ')', ';', '\n', '\n', '        ', 'return', ' ', 'extractString', '(', 'Base64', '.', 'getEncoder', '(', ')', '.', 'encode', '(', 'encryptedBytes', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,7d241e45cfc2a891893932e11dc08168059f66f7,KmsTextEncryptor.java,decrypt,"    public String decrypt(final String encryptedText) {
+
+        // Assuming the encryptedText is encoded in Base64
+        final ByteBuffer encryptedBytes = Base64.getDecoder().decode(ByteBuffer.wrap(encryptedText.getBytes()));
+
+        final DecryptRequest decryptRequest = new DecryptRequest().withCiphertextBlob(encryptedBytes);
+
+        return extractString(getKms().decrypt(decryptRequest).getPlaintext());
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/7d241e45cfc2a891893932e11dc08168059f66f7,"    public String decrypt(final String encryptedText) {
+
+        
+        final ByteBuffer encryptedBytes = Base64.getDecoder().decode(ByteBuffer.wrap(encryptedText.getBytes()));
+
+        final DecryptRequest decryptRequest = new DecryptRequest().withCiphertextBlob(encryptedBytes);
+
+        return extractString(getKms().decrypt(decryptRequest).getPlaintext());
+    }
+","['    ', 'public', ' ', 'String', ' ', 'decrypt', '(', 'final', ' ', 'String', ' ', 'encryptedText', ')', ' ', '{', '\n', '\n', '        ', '\n', '        ', 'final', ' ', 'ByteBuffer', ' ', 'encryptedBytes', ' ', '=', ' ', 'Base64', '.', 'getDecoder', '(', ')', '.', 'decode', '(', 'ByteBuffer', '.', 'wrap', '(', 'encryptedText', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '\n', '        ', 'final', ' ', 'DecryptRequest', ' ', 'decryptRequest', ' ', '=', ' ', 'new', ' ', 'DecryptRequest', '(', ')', '.', 'withCiphertextBlob', '(', 'encryptedBytes', ')', ';', '\n', '\n', '        ', 'return', ' ', 'extractString', '(', 'getKms', '(', ')', '.', 'decrypt', '(', 'decryptRequest', ')', '.', 'getPlaintext', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,59c52941971985d3e11a54e8a21169442169c73e,EncryptionCLI.java,run,"    public void run(final String... args) {
+        try {
+            checkArgument(args.length >= 3, ""Too few arguments."");",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/59c52941971985d3e11a54e8a21169442169c73e,"    public void run(final String... args) {
+        try {
+            checkArgument(args.length >= 3, ""Too few arguments."");
+","['    ', 'public', ' ', 'void', ' ', 'run', '(', 'final', ' ', 'String', '.', '.', '.', ' ', 'args', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'checkArgument', '(', 'args', '.', 'length', ' ', '>', '=', ' ', '3', ',', ' ', '""', 'Too few arguments.', '""', ')', ';', '\n']"
+master,59c52941971985d3e11a54e8a21169442169c73e,KmsEncryptionConfiguration.java,environmentDecryptApplicationInitializer,"    EnvironmentDecryptApplicationInitializer environmentDecryptApplicationInitializer() {
+        return new EnvironmentDecryptApplicationInitializer(kmsTextEncryptor);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/59c52941971985d3e11a54e8a21169442169c73e,"    EnvironmentDecryptApplicationInitializer environmentDecryptApplicationInitializer() {
+        return new EnvironmentDecryptApplicationInitializer(kmsTextEncryptor);
+    }
+","['    ', 'EnvironmentDecryptApplicationInitializer', ' ', 'environmentDecryptApplicationInitializer', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'new', ' ', 'EnvironmentDecryptApplicationInitializer', '(', 'kmsTextEncryptor', ')', ';', '\n', '    ', '}', '\n']"
+master,59c52941971985d3e11a54e8a21169442169c73e,KmsEncryptionConfiguration.java,kmsTextEncryptor,"        KmsTextEncryptor kmsTextEncryptor() {
+            return new KmsTextEncryptor(kms, kmsKeyId);
+        }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/59c52941971985d3e11a54e8a21169442169c73e,"        KmsTextEncryptor kmsTextEncryptor() {
+            return new KmsTextEncryptor(kms, kmsKeyId);
+        }
+","['        ', 'KmsTextEncryptor', ' ', 'kmsTextEncryptor', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'new', ' ', 'KmsTextEncryptor', '(', 'kms', ',', ' ', 'kmsKeyId', ')', ';', '\n', '        ', '}', '\n']"
+master,59c52941971985d3e11a54e8a21169442169c73e,KmsEncryptionConfiguration.java,kms,"        AWSKMS kms() {
+            final AWSKMSClient awskmsClient = new AWSKMSClient();
+            awskmsClient.setRegion(region);
+            return awskmsClient;
+        }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/59c52941971985d3e11a54e8a21169442169c73e,"        AWSKMS kms() {
+            final AWSKMSClient awskmsClient = new AWSKMSClient();
+            awskmsClient.setRegion(region);
+            return awskmsClient;
+        }
+","['        ', 'AWSKMS', ' ', 'kms', '(', ')', ' ', '{', '\n', '            ', 'final', ' ', 'AWSKMSClient', ' ', 'awskmsClient', ' ', '=', ' ', 'new', ' ', 'AWSKMSClient', '(', ')', ';', '\n', '            ', 'awskmsClient', '.', 'setRegion', '(', 'region', ')', ';', '\n', '            ', 'return', ' ', 'awskmsClient', ';', '\n', '        ', '}', '\n']"
+master,59c52941971985d3e11a54e8a21169442169c73e,KmsTextEncryptor.java,encrypt,"    public String encrypt(final String text) {
+        Assert.hasText(kmsKeyId, ""kmsKeyId must not be blank"");
+
+        final EncryptRequest encryptRequest =
+            new EncryptRequest().withKeyId(kmsKeyId) //
+                                .withPlaintext(ByteBuffer.wrap(text.getBytes()));
+
+        final ByteBuffer encryptedBytes = kms.encrypt(encryptRequest).getCiphertextBlob();
+
+        return extractString(Base64.getEncoder().encode(encryptedBytes));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/59c52941971985d3e11a54e8a21169442169c73e,"    public String encrypt(final String text) {
+        Assert.hasText(kmsKeyId, ""kmsKeyId must not be blank"");
+
+        final EncryptRequest encryptRequest =
+            new EncryptRequest().withKeyId(kmsKeyId) 
+                                .withPlaintext(ByteBuffer.wrap(text.getBytes()));
+
+        final ByteBuffer encryptedBytes = kms.encrypt(encryptRequest).getCiphertextBlob();
+
+        return extractString(Base64.getEncoder().encode(encryptedBytes));
+    }
+","['    ', 'public', ' ', 'String', ' ', 'encrypt', '(', 'final', ' ', 'String', ' ', 'text', ')', ' ', '{', '\n', '        ', 'Assert', '.', 'hasText', '(', 'kmsKeyId', ',', ' ', '""', 'kmsKeyId must not be blank', '""', ')', ';', '\n', '\n', '        ', 'final', ' ', 'EncryptRequest', ' ', 'encryptRequest', ' ', '=', '\n', '            ', 'new', ' ', 'EncryptRequest', '(', ')', '.', 'withKeyId', '(', 'kmsKeyId', ')', ' ', '\n', '                                ', '.', 'withPlaintext', '(', 'ByteBuffer', '.', 'wrap', '(', 'text', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '\n', '        ', 'final', ' ', 'ByteBuffer', ' ', 'encryptedBytes', ' ', '=', ' ', 'kms', '.', 'encrypt', '(', 'encryptRequest', ')', '.', 'getCiphertextBlob', '(', ')', ';', '\n', '\n', '        ', 'return', ' ', 'extractString', '(', 'Base64', '.', 'getEncoder', '(', ')', '.', 'encode', '(', 'encryptedBytes', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,59c52941971985d3e11a54e8a21169442169c73e,KmsTextEncryptor.java,decrypt,"    public String decrypt(final String encryptedText) {
+
+        // Assuming the encryptedText is encoded in Base64
+        final ByteBuffer encryptedBytes = Base64.getDecoder().decode(ByteBuffer.wrap(encryptedText.getBytes()));
+
+        final DecryptRequest decryptRequest = new DecryptRequest().withCiphertextBlob(encryptedBytes);
+
+        return extractString(kms.decrypt(decryptRequest).getPlaintext());
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/59c52941971985d3e11a54e8a21169442169c73e,"    public String decrypt(final String encryptedText) {
+
+        
+        final ByteBuffer encryptedBytes = Base64.getDecoder().decode(ByteBuffer.wrap(encryptedText.getBytes()));
+
+        final DecryptRequest decryptRequest = new DecryptRequest().withCiphertextBlob(encryptedBytes);
+
+        return extractString(kms.decrypt(decryptRequest).getPlaintext());
+    }
+","['    ', 'public', ' ', 'String', ' ', 'decrypt', '(', 'final', ' ', 'String', ' ', 'encryptedText', ')', ' ', '{', '\n', '\n', '        ', '\n', '        ', 'final', ' ', 'ByteBuffer', ' ', 'encryptedBytes', ' ', '=', ' ', 'Base64', '.', 'getDecoder', '(', ')', '.', 'decode', '(', 'ByteBuffer', '.', 'wrap', '(', 'encryptedText', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '\n', '        ', 'final', ' ', 'DecryptRequest', ' ', 'decryptRequest', ' ', '=', ' ', 'new', ' ', 'DecryptRequest', '(', ')', '.', 'withCiphertextBlob', '(', 'encryptedBytes', ')', ';', '\n', '\n', '        ', 'return', ' ', 'extractString', '(', 'kms', '.', 'decrypt', '(', 'decryptRequest', ')', '.', 'getPlaintext', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,KmsTextEncryptor.java,encrypt,"    public String encrypt(final String text) {
+        Assert.hasText(kmsKeyId, ""kmsKeyId must not be blank"");
+        if (text == null || text.isEmpty()) {
+            return EMPTY_STRING;",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,"    public String encrypt(final String text) {
+        Assert.hasText(kmsKeyId, ""kmsKeyId must not be blank"");
+        if (text == null || text.isEmpty()) {
+            return EMPTY_STRING;
+","['    ', 'public', ' ', 'String', ' ', 'encrypt', '(', 'final', ' ', 'String', ' ', 'text', ')', ' ', '{', '\n', '        ', 'Assert', '.', 'hasText', '(', 'kmsKeyId', ',', ' ', '""', 'kmsKeyId must not be blank', '""', ')', ';', '\n', '        ', 'if', ' ', '(', 'text', ' ', '=', '=', ' ', 'null', ' ', '|', '|', ' ', 'text', '.', 'isEmpty', '(', ')', ')', ' ', '{', '\n', '            ', 'return', ' ', 'EMPTY_STRING', ';', '\n']"
+master,3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,KmsTextEncryptor.java,decrypt,"    public String decrypt(final String encryptedText) {
+        if (encryptedText == null || encryptedText.isEmpty()) {
+            return EMPTY_STRING;",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,"    public String decrypt(final String encryptedText) {
+        if (encryptedText == null || encryptedText.isEmpty()) {
+            return EMPTY_STRING;
+","['    ', 'public', ' ', 'String', ' ', 'decrypt', '(', 'final', ' ', 'String', ' ', 'encryptedText', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'encryptedText', ' ', '=', '=', ' ', 'null', ' ', '|', '|', ' ', 'encryptedText', '.', 'isEmpty', '(', ')', ')', ' ', '{', '\n', '            ', 'return', ' ', 'EMPTY_STRING', ';', '\n']"
+master,3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,KmsTextEncryptorTest.java,setUp,"    public void setUp() throws Exception {
+        mockKms = mock(AWSKMS.class);
+        textEncryptor = new KmsTextEncryptor(mockKms, KMS_KEY_ID);
+
+        expectedEncryptRequest = new EncryptRequest();
+        expectedEncryptRequest.setKeyId(KMS_KEY_ID);
+        expectedEncryptRequest.setPlaintext(wrap(PLAINTEXT.getBytes()));
+
+        encryptResult = new EncryptResult();
+        encryptResult.setCiphertextBlob(wrap(CIPHER_TEXT.getBytes()));
+        when(mockKms.encrypt(any(EncryptRequest.class))).thenReturn(encryptResult);
+
+        expectedDecryptRequest = new DecryptRequest();
+        expectedDecryptRequest.setCiphertextBlob(wrap(CIPHER_TEXT.getBytes()));
+
+        decryptResult = new DecryptResult();
+        decryptResult.setPlaintext(wrap(PLAINTEXT.getBytes()));
+        when(mockKms.decrypt(any(DecryptRequest.class))).thenReturn(decryptResult);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,"    public void setUp() throws Exception {
+        mockKms = mock(AWSKMS.class);
+        textEncryptor = new KmsTextEncryptor(mockKms, KMS_KEY_ID);
+
+        expectedEncryptRequest = new EncryptRequest();
+        expectedEncryptRequest.setKeyId(KMS_KEY_ID);
+        expectedEncryptRequest.setPlaintext(wrap(PLAINTEXT.getBytes()));
+
+        encryptResult = new EncryptResult();
+        encryptResult.setCiphertextBlob(wrap(CIPHER_TEXT.getBytes()));
+        when(mockKms.encrypt(any(EncryptRequest.class))).thenReturn(encryptResult);
+
+        expectedDecryptRequest = new DecryptRequest();
+        expectedDecryptRequest.setCiphertextBlob(wrap(CIPHER_TEXT.getBytes()));
+
+        decryptResult = new DecryptResult();
+        decryptResult.setPlaintext(wrap(PLAINTEXT.getBytes()));
+        when(mockKms.decrypt(any(DecryptRequest.class))).thenReturn(decryptResult);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'setUp', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'mockKms', ' ', '=', ' ', 'mock', '(', 'AWSKMS', '.', 'class', ')', ';', '\n', '        ', 'textEncryptor', ' ', '=', ' ', 'new', ' ', 'KmsTextEncryptor', '(', 'mockKms', ',', ' ', 'KMS_KEY_ID', ')', ';', '\n', '\n', '        ', 'expectedEncryptRequest', ' ', '=', ' ', 'new', ' ', 'EncryptRequest', '(', ')', ';', '\n', '        ', 'expectedEncryptRequest', '.', 'setKeyId', '(', 'KMS_KEY_ID', ')', ';', '\n', '        ', 'expectedEncryptRequest', '.', 'setPlaintext', '(', 'wrap', '(', 'PLAINTEXT', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '\n', '        ', 'encryptResult', ' ', '=', ' ', 'new', ' ', 'EncryptResult', '(', ')', ';', '\n', '        ', 'encryptResult', '.', 'setCiphertextBlob', '(', 'wrap', '(', 'CIPHER_TEXT', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '        ', 'when', '(', 'mockKms', '.', 'encrypt', '(', 'any', '(', 'EncryptRequest', '.', 'class', ')', ')', ')', '.', 'thenReturn', '(', 'encryptResult', ')', ';', '\n', '\n', '        ', 'expectedDecryptRequest', ' ', '=', ' ', 'new', ' ', 'DecryptRequest', '(', ')', ';', '\n', '        ', 'expectedDecryptRequest', '.', 'setCiphertextBlob', '(', 'wrap', '(', 'CIPHER_TEXT', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '\n', '        ', 'decryptResult', ' ', '=', ' ', 'new', ' ', 'DecryptResult', '(', ')', ';', '\n', '        ', 'decryptResult', '.', 'setPlaintext', '(', 'wrap', '(', 'PLAINTEXT', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '        ', 'when', '(', 'mockKms', '.', 'decrypt', '(', 'any', '(', 'DecryptRequest', '.', 'class', ')', ')', ')', '.', 'thenReturn', '(', 'decryptResult', ')', ';', '\n', '    ', '}', '\n']"
+master,3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,KmsTextEncryptorTest.java,tearDown,"    public void tearDown() throws Exception {
+        verifyNoMoreInteractions(mockKms);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,"    public void tearDown() throws Exception {
+        verifyNoMoreInteractions(mockKms);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'tearDown', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'verifyNoMoreInteractions', '(', 'mockKms', ')', ';', '\n', '    ', '}', '\n']"
+master,3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,KmsTextEncryptorTest.java,testEncrypt,"    public void testEncrypt() throws Exception {
+        assertThat(textEncryptor.encrypt(PLAINTEXT)).isEqualTo(BASE64_CIPHER_TEXT);
+        verify(mockKms).encrypt(eq(expectedEncryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,"    public void testEncrypt() throws Exception {
+        assertThat(textEncryptor.encrypt(PLAINTEXT)).isEqualTo(BASE64_CIPHER_TEXT);
+        verify(mockKms).encrypt(eq(expectedEncryptRequest));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testEncrypt', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'encrypt', '(', 'PLAINTEXT', ')', ')', '.', 'isEqualTo', '(', 'BASE64_CIPHER_TEXT', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ')', '.', 'encrypt', '(', 'eq', '(', 'expectedEncryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,KmsTextEncryptorTest.java,testEncryptEmptyResponse,"    public void testEncryptEmptyResponse() throws Exception {
+        encryptResult.setCiphertextBlob(allocate(0));
+        assertThat(textEncryptor.encrypt(PLAINTEXT)).isEqualTo("""");
+        verify(mockKms).encrypt(eq(expectedEncryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,"    public void testEncryptEmptyResponse() throws Exception {
+        encryptResult.setCiphertextBlob(allocate(0));
+        assertThat(textEncryptor.encrypt(PLAINTEXT)).isEqualTo("""");
+        verify(mockKms).encrypt(eq(expectedEncryptRequest));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testEncryptEmptyResponse', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'encryptResult', '.', 'setCiphertextBlob', '(', 'allocate', '(', '0', ')', ')', ';', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'encrypt', '(', 'PLAINTEXT', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ')', '.', 'encrypt', '(', 'eq', '(', 'expectedEncryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,KmsTextEncryptorTest.java,testEncryptNull,"    public void testEncryptNull() throws Exception {
+        assertThat(textEncryptor.encrypt(null)).isEqualTo("""");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,"    public void testEncryptNull() throws Exception {
+        assertThat(textEncryptor.encrypt(null)).isEqualTo("""");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testEncryptNull', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'encrypt', '(', 'null', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,KmsTextEncryptorTest.java,testEncryptEmptyString,"    public void testEncryptEmptyString() throws Exception {
+        assertThat(textEncryptor.encrypt("""")).isEqualTo("""");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,"    public void testEncryptEmptyString() throws Exception {
+        assertThat(textEncryptor.encrypt("""")).isEqualTo("""");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testEncryptEmptyString', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'encrypt', '(', '""', '""', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,KmsTextEncryptorTest.java,testDecryptNull,"    public void testDecryptNull() throws Exception {
+        assertThat(textEncryptor.decrypt(null)).isEqualTo("""");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,"    public void testDecryptNull() throws Exception {
+        assertThat(textEncryptor.decrypt(null)).isEqualTo("""");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testDecryptNull', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'decrypt', '(', 'null', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,KmsTextEncryptorTest.java,testDecryptEmptyString,"    public void testDecryptEmptyString() throws Exception {
+        assertThat(textEncryptor.decrypt("""")).isEqualTo("""");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,"    public void testDecryptEmptyString() throws Exception {
+        assertThat(textEncryptor.decrypt("""")).isEqualTo("""");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testDecryptEmptyString', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'decrypt', '(', '""', '""', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,KmsTextEncryptorTest.java,testDecrypt,"    public void testDecrypt() throws Exception {
+        assertThat(textEncryptor.decrypt(BASE64_CIPHER_TEXT)).isEqualTo(PLAINTEXT);
+        verify(mockKms).decrypt(eq(expectedDecryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,"    public void testDecrypt() throws Exception {
+        assertThat(textEncryptor.decrypt(BASE64_CIPHER_TEXT)).isEqualTo(PLAINTEXT);
+        verify(mockKms).decrypt(eq(expectedDecryptRequest));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testDecrypt', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'decrypt', '(', 'BASE64_CIPHER_TEXT', ')', ')', '.', 'isEqualTo', '(', 'PLAINTEXT', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ')', '.', 'decrypt', '(', 'eq', '(', 'expectedDecryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,KmsTextEncryptorTest.java,testDecryptEmptyResult,"    public void testDecryptEmptyResult() throws Exception {
+        decryptResult.setPlaintext(ByteBuffer.allocate(0));
+        assertThat(textEncryptor.decrypt(BASE64_CIPHER_TEXT)).isEqualTo("""");
+        verify(mockKms).decrypt(eq(expectedDecryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/3fa0fc994222c7cc5fa61498aa7f3da25ad0e16d,"    public void testDecryptEmptyResult() throws Exception {
+        decryptResult.setPlaintext(ByteBuffer.allocate(0));
+        assertThat(textEncryptor.decrypt(BASE64_CIPHER_TEXT)).isEqualTo("""");
+        verify(mockKms).decrypt(eq(expectedDecryptRequest));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testDecryptEmptyResult', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'decryptResult', '.', 'setPlaintext', '(', 'ByteBuffer', '.', 'allocate', '(', '0', ')', ')', ';', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'decrypt', '(', 'BASE64_CIPHER_TEXT', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ')', '.', 'decrypt', '(', 'eq', '(', 'expectedDecryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,2ab894608d5fdcd21729ebfbd35b1e3a9e109f3b,DisabledKmsEncryptionIntegrationConfigurationTest.java,testPropertyHasNotBeenDecrypted,"    public void testPropertyHasNotBeenDecrypted() throws Exception {
+        assertThat(decryptedSecret).isEqualTo(ENCRYPTED);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/2ab894608d5fdcd21729ebfbd35b1e3a9e109f3b,"    public void testPropertyHasNotBeenDecrypted() throws Exception {
+        assertThat(decryptedSecret).isEqualTo(ENCRYPTED);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testPropertyHasNotBeenDecrypted', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'assertThat', '(', 'decryptedSecret', ')', '.', 'isEqualTo', '(', 'ENCRYPTED', ')', ';', '\n', '    ', '}', '\n']"
+master,2ab894608d5fdcd21729ebfbd35b1e3a9e109f3b,KmsEncryptionIntegrationConfigurationTest.java,testPropertyHasBeenDecrypted,"    public void testPropertyHasBeenDecrypted() throws Exception {
+
+        assertThat(decryptedSecret).isEqualTo(PLAINTEXT);
+
+        final DecryptRequest decryptRequest = new DecryptRequest();
+        decryptRequest.setCiphertextBlob(CIPHER_TEXT_BLOB);
+        verify(mockKms, atLeastOnce()).decrypt(decryptRequest);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/2ab894608d5fdcd21729ebfbd35b1e3a9e109f3b,"    public void testPropertyHasBeenDecrypted() throws Exception {
+
+        assertThat(decryptedSecret).isEqualTo(PLAINTEXT);
+
+        final DecryptRequest decryptRequest = new DecryptRequest();
+        decryptRequest.setCiphertextBlob(CIPHER_TEXT_BLOB);
+        verify(mockKms, atLeastOnce()).decrypt(decryptRequest);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testPropertyHasBeenDecrypted', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '\n', '        ', 'assertThat', '(', 'decryptedSecret', ')', '.', 'isEqualTo', '(', 'PLAINTEXT', ')', ';', '\n', '\n', '        ', 'final', ' ', 'DecryptRequest', ' ', 'decryptRequest', ' ', '=', ' ', 'new', ' ', 'DecryptRequest', '(', ')', ';', '\n', '        ', 'decryptRequest', '.', 'setCiphertextBlob', '(', 'CIPHER_TEXT_BLOB', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ',', ' ', 'atLeastOnce', '(', ')', ')', '.', 'decrypt', '(', 'decryptRequest', ')', ';', '\n', '    ', '}', '\n']"
+master,2ab894608d5fdcd21729ebfbd35b1e3a9e109f3b,MockAwsKmsConfig.java,kms,"    AWSKMS kms() {
+        final AWSKMS mock = mock(AWSKMS.class);
+        final DecryptResult result = new DecryptResult();
+        result.setPlaintext(ByteBuffer.wrap(KmsEncryptionIntegrationConfigurationTest.PLAINTEXT.getBytes()));
+        when(mock.decrypt(any(DecryptRequest.class))).thenReturn(result);
+        return mock;
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/2ab894608d5fdcd21729ebfbd35b1e3a9e109f3b,"    AWSKMS kms() {
+        final AWSKMS mock = mock(AWSKMS.class);
+        final DecryptResult result = new DecryptResult();
+        result.setPlaintext(ByteBuffer.wrap(KmsEncryptionIntegrationConfigurationTest.PLAINTEXT.getBytes()));
+        when(mock.decrypt(any(DecryptRequest.class))).thenReturn(result);
+        return mock;
+    }
+","['    ', 'AWSKMS', ' ', 'kms', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'AWSKMS', ' ', 'mock', ' ', '=', ' ', 'mock', '(', 'AWSKMS', '.', 'class', ')', ';', '\n', '        ', 'final', ' ', 'DecryptResult', ' ', 'result', ' ', '=', ' ', 'new', ' ', 'DecryptResult', '(', ')', ';', '\n', '        ', 'result', '.', 'setPlaintext', '(', 'ByteBuffer', '.', 'wrap', '(', 'KmsEncryptionIntegrationConfigurationTest', '.', 'PLAINTEXT', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '        ', 'when', '(', 'mock', '.', 'decrypt', '(', 'any', '(', 'DecryptRequest', '.', 'class', ')', ')', ')', '.', 'thenReturn', '(', 'result', ')', ';', '\n', '        ', 'return', ' ', 'mock', ';', '\n', '    ', '}', '\n']"
+master,2ab894608d5fdcd21729ebfbd35b1e3a9e109f3b,NoKmsEncryptionIntegrationConfigurationTest.java,testPropertyHasBeenDecrypted,"    public void testPropertyHasBeenDecrypted() throws Exception {
+        assertThat(secret).isEqualTo(""secret"");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/2ab894608d5fdcd21729ebfbd35b1e3a9e109f3b,"    public void testPropertyHasBeenDecrypted() throws Exception {
+        assertThat(secret).isEqualTo(""secret"");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testPropertyHasBeenDecrypted', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'assertThat', '(', 'secret', ')', '.', 'isEqualTo', '(', '""', 'secret', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,81506acb49f1b20a98f808ba49e2bb6a734f0ad1,KmsEncryptionConfiguration.java,kms,"        AWSKMS kms() {
+            final AWSKMSClient awskmsClient = new AWSKMSClient();
+            awskmsClient.setRegion(Region.getRegion(region));
+            return awskmsClient;
+        }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/81506acb49f1b20a98f808ba49e2bb6a734f0ad1,"        AWSKMS kms() {
+            final AWSKMSClient awskmsClient = new AWSKMSClient();
+            awskmsClient.setRegion(Region.getRegion(region));
+            return awskmsClient;
+        }
+","['        ', 'AWSKMS', ' ', 'kms', '(', ')', ' ', '{', '\n', '            ', 'final', ' ', 'AWSKMSClient', ' ', 'awskmsClient', ' ', '=', ' ', 'new', ' ', 'AWSKMSClient', '(', ')', ';', '\n', '            ', 'awskmsClient', '.', 'setRegion', '(', 'Region', '.', 'getRegion', '(', 'region', ')', ')', ';', '\n', '            ', 'return', ' ', 'awskmsClient', ';', '\n', '        ', '}', '\n']"
+master,b50ed11564461dcf332a0c85553c1fc22f94cc15,DisabledKmsEncryptionIntegrationConfigurationTest.java,testPropertyHasNotBeenDecrypted,"    public void testPropertyHasNotBeenDecrypted() throws Exception {
+        assertThat(decryptedSecret).isEmpty();
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b50ed11564461dcf332a0c85553c1fc22f94cc15,"    public void testPropertyHasNotBeenDecrypted() throws Exception {
+        assertThat(decryptedSecret).isEmpty();
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testPropertyHasNotBeenDecrypted', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'assertThat', '(', 'decryptedSecret', ')', '.', 'isEmpty', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,b50ed11564461dcf332a0c85553c1fc22f94cc15,MockAwsKmsConfig.java,kms,"    AWSKMS kms() {
+        final AWSKMS mock = mock(AWSKMS.class);
+        when(mock.decrypt(any(DecryptRequest.class))).thenAnswer(new Answer<DecryptResult>() {
+            @Override
+            public DecryptResult answer(InvocationOnMock invocation) throws Throwable {
+                return new DecryptResult().withPlaintext(ByteBuffer.wrap(KmsEncryptionIntegrationConfigurationTest.PLAINTEXT.getBytes()));
+            }
+        });
+        return mock;
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b50ed11564461dcf332a0c85553c1fc22f94cc15,"    AWSKMS kms() {
+        final AWSKMS mock = mock(AWSKMS.class);
+        when(mock.decrypt(any(DecryptRequest.class))).thenAnswer(new Answer<DecryptResult>() {
+            @Override
+            public DecryptResult answer(InvocationOnMock invocation) throws Throwable {
+                return new DecryptResult().withPlaintext(ByteBuffer.wrap(KmsEncryptionIntegrationConfigurationTest.PLAINTEXT.getBytes()));
+            }
+        });
+        return mock;
+    }
+","['    ', 'AWSKMS', ' ', 'kms', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'AWSKMS', ' ', 'mock', ' ', '=', ' ', 'mock', '(', 'AWSKMS', '.', 'class', ')', ';', '\n', '        ', 'when', '(', 'mock', '.', 'decrypt', '(', 'any', '(', 'DecryptRequest', '.', 'class', ')', ')', ')', '.', 'thenAnswer', '(', 'new', ' ', 'Answer', '<', 'DecryptResult', '>', '(', ')', ' ', '{', '\n', '            ', '@Override', '\n', '            ', 'public', ' ', 'DecryptResult', ' ', 'answer', '(', 'InvocationOnMock', ' ', 'invocation', ')', ' ', 'throws', ' ', 'Throwable', ' ', '{', '\n', '                ', 'return', ' ', 'new', ' ', 'DecryptResult', '(', ')', '.', 'withPlaintext', '(', 'ByteBuffer', '.', 'wrap', '(', 'KmsEncryptionIntegrationConfigurationTest', '.', 'PLAINTEXT', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '            ', '}', '\n', '        ', '}', ')', ';', '\n', '        ', 'return', ' ', 'mock', ';', '\n', '    ', '}', '\n']"
+master,b50ed11564461dcf332a0c85553c1fc22f94cc15,MockAwsKmsConfig.java,answer,"            public DecryptResult answer(InvocationOnMock invocation) throws Throwable {
+                return new DecryptResult().withPlaintext(ByteBuffer.wrap(KmsEncryptionIntegrationConfigurationTest.PLAINTEXT.getBytes()));
+            }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b50ed11564461dcf332a0c85553c1fc22f94cc15,"            public DecryptResult answer(InvocationOnMock invocation) throws Throwable {
+                return new DecryptResult().withPlaintext(ByteBuffer.wrap(KmsEncryptionIntegrationConfigurationTest.PLAINTEXT.getBytes()));
+            }
+","['            ', 'public', ' ', 'DecryptResult', ' ', 'answer', '(', 'InvocationOnMock', ' ', 'invocation', ')', ' ', 'throws', ' ', 'Throwable', ' ', '{', '\n', '                ', 'return', ' ', 'new', ' ', 'DecryptResult', '(', ')', '.', 'withPlaintext', '(', 'ByteBuffer', '.', 'wrap', '(', 'KmsEncryptionIntegrationConfigurationTest', '.', 'PLAINTEXT', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '            ', '}', '\n']"
+master,b4e375155781dbf6925e0f3ff0eca748fb45e675,KmsTextEncryptor.java,extractEncryptionContext,"    /* default for testing */ static Map<String, String> extractEncryptionContext(final String encryptedText) {
+        final int lower = encryptedText.indexOf('(');
+        final int upper= encryptedText.indexOf(')');
+        if (lower != 0 || upper < 0) {
+            return Collections.emptyMap();",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b4e375155781dbf6925e0f3ff0eca748fb45e675,"     static Map<String, String> extractEncryptionContext(final String encryptedText) {
+        final int lower = encryptedText.indexOf('(');
+        final int upper= encryptedText.indexOf(')');
+        if (lower != 0 || upper < 0) {
+            return Collections.emptyMap();
+","['     ', 'static', ' ', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'extractEncryptionContext', '(', 'final', ' ', 'String', ' ', 'encryptedText', ')', ' ', '{', '\n', '        ', 'final', ' ', 'int', ' ', 'lower', ' ', '=', ' ', 'encryptedText', '.', 'indexOf', '(', ""'('"", ')', ';', '\n', '        ', 'final', ' ', 'int', ' ', 'upper', '=', ' ', 'encryptedText', '.', 'indexOf', '(', ""')'"", ')', ';', '\n', '        ', 'if', ' ', '(', 'lower', ' ', '!', '=', ' ', '0', ' ', '|', '|', ' ', 'upper', ' ', '<', ' ', '0', ')', ' ', '{', '\n', '            ', 'return', ' ', 'Collections', '.', 'emptyMap', '(', ')', ';', '\n']"
+master,b4e375155781dbf6925e0f3ff0eca748fb45e675,KmsTextEncryptor.java,extractEncryptedValue,"    /* default for testing */ static String extractEncryptedValue(final String encryptedText) {
+        final int index = encryptedText.lastIndexOf(')');
+        if (index > 0) {
+            return encryptedText.substring(index + 1);
+        }
+        return encryptedText;
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b4e375155781dbf6925e0f3ff0eca748fb45e675,"     static String extractEncryptedValue(final String encryptedText) {
+        final int index = encryptedText.lastIndexOf(')');
+        if (index > 0) {
+            return encryptedText.substring(index + 1);
+        }
+        return encryptedText;
+    }
+","['     ', 'static', ' ', 'String', ' ', 'extractEncryptedValue', '(', 'final', ' ', 'String', ' ', 'encryptedText', ')', ' ', '{', '\n', '        ', 'final', ' ', 'int', ' ', 'index', ' ', '=', ' ', 'encryptedText', '.', 'lastIndexOf', '(', ""')'"", ')', ';', '\n', '        ', 'if', ' ', '(', 'index', ' ', '>', ' ', '0', ')', ' ', '{', '\n', '            ', 'return', ' ', 'encryptedText', '.', 'substring', '(', 'index', ' ', '+', ' ', '1', ')', ';', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'encryptedText', ';', '\n', '    ', '}', '\n']"
+master,b4e375155781dbf6925e0f3ff0eca748fb45e675,KmsEncryptionContextTest.java,testExtractEncryptionValue,"    public void testExtractEncryptionValue() {
+        String encryptionValue = KmsTextEncryptor.extractEncryptedValue(ENCRYPTION_TEXT);
+        assertEquals(""remaining"", encryptionValue);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b4e375155781dbf6925e0f3ff0eca748fb45e675,"    public void testExtractEncryptionValue() {
+        String encryptionValue = KmsTextEncryptor.extractEncryptedValue(ENCRYPTION_TEXT);
+        assertEquals(""remaining"", encryptionValue);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testExtractEncryptionValue', '(', ')', ' ', '{', '\n', '        ', 'String', ' ', 'encryptionValue', ' ', '=', ' ', 'KmsTextEncryptor', '.', 'extractEncryptedValue', '(', 'ENCRYPTION_TEXT', ')', ';', '\n', '        ', 'assertEquals', '(', '""', 'remaining', '""', ',', ' ', 'encryptionValue', ')', ';', '\n', '    ', '}', '\n']"
+master,4087f84aaea37da0dd4742845851fc509f5816f4,KmsEncryptionContextTest.java,testExtractEncryptionContext,"    public void testExtractEncryptionContext() {
+        assertThat(KmsTextEncryptor.extractEncryptionContext(ENCRYPTION_TEXT))
+                .containsOnly(",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/4087f84aaea37da0dd4742845851fc509f5816f4,"    public void testExtractEncryptionContext() {
+        assertThat(KmsTextEncryptor.extractEncryptionContext(ENCRYPTION_TEXT))
+                .containsOnly(
+","['    ', 'public', ' ', 'void', ' ', 'testExtractEncryptionContext', '(', ')', ' ', '{', '\n', '        ', 'assertThat', '(', 'KmsTextEncryptor', '.', 'extractEncryptionContext', '(', 'ENCRYPTION_TEXT', ')', ')', '\n', '                ', '.', 'containsOnly', '(', '\n']"
+master,95ae0d58264888ab3ffc57fafb4b4c437e89ffe3,TestApplication.java,main,"    public static void main(final String[] args) {
+        final SpringApplicationBuilder app = new SpringApplicationBuilder(TestApplication.class);
+        app.bannerMode(OFF);
+        app.properties(""spring.cloud.bootstrap.enabled=false"", ""logging.level.ROOT=WARN"");
+        app.run(args);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/95ae0d58264888ab3ffc57fafb4b4c437e89ffe3,"    public static void main(final String[] args) {
+        final SpringApplicationBuilder app = new SpringApplicationBuilder(TestApplication.class);
+        app.bannerMode(OFF);
+        app.properties(""spring.cloud.bootstrap.enabled=false"", ""logging.level.ROOT=WARN"");
+        app.run(args);
+    }
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'final', ' ', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'final', ' ', 'SpringApplicationBuilder', ' ', 'app', ' ', '=', ' ', 'new', ' ', 'SpringApplicationBuilder', '(', 'TestApplication', '.', 'class', ')', ';', '\n', '        ', 'app', '.', 'bannerMode', '(', 'OFF', ')', ';', '\n', '        ', 'app', '.', 'properties', '(', '""', 'spring.cloud.bootstrap.enabled=false', '""', ',', ' ', '""', 'logging.level.ROOT=WARN', '""', ')', ';', '\n', '        ', 'app', '.', 'run', '(', 'args', ')', ';', '\n', '    ', '}', '\n']"
+master,7aab71d257f824c411930a018dd1b1cfd0519168,KmsEncryptionConfiguration.java,kmsFactoryBean,"        public AmazonWebserviceClientFactoryBean<AWSKMSClient> kmsFactoryBean(
+                final Optional<AWSCredentialsProvider> awsCredentialsProvider,
+                final Optional<RegionProvider> regionProvider) {
+            return new AmazonWebserviceClientFactoryBean<>(
+                    AWSKMSClient.class,",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/7aab71d257f824c411930a018dd1b1cfd0519168,"        public AmazonWebserviceClientFactoryBean<AWSKMSClient> kmsFactoryBean(
+                final Optional<AWSCredentialsProvider> awsCredentialsProvider,
+                final Optional<RegionProvider> regionProvider) {
+            return new AmazonWebserviceClientFactoryBean<>(
+                    AWSKMSClient.class,
+","['        ', 'public', ' ', 'AmazonWebserviceClientFactoryBean', '<', 'AWSKMSClient', '>', ' ', 'kmsFactoryBean', '(', '\n', '                ', 'final', ' ', 'Optional', '<', 'AWSCredentialsProvider', '>', ' ', 'awsCredentialsProvider', ',', '\n', '                ', 'final', ' ', 'Optional', '<', 'RegionProvider', '>', ' ', 'regionProvider', ')', ' ', '{', '\n', '            ', 'return', ' ', 'new', ' ', 'AmazonWebserviceClientFactoryBean', '<', '>', '(', '\n', '                    ', 'AWSKMSClient', '.', 'class', ',', '\n']"
+master,7aab71d257f824c411930a018dd1b1cfd0519168,MockAwsKmsConfig.java,kms,"    AWSKMS kms() {
+        final AWSKMS mock = mock(AWSKMS.class);
+        when(mock.decrypt(any(DecryptRequest.class))).thenAnswer((Answer<DecryptResult>) invocation ->
+                new DecryptResult().withPlaintext(ByteBuffer.wrap(KmsEncryptionIntegrationConfigurationTest.PLAINTEXT.getBytes())));
+        return mock;
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/7aab71d257f824c411930a018dd1b1cfd0519168,"    AWSKMS kms() {
+        final AWSKMS mock = mock(AWSKMS.class);
+        when(mock.decrypt(any(DecryptRequest.class))).thenAnswer((Answer<DecryptResult>) invocation ->
+                new DecryptResult().withPlaintext(ByteBuffer.wrap(KmsEncryptionIntegrationConfigurationTest.PLAINTEXT.getBytes())));
+        return mock;
+    }
+","['    ', 'AWSKMS', ' ', 'kms', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'AWSKMS', ' ', 'mock', ' ', '=', ' ', 'mock', '(', 'AWSKMS', '.', 'class', ')', ';', '\n', '        ', 'when', '(', 'mock', '.', 'decrypt', '(', 'any', '(', 'DecryptRequest', '.', 'class', ')', ')', ')', '.', 'thenAnswer', '(', '(', 'Answer', '<', 'DecryptResult', '>', ')', ' ', 'invocation', ' ', '-', '>', '\n', '                ', 'new', ' ', 'DecryptResult', '(', ')', '.', 'withPlaintext', '(', 'ByteBuffer', '.', 'wrap', '(', 'KmsEncryptionIntegrationConfigurationTest', '.', 'PLAINTEXT', '.', 'getBytes', '(', ')', ')', ')', ')', ';', '\n', '        ', 'return', ' ', 'mock', ';', '\n', '    ', '}', '\n']"
+master,c925646246be694b26a25723f42da053312f01ae,EncryptionCLI.java,run,"    public void run(final String... args) {
+        try {
+            checkArgument(args.length >= 2, ""Too few arguments."");",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/c925646246be694b26a25723f42da053312f01ae,"    public void run(final String... args) {
+        try {
+            checkArgument(args.length >= 2, ""Too few arguments."");
+","['    ', 'public', ' ', 'void', ' ', 'run', '(', 'final', ' ', 'String', '.', '.', '.', ' ', 'args', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'checkArgument', '(', 'args', '.', 'length', ' ', '>', '=', ' ', '2', ',', ' ', '""', 'Too few arguments.', '""', ')', ';', '\n']"
+master,e6f2b05a5e49cabcb789a3630a80e80b997e57ae,KmsEncryptionConfiguration.java,kmsTextEncryptor,"        KmsTextEncryptor kmsTextEncryptor() {
+            return new KmsTextEncryptor(kms, properties.getKeyId());
+        }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/e6f2b05a5e49cabcb789a3630a80e80b997e57ae,"        KmsTextEncryptor kmsTextEncryptor() {
+            return new KmsTextEncryptor(kms, properties.getKeyId());
+        }
+","['        ', 'KmsTextEncryptor', ' ', 'kmsTextEncryptor', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'new', ' ', 'KmsTextEncryptor', '(', 'kms', ',', ' ', 'properties', '.', 'getKeyId', '(', ')', ')', ';', '\n', '        ', '}', '\n']"
+master,e6f2b05a5e49cabcb789a3630a80e80b997e57ae,KmsEncryptionConfiguration.java,kms,"        public AWSKMS kms(){
+            final AWSKMSClientBuilder builder = AWSKMSClient.builder();
+            Optional.ofNullable(properties.getRegion()).ifPresent(builder::setRegion);
+            return builder.build();
+        }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/e6f2b05a5e49cabcb789a3630a80e80b997e57ae,"        public AWSKMS kms(){
+            final AWSKMSClientBuilder builder = AWSKMSClient.builder();
+            Optional.ofNullable(properties.getRegion()).ifPresent(builder::setRegion);
+            return builder.build();
+        }
+","['        ', 'public', ' ', 'AWSKMS', ' ', 'kms', '(', ')', '{', '\n', '            ', 'final', ' ', 'AWSKMSClientBuilder', ' ', 'builder', ' ', '=', ' ', 'AWSKMSClient', '.', 'builder', '(', ')', ';', '\n', '            ', 'Optional', '.', 'ofNullable', '(', 'properties', '.', 'getRegion', '(', ')', ')', '.', 'ifPresent', '(', 'builder', ':', ':', 'setRegion', ')', ';', '\n', '            ', 'return', ' ', 'builder', '.', 'build', '(', ')', ';', '\n', '        ', '}', '\n']"
+master,020319ae8a4c0dbf14fe63c4fe1159f176e5cb6c,EncryptionCLI.java,printUsage,"    private void printUsage() {
+        System.out.println(""Usage:\n""        //
+                + ""Make sure that AWS credentials and region are set, either in ~/.aws/config, ~/.aws/credentials\n"" //",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/020319ae8a4c0dbf14fe63c4fe1159f176e5cb6c,"    private void printUsage() {
+        System.out.println(""Usage:\n""        
+                + ""Make sure that AWS credentials and region are set, either in ~/.aws/config, ~/.aws/credentials\n"" 
+","['    ', 'private', ' ', 'void', ' ', 'printUsage', '(', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'Usage:', '\\', 'n', '""', '        ', '\n', '                ', '+', ' ', '""', 'Make sure that AWS credentials and region are set, either in ~/.aws/config, ~/.aws/credentials', '\\', 'n', '""', ' ', '\n']"
+master,020319ae8a4c0dbf14fe63c4fe1159f176e5cb6c,EncryptionCLI.java,run,"    public void run(final String... args) {
+        final String plaintext = encrypt.getPlaintext();
+        final String cipherText = decrypt.getCipherText();
+        try {
+            if (hasText(plaintext)) {",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/020319ae8a4c0dbf14fe63c4fe1159f176e5cb6c,"    public void run(final String... args) {
+        final String plaintext = encrypt.getPlaintext();
+        final String cipherText = decrypt.getCipherText();
+        try {
+            if (hasText(plaintext)) {
+","['    ', 'public', ' ', 'void', ' ', 'run', '(', 'final', ' ', 'String', '.', '.', '.', ' ', 'args', ')', ' ', '{', '\n', '        ', 'final', ' ', 'String', ' ', 'plaintext', ' ', '=', ' ', 'encrypt', '.', 'getPlaintext', '(', ')', ';', '\n', '        ', 'final', ' ', 'String', ' ', 'cipherText', ' ', '=', ' ', 'decrypt', '.', 'getCipherText', '(', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'if', ' ', '(', 'hasText', '(', 'plaintext', ')', ')', ' ', '{', '\n']"
+master,020319ae8a4c0dbf14fe63c4fe1159f176e5cb6c,TestApplication.java,main,"    public static void main(final String[] args) {
+        final SpringApplicationBuilder app = new SpringApplicationBuilder(TestApplication.class);
+        app.bannerMode(OFF);
+        app.run(args);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/020319ae8a4c0dbf14fe63c4fe1159f176e5cb6c,"    public static void main(final String[] args) {
+        final SpringApplicationBuilder app = new SpringApplicationBuilder(TestApplication.class);
+        app.bannerMode(OFF);
+        app.run(args);
+    }
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'final', ' ', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'final', ' ', 'SpringApplicationBuilder', ' ', 'app', ' ', '=', ' ', 'new', ' ', 'SpringApplicationBuilder', '(', 'TestApplication', '.', 'class', ')', ';', '\n', '        ', 'app', '.', 'bannerMode', '(', 'OFF', ')', ';', '\n', '        ', 'app', '.', 'run', '(', 'args', ')', ';', '\n', '    ', '}', '\n']"
+master,bda0b6ad6e2cb97401844197aaf09cd68e4b23f1,EncryptionCLI.java,run,"    public void run(final String... args) {
+        final String plaintext = encrypt.getPlaintext();
+        final String ciphertext = decrypt.getCiphertext();
+        try {
+            if (hasText(plaintext)) {",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/bda0b6ad6e2cb97401844197aaf09cd68e4b23f1,"    public void run(final String... args) {
+        final String plaintext = encrypt.getPlaintext();
+        final String ciphertext = decrypt.getCiphertext();
+        try {
+            if (hasText(plaintext)) {
+","['    ', 'public', ' ', 'void', ' ', 'run', '(', 'final', ' ', 'String', '.', '.', '.', ' ', 'args', ')', ' ', '{', '\n', '        ', 'final', ' ', 'String', ' ', 'plaintext', ' ', '=', ' ', 'encrypt', '.', 'getPlaintext', '(', ')', ';', '\n', '        ', 'final', ' ', 'String', ' ', 'ciphertext', ' ', '=', ' ', 'decrypt', '.', 'getCiphertext', '(', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'if', ' ', '(', 'hasText', '(', 'plaintext', ')', ')', ' ', '{', '\n']"
+master,0f25683443d4e7de8584da0131fb4deffe6f29d1,KmsEncryptionConfiguration.java,kms,"        public AWSKMS kms() {
+            final AWSKMSClientBuilder builder = AWSKMSClient.builder();
+           	builder.withEndpointConfiguration(new EndpointConfiguration(properties.getEndpoint().getServiceEndpoint(), properties.getEndpoint().getSigningRegion()));
+            return builder.build();
+        }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0f25683443d4e7de8584da0131fb4deffe6f29d1,"        public AWSKMS kms() {
+            final AWSKMSClientBuilder builder = AWSKMSClient.builder();
+           	builder.withEndpointConfiguration(new EndpointConfiguration(properties.getEndpoint().getServiceEndpoint(), properties.getEndpoint().getSigningRegion()));
+            return builder.build();
+        }
+","['        ', 'public', ' ', 'AWSKMS', ' ', 'kms', '(', ')', ' ', '{', '\n', '            ', 'final', ' ', 'AWSKMSClientBuilder', ' ', 'builder', ' ', '=', ' ', 'AWSKMSClient', '.', 'builder', '(', ')', ';', '\n', '           \t', 'builder', '.', 'withEndpointConfiguration', '(', 'new', ' ', 'EndpointConfiguration', '(', 'properties', '.', 'getEndpoint', '(', ')', '.', 'getServiceEndpoint', '(', ')', ',', ' ', 'properties', '.', 'getEndpoint', '(', ')', '.', 'getSigningRegion', '(', ')', ')', ')', ';', '\n', '            ', 'return', ' ', 'builder', '.', 'build', '(', ')', ';', '\n', '        ', '}', '\n']"
+master,0f25683443d4e7de8584da0131fb4deffe6f29d1,KmsEncryptionConfiguration.java,kms,"        public AWSKMS kms() {
+            final AWSKMSClientBuilder builder = AWSKMSClient.builder();
+            Optional.ofNullable(properties.getRegion()).ifPresent(builder::setRegion);
+            return builder.build();
+        }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0f25683443d4e7de8584da0131fb4deffe6f29d1,"        public AWSKMS kms() {
+            final AWSKMSClientBuilder builder = AWSKMSClient.builder();
+            Optional.ofNullable(properties.getRegion()).ifPresent(builder::setRegion);
+            return builder.build();
+        }
+","['        ', 'public', ' ', 'AWSKMS', ' ', 'kms', '(', ')', ' ', '{', '\n', '            ', 'final', ' ', 'AWSKMSClientBuilder', ' ', 'builder', ' ', '=', ' ', 'AWSKMSClient', '.', 'builder', '(', ')', ';', '\n', '            ', 'Optional', '.', 'ofNullable', '(', 'properties', '.', 'getRegion', '(', ')', ')', '.', 'ifPresent', '(', 'builder', ':', ':', 'setRegion', ')', ';', '\n', '            ', 'return', ' ', 'builder', '.', 'build', '(', ')', ';', '\n', '        ', '}', '\n']"
+master,b01bcfdca7ccec3069c4f27e3870716d3039375b,NoKmsEncryptionIntegrationConfigurationTest.java,testContext,"    public void testContext() {
+    	assertNotNull(kms);
+    	assertTrue(kms instanceof AWSKMSClient);
+    	
+    	// endpoing configured based on aws.kms.region property
+    	AWSKMSClient client = (AWSKMSClient) kms;
+    	Field field = ReflectionUtils.findField(AWSKMSClient.class, ""endpoint"");
+    	ReflectionUtils.makeAccessible(field);
+    	Object endpointObject = ReflectionUtils.getField(field, client);
+    	assertNotNull(endpointObject);
+    	assertTrue(endpointObject instanceof URI);
+    	URI endpoint = (URI) endpointObject;
+    	assertTrue(endpoint.toString().contains(""eu-central-1""));
+    	
+    	// no override should occur in this configuration
+    	Field signerRegionField = ReflectionUtils.findField(AWSKMSClient.class, ""signerRegionOverride"");
+    	ReflectionUtils.makeAccessible(signerRegionField);
+    	Object signerRegionObject = ReflectionUtils.getField(signerRegionField, client);
+    	assertNull(signerRegionObject);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b01bcfdca7ccec3069c4f27e3870716d3039375b,"    public void testContext() {
+    	assertNotNull(kms);
+    	assertTrue(kms instanceof AWSKMSClient);
+    	
+    	
+    	AWSKMSClient client = (AWSKMSClient) kms;
+    	Field field = ReflectionUtils.findField(AWSKMSClient.class, ""endpoint"");
+    	ReflectionUtils.makeAccessible(field);
+    	Object endpointObject = ReflectionUtils.getField(field, client);
+    	assertNotNull(endpointObject);
+    	assertTrue(endpointObject instanceof URI);
+    	URI endpoint = (URI) endpointObject;
+    	assertTrue(endpoint.toString().contains(""eu-central-1""));
+    	
+    	
+    	Field signerRegionField = ReflectionUtils.findField(AWSKMSClient.class, ""signerRegionOverride"");
+    	ReflectionUtils.makeAccessible(signerRegionField);
+    	Object signerRegionObject = ReflectionUtils.getField(signerRegionField, client);
+    	assertNull(signerRegionObject);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testContext', '(', ')', ' ', '{', '\n', '    \t', 'assertNotNull', '(', 'kms', ')', ';', '\n', '    \t', 'assertTrue', '(', 'kms', ' ', 'instanceof', ' ', 'AWSKMSClient', ')', ';', '\n', '    \t', '\n', '    \t', '\n', '    \t', 'AWSKMSClient', ' ', 'client', ' ', '=', ' ', '(', 'AWSKMSClient', ')', ' ', 'kms', ';', '\n', '    \t', 'Field', ' ', 'field', ' ', '=', ' ', 'ReflectionUtils', '.', 'findField', '(', 'AWSKMSClient', '.', 'class', ',', ' ', '""', 'endpoint', '""', ')', ';', '\n', '    \t', 'ReflectionUtils', '.', 'makeAccessible', '(', 'field', ')', ';', '\n', '    \t', 'Object', ' ', 'endpointObject', ' ', '=', ' ', 'ReflectionUtils', '.', 'getField', '(', 'field', ',', ' ', 'client', ')', ';', '\n', '    \t', 'assertNotNull', '(', 'endpointObject', ')', ';', '\n', '    \t', 'assertTrue', '(', 'endpointObject', ' ', 'instanceof', ' ', 'URI', ')', ';', '\n', '    \t', 'URI', ' ', 'endpoint', ' ', '=', ' ', '(', 'URI', ')', ' ', 'endpointObject', ';', '\n', '    \t', 'assertTrue', '(', 'endpoint', '.', 'toString', '(', ')', '.', 'contains', '(', '""', 'eu-central-1', '""', ')', ')', ';', '\n', '    \t', '\n', '    \t', '\n', '    \t', 'Field', ' ', 'signerRegionField', ' ', '=', ' ', 'ReflectionUtils', '.', 'findField', '(', 'AWSKMSClient', '.', 'class', ',', ' ', '""', 'signerRegionOverride', '""', ')', ';', '\n', '    \t', 'ReflectionUtils', '.', 'makeAccessible', '(', 'signerRegionField', ')', ';', '\n', '    \t', 'Object', ' ', 'signerRegionObject', ' ', '=', ' ', 'ReflectionUtils', '.', 'getField', '(', 'signerRegionField', ',', ' ', 'client', ')', ';', '\n', '    \t', 'assertNull', '(', 'signerRegionObject', ')', ';', '\n', '    ', '}', '\n']"
+master,38689c1de9661856ee0b18b3d52c4caccbd3e015,KmsTextEncryptor.java,extractEncryptionContext,"    static Map<String, String> extractEncryptionContext(final String encryptedText) {
+        final int lower = encryptedText.indexOf('(');
+        final int upper = encryptedText.indexOf(')');
+        if (lower != 0 || upper < 0) {
+            return Collections.emptyMap();",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/38689c1de9661856ee0b18b3d52c4caccbd3e015,"    static Map<String, String> extractEncryptionContext(final String encryptedText) {
+        final int lower = encryptedText.indexOf('(');
+        final int upper = encryptedText.indexOf(')');
+        if (lower != 0 || upper < 0) {
+            return Collections.emptyMap();
+","['    ', 'static', ' ', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'extractEncryptionContext', '(', 'final', ' ', 'String', ' ', 'encryptedText', ')', ' ', '{', '\n', '        ', 'final', ' ', 'int', ' ', 'lower', ' ', '=', ' ', 'encryptedText', '.', 'indexOf', '(', ""'('"", ')', ';', '\n', '        ', 'final', ' ', 'int', ' ', 'upper', ' ', '=', ' ', 'encryptedText', '.', 'indexOf', '(', ""')'"", ')', ';', '\n', '        ', 'if', ' ', '(', 'lower', ' ', '!', '=', ' ', '0', ' ', '|', '|', ' ', 'upper', ' ', '<', ' ', '0', ')', ' ', '{', '\n', '            ', 'return', ' ', 'Collections', '.', 'emptyMap', '(', ')', ';', '\n']"
+master,38689c1de9661856ee0b18b3d52c4caccbd3e015,KmsTextEncryptor.java,extractEncryptedValue,"    static String extractEncryptedValue(final String encryptedText) {
+        final int index = encryptedText.lastIndexOf(')');
+        if (index > 0) {
+            return encryptedText.substring(index + 1);
+        }
+        return encryptedText;
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/38689c1de9661856ee0b18b3d52c4caccbd3e015,"    static String extractEncryptedValue(final String encryptedText) {
+        final int index = encryptedText.lastIndexOf(')');
+        if (index > 0) {
+            return encryptedText.substring(index + 1);
+        }
+        return encryptedText;
+    }
+","['    ', 'static', ' ', 'String', ' ', 'extractEncryptedValue', '(', 'final', ' ', 'String', ' ', 'encryptedText', ')', ' ', '{', '\n', '        ', 'final', ' ', 'int', ' ', 'index', ' ', '=', ' ', 'encryptedText', '.', 'lastIndexOf', '(', ""')'"", ')', ';', '\n', '        ', 'if', ' ', '(', 'index', ' ', '>', ' ', '0', ')', ' ', '{', '\n', '            ', 'return', ' ', 'encryptedText', '.', 'substring', '(', 'index', ' ', '+', ' ', '1', ')', ';', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'encryptedText', ';', '\n', '    ', '}', '\n']"
+master,38689c1de9661856ee0b18b3d52c4caccbd3e015,NoKmsEncryptionIntegrationConfigurationTest.java,testContext,"    public void testContext() {
+        assertNotNull(kms);
+        assertTrue(kms instanceof AWSKMSClient);
+
+        // endpoing configured based on aws.kms.region property
+        AWSKMSClient client = (AWSKMSClient) kms;
+        Field field = ReflectionUtils.findField(AWSKMSClient.class, ""endpoint"");
+        ReflectionUtils.makeAccessible(field);
+        Object endpointObject = ReflectionUtils.getField(field, client);
+        assertNotNull(endpointObject);
+        assertTrue(endpointObject instanceof URI);
+        URI endpoint = (URI) endpointObject;
+        assertTrue(endpoint.toString().contains(""eu-central-1""));
+
+        // no override should occur in this configuration
+        Field signerRegionField = ReflectionUtils.findField(AWSKMSClient.class, ""signerRegionOverride"");
+        ReflectionUtils.makeAccessible(signerRegionField);
+        Object signerRegionObject = ReflectionUtils.getField(signerRegionField, client);
+        assertNull(signerRegionObject);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/38689c1de9661856ee0b18b3d52c4caccbd3e015,"    public void testContext() {
+        assertNotNull(kms);
+        assertTrue(kms instanceof AWSKMSClient);
+
+        
+        AWSKMSClient client = (AWSKMSClient) kms;
+        Field field = ReflectionUtils.findField(AWSKMSClient.class, ""endpoint"");
+        ReflectionUtils.makeAccessible(field);
+        Object endpointObject = ReflectionUtils.getField(field, client);
+        assertNotNull(endpointObject);
+        assertTrue(endpointObject instanceof URI);
+        URI endpoint = (URI) endpointObject;
+        assertTrue(endpoint.toString().contains(""eu-central-1""));
+
+        
+        Field signerRegionField = ReflectionUtils.findField(AWSKMSClient.class, ""signerRegionOverride"");
+        ReflectionUtils.makeAccessible(signerRegionField);
+        Object signerRegionObject = ReflectionUtils.getField(signerRegionField, client);
+        assertNull(signerRegionObject);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testContext', '(', ')', ' ', '{', '\n', '        ', 'assertNotNull', '(', 'kms', ')', ';', '\n', '        ', 'assertTrue', '(', 'kms', ' ', 'instanceof', ' ', 'AWSKMSClient', ')', ';', '\n', '\n', '        ', '\n', '        ', 'AWSKMSClient', ' ', 'client', ' ', '=', ' ', '(', 'AWSKMSClient', ')', ' ', 'kms', ';', '\n', '        ', 'Field', ' ', 'field', ' ', '=', ' ', 'ReflectionUtils', '.', 'findField', '(', 'AWSKMSClient', '.', 'class', ',', ' ', '""', 'endpoint', '""', ')', ';', '\n', '        ', 'ReflectionUtils', '.', 'makeAccessible', '(', 'field', ')', ';', '\n', '        ', 'Object', ' ', 'endpointObject', ' ', '=', ' ', 'ReflectionUtils', '.', 'getField', '(', 'field', ',', ' ', 'client', ')', ';', '\n', '        ', 'assertNotNull', '(', 'endpointObject', ')', ';', '\n', '        ', 'assertTrue', '(', 'endpointObject', ' ', 'instanceof', ' ', 'URI', ')', ';', '\n', '        ', 'URI', ' ', 'endpoint', ' ', '=', ' ', '(', 'URI', ')', ' ', 'endpointObject', ';', '\n', '        ', 'assertTrue', '(', 'endpoint', '.', 'toString', '(', ')', '.', 'contains', '(', '""', 'eu-central-1', '""', ')', ')', ';', '\n', '\n', '        ', '\n', '        ', 'Field', ' ', 'signerRegionField', ' ', '=', ' ', 'ReflectionUtils', '.', 'findField', '(', 'AWSKMSClient', '.', 'class', ',', ' ', '""', 'signerRegionOverride', '""', ')', ';', '\n', '        ', 'ReflectionUtils', '.', 'makeAccessible', '(', 'signerRegionField', ')', ';', '\n', '        ', 'Object', ' ', 'signerRegionObject', ' ', '=', ' ', 'ReflectionUtils', '.', 'getField', '(', 'signerRegionField', ',', ' ', 'client', ')', ';', '\n', '        ', 'assertNull', '(', 'signerRegionObject', ')', ';', '\n', '    ', '}', '\n']"
+master,0b766fb49bfaa4905d9fecfcf1f89429faf8666f,EncryptedToken.java,parse,"    static EncryptedToken parse(String s) {
+        Assert.hasText(s, ""Encrypted string must not be blank"");
+
+        final Matcher matcher = ENCRYPTED_STRING.matcher(s);
+        Assert.isTrue(matcher.matches(), ""Malformed encrypted string '"" + s + ""'"");
+
+        final String contextString = matcher.group(""context"");
+        final String optionsString = matcher.group(""options"");
+        final String cipherString = matcher.group(""cipher"");
+
+        return new EncryptedToken(parseCipher(cipherString), parseContext(contextString), parseOptions(optionsString));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0b766fb49bfaa4905d9fecfcf1f89429faf8666f,"    static EncryptedToken parse(String s) {
+        Assert.hasText(s, ""Encrypted string must not be blank"");
+
+        final Matcher matcher = ENCRYPTED_STRING.matcher(s);
+        Assert.isTrue(matcher.matches(), ""Malformed encrypted string '"" + s + ""'"");
+
+        final String contextString = matcher.group(""context"");
+        final String optionsString = matcher.group(""options"");
+        final String cipherString = matcher.group(""cipher"");
+
+        return new EncryptedToken(parseCipher(cipherString), parseContext(contextString), parseOptions(optionsString));
+    }
+","['    ', 'static', ' ', 'EncryptedToken', ' ', 'parse', '(', 'String', ' ', 's', ')', ' ', '{', '\n', '        ', 'Assert', '.', 'hasText', '(', 's', ',', ' ', '""', 'Encrypted string must not be blank', '""', ')', ';', '\n', '\n', '        ', 'final', ' ', 'Matcher', ' ', 'matcher', ' ', '=', ' ', 'ENCRYPTED_STRING', '.', 'matcher', '(', 's', ')', ';', '\n', '        ', 'Assert', '.', 'isTrue', '(', 'matcher', '.', 'matches', '(', ')', ',', ' ', '""', ""Malformed encrypted string '"", '""', ' ', '+', ' ', 's', ' ', '+', ' ', '""', ""'"", '""', ')', ';', '\n', '\n', '        ', 'final', ' ', 'String', ' ', 'contextString', ' ', '=', ' ', 'matcher', '.', 'group', '(', '""', 'context', '""', ')', ';', '\n', '        ', 'final', ' ', 'String', ' ', 'optionsString', ' ', '=', ' ', 'matcher', '.', 'group', '(', '""', 'options', '""', ')', ';', '\n', '        ', 'final', ' ', 'String', ' ', 'cipherString', ' ', '=', ' ', 'matcher', '.', 'group', '(', '""', 'cipher', '""', ')', ';', '\n', '\n', '        ', 'return', ' ', 'new', ' ', 'EncryptedToken', '(', 'parseCipher', '(', 'cipherString', ')', ',', ' ', 'parseContext', '(', 'contextString', ')', ',', ' ', 'parseOptions', '(', 'optionsString', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,0b766fb49bfaa4905d9fecfcf1f89429faf8666f,EncryptedToken.java,parseCipher,"    private static ByteBuffer parseCipher(String valueString) {
+        return ByteBuffer.wrap(BASE64_DECODER.decode(valueString.getBytes()));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0b766fb49bfaa4905d9fecfcf1f89429faf8666f,"    private static ByteBuffer parseCipher(String valueString) {
+        return ByteBuffer.wrap(BASE64_DECODER.decode(valueString.getBytes()));
+    }
+","['    ', 'private', ' ', 'static', ' ', 'ByteBuffer', ' ', 'parseCipher', '(', 'String', ' ', 'valueString', ')', ' ', '{', '\n', '        ', 'return', ' ', 'ByteBuffer', '.', 'wrap', '(', 'BASE64_DECODER', '.', 'decode', '(', 'valueString', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,0b766fb49bfaa4905d9fecfcf1f89429faf8666f,EncryptedToken.java,parseOptions,"    private static KmsTextEncryptorOptions parseOptions(String optionsString) {
+        final Map<String, String> optionsMap = parseKeyValueMap(optionsString);
+
+        final OutputMode output = OutputMode.valueOf(
+                Optional.ofNullable(optionsMap.get(""output""))
+                        .map(String::toUpperCase)
+                        .orElse(OutputMode.PLAIN.name()));
+
+        return new KmsTextEncryptorOptions(output);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0b766fb49bfaa4905d9fecfcf1f89429faf8666f,"    private static KmsTextEncryptorOptions parseOptions(String optionsString) {
+        final Map<String, String> optionsMap = parseKeyValueMap(optionsString);
+
+        final OutputMode output = OutputMode.valueOf(
+                Optional.ofNullable(optionsMap.get(""output""))
+                        .map(String::toUpperCase)
+                        .orElse(OutputMode.PLAIN.name()));
+
+        return new KmsTextEncryptorOptions(output);
+    }
+","['    ', 'private', ' ', 'static', ' ', 'KmsTextEncryptorOptions', ' ', 'parseOptions', '(', 'String', ' ', 'optionsString', ')', ' ', '{', '\n', '        ', 'final', ' ', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'optionsMap', ' ', '=', ' ', 'parseKeyValueMap', '(', 'optionsString', ')', ';', '\n', '\n', '        ', 'final', ' ', 'OutputMode', ' ', 'output', ' ', '=', ' ', 'OutputMode', '.', 'valueOf', '(', '\n', '                ', 'Optional', '.', 'ofNullable', '(', 'optionsMap', '.', 'get', '(', '""', 'output', '""', ')', ')', '\n', '                        ', '.', 'map', '(', 'String', ':', ':', 'toUpperCase', ')', '\n', '                        ', '.', 'orElse', '(', 'OutputMode', '.', 'PLAIN', '.', 'name', '(', ')', ')', ')', ';', '\n', '\n', '        ', 'return', ' ', 'new', ' ', 'KmsTextEncryptorOptions', '(', 'output', ')', ';', '\n', '    ', '}', '\n']"
+master,0b766fb49bfaa4905d9fecfcf1f89429faf8666f,EncryptedToken.java,parseContext,"    private static Map<String, String> parseContext(String contextString) {
+        return parseKeyValueMap(contextString, BASE64_DECODE_VALUE);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0b766fb49bfaa4905d9fecfcf1f89429faf8666f,"    private static Map<String, String> parseContext(String contextString) {
+        return parseKeyValueMap(contextString, BASE64_DECODE_VALUE);
+    }
+","['    ', 'private', ' ', 'static', ' ', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'parseContext', '(', 'String', ' ', 'contextString', ')', ' ', '{', '\n', '        ', 'return', ' ', 'parseKeyValueMap', '(', 'contextString', ',', ' ', 'BASE64_DECODE_VALUE', ')', ';', '\n', '    ', '}', '\n']"
+master,0b766fb49bfaa4905d9fecfcf1f89429faf8666f,EncryptedToken.java,parseKeyValueMap,"    private static Map<String, String> parseKeyValueMap(String kvString) {
+        return parseKeyValueMap(kvString, identity());
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0b766fb49bfaa4905d9fecfcf1f89429faf8666f,"    private static Map<String, String> parseKeyValueMap(String kvString) {
+        return parseKeyValueMap(kvString, identity());
+    }
+","['    ', 'private', ' ', 'static', ' ', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'parseKeyValueMap', '(', 'String', ' ', 'kvString', ')', ' ', '{', '\n', '        ', 'return', ' ', 'parseKeyValueMap', '(', 'kvString', ',', ' ', 'identity', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,0b766fb49bfaa4905d9fecfcf1f89429faf8666f,EncryptedToken.java,parseKeyValueMap,"    private static Map<String, String> parseKeyValueMap(String kvString, Function<String, String> valueMapper) {
+        return Stream.of(
+                Optional.ofNullable(kvString)",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0b766fb49bfaa4905d9fecfcf1f89429faf8666f,"    private static Map<String, String> parseKeyValueMap(String kvString, Function<String, String> valueMapper) {
+        return Stream.of(
+                Optional.ofNullable(kvString)
+","['    ', 'private', ' ', 'static', ' ', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'parseKeyValueMap', '(', 'String', ' ', 'kvString', ',', ' ', 'Function', '<', 'String', ',', ' ', 'String', '>', ' ', 'valueMapper', ')', ' ', '{', '\n', '        ', 'return', ' ', 'Stream', '.', 'of', '(', '\n', '                ', 'Optional', '.', 'ofNullable', '(', 'kvString', ')', '\n']"
+master,0b766fb49bfaa4905d9fecfcf1f89429faf8666f,KmsTextEncryptor.java,extractString,"    private static String extractString(final ByteBuffer bb, final KmsTextEncryptorOptions options) {
+        if (bb.hasRemaining()) {
+            final byte[] bytes = new byte[bb.remaining()];",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0b766fb49bfaa4905d9fecfcf1f89429faf8666f,"    private static String extractString(final ByteBuffer bb, final KmsTextEncryptorOptions options) {
+        if (bb.hasRemaining()) {
+            final byte[] bytes = new byte[bb.remaining()];
+","['    ', 'private', ' ', 'static', ' ', 'String', ' ', 'extractString', '(', 'final', ' ', 'ByteBuffer', ' ', 'bb', ',', ' ', 'final', ' ', 'KmsTextEncryptorOptions', ' ', 'options', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'bb', '.', 'hasRemaining', '(', ')', ')', ' ', '{', '\n', '            ', 'final', ' ', 'byte', '[', ']', ' ', 'bytes', ' ', '=', ' ', 'new', ' ', 'byte', '[', 'bb', '.', 'remaining', '(', ')', ']', ';', '\n']"
+master,0b766fb49bfaa4905d9fecfcf1f89429faf8666f,KmsTextEncryptorOptions.java,equals,"    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        KmsTextEncryptorOptions that = (KmsTextEncryptorOptions) o;
+        return outputMode == that.outputMode;
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0b766fb49bfaa4905d9fecfcf1f89429faf8666f,"    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        KmsTextEncryptorOptions that = (KmsTextEncryptorOptions) o;
+        return outputMode == that.outputMode;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'equals', '(', 'Object', ' ', 'o', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'this', ' ', '=', '=', ' ', 'o', ')', ' ', 'return', ' ', 'true', ';', '\n', '        ', 'if', ' ', '(', 'o', ' ', '=', '=', ' ', 'null', ' ', '|', '|', ' ', 'getClass', '(', ')', ' ', '!', '=', ' ', 'o', '.', 'getClass', '(', ')', ')', ' ', 'return', ' ', 'false', ';', '\n', '        ', 'KmsTextEncryptorOptions', ' ', 'that', ' ', '=', ' ', '(', 'KmsTextEncryptorOptions', ')', ' ', 'o', ';', '\n', '        ', 'return', ' ', 'outputMode', ' ', '=', '=', ' ', 'that', '.', 'outputMode', ';', '\n', '    ', '}', '\n']"
+master,0b766fb49bfaa4905d9fecfcf1f89429faf8666f,KmsTextEncryptorOptions.java,hashCode,"    public int hashCode() {
+        return Objects.hash(outputMode);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0b766fb49bfaa4905d9fecfcf1f89429faf8666f,"    public int hashCode() {
+        return Objects.hash(outputMode);
+    }
+","['    ', 'public', ' ', 'int', ' ', 'hashCode', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'Objects', '.', 'hash', '(', 'outputMode', ')', ';', '\n', '    ', '}', '\n']"
+master,0b766fb49bfaa4905d9fecfcf1f89429faf8666f,EncryptedTokenTest.java,data,"    public static Iterable<Object[]> data() {
+        return asList(new Object[][]{
+                {""(param=TOKAmWhvbW1lIGPigJllc3Qgcmllbg==,test=bOKAmW9ldXZyZSBj4oCZZXN0IHRvdXQ= ,valueless)[foo=bar,output=base64]SGVsbG8gV29ybGQ="", BASE64_OPTIONS, CONTEXT_MAP},",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0b766fb49bfaa4905d9fecfcf1f89429faf8666f,"    public static Iterable<Object[]> data() {
+        return asList(new Object[][]{
+                {""(param=TOKAmWhvbW1lIGPigJllc3Qgcmllbg==,test=bOKAmW9ldXZyZSBj4oCZZXN0IHRvdXQ= ,valueless)[foo=bar,output=base64]SGVsbG8gV29ybGQ="", BASE64_OPTIONS, CONTEXT_MAP},
+","['    ', 'public', ' ', 'static', ' ', 'Iterable', '<', 'Object', '[', ']', '>', ' ', 'data', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'asList', '(', 'new', ' ', 'Object', '[', ']', '[', ']', '{', '\n', '                ', '{', '""', '(param=TOKAmWhvbW1lIGPigJllc3Qgcmllbg==,test=bOKAmW9ldXZyZSBj4oCZZXN0IHRvdXQ= ,valueless)[foo=bar,output=base64]SGVsbG8gV29ybGQ=', '""', ',', ' ', 'BASE64_OPTIONS', ',', ' ', 'CONTEXT_MAP', '}', ',', '\n']"
+master,0b766fb49bfaa4905d9fecfcf1f89429faf8666f,EncryptedTokenTest.java,testParseToken,"    public void testParseToken() {
+        final EncryptedToken token = EncryptedToken.parse(testString);
+
+        assertThat(token.getCipherBytes()).isEqualTo(ByteBuffer.wrap(""Hello World"".getBytes()));
+        assertThat(token.getOptions()).isEqualTo(expectedOptions);
+        assertThat(token.getEncryptionContext()).isEqualTo(expectedContext);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0b766fb49bfaa4905d9fecfcf1f89429faf8666f,"    public void testParseToken() {
+        final EncryptedToken token = EncryptedToken.parse(testString);
+
+        assertThat(token.getCipherBytes()).isEqualTo(ByteBuffer.wrap(""Hello World"".getBytes()));
+        assertThat(token.getOptions()).isEqualTo(expectedOptions);
+        assertThat(token.getEncryptionContext()).isEqualTo(expectedContext);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testParseToken', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'EncryptedToken', ' ', 'token', ' ', '=', ' ', 'EncryptedToken', '.', 'parse', '(', 'testString', ')', ';', '\n', '\n', '        ', 'assertThat', '(', 'token', '.', 'getCipherBytes', '(', ')', ')', '.', 'isEqualTo', '(', 'ByteBuffer', '.', 'wrap', '(', '""', 'Hello World', '""', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '        ', 'assertThat', '(', 'token', '.', 'getOptions', '(', ')', ')', '.', 'isEqualTo', '(', 'expectedOptions', ')', ';', '\n', '        ', 'assertThat', '(', 'token', '.', 'getEncryptionContext', '(', ')', ')', '.', 'isEqualTo', '(', 'expectedContext', ')', ';', '\n', '    ', '}', '\n']"
+master,6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,KmsTextEncryptorTest.java,tearDown,"    public void tearDown() {
+        verifyNoMoreInteractions(mockKms);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,"    public void tearDown() {
+        verifyNoMoreInteractions(mockKms);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'tearDown', '(', ')', ' ', '{', '\n', '        ', 'verifyNoMoreInteractions', '(', 'mockKms', ')', ';', '\n', '    ', '}', '\n']"
+master,6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,KmsTextEncryptorTest.java,testEncrypt,"    public void testEncrypt()  {
+        assertThat(textEncryptor.encrypt(PLAINTEXT)).isEqualTo(BASE64_CIPHER_TEXT);
+        verify(mockKms).encrypt(eq(expectedEncryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,"    public void testEncrypt()  {
+        assertThat(textEncryptor.encrypt(PLAINTEXT)).isEqualTo(BASE64_CIPHER_TEXT);
+        verify(mockKms).encrypt(eq(expectedEncryptRequest));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testEncrypt', '(', ')', '  ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'encrypt', '(', 'PLAINTEXT', ')', ')', '.', 'isEqualTo', '(', 'BASE64_CIPHER_TEXT', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ')', '.', 'encrypt', '(', 'eq', '(', 'expectedEncryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,KmsTextEncryptorTest.java,testEncryptEmptyResponse,"    public void testEncryptEmptyResponse()  {
+        encryptResult.setCiphertextBlob(allocate(0));
+        assertThat(textEncryptor.encrypt(PLAINTEXT)).isEqualTo("""");
+        verify(mockKms).encrypt(eq(expectedEncryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,"    public void testEncryptEmptyResponse()  {
+        encryptResult.setCiphertextBlob(allocate(0));
+        assertThat(textEncryptor.encrypt(PLAINTEXT)).isEqualTo("""");
+        verify(mockKms).encrypt(eq(expectedEncryptRequest));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testEncryptEmptyResponse', '(', ')', '  ', '{', '\n', '        ', 'encryptResult', '.', 'setCiphertextBlob', '(', 'allocate', '(', '0', ')', ')', ';', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'encrypt', '(', 'PLAINTEXT', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ')', '.', 'encrypt', '(', 'eq', '(', 'expectedEncryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,KmsTextEncryptorTest.java,testEncryptNull,"    public void testEncryptNull()  {
+        assertThat(textEncryptor.encrypt(null)).isEqualTo("""");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,"    public void testEncryptNull()  {
+        assertThat(textEncryptor.encrypt(null)).isEqualTo("""");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testEncryptNull', '(', ')', '  ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'encrypt', '(', 'null', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,KmsTextEncryptorTest.java,testEncryptEmptyString,"    public void testEncryptEmptyString()  {
+        assertThat(textEncryptor.encrypt("""")).isEqualTo("""");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,"    public void testEncryptEmptyString()  {
+        assertThat(textEncryptor.encrypt("""")).isEqualTo("""");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testEncryptEmptyString', '(', ')', '  ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'encrypt', '(', '""', '""', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,KmsTextEncryptorTest.java,testDecryptNull,"    public void testDecryptNull()  {
+        assertThat(textEncryptor.decrypt(null)).isEqualTo("""");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,"    public void testDecryptNull()  {
+        assertThat(textEncryptor.decrypt(null)).isEqualTo("""");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testDecryptNull', '(', ')', '  ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'decrypt', '(', 'null', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,KmsTextEncryptorTest.java,testDecryptEmptyString,"    public void testDecryptEmptyString()  {
+        assertThat(textEncryptor.decrypt("""")).isEqualTo("""");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,"    public void testDecryptEmptyString()  {
+        assertThat(textEncryptor.decrypt("""")).isEqualTo("""");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testDecryptEmptyString', '(', ')', '  ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'decrypt', '(', '""', '""', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,KmsTextEncryptorTest.java,testDecrypt,"    public void testDecrypt()  {
+        assertThat(textEncryptor.decrypt(BASE64_CIPHER_TEXT)).isEqualTo(PLAINTEXT);
+        verify(mockKms).decrypt(eq(expectedDecryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,"    public void testDecrypt()  {
+        assertThat(textEncryptor.decrypt(BASE64_CIPHER_TEXT)).isEqualTo(PLAINTEXT);
+        verify(mockKms).decrypt(eq(expectedDecryptRequest));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testDecrypt', '(', ')', '  ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'decrypt', '(', 'BASE64_CIPHER_TEXT', ')', ')', '.', 'isEqualTo', '(', 'PLAINTEXT', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ')', '.', 'decrypt', '(', 'eq', '(', 'expectedDecryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,KmsTextEncryptorTest.java,testDecryptEmptyResult,"    public void testDecryptEmptyResult()  {
+        decryptResult.setPlaintext(ByteBuffer.allocate(0));
+        assertThat(textEncryptor.decrypt(BASE64_CIPHER_TEXT)).isEqualTo("""");
+        verify(mockKms).decrypt(eq(expectedDecryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/6e3f01a4a60a4e66f171c6b86be2ffc4d04468c0,"    public void testDecryptEmptyResult()  {
+        decryptResult.setPlaintext(ByteBuffer.allocate(0));
+        assertThat(textEncryptor.decrypt(BASE64_CIPHER_TEXT)).isEqualTo("""");
+        verify(mockKms).decrypt(eq(expectedDecryptRequest));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testDecryptEmptyResult', '(', ')', '  ', '{', '\n', '        ', 'decryptResult', '.', 'setPlaintext', '(', 'ByteBuffer', '.', 'allocate', '(', '0', ')', ')', ';', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'decrypt', '(', 'BASE64_CIPHER_TEXT', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ')', '.', 'decrypt', '(', 'eq', '(', 'expectedDecryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,61527c93f19d680003e9a757672959df4855af53,MockAwsKmsConfig.java,kms,"    AWSKMS kms() {
+        final AWSKMS mock = mock(AWSKMS.class);
+        when(mock.decrypt(any(DecryptRequest.class))).thenAnswer((Answer<DecryptResult>) invocation ->
+                new DecryptResult().withPlaintext(ByteBuffer.wrap(PLAINTEXT.getBytes())));
+        return mock;
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/61527c93f19d680003e9a757672959df4855af53,"    AWSKMS kms() {
+        final AWSKMS mock = mock(AWSKMS.class);
+        when(mock.decrypt(any(DecryptRequest.class))).thenAnswer((Answer<DecryptResult>) invocation ->
+                new DecryptResult().withPlaintext(ByteBuffer.wrap(PLAINTEXT.getBytes())));
+        return mock;
+    }
+","['    ', 'AWSKMS', ' ', 'kms', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'AWSKMS', ' ', 'mock', ' ', '=', ' ', 'mock', '(', 'AWSKMS', '.', 'class', ')', ';', '\n', '        ', 'when', '(', 'mock', '.', 'decrypt', '(', 'any', '(', 'DecryptRequest', '.', 'class', ')', ')', ')', '.', 'thenAnswer', '(', '(', 'Answer', '<', 'DecryptResult', '>', ')', ' ', 'invocation', ' ', '-', '>', '\n', '                ', 'new', ' ', 'DecryptResult', '(', ')', '.', 'withPlaintext', '(', 'ByteBuffer', '.', 'wrap', '(', 'PLAINTEXT', '.', 'getBytes', '(', ')', ')', ')', ')', ';', '\n', '        ', 'return', ' ', 'mock', ';', '\n', '    ', '}', '\n']"
+master,61527c93f19d680003e9a757672959df4855af53,KmsEncryptionTest.java,testPropertyHasBeenDecrypted,"    public void testPropertyHasBeenDecrypted() {
+
+        assertThat(decryptedSecret).isEqualTo(MockAwsKmsConfig.PLAINTEXT);
+
+        final DecryptRequest decryptRequest = new DecryptRequest();
+        decryptRequest.setCiphertextBlob(CIPHER_TEXT_BLOB);
+        verify(mockKms, atLeastOnce()).decrypt(decryptRequest);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/61527c93f19d680003e9a757672959df4855af53,"    public void testPropertyHasBeenDecrypted() {
+
+        assertThat(decryptedSecret).isEqualTo(MockAwsKmsConfig.PLAINTEXT);
+
+        final DecryptRequest decryptRequest = new DecryptRequest();
+        decryptRequest.setCiphertextBlob(CIPHER_TEXT_BLOB);
+        verify(mockKms, atLeastOnce()).decrypt(decryptRequest);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testPropertyHasBeenDecrypted', '(', ')', ' ', '{', '\n', '\n', '        ', 'assertThat', '(', 'decryptedSecret', ')', '.', 'isEqualTo', '(', 'MockAwsKmsConfig', '.', 'PLAINTEXT', ')', ';', '\n', '\n', '        ', 'final', ' ', 'DecryptRequest', ' ', 'decryptRequest', ' ', '=', ' ', 'new', ' ', 'DecryptRequest', '(', ')', ';', '\n', '        ', 'decryptRequest', '.', 'setCiphertextBlob', '(', 'CIPHER_TEXT_BLOB', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ',', ' ', 'atLeastOnce', '(', ')', ')', '.', 'decrypt', '(', 'decryptRequest', ')', ';', '\n', '    ', '}', '\n']"
+master,61527c93f19d680003e9a757672959df4855af53,KmsRegionConfigurationTest.java,testPropertyIsAvailable,"    public void testPropertyIsAvailable() {
+        assertThat(secret).isEqualTo(""secret"");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/61527c93f19d680003e9a757672959df4855af53,"    public void testPropertyIsAvailable() {
+        assertThat(secret).isEqualTo(""secret"");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testPropertyIsAvailable', '(', ')', ' ', '{', '\n', '        ', 'assertThat', '(', 'secret', ')', '.', 'isEqualTo', '(', '""', 'secret', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,90032a8a72ff416a1a052dd09b6e45e66c8fe425,KmsEncryptionTest.java,testPropertyHasBeenDecrypted,"    public void testPropertyHasBeenDecrypted() {
+
+        assertThat(decryptedSecret).isEqualTo(MockAwsKmsConfig.PLAINTEXT);
+
+        final DecryptRequest decryptRequest = new DecryptRequest();
+        decryptRequest.setCiphertextBlob(CIPHER_TEXT_BLOB);
+        decryptRequest.setEncryptionAlgorithm(SYMMETRIC_DEFAULT.toString());
+        verify(mockKms, atLeastOnce()).decrypt(decryptRequest);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/90032a8a72ff416a1a052dd09b6e45e66c8fe425,"    public void testPropertyHasBeenDecrypted() {
+
+        assertThat(decryptedSecret).isEqualTo(MockAwsKmsConfig.PLAINTEXT);
+
+        final DecryptRequest decryptRequest = new DecryptRequest();
+        decryptRequest.setCiphertextBlob(CIPHER_TEXT_BLOB);
+        decryptRequest.setEncryptionAlgorithm(SYMMETRIC_DEFAULT.toString());
+        verify(mockKms, atLeastOnce()).decrypt(decryptRequest);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testPropertyHasBeenDecrypted', '(', ')', ' ', '{', '\n', '\n', '        ', 'assertThat', '(', 'decryptedSecret', ')', '.', 'isEqualTo', '(', 'MockAwsKmsConfig', '.', 'PLAINTEXT', ')', ';', '\n', '\n', '        ', 'final', ' ', 'DecryptRequest', ' ', 'decryptRequest', ' ', '=', ' ', 'new', ' ', 'DecryptRequest', '(', ')', ';', '\n', '        ', 'decryptRequest', '.', 'setCiphertextBlob', '(', 'CIPHER_TEXT_BLOB', ')', ';', '\n', '        ', 'decryptRequest', '.', 'setEncryptionAlgorithm', '(', 'SYMMETRIC_DEFAULT', '.', 'toString', '(', ')', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ',', ' ', 'atLeastOnce', '(', ')', ')', '.', 'decrypt', '(', 'decryptRequest', ')', ';', '\n', '    ', '}', '\n']"
+master,90032a8a72ff416a1a052dd09b6e45e66c8fe425,KmsEncryptionConfiguration.java,kmsTextEncryptor,"        KmsTextEncryptor kmsTextEncryptor() {
+            return new KmsTextEncryptor(kms, properties.getKeyId(), properties.getEncryptionAlgorithm());
+        }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/90032a8a72ff416a1a052dd09b6e45e66c8fe425,"        KmsTextEncryptor kmsTextEncryptor() {
+            return new KmsTextEncryptor(kms, properties.getKeyId(), properties.getEncryptionAlgorithm());
+        }
+","['        ', 'KmsTextEncryptor', ' ', 'kmsTextEncryptor', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'new', ' ', 'KmsTextEncryptor', '(', 'kms', ',', ' ', 'properties', '.', 'getKeyId', '(', ')', ',', ' ', 'properties', '.', 'getEncryptionAlgorithm', '(', ')', ')', ';', '\n', '        ', '}', '\n']"
+master,90032a8a72ff416a1a052dd09b6e45e66c8fe425,KmsTextEncryptorTest.java,testEncrypt,"    public void testEncrypt() {
+        assertThat(textEncryptor.encrypt(PLAINTEXT)).isEqualTo(BASE64_CIPHER_TEXT);
+        verify(mockKms).encrypt(eq(expectedEncryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/90032a8a72ff416a1a052dd09b6e45e66c8fe425,"    public void testEncrypt() {
+        assertThat(textEncryptor.encrypt(PLAINTEXT)).isEqualTo(BASE64_CIPHER_TEXT);
+        verify(mockKms).encrypt(eq(expectedEncryptRequest));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testEncrypt', '(', ')', ' ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'encrypt', '(', 'PLAINTEXT', ')', ')', '.', 'isEqualTo', '(', 'BASE64_CIPHER_TEXT', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ')', '.', 'encrypt', '(', 'eq', '(', 'expectedEncryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,90032a8a72ff416a1a052dd09b6e45e66c8fe425,KmsTextEncryptorTest.java,testEncryptEmptyResponse,"    public void testEncryptEmptyResponse() {
+        encryptResult.setCiphertextBlob(allocate(0));
+        assertThat(textEncryptor.encrypt(PLAINTEXT)).isEqualTo("""");
+        verify(mockKms).encrypt(eq(expectedEncryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/90032a8a72ff416a1a052dd09b6e45e66c8fe425,"    public void testEncryptEmptyResponse() {
+        encryptResult.setCiphertextBlob(allocate(0));
+        assertThat(textEncryptor.encrypt(PLAINTEXT)).isEqualTo("""");
+        verify(mockKms).encrypt(eq(expectedEncryptRequest));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testEncryptEmptyResponse', '(', ')', ' ', '{', '\n', '        ', 'encryptResult', '.', 'setCiphertextBlob', '(', 'allocate', '(', '0', ')', ')', ';', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'encrypt', '(', 'PLAINTEXT', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ')', '.', 'encrypt', '(', 'eq', '(', 'expectedEncryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,90032a8a72ff416a1a052dd09b6e45e66c8fe425,KmsTextEncryptorTest.java,testEncryptNull,"    public void testEncryptNull() {
+        assertThat(textEncryptor.encrypt(null)).isEqualTo("""");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/90032a8a72ff416a1a052dd09b6e45e66c8fe425,"    public void testEncryptNull() {
+        assertThat(textEncryptor.encrypt(null)).isEqualTo("""");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testEncryptNull', '(', ')', ' ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'encrypt', '(', 'null', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,90032a8a72ff416a1a052dd09b6e45e66c8fe425,KmsTextEncryptorTest.java,testEncryptEmptyString,"    public void testEncryptEmptyString() {
+        assertThat(textEncryptor.encrypt("""")).isEqualTo("""");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/90032a8a72ff416a1a052dd09b6e45e66c8fe425,"    public void testEncryptEmptyString() {
+        assertThat(textEncryptor.encrypt("""")).isEqualTo("""");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testEncryptEmptyString', '(', ')', ' ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'encrypt', '(', '""', '""', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,90032a8a72ff416a1a052dd09b6e45e66c8fe425,KmsTextEncryptorTest.java,testDecryptNull,"    public void testDecryptNull() {
+        assertThat(textEncryptor.decrypt(null)).isEqualTo("""");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/90032a8a72ff416a1a052dd09b6e45e66c8fe425,"    public void testDecryptNull() {
+        assertThat(textEncryptor.decrypt(null)).isEqualTo("""");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testDecryptNull', '(', ')', ' ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'decrypt', '(', 'null', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,90032a8a72ff416a1a052dd09b6e45e66c8fe425,KmsTextEncryptorTest.java,testDecryptEmptyString,"    public void testDecryptEmptyString() {
+        assertThat(textEncryptor.decrypt("""")).isEqualTo("""");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/90032a8a72ff416a1a052dd09b6e45e66c8fe425,"    public void testDecryptEmptyString() {
+        assertThat(textEncryptor.decrypt("""")).isEqualTo("""");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testDecryptEmptyString', '(', ')', ' ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'decrypt', '(', '""', '""', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,90032a8a72ff416a1a052dd09b6e45e66c8fe425,KmsTextEncryptorTest.java,testDecrypt,"    public void testDecrypt() {
+        assertThat(textEncryptor.decrypt(BASE64_CIPHER_TEXT)).isEqualTo(PLAINTEXT);
+        verify(mockKms).decrypt(eq(expectedDecryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/90032a8a72ff416a1a052dd09b6e45e66c8fe425,"    public void testDecrypt() {
+        assertThat(textEncryptor.decrypt(BASE64_CIPHER_TEXT)).isEqualTo(PLAINTEXT);
+        verify(mockKms).decrypt(eq(expectedDecryptRequest));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testDecrypt', '(', ')', ' ', '{', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'decrypt', '(', 'BASE64_CIPHER_TEXT', ')', ')', '.', 'isEqualTo', '(', 'PLAINTEXT', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ')', '.', 'decrypt', '(', 'eq', '(', 'expectedDecryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,90032a8a72ff416a1a052dd09b6e45e66c8fe425,KmsTextEncryptorTest.java,testDecryptEmptyResult,"    public void testDecryptEmptyResult() {
+        decryptResult.setPlaintext(ByteBuffer.allocate(0));
+        assertThat(textEncryptor.decrypt(BASE64_CIPHER_TEXT)).isEqualTo("""");
+        verify(mockKms).decrypt(eq(expectedDecryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/90032a8a72ff416a1a052dd09b6e45e66c8fe425,"    public void testDecryptEmptyResult() {
+        decryptResult.setPlaintext(ByteBuffer.allocate(0));
+        assertThat(textEncryptor.decrypt(BASE64_CIPHER_TEXT)).isEqualTo("""");
+        verify(mockKms).decrypt(eq(expectedDecryptRequest));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testDecryptEmptyResult', '(', ')', ' ', '{', '\n', '        ', 'decryptResult', '.', 'setPlaintext', '(', 'ByteBuffer', '.', 'allocate', '(', '0', ')', ')', ';', '\n', '        ', 'assertThat', '(', 'textEncryptor', '.', 'decrypt', '(', 'BASE64_CIPHER_TEXT', ')', ')', '.', 'isEqualTo', '(', '""', '""', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ')', '.', 'decrypt', '(', 'eq', '(', 'expectedDecryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,0e7f22fac519989e7e51a61f9c23f32e017ac075,EncryptedToken.java,parseOptions,"    private static KmsTextEncryptorOptions parseOptions(String optionsString) {
+        final Map<String, String> optionsMap = parseKeyValueMap(optionsString);
+
+        final OutputMode output = OutputMode.valueOf(
+                Optional.ofNullable(optionsMap.get(""output""))
+                        .map(String::toUpperCase)
+                        .orElse(OutputMode.PLAIN.name()));
+        final String kmsKeyId = optionsMap.get(""keyId"");
+        final String encryptionAlgorithm = optionsMap.get(""algorithm"");
+
+        return new KmsTextEncryptorOptions(output, kmsKeyId, encryptionAlgorithm);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0e7f22fac519989e7e51a61f9c23f32e017ac075,"    private static KmsTextEncryptorOptions parseOptions(String optionsString) {
+        final Map<String, String> optionsMap = parseKeyValueMap(optionsString);
+
+        final OutputMode output = OutputMode.valueOf(
+                Optional.ofNullable(optionsMap.get(""output""))
+                        .map(String::toUpperCase)
+                        .orElse(OutputMode.PLAIN.name()));
+        final String kmsKeyId = optionsMap.get(""keyId"");
+        final String encryptionAlgorithm = optionsMap.get(""algorithm"");
+
+        return new KmsTextEncryptorOptions(output, kmsKeyId, encryptionAlgorithm);
+    }
+","['    ', 'private', ' ', 'static', ' ', 'KmsTextEncryptorOptions', ' ', 'parseOptions', '(', 'String', ' ', 'optionsString', ')', ' ', '{', '\n', '        ', 'final', ' ', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'optionsMap', ' ', '=', ' ', 'parseKeyValueMap', '(', 'optionsString', ')', ';', '\n', '\n', '        ', 'final', ' ', 'OutputMode', ' ', 'output', ' ', '=', ' ', 'OutputMode', '.', 'valueOf', '(', '\n', '                ', 'Optional', '.', 'ofNullable', '(', 'optionsMap', '.', 'get', '(', '""', 'output', '""', ')', ')', '\n', '                        ', '.', 'map', '(', 'String', ':', ':', 'toUpperCase', ')', '\n', '                        ', '.', 'orElse', '(', 'OutputMode', '.', 'PLAIN', '.', 'name', '(', ')', ')', ')', ';', '\n', '        ', 'final', ' ', 'String', ' ', 'kmsKeyId', ' ', '=', ' ', 'optionsMap', '.', 'get', '(', '""', 'keyId', '""', ')', ';', '\n', '        ', 'final', ' ', 'String', ' ', 'encryptionAlgorithm', ' ', '=', ' ', 'optionsMap', '.', 'get', '(', '""', 'algorithm', '""', ')', ';', '\n', '\n', '        ', 'return', ' ', 'new', ' ', 'KmsTextEncryptorOptions', '(', 'output', ',', ' ', 'kmsKeyId', ',', ' ', 'encryptionAlgorithm', ')', ';', '\n', '    ', '}', '\n']"
+master,0e7f22fac519989e7e51a61f9c23f32e017ac075,KmsTextEncryptor.java,checkAlgorithm,"    private void checkAlgorithm(String algorithm) {
+        if (isAsymmetricEncryption(algorithm) && !IS_ALGORITHM_AVAILABLE) {
+            log.warn(""Non-symmetric encryption '{}' has been configured,"" +",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0e7f22fac519989e7e51a61f9c23f32e017ac075,"    private void checkAlgorithm(String algorithm) {
+        if (isAsymmetricEncryption(algorithm) && !IS_ALGORITHM_AVAILABLE) {
+            log.warn(""Non-symmetric encryption '{}' has been configured,"" +
+","['    ', 'private', ' ', 'void', ' ', 'checkAlgorithm', '(', 'String', ' ', 'algorithm', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'isAsymmetricEncryption', '(', 'algorithm', ')', ' ', '&', '&', ' ', '!', 'IS_ALGORITHM_AVAILABLE', ')', ' ', '{', '\n', '            ', 'log', '.', 'warn', '(', '""', ""Non-symmetric encryption '{}' has been configured,"", '""', ' ', '+', '\n']"
+master,0e7f22fac519989e7e51a61f9c23f32e017ac075,KmsTextEncryptor.java,isAsymmetricEncryption,"    private boolean isAsymmetricEncryption(String algorithm) {
+        return !algorithm.equals(""SYMMETRIC_DEFAULT"");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0e7f22fac519989e7e51a61f9c23f32e017ac075,"    private boolean isAsymmetricEncryption(String algorithm) {
+        return !algorithm.equals(""SYMMETRIC_DEFAULT"");
+    }
+","['    ', 'private', ' ', 'boolean', ' ', 'isAsymmetricEncryption', '(', 'String', ' ', 'algorithm', ')', ' ', '{', '\n', '        ', 'return', ' ', '!', 'algorithm', '.', 'equals', '(', '""', 'SYMMETRIC_DEFAULT', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,0e7f22fac519989e7e51a61f9c23f32e017ac075,KmsTextEncryptorOptions.java,equals,"    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        KmsTextEncryptorOptions that = (KmsTextEncryptorOptions) o;
+        return outputMode == that.outputMode &&
+                Objects.equals(keyId, that.keyId) &&",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0e7f22fac519989e7e51a61f9c23f32e017ac075,"    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        KmsTextEncryptorOptions that = (KmsTextEncryptorOptions) o;
+        return outputMode == that.outputMode &&
+                Objects.equals(keyId, that.keyId) &&
+","['    ', 'public', ' ', 'boolean', ' ', 'equals', '(', 'Object', ' ', 'o', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'this', ' ', '=', '=', ' ', 'o', ')', ' ', 'return', ' ', 'true', ';', '\n', '        ', 'if', ' ', '(', 'o', ' ', '=', '=', ' ', 'null', ' ', '|', '|', ' ', 'getClass', '(', ')', ' ', '!', '=', ' ', 'o', '.', 'getClass', '(', ')', ')', ' ', 'return', ' ', 'false', ';', '\n', '        ', 'KmsTextEncryptorOptions', ' ', 'that', ' ', '=', ' ', '(', 'KmsTextEncryptorOptions', ')', ' ', 'o', ';', '\n', '        ', 'return', ' ', 'outputMode', ' ', '=', '=', ' ', 'that', '.', 'outputMode', ' ', '&', '&', '\n', '                ', 'Objects', '.', 'equals', '(', 'keyId', ',', ' ', 'that', '.', 'keyId', ')', ' ', '&', '&', '\n']"
+master,0e7f22fac519989e7e51a61f9c23f32e017ac075,KmsTextEncryptorOptions.java,hashCode,"    public int hashCode() {
+        return Objects.hash(outputMode, keyId, encryptionAlgorithm);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/0e7f22fac519989e7e51a61f9c23f32e017ac075,"    public int hashCode() {
+        return Objects.hash(outputMode, keyId, encryptionAlgorithm);
+    }
+","['    ', 'public', ' ', 'int', ' ', 'hashCode', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'Objects', '.', 'hash', '(', 'outputMode', ',', ' ', 'keyId', ',', ' ', 'encryptionAlgorithm', ')', ';', '\n', '    ', '}', '\n']"
+master,b0130edf7fc56307a79c34923446b4309d8034ae,KmsTextEncryptor.java,extractString,"    private static String extractString(final ByteBuffer bb, final OutputMode outputMode) {
+        if (bb.hasRemaining()) {
+            final byte[] bytes = new byte[bb.remaining()];",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b0130edf7fc56307a79c34923446b4309d8034ae,"    private static String extractString(final ByteBuffer bb, final OutputMode outputMode) {
+        if (bb.hasRemaining()) {
+            final byte[] bytes = new byte[bb.remaining()];
+","['    ', 'private', ' ', 'static', ' ', 'String', ' ', 'extractString', '(', 'final', ' ', 'ByteBuffer', ' ', 'bb', ',', ' ', 'final', ' ', 'OutputMode', ' ', 'outputMode', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'bb', '.', 'hasRemaining', '(', ')', ')', ' ', '{', '\n', '            ', 'final', ' ', 'byte', '[', ']', ' ', 'bytes', ' ', '=', ' ', 'new', ' ', 'byte', '[', 'bb', '.', 'remaining', '(', ')', ']', ';', '\n']"
+master,b313790f2d34e1805dbe3c34a2e3319f4d00ac07,DisabledKmsEncryptionTest.java,testPropertyHasNotBeenDecrypted,"    public void testPropertyHasNotBeenDecrypted() {
+        assertThat(decryptedSecret).isEmpty();
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b313790f2d34e1805dbe3c34a2e3319f4d00ac07,"    public void testPropertyHasNotBeenDecrypted() {
+        assertThat(decryptedSecret).isEmpty();
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testPropertyHasNotBeenDecrypted', '(', ')', ' ', '{', '\n', '        ', 'assertThat', '(', 'decryptedSecret', ')', '.', 'isEmpty', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,b313790f2d34e1805dbe3c34a2e3319f4d00ac07,KmsEndpointConfigurationTest.java,testPropertyHasBeenDecrypted,"    public void testPropertyHasBeenDecrypted() {
+        assertThat(secret).isEqualTo(""secret"");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b313790f2d34e1805dbe3c34a2e3319f4d00ac07,"    public void testPropertyHasBeenDecrypted() {
+        assertThat(secret).isEqualTo(""secret"");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testPropertyHasBeenDecrypted', '(', ')', ' ', '{', '\n', '        ', 'assertThat', '(', 'secret', ')', '.', 'isEqualTo', '(', '""', 'secret', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,b313790f2d34e1805dbe3c34a2e3319f4d00ac07,AsymmetricEncryptionAlgorithmTest.java,testDecryptAsymmetricProperty,"    void testDecryptAsymmetricProperty() {
+        assertThat(decryptedSecret1).isEqualTo(PLAINTEXT);
+
+        final DecryptRequest decryptRequest = new DecryptRequest();
+        decryptRequest.withCiphertextBlob(CIPHER_TEXT_BLOB1);
+        decryptRequest.withEncryptionAlgorithm(RSAES_OAEP_SHA_1);
+        decryptRequest.withKeyId(""asymmetric-sha1-sample-key"");
+        verify(mockKms, atLeastOnce()).decrypt(eq(decryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b313790f2d34e1805dbe3c34a2e3319f4d00ac07,"    void testDecryptAsymmetricProperty() {
+        assertThat(decryptedSecret1).isEqualTo(PLAINTEXT);
+
+        final DecryptRequest decryptRequest = new DecryptRequest();
+        decryptRequest.withCiphertextBlob(CIPHER_TEXT_BLOB1);
+        decryptRequest.withEncryptionAlgorithm(RSAES_OAEP_SHA_1);
+        decryptRequest.withKeyId(""asymmetric-sha1-sample-key"");
+        verify(mockKms, atLeastOnce()).decrypt(eq(decryptRequest));
+    }
+","['    ', 'void', ' ', 'testDecryptAsymmetricProperty', '(', ')', ' ', '{', '\n', '        ', 'assertThat', '(', 'decryptedSecret1', ')', '.', 'isEqualTo', '(', 'PLAINTEXT', ')', ';', '\n', '\n', '        ', 'final', ' ', 'DecryptRequest', ' ', 'decryptRequest', ' ', '=', ' ', 'new', ' ', 'DecryptRequest', '(', ')', ';', '\n', '        ', 'decryptRequest', '.', 'withCiphertextBlob', '(', 'CIPHER_TEXT_BLOB1', ')', ';', '\n', '        ', 'decryptRequest', '.', 'withEncryptionAlgorithm', '(', 'RSAES_OAEP_SHA_1', ')', ';', '\n', '        ', 'decryptRequest', '.', 'withKeyId', '(', '""', 'asymmetric-sha1-sample-key', '""', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ',', ' ', 'atLeastOnce', '(', ')', ')', '.', 'decrypt', '(', 'eq', '(', 'decryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,b313790f2d34e1805dbe3c34a2e3319f4d00ac07,AsymmetricEncryptionAlgorithmTest.java,testAlgorithmsCanBeMixed,"    void testAlgorithmsCanBeMixed() {
+        assertThat(decryptedSecret2).isEqualTo(PLAINTEXT);
+
+        final DecryptRequest decryptRequest = new DecryptRequest();
+        decryptRequest.withCiphertextBlob(CIPHER_TEXT_BLOB2);
+        decryptRequest.withEncryptionAlgorithm(SYMMETRIC_DEFAULT);
+        verify(mockKms, atLeastOnce()).decrypt(eq(decryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b313790f2d34e1805dbe3c34a2e3319f4d00ac07,"    void testAlgorithmsCanBeMixed() {
+        assertThat(decryptedSecret2).isEqualTo(PLAINTEXT);
+
+        final DecryptRequest decryptRequest = new DecryptRequest();
+        decryptRequest.withCiphertextBlob(CIPHER_TEXT_BLOB2);
+        decryptRequest.withEncryptionAlgorithm(SYMMETRIC_DEFAULT);
+        verify(mockKms, atLeastOnce()).decrypt(eq(decryptRequest));
+    }
+","['    ', 'void', ' ', 'testAlgorithmsCanBeMixed', '(', ')', ' ', '{', '\n', '        ', 'assertThat', '(', 'decryptedSecret2', ')', '.', 'isEqualTo', '(', 'PLAINTEXT', ')', ';', '\n', '\n', '        ', 'final', ' ', 'DecryptRequest', ' ', 'decryptRequest', ' ', '=', ' ', 'new', ' ', 'DecryptRequest', '(', ')', ';', '\n', '        ', 'decryptRequest', '.', 'withCiphertextBlob', '(', 'CIPHER_TEXT_BLOB2', ')', ';', '\n', '        ', 'decryptRequest', '.', 'withEncryptionAlgorithm', '(', 'SYMMETRIC_DEFAULT', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ',', ' ', 'atLeastOnce', '(', ')', ')', '.', 'decrypt', '(', 'eq', '(', 'decryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,b313790f2d34e1805dbe3c34a2e3319f4d00ac07,AsymmetricEncryptionAlgorithmTest.java,testSecretWithCustomKeyId,"    void testSecretWithCustomKeyId() {
+        assertThat(decryptedSecret3).isEqualTo(PLAINTEXT);
+
+        final DecryptRequest decryptRequest = new DecryptRequest();
+        decryptRequest.withCiphertextBlob(CIPHER_TEXT_BLOB3);
+        decryptRequest.withEncryptionAlgorithm(RSAES_OAEP_SHA_256);
+        decryptRequest.withKeyId(""different-key"");
+        verify(mockKms, atLeastOnce()).decrypt(eq(decryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b313790f2d34e1805dbe3c34a2e3319f4d00ac07,"    void testSecretWithCustomKeyId() {
+        assertThat(decryptedSecret3).isEqualTo(PLAINTEXT);
+
+        final DecryptRequest decryptRequest = new DecryptRequest();
+        decryptRequest.withCiphertextBlob(CIPHER_TEXT_BLOB3);
+        decryptRequest.withEncryptionAlgorithm(RSAES_OAEP_SHA_256);
+        decryptRequest.withKeyId(""different-key"");
+        verify(mockKms, atLeastOnce()).decrypt(eq(decryptRequest));
+    }
+","['    ', 'void', ' ', 'testSecretWithCustomKeyId', '(', ')', ' ', '{', '\n', '        ', 'assertThat', '(', 'decryptedSecret3', ')', '.', 'isEqualTo', '(', 'PLAINTEXT', ')', ';', '\n', '\n', '        ', 'final', ' ', 'DecryptRequest', ' ', 'decryptRequest', ' ', '=', ' ', 'new', ' ', 'DecryptRequest', '(', ')', ';', '\n', '        ', 'decryptRequest', '.', 'withCiphertextBlob', '(', 'CIPHER_TEXT_BLOB3', ')', ';', '\n', '        ', 'decryptRequest', '.', 'withEncryptionAlgorithm', '(', 'RSAES_OAEP_SHA_256', ')', ';', '\n', '        ', 'decryptRequest', '.', 'withKeyId', '(', '""', 'different-key', '""', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ',', ' ', 'atLeastOnce', '(', ')', ')', '.', 'decrypt', '(', 'eq', '(', 'decryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,b313790f2d34e1805dbe3c34a2e3319f4d00ac07,AsymmetricEncryptionAlgorithmTest.java,testEncrypt,"    void testEncrypt() {
+        final byte[] cipherTextBytes = ""bla"".getBytes();
+        final String expectedCipherString = Base64.getEncoder().encodeToString(cipherTextBytes);
+        doReturn(new EncryptResult().withCiphertextBlob(ByteBuffer.wrap(cipherTextBytes)))
+                .when(mockKms).encrypt(any(EncryptRequest.class));
+
+        final String mySecret = ""my-secret"";
+        final String encryptedString = textEncryptor.encrypt(mySecret);
+        assertThat(encryptedString).isEqualTo(expectedCipherString);
+
+        final EncryptRequest encryptRequest = new EncryptRequest()
+                .withEncryptionAlgorithm(""RSAES_OAEP_SHA_1"")
+                .withKeyId(""asymmetric-sha1-sample-key"")
+                .withPlaintext(ByteBuffer.wrap(mySecret.getBytes()));
+        verify(mockKms).encrypt(eq(encryptRequest));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b313790f2d34e1805dbe3c34a2e3319f4d00ac07,"    void testEncrypt() {
+        final byte[] cipherTextBytes = ""bla"".getBytes();
+        final String expectedCipherString = Base64.getEncoder().encodeToString(cipherTextBytes);
+        doReturn(new EncryptResult().withCiphertextBlob(ByteBuffer.wrap(cipherTextBytes)))
+                .when(mockKms).encrypt(any(EncryptRequest.class));
+
+        final String mySecret = ""my-secret"";
+        final String encryptedString = textEncryptor.encrypt(mySecret);
+        assertThat(encryptedString).isEqualTo(expectedCipherString);
+
+        final EncryptRequest encryptRequest = new EncryptRequest()
+                .withEncryptionAlgorithm(""RSAES_OAEP_SHA_1"")
+                .withKeyId(""asymmetric-sha1-sample-key"")
+                .withPlaintext(ByteBuffer.wrap(mySecret.getBytes()));
+        verify(mockKms).encrypt(eq(encryptRequest));
+    }
+","['    ', 'void', ' ', 'testEncrypt', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'byte', '[', ']', ' ', 'cipherTextBytes', ' ', '=', ' ', '""', 'bla', '""', '.', 'getBytes', '(', ')', ';', '\n', '        ', 'final', ' ', 'String', ' ', 'expectedCipherString', ' ', '=', ' ', 'Base64', '.', 'getEncoder', '(', ')', '.', 'encodeToString', '(', 'cipherTextBytes', ')', ';', '\n', '        ', 'doReturn', '(', 'new', ' ', 'EncryptResult', '(', ')', '.', 'withCiphertextBlob', '(', 'ByteBuffer', '.', 'wrap', '(', 'cipherTextBytes', ')', ')', ')', '\n', '                ', '.', 'when', '(', 'mockKms', ')', '.', 'encrypt', '(', 'any', '(', 'EncryptRequest', '.', 'class', ')', ')', ';', '\n', '\n', '        ', 'final', ' ', 'String', ' ', 'mySecret', ' ', '=', ' ', '""', 'my-secret', '""', ';', '\n', '        ', 'final', ' ', 'String', ' ', 'encryptedString', ' ', '=', ' ', 'textEncryptor', '.', 'encrypt', '(', 'mySecret', ')', ';', '\n', '        ', 'assertThat', '(', 'encryptedString', ')', '.', 'isEqualTo', '(', 'expectedCipherString', ')', ';', '\n', '\n', '        ', 'final', ' ', 'EncryptRequest', ' ', 'encryptRequest', ' ', '=', ' ', 'new', ' ', 'EncryptRequest', '(', ')', '\n', '                ', '.', 'withEncryptionAlgorithm', '(', '""', 'RSAES_OAEP_SHA_1', '""', ')', '\n', '                ', '.', 'withKeyId', '(', '""', 'asymmetric-sha1-sample-key', '""', ')', '\n', '                ', '.', 'withPlaintext', '(', 'ByteBuffer', '.', 'wrap', '(', 'mySecret', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '        ', 'verify', '(', 'mockKms', ')', '.', 'encrypt', '(', 'eq', '(', 'encryptRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,b313790f2d34e1805dbe3c34a2e3319f4d00ac07,MockAwsKmsConfig.java,kms,"    AWSKMS kms() {
+        return mock(AWSKMS.class, defaultAnswer);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/b313790f2d34e1805dbe3c34a2e3319f4d00ac07,"    AWSKMS kms() {
+        return mock(AWSKMS.class, defaultAnswer);
+    }
+","['    ', 'AWSKMS', ' ', 'kms', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'mock', '(', 'AWSKMS', '.', 'class', ',', ' ', 'defaultAnswer', ')', ';', '\n', '    ', '}', '\n']"
+master,2a25ac97309912a610f6c78e657b51a7d4ad03de,AsymmetricEncryptionMissingKeyIdTest.java,testDecryptFails,"    void testDecryptFails() {
+        final String someCipher = Base64.getEncoder().encodeToString(""SOME_CIPHER"".getBytes());
+        try {
+            textEncryptor.decrypt(someCipher);
+            failBecauseExceptionWasNotThrown(RuntimeException.class);
+        } catch (Exception e) {
+            assertThat(e).hasMessageContaining(""kmsKeyId must not be blank. Asymmetric decryption requires the key to be known"");
+        }
+        verify(mockKms, never()).decrypt(any(DecryptRequest.class));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/2a25ac97309912a610f6c78e657b51a7d4ad03de,"    void testDecryptFails() {
+        final String someCipher = Base64.getEncoder().encodeToString(""SOME_CIPHER"".getBytes());
+        try {
+            textEncryptor.decrypt(someCipher);
+            failBecauseExceptionWasNotThrown(RuntimeException.class);
+        } catch (Exception e) {
+            assertThat(e).hasMessageContaining(""kmsKeyId must not be blank. Asymmetric decryption requires the key to be known"");
+        }
+        verify(mockKms, never()).decrypt(any(DecryptRequest.class));
+    }
+","['    ', 'void', ' ', 'testDecryptFails', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'String', ' ', 'someCipher', ' ', '=', ' ', 'Base64', '.', 'getEncoder', '(', ')', '.', 'encodeToString', '(', '""', 'SOME_CIPHER', '""', '.', 'getBytes', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'textEncryptor', '.', 'decrypt', '(', 'someCipher', ')', ';', '\n', '            ', 'failBecauseExceptionWasNotThrown', '(', 'RuntimeException', '.', 'class', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'Exception', ' ', 'e', ')', ' ', '{', '\n', '            ', 'assertThat', '(', 'e', ')', '.', 'hasMessageContaining', '(', '""', 'kmsKeyId must not be blank. Asymmetric decryption requires the key to be known', '""', ')', ';', '\n', '        ', '}', '\n', '        ', 'verify', '(', 'mockKms', ',', ' ', 'never', '(', ')', ')', '.', 'decrypt', '(', 'any', '(', 'DecryptRequest', '.', 'class', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,2a25ac97309912a610f6c78e657b51a7d4ad03de,AsymmetricEncryptionMissingKeyIdTest.java,testEncryptFails,"    void testEncryptFails() {
+        try {
+            textEncryptor.encrypt(""Hello"");
+            failBecauseExceptionWasNotThrown(RuntimeException.class);
+        } catch (Exception e) {
+            assertThat(e).hasMessageContaining(""kmsKeyId must not be blank"");
+        }
+
+        verify(mockKms, never()).encrypt(any(EncryptRequest.class));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/2a25ac97309912a610f6c78e657b51a7d4ad03de,"    void testEncryptFails() {
+        try {
+            textEncryptor.encrypt(""Hello"");
+            failBecauseExceptionWasNotThrown(RuntimeException.class);
+        } catch (Exception e) {
+            assertThat(e).hasMessageContaining(""kmsKeyId must not be blank"");
+        }
+
+        verify(mockKms, never()).encrypt(any(EncryptRequest.class));
+    }
+","['    ', 'void', ' ', 'testEncryptFails', '(', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'textEncryptor', '.', 'encrypt', '(', '""', 'Hello', '""', ')', ';', '\n', '            ', 'failBecauseExceptionWasNotThrown', '(', 'RuntimeException', '.', 'class', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'Exception', ' ', 'e', ')', ' ', '{', '\n', '            ', 'assertThat', '(', 'e', ')', '.', 'hasMessageContaining', '(', '""', 'kmsKeyId must not be blank', '""', ')', ';', '\n', '        ', '}', '\n', '\n', '        ', 'verify', '(', 'mockKms', ',', ' ', 'never', '(', ')', ')', '.', 'encrypt', '(', 'any', '(', 'EncryptRequest', '.', 'class', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,c3cdb5cc0f80458adefa46c0fcfb758a8b392d2e,AsymmetricEncryptionNotAvailableTest.java,testAsymmetricEncryptionIsNotAvailable,"    void testAsymmetricEncryptionIsNotAvailable(CapturedOutput output) {
+        doThrow(InvalidKeyUsageException.class).when(mockKms).encrypt(any(EncryptRequest.class));
+
+        try {
+            // Asymmetric algorithm is not available, because an outdated AWS SDK is used. The textEncryptor will",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/c3cdb5cc0f80458adefa46c0fcfb758a8b392d2e,"    void testAsymmetricEncryptionIsNotAvailable(CapturedOutput output) {
+        doThrow(InvalidKeyUsageException.class).when(mockKms).encrypt(any(EncryptRequest.class));
+
+        try {
+            
+","['    ', 'void', ' ', 'testAsymmetricEncryptionIsNotAvailable', '(', 'CapturedOutput', ' ', 'output', ')', ' ', '{', '\n', '        ', 'doThrow', '(', 'InvalidKeyUsageException', '.', 'class', ')', '.', 'when', '(', 'mockKms', ')', '.', 'encrypt', '(', 'any', '(', 'EncryptRequest', '.', 'class', ')', ')', ';', '\n', '\n', '        ', 'try', ' ', '{', '\n', '            ', '\n']"
+master,73ee7369b2df6c42d1981e34f5b7f16f0b596215,AsymmetricEncryptionNotAvailableTest.java,testAsymmetricDecryptionIsNotAvailable,"    void testAsymmetricDecryptionIsNotAvailable(CapturedOutput output) {
+        doThrow(InvalidCiphertextException.class).when(mockKms).decrypt(any(DecryptRequest.class));
+
+        try {
+            // Asymmetric algorithm is not available, because an outdated AWS SDK is used. The textEncryptor will",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/73ee7369b2df6c42d1981e34f5b7f16f0b596215,"    void testAsymmetricDecryptionIsNotAvailable(CapturedOutput output) {
+        doThrow(InvalidCiphertextException.class).when(mockKms).decrypt(any(DecryptRequest.class));
+
+        try {
+            
+","['    ', 'void', ' ', 'testAsymmetricDecryptionIsNotAvailable', '(', 'CapturedOutput', ' ', 'output', ')', ' ', '{', '\n', '        ', 'doThrow', '(', 'InvalidCiphertextException', '.', 'class', ')', '.', 'when', '(', 'mockKms', ')', '.', 'decrypt', '(', 'any', '(', 'DecryptRequest', '.', 'class', ')', ')', ';', '\n', '\n', '        ', 'try', ' ', '{', '\n', '            ', '\n']"
+master,770e93b70215f2d51f58c190944b1c758cf160b5,KmsTextEncryptor.java,isAsymmetricEncryption,"    private static boolean isAsymmetricEncryption(String algorithm) {
+        return !algorithm.equals(""SYMMETRIC_DEFAULT"");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/770e93b70215f2d51f58c190944b1c758cf160b5,"    private static boolean isAsymmetricEncryption(String algorithm) {
+        return !algorithm.equals(""SYMMETRIC_DEFAULT"");
+    }
+","['    ', 'private', ' ', 'static', ' ', 'boolean', ' ', 'isAsymmetricEncryption', '(', 'String', ' ', 'algorithm', ')', ' ', '{', '\n', '        ', 'return', ' ', '!', 'algorithm', '.', 'equals', '(', '""', 'SYMMETRIC_DEFAULT', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,fb040fdc4d6e0860f72fa9ee3bf7f408f39fd0de,EncryptedToken.java,parseOptions,"    private static KmsTextEncryptorOptions parseOptions(String optionsString) {
+        final Map<String, String> optionsMap = parseKeyValueMap(optionsString);
+
+        final OutputMode output = OutputMode.valueOf(
+                Optional.ofNullable(optionsMap.get(""output""))
+                        .map(String::toUpperCase)
+                        .orElse(OutputMode.PLAIN.name()));
+        final String kmsKeyId = optionsMap.get(""keyId"");
+        final String encryptionAlgorithm = optionsMap.get(""algorithm"");
+
+        return KmsTextEncryptorOptions.builder()
+                .withOutputMode(output)",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/fb040fdc4d6e0860f72fa9ee3bf7f408f39fd0de,"    private static KmsTextEncryptorOptions parseOptions(String optionsString) {
+        final Map<String, String> optionsMap = parseKeyValueMap(optionsString);
+
+        final OutputMode output = OutputMode.valueOf(
+                Optional.ofNullable(optionsMap.get(""output""))
+                        .map(String::toUpperCase)
+                        .orElse(OutputMode.PLAIN.name()));
+        final String kmsKeyId = optionsMap.get(""keyId"");
+        final String encryptionAlgorithm = optionsMap.get(""algorithm"");
+
+        return KmsTextEncryptorOptions.builder()
+                .withOutputMode(output)
+","['    ', 'private', ' ', 'static', ' ', 'KmsTextEncryptorOptions', ' ', 'parseOptions', '(', 'String', ' ', 'optionsString', ')', ' ', '{', '\n', '        ', 'final', ' ', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'optionsMap', ' ', '=', ' ', 'parseKeyValueMap', '(', 'optionsString', ')', ';', '\n', '\n', '        ', 'final', ' ', 'OutputMode', ' ', 'output', ' ', '=', ' ', 'OutputMode', '.', 'valueOf', '(', '\n', '                ', 'Optional', '.', 'ofNullable', '(', 'optionsMap', '.', 'get', '(', '""', 'output', '""', ')', ')', '\n', '                        ', '.', 'map', '(', 'String', ':', ':', 'toUpperCase', ')', '\n', '                        ', '.', 'orElse', '(', 'OutputMode', '.', 'PLAIN', '.', 'name', '(', ')', ')', ')', ';', '\n', '        ', 'final', ' ', 'String', ' ', 'kmsKeyId', ' ', '=', ' ', 'optionsMap', '.', 'get', '(', '""', 'keyId', '""', ')', ';', '\n', '        ', 'final', ' ', 'String', ' ', 'encryptionAlgorithm', ' ', '=', ' ', 'optionsMap', '.', 'get', '(', '""', 'algorithm', '""', ')', ';', '\n', '\n', '        ', 'return', ' ', 'KmsTextEncryptorOptions', '.', 'builder', '(', ')', '\n', '                ', '.', 'withOutputMode', '(', 'output', ')', '\n']"
+master,fb040fdc4d6e0860f72fa9ee3bf7f408f39fd0de,KmsTextEncryptor.java,checkAlgorithm,"    private void checkAlgorithm(String algorithm) {
+        if (isAsymmetricEncryption(algorithm) && !IS_ALGORITHM_AVAILABLE) {
+            log.warn(""Asymmetric encryption '{}' has been configured,"" +",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/fb040fdc4d6e0860f72fa9ee3bf7f408f39fd0de,"    private void checkAlgorithm(String algorithm) {
+        if (isAsymmetricEncryption(algorithm) && !IS_ALGORITHM_AVAILABLE) {
+            log.warn(""Asymmetric encryption '{}' has been configured,"" +
+","['    ', 'private', ' ', 'void', ' ', 'checkAlgorithm', '(', 'String', ' ', 'algorithm', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'isAsymmetricEncryption', '(', 'algorithm', ')', ' ', '&', '&', ' ', '!', 'IS_ALGORITHM_AVAILABLE', ')', ' ', '{', '\n', '            ', 'log', '.', 'warn', '(', '""', ""Asymmetric encryption '{}' has been configured,"", '""', ' ', '+', '\n']"
+master,fb040fdc4d6e0860f72fa9ee3bf7f408f39fd0de,KmsTextEncryptorOptions.java,builder,"    static Builder builder() {
+        return new Builder();
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/fb040fdc4d6e0860f72fa9ee3bf7f408f39fd0de,"    static Builder builder() {
+        return new Builder();
+    }
+","['    ', 'static', ' ', 'Builder', ' ', 'builder', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'new', ' ', 'Builder', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,fb040fdc4d6e0860f72fa9ee3bf7f408f39fd0de,KmsTextEncryptorOptions.java,withOutputMode,"        public Builder withOutputMode(OutputMode outputMode) {
+            this.outputMode = outputMode;
+            return this;
+        }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/fb040fdc4d6e0860f72fa9ee3bf7f408f39fd0de,"        public Builder withOutputMode(OutputMode outputMode) {
+            this.outputMode = outputMode;
+            return this;
+        }
+","['        ', 'public', ' ', 'Builder', ' ', 'withOutputMode', '(', 'OutputMode', ' ', 'outputMode', ')', ' ', '{', '\n', '            ', 'this', '.', 'outputMode', ' ', '=', ' ', 'outputMode', ';', '\n', '            ', 'return', ' ', 'this', ';', '\n', '        ', '}', '\n']"
+master,fb040fdc4d6e0860f72fa9ee3bf7f408f39fd0de,KmsTextEncryptorOptions.java,withKeyId,"        public Builder withKeyId(String keyId) {
+            this.keyId = keyId;
+            return this;
+        }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/fb040fdc4d6e0860f72fa9ee3bf7f408f39fd0de,"        public Builder withKeyId(String keyId) {
+            this.keyId = keyId;
+            return this;
+        }
+","['        ', 'public', ' ', 'Builder', ' ', 'withKeyId', '(', 'String', ' ', 'keyId', ')', ' ', '{', '\n', '            ', 'this', '.', 'keyId', ' ', '=', ' ', 'keyId', ';', '\n', '            ', 'return', ' ', 'this', ';', '\n', '        ', '}', '\n']"
+master,fb040fdc4d6e0860f72fa9ee3bf7f408f39fd0de,KmsTextEncryptorOptions.java,withEncryptionAlgorithm,"        public Builder withEncryptionAlgorithm(String encryptionAlgorithm) {
+            this.encryptionAlgorithm = encryptionAlgorithm;
+            return this;
+        }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/fb040fdc4d6e0860f72fa9ee3bf7f408f39fd0de,"        public Builder withEncryptionAlgorithm(String encryptionAlgorithm) {
+            this.encryptionAlgorithm = encryptionAlgorithm;
+            return this;
+        }
+","['        ', 'public', ' ', 'Builder', ' ', 'withEncryptionAlgorithm', '(', 'String', ' ', 'encryptionAlgorithm', ')', ' ', '{', '\n', '            ', 'this', '.', 'encryptionAlgorithm', ' ', '=', ' ', 'encryptionAlgorithm', ';', '\n', '            ', 'return', ' ', 'this', ';', '\n', '        ', '}', '\n']"
+master,fb040fdc4d6e0860f72fa9ee3bf7f408f39fd0de,KmsTextEncryptorOptions.java,build,"        public KmsTextEncryptorOptions build() {
+            return new KmsTextEncryptorOptions(outputMode, keyId, encryptionAlgorithm);
+        }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/fb040fdc4d6e0860f72fa9ee3bf7f408f39fd0de,"        public KmsTextEncryptorOptions build() {
+            return new KmsTextEncryptorOptions(outputMode, keyId, encryptionAlgorithm);
+        }
+","['        ', 'public', ' ', 'KmsTextEncryptorOptions', ' ', 'build', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'new', ' ', 'KmsTextEncryptorOptions', '(', 'outputMode', ',', ' ', 'keyId', ',', ' ', 'encryptionAlgorithm', ')', ';', '\n', '        ', '}', '\n']"
+master,84e67354cdca3f61575846ecd5b3946fafe27d9c,ConfigServerTest.java,testEncryptEndpoint,"    void testEncryptEndpoint() {
+        final String plainText = ""some-plaintext"";
+        final String cipherText = ""cIpHeR"";
+
+        doAnswer(invocation -> new EncryptResult().withCiphertextBlob(ByteBuffer.wrap(cipherText.getBytes())))
+                .when(mockKms).encrypt(any(EncryptRequest.class));
+
+        final ResponseEntity<String> response = rest.exchange(
+                post(URI.create(""/encrypt""))
+                        .contentType(APPLICATION_FORM_URLENCODED)
+                        .body(plainText),
+                String.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isEqualTo(Base64.getEncoder().encodeToString(cipherText.getBytes()));
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/84e67354cdca3f61575846ecd5b3946fafe27d9c,"    void testEncryptEndpoint() {
+        final String plainText = ""some-plaintext"";
+        final String cipherText = ""cIpHeR"";
+
+        doAnswer(invocation -> new EncryptResult().withCiphertextBlob(ByteBuffer.wrap(cipherText.getBytes())))
+                .when(mockKms).encrypt(any(EncryptRequest.class));
+
+        final ResponseEntity<String> response = rest.exchange(
+                post(URI.create(""/encrypt""))
+                        .contentType(APPLICATION_FORM_URLENCODED)
+                        .body(plainText),
+                String.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isEqualTo(Base64.getEncoder().encodeToString(cipherText.getBytes()));
+    }
+","['    ', 'void', ' ', 'testEncryptEndpoint', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'String', ' ', 'plainText', ' ', '=', ' ', '""', 'some-plaintext', '""', ';', '\n', '        ', 'final', ' ', 'String', ' ', 'cipherText', ' ', '=', ' ', '""', 'cIpHeR', '""', ';', '\n', '\n', '        ', 'doAnswer', '(', 'invocation', ' ', '-', '>', ' ', 'new', ' ', 'EncryptResult', '(', ')', '.', 'withCiphertextBlob', '(', 'ByteBuffer', '.', 'wrap', '(', 'cipherText', '.', 'getBytes', '(', ')', ')', ')', ')', '\n', '                ', '.', 'when', '(', 'mockKms', ')', '.', 'encrypt', '(', 'any', '(', 'EncryptRequest', '.', 'class', ')', ')', ';', '\n', '\n', '        ', 'final', ' ', 'ResponseEntity', '<', 'String', '>', ' ', 'response', ' ', '=', ' ', 'rest', '.', 'exchange', '(', '\n', '                ', 'post', '(', 'URI', '.', 'create', '(', '""', '/encrypt', '""', ')', ')', '\n', '                        ', '.', 'contentType', '(', 'APPLICATION_FORM_URLENCODED', ')', '\n', '                        ', '.', 'body', '(', 'plainText', ')', ',', '\n', '                ', 'String', '.', 'class', ')', ';', '\n', '        ', 'assertThat', '(', 'response', '.', 'getStatusCode', '(', ')', ')', '.', 'isEqualTo', '(', 'HttpStatus', '.', 'OK', ')', ';', '\n', '        ', 'assertThat', '(', 'response', '.', 'getBody', '(', ')', ')', '.', 'isEqualTo', '(', 'Base64', '.', 'getEncoder', '(', ')', '.', 'encodeToString', '(', 'cipherText', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,84e67354cdca3f61575846ecd5b3946fafe27d9c,ConfigServerTest.java,testDecryptEndpoint,"    void testDecryptEndpoint() {
+        final String cipherText = Base64.getEncoder().encodeToString(""cIpHeR"".getBytes());
+
+        // Config Server does a ""test"" encrypt with the given key
+        doAnswer(invocation -> new EncryptResult().withCiphertextBlob(ByteBuffer.wrap(cipherText.getBytes())))
+                .when(mockKms).encrypt(any(EncryptRequest.class));
+
+        final ResponseEntity<String> response = rest.exchange(
+                post(URI.create(""/decrypt""))
+                        .contentType(APPLICATION_FORM_URLENCODED)
+                        .body(cipherText),
+                String.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isEqualTo(""Hello World"");
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/84e67354cdca3f61575846ecd5b3946fafe27d9c,"    void testDecryptEndpoint() {
+        final String cipherText = Base64.getEncoder().encodeToString(""cIpHeR"".getBytes());
+
+        
+        doAnswer(invocation -> new EncryptResult().withCiphertextBlob(ByteBuffer.wrap(cipherText.getBytes())))
+                .when(mockKms).encrypt(any(EncryptRequest.class));
+
+        final ResponseEntity<String> response = rest.exchange(
+                post(URI.create(""/decrypt""))
+                        .contentType(APPLICATION_FORM_URLENCODED)
+                        .body(cipherText),
+                String.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isEqualTo(""Hello World"");
+    }
+","['    ', 'void', ' ', 'testDecryptEndpoint', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'String', ' ', 'cipherText', ' ', '=', ' ', 'Base64', '.', 'getEncoder', '(', ')', '.', 'encodeToString', '(', '""', 'cIpHeR', '""', '.', 'getBytes', '(', ')', ')', ';', '\n', '\n', '        ', '\n', '        ', 'doAnswer', '(', 'invocation', ' ', '-', '>', ' ', 'new', ' ', 'EncryptResult', '(', ')', '.', 'withCiphertextBlob', '(', 'ByteBuffer', '.', 'wrap', '(', 'cipherText', '.', 'getBytes', '(', ')', ')', ')', ')', '\n', '                ', '.', 'when', '(', 'mockKms', ')', '.', 'encrypt', '(', 'any', '(', 'EncryptRequest', '.', 'class', ')', ')', ';', '\n', '\n', '        ', 'final', ' ', 'ResponseEntity', '<', 'String', '>', ' ', 'response', ' ', '=', ' ', 'rest', '.', 'exchange', '(', '\n', '                ', 'post', '(', 'URI', '.', 'create', '(', '""', '/decrypt', '""', ')', ')', '\n', '                        ', '.', 'contentType', '(', 'APPLICATION_FORM_URLENCODED', ')', '\n', '                        ', '.', 'body', '(', 'cipherText', ')', ',', '\n', '                ', 'String', '.', 'class', ')', ';', '\n', '        ', 'assertThat', '(', 'response', '.', 'getStatusCode', '(', ')', ')', '.', 'isEqualTo', '(', 'HttpStatus', '.', 'OK', ')', ';', '\n', '        ', 'assertThat', '(', 'response', '.', 'getBody', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Hello World', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,330e18c5895452b544246fdd57b37c01abc8d067,EncryptedTokenTest.java,data,"    public static Stream<Arguments> data() {
+        return Stream.of(
+                Arguments.of(""(param=TOKAmWhvbW1lIGPigJllc3Qgcmllbg==,test=bOKAmW9ldXZyZSBj4oCZZXN0IHRvdXQ= ,valueless)[foo=bar,output=base64]SGVsbG8gV29ybGQ="", BASE64_OPTIONS, CONTEXT_MAP),",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/330e18c5895452b544246fdd57b37c01abc8d067,"    public static Stream<Arguments> data() {
+        return Stream.of(
+                Arguments.of(""(param=TOKAmWhvbW1lIGPigJllc3Qgcmllbg==,test=bOKAmW9ldXZyZSBj4oCZZXN0IHRvdXQ= ,valueless)[foo=bar,output=base64]SGVsbG8gV29ybGQ="", BASE64_OPTIONS, CONTEXT_MAP),
+","['    ', 'public', ' ', 'static', ' ', 'Stream', '<', 'Arguments', '>', ' ', 'data', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'Stream', '.', 'of', '(', '\n', '                ', 'Arguments', '.', 'of', '(', '""', '(param=TOKAmWhvbW1lIGPigJllc3Qgcmllbg==,test=bOKAmW9ldXZyZSBj4oCZZXN0IHRvdXQ= ,valueless)[foo=bar,output=base64]SGVsbG8gV29ybGQ=', '""', ',', ' ', 'BASE64_OPTIONS', ',', ' ', 'CONTEXT_MAP', ')', ',', '\n']"
+master,330e18c5895452b544246fdd57b37c01abc8d067,EncryptedTokenTest.java,testParseToken,"    public void testParseToken(String testString, KmsTextEncryptorOptions expectedOptions, Map<String, String> expectedContext) {
+        final EncryptedToken token = EncryptedToken.parse(testString);
+
+        assertThat(token.getCipherBytes()).isEqualTo(ByteBuffer.wrap(""Hello World"".getBytes()));
+        assertThat(token.getOptions()).isEqualTo(expectedOptions);
+        assertThat(token.getEncryptionContext()).isEqualTo(expectedContext);
+    }",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/330e18c5895452b544246fdd57b37c01abc8d067,"    public void testParseToken(String testString, KmsTextEncryptorOptions expectedOptions, Map<String, String> expectedContext) {
+        final EncryptedToken token = EncryptedToken.parse(testString);
+
+        assertThat(token.getCipherBytes()).isEqualTo(ByteBuffer.wrap(""Hello World"".getBytes()));
+        assertThat(token.getOptions()).isEqualTo(expectedOptions);
+        assertThat(token.getEncryptionContext()).isEqualTo(expectedContext);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testParseToken', '(', 'String', ' ', 'testString', ',', ' ', 'KmsTextEncryptorOptions', ' ', 'expectedOptions', ',', ' ', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'expectedContext', ')', ' ', '{', '\n', '        ', 'final', ' ', 'EncryptedToken', ' ', 'token', ' ', '=', ' ', 'EncryptedToken', '.', 'parse', '(', 'testString', ')', ';', '\n', '\n', '        ', 'assertThat', '(', 'token', '.', 'getCipherBytes', '(', ')', ')', '.', 'isEqualTo', '(', 'ByteBuffer', '.', 'wrap', '(', '""', 'Hello World', '""', '.', 'getBytes', '(', ')', ')', ')', ';', '\n', '        ', 'assertThat', '(', 'token', '.', 'getOptions', '(', ')', ')', '.', 'isEqualTo', '(', 'expectedOptions', ')', ';', '\n', '        ', 'assertThat', '(', 'token', '.', 'getEncryptionContext', '(', ')', ')', '.', 'isEqualTo', '(', 'expectedContext', ')', ';', '\n', '    ', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,KmsAutoConfiguration.java,kmsClient,"	public KmsClient kmsClient(AwsClientBuilderConfigurer awsClientBuilderConfigurer, ObjectProvider<AwsClientCustomizer<KmsClientBuilder>> configurer, KmsProperties properties) {
+		return awsClientBuilderConfigurer.configure(KmsClient.builder(), properties, configurer.getIfAvailable()).build();
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public KmsClient kmsClient(AwsClientBuilderConfigurer awsClientBuilderConfigurer, ObjectProvider<AwsClientCustomizer<KmsClientBuilder>> configurer, KmsProperties properties) {
+		return awsClientBuilderConfigurer.configure(KmsClient.builder(), properties, configurer.getIfAvailable()).build();
+	}
+","['\t', 'public', ' ', 'KmsClient', ' ', 'kmsClient', '(', 'AwsClientBuilderConfigurer', ' ', 'awsClientBuilderConfigurer', ',', ' ', 'ObjectProvider', '<', 'AwsClientCustomizer', '<', 'KmsClientBuilder', '>', '>', ' ', 'configurer', ',', ' ', 'KmsProperties', ' ', 'properties', ')', ' ', '{', '\n', '\t\t', 'return', ' ', 'awsClientBuilderConfigurer', '.', 'configure', '(', 'KmsClient', '.', 'builder', '(', ')', ',', ' ', 'properties', ',', ' ', 'configurer', '.', 'getIfAvailable', '(', ')', ')', '.', 'build', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,KmsAutoConfiguration.java,kmsAsyncClient,"	public KmsAsyncClient kmsAsyncClient(AwsClientBuilderConfigurer awsClientBuilderConfigurer, ObjectProvider<AwsClientCustomizer<KmsAsyncClientBuilder>> configurer,
+			KmsProperties properties) {
+		return awsClientBuilderConfigurer.configure(KmsAsyncClient.builder(), properties, configurer.getIfAvailable()).build();
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public KmsAsyncClient kmsAsyncClient(AwsClientBuilderConfigurer awsClientBuilderConfigurer, ObjectProvider<AwsClientCustomizer<KmsAsyncClientBuilder>> configurer,
+			KmsProperties properties) {
+		return awsClientBuilderConfigurer.configure(KmsAsyncClient.builder(), properties, configurer.getIfAvailable()).build();
+	}
+","['\t', 'public', ' ', 'KmsAsyncClient', ' ', 'kmsAsyncClient', '(', 'AwsClientBuilderConfigurer', ' ', 'awsClientBuilderConfigurer', ',', ' ', 'ObjectProvider', '<', 'AwsClientCustomizer', '<', 'KmsAsyncClientBuilder', '>', '>', ' ', 'configurer', ',', '\n', '\t\t\t', 'KmsProperties', ' ', 'properties', ')', ' ', '{', '\n', '\t\t', 'return', ' ', 'awsClientBuilderConfigurer', '.', 'configure', '(', 'KmsAsyncClient', '.', 'builder', '(', ')', ',', ' ', 'properties', ',', ' ', 'configurer', '.', 'getIfAvailable', '(', ')', ')', '.', 'build', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,KmsEncryptConfiguration.java,textEncryptor,"	public TextEncryptor textEncryptor(KmsClient kmsClient, KmsProperties properties) {
+		return new KmsTextEncryptor(kmsClient, properties.getKeyId(), properties.getEncryptionAlgorithm());
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public TextEncryptor textEncryptor(KmsClient kmsClient, KmsProperties properties) {
+		return new KmsTextEncryptor(kmsClient, properties.getKeyId(), properties.getEncryptionAlgorithm());
+	}
+","['\t', 'public', ' ', 'TextEncryptor', ' ', 'textEncryptor', '(', 'KmsClient', ' ', 'kmsClient', ',', ' ', 'KmsProperties', ' ', 'properties', ')', ' ', '{', '\n', '\t\t', 'return', ' ', 'new', ' ', 'KmsTextEncryptor', '(', 'kmsClient', ',', ' ', 'properties', '.', 'getKeyId', '(', ')', ',', ' ', 'properties', '.', 'getEncryptionAlgorithm', '(', ')', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,EncryptedToken.java,parse,"	public static EncryptedToken parse(String text) {
+		Matcher matcher = ENCRYPTED_TOKEN_PATTERN.matcher(text);
+		boolean matches = matcher.matches();
+		Assert.isTrue(matches, ""Malformed encrypted string '"" + text + ""'"");
+
+		String contextString = matcher.group(""context"");
+        String optionsString = matcher.group(""options"");
+        String cipherString = matcher.group(""cipher"");
+        
+        byte[] cipher = parseCipher(cipherString);
+        Map<String, String> context = parseContext(contextString);
+        EncryptedTokenOptions options = parseOptions(optionsString);
+        
+        return new EncryptedToken(cipher, context, options);
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public static EncryptedToken parse(String text) {
+		Matcher matcher = ENCRYPTED_TOKEN_PATTERN.matcher(text);
+		boolean matches = matcher.matches();
+		Assert.isTrue(matches, ""Malformed encrypted string '"" + text + ""'"");
+
+		String contextString = matcher.group(""context"");
+        String optionsString = matcher.group(""options"");
+        String cipherString = matcher.group(""cipher"");
+        
+        byte[] cipher = parseCipher(cipherString);
+        Map<String, String> context = parseContext(contextString);
+        EncryptedTokenOptions options = parseOptions(optionsString);
+        
+        return new EncryptedToken(cipher, context, options);
+	}
+","['\t', 'public', ' ', 'static', ' ', 'EncryptedToken', ' ', 'parse', '(', 'String', ' ', 'text', ')', ' ', '{', '\n', '\t\t', 'Matcher', ' ', 'matcher', ' ', '=', ' ', 'ENCRYPTED_TOKEN_PATTERN', '.', 'matcher', '(', 'text', ')', ';', '\n', '\t\t', 'boolean', ' ', 'matches', ' ', '=', ' ', 'matcher', '.', 'matches', '(', ')', ';', '\n', '\t\t', 'Assert', '.', 'isTrue', '(', 'matches', ',', ' ', '""', ""Malformed encrypted string '"", '""', ' ', '+', ' ', 'text', ' ', '+', ' ', '""', ""'"", '""', ')', ';', '\n', '\n', '\t\t', 'String', ' ', 'contextString', ' ', '=', ' ', 'matcher', '.', 'group', '(', '""', 'context', '""', ')', ';', '\n', '        ', 'String', ' ', 'optionsString', ' ', '=', ' ', 'matcher', '.', 'group', '(', '""', 'options', '""', ')', ';', '\n', '        ', 'String', ' ', 'cipherString', ' ', '=', ' ', 'matcher', '.', 'group', '(', '""', 'cipher', '""', ')', ';', '\n', '        ', '\n', '        ', 'byte', '[', ']', ' ', 'cipher', ' ', '=', ' ', 'parseCipher', '(', 'cipherString', ')', ';', '\n', '        ', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'context', ' ', '=', ' ', 'parseContext', '(', 'contextString', ')', ';', '\n', '        ', 'EncryptedTokenOptions', ' ', 'options', ' ', '=', ' ', 'parseOptions', '(', 'optionsString', ')', ';', '\n', '        ', '\n', '        ', 'return', ' ', 'new', ' ', 'EncryptedToken', '(', 'cipher', ',', ' ', 'context', ',', ' ', 'options', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,EncryptedToken.java,parseCipher,"	private static byte[] parseCipher(String cipherString) {
+		return Base64.getDecoder().decode(cipherString);
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	private static byte[] parseCipher(String cipherString) {
+		return Base64.getDecoder().decode(cipherString);
+	}
+","['\t', 'private', ' ', 'static', ' ', 'byte', '[', ']', ' ', 'parseCipher', '(', 'String', ' ', 'cipherString', ')', ' ', '{', '\n', '\t\t', 'return', ' ', 'Base64', '.', 'getDecoder', '(', ')', '.', 'decode', '(', 'cipherString', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,EncryptedToken.java,parseContext,"	private static Map<String, String> parseContext(String contextString) {
+		return parseMap(contextString, value -> new String(Base64.getDecoder().decode(value)));
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	private static Map<String, String> parseContext(String contextString) {
+		return parseMap(contextString, value -> new String(Base64.getDecoder().decode(value)));
+	}
+","['\t', 'private', ' ', 'static', ' ', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'parseContext', '(', 'String', ' ', 'contextString', ')', ' ', '{', '\n', '\t\t', 'return', ' ', 'parseMap', '(', 'contextString', ',', ' ', 'value', ' ', '-', '>', ' ', 'new', ' ', 'String', '(', 'Base64', '.', 'getDecoder', '(', ')', '.', 'decode', '(', 'value', ')', ')', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,EncryptedToken.java,parseOptions,"	private static EncryptedTokenOptions parseOptions(String optionsString) {
+		Map<String, String> options = parseMap(optionsString, Function.identity());
+		if (options == null) {
+			return null;
+		}
+		
+		String keyId = options.get(""keyId"");
+		String encryptionAlgorithm = options.get(""encryptionAlgorithm"");
+		String modeText = options.get(""output"");
+		
+		if (modeText != null) {
+			return new EncryptedTokenOptions(keyId, encryptionAlgorithm, OutputMode.valueOf(modeText.toUpperCase()));",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	private static EncryptedTokenOptions parseOptions(String optionsString) {
+		Map<String, String> options = parseMap(optionsString, Function.identity());
+		if (options == null) {
+			return null;
+		}
+		
+		String keyId = options.get(""keyId"");
+		String encryptionAlgorithm = options.get(""encryptionAlgorithm"");
+		String modeText = options.get(""output"");
+		
+		if (modeText != null) {
+			return new EncryptedTokenOptions(keyId, encryptionAlgorithm, OutputMode.valueOf(modeText.toUpperCase()));
+","['\t', 'private', ' ', 'static', ' ', 'EncryptedTokenOptions', ' ', 'parseOptions', '(', 'String', ' ', 'optionsString', ')', ' ', '{', '\n', '\t\t', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'options', ' ', '=', ' ', 'parseMap', '(', 'optionsString', ',', ' ', 'Function', '.', 'identity', '(', ')', ')', ';', '\n', '\t\t', 'if', ' ', '(', 'options', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'null', ';', '\n', '\t\t', '}', '\n', '\t\t', '\n', '\t\t', 'String', ' ', 'keyId', ' ', '=', ' ', 'options', '.', 'get', '(', '""', 'keyId', '""', ')', ';', '\n', '\t\t', 'String', ' ', 'encryptionAlgorithm', ' ', '=', ' ', 'options', '.', 'get', '(', '""', 'encryptionAlgorithm', '""', ')', ';', '\n', '\t\t', 'String', ' ', 'modeText', ' ', '=', ' ', 'options', '.', 'get', '(', '""', 'output', '""', ')', ';', '\n', '\t\t', '\n', '\t\t', 'if', ' ', '(', 'modeText', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'new', ' ', 'EncryptedTokenOptions', '(', 'keyId', ',', ' ', 'encryptionAlgorithm', ',', ' ', 'OutputMode', '.', 'valueOf', '(', 'modeText', '.', 'toUpperCase', '(', ')', ')', ')', ';', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,EncryptedToken.java,parseMap,"	private static Map<String, String> parseMap(String text, Function<String, String> transformer) {
+		if (text == null) {
+			return null;
+		}
+		
+		Map<String, String> result = new HashMap<>();
+		String delimiter = "","";
+		int pos = 0;
+		int delPos;
+		while ((delPos = text.indexOf(delimiter, pos)) != -1 ) {
+			String kvString = text.substring(pos, delPos).strip();
+			String[] kv = kvString.split(""="", 2);
+			
+			result.put(kv[0], kv.length == 1 ? """" : transformer.apply(kv[1]));
+			
+			pos = delPos + delimiter.length();
+		}
+		if (text.length() > 0 && pos <= text.length()) {
+			String kvString = text.substring(pos).strip();
+			String[] kv = kvString.split(""="", 2);
+			result.put(kv[0].strip(), kv.length == 1 ? """" : transformer.apply(kv[1]));
+		}
+		return result;
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	private static Map<String, String> parseMap(String text, Function<String, String> transformer) {
+		if (text == null) {
+			return null;
+		}
+		
+		Map<String, String> result = new HashMap<>();
+		String delimiter = "","";
+		int pos = 0;
+		int delPos;
+		while ((delPos = text.indexOf(delimiter, pos)) != -1 ) {
+			String kvString = text.substring(pos, delPos).strip();
+			String[] kv = kvString.split(""="", 2);
+			
+			result.put(kv[0], kv.length == 1 ? """" : transformer.apply(kv[1]));
+			
+			pos = delPos + delimiter.length();
+		}
+		if (text.length() > 0 && pos <= text.length()) {
+			String kvString = text.substring(pos).strip();
+			String[] kv = kvString.split(""="", 2);
+			result.put(kv[0].strip(), kv.length == 1 ? """" : transformer.apply(kv[1]));
+		}
+		return result;
+	}
+","['\t', 'private', ' ', 'static', ' ', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'parseMap', '(', 'String', ' ', 'text', ',', ' ', 'Function', '<', 'String', ',', ' ', 'String', '>', ' ', 'transformer', ')', ' ', '{', '\n', '\t\t', 'if', ' ', '(', 'text', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'null', ';', '\n', '\t\t', '}', '\n', '\t\t', '\n', '\t\t', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'result', ' ', '=', ' ', 'new', ' ', 'HashMap', '<', '>', '(', ')', ';', '\n', '\t\t', 'String', ' ', 'delimiter', ' ', '=', ' ', '""', ',', '""', ';', '\n', '\t\t', 'int', ' ', 'pos', ' ', '=', ' ', '0', ';', '\n', '\t\t', 'int', ' ', 'delPos', ';', '\n', '\t\t', 'while', ' ', '(', '(', 'delPos', ' ', '=', ' ', 'text', '.', 'indexOf', '(', 'delimiter', ',', ' ', 'pos', ')', ')', ' ', '!', '=', ' ', '-', '1', ' ', ')', ' ', '{', '\n', '\t\t\t', 'String', ' ', 'kvString', ' ', '=', ' ', 'text', '.', 'substring', '(', 'pos', ',', ' ', 'delPos', ')', '.', 'strip', '(', ')', ';', '\n', '\t\t\t', 'String', '[', ']', ' ', 'kv', ' ', '=', ' ', 'kvString', '.', 'split', '(', '""', '=', '""', ',', ' ', '2', ')', ';', '\n', '\t\t\t', '\n', '\t\t\t', 'result', '.', 'put', '(', 'kv', '[', '0', ']', ',', ' ', 'kv', '.', 'length', ' ', '=', '=', ' ', '1', ' ', '?', ' ', '""', '""', ' ', ':', ' ', 'transformer', '.', 'apply', '(', 'kv', '[', '1', ']', ')', ')', ';', '\n', '\t\t\t', '\n', '\t\t\t', 'pos', ' ', '=', ' ', 'delPos', ' ', '+', ' ', 'delimiter', '.', 'length', '(', ')', ';', '\n', '\t\t', '}', '\n', '\t\t', 'if', ' ', '(', 'text', '.', 'length', '(', ')', ' ', '>', ' ', '0', ' ', '&', '&', ' ', 'pos', ' ', '<', '=', ' ', 'text', '.', 'length', '(', ')', ')', ' ', '{', '\n', '\t\t\t', 'String', ' ', 'kvString', ' ', '=', ' ', 'text', '.', 'substring', '(', 'pos', ')', '.', 'strip', '(', ')', ';', '\n', '\t\t\t', 'String', '[', ']', ' ', 'kv', ' ', '=', ' ', 'kvString', '.', 'split', '(', '""', '=', '""', ',', ' ', '2', ')', ';', '\n', '\t\t\t', 'result', '.', 'put', '(', 'kv', '[', '0', ']', '.', 'strip', '(', ')', ',', ' ', 'kv', '.', 'length', ' ', '=', '=', ' ', '1', ' ', '?', ' ', '""', '""', ' ', ':', ' ', 'transformer', '.', 'apply', '(', 'kv', '[', '1', ']', ')', ')', ';', '\n', '\t\t', '}', '\n', '\t\t', 'return', ' ', 'result', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,KmsTextEncryptor.java,convertToString,"	private String convertToString(byte[] cipherBytes, OutputMode output) {
+		if (OutputMode.BASE64 == output) {
+			return Base64.getEncoder().encodeToString(cipherBytes);",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	private String convertToString(byte[] cipherBytes, OutputMode output) {
+		if (OutputMode.BASE64 == output) {
+			return Base64.getEncoder().encodeToString(cipherBytes);
+","['\t', 'private', ' ', 'String', ' ', 'convertToString', '(', 'byte', '[', ']', ' ', 'cipherBytes', ',', ' ', 'OutputMode', ' ', 'output', ')', ' ', '{', '\n', '\t\t', 'if', ' ', '(', 'OutputMode', '.', 'BASE64', ' ', '=', '=', ' ', 'output', ')', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'Base64', '.', 'getEncoder', '(', ')', '.', 'encodeToString', '(', 'cipherBytes', ')', ';', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,KmsTextEncryptor.java,encrypt,"	public String encrypt(String text) {
+		EncryptRequest request = buildEncryptRequest(text);
+		EncryptResponse response = kmsClient.encrypt(request);
+		
+		byte[] cipherBytes = response.ciphertextBlob().asByteArray();
+		
+		return convertToString(cipherBytes, OutputMode.BASE64);
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public String encrypt(String text) {
+		EncryptRequest request = buildEncryptRequest(text);
+		EncryptResponse response = kmsClient.encrypt(request);
+		
+		byte[] cipherBytes = response.ciphertextBlob().asByteArray();
+		
+		return convertToString(cipherBytes, OutputMode.BASE64);
+	}
+","['\t', 'public', ' ', 'String', ' ', 'encrypt', '(', 'String', ' ', 'text', ')', ' ', '{', '\n', '\t\t', 'EncryptRequest', ' ', 'request', ' ', '=', ' ', 'buildEncryptRequest', '(', 'text', ')', ';', '\n', '\t\t', 'EncryptResponse', ' ', 'response', ' ', '=', ' ', 'kmsClient', '.', 'encrypt', '(', 'request', ')', ';', '\n', '\t\t', '\n', '\t\t', 'byte', '[', ']', ' ', 'cipherBytes', ' ', '=', ' ', 'response', '.', 'ciphertextBlob', '(', ')', '.', 'asByteArray', '(', ')', ';', '\n', '\t\t', '\n', '\t\t', 'return', ' ', 'convertToString', '(', 'cipherBytes', ',', ' ', 'OutputMode', '.', 'BASE64', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,KmsTextEncryptor.java,buildEncryptRequest,"	private EncryptRequest buildEncryptRequest(String text) {
+		EncryptRequest.Builder requestBuilder = EncryptRequest.builder().keyId(kmsKeyId)
+				.plaintext(SdkBytes.fromUtf8String(text));
+		
+		if (kmsEncryptionAlgorithm != null) {
+			requestBuilder = requestBuilder.encryptionAlgorithm(kmsEncryptionAlgorithm);
+		}
+		
+		return requestBuilder.build();
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	private EncryptRequest buildEncryptRequest(String text) {
+		EncryptRequest.Builder requestBuilder = EncryptRequest.builder().keyId(kmsKeyId)
+				.plaintext(SdkBytes.fromUtf8String(text));
+		
+		if (kmsEncryptionAlgorithm != null) {
+			requestBuilder = requestBuilder.encryptionAlgorithm(kmsEncryptionAlgorithm);
+		}
+		
+		return requestBuilder.build();
+	}
+","['\t', 'private', ' ', 'EncryptRequest', ' ', 'buildEncryptRequest', '(', 'String', ' ', 'text', ')', ' ', '{', '\n', '\t\t', 'EncryptRequest', '.', 'Builder', ' ', 'requestBuilder', ' ', '=', ' ', 'EncryptRequest', '.', 'builder', '(', ')', '.', 'keyId', '(', 'kmsKeyId', ')', '\n', '\t\t\t\t', '.', 'plaintext', '(', 'SdkBytes', '.', 'fromUtf8String', '(', 'text', ')', ')', ';', '\n', '\t\t', '\n', '\t\t', 'if', ' ', '(', 'kmsEncryptionAlgorithm', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '\t\t\t', 'requestBuilder', ' ', '=', ' ', 'requestBuilder', '.', 'encryptionAlgorithm', '(', 'kmsEncryptionAlgorithm', ')', ';', '\n', '\t\t', '}', '\n', '\t\t', '\n', '\t\t', 'return', ' ', 'requestBuilder', '.', 'build', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,KmsTextEncryptor.java,decrypt,"	public String decrypt(String encryptedText) {
+		
+		EncryptedToken encryptedToken = EncryptedToken.parse(encryptedText);
+		LOG.info(""decrypting {} as part of stack.\n{}"", encryptedText, Thread.currentThread().getStackTrace());
+		
+		DecryptRequest request = buildDecryptRequest(encryptedToken.getCipher());
+		
+		DecryptResponse response = kmsClient.decrypt(request);
+		byte[] textBytes = response.plaintext().asByteArray();
+		
+		return convertToString(textBytes, OutputMode.PLAIN);
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public String decrypt(String encryptedText) {
+		
+		EncryptedToken encryptedToken = EncryptedToken.parse(encryptedText);
+		LOG.info(""decrypting {} as part of stack.\n{}"", encryptedText, Thread.currentThread().getStackTrace());
+		
+		DecryptRequest request = buildDecryptRequest(encryptedToken.getCipher());
+		
+		DecryptResponse response = kmsClient.decrypt(request);
+		byte[] textBytes = response.plaintext().asByteArray();
+		
+		return convertToString(textBytes, OutputMode.PLAIN);
+	}
+","['\t', 'public', ' ', 'String', ' ', 'decrypt', '(', 'String', ' ', 'encryptedText', ')', ' ', '{', '\n', '\t\t', '\n', '\t\t', 'EncryptedToken', ' ', 'encryptedToken', ' ', '=', ' ', 'EncryptedToken', '.', 'parse', '(', 'encryptedText', ')', ';', '\n', '\t\t', 'LOG', '.', 'info', '(', '""', 'decrypting {} as part of stack.', '\\', 'n{}', '""', ',', ' ', 'encryptedText', ',', ' ', 'Thread', '.', 'currentThread', '(', ')', '.', 'getStackTrace', '(', ')', ')', ';', '\n', '\t\t', '\n', '\t\t', 'DecryptRequest', ' ', 'request', ' ', '=', ' ', 'buildDecryptRequest', '(', 'encryptedToken', '.', 'getCipher', '(', ')', ')', ';', '\n', '\t\t', '\n', '\t\t', 'DecryptResponse', ' ', 'response', ' ', '=', ' ', 'kmsClient', '.', 'decrypt', '(', 'request', ')', ';', '\n', '\t\t', 'byte', '[', ']', ' ', 'textBytes', ' ', '=', ' ', 'response', '.', 'plaintext', '(', ')', '.', 'asByteArray', '(', ')', ';', '\n', '\t\t', '\n', '\t\t', 'return', ' ', 'convertToString', '(', 'textBytes', ',', ' ', 'OutputMode', '.', 'PLAIN', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,KmsTextEncryptor.java,buildDecryptRequest,"	private DecryptRequest buildDecryptRequest(byte[] encryptedText) {
+		DecryptRequest.Builder requestBuilder = DecryptRequest.builder();
+		
+		requestBuilder = requestBuilder.ciphertextBlob(SdkBytes.fromByteArray(encryptedText));
+		if (kmsKeyId != null) {
+			requestBuilder = requestBuilder.keyId(kmsKeyId);
+		}
+		if (kmsEncryptionAlgorithm != null) {
+			requestBuilder = requestBuilder.encryptionAlgorithm(kmsEncryptionAlgorithm);
+		}
+		
+		return requestBuilder.build();
+		",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	private DecryptRequest buildDecryptRequest(byte[] encryptedText) {
+		DecryptRequest.Builder requestBuilder = DecryptRequest.builder();
+		
+		requestBuilder = requestBuilder.ciphertextBlob(SdkBytes.fromByteArray(encryptedText));
+		if (kmsKeyId != null) {
+			requestBuilder = requestBuilder.keyId(kmsKeyId);
+		}
+		if (kmsEncryptionAlgorithm != null) {
+			requestBuilder = requestBuilder.encryptionAlgorithm(kmsEncryptionAlgorithm);
+		}
+		
+		return requestBuilder.build();
+		
+","['\t', 'private', ' ', 'DecryptRequest', ' ', 'buildDecryptRequest', '(', 'byte', '[', ']', ' ', 'encryptedText', ')', ' ', '{', '\n', '\t\t', 'DecryptRequest', '.', 'Builder', ' ', 'requestBuilder', ' ', '=', ' ', 'DecryptRequest', '.', 'builder', '(', ')', ';', '\n', '\t\t', '\n', '\t\t', 'requestBuilder', ' ', '=', ' ', 'requestBuilder', '.', 'ciphertextBlob', '(', 'SdkBytes', '.', 'fromByteArray', '(', 'encryptedText', ')', ')', ';', '\n', '\t\t', 'if', ' ', '(', 'kmsKeyId', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '\t\t\t', 'requestBuilder', ' ', '=', ' ', 'requestBuilder', '.', 'keyId', '(', 'kmsKeyId', ')', ';', '\n', '\t\t', '}', '\n', '\t\t', 'if', ' ', '(', 'kmsEncryptionAlgorithm', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '\t\t\t', 'requestBuilder', ' ', '=', ' ', 'requestBuilder', '.', 'encryptionAlgorithm', '(', 'kmsEncryptionAlgorithm', ')', ';', '\n', '\t\t', '}', '\n', '\t\t', '\n', '\t\t', 'return', ' ', 'requestBuilder', '.', 'build', '(', ')', ';', '\n', '\t\t', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,EncryptedTokenTest.java,data,"	public static Stream<Arguments> data() {
+		return Stream.of(
+			Arguments.of(CIPHER_BASE64, null, null),",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public static Stream<Arguments> data() {
+		return Stream.of(
+			Arguments.of(CIPHER_BASE64, null, null),
+","['\t', 'public', ' ', 'static', ' ', 'Stream', '<', 'Arguments', '>', ' ', 'data', '(', ')', ' ', '{', '\n', '\t\t', 'return', ' ', 'Stream', '.', 'of', '(', '\n', '\t\t\t', 'Arguments', '.', 'of', '(', 'CIPHER_BASE64', ',', ' ', 'null', ',', ' ', 'null', ')', ',', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,EncryptedTokenTest.java,testParseToken,"	public void testParseToken(String tokenString, Map<String, String> expectedContext, EncryptedTokenOptions expectedOptions) {
+		EncryptedToken token = EncryptedToken.parse(tokenString);
+		
+		Assertions.assertThat(token.getCipher()).isEqualTo(""Hello World"".getBytes());
+		Assertions.assertThat(token.getContext()).isEqualTo(expectedContext);
+		Assertions.assertThat(token.getOptions()).isEqualTo(expectedOptions);
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public void testParseToken(String tokenString, Map<String, String> expectedContext, EncryptedTokenOptions expectedOptions) {
+		EncryptedToken token = EncryptedToken.parse(tokenString);
+		
+		Assertions.assertThat(token.getCipher()).isEqualTo(""Hello World"".getBytes());
+		Assertions.assertThat(token.getContext()).isEqualTo(expectedContext);
+		Assertions.assertThat(token.getOptions()).isEqualTo(expectedOptions);
+	}
+","['\t', 'public', ' ', 'void', ' ', 'testParseToken', '(', 'String', ' ', 'tokenString', ',', ' ', 'Map', '<', 'String', ',', ' ', 'String', '>', ' ', 'expectedContext', ',', ' ', 'EncryptedTokenOptions', ' ', 'expectedOptions', ')', ' ', '{', '\n', '\t\t', 'EncryptedToken', ' ', 'token', ' ', '=', ' ', 'EncryptedToken', '.', 'parse', '(', 'tokenString', ')', ';', '\n', '\t\t', '\n', '\t\t', 'Assertions', '.', 'assertThat', '(', 'token', '.', 'getCipher', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Hello World', '""', '.', 'getBytes', '(', ')', ')', ';', '\n', '\t\t', 'Assertions', '.', 'assertThat', '(', 'token', '.', 'getContext', '(', ')', ')', '.', 'isEqualTo', '(', 'expectedContext', ')', ';', '\n', '\t\t', 'Assertions', '.', 'assertThat', '(', 'token', '.', 'getOptions', '(', ')', ')', '.', 'isEqualTo', '(', 'expectedOptions', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,KmsTextEncryptorTest.java,beforeAll,"	public static void beforeAll() {
+		kmsClient = KmsClient.builder().endpointOverride(localstack.getEndpoint())
+				.credentialsProvider(StaticCredentialsProvider
+						.create(AwsBasicCredentials.create(localstack.getAccessKey(), localstack.getSecretKey())))
+				.region(Region.of(localstack.getRegion())).build();
+
+		CreateKeyResponse response = kmsClient.createKey(CreateKeyRequest.builder().keySpec(KeySpec.SYMMETRIC_DEFAULT)
+				.keyUsage(KeyUsageType.ENCRYPT_DECRYPT).build());
+		symmetricKeyId = response.keyMetadata().keyId();
+
+		response = kmsClient.createKey(
+				CreateKeyRequest.builder().keySpec(KeySpec.RSA_4096).keyUsage(KeyUsageType.ENCRYPT_DECRYPT).build());
+		rsaKeyId = response.keyMetadata().keyId();
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public static void beforeAll() {
+		kmsClient = KmsClient.builder().endpointOverride(localstack.getEndpoint())
+				.credentialsProvider(StaticCredentialsProvider
+						.create(AwsBasicCredentials.create(localstack.getAccessKey(), localstack.getSecretKey())))
+				.region(Region.of(localstack.getRegion())).build();
+
+		CreateKeyResponse response = kmsClient.createKey(CreateKeyRequest.builder().keySpec(KeySpec.SYMMETRIC_DEFAULT)
+				.keyUsage(KeyUsageType.ENCRYPT_DECRYPT).build());
+		symmetricKeyId = response.keyMetadata().keyId();
+
+		response = kmsClient.createKey(
+				CreateKeyRequest.builder().keySpec(KeySpec.RSA_4096).keyUsage(KeyUsageType.ENCRYPT_DECRYPT).build());
+		rsaKeyId = response.keyMetadata().keyId();
+	}
+","['\t', 'public', ' ', 'static', ' ', 'void', ' ', 'beforeAll', '(', ')', ' ', '{', '\n', '\t\t', 'kmsClient', ' ', '=', ' ', 'KmsClient', '.', 'builder', '(', ')', '.', 'endpointOverride', '(', 'localstack', '.', 'getEndpoint', '(', ')', ')', '\n', '\t\t\t\t', '.', 'credentialsProvider', '(', 'StaticCredentialsProvider', '\n', '\t\t\t\t\t\t', '.', 'create', '(', 'AwsBasicCredentials', '.', 'create', '(', 'localstack', '.', 'getAccessKey', '(', ')', ',', ' ', 'localstack', '.', 'getSecretKey', '(', ')', ')', ')', ')', '\n', '\t\t\t\t', '.', 'region', '(', 'Region', '.', 'of', '(', 'localstack', '.', 'getRegion', '(', ')', ')', ')', '.', 'build', '(', ')', ';', '\n', '\n', '\t\t', 'CreateKeyResponse', ' ', 'response', ' ', '=', ' ', 'kmsClient', '.', 'createKey', '(', 'CreateKeyRequest', '.', 'builder', '(', ')', '.', 'keySpec', '(', 'KeySpec', '.', 'SYMMETRIC_DEFAULT', ')', '\n', '\t\t\t\t', '.', 'keyUsage', '(', 'KeyUsageType', '.', 'ENCRYPT_DECRYPT', ')', '.', 'build', '(', ')', ')', ';', '\n', '\t\t', 'symmetricKeyId', ' ', '=', ' ', 'response', '.', 'keyMetadata', '(', ')', '.', 'keyId', '(', ')', ';', '\n', '\n', '\t\t', 'response', ' ', '=', ' ', 'kmsClient', '.', 'createKey', '(', '\n', '\t\t\t\t', 'CreateKeyRequest', '.', 'builder', '(', ')', '.', 'keySpec', '(', 'KeySpec', '.', 'RSA_4096', ')', '.', 'keyUsage', '(', 'KeyUsageType', '.', 'ENCRYPT_DECRYPT', ')', '.', 'build', '(', ')', ')', ';', '\n', '\t\t', 'rsaKeyId', ' ', '=', ' ', 'response', '.', 'keyMetadata', '(', ')', '.', 'keyId', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,KmsTextEncryptorTest.java,encryptSymmetric,"	public void encryptSymmetric() throws Exception {
+		KmsTextEncryptor encryptor = new KmsTextEncryptor(kmsClient, symmetricKeyId, null);
+		String encrypted = encryptor.encrypt(""secret"");
+
+		Assertions.assertThat(encrypted).isNotBlank().isBase64();
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public void encryptSymmetric() throws Exception {
+		KmsTextEncryptor encryptor = new KmsTextEncryptor(kmsClient, symmetricKeyId, null);
+		String encrypted = encryptor.encrypt(""secret"");
+
+		Assertions.assertThat(encrypted).isNotBlank().isBase64();
+	}
+","['\t', 'public', ' ', 'void', ' ', 'encryptSymmetric', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '\t\t', 'KmsTextEncryptor', ' ', 'encryptor', ' ', '=', ' ', 'new', ' ', 'KmsTextEncryptor', '(', 'kmsClient', ',', ' ', 'symmetricKeyId', ',', ' ', 'null', ')', ';', '\n', '\t\t', 'String', ' ', 'encrypted', ' ', '=', ' ', 'encryptor', '.', 'encrypt', '(', '""', 'secret', '""', ')', ';', '\n', '\n', '\t\t', 'Assertions', '.', 'assertThat', '(', 'encrypted', ')', '.', 'isNotBlank', '(', ')', '.', 'isBase64', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,KmsTextEncryptorTest.java,encryptRsa,"	public void encryptRsa() throws Exception {
+		KmsTextEncryptor encryptor = new KmsTextEncryptor(kmsClient, rsaKeyId, null);
+		String encrypted = encryptor.encrypt(""secret"");
+
+		Assertions.assertThat(encrypted).isNotBlank().isBase64();
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public void encryptRsa() throws Exception {
+		KmsTextEncryptor encryptor = new KmsTextEncryptor(kmsClient, rsaKeyId, null);
+		String encrypted = encryptor.encrypt(""secret"");
+
+		Assertions.assertThat(encrypted).isNotBlank().isBase64();
+	}
+","['\t', 'public', ' ', 'void', ' ', 'encryptRsa', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '\t\t', 'KmsTextEncryptor', ' ', 'encryptor', ' ', '=', ' ', 'new', ' ', 'KmsTextEncryptor', '(', 'kmsClient', ',', ' ', 'rsaKeyId', ',', ' ', 'null', ')', ';', '\n', '\t\t', 'String', ' ', 'encrypted', ' ', '=', ' ', 'encryptor', '.', 'encrypt', '(', '""', 'secret', '""', ')', ';', '\n', '\n', '\t\t', 'Assertions', '.', 'assertThat', '(', 'encrypted', ')', '.', 'isNotBlank', '(', ')', '.', 'isBase64', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,KmsTextEncryptorTest.java,decryptSymmetric,"	public void decryptSymmetric() throws Exception {
+		String password = ""secret"";
+
+		EncryptResponse response = kmsClient.encrypt(EncryptRequest.builder().keyId(symmetricKeyId)
+				.plaintext(SdkBytes.fromString(password, StandardCharsets.ISO_8859_1)).build());
+		String encrypted = Base64.getEncoder().encodeToString(response.ciphertextBlob().asByteArray());
+
+		KmsTextEncryptor encryptor = new KmsTextEncryptor(kmsClient, symmetricKeyId, null);
+		String plaintext = encryptor.decrypt(encrypted);
+
+		Assertions.assertThat(plaintext).isEqualTo(password);
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public void decryptSymmetric() throws Exception {
+		String password = ""secret"";
+
+		EncryptResponse response = kmsClient.encrypt(EncryptRequest.builder().keyId(symmetricKeyId)
+				.plaintext(SdkBytes.fromString(password, StandardCharsets.ISO_8859_1)).build());
+		String encrypted = Base64.getEncoder().encodeToString(response.ciphertextBlob().asByteArray());
+
+		KmsTextEncryptor encryptor = new KmsTextEncryptor(kmsClient, symmetricKeyId, null);
+		String plaintext = encryptor.decrypt(encrypted);
+
+		Assertions.assertThat(plaintext).isEqualTo(password);
+	}
+","['\t', 'public', ' ', 'void', ' ', 'decryptSymmetric', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '\t\t', 'String', ' ', 'password', ' ', '=', ' ', '""', 'secret', '""', ';', '\n', '\n', '\t\t', 'EncryptResponse', ' ', 'response', ' ', '=', ' ', 'kmsClient', '.', 'encrypt', '(', 'EncryptRequest', '.', 'builder', '(', ')', '.', 'keyId', '(', 'symmetricKeyId', ')', '\n', '\t\t\t\t', '.', 'plaintext', '(', 'SdkBytes', '.', 'fromString', '(', 'password', ',', ' ', 'StandardCharsets', '.', 'ISO_8859_1', ')', ')', '.', 'build', '(', ')', ')', ';', '\n', '\t\t', 'String', ' ', 'encrypted', ' ', '=', ' ', 'Base64', '.', 'getEncoder', '(', ')', '.', 'encodeToString', '(', 'response', '.', 'ciphertextBlob', '(', ')', '.', 'asByteArray', '(', ')', ')', ';', '\n', '\n', '\t\t', 'KmsTextEncryptor', ' ', 'encryptor', ' ', '=', ' ', 'new', ' ', 'KmsTextEncryptor', '(', 'kmsClient', ',', ' ', 'symmetricKeyId', ',', ' ', 'null', ')', ';', '\n', '\t\t', 'String', ' ', 'plaintext', ' ', '=', ' ', 'encryptor', '.', 'decrypt', '(', 'encrypted', ')', ';', '\n', '\n', '\t\t', 'Assertions', '.', 'assertThat', '(', 'plaintext', ')', '.', 'isEqualTo', '(', 'password', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,KmsTextEncryptorTest.java,decryptRsa,"	public void decryptRsa() throws Exception {
+		String password = ""secret"";
+
+		EncryptResponse response = kmsClient.encrypt(EncryptRequest.builder().keyId(rsaKeyId)
+				.plaintext(SdkBytes.fromString(password, StandardCharsets.ISO_8859_1)).build());
+		String encrypted = Base64.getEncoder().encodeToString(response.ciphertextBlob().asByteArray());
+
+		KmsTextEncryptor encryptor = new KmsTextEncryptor(kmsClient, rsaKeyId, null);
+		String plaintext = encryptor.decrypt(encrypted);
+
+		Assertions.assertThat(plaintext).isEqualTo(password);
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public void decryptRsa() throws Exception {
+		String password = ""secret"";
+
+		EncryptResponse response = kmsClient.encrypt(EncryptRequest.builder().keyId(rsaKeyId)
+				.plaintext(SdkBytes.fromString(password, StandardCharsets.ISO_8859_1)).build());
+		String encrypted = Base64.getEncoder().encodeToString(response.ciphertextBlob().asByteArray());
+
+		KmsTextEncryptor encryptor = new KmsTextEncryptor(kmsClient, rsaKeyId, null);
+		String plaintext = encryptor.decrypt(encrypted);
+
+		Assertions.assertThat(plaintext).isEqualTo(password);
+	}
+","['\t', 'public', ' ', 'void', ' ', 'decryptRsa', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '\t\t', 'String', ' ', 'password', ' ', '=', ' ', '""', 'secret', '""', ';', '\n', '\n', '\t\t', 'EncryptResponse', ' ', 'response', ' ', '=', ' ', 'kmsClient', '.', 'encrypt', '(', 'EncryptRequest', '.', 'builder', '(', ')', '.', 'keyId', '(', 'rsaKeyId', ')', '\n', '\t\t\t\t', '.', 'plaintext', '(', 'SdkBytes', '.', 'fromString', '(', 'password', ',', ' ', 'StandardCharsets', '.', 'ISO_8859_1', ')', ')', '.', 'build', '(', ')', ')', ';', '\n', '\t\t', 'String', ' ', 'encrypted', ' ', '=', ' ', 'Base64', '.', 'getEncoder', '(', ')', '.', 'encodeToString', '(', 'response', '.', 'ciphertextBlob', '(', ')', '.', 'asByteArray', '(', ')', ')', ';', '\n', '\n', '\t\t', 'KmsTextEncryptor', ' ', 'encryptor', ' ', '=', ' ', 'new', ' ', 'KmsTextEncryptor', '(', 'kmsClient', ',', ' ', 'rsaKeyId', ',', ' ', 'null', ')', ';', '\n', '\t\t', 'String', ' ', 'plaintext', ' ', '=', ' ', 'encryptor', '.', 'decrypt', '(', 'encrypted', ')', ';', '\n', '\n', '\t\t', 'Assertions', '.', 'assertThat', '(', 'plaintext', ')', '.', 'isEqualTo', '(', 'password', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,BootstrapApplication.java,main,"	public static void main(String[] args) {
+		SpringApplication.run(BootstrapApplication.class, args);
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public static void main(String[] args) {
+		SpringApplication.run(BootstrapApplication.class, args);
+	}
+","['\t', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '\t\t', 'SpringApplication', '.', 'run', '(', 'BootstrapApplication', '.', 'class', ',', ' ', 'args', ')', ';', '\n', '\t', '}', '\n']"
+master,79e02c1e118dcd41c928e713221c778bed111636,SampleController.java,greeting,"	public Greeting greeting() {
+		return new Greeting(""Hello"");
+	}",https://www.github.com/zalando/spring-cloud-config-aws-kms/commit/79e02c1e118dcd41c928e713221c778bed111636,"	public Greeting greeting() {
+		return new Greeting(""Hello"");
+	}
+","['\t', 'public', ' ', 'Greeting', ' ', 'greeting', '(', ')', ' ', '{', '\n', '\t\t', 'return', ' ', 'new', ' ', 'Greeting', '(', '""', 'Hello', '""', ')', ';', '\n', '\t', '}', '\n']"

@@ -1,0 +1,491 @@
+Branch Name,Commit Hash,File Name,Method Name,Method Code,Commit Link,Method Code No Comments,Tokens
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,processPage,"    protected void processPage(PDPage page, COSStream content ) throws IOException {
+        PDRectangle pageRectangle = page.findMediaBox(); 
+        if (pageRectangle!= null) {
+            this.setCurrentPageWidth(pageRectangle.getWidth());",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    protected void processPage(PDPage page, COSStream content ) throws IOException {
+        PDRectangle pageRectangle = page.findMediaBox(); 
+        if (pageRectangle!= null) {
+            this.setCurrentPageWidth(pageRectangle.getWidth());
+","['    ', 'protected', ' ', 'void', ' ', 'processPage', '(', 'PDPage', ' ', 'page', ',', ' ', 'COSStream', ' ', 'content', ' ', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '        ', 'PDRectangle', ' ', 'pageRectangle', ' ', '=', ' ', 'page', '.', 'findMediaBox', '(', ')', ';', ' ', '\n', '        ', 'if', ' ', '(', 'pageRectangle', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'this', '.', 'setCurrentPageWidth', '(', 'pageRectangle', '.', 'getWidth', '(', ')', ')', ';', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,writePage,"    protected void writePage() throws IOException {
+        Vector<List<TextPosition>> charactersByArticle = super.getCharactersByArticle();
+        for( int i = 0; i < charactersByArticle.size(); i++) {
+           List<TextPosition> textList = charactersByArticle.get(i);
+           this.sortTextPositionList(textList);
+           this.iterateThroughTextList(textList.iterator()) ;
+        }
+        this.writeToOutputStream(this.getTextLineList());
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    protected void writePage() throws IOException {
+        Vector<List<TextPosition>> charactersByArticle = super.getCharactersByArticle();
+        for( int i = 0; i < charactersByArticle.size(); i++) {
+           List<TextPosition> textList = charactersByArticle.get(i);
+           this.sortTextPositionList(textList);
+           this.iterateThroughTextList(textList.iterator()) ;
+        }
+        this.writeToOutputStream(this.getTextLineList());
+    }
+","['    ', 'protected', ' ', 'void', ' ', 'writePage', '(', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '        ', 'Vector', '<', 'List', '<', 'TextPosition', '>', '>', ' ', 'charactersByArticle', ' ', '=', ' ', 'super', '.', 'getCharactersByArticle', '(', ')', ';', '\n', '        ', 'for', '(', ' ', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', 'charactersByArticle', '.', 'size', '(', ')', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '           ', 'List', '<', 'TextPosition', '>', ' ', 'textList', ' ', '=', ' ', 'charactersByArticle', '.', 'get', '(', 'i', ')', ';', '\n', '           ', 'this', '.', 'sortTextPositionList', '(', 'textList', ')', ';', '\n', '           ', 'this', '.', 'iterateThroughTextList', '(', 'textList', '.', 'iterator', '(', ')', ')', ' ', ';', '\n', '        ', '}', '\n', '        ', 'this', '.', 'writeToOutputStream', '(', 'this', '.', 'getTextLineList', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,writeToOutputStream,"    private void writeToOutputStream(final List<TextLine> textLineList) throws IOException {
+        for (TextLine textLine : textLineList) {
+            char[] line = textLine.getLine().toCharArray();",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private void writeToOutputStream(final List<TextLine> textLineList) throws IOException {
+        for (TextLine textLine : textLineList) {
+            char[] line = textLine.getLine().toCharArray();
+","['    ', 'private', ' ', 'void', ' ', 'writeToOutputStream', '(', 'final', ' ', 'List', '<', 'TextLine', '>', ' ', 'textLineList', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '        ', 'for', ' ', '(', 'TextLine', ' ', 'textLine', ' ', ':', ' ', 'textLineList', ')', ' ', '{', '\n', '            ', 'char', '[', ']', ' ', 'line', ' ', '=', ' ', 'textLine', '.', 'getLine', '(', ')', '.', 'toCharArray', '(', ')', ';', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,sortTextPositionList,"    private void sortTextPositionList(final List<TextPosition> textList) {
+        TextPositionComparator comparator = new TextPositionComparator();
+        Collections.sort(textList, comparator);
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private void sortTextPositionList(final List<TextPosition> textList) {
+        TextPositionComparator comparator = new TextPositionComparator();
+        Collections.sort(textList, comparator);
+    }
+","['    ', 'private', ' ', 'void', ' ', 'sortTextPositionList', '(', 'final', ' ', 'List', '<', 'TextPosition', '>', ' ', 'textList', ')', ' ', '{', '\n', '        ', 'TextPositionComparator', ' ', 'comparator', ' ', '=', ' ', 'new', ' ', 'TextPositionComparator', '(', ')', ';', '\n', '        ', 'Collections', '.', 'sort', '(', 'textList', ',', ' ', 'comparator', ')', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,computeAverageCharacterWidth,"    private int computeAverageCharacterWidth(final List<TextPosition> textPositionList) {
+        if (textPositionList.size() == 0) {
+            return 0;",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private int computeAverageCharacterWidth(final List<TextPosition> textPositionList) {
+        if (textPositionList.size() == 0) {
+            return 0;
+","['    ', 'private', ' ', 'int', ' ', 'computeAverageCharacterWidth', '(', 'final', ' ', 'List', '<', 'TextPosition', '>', ' ', 'textPositionList', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'textPositionList', '.', 'size', '(', ')', ' ', '=', '=', ' ', '0', ')', ' ', '{', '\n', '            ', 'return', ' ', '0', ';', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,writeLine,"    private void writeLine(final List<TextPosition> textPositionList) {
+        if ( textPositionList.size() > 0 ) {
+            TextLine textLine = this.addNewLine();",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private void writeLine(final List<TextPosition> textPositionList) {
+        if ( textPositionList.size() > 0 ) {
+            TextLine textLine = this.addNewLine();
+","['    ', 'private', ' ', 'void', ' ', 'writeLine', '(', 'final', ' ', 'List', '<', 'TextPosition', '>', ' ', 'textPositionList', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', ' ', 'textPositionList', '.', 'size', '(', ')', ' ', '>', ' ', '0', ' ', ')', ' ', '{', '\n', '            ', 'TextLine', ' ', 'textLine', ' ', '=', ' ', 'this', '.', 'addNewLine', '(', ')', ';', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,iterateThroughTextList,"    private void iterateThroughTextList(Iterator<TextPosition> textIterator) {
+        List<TextPosition> textPositionList = new ArrayList<TextPosition>();
+        
+        while ( textIterator.hasNext() ) {
+            TextPosition textPosition = (TextPosition)textIterator.next();",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private void iterateThroughTextList(Iterator<TextPosition> textIterator) {
+        List<TextPosition> textPositionList = new ArrayList<TextPosition>();
+        
+        while ( textIterator.hasNext() ) {
+            TextPosition textPosition = (TextPosition)textIterator.next();
+","['    ', 'private', ' ', 'void', ' ', 'iterateThroughTextList', '(', 'Iterator', '<', 'TextPosition', '>', ' ', 'textIterator', ')', ' ', '{', '\n', '        ', 'List', '<', 'TextPosition', '>', ' ', 'textPositionList', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', 'TextPosition', '>', '(', ')', ';', '\n', '        ', '\n', '        ', 'while', ' ', '(', ' ', 'textIterator', '.', 'hasNext', '(', ')', ' ', ')', ' ', '{', '\n', '            ', 'TextPosition', ' ', 'textPosition', ' ', '=', ' ', '(', 'TextPosition', ')', 'textIterator', '.', 'next', '(', ')', ';', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,writeTextPositionList,"    private void writeTextPositionList(final List<TextPosition> textPositionList) {
+        this.writeLine(textPositionList);
+        textPositionList.clear();
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private void writeTextPositionList(final List<TextPosition> textPositionList) {
+        this.writeLine(textPositionList);
+        textPositionList.clear();
+    }
+","['    ', 'private', ' ', 'void', ' ', 'writeTextPositionList', '(', 'final', ' ', 'List', '<', 'TextPosition', '>', ' ', 'textPositionList', ')', ' ', '{', '\n', '        ', 'this', '.', 'writeLine', '(', 'textPositionList', ')', ';', '\n', '        ', 'textPositionList', '.', 'clear', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,createNewEmptyNewLines,"    private void createNewEmptyNewLines(int numberOfNewLines) {
+        for (int i = 0; i < numberOfNewLines - 1; ++i) {
+            this.addNewLine();",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private void createNewEmptyNewLines(int numberOfNewLines) {
+        for (int i = 0; i < numberOfNewLines - 1; ++i) {
+            this.addNewLine();
+","['    ', 'private', ' ', 'void', ' ', 'createNewEmptyNewLines', '(', 'int', ' ', 'numberOfNewLines', ')', ' ', '{', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', 'numberOfNewLines', ' ', '-', ' ', '1', ';', ' ', '+', '+', 'i', ')', ' ', '{', '\n', '            ', 'this', '.', 'addNewLine', '(', ')', ';', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,addNewLine,"    private TextLine addNewLine() {
+        TextLine textLine = new TextLine(this.getCurrentPageWidth());
+        textLineList.add(textLine);
+        return textLine;
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private TextLine addNewLine() {
+        TextLine textLine = new TextLine(this.getCurrentPageWidth());
+        textLineList.add(textLine);
+        return textLine;
+    }
+","['    ', 'private', ' ', 'TextLine', ' ', 'addNewLine', '(', ')', ' ', '{', '\n', '        ', 'TextLine', ' ', 'textLine', ' ', '=', ' ', 'new', ' ', 'TextLine', '(', 'this', '.', 'getCurrentPageWidth', '(', ')', ')', ';', '\n', '        ', 'textLineList', '.', 'add', '(', 'textLine', ')', ';', '\n', '        ', 'return', ' ', 'textLine', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,writeCharacterAtIndex,"    public void writeCharacterAtIndex(final Character character) {
+        character.setIndex(this.computeIndexForCharacter(character));
+        int index = character.getIndex();
+        char characterValue = character.getCharacterValue();
+        if ( this.indexIsInBounds(index) && this.line.charAt(index) == SPACE_CHARACTER) {
+            this.line = this.line.substring(0, index) + characterValue + this.line.substring(index + 1, this.getLineLength());",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    public void writeCharacterAtIndex(final Character character) {
+        character.setIndex(this.computeIndexForCharacter(character));
+        int index = character.getIndex();
+        char characterValue = character.getCharacterValue();
+        if ( this.indexIsInBounds(index) && this.line.charAt(index) == SPACE_CHARACTER) {
+            this.line = this.line.substring(0, index) + characterValue + this.line.substring(index + 1, this.getLineLength());
+","['    ', 'public', ' ', 'void', ' ', 'writeCharacterAtIndex', '(', 'final', ' ', 'Character', ' ', 'character', ')', ' ', '{', '\n', '        ', 'character', '.', 'setIndex', '(', 'this', '.', 'computeIndexForCharacter', '(', 'character', ')', ')', ';', '\n', '        ', 'int', ' ', 'index', ' ', '=', ' ', 'character', '.', 'getIndex', '(', ')', ';', '\n', '        ', 'char', ' ', 'characterValue', ' ', '=', ' ', 'character', '.', 'getCharacterValue', '(', ')', ';', '\n', '        ', 'if', ' ', '(', ' ', 'this', '.', 'indexIsInBounds', '(', 'index', ')', ' ', '&', '&', ' ', 'this', '.', 'line', '.', 'charAt', '(', 'index', ')', ' ', '=', '=', ' ', 'SPACE_CHARACTER', ')', ' ', '{', '\n', '            ', 'this', '.', 'line', ' ', '=', ' ', 'this', '.', 'line', '.', 'substring', '(', '0', ',', ' ', 'index', ')', ' ', '+', ' ', 'characterValue', ' ', '+', ' ', 'this', '.', 'line', '.', 'substring', '(', 'index', ' ', '+', ' ', '1', ',', ' ', 'this', '.', 'getLineLength', '(', ')', ')', ';', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,computeIndexForCharacter,"    private int computeIndexForCharacter(final Character character) { 
+        int index = character.getIndex();
+        boolean isCharacterPartOfPreviousWord = character.isCharacterPartOfPreviousWord();
+        boolean isCharacterAtTheBeginningOfNewLine = character.isCharacterAtTheBeginningOfNewLine();
+        boolean isCharacterCloseToPreviousWord = character.isCharacterCloseToPreviousWord();
+     
+        if ( !this.indexIsInBounds(index) ) {
+            return -1;",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private int computeIndexForCharacter(final Character character) { 
+        int index = character.getIndex();
+        boolean isCharacterPartOfPreviousWord = character.isCharacterPartOfPreviousWord();
+        boolean isCharacterAtTheBeginningOfNewLine = character.isCharacterAtTheBeginningOfNewLine();
+        boolean isCharacterCloseToPreviousWord = character.isCharacterCloseToPreviousWord();
+     
+        if ( !this.indexIsInBounds(index) ) {
+            return -1;
+","['    ', 'private', ' ', 'int', ' ', 'computeIndexForCharacter', '(', 'final', ' ', 'Character', ' ', 'character', ')', ' ', '{', ' ', '\n', '        ', 'int', ' ', 'index', ' ', '=', ' ', 'character', '.', 'getIndex', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'isCharacterPartOfPreviousWord', ' ', '=', ' ', 'character', '.', 'isCharacterPartOfPreviousWord', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'isCharacterAtTheBeginningOfNewLine', ' ', '=', ' ', 'character', '.', 'isCharacterAtTheBeginningOfNewLine', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'isCharacterCloseToPreviousWord', ' ', '=', ' ', 'character', '.', 'isCharacterCloseToPreviousWord', '(', ')', ';', '\n', '     ', '\n', '        ', 'if', ' ', '(', ' ', '!', 'this', '.', 'indexIsInBounds', '(', 'index', ')', ' ', ')', ' ', '{', '\n', '            ', 'return', ' ', '-', '1', ';', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,isSpaceCharacterAtIndex,"    private boolean isSpaceCharacterAtIndex(int index) {
+        return this.line.charAt(index) != SPACE_CHARACTER;
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private boolean isSpaceCharacterAtIndex(int index) {
+        return this.line.charAt(index) != SPACE_CHARACTER;
+    }
+","['    ', 'private', ' ', 'boolean', ' ', 'isSpaceCharacterAtIndex', '(', 'int', ' ', 'index', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'line', '.', 'charAt', '(', 'index', ')', ' ', '!', '=', ' ', 'SPACE_CHARACTER', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,isNewIndexGreaterThanLastIndex,"    private boolean isNewIndexGreaterThanLastIndex(int index) {
+        int lastIndex = this.getLastIndex();
+        return ( index > lastIndex );
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private boolean isNewIndexGreaterThanLastIndex(int index) {
+        int lastIndex = this.getLastIndex();
+        return ( index > lastIndex );
+    }
+","['    ', 'private', ' ', 'boolean', ' ', 'isNewIndexGreaterThanLastIndex', '(', 'int', ' ', 'index', ')', ' ', '{', '\n', '        ', 'int', ' ', 'lastIndex', ' ', '=', ' ', 'this', '.', 'getLastIndex', '(', ')', ';', '\n', '        ', 'return', ' ', '(', ' ', 'index', ' ', '>', ' ', 'lastIndex', ' ', ')', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,findMinimumIndexWithSpaceCharacterFromIndex,"    private int findMinimumIndexWithSpaceCharacterFromIndex(int index) {
+        int newIndex = index;
+        while( newIndex >= 0 && this.line.charAt(newIndex) == SPACE_CHARACTER ) {
+            newIndex = newIndex - 1; 
+        }
+        return newIndex + 1;
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private int findMinimumIndexWithSpaceCharacterFromIndex(int index) {
+        int newIndex = index;
+        while( newIndex >= 0 && this.line.charAt(newIndex) == SPACE_CHARACTER ) {
+            newIndex = newIndex - 1; 
+        }
+        return newIndex + 1;
+    }
+","['    ', 'private', ' ', 'int', ' ', 'findMinimumIndexWithSpaceCharacterFromIndex', '(', 'int', ' ', 'index', ')', ' ', '{', '\n', '        ', 'int', ' ', 'newIndex', ' ', '=', ' ', 'index', ';', '\n', '        ', 'while', '(', ' ', 'newIndex', ' ', '>', '=', ' ', '0', ' ', '&', '&', ' ', 'this', '.', 'line', '.', 'charAt', '(', 'newIndex', ')', ' ', '=', '=', ' ', 'SPACE_CHARACTER', ' ', ')', ' ', '{', '\n', '            ', 'newIndex', ' ', '=', ' ', 'newIndex', ' ', '-', ' ', '1', ';', ' ', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'newIndex', ' ', '+', ' ', '1', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,indexIsInBounds,"    private boolean indexIsInBounds(int index) {
+        return (index >= 0 && index < this.lineLength);
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private boolean indexIsInBounds(int index) {
+        return (index >= 0 && index < this.lineLength);
+    }
+","['    ', 'private', ' ', 'boolean', ' ', 'indexIsInBounds', '(', 'int', ' ', 'index', ')', ' ', '{', '\n', '        ', 'return', ' ', '(', 'index', ' ', '>', '=', ' ', '0', ' ', '&', '&', ' ', 'index', ' ', '<', ' ', 'this', '.', 'lineLength', ')', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,isCharacterPartOfPreviousWord,"    public boolean isCharacterPartOfPreviousWord() {
+        return this.isCharacterPartOfPreviousWord;
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    public boolean isCharacterPartOfPreviousWord() {
+        return this.isCharacterPartOfPreviousWord;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isCharacterPartOfPreviousWord', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'isCharacterPartOfPreviousWord', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,isFirstCharacterOfAWord,"    public boolean isFirstCharacterOfAWord() {
+        return this.isFirstCharacterOfAWord;
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    public boolean isFirstCharacterOfAWord() {
+        return this.isFirstCharacterOfAWord;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isFirstCharacterOfAWord', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'isFirstCharacterOfAWord', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,isCharacterAtTheBeginningOfNewLine,"    public boolean isCharacterAtTheBeginningOfNewLine() {
+        return this.isCharacterAtTheBeginningOfNewLine;
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    public boolean isCharacterAtTheBeginningOfNewLine() {
+        return this.isCharacterAtTheBeginningOfNewLine;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isCharacterAtTheBeginningOfNewLine', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'isCharacterAtTheBeginningOfNewLine', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,isCharacterCloseToPreviousWord,"    public boolean isCharacterCloseToPreviousWord() {
+        return this.isCharacterCloseToPreviousWord;
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    public boolean isCharacterCloseToPreviousWord() {
+        return this.isCharacterCloseToPreviousWord;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isCharacterCloseToPreviousWord', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'isCharacterCloseToPreviousWord', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,toString,"    public String toString() {
+        String toString = """";
+        toString += index;
+        toString += "" "";
+        toString += characterValue;
+        toString += "" isCharacterPartOfPreviousWord="" + isCharacterPartOfPreviousWord;
+        toString += "" isFirstCharacterOfAWord="" + isFirstCharacterOfAWord;
+        toString += "" isCharacterAtTheBeginningOfNewLine="" + isCharacterAtTheBeginningOfNewLine;
+        toString += "" isCharacterPartOfASentence="" + isCharacterCloseToPreviousWord;
+        toString += "" isCharacterCloseToPreviousWord="" + isCharacterCloseToPreviousWord;
+        return toString;
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    public String toString() {
+        String toString = """";
+        toString += index;
+        toString += "" "";
+        toString += characterValue;
+        toString += "" isCharacterPartOfPreviousWord="" + isCharacterPartOfPreviousWord;
+        toString += "" isFirstCharacterOfAWord="" + isFirstCharacterOfAWord;
+        toString += "" isCharacterAtTheBeginningOfNewLine="" + isCharacterAtTheBeginningOfNewLine;
+        toString += "" isCharacterPartOfASentence="" + isCharacterCloseToPreviousWord;
+        toString += "" isCharacterCloseToPreviousWord="" + isCharacterCloseToPreviousWord;
+        return toString;
+    }
+","['    ', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '        ', 'String', ' ', 'toString', ' ', '=', ' ', '""', '""', ';', '\n', '        ', 'toString', ' ', '+', '=', ' ', 'index', ';', '\n', '        ', 'toString', ' ', '+', '=', ' ', '""', ' ', '""', ';', '\n', '        ', 'toString', ' ', '+', '=', ' ', 'characterValue', ';', '\n', '        ', 'toString', ' ', '+', '=', ' ', '""', ' isCharacterPartOfPreviousWord=', '""', ' ', '+', ' ', 'isCharacterPartOfPreviousWord', ';', '\n', '        ', 'toString', ' ', '+', '=', ' ', '""', ' isFirstCharacterOfAWord=', '""', ' ', '+', ' ', 'isFirstCharacterOfAWord', ';', '\n', '        ', 'toString', ' ', '+', '=', ' ', '""', ' isCharacterAtTheBeginningOfNewLine=', '""', ' ', '+', ' ', 'isCharacterAtTheBeginningOfNewLine', ';', '\n', '        ', 'toString', ' ', '+', '=', ' ', '""', ' isCharacterPartOfASentence=', '""', ' ', '+', ' ', 'isCharacterCloseToPreviousWord', ';', '\n', '        ', 'toString', ' ', '+', '=', ' ', '""', ' isCharacterCloseToPreviousWord=', '""', ' ', '+', ' ', 'isCharacterCloseToPreviousWord', ';', '\n', '        ', 'return', ' ', 'toString', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,isCharacterAtTheBeginningOfNewLine,"    private boolean isCharacterAtTheBeginningOfNewLine(final TextPosition textPosition) {
+        if ( ! firstCharacterOfLineFound ) {
+            return true;
+        }
+        TextPosition previousTextPosition = this.getPreviousTextPosition();
+        double previousTextYPosition = previousTextPosition.getTextPos().getYPosition();
+        return ( Math.round( textPosition.getTextPos().getYPosition() ) < Math.round(previousTextYPosition) ); 
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private boolean isCharacterAtTheBeginningOfNewLine(final TextPosition textPosition) {
+        if ( ! firstCharacterOfLineFound ) {
+            return true;
+        }
+        TextPosition previousTextPosition = this.getPreviousTextPosition();
+        double previousTextYPosition = previousTextPosition.getTextPos().getYPosition();
+        return ( Math.round( textPosition.getTextPos().getYPosition() ) < Math.round(previousTextYPosition) ); 
+    }
+","['    ', 'private', ' ', 'boolean', ' ', 'isCharacterAtTheBeginningOfNewLine', '(', 'final', ' ', 'TextPosition', ' ', 'textPosition', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', ' ', '!', ' ', 'firstCharacterOfLineFound', ' ', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '        ', 'TextPosition', ' ', 'previousTextPosition', ' ', '=', ' ', 'this', '.', 'getPreviousTextPosition', '(', ')', ';', '\n', '        ', 'double', ' ', 'previousTextYPosition', ' ', '=', ' ', 'previousTextPosition', '.', 'getTextPos', '(', ')', '.', 'getYPosition', '(', ')', ';', '\n', '        ', 'return', ' ', '(', ' ', 'Math', '.', 'round', '(', ' ', 'textPosition', '.', 'getTextPos', '(', ')', '.', 'getYPosition', '(', ')', ' ', ')', ' ', '<', ' ', 'Math', '.', 'round', '(', 'previousTextYPosition', ')', ' ', ')', ';', ' ', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,isFirstCharacterOfAWord,"    private boolean isFirstCharacterOfAWord(final TextPosition textPosition) {
+        if ( ! firstCharacterOfLineFound ) {
+            return true;
+        }
+        double numberOfSpaces = this.numberOfSpacesBetweenTwoCharacters(previousTextPosition, textPosition);
+        return (numberOfSpaces > 1) || this.isCharacterAtTheBeginningOfNewLine(textPosition);
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private boolean isFirstCharacterOfAWord(final TextPosition textPosition) {
+        if ( ! firstCharacterOfLineFound ) {
+            return true;
+        }
+        double numberOfSpaces = this.numberOfSpacesBetweenTwoCharacters(previousTextPosition, textPosition);
+        return (numberOfSpaces > 1) || this.isCharacterAtTheBeginningOfNewLine(textPosition);
+    }
+","['    ', 'private', ' ', 'boolean', ' ', 'isFirstCharacterOfAWord', '(', 'final', ' ', 'TextPosition', ' ', 'textPosition', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', ' ', '!', ' ', 'firstCharacterOfLineFound', ' ', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '        ', 'double', ' ', 'numberOfSpaces', ' ', '=', ' ', 'this', '.', 'numberOfSpacesBetweenTwoCharacters', '(', 'previousTextPosition', ',', ' ', 'textPosition', ')', ';', '\n', '        ', 'return', ' ', '(', 'numberOfSpaces', ' ', '>', ' ', '1', ')', ' ', '|', '|', ' ', 'this', '.', 'isCharacterAtTheBeginningOfNewLine', '(', 'textPosition', ')', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,isCharacterCloseToPreviousWord,"    private boolean isCharacterCloseToPreviousWord(final TextPosition textPosition) {
+        if ( ! firstCharacterOfLineFound ) {
+            return false;
+        }
+        double numberOfSpaces = this.numberOfSpacesBetweenTwoCharacters(previousTextPosition, textPosition);
+        int widthOfSpace = (int) Math.ceil(textPosition.getWidthOfSpace());
+        return (numberOfSpaces > 1 && numberOfSpaces <= widthOfSpace);
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private boolean isCharacterCloseToPreviousWord(final TextPosition textPosition) {
+        if ( ! firstCharacterOfLineFound ) {
+            return false;
+        }
+        double numberOfSpaces = this.numberOfSpacesBetweenTwoCharacters(previousTextPosition, textPosition);
+        int widthOfSpace = (int) Math.ceil(textPosition.getWidthOfSpace());
+        return (numberOfSpaces > 1 && numberOfSpaces <= widthOfSpace);
+    }
+","['    ', 'private', ' ', 'boolean', ' ', 'isCharacterCloseToPreviousWord', '(', 'final', ' ', 'TextPosition', ' ', 'textPosition', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', ' ', '!', ' ', 'firstCharacterOfLineFound', ' ', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '        ', 'double', ' ', 'numberOfSpaces', ' ', '=', ' ', 'this', '.', 'numberOfSpacesBetweenTwoCharacters', '(', 'previousTextPosition', ',', ' ', 'textPosition', ')', ';', '\n', '        ', 'int', ' ', 'widthOfSpace', ' ', '=', ' ', '(', 'int', ')', ' ', 'Math', '.', 'ceil', '(', 'textPosition', '.', 'getWidthOfSpace', '(', ')', ')', ';', '\n', '        ', 'return', ' ', '(', 'numberOfSpaces', ' ', '>', ' ', '1', ' ', '&', '&', ' ', 'numberOfSpaces', ' ', '<', '=', ' ', 'widthOfSpace', ')', ';', '\n', '    ', '}', '\n']"
+master,fa272ca6b7db2236a999ce0b0c2f770d9d09d888,PDFLayoutTextStripper.java,numberOfSpacesBetweenTwoCharacters,"    private double numberOfSpacesBetweenTwoCharacters(final TextPosition textPosition1, final TextPosition textPosition2) {
+        double previousTextXPosition = textPosition1.getTextPos().getXPosition();
+        double previousTextWidth = textPosition1.getWidth();
+        double previousTextEndXPosition = (previousTextXPosition + previousTextWidth);
+        double numberOfSpaces = Math.abs(Math.round(textPosition2.getTextPos().getXPosition() - previousTextEndXPosition));
+        return numberOfSpaces;
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/fa272ca6b7db2236a999ce0b0c2f770d9d09d888,"    private double numberOfSpacesBetweenTwoCharacters(final TextPosition textPosition1, final TextPosition textPosition2) {
+        double previousTextXPosition = textPosition1.getTextPos().getXPosition();
+        double previousTextWidth = textPosition1.getWidth();
+        double previousTextEndXPosition = (previousTextXPosition + previousTextWidth);
+        double numberOfSpaces = Math.abs(Math.round(textPosition2.getTextPos().getXPosition() - previousTextEndXPosition));
+        return numberOfSpaces;
+    }
+","['    ', 'private', ' ', 'double', ' ', 'numberOfSpacesBetweenTwoCharacters', '(', 'final', ' ', 'TextPosition', ' ', 'textPosition1', ',', ' ', 'final', ' ', 'TextPosition', ' ', 'textPosition2', ')', ' ', '{', '\n', '        ', 'double', ' ', 'previousTextXPosition', ' ', '=', ' ', 'textPosition1', '.', 'getTextPos', '(', ')', '.', 'getXPosition', '(', ')', ';', '\n', '        ', 'double', ' ', 'previousTextWidth', ' ', '=', ' ', 'textPosition1', '.', 'getWidth', '(', ')', ';', '\n', '        ', 'double', ' ', 'previousTextEndXPosition', ' ', '=', ' ', '(', 'previousTextXPosition', ' ', '+', ' ', 'previousTextWidth', ')', ';', '\n', '        ', 'double', ' ', 'numberOfSpaces', ' ', '=', ' ', 'Math', '.', 'abs', '(', 'Math', '.', 'round', '(', 'textPosition2', '.', 'getTextPos', '(', ')', '.', 'getXPosition', '(', ')', ' ', '-', ' ', 'previousTextEndXPosition', ')', ')', ';', '\n', '        ', 'return', ' ', 'numberOfSpaces', ';', '\n', '    ', '}', '\n']"
+master,cbe6ded84856257bb76c3fdd15931f26bd2b35ce,PDFLayoutTextStripper.java,processPage,"    public void processPage(PDPage page) throws IOException {
+        PDRectangle pageRectangle = page.getMediaBox(); 
+        if (pageRectangle!= null) {
+            this.setCurrentPageWidth(pageRectangle.getWidth());",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/cbe6ded84856257bb76c3fdd15931f26bd2b35ce,"    public void processPage(PDPage page) throws IOException {
+        PDRectangle pageRectangle = page.getMediaBox(); 
+        if (pageRectangle!= null) {
+            this.setCurrentPageWidth(pageRectangle.getWidth());
+","['    ', 'public', ' ', 'void', ' ', 'processPage', '(', 'PDPage', ' ', 'page', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '        ', 'PDRectangle', ' ', 'pageRectangle', ' ', '=', ' ', 'page', '.', 'getMediaBox', '(', ')', ';', ' ', '\n', '        ', 'if', ' ', '(', 'pageRectangle', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'this', '.', 'setCurrentPageWidth', '(', 'pageRectangle', '.', 'getWidth', '(', ')', ')', ';', '\n']"
+master,cbe6ded84856257bb76c3fdd15931f26bd2b35ce,PDFLayoutTextStripper.java,writePage,"    protected void writePage() throws IOException {
+        List<List<TextPosition>> charactersByArticle = super.getCharactersByArticle();
+        for( int i = 0; i < charactersByArticle.size(); i++) {
+           List<TextPosition> textList = charactersByArticle.get(i);
+           this.sortTextPositionList(textList);
+           this.iterateThroughTextList(textList.iterator()) ;
+        }
+        this.writeToOutputStream(this.getTextLineList());
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/cbe6ded84856257bb76c3fdd15931f26bd2b35ce,"    protected void writePage() throws IOException {
+        List<List<TextPosition>> charactersByArticle = super.getCharactersByArticle();
+        for( int i = 0; i < charactersByArticle.size(); i++) {
+           List<TextPosition> textList = charactersByArticle.get(i);
+           this.sortTextPositionList(textList);
+           this.iterateThroughTextList(textList.iterator()) ;
+        }
+        this.writeToOutputStream(this.getTextLineList());
+    }
+","['    ', 'protected', ' ', 'void', ' ', 'writePage', '(', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '        ', 'List', '<', 'List', '<', 'TextPosition', '>', '>', ' ', 'charactersByArticle', ' ', '=', ' ', 'super', '.', 'getCharactersByArticle', '(', ')', ';', '\n', '        ', 'for', '(', ' ', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', 'charactersByArticle', '.', 'size', '(', ')', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '           ', 'List', '<', 'TextPosition', '>', ' ', 'textList', ' ', '=', ' ', 'charactersByArticle', '.', 'get', '(', 'i', ')', ';', '\n', '           ', 'this', '.', 'sortTextPositionList', '(', 'textList', ')', ';', '\n', '           ', 'this', '.', 'iterateThroughTextList', '(', 'textList', '.', 'iterator', '(', ')', ')', ' ', ';', '\n', '        ', '}', '\n', '        ', 'this', '.', 'writeToOutputStream', '(', 'this', '.', 'getTextLineList', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,cbe6ded84856257bb76c3fdd15931f26bd2b35ce,PDFLayoutTextStripper.java,createCharacterFromTextPosition,"    public Character createCharacterFromTextPosition(final TextPosition textPosition, final TextPosition previousTextPosition) {
+        this.setPreviousTextPosition(previousTextPosition);
+        this.isCharacterPartOfPreviousWord = this.isCharacterPartOfPreviousWord(textPosition);
+        this.isFirstCharacterOfAWord = this.isFirstCharacterOfAWord(textPosition);
+        this.isCharacterAtTheBeginningOfNewLine = this.isCharacterAtTheBeginningOfNewLine(textPosition);
+        this.isCharacterCloseToPreviousWord = this.isCharacterCloseToPreviousWord(textPosition);
+        char character = this.getCharacterFromTextPosition(textPosition);
+        int index = (int)textPosition.getX() / PDFLayoutTextStripper.OUTPUT_SPACE_CHARACTER_WIDTH_IN_PT;
+        return new Character(character, 
+                index,",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/cbe6ded84856257bb76c3fdd15931f26bd2b35ce,"    public Character createCharacterFromTextPosition(final TextPosition textPosition, final TextPosition previousTextPosition) {
+        this.setPreviousTextPosition(previousTextPosition);
+        this.isCharacterPartOfPreviousWord = this.isCharacterPartOfPreviousWord(textPosition);
+        this.isFirstCharacterOfAWord = this.isFirstCharacterOfAWord(textPosition);
+        this.isCharacterAtTheBeginningOfNewLine = this.isCharacterAtTheBeginningOfNewLine(textPosition);
+        this.isCharacterCloseToPreviousWord = this.isCharacterCloseToPreviousWord(textPosition);
+        char character = this.getCharacterFromTextPosition(textPosition);
+        int index = (int)textPosition.getX() / PDFLayoutTextStripper.OUTPUT_SPACE_CHARACTER_WIDTH_IN_PT;
+        return new Character(character, 
+                index,
+","['    ', 'public', ' ', 'Character', ' ', 'createCharacterFromTextPosition', '(', 'final', ' ', 'TextPosition', ' ', 'textPosition', ',', ' ', 'final', ' ', 'TextPosition', ' ', 'previousTextPosition', ')', ' ', '{', '\n', '        ', 'this', '.', 'setPreviousTextPosition', '(', 'previousTextPosition', ')', ';', '\n', '        ', 'this', '.', 'isCharacterPartOfPreviousWord', ' ', '=', ' ', 'this', '.', 'isCharacterPartOfPreviousWord', '(', 'textPosition', ')', ';', '\n', '        ', 'this', '.', 'isFirstCharacterOfAWord', ' ', '=', ' ', 'this', '.', 'isFirstCharacterOfAWord', '(', 'textPosition', ')', ';', '\n', '        ', 'this', '.', 'isCharacterAtTheBeginningOfNewLine', ' ', '=', ' ', 'this', '.', 'isCharacterAtTheBeginningOfNewLine', '(', 'textPosition', ')', ';', '\n', '        ', 'this', '.', 'isCharacterCloseToPreviousWord', ' ', '=', ' ', 'this', '.', 'isCharacterCloseToPreviousWord', '(', 'textPosition', ')', ';', '\n', '        ', 'char', ' ', 'character', ' ', '=', ' ', 'this', '.', 'getCharacterFromTextPosition', '(', 'textPosition', ')', ';', '\n', '        ', 'int', ' ', 'index', ' ', '=', ' ', '(', 'int', ')', 'textPosition', '.', 'getX', '(', ')', ' ', '/', ' ', 'PDFLayoutTextStripper', '.', 'OUTPUT_SPACE_CHARACTER_WIDTH_IN_PT', ';', '\n', '        ', 'return', ' ', 'new', ' ', 'Character', '(', 'character', ',', ' ', '\n', '                ', 'index', ',', '\n']"
+master,cbe6ded84856257bb76c3fdd15931f26bd2b35ce,PDFLayoutTextStripper.java,isCharacterAtTheBeginningOfNewLine,"    private boolean isCharacterAtTheBeginningOfNewLine(final TextPosition textPosition) {
+        if ( ! firstCharacterOfLineFound ) {
+            return true;
+        }
+        TextPosition previousTextPosition = this.getPreviousTextPosition();
+        float previousTextYPosition = previousTextPosition.getY();
+        return ( Math.round( textPosition.getY() ) < Math.round(previousTextYPosition) ); 
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/cbe6ded84856257bb76c3fdd15931f26bd2b35ce,"    private boolean isCharacterAtTheBeginningOfNewLine(final TextPosition textPosition) {
+        if ( ! firstCharacterOfLineFound ) {
+            return true;
+        }
+        TextPosition previousTextPosition = this.getPreviousTextPosition();
+        float previousTextYPosition = previousTextPosition.getY();
+        return ( Math.round( textPosition.getY() ) < Math.round(previousTextYPosition) ); 
+    }
+","['    ', 'private', ' ', 'boolean', ' ', 'isCharacterAtTheBeginningOfNewLine', '(', 'final', ' ', 'TextPosition', ' ', 'textPosition', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', ' ', '!', ' ', 'firstCharacterOfLineFound', ' ', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '        ', 'TextPosition', ' ', 'previousTextPosition', ' ', '=', ' ', 'this', '.', 'getPreviousTextPosition', '(', ')', ';', '\n', '        ', 'float', ' ', 'previousTextYPosition', ' ', '=', ' ', 'previousTextPosition', '.', 'getY', '(', ')', ';', '\n', '        ', 'return', ' ', '(', ' ', 'Math', '.', 'round', '(', ' ', 'textPosition', '.', 'getY', '(', ')', ' ', ')', ' ', '<', ' ', 'Math', '.', 'round', '(', 'previousTextYPosition', ')', ' ', ')', ';', ' ', '\n', '    ', '}', '\n']"
+master,cbe6ded84856257bb76c3fdd15931f26bd2b35ce,PDFLayoutTextStripper.java,numberOfSpacesBetweenTwoCharacters,"    private double numberOfSpacesBetweenTwoCharacters(final TextPosition textPosition1, final TextPosition textPosition2) {
+        double previousTextXPosition = textPosition1.getX();
+        double previousTextWidth = textPosition1.getWidth();
+        double previousTextEndXPosition = (previousTextXPosition + previousTextWidth);
+        double numberOfSpaces = Math.abs(Math.round(textPosition2.getX() - previousTextEndXPosition));
+        return numberOfSpaces;
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/cbe6ded84856257bb76c3fdd15931f26bd2b35ce,"    private double numberOfSpacesBetweenTwoCharacters(final TextPosition textPosition1, final TextPosition textPosition2) {
+        double previousTextXPosition = textPosition1.getX();
+        double previousTextWidth = textPosition1.getWidth();
+        double previousTextEndXPosition = (previousTextXPosition + previousTextWidth);
+        double numberOfSpaces = Math.abs(Math.round(textPosition2.getX() - previousTextEndXPosition));
+        return numberOfSpaces;
+    }
+","['    ', 'private', ' ', 'double', ' ', 'numberOfSpacesBetweenTwoCharacters', '(', 'final', ' ', 'TextPosition', ' ', 'textPosition1', ',', ' ', 'final', ' ', 'TextPosition', ' ', 'textPosition2', ')', ' ', '{', '\n', '        ', 'double', ' ', 'previousTextXPosition', ' ', '=', ' ', 'textPosition1', '.', 'getX', '(', ')', ';', '\n', '        ', 'double', ' ', 'previousTextWidth', ' ', '=', ' ', 'textPosition1', '.', 'getWidth', '(', ')', ';', '\n', '        ', 'double', ' ', 'previousTextEndXPosition', ' ', '=', ' ', '(', 'previousTextXPosition', ' ', '+', ' ', 'previousTextWidth', ')', ';', '\n', '        ', 'double', ' ', 'numberOfSpaces', ' ', '=', ' ', 'Math', '.', 'abs', '(', 'Math', '.', 'round', '(', 'textPosition2', '.', 'getX', '(', ')', ' ', '-', ' ', 'previousTextEndXPosition', ')', ')', ';', '\n', '        ', 'return', ' ', 'numberOfSpaces', ';', '\n', '    ', '}', '\n']"
+master,cbe6ded84856257bb76c3fdd15931f26bd2b35ce,test.java,main,"	public static void main(String[] args) {
+		String string = null;
+        try {
+            PDFParser pdfParser = new PDFParser(new RandomAccessFile(new File(""./samples/bus.pdf""), ""r""));
+            pdfParser.parse();
+            PDDocument pdDocument = new PDDocument(pdfParser.getDocument());
+            PDFTextStripper pdfTextStripper = new PDFLayoutTextStripper();
+            string = pdfTextStripper.getText(pdDocument);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        };
+        System.out.println(string);
+	}",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/cbe6ded84856257bb76c3fdd15931f26bd2b35ce,"	public static void main(String[] args) {
+		String string = null;
+        try {
+            PDFParser pdfParser = new PDFParser(new RandomAccessFile(new File(""./samples/bus.pdf""), ""r""));
+            pdfParser.parse();
+            PDDocument pdDocument = new PDDocument(pdfParser.getDocument());
+            PDFTextStripper pdfTextStripper = new PDFLayoutTextStripper();
+            string = pdfTextStripper.getText(pdDocument);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        };
+        System.out.println(string);
+	}
+","['\t', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '\t\t', 'String', ' ', 'string', ' ', '=', ' ', 'null', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'PDFParser', ' ', 'pdfParser', ' ', '=', ' ', 'new', ' ', 'PDFParser', '(', 'new', ' ', 'RandomAccessFile', '(', 'new', ' ', 'File', '(', '""', './samples/bus.pdf', '""', ')', ',', ' ', '""', 'r', '""', ')', ')', ';', '\n', '            ', 'pdfParser', '.', 'parse', '(', ')', ';', '\n', '            ', 'PDDocument', ' ', 'pdDocument', ' ', '=', ' ', 'new', ' ', 'PDDocument', '(', 'pdfParser', '.', 'getDocument', '(', ')', ')', ';', '\n', '            ', 'PDFTextStripper', ' ', 'pdfTextStripper', ' ', '=', ' ', 'new', ' ', 'PDFLayoutTextStripper', '(', ')', ';', '\n', '            ', 'string', ' ', '=', ' ', 'pdfTextStripper', '.', 'getText', '(', 'pdDocument', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'FileNotFoundException', ' ', 'e', ')', ' ', '{', '\n', '            ', 'e', '.', 'printStackTrace', '(', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'IOException', ' ', 'e', ')', ' ', '{', '\n', '            ', 'e', '.', 'printStackTrace', '(', ')', ';', '\n', '        ', '}', ';', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', 'string', ')', ';', '\n', '\t', '}', '\n']"
+master,09bcc6fd88713c84949bc791684ef6b09b968093,PDFLayoutTextStripper.java,processPage,"    public void processPage(PDPage page) throws IOException {
+        PDRectangle pageRectangle = page.getMediaBox();
+        if (pageRectangle!= null) {
+            this.setCurrentPageWidth(pageRectangle.getWidth());",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/09bcc6fd88713c84949bc791684ef6b09b968093,"    public void processPage(PDPage page) throws IOException {
+        PDRectangle pageRectangle = page.getMediaBox();
+        if (pageRectangle!= null) {
+            this.setCurrentPageWidth(pageRectangle.getWidth());
+","['    ', 'public', ' ', 'void', ' ', 'processPage', '(', 'PDPage', ' ', 'page', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '        ', 'PDRectangle', ' ', 'pageRectangle', ' ', '=', ' ', 'page', '.', 'getMediaBox', '(', ')', ';', '\n', '        ', 'if', ' ', '(', 'pageRectangle', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'this', '.', 'setCurrentPageWidth', '(', 'pageRectangle', '.', 'getWidth', '(', ')', ')', ';', '\n']"
+master,09bcc6fd88713c84949bc791684ef6b09b968093,PDFLayoutTextStripper.java,writePage,"    protected void writePage() throws IOException {
+        List<List<TextPosition>> charactersByArticle = super.getCharactersByArticle();
+        for( int i = 0; i < charactersByArticle.size(); i++) {
+            List<TextPosition> textList = charactersByArticle.get(i);
+            this.sortTextPositionList(textList);
+            this.iterateThroughTextList(textList.iterator()) ;
+        }
+        this.writeToOutputStream(this.getTextLineList());
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/09bcc6fd88713c84949bc791684ef6b09b968093,"    protected void writePage() throws IOException {
+        List<List<TextPosition>> charactersByArticle = super.getCharactersByArticle();
+        for( int i = 0; i < charactersByArticle.size(); i++) {
+            List<TextPosition> textList = charactersByArticle.get(i);
+            this.sortTextPositionList(textList);
+            this.iterateThroughTextList(textList.iterator()) ;
+        }
+        this.writeToOutputStream(this.getTextLineList());
+    }
+","['    ', 'protected', ' ', 'void', ' ', 'writePage', '(', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '        ', 'List', '<', 'List', '<', 'TextPosition', '>', '>', ' ', 'charactersByArticle', ' ', '=', ' ', 'super', '.', 'getCharactersByArticle', '(', ')', ';', '\n', '        ', 'for', '(', ' ', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', 'charactersByArticle', '.', 'size', '(', ')', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'List', '<', 'TextPosition', '>', ' ', 'textList', ' ', '=', ' ', 'charactersByArticle', '.', 'get', '(', 'i', ')', ';', '\n', '            ', 'this', '.', 'sortTextPositionList', '(', 'textList', ')', ';', '\n', '            ', 'this', '.', 'iterateThroughTextList', '(', 'textList', '.', 'iterator', '(', ')', ')', ' ', ';', '\n', '        ', '}', '\n', '        ', 'this', '.', 'writeToOutputStream', '(', 'this', '.', 'getTextLineList', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,09bcc6fd88713c84949bc791684ef6b09b968093,PDFLayoutTextStripper.java,computeIndexForCharacter,"    private int computeIndexForCharacter(final Character character) {
+        int index = character.getIndex();
+        boolean isCharacterPartOfPreviousWord = character.isCharacterPartOfPreviousWord();
+        boolean isCharacterAtTheBeginningOfNewLine = character.isCharacterAtTheBeginningOfNewLine();
+        boolean isCharacterCloseToPreviousWord = character.isCharacterCloseToPreviousWord();
+        
+        if ( !this.indexIsInBounds(index) ) {
+            return -1;",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/09bcc6fd88713c84949bc791684ef6b09b968093,"    private int computeIndexForCharacter(final Character character) {
+        int index = character.getIndex();
+        boolean isCharacterPartOfPreviousWord = character.isCharacterPartOfPreviousWord();
+        boolean isCharacterAtTheBeginningOfNewLine = character.isCharacterAtTheBeginningOfNewLine();
+        boolean isCharacterCloseToPreviousWord = character.isCharacterCloseToPreviousWord();
+        
+        if ( !this.indexIsInBounds(index) ) {
+            return -1;
+","['    ', 'private', ' ', 'int', ' ', 'computeIndexForCharacter', '(', 'final', ' ', 'Character', ' ', 'character', ')', ' ', '{', '\n', '        ', 'int', ' ', 'index', ' ', '=', ' ', 'character', '.', 'getIndex', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'isCharacterPartOfPreviousWord', ' ', '=', ' ', 'character', '.', 'isCharacterPartOfPreviousWord', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'isCharacterAtTheBeginningOfNewLine', ' ', '=', ' ', 'character', '.', 'isCharacterAtTheBeginningOfNewLine', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'isCharacterCloseToPreviousWord', ' ', '=', ' ', 'character', '.', 'isCharacterCloseToPreviousWord', '(', ')', ';', '\n', '        ', '\n', '        ', 'if', ' ', '(', ' ', '!', 'this', '.', 'indexIsInBounds', '(', 'index', ')', ' ', ')', ' ', '{', '\n', '            ', 'return', ' ', '-', '1', ';', '\n']"
+master,09bcc6fd88713c84949bc791684ef6b09b968093,PDFLayoutTextStripper.java,findMinimumIndexWithSpaceCharacterFromIndex,"    private int findMinimumIndexWithSpaceCharacterFromIndex(int index) {
+        int newIndex = index;
+        while( newIndex >= 0 && this.line.charAt(newIndex) == SPACE_CHARACTER ) {
+            newIndex = newIndex - 1;
+        }
+        return newIndex + 1;
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/09bcc6fd88713c84949bc791684ef6b09b968093,"    private int findMinimumIndexWithSpaceCharacterFromIndex(int index) {
+        int newIndex = index;
+        while( newIndex >= 0 && this.line.charAt(newIndex) == SPACE_CHARACTER ) {
+            newIndex = newIndex - 1;
+        }
+        return newIndex + 1;
+    }
+","['    ', 'private', ' ', 'int', ' ', 'findMinimumIndexWithSpaceCharacterFromIndex', '(', 'int', ' ', 'index', ')', ' ', '{', '\n', '        ', 'int', ' ', 'newIndex', ' ', '=', ' ', 'index', ';', '\n', '        ', 'while', '(', ' ', 'newIndex', ' ', '>', '=', ' ', '0', ' ', '&', '&', ' ', 'this', '.', 'line', '.', 'charAt', '(', 'newIndex', ')', ' ', '=', '=', ' ', 'SPACE_CHARACTER', ' ', ')', ' ', '{', '\n', '            ', 'newIndex', ' ', '=', ' ', 'newIndex', ' ', '-', ' ', '1', ';', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'newIndex', ' ', '+', ' ', '1', ';', '\n', '    ', '}', '\n']"
+master,09bcc6fd88713c84949bc791684ef6b09b968093,PDFLayoutTextStripper.java,isCharacterAtTheBeginningOfNewLine,"    private boolean isCharacterAtTheBeginningOfNewLine(final TextPosition textPosition) {
+        if ( ! firstCharacterOfLineFound ) {
+            return true;
+        }
+        TextPosition previousTextPosition = this.getPreviousTextPosition();
+        float previousTextYPosition = previousTextPosition.getY();
+        return ( Math.round( textPosition.getY() ) < Math.round(previousTextYPosition) );
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/09bcc6fd88713c84949bc791684ef6b09b968093,"    private boolean isCharacterAtTheBeginningOfNewLine(final TextPosition textPosition) {
+        if ( ! firstCharacterOfLineFound ) {
+            return true;
+        }
+        TextPosition previousTextPosition = this.getPreviousTextPosition();
+        float previousTextYPosition = previousTextPosition.getY();
+        return ( Math.round( textPosition.getY() ) < Math.round(previousTextYPosition) );
+    }
+","['    ', 'private', ' ', 'boolean', ' ', 'isCharacterAtTheBeginningOfNewLine', '(', 'final', ' ', 'TextPosition', ' ', 'textPosition', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', ' ', '!', ' ', 'firstCharacterOfLineFound', ' ', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '        ', 'TextPosition', ' ', 'previousTextPosition', ' ', '=', ' ', 'this', '.', 'getPreviousTextPosition', '(', ')', ';', '\n', '        ', 'float', ' ', 'previousTextYPosition', ' ', '=', ' ', 'previousTextPosition', '.', 'getY', '(', ')', ';', '\n', '        ', 'return', ' ', '(', ' ', 'Math', '.', 'round', '(', ' ', 'textPosition', '.', 'getY', '(', ')', ' ', ')', ' ', '<', ' ', 'Math', '.', 'round', '(', 'previousTextYPosition', ')', ' ', ')', ';', '\n', '    ', '}', '\n']"
+master,079787697813f11c7d605ad801644bec9d1eb3ed,PDFLayoutTextStripper.java,writePage,"    protected void writePage() throws IOException {
+        List<List<TextPosition>> charactersByArticle = super.getCharactersByArticle();
+        for( int i = 0; i < charactersByArticle.size(); i++) {
+            List<TextPosition> textList = charactersByArticle.get(i);
+            try {
+                this.sortTextPositionList(textList);
+            } catch ( java.lang.IllegalArgumentException e) {
+                System.err.println(e);
+            }
+            this.iterateThroughTextList(textList.iterator()) ;
+        }
+        this.writeToOutputStream(this.getTextLineList());
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/079787697813f11c7d605ad801644bec9d1eb3ed,"    protected void writePage() throws IOException {
+        List<List<TextPosition>> charactersByArticle = super.getCharactersByArticle();
+        for( int i = 0; i < charactersByArticle.size(); i++) {
+            List<TextPosition> textList = charactersByArticle.get(i);
+            try {
+                this.sortTextPositionList(textList);
+            } catch ( java.lang.IllegalArgumentException e) {
+                System.err.println(e);
+            }
+            this.iterateThroughTextList(textList.iterator()) ;
+        }
+        this.writeToOutputStream(this.getTextLineList());
+    }
+","['    ', 'protected', ' ', 'void', ' ', 'writePage', '(', ')', ' ', 'throws', ' ', 'IOException', ' ', '{', '\n', '        ', 'List', '<', 'List', '<', 'TextPosition', '>', '>', ' ', 'charactersByArticle', ' ', '=', ' ', 'super', '.', 'getCharactersByArticle', '(', ')', ';', '\n', '        ', 'for', '(', ' ', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', 'charactersByArticle', '.', 'size', '(', ')', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'List', '<', 'TextPosition', '>', ' ', 'textList', ' ', '=', ' ', 'charactersByArticle', '.', 'get', '(', 'i', ')', ';', '\n', '            ', 'try', ' ', '{', '\n', '                ', 'this', '.', 'sortTextPositionList', '(', 'textList', ')', ';', '\n', '            ', '}', ' ', 'catch', ' ', '(', ' ', 'java', '.', 'lang', '.', 'IllegalArgumentException', ' ', 'e', ')', ' ', '{', '\n', '                ', 'System', '.', 'err', '.', 'println', '(', 'e', ')', ';', '\n', '            ', '}', '\n', '            ', 'this', '.', 'iterateThroughTextList', '(', 'textList', '.', 'iterator', '(', ')', ')', ' ', ';', '\n', '        ', '}', '\n', '        ', 'this', '.', 'writeToOutputStream', '(', 'this', '.', 'getTextLineList', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,079787697813f11c7d605ad801644bec9d1eb3ed,PDFLayoutTextStripper.java,computeIndexForCharacter,"    private int computeIndexForCharacter(final Character character) {
+        int index = character.getIndex();
+        boolean isCharacterPartOfPreviousWord = character.isCharacterPartOfPreviousWord();
+        boolean isCharacterAtTheBeginningOfNewLine = character.isCharacterAtTheBeginningOfNewLine();
+        boolean isCharacterCloseToPreviousWord = character.isCharacterCloseToPreviousWord();
+
+        if ( !this.indexIsInBounds(index) ) {
+            return -1;",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/079787697813f11c7d605ad801644bec9d1eb3ed,"    private int computeIndexForCharacter(final Character character) {
+        int index = character.getIndex();
+        boolean isCharacterPartOfPreviousWord = character.isCharacterPartOfPreviousWord();
+        boolean isCharacterAtTheBeginningOfNewLine = character.isCharacterAtTheBeginningOfNewLine();
+        boolean isCharacterCloseToPreviousWord = character.isCharacterCloseToPreviousWord();
+
+        if ( !this.indexIsInBounds(index) ) {
+            return -1;
+","['    ', 'private', ' ', 'int', ' ', 'computeIndexForCharacter', '(', 'final', ' ', 'Character', ' ', 'character', ')', ' ', '{', '\n', '        ', 'int', ' ', 'index', ' ', '=', ' ', 'character', '.', 'getIndex', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'isCharacterPartOfPreviousWord', ' ', '=', ' ', 'character', '.', 'isCharacterPartOfPreviousWord', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'isCharacterAtTheBeginningOfNewLine', ' ', '=', ' ', 'character', '.', 'isCharacterAtTheBeginningOfNewLine', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'isCharacterCloseToPreviousWord', ' ', '=', ' ', 'character', '.', 'isCharacterCloseToPreviousWord', '(', ')', ';', '\n', '\n', '        ', 'if', ' ', '(', ' ', '!', 'this', '.', 'indexIsInBounds', '(', 'index', ')', ' ', ')', ' ', '{', '\n', '            ', 'return', ' ', '-', '1', ';', '\n']"
+master,0778122bba6cf03a219865ede4a88a11e62cebe8,PDFLayoutTextStripper.java,isCharacterCloseToPreviousWord,"    private boolean isCharacterCloseToPreviousWord(final TextPosition textPosition) {
+        if ( ! firstCharacterOfLineFound ) {
+            return false;
+        }
+        double numberOfSpaces = this.numberOfSpacesBetweenTwoCharacters(previousTextPosition, textPosition);
+        return (numberOfSpaces > 1 && numberOfSpaces <= PDFLayoutTextStripper.OUTPUT_SPACE_CHARACTER_WIDTH_IN_PT);
+    }",https://www.github.com/jonathanlink/pdflayouttextstripper/commit/0778122bba6cf03a219865ede4a88a11e62cebe8,"    private boolean isCharacterCloseToPreviousWord(final TextPosition textPosition) {
+        if ( ! firstCharacterOfLineFound ) {
+            return false;
+        }
+        double numberOfSpaces = this.numberOfSpacesBetweenTwoCharacters(previousTextPosition, textPosition);
+        return (numberOfSpaces > 1 && numberOfSpaces <= PDFLayoutTextStripper.OUTPUT_SPACE_CHARACTER_WIDTH_IN_PT);
+    }
+","['    ', 'private', ' ', 'boolean', ' ', 'isCharacterCloseToPreviousWord', '(', 'final', ' ', 'TextPosition', ' ', 'textPosition', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', ' ', '!', ' ', 'firstCharacterOfLineFound', ' ', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '        ', 'double', ' ', 'numberOfSpaces', ' ', '=', ' ', 'this', '.', 'numberOfSpacesBetweenTwoCharacters', '(', 'previousTextPosition', ',', ' ', 'textPosition', ')', ';', '\n', '        ', 'return', ' ', '(', 'numberOfSpaces', ' ', '>', ' ', '1', ' ', '&', '&', ' ', 'numberOfSpaces', ' ', '<', '=', ' ', 'PDFLayoutTextStripper', '.', 'OUTPUT_SPACE_CHARACTER_WIDTH_IN_PT', ')', ';', '\n', '    ', '}', '\n']"

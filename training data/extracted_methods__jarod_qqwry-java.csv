@@ -1,0 +1,521 @@
+Branch Name,Commit Hash,File Name,Method Name,Method Code,Commit Link,Method Code No Comments,Tokens
+master,1ae15d7d2c7d0dba2b7983b0e738094719f719ef,IPZone.java,toString,"	public String toString() {
+		final StringBuilder builder = new StringBuilder();
+		builder.append(""IPZone [ip="").append(ip).append("", country="")
+				.append(country).append("", city="").append(city).append(""]"");
+		return builder.toString();
+	}",https://www.github.com/jarod/qqwry-java/commit/1ae15d7d2c7d0dba2b7983b0e738094719f719ef,"	public String toString() {
+		final StringBuilder builder = new StringBuilder();
+		builder.append(""IPZone [ip="").append(ip).append("", country="")
+				.append(country).append("", city="").append(city).append(""]"");
+		return builder.toString();
+	}
+","['\t', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'StringBuilder', ' ', 'builder', ' ', '=', ' ', 'new', ' ', 'StringBuilder', '(', ')', ';', '\n', '\t\t', 'builder', '.', 'append', '(', '""', 'IPZone [ip=', '""', ')', '.', 'append', '(', 'ip', ')', '.', 'append', '(', '""', ', country=', '""', ')', '\n', '\t\t\t\t', '.', 'append', '(', 'country', ')', '.', 'append', '(', '""', ', city=', '""', ')', '.', 'append', '(', 'city', ')', '.', 'append', '(', '""', ']', '""', ')', ';', '\n', '\t\t', 'return', ' ', 'builder', '.', 'toString', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,1ae15d7d2c7d0dba2b7983b0e738094719f719ef,QQWry.java,findIP,"	public IPZone findIP(final String ip) {
+		final long ipNum = toNumericIP(ip);
+		final QIndex idx = searchIndex(ipNum);
+		if (idx == null) {
+			return null;
+		}
+		return readIP(ip, idx);
+	}",https://www.github.com/jarod/qqwry-java/commit/1ae15d7d2c7d0dba2b7983b0e738094719f719ef,"	public IPZone findIP(final String ip) {
+		final long ipNum = toNumericIP(ip);
+		final QIndex idx = searchIndex(ipNum);
+		if (idx == null) {
+			return null;
+		}
+		return readIP(ip, idx);
+	}
+","['\t', 'public', ' ', 'IPZone', ' ', 'findIP', '(', 'final', ' ', 'String', ' ', 'ip', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'long', ' ', 'ipNum', ' ', '=', ' ', 'toNumericIP', '(', 'ip', ')', ';', '\n', '\t\t', 'final', ' ', 'QIndex', ' ', 'idx', ' ', '=', ' ', 'searchIndex', '(', 'ipNum', ')', ';', '\n', '\t\t', 'if', ' ', '(', 'idx', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'null', ';', '\n', '\t\t', '}', '\n', '\t\t', 'return', ' ', 'readIP', '(', 'ip', ',', ' ', 'idx', ')', ';', '\n', '\t', '}', '\n']"
+master,1ae15d7d2c7d0dba2b7983b0e738094719f719ef,QQWry.java,readCity,"	private String readCity(final int offset) {
+		final byte b = data[offset];
+		if ((b == 0x01) || (b == 0x02)) {
+			final int areaOffset = readInt24(offset + 1);",https://www.github.com/jarod/qqwry-java/commit/1ae15d7d2c7d0dba2b7983b0e738094719f719ef,"	private String readCity(final int offset) {
+		final byte b = data[offset];
+		if ((b == 0x01) || (b == 0x02)) {
+			final int areaOffset = readInt24(offset + 1);
+","['\t', 'private', ' ', 'String', ' ', 'readCity', '(', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'byte', ' ', 'b', ' ', '=', ' ', 'data', '[', 'offset', ']', ';', '\n', '\t\t', 'if', ' ', '(', '(', 'b', ' ', '=', '=', ' ', '0x01', ')', ' ', '|', '|', ' ', '(', 'b', ' ', '=', '=', ' ', '0x02', ')', ')', ' ', '{', '\n', '\t\t\t', 'final', ' ', 'int', ' ', 'areaOffset', ' ', '=', ' ', 'readInt24', '(', 'offset', ' ', '+', ' ', '1', ')', ';', '\n']"
+master,1ae15d7d2c7d0dba2b7983b0e738094719f719ef,QQWry.java,readIndex,"	private QIndex readIndex(final int offset) {
+		final long min = readLong32(offset);
+		final int record = readInt24(offset + 4);
+		final long max = readLong32(record);
+		return new QIndex(min, max, record);
+	}",https://www.github.com/jarod/qqwry-java/commit/1ae15d7d2c7d0dba2b7983b0e738094719f719ef,"	private QIndex readIndex(final int offset) {
+		final long min = readLong32(offset);
+		final int record = readInt24(offset + 4);
+		final long max = readLong32(record);
+		return new QIndex(min, max, record);
+	}
+","['\t', 'private', ' ', 'QIndex', ' ', 'readIndex', '(', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'long', ' ', 'min', ' ', '=', ' ', 'readLong32', '(', 'offset', ')', ';', '\n', '\t\t', 'final', ' ', 'int', ' ', 'record', ' ', '=', ' ', 'readInt24', '(', 'offset', ' ', '+', ' ', '4', ')', ';', '\n', '\t\t', 'final', ' ', 'long', ' ', 'max', ' ', '=', ' ', 'readLong32', '(', 'record', ')', ';', '\n', '\t\t', 'return', ' ', 'new', ' ', 'QIndex', '(', 'min', ',', ' ', 'max', ',', ' ', 'record', ')', ';', '\n', '\t', '}', '\n']"
+master,1ae15d7d2c7d0dba2b7983b0e738094719f719ef,QQWry.java,readInt24,"	private int readInt24(final int offset) {
+		int v = data[offset] & 0xFF;
+		v |= ((data[offset + 1] << 8) & 0xFF00);
+		v |= ((data[offset + 2] << 16) & 0xFF0000);
+		return v;
+	}",https://www.github.com/jarod/qqwry-java/commit/1ae15d7d2c7d0dba2b7983b0e738094719f719ef,"	private int readInt24(final int offset) {
+		int v = data[offset] & 0xFF;
+		v |= ((data[offset + 1] << 8) & 0xFF00);
+		v |= ((data[offset + 2] << 16) & 0xFF0000);
+		return v;
+	}
+","['\t', 'private', ' ', 'int', ' ', 'readInt24', '(', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'int', ' ', 'v', ' ', '=', ' ', 'data', '[', 'offset', ']', ' ', '&', ' ', '0xFF', ';', '\n', '\t\t', 'v', ' ', '|', '=', ' ', '(', '(', 'data', '[', 'offset', ' ', '+', ' ', '1', ']', ' ', '<', '<', ' ', '8', ')', ' ', '&', ' ', '0xFF00', ')', ';', '\n', '\t\t', 'v', ' ', '|', '=', ' ', '(', '(', 'data', '[', 'offset', ' ', '+', ' ', '2', ']', ' ', '<', '<', ' ', '16', ')', ' ', '&', ' ', '0xFF0000', ')', ';', '\n', '\t\t', 'return', ' ', 'v', ';', '\n', '\t', '}', '\n']"
+master,1ae15d7d2c7d0dba2b7983b0e738094719f719ef,QQWry.java,readIP,"	private IPZone readIP(final String ip, final QIndex idx) {
+		final int mode = data[idx.getRecordOffset() + 4];
+		final IPZone z = new IPZone(ip);
+		System.out.print(""mode="" + mode + "" "");
+		if (mode == 0x01) {
+			final int offset = readInt24(idx.getRecordOffset() + 5);
+			if (data[offset] == 0x02) {
+				readMode2(z, offset);
+			} else {
+				final WryString country = readString(offset);
+				final String city = readCity(offset + country.getLength());
+				z.setCountry(country.getString());
+				z.setCity(city);
+			}
+		} else if (mode == 0x02) {
+			readMode2(z, idx.getRecordOffset() + 4);
+		}
+		return z;
+	}",https://www.github.com/jarod/qqwry-java/commit/1ae15d7d2c7d0dba2b7983b0e738094719f719ef,"	private IPZone readIP(final String ip, final QIndex idx) {
+		final int mode = data[idx.getRecordOffset() + 4];
+		final IPZone z = new IPZone(ip);
+		System.out.print(""mode="" + mode + "" "");
+		if (mode == 0x01) {
+			final int offset = readInt24(idx.getRecordOffset() + 5);
+			if (data[offset] == 0x02) {
+				readMode2(z, offset);
+			} else {
+				final WryString country = readString(offset);
+				final String city = readCity(offset + country.getLength());
+				z.setCountry(country.getString());
+				z.setCity(city);
+			}
+		} else if (mode == 0x02) {
+			readMode2(z, idx.getRecordOffset() + 4);
+		}
+		return z;
+	}
+","['\t', 'private', ' ', 'IPZone', ' ', 'readIP', '(', 'final', ' ', 'String', ' ', 'ip', ',', ' ', 'final', ' ', 'QIndex', ' ', 'idx', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'int', ' ', 'mode', ' ', '=', ' ', 'data', '[', 'idx', '.', 'getRecordOffset', '(', ')', ' ', '+', ' ', '4', ']', ';', '\n', '\t\t', 'final', ' ', 'IPZone', ' ', 'z', ' ', '=', ' ', 'new', ' ', 'IPZone', '(', 'ip', ')', ';', '\n', '\t\t', 'System', '.', 'out', '.', 'print', '(', '""', 'mode=', '""', ' ', '+', ' ', 'mode', ' ', '+', ' ', '""', ' ', '""', ')', ';', '\n', '\t\t', 'if', ' ', '(', 'mode', ' ', '=', '=', ' ', '0x01', ')', ' ', '{', '\n', '\t\t\t', 'final', ' ', 'int', ' ', 'offset', ' ', '=', ' ', 'readInt24', '(', 'idx', '.', 'getRecordOffset', '(', ')', ' ', '+', ' ', '5', ')', ';', '\n', '\t\t\t', 'if', ' ', '(', 'data', '[', 'offset', ']', ' ', '=', '=', ' ', '0x02', ')', ' ', '{', '\n', '\t\t\t\t', 'readMode2', '(', 'z', ',', ' ', 'offset', ')', ';', '\n', '\t\t\t', '}', ' ', 'else', ' ', '{', '\n', '\t\t\t\t', 'final', ' ', 'WryString', ' ', 'country', ' ', '=', ' ', 'readString', '(', 'offset', ')', ';', '\n', '\t\t\t\t', 'final', ' ', 'String', ' ', 'city', ' ', '=', ' ', 'readCity', '(', 'offset', ' ', '+', ' ', 'country', '.', 'getLength', '(', ')', ')', ';', '\n', '\t\t\t\t', 'z', '.', 'setCountry', '(', 'country', '.', 'getString', '(', ')', ')', ';', '\n', '\t\t\t\t', 'z', '.', 'setCity', '(', 'city', ')', ';', '\n', '\t\t\t', '}', '\n', '\t\t', '}', ' ', 'else', ' ', 'if', ' ', '(', 'mode', ' ', '=', '=', ' ', '0x02', ')', ' ', '{', '\n', '\t\t\t', 'readMode2', '(', 'z', ',', ' ', 'idx', '.', 'getRecordOffset', '(', ')', ' ', '+', ' ', '4', ')', ';', '\n', '\t\t', '}', '\n', '\t\t', 'return', ' ', 'z', ';', '\n', '\t', '}', '\n']"
+master,1ae15d7d2c7d0dba2b7983b0e738094719f719ef,QQWry.java,readLong32,"	private long readLong32(final int offset) {
+		long v = data[offset] & 0xFF;
+		v |= (data[offset + 1] << 8) & 0xFF00;
+		v |= ((data[offset + 2] << 16) & 0xFF0000);
+		v |= ((data[offset + 3] << 24) & 0xFF000000L);
+		return v;
+	}",https://www.github.com/jarod/qqwry-java/commit/1ae15d7d2c7d0dba2b7983b0e738094719f719ef,"	private long readLong32(final int offset) {
+		long v = data[offset] & 0xFF;
+		v |= (data[offset + 1] << 8) & 0xFF00;
+		v |= ((data[offset + 2] << 16) & 0xFF0000);
+		v |= ((data[offset + 3] << 24) & 0xFF000000L);
+		return v;
+	}
+","['\t', 'private', ' ', 'long', ' ', 'readLong32', '(', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'long', ' ', 'v', ' ', '=', ' ', 'data', '[', 'offset', ']', ' ', '&', ' ', '0xFF', ';', '\n', '\t\t', 'v', ' ', '|', '=', ' ', '(', 'data', '[', 'offset', ' ', '+', ' ', '1', ']', ' ', '<', '<', ' ', '8', ')', ' ', '&', ' ', '0xFF00', ';', '\n', '\t\t', 'v', ' ', '|', '=', ' ', '(', '(', 'data', '[', 'offset', ' ', '+', ' ', '2', ']', ' ', '<', '<', ' ', '16', ')', ' ', '&', ' ', '0xFF0000', ')', ';', '\n', '\t\t', 'v', ' ', '|', '=', ' ', '(', '(', 'data', '[', 'offset', ' ', '+', ' ', '3', ']', ' ', '<', '<', ' ', '24', ')', ' ', '&', ' ', '0xFF000000L', ')', ';', '\n', '\t\t', 'return', ' ', 'v', ';', '\n', '\t', '}', '\n']"
+master,1ae15d7d2c7d0dba2b7983b0e738094719f719ef,QQWry.java,readMode2,"	private void readMode2(final IPZone z, final int offset) {
+		final int countryOffset = readInt24(offset + 1);
+		final String country = readString(countryOffset).getString();
+		final String city = readCity(offset + 4);
+		z.setCountry(country);
+		z.setCity(city);
+	}",https://www.github.com/jarod/qqwry-java/commit/1ae15d7d2c7d0dba2b7983b0e738094719f719ef,"	private void readMode2(final IPZone z, final int offset) {
+		final int countryOffset = readInt24(offset + 1);
+		final String country = readString(countryOffset).getString();
+		final String city = readCity(offset + 4);
+		z.setCountry(country);
+		z.setCity(city);
+	}
+","['\t', 'private', ' ', 'void', ' ', 'readMode2', '(', 'final', ' ', 'IPZone', ' ', 'z', ',', ' ', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'int', ' ', 'countryOffset', ' ', '=', ' ', 'readInt24', '(', 'offset', ' ', '+', ' ', '1', ')', ';', '\n', '\t\t', 'final', ' ', 'String', ' ', 'country', ' ', '=', ' ', 'readString', '(', 'countryOffset', ')', '.', 'getString', '(', ')', ';', '\n', '\t\t', 'final', ' ', 'String', ' ', 'city', ' ', '=', ' ', 'readCity', '(', 'offset', ' ', '+', ' ', '4', ')', ';', '\n', '\t\t', 'z', '.', 'setCountry', '(', 'country', ')', ';', '\n', '\t\t', 'z', '.', 'setCity', '(', 'city', ')', ';', '\n', '\t', '}', '\n']"
+master,1ae15d7d2c7d0dba2b7983b0e738094719f719ef,QQWry.java,readString,"	private WryString readString(final int offset) {
+		int i = 0;
+		for (;; i++) {
+			final byte b = data[offset + i];
+			if (STRING_END == b) {
+				break;
+			}
+			STRING_BUF[i] = b;
+		}
+		try {
+			return new WryString(new String(STRING_BUF, 0, i, ""GB18030""), i);",https://www.github.com/jarod/qqwry-java/commit/1ae15d7d2c7d0dba2b7983b0e738094719f719ef,"	private WryString readString(final int offset) {
+		int i = 0;
+		for (;; i++) {
+			final byte b = data[offset + i];
+			if (STRING_END == b) {
+				break;
+			}
+			STRING_BUF[i] = b;
+		}
+		try {
+			return new WryString(new String(STRING_BUF, 0, i, ""GB18030""), i);
+","['\t', 'private', ' ', 'WryString', ' ', 'readString', '(', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', '\n', '\t\t', 'for', ' ', '(', ';', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '\t\t\t', 'final', ' ', 'byte', ' ', 'b', ' ', '=', ' ', 'data', '[', 'offset', ' ', '+', ' ', 'i', ']', ';', '\n', '\t\t\t', 'if', ' ', '(', 'STRING_END', ' ', '=', '=', ' ', 'b', ')', ' ', '{', '\n', '\t\t\t\t', 'break', ';', '\n', '\t\t\t', '}', '\n', '\t\t\t', 'STRING_BUF', '[', 'i', ']', ' ', '=', ' ', 'b', ';', '\n', '\t\t', '}', '\n', '\t\t', 'try', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'new', ' ', 'WryString', '(', 'new', ' ', 'String', '(', 'STRING_BUF', ',', ' ', '0', ',', ' ', 'i', ',', ' ', '""', 'GB18030', '""', ')', ',', ' ', 'i', ')', ';', '\n']"
+master,1ae15d7d2c7d0dba2b7983b0e738094719f719ef,QQWry.java,toNumericIP,"	private long toNumericIP(final String s) {
+		final String[] parts = s.split(""\\."");
+		if (parts.length != 4) {
+			throw new IllegalArgumentException(""ip="" + s);
+		}
+		long n = Long.parseLong(parts[0].trim()) << 24L;
+		n += Long.parseLong(parts[1].trim()) << 16L;
+		n += Long.parseLong(parts[2].trim()) << 8L;
+		n += Long.parseLong(parts[3].trim());
+		return n;
+	}",https://www.github.com/jarod/qqwry-java/commit/1ae15d7d2c7d0dba2b7983b0e738094719f719ef,"	private long toNumericIP(final String s) {
+		final String[] parts = s.split(""\\."");
+		if (parts.length != 4) {
+			throw new IllegalArgumentException(""ip="" + s);
+		}
+		long n = Long.parseLong(parts[0].trim()) << 24L;
+		n += Long.parseLong(parts[1].trim()) << 16L;
+		n += Long.parseLong(parts[2].trim()) << 8L;
+		n += Long.parseLong(parts[3].trim());
+		return n;
+	}
+","['\t', 'private', ' ', 'long', ' ', 'toNumericIP', '(', 'final', ' ', 'String', ' ', 's', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'String', '[', ']', ' ', 'parts', ' ', '=', ' ', 's', '.', 'split', '(', '""', '\\\\', '.', '""', ')', ';', '\n', '\t\t', 'if', ' ', '(', 'parts', '.', 'length', ' ', '!', '=', ' ', '4', ')', ' ', '{', '\n', '\t\t\t', 'throw', ' ', 'new', ' ', 'IllegalArgumentException', '(', '""', 'ip=', '""', ' ', '+', ' ', 's', ')', ';', '\n', '\t\t', '}', '\n', '\t\t', 'long', ' ', 'n', ' ', '=', ' ', 'Long', '.', 'parseLong', '(', 'parts', '[', '0', ']', '.', 'trim', '(', ')', ')', ' ', '<', '<', ' ', '24L', ';', '\n', '\t\t', 'n', ' ', '+', '=', ' ', 'Long', '.', 'parseLong', '(', 'parts', '[', '1', ']', '.', 'trim', '(', ')', ')', ' ', '<', '<', ' ', '16L', ';', '\n', '\t\t', 'n', ' ', '+', '=', ' ', 'Long', '.', 'parseLong', '(', 'parts', '[', '2', ']', '.', 'trim', '(', ')', ')', ' ', '<', '<', ' ', '8L', ';', '\n', '\t\t', 'n', ' ', '+', '=', ' ', 'Long', '.', 'parseLong', '(', 'parts', '[', '3', ']', '.', 'trim', '(', ')', ')', ';', '\n', '\t\t', 'return', ' ', 'n', ';', '\n', '\t', '}', '\n']"
+master,1ae15d7d2c7d0dba2b7983b0e738094719f719ef,QQWryTest.java,setUp,"	public void setUp() throws Exception {
+		qqwry = new QQWry(""qqwry.dat"");
+	}",https://www.github.com/jarod/qqwry-java/commit/1ae15d7d2c7d0dba2b7983b0e738094719f719ef,"	public void setUp() throws Exception {
+		qqwry = new QQWry(""qqwry.dat"");
+	}
+","['\t', 'public', ' ', 'void', ' ', 'setUp', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '\t\t', 'qqwry', ' ', '=', ' ', 'new', ' ', 'QQWry', '(', '""', 'qqwry.dat', '""', ')', ';', '\n', '\t', '}', '\n']"
+master,1ae15d7d2c7d0dba2b7983b0e738094719f719ef,QQWryTest.java,testFindIP,"	public void testFindIP() throws Exception {
+		for (int a = 0; a <= 255; a++) {
+			for (int b = 0; b <= 255; b++) {",https://www.github.com/jarod/qqwry-java/commit/1ae15d7d2c7d0dba2b7983b0e738094719f719ef,"	public void testFindIP() throws Exception {
+		for (int a = 0; a <= 255; a++) {
+			for (int b = 0; b <= 255; b++) {
+","['\t', 'public', ' ', 'void', ' ', 'testFindIP', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '\t\t', 'for', ' ', '(', 'int', ' ', 'a', ' ', '=', ' ', '0', ';', ' ', 'a', ' ', '<', '=', ' ', '255', ';', ' ', 'a', '+', '+', ')', ' ', '{', '\n', '\t\t\t', 'for', ' ', '(', 'int', ' ', 'b', ' ', '=', ' ', '0', ';', ' ', 'b', ' ', '<', '=', ' ', '255', ';', ' ', 'b', '+', '+', ')', ' ', '{', '\n']"
+master,e1b0f5f9d4c7faf6821fa782b2537a4b5606a151,QQWry.java,readString,"	private WryString readString(final int offset) {
+		int i = 0;
+		for (;; i++) {
+			final byte b = data[offset + i];
+			if (STRING_END == b) {
+				break;
+			}
+			stringBuf[i] = b;
+		}
+		try {
+			return new WryString(new String(stringBuf, 0, i, ""GB18030""), i);",https://www.github.com/jarod/qqwry-java/commit/e1b0f5f9d4c7faf6821fa782b2537a4b5606a151,"	private WryString readString(final int offset) {
+		int i = 0;
+		for (;; i++) {
+			final byte b = data[offset + i];
+			if (STRING_END == b) {
+				break;
+			}
+			stringBuf[i] = b;
+		}
+		try {
+			return new WryString(new String(stringBuf, 0, i, ""GB18030""), i);
+","['\t', 'private', ' ', 'WryString', ' ', 'readString', '(', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', '\n', '\t\t', 'for', ' ', '(', ';', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '\t\t\t', 'final', ' ', 'byte', ' ', 'b', ' ', '=', ' ', 'data', '[', 'offset', ' ', '+', ' ', 'i', ']', ';', '\n', '\t\t\t', 'if', ' ', '(', 'STRING_END', ' ', '=', '=', ' ', 'b', ')', ' ', '{', '\n', '\t\t\t\t', 'break', ';', '\n', '\t\t\t', '}', '\n', '\t\t\t', 'stringBuf', '[', 'i', ']', ' ', '=', ' ', 'b', ';', '\n', '\t\t', '}', '\n', '\t\t', 'try', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'new', ' ', 'WryString', '(', 'new', ' ', 'String', '(', 'stringBuf', ',', ' ', '0', ',', ' ', 'i', ',', ' ', '""', 'GB18030', '""', ')', ',', ' ', 'i', ')', ';', '\n']"
+master,e1b0f5f9d4c7faf6821fa782b2537a4b5606a151,ThreadLocalQQWryFactory.java,initialValue,"		protected QQWry initialValue() {
+			return new QQWry(getData());
+		}",https://www.github.com/jarod/qqwry-java/commit/e1b0f5f9d4c7faf6821fa782b2537a4b5606a151,"		protected QQWry initialValue() {
+			return new QQWry(getData());
+		}
+","['\t\t', 'protected', ' ', 'QQWry', ' ', 'initialValue', '(', ')', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'new', ' ', 'QQWry', '(', 'getData', '(', ')', ')', ';', '\n', '\t\t', '}', '\n']"
+master,e1b0f5f9d4c7faf6821fa782b2537a4b5606a151,QQWryTest.java,setUp,"	public void setUp() throws Exception {
+		factory = new DefaultQQWryFactory(""qqwry.dat"");
+	}",https://www.github.com/jarod/qqwry-java/commit/e1b0f5f9d4c7faf6821fa782b2537a4b5606a151,"	public void setUp() throws Exception {
+		factory = new DefaultQQWryFactory(""qqwry.dat"");
+	}
+","['\t', 'public', ' ', 'void', ' ', 'setUp', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '\t\t', 'factory', ' ', '=', ' ', 'new', ' ', 'DefaultQQWryFactory', '(', '""', 'qqwry.dat', '""', ')', ';', '\n', '\t', '}', '\n']"
+master,e1b0f5f9d4c7faf6821fa782b2537a4b5606a151,QQWryTest.java,testFindIP,"	public void testFindIP() throws Exception {
+		QQWry qqwry = factory.getInstance();
+		for (int a = 0; a <= 255; a++) {
+			for (int b = 0; b <= 255; b++) {",https://www.github.com/jarod/qqwry-java/commit/e1b0f5f9d4c7faf6821fa782b2537a4b5606a151,"	public void testFindIP() throws Exception {
+		QQWry qqwry = factory.getInstance();
+		for (int a = 0; a <= 255; a++) {
+			for (int b = 0; b <= 255; b++) {
+","['\t', 'public', ' ', 'void', ' ', 'testFindIP', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '\t\t', 'QQWry', ' ', 'qqwry', ' ', '=', ' ', 'factory', '.', 'getInstance', '(', ')', ';', '\n', '\t\t', 'for', ' ', '(', 'int', ' ', 'a', ' ', '=', ' ', '0', ';', ' ', 'a', ' ', '<', '=', ' ', '255', ';', ' ', 'a', '+', '+', ')', ' ', '{', '\n', '\t\t\t', 'for', ' ', '(', 'int', ' ', 'b', ' ', '=', ' ', '0', ';', ' ', 'b', ' ', '<', '=', ' ', '255', ';', ' ', 'b', '+', '+', ')', ' ', '{', '\n']"
+master,d4329101983bee8a530885a504bef1279bd346ab,IPZone.java,toString,"	public String toString() {
+		final StringBuilder builder = new StringBuilder();
+		builder.append(""IPZone [ip="").append(ip).append("", country="").append(country).append("", city="").append(city)
+		.append(""]"");
+		return builder.toString();
+	}",https://www.github.com/jarod/qqwry-java/commit/d4329101983bee8a530885a504bef1279bd346ab,"	public String toString() {
+		final StringBuilder builder = new StringBuilder();
+		builder.append(""IPZone [ip="").append(ip).append("", country="").append(country).append("", city="").append(city)
+		.append(""]"");
+		return builder.toString();
+	}
+","['\t', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'StringBuilder', ' ', 'builder', ' ', '=', ' ', 'new', ' ', 'StringBuilder', '(', ')', ';', '\n', '\t\t', 'builder', '.', 'append', '(', '""', 'IPZone [ip=', '""', ')', '.', 'append', '(', 'ip', ')', '.', 'append', '(', '""', ', country=', '""', ')', '.', 'append', '(', 'country', ')', '.', 'append', '(', '""', ', city=', '""', ')', '.', 'append', '(', 'city', ')', '\n', '\t\t', '.', 'append', '(', '""', ']', '""', ')', ';', '\n', '\t\t', 'return', ' ', 'builder', '.', 'toString', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,d4329101983bee8a530885a504bef1279bd346ab,QQWryTest.java,testFindIP,"	public void testFindIP() throws Exception {
+		final QQWry qqwry = factory.getInstance();
+		for (int a = 0; a <= 255; a++) {
+			for (int b = 0; b <= 255; b++) {",https://www.github.com/jarod/qqwry-java/commit/d4329101983bee8a530885a504bef1279bd346ab,"	public void testFindIP() throws Exception {
+		final QQWry qqwry = factory.getInstance();
+		for (int a = 0; a <= 255; a++) {
+			for (int b = 0; b <= 255; b++) {
+","['\t', 'public', ' ', 'void', ' ', 'testFindIP', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '\t\t', 'final', ' ', 'QQWry', ' ', 'qqwry', ' ', '=', ' ', 'factory', '.', 'getInstance', '(', ')', ';', '\n', '\t\t', 'for', ' ', '(', 'int', ' ', 'a', ' ', '=', ' ', '0', ';', ' ', 'a', ' ', '<', '=', ' ', '255', ';', ' ', 'a', '+', '+', ')', ' ', '{', '\n', '\t\t\t', 'for', ' ', '(', 'int', ' ', 'b', ' ', '=', ' ', '0', ';', ' ', 'b', ' ', '<', '=', ' ', '255', ';', ' ', 'b', '+', '+', ')', ' ', '{', '\n']"
+master,a30f6542d38eed81b5536e899f1858621142b257,IPZone.java,toString,"	public String toString() {
+		final StringBuilder builder = new StringBuilder();
+		builder.append(country).append("" "").append(city);
+		return builder.toString();
+	}",https://www.github.com/jarod/qqwry-java/commit/a30f6542d38eed81b5536e899f1858621142b257,"	public String toString() {
+		final StringBuilder builder = new StringBuilder();
+		builder.append(country).append("" "").append(city);
+		return builder.toString();
+	}
+","['\t', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'StringBuilder', ' ', 'builder', ' ', '=', ' ', 'new', ' ', 'StringBuilder', '(', ')', ';', '\n', '\t\t', 'builder', '.', 'append', '(', 'country', ')', '.', 'append', '(', '""', ' ', '""', ')', '.', 'append', '(', 'city', ')', ';', '\n', '\t\t', 'return', ' ', 'builder', '.', 'toString', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,a30f6542d38eed81b5536e899f1858621142b257,QQWry.java,findIP,"	public IPZone findIP(final String ip) {
+		final long ipNum = toNumericIP(ip);
+		final QIndex idx = searchIndex(ipNum);
+		if (idx == null) {
+			return new IPZone(ip);
+		}
+		return readIP(ip, idx);
+	}",https://www.github.com/jarod/qqwry-java/commit/a30f6542d38eed81b5536e899f1858621142b257,"	public IPZone findIP(final String ip) {
+		final long ipNum = toNumericIP(ip);
+		final QIndex idx = searchIndex(ipNum);
+		if (idx == null) {
+			return new IPZone(ip);
+		}
+		return readIP(ip, idx);
+	}
+","['\t', 'public', ' ', 'IPZone', ' ', 'findIP', '(', 'final', ' ', 'String', ' ', 'ip', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'long', ' ', 'ipNum', ' ', '=', ' ', 'toNumericIP', '(', 'ip', ')', ';', '\n', '\t\t', 'final', ' ', 'QIndex', ' ', 'idx', ' ', '=', ' ', 'searchIndex', '(', 'ipNum', ')', ';', '\n', '\t\t', 'if', ' ', '(', 'idx', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'new', ' ', 'IPZone', '(', 'ip', ')', ';', '\n', '\t\t', '}', '\n', '\t\t', 'return', ' ', 'readIP', '(', 'ip', ',', ' ', 'idx', ')', ';', '\n', '\t', '}', '\n']"
+master,a30f6542d38eed81b5536e899f1858621142b257,QQWry.java,readCity,"	private String readCity(final int offset) {
+		final byte b = data[offset];
+		if ((b == REDIRECT_MODE_1) || (b == REDIRECT_MODE_2)) {
+			final int areaOffset = readInt24(offset + 1);",https://www.github.com/jarod/qqwry-java/commit/a30f6542d38eed81b5536e899f1858621142b257,"	private String readCity(final int offset) {
+		final byte b = data[offset];
+		if ((b == REDIRECT_MODE_1) || (b == REDIRECT_MODE_2)) {
+			final int areaOffset = readInt24(offset + 1);
+","['\t', 'private', ' ', 'String', ' ', 'readCity', '(', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'byte', ' ', 'b', ' ', '=', ' ', 'data', '[', 'offset', ']', ';', '\n', '\t\t', 'if', ' ', '(', '(', 'b', ' ', '=', '=', ' ', 'REDIRECT_MODE_1', ')', ' ', '|', '|', ' ', '(', 'b', ' ', '=', '=', ' ', 'REDIRECT_MODE_2', ')', ')', ' ', '{', '\n', '\t\t\t', 'final', ' ', 'int', ' ', 'areaOffset', ' ', '=', ' ', 'readInt24', '(', 'offset', ' ', '+', ' ', '1', ')', ';', '\n']"
+master,a30f6542d38eed81b5536e899f1858621142b257,QQWry.java,readLong32,"	private long readLong32(final int offset) {
+		long v = data[offset] & 0xFFL;
+		v |= (data[offset + 1] << 8L) & 0xFF00L;
+		v |= ((data[offset + 2] << 16L) & 0xFF0000L);
+		v |= ((data[offset + 3] << 24L) & 0xFF000000L);
+		return v;
+	}",https://www.github.com/jarod/qqwry-java/commit/a30f6542d38eed81b5536e899f1858621142b257,"	private long readLong32(final int offset) {
+		long v = data[offset] & 0xFFL;
+		v |= (data[offset + 1] << 8L) & 0xFF00L;
+		v |= ((data[offset + 2] << 16L) & 0xFF0000L);
+		v |= ((data[offset + 3] << 24L) & 0xFF000000L);
+		return v;
+	}
+","['\t', 'private', ' ', 'long', ' ', 'readLong32', '(', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'long', ' ', 'v', ' ', '=', ' ', 'data', '[', 'offset', ']', ' ', '&', ' ', '0xFFL', ';', '\n', '\t\t', 'v', ' ', '|', '=', ' ', '(', 'data', '[', 'offset', ' ', '+', ' ', '1', ']', ' ', '<', '<', ' ', '8L', ')', ' ', '&', ' ', '0xFF00L', ';', '\n', '\t\t', 'v', ' ', '|', '=', ' ', '(', '(', 'data', '[', 'offset', ' ', '+', ' ', '2', ']', ' ', '<', '<', ' ', '16L', ')', ' ', '&', ' ', '0xFF0000L', ')', ';', '\n', '\t\t', 'v', ' ', '|', '=', ' ', '(', '(', 'data', '[', 'offset', ' ', '+', ' ', '3', ']', ' ', '<', '<', ' ', '24L', ')', ' ', '&', ' ', '0xFF000000L', ')', ';', '\n', '\t\t', 'return', ' ', 'v', ';', '\n', '\t', '}', '\n']"
+master,a30f6542d38eed81b5536e899f1858621142b257,QQWry.java,readString,"	private WryString readString(final int offset) {
+		int i = 0;
+		for (;; i++) {
+			final byte b = data[offset + i];
+			if (STRING_END == b) {
+				break;
+			}
+			stringBuf[i] = b;
+		}
+		try {
+			return new WryString(new String(stringBuf, 0, i, ""GB18030""), i + 1);",https://www.github.com/jarod/qqwry-java/commit/a30f6542d38eed81b5536e899f1858621142b257,"	private WryString readString(final int offset) {
+		int i = 0;
+		for (;; i++) {
+			final byte b = data[offset + i];
+			if (STRING_END == b) {
+				break;
+			}
+			stringBuf[i] = b;
+		}
+		try {
+			return new WryString(new String(stringBuf, 0, i, ""GB18030""), i + 1);
+","['\t', 'private', ' ', 'WryString', ' ', 'readString', '(', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', '\n', '\t\t', 'for', ' ', '(', ';', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '\t\t\t', 'final', ' ', 'byte', ' ', 'b', ' ', '=', ' ', 'data', '[', 'offset', ' ', '+', ' ', 'i', ']', ';', '\n', '\t\t\t', 'if', ' ', '(', 'STRING_END', ' ', '=', '=', ' ', 'b', ')', ' ', '{', '\n', '\t\t\t\t', 'break', ';', '\n', '\t\t\t', '}', '\n', '\t\t\t', 'stringBuf', '[', 'i', ']', ' ', '=', ' ', 'b', ';', '\n', '\t\t', '}', '\n', '\t\t', 'try', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'new', ' ', 'WryString', '(', 'new', ' ', 'String', '(', 'stringBuf', ',', ' ', '0', ',', ' ', 'i', ',', ' ', '""', 'GB18030', '""', ')', ',', ' ', 'i', ' ', '+', ' ', '1', ')', ';', '\n']"
+master,a30f6542d38eed81b5536e899f1858621142b257,QQWry.java,toNumericIP,"	private long toNumericIP(final String s) {
+		final String[] parts = s.split(""\\."");
+		if (parts.length != 4) {
+			throw new IllegalArgumentException(""ip="" + s);
+		}
+		long n = Long.parseLong(parts[0]) << 24L;
+		n += Long.parseLong(parts[1]) << 16L;
+		n += Long.parseLong(parts[2]) << 8L;
+		n += Long.parseLong(parts[3]);
+		return n;
+	}",https://www.github.com/jarod/qqwry-java/commit/a30f6542d38eed81b5536e899f1858621142b257,"	private long toNumericIP(final String s) {
+		final String[] parts = s.split(""\\."");
+		if (parts.length != 4) {
+			throw new IllegalArgumentException(""ip="" + s);
+		}
+		long n = Long.parseLong(parts[0]) << 24L;
+		n += Long.parseLong(parts[1]) << 16L;
+		n += Long.parseLong(parts[2]) << 8L;
+		n += Long.parseLong(parts[3]);
+		return n;
+	}
+","['\t', 'private', ' ', 'long', ' ', 'toNumericIP', '(', 'final', ' ', 'String', ' ', 's', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'String', '[', ']', ' ', 'parts', ' ', '=', ' ', 's', '.', 'split', '(', '""', '\\\\', '.', '""', ')', ';', '\n', '\t\t', 'if', ' ', '(', 'parts', '.', 'length', ' ', '!', '=', ' ', '4', ')', ' ', '{', '\n', '\t\t\t', 'throw', ' ', 'new', ' ', 'IllegalArgumentException', '(', '""', 'ip=', '""', ' ', '+', ' ', 's', ')', ';', '\n', '\t\t', '}', '\n', '\t\t', 'long', ' ', 'n', ' ', '=', ' ', 'Long', '.', 'parseLong', '(', 'parts', '[', '0', ']', ')', ' ', '<', '<', ' ', '24L', ';', '\n', '\t\t', 'n', ' ', '+', '=', ' ', 'Long', '.', 'parseLong', '(', 'parts', '[', '1', ']', ')', ' ', '<', '<', ' ', '16L', ';', '\n', '\t\t', 'n', ' ', '+', '=', ' ', 'Long', '.', 'parseLong', '(', 'parts', '[', '2', ']', ')', ' ', '<', '<', ' ', '8L', ';', '\n', '\t\t', 'n', ' ', '+', '=', ' ', 'Long', '.', 'parseLong', '(', 'parts', '[', '3', ']', ')', ';', '\n', '\t\t', 'return', ' ', 'n', ';', '\n', '\t', '}', '\n']"
+master,a30f6542d38eed81b5536e899f1858621142b257,QQWryTest.java,setUp,"	public void setUp() throws Exception {
+		factory = new DefaultQQWryFactory();
+	}",https://www.github.com/jarod/qqwry-java/commit/a30f6542d38eed81b5536e899f1858621142b257,"	public void setUp() throws Exception {
+		factory = new DefaultQQWryFactory();
+	}
+","['\t', 'public', ' ', 'void', ' ', 'setUp', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '\t\t', 'factory', ' ', '=', ' ', 'new', ' ', 'DefaultQQWryFactory', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,f085f21a173e58ff0d125267b627c4c681501dce,IPZone.java,toString,"	public String toString() {
+		return new StringBuilder(country).append(city).toString();
+	}",https://www.github.com/jarod/qqwry-java/commit/f085f21a173e58ff0d125267b627c4c681501dce,"	public String toString() {
+		return new StringBuilder(country).append(city).toString();
+	}
+","['\t', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '\t\t', 'return', ' ', 'new', ' ', 'StringBuilder', '(', 'country', ')', '.', 'append', '(', 'city', ')', '.', 'toString', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,f085f21a173e58ff0d125267b627c4c681501dce,QQWryTest.java,setUpBeforeClass,"	public static void setUpBeforeClass() throws Exception {
+		qqwry = new QQWry();
+		final IPZone ipzone = qqwry.findIP(""127.0.0.1"");
+		System.out.printf(""%s,%s"", ipzone.getCountry(), ipzone.getCity());
+	}",https://www.github.com/jarod/qqwry-java/commit/f085f21a173e58ff0d125267b627c4c681501dce,"	public static void setUpBeforeClass() throws Exception {
+		qqwry = new QQWry();
+		final IPZone ipzone = qqwry.findIP(""127.0.0.1"");
+		System.out.printf(""%s,%s"", ipzone.getCountry(), ipzone.getCity());
+	}
+","['\t', 'public', ' ', 'static', ' ', 'void', ' ', 'setUpBeforeClass', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '\t\t', 'qqwry', ' ', '=', ' ', 'new', ' ', 'QQWry', '(', ')', ';', '\n', '\t\t', 'final', ' ', 'IPZone', ' ', 'ipzone', ' ', '=', ' ', 'qqwry', '.', 'findIP', '(', '""', '127.0.0.1', '""', ')', ';', '\n', '\t\t', 'System', '.', 'out', '.', 'printf', '(', '""', '%s,%s', '""', ',', ' ', 'ipzone', '.', 'getCountry', '(', ')', ',', ' ', 'ipzone', '.', 'getCity', '(', ')', ')', ';', '\n', '\t', '}', '\n']"
+master,6cc883f9d0c9d2776230809d8d9890e7c445ff0f,IPZone.java,toString,"	public String toString() {
+		return new StringBuilder(mainInfo).append(subInfo).toString();
+	}",https://www.github.com/jarod/qqwry-java/commit/6cc883f9d0c9d2776230809d8d9890e7c445ff0f,"	public String toString() {
+		return new StringBuilder(mainInfo).append(subInfo).toString();
+	}
+","['\t', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '\t\t', 'return', ' ', 'new', ' ', 'StringBuilder', '(', 'mainInfo', ')', '.', 'append', '(', 'subInfo', ')', '.', 'toString', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,6cc883f9d0c9d2776230809d8d9890e7c445ff0f,QQWry.java,readMode2,"	private void readMode2(final IPZone z, final int offset) {
+		final int mainInfoOffset = readInt24(offset + 1);
+		final String main = readString(mainInfoOffset).string;
+		final String sub = readSubInfo(offset + 4);
+		z.setMainInfo(main);
+		z.setSubInfo(sub);
+	}",https://www.github.com/jarod/qqwry-java/commit/6cc883f9d0c9d2776230809d8d9890e7c445ff0f,"	private void readMode2(final IPZone z, final int offset) {
+		final int mainInfoOffset = readInt24(offset + 1);
+		final String main = readString(mainInfoOffset).string;
+		final String sub = readSubInfo(offset + 4);
+		z.setMainInfo(main);
+		z.setSubInfo(sub);
+	}
+","['\t', 'private', ' ', 'void', ' ', 'readMode2', '(', 'final', ' ', 'IPZone', ' ', 'z', ',', ' ', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'int', ' ', 'mainInfoOffset', ' ', '=', ' ', 'readInt24', '(', 'offset', ' ', '+', ' ', '1', ')', ';', '\n', '\t\t', 'final', ' ', 'String', ' ', 'main', ' ', '=', ' ', 'readString', '(', 'mainInfoOffset', ')', '.', 'string', ';', '\n', '\t\t', 'final', ' ', 'String', ' ', 'sub', ' ', '=', ' ', 'readSubInfo', '(', 'offset', ' ', '+', ' ', '4', ')', ';', '\n', '\t\t', 'z', '.', 'setMainInfo', '(', 'main', ')', ';', '\n', '\t\t', 'z', '.', 'setSubInfo', '(', 'sub', ')', ';', '\n', '\t', '}', '\n']"
+master,6cc883f9d0c9d2776230809d8d9890e7c445ff0f,QQWry.java,readSubInfo,"	private String readSubInfo(final int offset) {
+		final byte b = data[offset];
+		if ((b == REDIRECT_MODE_1) || (b == REDIRECT_MODE_2)) {
+			final int areaOffset = readInt24(offset + 1);",https://www.github.com/jarod/qqwry-java/commit/6cc883f9d0c9d2776230809d8d9890e7c445ff0f,"	private String readSubInfo(final int offset) {
+		final byte b = data[offset];
+		if ((b == REDIRECT_MODE_1) || (b == REDIRECT_MODE_2)) {
+			final int areaOffset = readInt24(offset + 1);
+","['\t', 'private', ' ', 'String', ' ', 'readSubInfo', '(', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'final', ' ', 'byte', ' ', 'b', ' ', '=', ' ', 'data', '[', 'offset', ']', ';', '\n', '\t\t', 'if', ' ', '(', '(', 'b', ' ', '=', '=', ' ', 'REDIRECT_MODE_1', ')', ' ', '|', '|', ' ', '(', 'b', ' ', '=', '=', ' ', 'REDIRECT_MODE_2', ')', ')', ' ', '{', '\n', '\t\t\t', 'final', ' ', 'int', ' ', 'areaOffset', ' ', '=', ' ', 'readInt24', '(', 'offset', ' ', '+', ' ', '1', ')', ';', '\n']"
+master,6cc883f9d0c9d2776230809d8d9890e7c445ff0f,QQWry.java,searchIndex,"	private QIndex searchIndex(final long ip) {
+		long head = indexHead;
+		long tail = indexTail;
+		while (tail > head) {
+			final long cur = getMiddleOffset(head, tail);
+			final QIndex idx = readIndex((int) cur);
+			if ((ip >= idx.minIP) && (ip <= idx.maxIP)) {
+				return idx;
+			}
+			if ((cur == head) || (cur == tail)) {
+				return idx;
+			}
+			if (ip < idx.minIP) {
+				tail = cur;
+			} else if (ip > idx.maxIP) {
+				head = cur;
+			} else {
+				return idx;
+			}
+		}
+		return null;
+	}",https://www.github.com/jarod/qqwry-java/commit/6cc883f9d0c9d2776230809d8d9890e7c445ff0f,"	private QIndex searchIndex(final long ip) {
+		long head = indexHead;
+		long tail = indexTail;
+		while (tail > head) {
+			final long cur = getMiddleOffset(head, tail);
+			final QIndex idx = readIndex((int) cur);
+			if ((ip >= idx.minIP) && (ip <= idx.maxIP)) {
+				return idx;
+			}
+			if ((cur == head) || (cur == tail)) {
+				return idx;
+			}
+			if (ip < idx.minIP) {
+				tail = cur;
+			} else if (ip > idx.maxIP) {
+				head = cur;
+			} else {
+				return idx;
+			}
+		}
+		return null;
+	}
+","['\t', 'private', ' ', 'QIndex', ' ', 'searchIndex', '(', 'final', ' ', 'long', ' ', 'ip', ')', ' ', '{', '\n', '\t\t', 'long', ' ', 'head', ' ', '=', ' ', 'indexHead', ';', '\n', '\t\t', 'long', ' ', 'tail', ' ', '=', ' ', 'indexTail', ';', '\n', '\t\t', 'while', ' ', '(', 'tail', ' ', '>', ' ', 'head', ')', ' ', '{', '\n', '\t\t\t', 'final', ' ', 'long', ' ', 'cur', ' ', '=', ' ', 'getMiddleOffset', '(', 'head', ',', ' ', 'tail', ')', ';', '\n', '\t\t\t', 'final', ' ', 'QIndex', ' ', 'idx', ' ', '=', ' ', 'readIndex', '(', '(', 'int', ')', ' ', 'cur', ')', ';', '\n', '\t\t\t', 'if', ' ', '(', '(', 'ip', ' ', '>', '=', ' ', 'idx', '.', 'minIP', ')', ' ', '&', '&', ' ', '(', 'ip', ' ', '<', '=', ' ', 'idx', '.', 'maxIP', ')', ')', ' ', '{', '\n', '\t\t\t\t', 'return', ' ', 'idx', ';', '\n', '\t\t\t', '}', '\n', '\t\t\t', 'if', ' ', '(', '(', 'cur', ' ', '=', '=', ' ', 'head', ')', ' ', '|', '|', ' ', '(', 'cur', ' ', '=', '=', ' ', 'tail', ')', ')', ' ', '{', '\n', '\t\t\t\t', 'return', ' ', 'idx', ';', '\n', '\t\t\t', '}', '\n', '\t\t\t', 'if', ' ', '(', 'ip', ' ', '<', ' ', 'idx', '.', 'minIP', ')', ' ', '{', '\n', '\t\t\t\t', 'tail', ' ', '=', ' ', 'cur', ';', '\n', '\t\t\t', '}', ' ', 'else', ' ', 'if', ' ', '(', 'ip', ' ', '>', ' ', 'idx', '.', 'maxIP', ')', ' ', '{', '\n', '\t\t\t\t', 'head', ' ', '=', ' ', 'cur', ';', '\n', '\t\t\t', '}', ' ', 'else', ' ', '{', '\n', '\t\t\t\t', 'return', ' ', 'idx', ';', '\n', '\t\t\t', '}', '\n', '\t\t', '}', '\n', '\t\t', 'return', ' ', 'null', ';', '\n', '\t', '}', '\n']"
+master,6cc883f9d0c9d2776230809d8d9890e7c445ff0f,QQWryTest.java,setUpBeforeClass,"	public static void setUpBeforeClass() throws Exception {
+		qqwry = new QQWry();
+	}",https://www.github.com/jarod/qqwry-java/commit/6cc883f9d0c9d2776230809d8d9890e7c445ff0f,"	public static void setUpBeforeClass() throws Exception {
+		qqwry = new QQWry();
+	}
+","['\t', 'public', ' ', 'static', ' ', 'void', ' ', 'setUpBeforeClass', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '\t\t', 'qqwry', ' ', '=', ' ', 'new', ' ', 'QQWry', '(', ')', ';', '\n', '\t', '}', '\n']"
+master,9c645019863a373a2a7bc17e9d5ef64aa6d185f1,QQWry.java,readString,"	private WryString readString(final int offset) {
+		int i = 0;
+		byte[] buf = new byte[128];
+		for (;; i++) {
+			final byte b = data[offset + i];
+			if (STRING_END == b) {
+				break;
+			}
+			buf[i] = b;
+		}
+		try {
+			return new WryString(new String(buf, 0, i, ""GB18030""), i + 1);",https://www.github.com/jarod/qqwry-java/commit/9c645019863a373a2a7bc17e9d5ef64aa6d185f1,"	private WryString readString(final int offset) {
+		int i = 0;
+		byte[] buf = new byte[128];
+		for (;; i++) {
+			final byte b = data[offset + i];
+			if (STRING_END == b) {
+				break;
+			}
+			buf[i] = b;
+		}
+		try {
+			return new WryString(new String(buf, 0, i, ""GB18030""), i + 1);
+","['\t', 'private', ' ', 'WryString', ' ', 'readString', '(', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', '\n', '\t\t', 'byte', '[', ']', ' ', 'buf', ' ', '=', ' ', 'new', ' ', 'byte', '[', '128', ']', ';', '\n', '\t\t', 'for', ' ', '(', ';', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '\t\t\t', 'final', ' ', 'byte', ' ', 'b', ' ', '=', ' ', 'data', '[', 'offset', ' ', '+', ' ', 'i', ']', ';', '\n', '\t\t\t', 'if', ' ', '(', 'STRING_END', ' ', '=', '=', ' ', 'b', ')', ' ', '{', '\n', '\t\t\t\t', 'break', ';', '\n', '\t\t\t', '}', '\n', '\t\t\t', 'buf', '[', 'i', ']', ' ', '=', ' ', 'b', ';', '\n', '\t\t', '}', '\n', '\t\t', 'try', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'new', ' ', 'WryString', '(', 'new', ' ', 'String', '(', 'buf', ',', ' ', '0', ',', ' ', 'i', ',', ' ', '""', 'GB18030', '""', ')', ',', ' ', 'i', ' ', '+', ' ', '1', ')', ';', '\n']"
+master,db148779331826e4040cfaf2aab80a734629c95b,QQWry.java,readString,"	private QString readString(final int offset) {
+		int i = 0;
+		final byte[] buf = new byte[128];
+		for (;; i++) {
+			final byte b = data[offset + i];
+			if (STRING_END == b) {
+				break;
+			}
+			buf[i] = b;
+		}
+		try {
+			return new QString(new String(buf, 0, i, ""GB18030""), i + 1);",https://www.github.com/jarod/qqwry-java/commit/db148779331826e4040cfaf2aab80a734629c95b,"	private QString readString(final int offset) {
+		int i = 0;
+		final byte[] buf = new byte[128];
+		for (;; i++) {
+			final byte b = data[offset + i];
+			if (STRING_END == b) {
+				break;
+			}
+			buf[i] = b;
+		}
+		try {
+			return new QString(new String(buf, 0, i, ""GB18030""), i + 1);
+","['\t', 'private', ' ', 'QString', ' ', 'readString', '(', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', '\n', '\t\t', 'final', ' ', 'byte', '[', ']', ' ', 'buf', ' ', '=', ' ', 'new', ' ', 'byte', '[', '128', ']', ';', '\n', '\t\t', 'for', ' ', '(', ';', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '\t\t\t', 'final', ' ', 'byte', ' ', 'b', ' ', '=', ' ', 'data', '[', 'offset', ' ', '+', ' ', 'i', ']', ';', '\n', '\t\t\t', 'if', ' ', '(', 'STRING_END', ' ', '=', '=', ' ', 'b', ')', ' ', '{', '\n', '\t\t\t\t', 'break', ';', '\n', '\t\t\t', '}', '\n', '\t\t\t', 'buf', '[', 'i', ']', ' ', '=', ' ', 'b', ';', '\n', '\t\t', '}', '\n', '\t\t', 'try', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'new', ' ', 'QString', '(', 'new', ' ', 'String', '(', 'buf', ',', ' ', '0', ',', ' ', 'i', ',', ' ', '""', 'GB18030', '""', ')', ',', ' ', 'i', ' ', '+', ' ', '1', ')', ';', '\n']"
+master,3798f848279beb323c0a454e1c78a2bda816c05c,QQWryTest.java,testParseDatabaseVersion,"	public void testParseDatabaseVersion() {
+		String dbVer = qqwry.parseDatabaseVersion();
+		System.out.println(""qqwry.dat version="" + dbVer);
+		assertTrue(dbVer != null && !dbVer.isEmpty());
+		String[] parts = dbVer.split(""\\."");
+		assertEquals(3, parts.length);
+	}",https://www.github.com/jarod/qqwry-java/commit/3798f848279beb323c0a454e1c78a2bda816c05c,"	public void testParseDatabaseVersion() {
+		String dbVer = qqwry.parseDatabaseVersion();
+		System.out.println(""qqwry.dat version="" + dbVer);
+		assertTrue(dbVer != null && !dbVer.isEmpty());
+		String[] parts = dbVer.split(""\\."");
+		assertEquals(3, parts.length);
+	}
+","['\t', 'public', ' ', 'void', ' ', 'testParseDatabaseVersion', '(', ')', ' ', '{', '\n', '\t\t', 'String', ' ', 'dbVer', ' ', '=', ' ', 'qqwry', '.', 'parseDatabaseVersion', '(', ')', ';', '\n', '\t\t', 'System', '.', 'out', '.', 'println', '(', '""', 'qqwry.dat version=', '""', ' ', '+', ' ', 'dbVer', ')', ';', '\n', '\t\t', 'assertTrue', '(', 'dbVer', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', '!', 'dbVer', '.', 'isEmpty', '(', ')', ')', ';', '\n', '\t\t', 'String', '[', ']', ' ', 'parts', ' ', '=', ' ', 'dbVer', '.', 'split', '(', '""', '\\\\', '.', '""', ')', ';', '\n', '\t\t', 'assertEquals', '(', '3', ',', ' ', 'parts', '.', 'length', ')', ';', '\n', '\t', '}', '\n']"
+master,256beb404044d800420e53f4208c37cdb9a196ff,QQWry.java,readString,"	private QString readString(final int offset) {
+		int i = 0;
+
+		for (;; i++) {
+			final byte b = data[offset + i];
+			if (STRING_END == b) {
+				break;
+			}
+		}
+		try {
+			return new QString(new String(data, offset, i, ""GB18030""), i + 1);",https://www.github.com/jarod/qqwry-java/commit/256beb404044d800420e53f4208c37cdb9a196ff,"	private QString readString(final int offset) {
+		int i = 0;
+
+		for (;; i++) {
+			final byte b = data[offset + i];
+			if (STRING_END == b) {
+				break;
+			}
+		}
+		try {
+			return new QString(new String(data, offset, i, ""GB18030""), i + 1);
+","['\t', 'private', ' ', 'QString', ' ', 'readString', '(', 'final', ' ', 'int', ' ', 'offset', ')', ' ', '{', '\n', '\t\t', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', '\n', '\n', '\t\t', 'for', ' ', '(', ';', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '\t\t\t', 'final', ' ', 'byte', ' ', 'b', ' ', '=', ' ', 'data', '[', 'offset', ' ', '+', ' ', 'i', ']', ';', '\n', '\t\t\t', 'if', ' ', '(', 'STRING_END', ' ', '=', '=', ' ', 'b', ')', ' ', '{', '\n', '\t\t\t\t', 'break', ';', '\n', '\t\t\t', '}', '\n', '\t\t', '}', '\n', '\t\t', 'try', ' ', '{', '\n', '\t\t\t', 'return', ' ', 'new', ' ', 'QString', '(', 'new', ' ', 'String', '(', 'data', ',', ' ', 'offset', ',', ' ', 'i', ',', ' ', '""', 'GB18030', '""', ')', ',', ' ', 'i', ' ', '+', ' ', '1', ')', ';', '\n']"

@@ -1,0 +1,197 @@
+Branch Name,Commit Hash,File Name,Method Name,Method Code,Commit Link,Method Code No Comments,Tokens
+master,3c6495cc5b37ad283ce1001b53d51c46556a13ee,MyChatGptApplication.java,main,"    public static void main(String[] args) {
+        SpringApplication.run(MyChatGptApplication.class, args);
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/3c6495cc5b37ad283ce1001b53d51c46556a13ee,"    public static void main(String[] args) {
+        SpringApplication.run(MyChatGptApplication.class, args);
+    }
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'SpringApplication', '.', 'run', '(', 'MyChatGptApplication', '.', 'class', ',', ' ', 'args', ')', ';', '\n', '    ', '}', '\n']"
+master,3c6495cc5b37ad283ce1001b53d51c46556a13ee,MessageEventHandler.java,onMessage,"    public void onMessage(@NotNull MessageEvent event) {
+        ChatBO chatBO = new ChatBO();
+        chatBO.setSessionId(String.valueOf(event.getSender().getId()));
+        chatBO.setQuestion(event.getMessage().contentToString());
+        event.getSubject().sendMessage(interactService.chat(chatBO));
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/3c6495cc5b37ad283ce1001b53d51c46556a13ee,"    public void onMessage(@NotNull MessageEvent event) {
+        ChatBO chatBO = new ChatBO();
+        chatBO.setSessionId(String.valueOf(event.getSender().getId()));
+        chatBO.setQuestion(event.getMessage().contentToString());
+        event.getSubject().sendMessage(interactService.chat(chatBO));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'onMessage', '(', '@NotNull', ' ', 'MessageEvent', ' ', 'event', ')', ' ', '{', '\n', '        ', 'ChatBO', ' ', 'chatBO', ' ', '=', ' ', 'new', ' ', 'ChatBO', '(', ')', ';', '\n', '        ', 'chatBO', '.', 'setSessionId', '(', 'String', '.', 'valueOf', '(', 'event', '.', 'getSender', '(', ')', '.', 'getId', '(', ')', ')', ')', ';', '\n', '        ', 'chatBO', '.', 'setQuestion', '(', 'event', '.', 'getMessage', '(', ')', '.', 'contentToString', '(', ')', ')', ';', '\n', '        ', 'event', '.', 'getSubject', '(', ')', '.', 'sendMessage', '(', 'interactService', '.', 'chat', '(', 'chatBO', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,008b87b44d364b90f5d5ad868c49d550e6a05233,BotUtil.java,updatePrompt,"    public static void updatePrompt(String sessionId, String prompt){
+        PROMPT_MAP.put(sessionId, prompt);
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/008b87b44d364b90f5d5ad868c49d550e6a05233,"    public static void updatePrompt(String sessionId, String prompt){
+        PROMPT_MAP.put(sessionId, prompt);
+    }
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'updatePrompt', '(', 'String', ' ', 'sessionId', ',', ' ', 'String', ' ', 'prompt', ')', '{', '\n', '        ', 'PROMPT_MAP', '.', 'put', '(', 'sessionId', ',', ' ', 'prompt', ')', ';', '\n', '    ', '}', '\n']"
+master,c822c90ad11cee9eb0e29e72848ae0b451ede63d,BotUtil.java,resetPrompt,"    public static void resetPrompt(String sessionId){
+        PROMPT_MAP.remove(sessionId);
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/c822c90ad11cee9eb0e29e72848ae0b451ede63d,"    public static void resetPrompt(String sessionId){
+        PROMPT_MAP.remove(sessionId);
+    }
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'resetPrompt', '(', 'String', ' ', 'sessionId', ')', '{', '\n', '        ', 'PROMPT_MAP', '.', 'remove', '(', 'sessionId', ')', ';', '\n', '    ', '}', '\n']"
+master,72049532ca21be7a3e7096ded05515e79c819791,InteractService.java,chat,"    String chat(ChatBO chatBO) throws ChatException;
+}",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/72049532ca21be7a3e7096ded05515e79c819791,"    String chat(ChatBO chatBO) throws ChatException;
+}
+","['    ', 'String', ' ', 'chat', '(', 'ChatBO', ' ', 'chatBO', ')', ' ', 'throws', ' ', 'ChatException', ';', '\n', '}', '\n']"
+master,72049532ca21be7a3e7096ded05515e79c819791,BotUtil.java,updatePrompt,"    public static void updatePrompt(String sessionId, String prompt, String answer){
+        if (PROMPT_MAP.containsKey(sessionId)){
+            PROMPT_MAP.get(sessionId).offer(""User: "" + prompt + ""\nChatGPT: "" + answer);",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/72049532ca21be7a3e7096ded05515e79c819791,"    public static void updatePrompt(String sessionId, String prompt, String answer){
+        if (PROMPT_MAP.containsKey(sessionId)){
+            PROMPT_MAP.get(sessionId).offer(""User: "" + prompt + ""\nChatGPT: "" + answer);
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'updatePrompt', '(', 'String', ' ', 'sessionId', ',', ' ', 'String', ' ', 'prompt', ',', ' ', 'String', ' ', 'answer', ')', '{', '\n', '        ', 'if', ' ', '(', 'PROMPT_MAP', '.', 'containsKey', '(', 'sessionId', ')', ')', '{', '\n', '            ', 'PROMPT_MAP', '.', 'get', '(', 'sessionId', ')', '.', 'offer', '(', '""', 'User: ', '""', ' ', '+', ' ', 'prompt', ' ', '+', ' ', '""', '\\', 'nChatGPT: ', '""', ' ', '+', ' ', 'answer', ')', ';', '\n']"
+master,c55b65c7ffd9d3b4fee8ea2f4a8499993167508e,BotUtil.java,updatePrompt,"    public static void updatePrompt(String sessionId, List<ChatMessage> promptList) {
+        PROMPT_MAP.put(sessionId, promptList);
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/c55b65c7ffd9d3b4fee8ea2f4a8499993167508e,"    public static void updatePrompt(String sessionId, List<ChatMessage> promptList) {
+        PROMPT_MAP.put(sessionId, promptList);
+    }
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'updatePrompt', '(', 'String', ' ', 'sessionId', ',', ' ', 'List', '<', 'ChatMessage', '>', ' ', 'promptList', ')', ' ', '{', '\n', '        ', 'PROMPT_MAP', '.', 'put', '(', 'sessionId', ',', ' ', 'promptList', ')', ';', '\n', '    ', '}', '\n']"
+master,c55b65c7ffd9d3b4fee8ea2f4a8499993167508e,BotUtil.java,resetPrompt,"    public static void resetPrompt(String sessionId) {
+        PROMPT_MAP.remove(sessionId);
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/c55b65c7ffd9d3b4fee8ea2f4a8499993167508e,"    public static void resetPrompt(String sessionId) {
+        PROMPT_MAP.remove(sessionId);
+    }
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'resetPrompt', '(', 'String', ' ', 'sessionId', ')', ' ', '{', '\n', '        ', 'PROMPT_MAP', '.', 'remove', '(', 'sessionId', ')', ';', '\n', '    ', '}', '\n']"
+master,bab3bedc6432f38b239029ec446c7e3f6f267c93,WechatMessageHandler.java,picMsgHandle,"    public String picMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/bab3bedc6432f38b239029ec446c7e3f6f267c93,"    public String picMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }
+","['    ', 'public', ' ', 'String', ' ', 'picMsgHandle', '(', 'BaseMsg', ' ', 'baseMsg', ')', ' ', '{', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+master,bab3bedc6432f38b239029ec446c7e3f6f267c93,WechatMessageHandler.java,voiceMsgHandle,"    public String voiceMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/bab3bedc6432f38b239029ec446c7e3f6f267c93,"    public String voiceMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }
+","['    ', 'public', ' ', 'String', ' ', 'voiceMsgHandle', '(', 'BaseMsg', ' ', 'baseMsg', ')', ' ', '{', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+master,bab3bedc6432f38b239029ec446c7e3f6f267c93,WechatMessageHandler.java,viedoMsgHandle,"    public String viedoMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/bab3bedc6432f38b239029ec446c7e3f6f267c93,"    public String viedoMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }
+","['    ', 'public', ' ', 'String', ' ', 'viedoMsgHandle', '(', 'BaseMsg', ' ', 'baseMsg', ')', ' ', '{', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+master,bab3bedc6432f38b239029ec446c7e3f6f267c93,WechatMessageHandler.java,nameCardMsgHandle,"    public String nameCardMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/bab3bedc6432f38b239029ec446c7e3f6f267c93,"    public String nameCardMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }
+","['    ', 'public', ' ', 'String', ' ', 'nameCardMsgHandle', '(', 'BaseMsg', ' ', 'baseMsg', ')', ' ', '{', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+master,bab3bedc6432f38b239029ec446c7e3f6f267c93,WechatMessageHandler.java,sysMsgHandle,"    public void sysMsgHandle(BaseMsg baseMsg) {
+
+    }
+
+    @Override
+    public String verifyAddFriendMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }
+
+    @Override
+    public String mediaMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }
+}",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/bab3bedc6432f38b239029ec446c7e3f6f267c93,"    public void sysMsgHandle(BaseMsg baseMsg) {
+
+    }
+
+    @Override
+    public String verifyAddFriendMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }
+
+    @Override
+    public String mediaMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }
+}
+","['    ', 'public', ' ', 'void', ' ', 'sysMsgHandle', '(', 'BaseMsg', ' ', 'baseMsg', ')', ' ', '{', '\n', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'String', ' ', 'verifyAddFriendMsgHandle', '(', 'BaseMsg', ' ', 'baseMsg', ')', ' ', '{', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'String', ' ', 'mediaMsgHandle', '(', 'BaseMsg', ' ', 'baseMsg', ')', ' ', '{', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '}', '\n']"
+master,bab3bedc6432f38b239029ec446c7e3f6f267c93,WechatMessageHandler.java,verifyAddFriendMsgHandle,"    public String verifyAddFriendMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/bab3bedc6432f38b239029ec446c7e3f6f267c93,"    public String verifyAddFriendMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }
+","['    ', 'public', ' ', 'String', ' ', 'verifyAddFriendMsgHandle', '(', 'BaseMsg', ' ', 'baseMsg', ')', ' ', '{', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+master,bab3bedc6432f38b239029ec446c7e3f6f267c93,WechatMessageHandler.java,mediaMsgHandle,"    public String mediaMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/bab3bedc6432f38b239029ec446c7e3f6f267c93,"    public String mediaMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }
+","['    ', 'public', ' ', 'String', ' ', 'mediaMsgHandle', '(', 'BaseMsg', ' ', 'baseMsg', ')', ' ', '{', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+master,4d2180bfb338d5ec07bb43b2516f46120f8595c3,BotUtil.java,deleteFirstPrompt,"    public static void deleteFirstPrompt(String sessionId) {
+        if (PROMPT_MAP.containsKey(sessionId)){
+            List<ChatMessage> promptList = PROMPT_MAP.get(sessionId);",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/4d2180bfb338d5ec07bb43b2516f46120f8595c3,"    public static void deleteFirstPrompt(String sessionId) {
+        if (PROMPT_MAP.containsKey(sessionId)){
+            List<ChatMessage> promptList = PROMPT_MAP.get(sessionId);
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'deleteFirstPrompt', '(', 'String', ' ', 'sessionId', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'PROMPT_MAP', '.', 'containsKey', '(', 'sessionId', ')', ')', '{', '\n', '            ', 'List', '<', 'ChatMessage', '>', ' ', 'promptList', ' ', '=', ' ', 'PROMPT_MAP', '.', 'get', '(', 'sessionId', ')', ';', '\n']"
+master,58a81d8bbca8707e0eeb31e9a20fefbc30091ff2,QqMessageHandler.java,onFriendMessageEvent,"    public void onFriendMessageEvent(FriendMessageEvent event){
+        ChatBO chatBO = new ChatBO();
+        chatBO.setSessionId(String.valueOf(event.getSubject().getId()));
+        String prompt = event.getMessage().contentToString().trim();
+        response(event, chatBO, prompt);
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/58a81d8bbca8707e0eeb31e9a20fefbc30091ff2,"    public void onFriendMessageEvent(FriendMessageEvent event){
+        ChatBO chatBO = new ChatBO();
+        chatBO.setSessionId(String.valueOf(event.getSubject().getId()));
+        String prompt = event.getMessage().contentToString().trim();
+        response(event, chatBO, prompt);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'onFriendMessageEvent', '(', 'FriendMessageEvent', ' ', 'event', ')', '{', '\n', '        ', 'ChatBO', ' ', 'chatBO', ' ', '=', ' ', 'new', ' ', 'ChatBO', '(', ')', ';', '\n', '        ', 'chatBO', '.', 'setSessionId', '(', 'String', '.', 'valueOf', '(', 'event', '.', 'getSubject', '(', ')', '.', 'getId', '(', ')', ')', ')', ';', '\n', '        ', 'String', ' ', 'prompt', ' ', '=', ' ', 'event', '.', 'getMessage', '(', ')', '.', 'contentToString', '(', ')', '.', 'trim', '(', ')', ';', '\n', '        ', 'response', '(', 'event', ',', ' ', 'chatBO', ',', ' ', 'prompt', ')', ';', '\n', '    ', '}', '\n']"
+master,3ee354bda295f5e549b829493ce399e37a0d266d,Tokenizer.java,countMessageTokens,"    public int countMessageTokens(String modelName, List<ChatMessage> messages) {
+        return countMessageTokens(getModelTypeByName(modelName), messages);
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/3ee354bda295f5e549b829493ce399e37a0d266d,"    public int countMessageTokens(String modelName, List<ChatMessage> messages) {
+        return countMessageTokens(getModelTypeByName(modelName), messages);
+    }
+","['    ', 'public', ' ', 'int', ' ', 'countMessageTokens', '(', 'String', ' ', 'modelName', ',', ' ', 'List', '<', 'ChatMessage', '>', ' ', 'messages', ')', ' ', '{', '\n', '        ', 'return', ' ', 'countMessageTokens', '(', 'getModelTypeByName', '(', 'modelName', ')', ',', ' ', 'messages', ')', ';', '\n', '    ', '}', '\n']"
+master,774b680a33ecbeabce816d0ec5e84c6b40bcac80,WechatMessageHandler.java,sysMsgHandle,"    public void sysMsgHandle(BaseMsg baseMsg) {
+    }
+
+    @Override
+    public String verifyAddFriendMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }
+
+    @Override
+    public String mediaMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }
+}",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/774b680a33ecbeabce816d0ec5e84c6b40bcac80,"    public void sysMsgHandle(BaseMsg baseMsg) {
+    }
+
+    @Override
+    public String verifyAddFriendMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }
+
+    @Override
+    public String mediaMsgHandle(BaseMsg baseMsg) {
+        return null;
+    }
+}
+","['    ', 'public', ' ', 'void', ' ', 'sysMsgHandle', '(', 'BaseMsg', ' ', 'baseMsg', ')', ' ', '{', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'String', ' ', 'verifyAddFriendMsgHandle', '(', 'BaseMsg', ' ', 'baseMsg', ')', ' ', '{', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'String', ' ', 'mediaMsgHandle', '(', 'BaseMsg', ' ', 'baseMsg', ')', ' ', '{', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '}', '\n']"
+master,774b680a33ecbeabce816d0ec5e84c6b40bcac80,BotUtil.java,isPromptEmpty,"    public boolean isPromptEmpty(String sessionId){
+        if (!PROMPT_MAP.containsKey(sessionId)){
+            return true;
+        }
+        return PROMPT_MAP.get(sessionId).size() == BASIC_PROMPT_LIST.size();
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/774b680a33ecbeabce816d0ec5e84c6b40bcac80,"    public boolean isPromptEmpty(String sessionId){
+        if (!PROMPT_MAP.containsKey(sessionId)){
+            return true;
+        }
+        return PROMPT_MAP.get(sessionId).size() == BASIC_PROMPT_LIST.size();
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isPromptEmpty', '(', 'String', ' ', 'sessionId', ')', '{', '\n', '        ', 'if', ' ', '(', '!', 'PROMPT_MAP', '.', 'containsKey', '(', 'sessionId', ')', ')', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'PROMPT_MAP', '.', 'get', '(', 'sessionId', ')', '.', 'size', '(', ')', ' ', '=', '=', ' ', 'BASIC_PROMPT_LIST', '.', 'size', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,774b680a33ecbeabce816d0ec5e84c6b40bcac80,BotUtil.java,resetPrompt,"    public void resetPrompt(String sessionId) {
+        PROMPT_MAP.remove(sessionId);
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/774b680a33ecbeabce816d0ec5e84c6b40bcac80,"    public void resetPrompt(String sessionId) {
+        PROMPT_MAP.remove(sessionId);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'resetPrompt', '(', 'String', ' ', 'sessionId', ')', ' ', '{', '\n', '        ', 'PROMPT_MAP', '.', 'remove', '(', 'sessionId', ')', ';', '\n', '    ', '}', '\n']"
+master,d976a0e36359797eadf1287434e2222e932cb8b9,QqMessageHandler.java,onFriendMessageEvent,"    public void onFriendMessageEvent(FriendMessageEvent event) {
+        ChatBO chatBO = new ChatBO();
+        chatBO.setSessionId(String.valueOf(event.getSubject().getId()));
+        String prompt = event.getMessage().contentToString().trim();
+        response(event, chatBO, prompt);
+    }",https://www.github.com/ashinnotfound/chatgpt-yourchatrobot/commit/d976a0e36359797eadf1287434e2222e932cb8b9,"    public void onFriendMessageEvent(FriendMessageEvent event) {
+        ChatBO chatBO = new ChatBO();
+        chatBO.setSessionId(String.valueOf(event.getSubject().getId()));
+        String prompt = event.getMessage().contentToString().trim();
+        response(event, chatBO, prompt);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'onFriendMessageEvent', '(', 'FriendMessageEvent', ' ', 'event', ')', ' ', '{', '\n', '        ', 'ChatBO', ' ', 'chatBO', ' ', '=', ' ', 'new', ' ', 'ChatBO', '(', ')', ';', '\n', '        ', 'chatBO', '.', 'setSessionId', '(', 'String', '.', 'valueOf', '(', 'event', '.', 'getSubject', '(', ')', '.', 'getId', '(', ')', ')', ')', ';', '\n', '        ', 'String', ' ', 'prompt', ' ', '=', ' ', 'event', '.', 'getMessage', '(', ')', '.', 'contentToString', '(', ')', '.', 'trim', '(', ')', ';', '\n', '        ', 'response', '(', 'event', ',', ' ', 'chatBO', ',', ' ', 'prompt', ')', ';', '\n', '    ', '}', '\n']"

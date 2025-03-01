@@ -1,0 +1,256 @@
+Branch Name,Commit Hash,File Name,Method Name,Method Code,Commit Link,Method Code No Comments,Tokens
+master,2af516cd89e00b7a806d7baeb28b869ec05ef329,ChatgptAutoConfiguration.java,chatgptService,"    public ChatgptService chatgptService(){
+        return new DefaultChatgptService(chatgptProperties);
+    }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/2af516cd89e00b7a806d7baeb28b869ec05ef329,"    public ChatgptService chatgptService(){
+        return new DefaultChatgptService(chatgptProperties);
+    }
+","['    ', 'public', ' ', 'ChatgptService', ' ', 'chatgptService', '(', ')', '{', '\n', '        ', 'return', ' ', 'new', ' ', 'DefaultChatgptService', '(', 'chatgptProperties', ')', ';', '\n', '    ', '}', '\n']"
+master,2af516cd89e00b7a806d7baeb28b869ec05ef329,ChatgptService.java,sendMessage,"    String sendMessage(String message);
+
+    ChatResponse sendChatRequest(ChatRequest request);
+
+}",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/2af516cd89e00b7a806d7baeb28b869ec05ef329,"    String sendMessage(String message);
+
+    ChatResponse sendChatRequest(ChatRequest request);
+
+}
+","['    ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ';', '\n', '\n', '    ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'request', ')', ';', '\n', '\n', '}', '\n']"
+master,2af516cd89e00b7a806d7baeb28b869ec05ef329,ChatgptService.java,sendChatRequest,"    ChatResponse sendChatRequest(ChatRequest request);
+
+}",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/2af516cd89e00b7a806d7baeb28b869ec05ef329,"    ChatResponse sendChatRequest(ChatRequest request);
+
+}
+","['    ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'request', ')', ';', '\n', '\n', '}', '\n']"
+master,2af516cd89e00b7a806d7baeb28b869ec05ef329,DefaultChatgptService.java,sendMessage,"    public String sendMessage(String message) {
+        ChatRequest chatRequest = new ChatRequest(chatgptProperties.getModel(), message,
+                chatgptProperties.getMaxTokens(), chatgptProperties.getTemperature(), chatgptProperties.getTopP());
+        ChatResponse chatResponse = this.getResponse(this.buildHttpEntity(chatRequest));
+        try {
+            return chatResponse.getChoices().get(0).getText();",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/2af516cd89e00b7a806d7baeb28b869ec05ef329,"    public String sendMessage(String message) {
+        ChatRequest chatRequest = new ChatRequest(chatgptProperties.getModel(), message,
+                chatgptProperties.getMaxTokens(), chatgptProperties.getTemperature(), chatgptProperties.getTopP());
+        ChatResponse chatResponse = this.getResponse(this.buildHttpEntity(chatRequest));
+        try {
+            return chatResponse.getChoices().get(0).getText();
+","['    ', 'public', ' ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ' ', '{', '\n', '        ', 'ChatRequest', ' ', 'chatRequest', ' ', '=', ' ', 'new', ' ', 'ChatRequest', '(', 'chatgptProperties', '.', 'getModel', '(', ')', ',', ' ', 'message', ',', '\n', '                ', 'chatgptProperties', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'ChatResponse', ' ', 'chatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'chatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getText', '(', ')', ';', '\n']"
+master,2af516cd89e00b7a806d7baeb28b869ec05ef329,DefaultChatgptService.java,sendChatRequest,"    public ChatResponse sendChatRequest(ChatRequest chatRequest) {
+        return this.getResponse(this.buildHttpEntity(chatRequest));
+    }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/2af516cd89e00b7a806d7baeb28b869ec05ef329,"    public ChatResponse sendChatRequest(ChatRequest chatRequest) {
+        return this.getResponse(this.buildHttpEntity(chatRequest));
+    }
+","['    ', 'public', ' ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'chatRequest', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,2af516cd89e00b7a806d7baeb28b869ec05ef329,DefaultChatgptService.java,buildHttpEntity,"    public HttpEntity<ChatRequest> buildHttpEntity(ChatRequest chatRequest) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.parseMediaType(""application/json; charset=UTF-8""));
+        headers.add(""Authorization"", AUTHORIZATION);
+        return new HttpEntity<>(chatRequest, headers);
+    }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/2af516cd89e00b7a806d7baeb28b869ec05ef329,"    public HttpEntity<ChatRequest> buildHttpEntity(ChatRequest chatRequest) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.parseMediaType(""application/json; charset=UTF-8""));
+        headers.add(""Authorization"", AUTHORIZATION);
+        return new HttpEntity<>(chatRequest, headers);
+    }
+","['    ', 'public', ' ', 'HttpEntity', '<', 'ChatRequest', '>', ' ', 'buildHttpEntity', '(', 'ChatRequest', ' ', 'chatRequest', ')', ' ', '{', '\n', '        ', 'HttpHeaders', ' ', 'headers', ' ', '=', ' ', 'new', ' ', 'HttpHeaders', '(', ')', ';', '\n', '        ', 'headers', '.', 'setContentType', '(', 'MediaType', '.', 'parseMediaType', '(', '""', 'application/json; charset=UTF-8', '""', ')', ')', ';', '\n', '        ', 'headers', '.', 'add', '(', '""', 'Authorization', '""', ',', ' ', 'AUTHORIZATION', ')', ';', '\n', '        ', 'return', ' ', 'new', ' ', 'HttpEntity', '<', '>', '(', 'chatRequest', ',', ' ', 'headers', ')', ';', '\n', '    ', '}', '\n']"
+master,1523178d865784ad3a509283f58f19ae29b07130,ChatgptService.java,sendMessage,"    String sendMessage(String message);
+
+    ChatResponse sendChatRequest(ChatRequest request);
+
+    String multiChat(List<MultiChatMessage> messages);
+
+    MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
+}",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/1523178d865784ad3a509283f58f19ae29b07130,"    String sendMessage(String message);
+
+    ChatResponse sendChatRequest(ChatRequest request);
+
+    String multiChat(List<MultiChatMessage> messages);
+
+    MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
+}
+","['    ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ';', '\n', '\n', '    ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'request', ')', ';', '\n', '\n', '    ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ';', '\n', '\n', '    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '}', '\n']"
+master,1523178d865784ad3a509283f58f19ae29b07130,ChatgptService.java,sendChatRequest,"    ChatResponse sendChatRequest(ChatRequest request);
+
+    String multiChat(List<MultiChatMessage> messages);
+
+    MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
+}",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/1523178d865784ad3a509283f58f19ae29b07130,"    ChatResponse sendChatRequest(ChatRequest request);
+
+    String multiChat(List<MultiChatMessage> messages);
+
+    MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
+}
+","['    ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'request', ')', ';', '\n', '\n', '    ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ';', '\n', '\n', '    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '}', '\n']"
+master,1523178d865784ad3a509283f58f19ae29b07130,ChatgptService.java,multiChat,"    String multiChat(List<MultiChatMessage> messages);
+
+    MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
+}",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/1523178d865784ad3a509283f58f19ae29b07130,"    String multiChat(List<MultiChatMessage> messages);
+
+    MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
+}
+","['    ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ';', '\n', '\n', '    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '}', '\n']"
+master,1523178d865784ad3a509283f58f19ae29b07130,ChatgptService.java,multiChatRequest,"    MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
+}",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/1523178d865784ad3a509283f58f19ae29b07130,"    MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
+}
+","['    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '}', '\n']"
+master,1523178d865784ad3a509283f58f19ae29b07130,DefaultChatgptService.java,sendMessage,"    public String sendMessage(String message) {
+        ChatRequest chatRequest = new ChatRequest(chatgptProperties.getModel(), message,
+                chatgptProperties.getMaxTokens(), chatgptProperties.getTemperature(), chatgptProperties.getTopP());
+        ChatResponse chatResponse = this.getResponse(this.buildHttpEntity(chatRequest), ChatResponse.class, chatgptProperties.getUrl());
+        try {
+            return chatResponse.getChoices().get(0).getText();",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/1523178d865784ad3a509283f58f19ae29b07130,"    public String sendMessage(String message) {
+        ChatRequest chatRequest = new ChatRequest(chatgptProperties.getModel(), message,
+                chatgptProperties.getMaxTokens(), chatgptProperties.getTemperature(), chatgptProperties.getTopP());
+        ChatResponse chatResponse = this.getResponse(this.buildHttpEntity(chatRequest), ChatResponse.class, chatgptProperties.getUrl());
+        try {
+            return chatResponse.getChoices().get(0).getText();
+","['    ', 'public', ' ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ' ', '{', '\n', '        ', 'ChatRequest', ' ', 'chatRequest', ' ', '=', ' ', 'new', ' ', 'ChatRequest', '(', 'chatgptProperties', '.', 'getModel', '(', ')', ',', ' ', 'message', ',', '\n', '                ', 'chatgptProperties', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'ChatResponse', ' ', 'chatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ',', ' ', 'ChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'chatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getText', '(', ')', ';', '\n']"
+master,1523178d865784ad3a509283f58f19ae29b07130,DefaultChatgptService.java,sendChatRequest,"    public ChatResponse sendChatRequest(ChatRequest chatRequest) {
+        return this.getResponse(this.buildHttpEntity(chatRequest), ChatResponse.class, chatgptProperties.getUrl());
+    }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/1523178d865784ad3a509283f58f19ae29b07130,"    public ChatResponse sendChatRequest(ChatRequest chatRequest) {
+        return this.getResponse(this.buildHttpEntity(chatRequest), ChatResponse.class, chatgptProperties.getUrl());
+    }
+","['    ', 'public', ' ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'chatRequest', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ',', ' ', 'ChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getUrl', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,1523178d865784ad3a509283f58f19ae29b07130,DefaultChatgptService.java,multiChat,"    public String multiChat(List<MultiChatMessage> messages) {
+        MultiChatRequest multiChatRequest = new MultiChatRequest(chatgptProperties.getMulti().getModel(), messages,
+                chatgptProperties.getMulti().getMaxTokens(), chatgptProperties.getMulti().getTemperature(), chatgptProperties.getMulti().getTopP());
+        MultiChatResponse multiChatResponse = this.getResponse(this.buildHttpEntity(multiChatRequest), MultiChatResponse.class, chatgptProperties.getMulti().getUrl());
+        try {
+            return multiChatResponse.getChoices().get(0).getMessage().getContent();",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/1523178d865784ad3a509283f58f19ae29b07130,"    public String multiChat(List<MultiChatMessage> messages) {
+        MultiChatRequest multiChatRequest = new MultiChatRequest(chatgptProperties.getMulti().getModel(), messages,
+                chatgptProperties.getMulti().getMaxTokens(), chatgptProperties.getMulti().getTemperature(), chatgptProperties.getMulti().getTopP());
+        MultiChatResponse multiChatResponse = this.getResponse(this.buildHttpEntity(multiChatRequest), MultiChatResponse.class, chatgptProperties.getMulti().getUrl());
+        try {
+            return multiChatResponse.getChoices().get(0).getMessage().getContent();
+","['    ', 'public', ' ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ' ', '{', '\n', '        ', 'MultiChatRequest', ' ', 'multiChatRequest', ' ', '=', ' ', 'new', ' ', 'MultiChatRequest', '(', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getModel', '(', ')', ',', ' ', 'messages', ',', '\n', '                ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'MultiChatResponse', ' ', 'multiChatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'multiChatRequest', ')', ',', ' ', 'MultiChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'multiChatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getMessage', '(', ')', '.', 'getContent', '(', ')', ';', '\n']"
+master,1523178d865784ad3a509283f58f19ae29b07130,DefaultChatgptService.java,multiChatRequest,"    public MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest) {
+        return this.getResponse(this.buildHttpEntity(multiChatRequest), MultiChatResponse.class, chatgptProperties.getMulti().getUrl());
+    }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/1523178d865784ad3a509283f58f19ae29b07130,"    public MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest) {
+        return this.getResponse(this.buildHttpEntity(multiChatRequest), MultiChatResponse.class, chatgptProperties.getMulti().getUrl());
+    }
+","['    ', 'public', ' ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'multiChatRequest', ')', ',', ' ', 'MultiChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,1523178d865784ad3a509283f58f19ae29b07130,DefaultChatgptService.java,buildHttpEntity,"    protected <T> HttpEntity<?> buildHttpEntity(T request) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.parseMediaType(""application/json; charset=UTF-8""));
+        headers.add(""Authorization"", AUTHORIZATION);
+        return new HttpEntity<>(request, headers);
+    }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/1523178d865784ad3a509283f58f19ae29b07130,"    protected <T> HttpEntity<?> buildHttpEntity(T request) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.parseMediaType(""application/json; charset=UTF-8""));
+        headers.add(""Authorization"", AUTHORIZATION);
+        return new HttpEntity<>(request, headers);
+    }
+","['    ', 'protected', ' ', '<', 'T', '>', ' ', 'HttpEntity', '<', '?', '>', ' ', 'buildHttpEntity', '(', 'T', ' ', 'request', ')', ' ', '{', '\n', '        ', 'HttpHeaders', ' ', 'headers', ' ', '=', ' ', 'new', ' ', 'HttpHeaders', '(', ')', ';', '\n', '        ', 'headers', '.', 'setContentType', '(', 'MediaType', '.', 'parseMediaType', '(', '""', 'application/json; charset=UTF-8', '""', ')', ')', ';', '\n', '        ', 'headers', '.', 'add', '(', '""', 'Authorization', '""', ',', ' ', 'AUTHORIZATION', ')', ';', '\n', '        ', 'return', ' ', 'new', ' ', 'HttpEntity', '<', '>', '(', 'request', ',', ' ', 'headers', ')', ';', '\n', '    ', '}', '\n']"
+master,47c0552ced2defca25c00cc476dfb2c331a9696e,ChatgptService.java,multiChatRequest,"    MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
+
+    /**
+     * @param prompt A text description of the desired image(s). The maximum length is 1000 characters.
+     * @return generated image url
+     */
+    String imageGenerate(String prompt);
+
+    /**
+     * @param prompt A text description of the desired image(s). The maximum length is 1000 characters.
+     * @param n      The number of images to generate. Must be between 1 and 10.
+     * @param size   The size of the generated images. Must be one of ImageFormat.SMALL(""256x256""), ImageFormat.MEDIUM(""512x512""), ImageFormat.LARGE(""1024x1024"").
+     * @param format The format in which the generated images are returned. Must be one of ImageFormat.URL(""url""), ImageFormat.BASE64(""b64_json"").
+     * @return image url/base64 list
+     */
+    List<String> imageGenerate(String prompt, Integer n, ImageSize size, ImageFormat format);
+
+    ImageResponse imageGenerateRequest(ImageRequest imageRequest);
+
+}",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/47c0552ced2defca25c00cc476dfb2c331a9696e,"    MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
+
+    
+    String imageGenerate(String prompt);
+
+    
+    List<String> imageGenerate(String prompt, Integer n, ImageSize size, ImageFormat format);
+
+    ImageResponse imageGenerateRequest(ImageRequest imageRequest);
+
+}
+","['    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '\n', '    ', '\n', '    ', 'String', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ')', ';', '\n', '\n', '    ', '\n', '    ', 'List', '<', 'String', '>', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ',', ' ', 'Integer', ' ', 'n', ',', ' ', 'ImageSize', ' ', 'size', ',', ' ', 'ImageFormat', ' ', 'format', ')', ';', '\n', '\n', '    ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ';', '\n', '\n', '}', '\n']"
+master,47c0552ced2defca25c00cc476dfb2c331a9696e,ChatgptService.java,imageGenerate,"    String imageGenerate(String prompt);
+
+    /**
+     * @param prompt A text description of the desired image(s). The maximum length is 1000 characters.
+     * @param n      The number of images to generate. Must be between 1 and 10.
+     * @param size   The size of the generated images. Must be one of ImageFormat.SMALL(""256x256""), ImageFormat.MEDIUM(""512x512""), ImageFormat.LARGE(""1024x1024"").
+     * @param format The format in which the generated images are returned. Must be one of ImageFormat.URL(""url""), ImageFormat.BASE64(""b64_json"").
+     * @return image url/base64 list
+     */
+    List<String> imageGenerate(String prompt, Integer n, ImageSize size, ImageFormat format);
+
+    ImageResponse imageGenerateRequest(ImageRequest imageRequest);
+
+}",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/47c0552ced2defca25c00cc476dfb2c331a9696e,"    String imageGenerate(String prompt);
+
+    
+    List<String> imageGenerate(String prompt, Integer n, ImageSize size, ImageFormat format);
+
+    ImageResponse imageGenerateRequest(ImageRequest imageRequest);
+
+}
+","['    ', 'String', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ')', ';', '\n', '\n', '    ', '\n', '    ', 'List', '<', 'String', '>', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ',', ' ', 'Integer', ' ', 'n', ',', ' ', 'ImageSize', ' ', 'size', ',', ' ', 'ImageFormat', ' ', 'format', ')', ';', '\n', '\n', '    ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ';', '\n', '\n', '}', '\n']"
+master,47c0552ced2defca25c00cc476dfb2c331a9696e,ChatgptService.java,imageGenerate,"    List<String> imageGenerate(String prompt, Integer n, ImageSize size, ImageFormat format);
+
+    ImageResponse imageGenerateRequest(ImageRequest imageRequest);
+
+}",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/47c0552ced2defca25c00cc476dfb2c331a9696e,"    List<String> imageGenerate(String prompt, Integer n, ImageSize size, ImageFormat format);
+
+    ImageResponse imageGenerateRequest(ImageRequest imageRequest);
+
+}
+","['    ', 'List', '<', 'String', '>', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ',', ' ', 'Integer', ' ', 'n', ',', ' ', 'ImageSize', ' ', 'size', ',', ' ', 'ImageFormat', ' ', 'format', ')', ';', '\n', '\n', '    ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ';', '\n', '\n', '}', '\n']"
+master,47c0552ced2defca25c00cc476dfb2c331a9696e,ChatgptService.java,imageGenerateRequest,"    ImageResponse imageGenerateRequest(ImageRequest imageRequest);
+
+}",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/47c0552ced2defca25c00cc476dfb2c331a9696e,"    ImageResponse imageGenerateRequest(ImageRequest imageRequest);
+
+}
+","['    ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ';', '\n', '\n', '}', '\n']"
+master,47c0552ced2defca25c00cc476dfb2c331a9696e,DefaultChatgptService.java,sendMessage,"    public String sendMessage(String message) {
+        ChatRequest chatRequest = new ChatRequest(chatgptProperties.getModel(), message, chatgptProperties.getMaxTokens(), chatgptProperties.getTemperature(), chatgptProperties.getTopP());
+        ChatResponse chatResponse = this.getResponse(this.buildHttpEntity(chatRequest), ChatResponse.class, chatgptProperties.getUrl());
+        try {
+            return chatResponse.getChoices().get(0).getText();",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/47c0552ced2defca25c00cc476dfb2c331a9696e,"    public String sendMessage(String message) {
+        ChatRequest chatRequest = new ChatRequest(chatgptProperties.getModel(), message, chatgptProperties.getMaxTokens(), chatgptProperties.getTemperature(), chatgptProperties.getTopP());
+        ChatResponse chatResponse = this.getResponse(this.buildHttpEntity(chatRequest), ChatResponse.class, chatgptProperties.getUrl());
+        try {
+            return chatResponse.getChoices().get(0).getText();
+","['    ', 'public', ' ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ' ', '{', '\n', '        ', 'ChatRequest', ' ', 'chatRequest', ' ', '=', ' ', 'new', ' ', 'ChatRequest', '(', 'chatgptProperties', '.', 'getModel', '(', ')', ',', ' ', 'message', ',', ' ', 'chatgptProperties', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'ChatResponse', ' ', 'chatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ',', ' ', 'ChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'chatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getText', '(', ')', ';', '\n']"
+master,47c0552ced2defca25c00cc476dfb2c331a9696e,DefaultChatgptService.java,multiChat,"    public String multiChat(List<MultiChatMessage> messages) {
+        MultiChatRequest multiChatRequest = new MultiChatRequest(chatgptProperties.getMulti().getModel(), messages, chatgptProperties.getMulti().getMaxTokens(), chatgptProperties.getMulti().getTemperature(), chatgptProperties.getMulti().getTopP());
+        MultiChatResponse multiChatResponse = this.getResponse(this.buildHttpEntity(multiChatRequest), MultiChatResponse.class, chatgptProperties.getMulti().getUrl());
+        try {
+            return multiChatResponse.getChoices().get(0).getMessage().getContent();",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/47c0552ced2defca25c00cc476dfb2c331a9696e,"    public String multiChat(List<MultiChatMessage> messages) {
+        MultiChatRequest multiChatRequest = new MultiChatRequest(chatgptProperties.getMulti().getModel(), messages, chatgptProperties.getMulti().getMaxTokens(), chatgptProperties.getMulti().getTemperature(), chatgptProperties.getMulti().getTopP());
+        MultiChatResponse multiChatResponse = this.getResponse(this.buildHttpEntity(multiChatRequest), MultiChatResponse.class, chatgptProperties.getMulti().getUrl());
+        try {
+            return multiChatResponse.getChoices().get(0).getMessage().getContent();
+","['    ', 'public', ' ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ' ', '{', '\n', '        ', 'MultiChatRequest', ' ', 'multiChatRequest', ' ', '=', ' ', 'new', ' ', 'MultiChatRequest', '(', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getModel', '(', ')', ',', ' ', 'messages', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'MultiChatResponse', ' ', 'multiChatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'multiChatRequest', ')', ',', ' ', 'MultiChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'multiChatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getMessage', '(', ')', '.', 'getContent', '(', ')', ';', '\n']"
+master,47c0552ced2defca25c00cc476dfb2c331a9696e,DefaultChatgptService.java,imageGenerate,"    public String imageGenerate(String prompt) {
+        ImageRequest imageRequest = new ImageRequest(prompt, null, null, null, null);
+        ImageResponse imageResponse = this.getResponse(this.buildHttpEntity(imageRequest), ImageResponse.class, chatgptProperties.getImage().getUrl());
+        try {
+            return imageResponse.getData().get(0).getUrl();",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/47c0552ced2defca25c00cc476dfb2c331a9696e,"    public String imageGenerate(String prompt) {
+        ImageRequest imageRequest = new ImageRequest(prompt, null, null, null, null);
+        ImageResponse imageResponse = this.getResponse(this.buildHttpEntity(imageRequest), ImageResponse.class, chatgptProperties.getImage().getUrl());
+        try {
+            return imageResponse.getData().get(0).getUrl();
+","['    ', 'public', ' ', 'String', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ')', ' ', '{', '\n', '        ', 'ImageRequest', ' ', 'imageRequest', ' ', '=', ' ', 'new', ' ', 'ImageRequest', '(', 'prompt', ',', ' ', 'null', ',', ' ', 'null', ',', ' ', 'null', ',', ' ', 'null', ')', ';', '\n', '        ', 'ImageResponse', ' ', 'imageResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'imageRequest', ')', ',', ' ', 'ImageResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getImage', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'imageResponse', '.', 'getData', '(', ')', '.', 'get', '(', '0', ')', '.', 'getUrl', '(', ')', ';', '\n']"
+master,47c0552ced2defca25c00cc476dfb2c331a9696e,DefaultChatgptService.java,imageGenerate,"    public List<String> imageGenerate(String prompt, Integer n, ImageSize size, ImageFormat format) {
+        ImageRequest imageRequest = new ImageRequest(prompt, n, size.getSize(), format.getFormat(), null);
+        ImageResponse imageResponse = this.getResponse(this.buildHttpEntity(imageRequest), ImageResponse.class, chatgptProperties.getImage().getUrl());
+        try {
+            List<String> list = new ArrayList<>();",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/47c0552ced2defca25c00cc476dfb2c331a9696e,"    public List<String> imageGenerate(String prompt, Integer n, ImageSize size, ImageFormat format) {
+        ImageRequest imageRequest = new ImageRequest(prompt, n, size.getSize(), format.getFormat(), null);
+        ImageResponse imageResponse = this.getResponse(this.buildHttpEntity(imageRequest), ImageResponse.class, chatgptProperties.getImage().getUrl());
+        try {
+            List<String> list = new ArrayList<>();
+","['    ', 'public', ' ', 'List', '<', 'String', '>', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ',', ' ', 'Integer', ' ', 'n', ',', ' ', 'ImageSize', ' ', 'size', ',', ' ', 'ImageFormat', ' ', 'format', ')', ' ', '{', '\n', '        ', 'ImageRequest', ' ', 'imageRequest', ' ', '=', ' ', 'new', ' ', 'ImageRequest', '(', 'prompt', ',', ' ', 'n', ',', ' ', 'size', '.', 'getSize', '(', ')', ',', ' ', 'format', '.', 'getFormat', '(', ')', ',', ' ', 'null', ')', ';', '\n', '        ', 'ImageResponse', ' ', 'imageResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'imageRequest', ')', ',', ' ', 'ImageResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getImage', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'List', '<', 'String', '>', ' ', 'list', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', ')', ';', '\n']"
+master,47c0552ced2defca25c00cc476dfb2c331a9696e,DefaultChatgptService.java,imageGenerateRequest,"    public ImageResponse imageGenerateRequest(ImageRequest imageRequest) {
+        return this.getResponse(this.buildHttpEntity(imageRequest), ImageResponse.class, chatgptProperties.getImage().getUrl());
+    }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/47c0552ced2defca25c00cc476dfb2c331a9696e,"    public ImageResponse imageGenerateRequest(ImageRequest imageRequest) {
+        return this.getResponse(this.buildHttpEntity(imageRequest), ImageResponse.class, chatgptProperties.getImage().getUrl());
+    }
+","['    ', 'public', ' ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'imageRequest', ')', ',', ' ', 'ImageResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getImage', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '    ', '}', '\n']"

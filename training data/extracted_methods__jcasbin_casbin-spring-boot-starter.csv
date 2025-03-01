@@ -1,0 +1,1325 @@
+Branch Name,Commit Hash,File Name,Method Name,Method Code,Commit Link,Method Code No Comments,Tokens
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,CasbinRule.java,toPolicy,"    public ArrayList<String> toPolicy() {
+        ArrayList<String> policy = new ArrayList<>();
+        policy.add(ptype);
+        if (!StringUtils.isEmpty(v0)) {
+            policy.add(v0);
+        }
+        if (!StringUtils.isEmpty(v1)) {
+            policy.add(v1);
+        }
+        if (!StringUtils.isEmpty(v2)) {
+            policy.add(v2);
+        }
+        if (!StringUtils.isEmpty(v3)) {
+            policy.add(v3);
+        }
+        if (!StringUtils.isEmpty(v4)) {
+            policy.add(v4);
+        }
+        if (!StringUtils.isEmpty(v5)) {
+            policy.add(v5);
+        }
+        return policy;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    public ArrayList<String> toPolicy() {
+        ArrayList<String> policy = new ArrayList<>();
+        policy.add(ptype);
+        if (!StringUtils.isEmpty(v0)) {
+            policy.add(v0);
+        }
+        if (!StringUtils.isEmpty(v1)) {
+            policy.add(v1);
+        }
+        if (!StringUtils.isEmpty(v2)) {
+            policy.add(v2);
+        }
+        if (!StringUtils.isEmpty(v3)) {
+            policy.add(v3);
+        }
+        if (!StringUtils.isEmpty(v4)) {
+            policy.add(v4);
+        }
+        if (!StringUtils.isEmpty(v5)) {
+            policy.add(v5);
+        }
+        return policy;
+    }
+","['    ', 'public', ' ', 'ArrayList', '<', 'String', '>', ' ', 'toPolicy', '(', ')', ' ', '{', '\n', '        ', 'ArrayList', '<', 'String', '>', ' ', 'policy', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', ')', ';', '\n', '        ', 'policy', '.', 'add', '(', 'ptype', ')', ';', '\n', '        ', 'if', ' ', '(', '!', 'StringUtils', '.', 'isEmpty', '(', 'v0', ')', ')', ' ', '{', '\n', '            ', 'policy', '.', 'add', '(', 'v0', ')', ';', '\n', '        ', '}', '\n', '        ', 'if', ' ', '(', '!', 'StringUtils', '.', 'isEmpty', '(', 'v1', ')', ')', ' ', '{', '\n', '            ', 'policy', '.', 'add', '(', 'v1', ')', ';', '\n', '        ', '}', '\n', '        ', 'if', ' ', '(', '!', 'StringUtils', '.', 'isEmpty', '(', 'v2', ')', ')', ' ', '{', '\n', '            ', 'policy', '.', 'add', '(', 'v2', ')', ';', '\n', '        ', '}', '\n', '        ', 'if', ' ', '(', '!', 'StringUtils', '.', 'isEmpty', '(', 'v3', ')', ')', ' ', '{', '\n', '            ', 'policy', '.', 'add', '(', 'v3', ')', ';', '\n', '        ', '}', '\n', '        ', 'if', ' ', '(', '!', 'StringUtils', '.', 'isEmpty', '(', 'v4', ')', ')', ' ', '{', '\n', '            ', 'policy', '.', 'add', '(', 'v4', ')', ';', '\n', '        ', '}', '\n', '        ', 'if', ' ', '(', '!', 'StringUtils', '.', 'isEmpty', '(', 'v5', ')', ')', ' ', '{', '\n', '            ', 'policy', '.', 'add', '(', 'v5', ')', ';', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'policy', ';', '\n', '    ', '}', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,CasbinRule.java,transformToCasbinRule,"    public static List<CasbinRule> transformToCasbinRule(Model model) {
+        Set<CasbinRule> casbinRules = new HashSet<>();
+        model.model.values().forEach(x -> x.values().forEach(y -> y.policy.forEach(z -> {
+            if (z.isEmpty()) return;
+            int size = z.size();
+            CasbinRule casbinRule = new CasbinRule();
+            casbinRule.setPtype(y.key);
+            casbinRule.setV0(z.get(0));
+            if (size >= 2) {
+                casbinRule.setV1(z.get(1));
+            }
+            if (size >= 3) {
+                casbinRule.setV2(z.get(2));
+            }
+            if (size >= 4) {
+                casbinRule.setV3(z.get(3));
+            }
+            if (size >= 5) {
+                casbinRule.setV4(z.get(4));
+            }
+            if (size >= 6) {
+                casbinRule.setV5(z.get(5));
+            }
+            casbinRules.add(casbinRule);
+        })));
+        return new ArrayList<>(casbinRules);
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    public static List<CasbinRule> transformToCasbinRule(Model model) {
+        Set<CasbinRule> casbinRules = new HashSet<>();
+        model.model.values().forEach(x -> x.values().forEach(y -> y.policy.forEach(z -> {
+            if (z.isEmpty()) return;
+            int size = z.size();
+            CasbinRule casbinRule = new CasbinRule();
+            casbinRule.setPtype(y.key);
+            casbinRule.setV0(z.get(0));
+            if (size >= 2) {
+                casbinRule.setV1(z.get(1));
+            }
+            if (size >= 3) {
+                casbinRule.setV2(z.get(2));
+            }
+            if (size >= 4) {
+                casbinRule.setV3(z.get(3));
+            }
+            if (size >= 5) {
+                casbinRule.setV4(z.get(4));
+            }
+            if (size >= 6) {
+                casbinRule.setV5(z.get(5));
+            }
+            casbinRules.add(casbinRule);
+        })));
+        return new ArrayList<>(casbinRules);
+    }
+","['    ', 'public', ' ', 'static', ' ', 'List', '<', 'CasbinRule', '>', ' ', 'transformToCasbinRule', '(', 'Model', ' ', 'model', ')', ' ', '{', '\n', '        ', 'Set', '<', 'CasbinRule', '>', ' ', 'casbinRules', ' ', '=', ' ', 'new', ' ', 'HashSet', '<', '>', '(', ')', ';', '\n', '        ', 'model', '.', 'model', '.', 'values', '(', ')', '.', 'forEach', '(', 'x', ' ', '-', '>', ' ', 'x', '.', 'values', '(', ')', '.', 'forEach', '(', 'y', ' ', '-', '>', ' ', 'y', '.', 'policy', '.', 'forEach', '(', 'z', ' ', '-', '>', ' ', '{', '\n', '            ', 'if', ' ', '(', 'z', '.', 'isEmpty', '(', ')', ')', ' ', 'return', ';', '\n', '            ', 'int', ' ', 'size', ' ', '=', ' ', 'z', '.', 'size', '(', ')', ';', '\n', '            ', 'CasbinRule', ' ', 'casbinRule', ' ', '=', ' ', 'new', ' ', 'CasbinRule', '(', ')', ';', '\n', '            ', 'casbinRule', '.', 'setPtype', '(', 'y', '.', 'key', ')', ';', '\n', '            ', 'casbinRule', '.', 'setV0', '(', 'z', '.', 'get', '(', '0', ')', ')', ';', '\n', '            ', 'if', ' ', '(', 'size', ' ', '>', '=', ' ', '2', ')', ' ', '{', '\n', '                ', 'casbinRule', '.', 'setV1', '(', 'z', '.', 'get', '(', '1', ')', ')', ';', '\n', '            ', '}', '\n', '            ', 'if', ' ', '(', 'size', ' ', '>', '=', ' ', '3', ')', ' ', '{', '\n', '                ', 'casbinRule', '.', 'setV2', '(', 'z', '.', 'get', '(', '2', ')', ')', ';', '\n', '            ', '}', '\n', '            ', 'if', ' ', '(', 'size', ' ', '>', '=', ' ', '4', ')', ' ', '{', '\n', '                ', 'casbinRule', '.', 'setV3', '(', 'z', '.', 'get', '(', '3', ')', ')', ';', '\n', '            ', '}', '\n', '            ', 'if', ' ', '(', 'size', ' ', '>', '=', ' ', '5', ')', ' ', '{', '\n', '                ', 'casbinRule', '.', 'setV4', '(', 'z', '.', 'get', '(', '4', ')', ')', ';', '\n', '            ', '}', '\n', '            ', 'if', ' ', '(', 'size', ' ', '>', '=', ' ', '6', ')', ' ', '{', '\n', '                ', 'casbinRule', '.', 'setV5', '(', 'z', '.', 'get', '(', '5', ')', ')', ';', '\n', '            ', '}', '\n', '            ', 'casbinRules', '.', 'add', '(', 'casbinRule', ')', ';', '\n', '        ', '}', ')', ')', ')', ';', '\n', '        ', 'return', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', 'casbinRules', ')', ';', '\n', '    ', '}', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,JdbcAdapter.java,initTable,"    protected void initTable() {
+        jdbcTemplate.execute(getInitTableSql());
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    protected void initTable() {
+        jdbcTemplate.execute(getInitTableSql());
+    }
+","['    ', 'protected', ' ', 'void', ' ', 'initTable', '(', ')', ' ', '{', '\n', '        ', 'jdbcTemplate', '.', 'execute', '(', 'getInitTableSql', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,JdbcAdapter.java,dropTable,"    protected void dropTable() {
+        jdbcTemplate.execute(getDropTableSql());
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    protected void dropTable() {
+        jdbcTemplate.execute(getDropTableSql());
+    }
+","['    ', 'protected', ' ', 'void', ' ', 'dropTable', '(', ')', ' ', '{', '\n', '        ', 'jdbcTemplate', '.', 'execute', '(', 'getDropTableSql', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,JdbcAdapter.java,deleteTableContent,"    protected void deleteTableContent() {
+        jdbcTemplate.execute(getDeleteTableContentSql());
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    protected void deleteTableContent() {
+        jdbcTemplate.execute(getDeleteTableContentSql());
+    }
+","['    ', 'protected', ' ', 'void', ' ', 'deleteTableContent', '(', ')', ' ', '{', '\n', '        ', 'jdbcTemplate', '.', 'execute', '(', 'getDeleteTableContentSql', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,JdbcAdapter.java,setValues,"                    public void setValues(PreparedStatement ps, int i) throws SQLException {
+                        ps.setString(1, casbinRules.get(i).getPtype());
+                        ps.setString(2, casbinRules.get(i).getV0());
+                        ps.setString(3, casbinRules.get(i).getV1());
+                        ps.setString(4, casbinRules.get(i).getV2());
+                        ps.setString(5, casbinRules.get(i).getV3());
+                        ps.setString(6, casbinRules.get(i).getV4());
+                        ps.setString(7, casbinRules.get(i).getV5());
+                    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"                    public void setValues(PreparedStatement ps, int i) throws SQLException {
+                        ps.setString(1, casbinRules.get(i).getPtype());
+                        ps.setString(2, casbinRules.get(i).getV0());
+                        ps.setString(3, casbinRules.get(i).getV1());
+                        ps.setString(4, casbinRules.get(i).getV2());
+                        ps.setString(5, casbinRules.get(i).getV3());
+                        ps.setString(6, casbinRules.get(i).getV4());
+                        ps.setString(7, casbinRules.get(i).getV5());
+                    }
+","['                    ', 'public', ' ', 'void', ' ', 'setValues', '(', 'PreparedStatement', ' ', 'ps', ',', ' ', 'int', ' ', 'i', ')', ' ', 'throws', ' ', 'SQLException', ' ', '{', '\n', '                        ', 'ps', '.', 'setString', '(', '1', ',', ' ', 'casbinRules', '.', 'get', '(', 'i', ')', '.', 'getPtype', '(', ')', ')', ';', '\n', '                        ', 'ps', '.', 'setString', '(', '2', ',', ' ', 'casbinRules', '.', 'get', '(', 'i', ')', '.', 'getV0', '(', ')', ')', ';', '\n', '                        ', 'ps', '.', 'setString', '(', '3', ',', ' ', 'casbinRules', '.', 'get', '(', 'i', ')', '.', 'getV1', '(', ')', ')', ';', '\n', '                        ', 'ps', '.', 'setString', '(', '4', ',', ' ', 'casbinRules', '.', 'get', '(', 'i', ')', '.', 'getV2', '(', ')', ')', ';', '\n', '                        ', 'ps', '.', 'setString', '(', '5', ',', ' ', 'casbinRules', '.', 'get', '(', 'i', ')', '.', 'getV3', '(', ')', ')', ';', '\n', '                        ', 'ps', '.', 'setString', '(', '6', ',', ' ', 'casbinRules', '.', 'get', '(', 'i', ')', '.', 'getV4', '(', ')', ')', ';', '\n', '                        ', 'ps', '.', 'setString', '(', '7', ',', ' ', 'casbinRules', '.', 'get', '(', 'i', ')', '.', 'getV5', '(', ')', ')', ';', '\n', '                    ', '}', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,JdbcAdapter.java,addPolicy,"    public void addPolicy(String sec, String ptype, List<String> rule) {
+        ArrayList<String> rules = new ArrayList<>(rule);
+        rules.add(0, ptype);
+        for (int i = 0; i < 6 - rule.size(); i++) {
+            rules.add(null);
+        }
+        int rows = jdbcTemplate.update(INSERT_POLICY_SQL, rules.toArray());
+        if (rows != 1) {
+            throw new CasbinAdapterException(String.format(""Add policy error, add %d rows, expect %d rows"", rows, 1));",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    public void addPolicy(String sec, String ptype, List<String> rule) {
+        ArrayList<String> rules = new ArrayList<>(rule);
+        rules.add(0, ptype);
+        for (int i = 0; i < 6 - rule.size(); i++) {
+            rules.add(null);
+        }
+        int rows = jdbcTemplate.update(INSERT_POLICY_SQL, rules.toArray());
+        if (rows != 1) {
+            throw new CasbinAdapterException(String.format(""Add policy error, add %d rows, expect %d rows"", rows, 1));
+","['    ', 'public', ' ', 'void', ' ', 'addPolicy', '(', 'String', ' ', 'sec', ',', ' ', 'String', ' ', 'ptype', ',', ' ', 'List', '<', 'String', '>', ' ', 'rule', ')', ' ', '{', '\n', '        ', 'ArrayList', '<', 'String', '>', ' ', 'rules', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', 'rule', ')', ';', '\n', '        ', 'rules', '.', 'add', '(', '0', ',', ' ', 'ptype', ')', ';', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '6', ' ', '-', ' ', 'rule', '.', 'size', '(', ')', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'rules', '.', 'add', '(', 'null', ')', ';', '\n', '        ', '}', '\n', '        ', 'int', ' ', 'rows', ' ', '=', ' ', 'jdbcTemplate', '.', 'update', '(', 'INSERT_POLICY_SQL', ',', ' ', 'rules', '.', 'toArray', '(', ')', ')', ';', '\n', '        ', 'if', ' ', '(', 'rows', ' ', '!', '=', ' ', '1', ')', ' ', '{', '\n', '            ', 'throw', ' ', 'new', ' ', 'CasbinAdapterException', '(', 'String', '.', 'format', '(', '""', 'Add policy error, add %d rows, expect %d rows', '""', ',', ' ', 'rows', ',', ' ', '1', ')', ')', ';', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,JdbcAdapter.java,removePolicy,"    public void removePolicy(String sec, String ptype, List<String> rule) {
+        if (rule.isEmpty()) return;
+        removeFilteredPolicy(sec, ptype, 0, rule.toArray(new String[0]));
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    public void removePolicy(String sec, String ptype, List<String> rule) {
+        if (rule.isEmpty()) return;
+        removeFilteredPolicy(sec, ptype, 0, rule.toArray(new String[0]));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'removePolicy', '(', 'String', ' ', 'sec', ',', ' ', 'String', ' ', 'ptype', ',', ' ', 'List', '<', 'String', '>', ' ', 'rule', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'rule', '.', 'isEmpty', '(', ')', ')', ' ', 'return', ';', '\n', '        ', 'removeFilteredPolicy', '(', 'sec', ',', ' ', 'ptype', ',', ' ', '0', ',', ' ', 'rule', '.', 'toArray', '(', 'new', ' ', 'String', '[', '0', ']', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,JdbcAdapter.java,removeFilteredPolicy,"    public void removeFilteredPolicy(String sec, String ptype, int fieldIndex, String... fieldValues) {
+        if (fieldValues.length == 0) return;
+        List<String> params = new ArrayList<>(Arrays.asList(fieldValues));
+        params.add(0, ptype);
+        String delSql = DELETE_POLICY_SQL;
+        int columnIndex = fieldIndex;
+        for (int i = 0; i < fieldValues.length; i++) {
+            delSql = String.format(""%s%s%s%s"", delSql, "" AND v"", columnIndex, "" = ? "");
+            columnIndex++;
+        }
+        int rows = jdbcTemplate.update(delSql, params.toArray());
+        if (rows < 1) {
+            throw new CasbinAdapterException(String.format(""Remove filtered policy error, remove %d rows, expect least 1 rows"", rows));",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    public void removeFilteredPolicy(String sec, String ptype, int fieldIndex, String... fieldValues) {
+        if (fieldValues.length == 0) return;
+        List<String> params = new ArrayList<>(Arrays.asList(fieldValues));
+        params.add(0, ptype);
+        String delSql = DELETE_POLICY_SQL;
+        int columnIndex = fieldIndex;
+        for (int i = 0; i < fieldValues.length; i++) {
+            delSql = String.format(""%s%s%s%s"", delSql, "" AND v"", columnIndex, "" = ? "");
+            columnIndex++;
+        }
+        int rows = jdbcTemplate.update(delSql, params.toArray());
+        if (rows < 1) {
+            throw new CasbinAdapterException(String.format(""Remove filtered policy error, remove %d rows, expect least 1 rows"", rows));
+","['    ', 'public', ' ', 'void', ' ', 'removeFilteredPolicy', '(', 'String', ' ', 'sec', ',', ' ', 'String', ' ', 'ptype', ',', ' ', 'int', ' ', 'fieldIndex', ',', ' ', 'String', '.', '.', '.', ' ', 'fieldValues', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'fieldValues', '.', 'length', ' ', '=', '=', ' ', '0', ')', ' ', 'return', ';', '\n', '        ', 'List', '<', 'String', '>', ' ', 'params', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', 'Arrays', '.', 'asList', '(', 'fieldValues', ')', ')', ';', '\n', '        ', 'params', '.', 'add', '(', '0', ',', ' ', 'ptype', ')', ';', '\n', '        ', 'String', ' ', 'delSql', ' ', '=', ' ', 'DELETE_POLICY_SQL', ';', '\n', '        ', 'int', ' ', 'columnIndex', ' ', '=', ' ', 'fieldIndex', ';', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', 'fieldValues', '.', 'length', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'delSql', ' ', '=', ' ', 'String', '.', 'format', '(', '""', '%s%s%s%s', '""', ',', ' ', 'delSql', ',', ' ', '""', ' AND v', '""', ',', ' ', 'columnIndex', ',', ' ', '""', ' = ? ', '""', ')', ';', '\n', '            ', 'columnIndex', '+', '+', ';', '\n', '        ', '}', '\n', '        ', 'int', ' ', 'rows', ' ', '=', ' ', 'jdbcTemplate', '.', 'update', '(', 'delSql', ',', ' ', 'params', '.', 'toArray', '(', ')', ')', ';', '\n', '        ', 'if', ' ', '(', 'rows', ' ', '<', ' ', '1', ')', ' ', '{', '\n', '            ', 'throw', ' ', 'new', ' ', 'CasbinAdapterException', '(', 'String', '.', 'format', '(', '""', 'Remove filtered policy error, remove %d rows, expect least 1 rows', '""', ',', ' ', 'rows', ')', ')', ';', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,OracleAdapter.java,initTable,"    protected void initTable() {
+        Integer count = jdbcTemplate.queryForObject(CHECK_TABLE_EXIST, Integer.class);
+        if (count != null && count == 0) {
+            super.initTable();",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    protected void initTable() {
+        Integer count = jdbcTemplate.queryForObject(CHECK_TABLE_EXIST, Integer.class);
+        if (count != null && count == 0) {
+            super.initTable();
+","['    ', 'protected', ' ', 'void', ' ', 'initTable', '(', ')', ' ', '{', '\n', '        ', 'Integer', ' ', 'count', ' ', '=', ' ', 'jdbcTemplate', '.', 'queryForObject', '(', 'CHECK_TABLE_EXIST', ',', ' ', 'Integer', '.', 'class', ')', ';', '\n', '        ', 'if', ' ', '(', 'count', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'count', ' ', '=', '=', ' ', '0', ')', ' ', '{', '\n', '            ', 'super', '.', 'initTable', '(', ')', ';', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,CasbinAutoConfiguration.java,autoConfigJdbcAdapter,"    public Adapter autoConfigJdbcAdapter(JdbcTemplate jdbcTemplate, CasbinProperties properties) {
+        String databaseName = getDatabaseName(jdbcTemplate.getDataSource());
+        CasbinDataSourceInitializationMode initializeSchema = properties.getInitializeSchema();
+        boolean autoCreateTable = initializeSchema == CasbinDataSourceInitializationMode.CREATE;
+        switch (databaseName) {
+            case ""mysql"":",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    public Adapter autoConfigJdbcAdapter(JdbcTemplate jdbcTemplate, CasbinProperties properties) {
+        String databaseName = getDatabaseName(jdbcTemplate.getDataSource());
+        CasbinDataSourceInitializationMode initializeSchema = properties.getInitializeSchema();
+        boolean autoCreateTable = initializeSchema == CasbinDataSourceInitializationMode.CREATE;
+        switch (databaseName) {
+            case ""mysql"":
+","['    ', 'public', ' ', 'Adapter', ' ', 'autoConfigJdbcAdapter', '(', 'JdbcTemplate', ' ', 'jdbcTemplate', ',', ' ', 'CasbinProperties', ' ', 'properties', ')', ' ', '{', '\n', '        ', 'String', ' ', 'databaseName', ' ', '=', ' ', 'getDatabaseName', '(', 'jdbcTemplate', '.', 'getDataSource', '(', ')', ')', ';', '\n', '        ', 'CasbinDataSourceInitializationMode', ' ', 'initializeSchema', ' ', '=', ' ', 'properties', '.', 'getInitializeSchema', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'autoCreateTable', ' ', '=', ' ', 'initializeSchema', ' ', '=', '=', ' ', 'CasbinDataSourceInitializationMode', '.', 'CREATE', ';', '\n', '        ', 'switch', ' ', '(', 'databaseName', ')', ' ', '{', '\n', '            ', 'case', ' ', '""', 'mysql', '""', ':', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,CasbinRedisWatcherAutoConfiguration.java,redisWatcher,"    public Watcher redisWatcher(StringRedisTemplate stringRedisTemplate) {
+        return new RedisWatcher(stringRedisTemplate);
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    public Watcher redisWatcher(StringRedisTemplate stringRedisTemplate) {
+        return new RedisWatcher(stringRedisTemplate);
+    }
+","['    ', 'public', ' ', 'Watcher', ' ', 'redisWatcher', '(', 'StringRedisTemplate', ' ', 'stringRedisTemplate', ')', ' ', '{', '\n', '        ', 'return', ' ', 'new', ' ', 'RedisWatcher', '(', 'stringRedisTemplate', ')', ';', '\n', '    ', '}', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,CasbinRedisWatcherAutoConfiguration.java,messageListenerAdapter,"    public MessageListenerAdapter messageListenerAdapter(Watcher receiver) {
+        return new MessageListenerAdapter(receiver, ""updatePolicy"");
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    public MessageListenerAdapter messageListenerAdapter(Watcher receiver) {
+        return new MessageListenerAdapter(receiver, ""updatePolicy"");
+    }
+","['    ', 'public', ' ', 'MessageListenerAdapter', ' ', 'messageListenerAdapter', '(', 'Watcher', ' ', 'receiver', ')', ' ', '{', '\n', '        ', 'return', ' ', 'new', ' ', 'MessageListenerAdapter', '(', 'receiver', ',', ' ', '""', 'updatePolicy', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,RedisWatcher.java,update,"    public void update() {
+        stringRedisTemplate.convertAndSend(
+                CasbinRedisWatcherAutoConfiguration.CASBIN_POLICY_TOPIC,",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    public void update() {
+        stringRedisTemplate.convertAndSend(
+                CasbinRedisWatcherAutoConfiguration.CASBIN_POLICY_TOPIC,
+","['    ', 'public', ' ', 'void', ' ', 'update', '(', ')', ' ', '{', '\n', '        ', 'stringRedisTemplate', '.', 'convertAndSend', '(', '\n', '                ', 'CasbinRedisWatcherAutoConfiguration', '.', 'CASBIN_POLICY_TOPIC', ',', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,RedisWatcher.java,updatePolicy,"    public void updatePolicy(String message) {
+        logger.info(message);
+        updateCallback.run();
+        logger.info(""Casbin policy updated."");
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    public void updatePolicy(String message) {
+        logger.info(message);
+        updateCallback.run();
+        logger.info(""Casbin policy updated."");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'updatePolicy', '(', 'String', ' ', 'message', ')', ' ', '{', '\n', '        ', 'logger', '.', 'info', '(', 'message', ')', ';', '\n', '        ', 'updateCallback', '.', 'run', '(', ')', ';', '\n', '        ', 'logger', '.', 'info', '(', '""', 'Casbin policy updated.', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,CasbinSpringBootStarterApplicationTest.java,main,"    public static void main(String[] args) {
+        SpringApplication.run(CasbinSpringBootStarterApplicationTest.class, args);
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    public static void main(String[] args) {
+        SpringApplication.run(CasbinSpringBootStarterApplicationTest.class, args);
+    }
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'SpringApplication', '.', 'run', '(', 'CasbinSpringBootStarterApplicationTest', '.', 'class', ',', ' ', 'args', ')', ';', '\n', '    ', '}', '\n']"
+master,fa8a09728d8f55260a3fbcdfa150ce432b9385dd,EnforcerTest.java,test2,"    public void test2() {
+        enforcer.clearPolicy();
+
+        Assert.assertFalse(enforcer.enforce(""bob"", ""data1"", ""read""));
+        Assert.assertFalse(enforcer.enforce(""alice"", ""data2"", ""read""));
+        Assert.assertFalse(enforcer.enforce(""alice"", ""data2"", ""write""));
+",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/fa8a09728d8f55260a3fbcdfa150ce432b9385dd,"    public void test2() {
+        enforcer.clearPolicy();
+
+        Assert.assertFalse(enforcer.enforce(""bob"", ""data1"", ""read""));
+        Assert.assertFalse(enforcer.enforce(""alice"", ""data2"", ""read""));
+        Assert.assertFalse(enforcer.enforce(""alice"", ""data2"", ""write""));
+","['    ', 'public', ' ', 'void', ' ', 'test2', '(', ')', ' ', '{', '\n', '        ', 'enforcer', '.', 'clearPolicy', '(', ')', ';', '\n', '\n', '        ', 'Assert', '.', 'assertFalse', '(', 'enforcer', '.', 'enforce', '(', '""', 'bob', '""', ',', ' ', '""', 'data1', '""', ',', ' ', '""', 'read', '""', ')', ')', ';', '\n', '        ', 'Assert', '.', 'assertFalse', '(', 'enforcer', '.', 'enforce', '(', '""', 'alice', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'read', '""', ')', ')', ';', '\n', '        ', 'Assert', '.', 'assertFalse', '(', 'enforcer', '.', 'enforce', '(', '""', 'alice', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ')', ';', '\n']"
+master,6cdc606e51071010bdadad1938230b78f7cd1e4a,RedisWatcher.java,updatePolicy,"    public void updatePolicy(String message) {
+        if (message.contains(REDIS_WATCHER_UUID)) {
+            logger.info(""This casbin policy update notification comes from the current redis watcher instance: {}"", REDIS_WATCHER_UUID);
+        } else {
+            logger.info(message);
+        }
+
+        updateCallback.run();
+        logger.info(""Casbin policy updated."");
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/6cdc606e51071010bdadad1938230b78f7cd1e4a,"    public void updatePolicy(String message) {
+        if (message.contains(REDIS_WATCHER_UUID)) {
+            logger.info(""This casbin policy update notification comes from the current redis watcher instance: {}"", REDIS_WATCHER_UUID);
+        } else {
+            logger.info(message);
+        }
+
+        updateCallback.run();
+        logger.info(""Casbin policy updated."");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'updatePolicy', '(', 'String', ' ', 'message', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'message', '.', 'contains', '(', 'REDIS_WATCHER_UUID', ')', ')', ' ', '{', '\n', '            ', 'logger', '.', 'info', '(', '""', 'This casbin policy update notification comes from the current redis watcher instance: {}', '""', ',', ' ', 'REDIS_WATCHER_UUID', ')', ';', '\n', '        ', '}', ' ', 'else', ' ', '{', '\n', '            ', 'logger', '.', 'info', '(', 'message', ')', ';', '\n', '        ', '}', '\n', '\n', '        ', 'updateCallback', '.', 'run', '(', ')', ';', '\n', '        ', 'logger', '.', 'info', '(', '""', 'Casbin policy updated.', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,522bd60d2db3434381da3328d7bdce41dee8239a,RedisWatcher.java,updatePolicy,"    public void updatePolicy(String message) {
+        if (message.contains(REDIS_WATCHER_UUID)) {
+            logger.info(""This casbin policy update notification comes from the current redis watcher instance: {}"", REDIS_WATCHER_UUID);
+            return;
+        } else {
+            logger.info(message);
+        }
+
+        updateCallback.run();
+        logger.info(""Casbin policy updated."");
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/522bd60d2db3434381da3328d7bdce41dee8239a,"    public void updatePolicy(String message) {
+        if (message.contains(REDIS_WATCHER_UUID)) {
+            logger.info(""This casbin policy update notification comes from the current redis watcher instance: {}"", REDIS_WATCHER_UUID);
+            return;
+        } else {
+            logger.info(message);
+        }
+
+        updateCallback.run();
+        logger.info(""Casbin policy updated."");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'updatePolicy', '(', 'String', ' ', 'message', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'message', '.', 'contains', '(', 'REDIS_WATCHER_UUID', ')', ')', ' ', '{', '\n', '            ', 'logger', '.', 'info', '(', '""', 'This casbin policy update notification comes from the current redis watcher instance: {}', '""', ',', ' ', 'REDIS_WATCHER_UUID', ')', ';', '\n', '            ', 'return', ';', '\n', '        ', '}', ' ', 'else', ' ', '{', '\n', '            ', 'logger', '.', 'info', '(', 'message', ')', ';', '\n', '        ', '}', '\n', '\n', '        ', 'updateCallback', '.', 'run', '(', ')', ';', '\n', '        ', 'logger', '.', 'info', '(', '""', 'Casbin policy updated.', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,47bdfcb518abf90951c3b82992f19644864b0a52,DB2Adapter.java,initTable,"    protected void initTable() {
+        try {
+            jdbcTemplate.queryForObject(CHECK_TABLE_SQL, Integer.class);",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/47bdfcb518abf90951c3b82992f19644864b0a52,"    protected void initTable() {
+        try {
+            jdbcTemplate.queryForObject(CHECK_TABLE_SQL, Integer.class);
+","['    ', 'protected', ' ', 'void', ' ', 'initTable', '(', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'jdbcTemplate', '.', 'queryForObject', '(', 'CHECK_TABLE_SQL', ',', ' ', 'Integer', '.', 'class', ')', ';', '\n']"
+master,b506c54dfcb2af217255acfb881b84fdac7f399b,CasbinRedisWatcherAutoConfiguration.java,redisWatcher,"    public Watcher redisWatcher(StringRedisTemplate stringRedisTemplate, Enforcer enforcer) {
+        RedisWatcher watcher = new RedisWatcher(stringRedisTemplate);
+        enforcer.setWatcher(watcher);
+        logger.info(""Casbin set watcher: {}"", watcher.getClass().getName());
+        return watcher;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/b506c54dfcb2af217255acfb881b84fdac7f399b,"    public Watcher redisWatcher(StringRedisTemplate stringRedisTemplate, Enforcer enforcer) {
+        RedisWatcher watcher = new RedisWatcher(stringRedisTemplate);
+        enforcer.setWatcher(watcher);
+        logger.info(""Casbin set watcher: {}"", watcher.getClass().getName());
+        return watcher;
+    }
+","['    ', 'public', ' ', 'Watcher', ' ', 'redisWatcher', '(', 'StringRedisTemplate', ' ', 'stringRedisTemplate', ',', ' ', 'Enforcer', ' ', 'enforcer', ')', ' ', '{', '\n', '        ', 'RedisWatcher', ' ', 'watcher', ' ', '=', ' ', 'new', ' ', 'RedisWatcher', '(', 'stringRedisTemplate', ')', ';', '\n', '        ', 'enforcer', '.', 'setWatcher', '(', 'watcher', ')', ';', '\n', '        ', 'logger', '.', 'info', '(', '""', 'Casbin set watcher: {}', '""', ',', ' ', 'watcher', '.', 'getClass', '(', ')', '.', 'getName', '(', ')', ')', ';', '\n', '        ', 'return', ' ', 'watcher', ';', '\n', '    ', '}', '\n']"
+master,0c9cf6557d4a84d308bb22dc8d6bec4cd530851e,JdbcAdapter.java,removeFilteredPolicy,"    public void removeFilteredPolicy(String sec, String ptype, int fieldIndex, String... fieldValues) {
+        if (fieldValues.length == 0) return;
+        List<String> params = new ArrayList<>(Arrays.asList(fieldValues));
+        params.add(0, ptype);
+        String delSql = DELETE_POLICY_SQL;
+        int columnIndex = fieldIndex;
+        for (int i = 0; i < fieldValues.length; i++) {
+            delSql = String.format(""%s%s%s%s"", delSql, "" AND v"", columnIndex, "" = ? "");
+            columnIndex++;
+        }
+        int rows = jdbcTemplate.update(delSql, params.toArray());
+        if (rows < 1) {
+            if (casbinExceptionProperties.isRemovePolicyFailed()) {",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/0c9cf6557d4a84d308bb22dc8d6bec4cd530851e,"    public void removeFilteredPolicy(String sec, String ptype, int fieldIndex, String... fieldValues) {
+        if (fieldValues.length == 0) return;
+        List<String> params = new ArrayList<>(Arrays.asList(fieldValues));
+        params.add(0, ptype);
+        String delSql = DELETE_POLICY_SQL;
+        int columnIndex = fieldIndex;
+        for (int i = 0; i < fieldValues.length; i++) {
+            delSql = String.format(""%s%s%s%s"", delSql, "" AND v"", columnIndex, "" = ? "");
+            columnIndex++;
+        }
+        int rows = jdbcTemplate.update(delSql, params.toArray());
+        if (rows < 1) {
+            if (casbinExceptionProperties.isRemovePolicyFailed()) {
+","['    ', 'public', ' ', 'void', ' ', 'removeFilteredPolicy', '(', 'String', ' ', 'sec', ',', ' ', 'String', ' ', 'ptype', ',', ' ', 'int', ' ', 'fieldIndex', ',', ' ', 'String', '.', '.', '.', ' ', 'fieldValues', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'fieldValues', '.', 'length', ' ', '=', '=', ' ', '0', ')', ' ', 'return', ';', '\n', '        ', 'List', '<', 'String', '>', ' ', 'params', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', 'Arrays', '.', 'asList', '(', 'fieldValues', ')', ')', ';', '\n', '        ', 'params', '.', 'add', '(', '0', ',', ' ', 'ptype', ')', ';', '\n', '        ', 'String', ' ', 'delSql', ' ', '=', ' ', 'DELETE_POLICY_SQL', ';', '\n', '        ', 'int', ' ', 'columnIndex', ' ', '=', ' ', 'fieldIndex', ';', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', 'fieldValues', '.', 'length', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'delSql', ' ', '=', ' ', 'String', '.', 'format', '(', '""', '%s%s%s%s', '""', ',', ' ', 'delSql', ',', ' ', '""', ' AND v', '""', ',', ' ', 'columnIndex', ',', ' ', '""', ' = ? ', '""', ')', ';', '\n', '            ', 'columnIndex', '+', '+', ';', '\n', '        ', '}', '\n', '        ', 'int', ' ', 'rows', ' ', '=', ' ', 'jdbcTemplate', '.', 'update', '(', 'delSql', ',', ' ', 'params', '.', 'toArray', '(', ')', ')', ';', '\n', '        ', 'if', ' ', '(', 'rows', ' ', '<', ' ', '1', ')', ' ', '{', '\n', '            ', 'if', ' ', '(', 'casbinExceptionProperties', '.', 'isRemovePolicyFailed', '(', ')', ')', ' ', '{', '\n']"
+master,0c9cf6557d4a84d308bb22dc8d6bec4cd530851e,CasbinAutoConfiguration.java,autoConfigJdbcAdapter,"    public Adapter autoConfigJdbcAdapter(JdbcTemplate jdbcTemplate, CasbinProperties properties, CasbinExceptionProperties exceptionProperties) {
+        String databaseName = getDatabaseName(jdbcTemplate.getDataSource());
+        CasbinDataSourceInitializationMode initializeSchema = properties.getInitializeSchema();
+        boolean autoCreateTable = initializeSchema == CasbinDataSourceInitializationMode.CREATE;
+        switch (databaseName) {
+            case ""mysql"":",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/0c9cf6557d4a84d308bb22dc8d6bec4cd530851e,"    public Adapter autoConfigJdbcAdapter(JdbcTemplate jdbcTemplate, CasbinProperties properties, CasbinExceptionProperties exceptionProperties) {
+        String databaseName = getDatabaseName(jdbcTemplate.getDataSource());
+        CasbinDataSourceInitializationMode initializeSchema = properties.getInitializeSchema();
+        boolean autoCreateTable = initializeSchema == CasbinDataSourceInitializationMode.CREATE;
+        switch (databaseName) {
+            case ""mysql"":
+","['    ', 'public', ' ', 'Adapter', ' ', 'autoConfigJdbcAdapter', '(', 'JdbcTemplate', ' ', 'jdbcTemplate', ',', ' ', 'CasbinProperties', ' ', 'properties', ',', ' ', 'CasbinExceptionProperties', ' ', 'exceptionProperties', ')', ' ', '{', '\n', '        ', 'String', ' ', 'databaseName', ' ', '=', ' ', 'getDatabaseName', '(', 'jdbcTemplate', '.', 'getDataSource', '(', ')', ')', ';', '\n', '        ', 'CasbinDataSourceInitializationMode', ' ', 'initializeSchema', ' ', '=', ' ', 'properties', '.', 'getInitializeSchema', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'autoCreateTable', ' ', '=', ' ', 'initializeSchema', ' ', '=', '=', ' ', 'CasbinDataSourceInitializationMode', '.', 'CREATE', ';', '\n', '        ', 'switch', ' ', '(', 'databaseName', ')', ' ', '{', '\n', '            ', 'case', ' ', '""', 'mysql', '""', ':', '\n']"
+master,0c9cf6557d4a84d308bb22dc8d6bec4cd530851e,FileUtils.java,removePrefix,"    private String removePrefix(String str, String prefix) {
+        if (str.startsWith(prefix)) {
+            return str.substring(prefix.length());
+        }
+        return str;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/0c9cf6557d4a84d308bb22dc8d6bec4cd530851e,"    private String removePrefix(String str, String prefix) {
+        if (str.startsWith(prefix)) {
+            return str.substring(prefix.length());
+        }
+        return str;
+    }
+","['    ', 'private', ' ', 'String', ' ', 'removePrefix', '(', 'String', ' ', 'str', ',', ' ', 'String', ' ', 'prefix', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'str', '.', 'startsWith', '(', 'prefix', ')', ')', ' ', '{', '\n', '            ', 'return', ' ', 'str', '.', 'substring', '(', 'prefix', '.', 'length', '(', ')', ')', ';', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'str', ';', '\n', '    ', '}', '\n']"
+master,c6eee8f496935e076fcbff75d9894051267aab17,JdbcAdapter.java,loadFilteredPolicy,"    public void loadFilteredPolicy(Model model, Object filter) throws CasbinAdapterException {
+        if (filter == null) {
+            loadPolicy(model);
+            return;
+        }
+        if (!(filter instanceof Filter)) {
+            throw new CasbinAdapterException(""Invalid filter type."");
+        }
+        try {
+            loadFilteredPolicyFromJdbc(model, (Filter) filter);",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/c6eee8f496935e076fcbff75d9894051267aab17,"    public void loadFilteredPolicy(Model model, Object filter) throws CasbinAdapterException {
+        if (filter == null) {
+            loadPolicy(model);
+            return;
+        }
+        if (!(filter instanceof Filter)) {
+            throw new CasbinAdapterException(""Invalid filter type."");
+        }
+        try {
+            loadFilteredPolicyFromJdbc(model, (Filter) filter);
+","['    ', 'public', ' ', 'void', ' ', 'loadFilteredPolicy', '(', 'Model', ' ', 'model', ',', ' ', 'Object', ' ', 'filter', ')', ' ', 'throws', ' ', 'CasbinAdapterException', ' ', '{', '\n', '        ', 'if', ' ', '(', 'filter', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'loadPolicy', '(', 'model', ')', ';', '\n', '            ', 'return', ';', '\n', '        ', '}', '\n', '        ', 'if', ' ', '(', '!', '(', 'filter', ' ', 'instanceof', ' ', 'Filter', ')', ')', ' ', '{', '\n', '            ', 'throw', ' ', 'new', ' ', 'CasbinAdapterException', '(', '""', 'Invalid filter type.', '""', ')', ';', '\n', '        ', '}', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'loadFilteredPolicyFromJdbc', '(', 'model', ',', ' ', '(', 'Filter', ')', ' ', 'filter', ')', ';', '\n']"
+master,c6eee8f496935e076fcbff75d9894051267aab17,JdbcAdapter.java,isFiltered,"    public boolean isFiltered() {
+        return isFiltered;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/c6eee8f496935e076fcbff75d9894051267aab17,"    public boolean isFiltered() {
+        return isFiltered;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isFiltered', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'isFiltered', ';', '\n', '    ', '}', '\n']"
+master,c6eee8f496935e076fcbff75d9894051267aab17,JdbcAdapter.java,loadFilteredPolicyFromJdbc,"    private void loadFilteredPolicyFromJdbc(Model model, Filter filter) {
+        // group the policies by ptype and merge the duplicate data.
+        List<CasbinRule> casbinRules = jdbcTemplate.query(getLoadPolicySql(), BeanPropertyRowMapper.newInstance(CasbinRule.class));
+        Map<String, List<ArrayList<String>>> policies = casbinRules.parallelStream().distinct()
+                .map(CasbinRule::toPolicy)
+                .collect(Collectors.toMap(x -> x.get(0), y -> {
+                    ArrayList<ArrayList<String>> lists = new ArrayList<>();
+                    if (!filterCasbinRule(y, filter)) {
+                        // remove the first policy type in the list.
+                        y.remove(0);
+                        lists.add(y);
+                    }
+                    return lists;
+                }, (oldValue, newValue) -> {
+                    oldValue.addAll(newValue);
+                    return oldValue;
+                }));
+        // load grouped policies
+        policies.keySet().forEach(
+                k -> model.model.get(k.substring(0, 1)).get(k).policy.addAll(policies.get(k))
+        );
+        isFiltered = false;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/c6eee8f496935e076fcbff75d9894051267aab17,"    private void loadFilteredPolicyFromJdbc(Model model, Filter filter) {
+        
+        List<CasbinRule> casbinRules = jdbcTemplate.query(getLoadPolicySql(), BeanPropertyRowMapper.newInstance(CasbinRule.class));
+        Map<String, List<ArrayList<String>>> policies = casbinRules.parallelStream().distinct()
+                .map(CasbinRule::toPolicy)
+                .collect(Collectors.toMap(x -> x.get(0), y -> {
+                    ArrayList<ArrayList<String>> lists = new ArrayList<>();
+                    if (!filterCasbinRule(y, filter)) {
+                        
+                        y.remove(0);
+                        lists.add(y);
+                    }
+                    return lists;
+                }, (oldValue, newValue) -> {
+                    oldValue.addAll(newValue);
+                    return oldValue;
+                }));
+        
+        policies.keySet().forEach(
+                k -> model.model.get(k.substring(0, 1)).get(k).policy.addAll(policies.get(k))
+        );
+        isFiltered = false;
+    }
+","['    ', 'private', ' ', 'void', ' ', 'loadFilteredPolicyFromJdbc', '(', 'Model', ' ', 'model', ',', ' ', 'Filter', ' ', 'filter', ')', ' ', '{', '\n', '        ', '\n', '        ', 'List', '<', 'CasbinRule', '>', ' ', 'casbinRules', ' ', '=', ' ', 'jdbcTemplate', '.', 'query', '(', 'getLoadPolicySql', '(', ')', ',', ' ', 'BeanPropertyRowMapper', '.', 'newInstance', '(', 'CasbinRule', '.', 'class', ')', ')', ';', '\n', '        ', 'Map', '<', 'String', ',', ' ', 'List', '<', 'ArrayList', '<', 'String', '>', '>', '>', ' ', 'policies', ' ', '=', ' ', 'casbinRules', '.', 'parallelStream', '(', ')', '.', 'distinct', '(', ')', '\n', '                ', '.', 'map', '(', 'CasbinRule', ':', ':', 'toPolicy', ')', '\n', '                ', '.', 'collect', '(', 'Collectors', '.', 'toMap', '(', 'x', ' ', '-', '>', ' ', 'x', '.', 'get', '(', '0', ')', ',', ' ', 'y', ' ', '-', '>', ' ', '{', '\n', '                    ', 'ArrayList', '<', 'ArrayList', '<', 'String', '>', '>', ' ', 'lists', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', ')', ';', '\n', '                    ', 'if', ' ', '(', '!', 'filterCasbinRule', '(', 'y', ',', ' ', 'filter', ')', ')', ' ', '{', '\n', '                        ', '\n', '                        ', 'y', '.', 'remove', '(', '0', ')', ';', '\n', '                        ', 'lists', '.', 'add', '(', 'y', ')', ';', '\n', '                    ', '}', '\n', '                    ', 'return', ' ', 'lists', ';', '\n', '                ', '}', ',', ' ', '(', 'oldValue', ',', ' ', 'newValue', ')', ' ', '-', '>', ' ', '{', '\n', '                    ', 'oldValue', '.', 'addAll', '(', 'newValue', ')', ';', '\n', '                    ', 'return', ' ', 'oldValue', ';', '\n', '                ', '}', ')', ')', ';', '\n', '        ', '\n', '        ', 'policies', '.', 'keySet', '(', ')', '.', 'forEach', '(', '\n', '                ', 'k', ' ', '-', '>', ' ', 'model', '.', 'model', '.', 'get', '(', 'k', '.', 'substring', '(', '0', ',', ' ', '1', ')', ')', '.', 'get', '(', 'k', ')', '.', 'policy', '.', 'addAll', '(', 'policies', '.', 'get', '(', 'k', ')', ')', '\n', '        ', ')', ';', '\n', '        ', 'isFiltered', ' ', '=', ' ', 'false', ';', '\n', '    ', '}', '\n']"
+master,c6eee8f496935e076fcbff75d9894051267aab17,JdbcAdapter.java,filterCasbinRule,"    private boolean filterCasbinRule(ArrayList<String> policy, Filter filter) {
+        String[] filterSlice = null;
+        switch (policy.get(0)) {
+            case ""p"":
+                filterSlice = filter.p;
+                break;
+            case ""g"":
+                filterSlice = filter.g;
+                break;
+            default:
+                break;
+        }
+        if (filterSlice == null) {
+            filterSlice = new String[]{};
+        }
+        return filterWords(policy, filterSlice);
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/c6eee8f496935e076fcbff75d9894051267aab17,"    private boolean filterCasbinRule(ArrayList<String> policy, Filter filter) {
+        String[] filterSlice = null;
+        switch (policy.get(0)) {
+            case ""p"":
+                filterSlice = filter.p;
+                break;
+            case ""g"":
+                filterSlice = filter.g;
+                break;
+            default:
+                break;
+        }
+        if (filterSlice == null) {
+            filterSlice = new String[]{};
+        }
+        return filterWords(policy, filterSlice);
+    }
+","['    ', 'private', ' ', 'boolean', ' ', 'filterCasbinRule', '(', 'ArrayList', '<', 'String', '>', ' ', 'policy', ',', ' ', 'Filter', ' ', 'filter', ')', ' ', '{', '\n', '        ', 'String', '[', ']', ' ', 'filterSlice', ' ', '=', ' ', 'null', ';', '\n', '        ', 'switch', ' ', '(', 'policy', '.', 'get', '(', '0', ')', ')', ' ', '{', '\n', '            ', 'case', ' ', '""', 'p', '""', ':', '\n', '                ', 'filterSlice', ' ', '=', ' ', 'filter', '.', 'p', ';', '\n', '                ', 'break', ';', '\n', '            ', 'case', ' ', '""', 'g', '""', ':', '\n', '                ', 'filterSlice', ' ', '=', ' ', 'filter', '.', 'g', ';', '\n', '                ', 'break', ';', '\n', '            ', 'default', ':', '\n', '                ', 'break', ';', '\n', '        ', '}', '\n', '        ', 'if', ' ', '(', 'filterSlice', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'filterSlice', ' ', '=', ' ', 'new', ' ', 'String', '[', ']', '{', '}', ';', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'filterWords', '(', 'policy', ',', ' ', 'filterSlice', ')', ';', '\n', '    ', '}', '\n']"
+master,c6eee8f496935e076fcbff75d9894051267aab17,JdbcAdapter.java,filterWords,"    private boolean filterWords(ArrayList<String> policy, String[] filter) {
+        boolean skipLine = false;
+        int i = 0;
+        for (String s : filter) {
+            i++;
+            if (s.length() > 0 && !s.trim().equals(policy.get(i))) {
+                skipLine = true;
+                break;
+            }
+        }
+        return skipLine;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/c6eee8f496935e076fcbff75d9894051267aab17,"    private boolean filterWords(ArrayList<String> policy, String[] filter) {
+        boolean skipLine = false;
+        int i = 0;
+        for (String s : filter) {
+            i++;
+            if (s.length() > 0 && !s.trim().equals(policy.get(i))) {
+                skipLine = true;
+                break;
+            }
+        }
+        return skipLine;
+    }
+","['    ', 'private', ' ', 'boolean', ' ', 'filterWords', '(', 'ArrayList', '<', 'String', '>', ' ', 'policy', ',', ' ', 'String', '[', ']', ' ', 'filter', ')', ' ', '{', '\n', '        ', 'boolean', ' ', 'skipLine', ' ', '=', ' ', 'false', ';', '\n', '        ', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', '\n', '        ', 'for', ' ', '(', 'String', ' ', 's', ' ', ':', ' ', 'filter', ')', ' ', '{', '\n', '            ', 'i', '+', '+', ';', '\n', '            ', 'if', ' ', '(', 's', '.', 'length', '(', ')', ' ', '>', ' ', '0', ' ', '&', '&', ' ', '!', 's', '.', 'trim', '(', ')', '.', 'equals', '(', 'policy', '.', 'get', '(', 'i', ')', ')', ')', ' ', '{', '\n', '                ', 'skipLine', ' ', '=', ' ', 'true', ';', '\n', '                ', 'break', ';', '\n', '            ', '}', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'skipLine', ';', '\n', '    ', '}', '\n']"
+master,c6eee8f496935e076fcbff75d9894051267aab17,JdbcAdapterTest.java,testLoadFilteredPolicyEmptyFilter,"    public void testLoadFilteredPolicyEmptyFilter() {
+        init();
+        getLoadPolicyResult();
+        init();
+
+        // the filter is null, so the result is same as the loadPolicyResult.
+        this.filteredAdapter.loadFilteredPolicy(this.model, null);
+        Assert.assertEquals(this.loadPolicyResult, this.model.savePolicyToText());
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/c6eee8f496935e076fcbff75d9894051267aab17,"    public void testLoadFilteredPolicyEmptyFilter() {
+        init();
+        getLoadPolicyResult();
+        init();
+
+        
+        this.filteredAdapter.loadFilteredPolicy(this.model, null);
+        Assert.assertEquals(this.loadPolicyResult, this.model.savePolicyToText());
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testLoadFilteredPolicyEmptyFilter', '(', ')', ' ', '{', '\n', '        ', 'init', '(', ')', ';', '\n', '        ', 'getLoadPolicyResult', '(', ')', ';', '\n', '        ', 'init', '(', ')', ';', '\n', '\n', '        ', '\n', '        ', 'this', '.', 'filteredAdapter', '.', 'loadFilteredPolicy', '(', 'this', '.', 'model', ',', ' ', 'null', ')', ';', '\n', '        ', 'Assert', '.', 'assertEquals', '(', 'this', '.', 'loadPolicyResult', ',', ' ', 'this', '.', 'model', '.', 'savePolicyToText', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,c6eee8f496935e076fcbff75d9894051267aab17,JdbcAdapterTest.java,testLoadFilteredPolicyInvalidFilterType,"    public void testLoadFilteredPolicyInvalidFilterType() {
+        init();
+
+        // owing to the invalid filter type,this function should throw a CasbinAdapterException
+        Object filter = new Object();
+        try {
+            this.filteredAdapter.loadFilteredPolicy(this.model, filter);",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/c6eee8f496935e076fcbff75d9894051267aab17,"    public void testLoadFilteredPolicyInvalidFilterType() {
+        init();
+
+        
+        Object filter = new Object();
+        try {
+            this.filteredAdapter.loadFilteredPolicy(this.model, filter);
+","['    ', 'public', ' ', 'void', ' ', 'testLoadFilteredPolicyInvalidFilterType', '(', ')', ' ', '{', '\n', '        ', 'init', '(', ')', ';', '\n', '\n', '        ', '\n', '        ', 'Object', ' ', 'filter', ' ', '=', ' ', 'new', ' ', 'Object', '(', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'this', '.', 'filteredAdapter', '.', 'loadFilteredPolicy', '(', 'this', '.', 'model', ',', ' ', 'filter', ')', ';', '\n']"
+master,c6eee8f496935e076fcbff75d9894051267aab17,JdbcAdapterTest.java,init,"    private void init() {
+        this.model = newModel();
+        this.model.addDef(""r"", ""r"", ""sub, obj, act"");
+        this.model.addDef(""p"", ""p"", ""sub, obj, act"");
+        this.model.addDef(""e"", ""e"", ""some(where (p.eft == allow))"");
+        this.model.addDef(""m"", ""m"", ""r.sub == p.sub && keyMatch(r.obj, p.obj) && regexMatch(r.act, p.act)"");
+        this.model.addDef(""g"", ""g"", ""_, _"");
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/c6eee8f496935e076fcbff75d9894051267aab17,"    private void init() {
+        this.model = newModel();
+        this.model.addDef(""r"", ""r"", ""sub, obj, act"");
+        this.model.addDef(""p"", ""p"", ""sub, obj, act"");
+        this.model.addDef(""e"", ""e"", ""some(where (p.eft == allow))"");
+        this.model.addDef(""m"", ""m"", ""r.sub == p.sub && keyMatch(r.obj, p.obj) && regexMatch(r.act, p.act)"");
+        this.model.addDef(""g"", ""g"", ""_, _"");
+    }
+","['    ', 'private', ' ', 'void', ' ', 'init', '(', ')', ' ', '{', '\n', '        ', 'this', '.', 'model', ' ', '=', ' ', 'newModel', '(', ')', ';', '\n', '        ', 'this', '.', 'model', '.', 'addDef', '(', '""', 'r', '""', ',', ' ', '""', 'r', '""', ',', ' ', '""', 'sub, obj, act', '""', ')', ';', '\n', '        ', 'this', '.', 'model', '.', 'addDef', '(', '""', 'p', '""', ',', ' ', '""', 'p', '""', ',', ' ', '""', 'sub, obj, act', '""', ')', ';', '\n', '        ', 'this', '.', 'model', '.', 'addDef', '(', '""', 'e', '""', ',', ' ', '""', 'e', '""', ',', ' ', '""', 'some(where (p.eft == allow))', '""', ')', ';', '\n', '        ', 'this', '.', 'model', '.', 'addDef', '(', '""', 'm', '""', ',', ' ', '""', 'm', '""', ',', ' ', '""', 'r.sub == p.sub && keyMatch(r.obj, p.obj) && regexMatch(r.act, p.act)', '""', ')', ';', '\n', '        ', 'this', '.', 'model', '.', 'addDef', '(', '""', 'g', '""', ',', ' ', '""', 'g', '""', ',', ' ', '""', '_, _', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,643063aedb1684a18e7c42c90412dc742f33a2ea,CasbinRule.java,hashCode,"    public int hashCode() {
+        return Objects.hash(ptype, v0, v1, v2, v3, v4, v5);
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/643063aedb1684a18e7c42c90412dc742f33a2ea,"    public int hashCode() {
+        return Objects.hash(ptype, v0, v1, v2, v3, v4, v5);
+    }
+","['    ', 'public', ' ', 'int', ' ', 'hashCode', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'Objects', '.', 'hash', '(', 'ptype', ',', ' ', 'v0', ',', ' ', 'v1', ',', ' ', 'v2', ',', ' ', 'v3', ',', ' ', 'v4', ',', ' ', 'v5', ')', ';', '\n', '    ', '}', '\n']"
+master,643063aedb1684a18e7c42c90412dc742f33a2ea,JdbcAdapter.java,removePolicy,"    public void removePolicy(String sec, String ptype, List<String> rule) {
+        if (rule.isEmpty()) {
+            return;
+        }
+        removeFilteredPolicy(sec, ptype, 0, rule.toArray(new String[0]));
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/643063aedb1684a18e7c42c90412dc742f33a2ea,"    public void removePolicy(String sec, String ptype, List<String> rule) {
+        if (rule.isEmpty()) {
+            return;
+        }
+        removeFilteredPolicy(sec, ptype, 0, rule.toArray(new String[0]));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'removePolicy', '(', 'String', ' ', 'sec', ',', ' ', 'String', ' ', 'ptype', ',', ' ', 'List', '<', 'String', '>', ' ', 'rule', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'rule', '.', 'isEmpty', '(', ')', ')', ' ', '{', '\n', '            ', 'return', ';', '\n', '        ', '}', '\n', '        ', 'removeFilteredPolicy', '(', 'sec', ',', ' ', 'ptype', ',', ' ', '0', ',', ' ', 'rule', '.', 'toArray', '(', 'new', ' ', 'String', '[', '0', ']', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,643063aedb1684a18e7c42c90412dc742f33a2ea,JdbcAdapter.java,removeFilteredPolicy,"    public void removeFilteredPolicy(String sec, String ptype, int fieldIndex, String... fieldValues) {
+        if (fieldValues.length == 0) {
+            return;
+        }
+        List<String> params = new ArrayList<>(Arrays.asList(fieldValues));
+        params.add(0, ptype);
+        String delSql = DELETE_POLICY_SQL;
+        int columnIndex = fieldIndex;
+        for (int i = 0; i < fieldValues.length; i++) {
+            delSql = String.format(""%s%s%s%s"", delSql, "" AND v"", columnIndex, "" = ? "");
+            columnIndex++;
+        }
+        int rows = jdbcTemplate.update(delSql, params.toArray());
+        if (rows < 1) {
+            if (casbinExceptionProperties.isRemovePolicyFailed()) {",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/643063aedb1684a18e7c42c90412dc742f33a2ea,"    public void removeFilteredPolicy(String sec, String ptype, int fieldIndex, String... fieldValues) {
+        if (fieldValues.length == 0) {
+            return;
+        }
+        List<String> params = new ArrayList<>(Arrays.asList(fieldValues));
+        params.add(0, ptype);
+        String delSql = DELETE_POLICY_SQL;
+        int columnIndex = fieldIndex;
+        for (int i = 0; i < fieldValues.length; i++) {
+            delSql = String.format(""%s%s%s%s"", delSql, "" AND v"", columnIndex, "" = ? "");
+            columnIndex++;
+        }
+        int rows = jdbcTemplate.update(delSql, params.toArray());
+        if (rows < 1) {
+            if (casbinExceptionProperties.isRemovePolicyFailed()) {
+","['    ', 'public', ' ', 'void', ' ', 'removeFilteredPolicy', '(', 'String', ' ', 'sec', ',', ' ', 'String', ' ', 'ptype', ',', ' ', 'int', ' ', 'fieldIndex', ',', ' ', 'String', '.', '.', '.', ' ', 'fieldValues', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'fieldValues', '.', 'length', ' ', '=', '=', ' ', '0', ')', ' ', '{', '\n', '            ', 'return', ';', '\n', '        ', '}', '\n', '        ', 'List', '<', 'String', '>', ' ', 'params', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', 'Arrays', '.', 'asList', '(', 'fieldValues', ')', ')', ';', '\n', '        ', 'params', '.', 'add', '(', '0', ',', ' ', 'ptype', ')', ';', '\n', '        ', 'String', ' ', 'delSql', ' ', '=', ' ', 'DELETE_POLICY_SQL', ';', '\n', '        ', 'int', ' ', 'columnIndex', ' ', '=', ' ', 'fieldIndex', ';', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', 'fieldValues', '.', 'length', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'delSql', ' ', '=', ' ', 'String', '.', 'format', '(', '""', '%s%s%s%s', '""', ',', ' ', 'delSql', ',', ' ', '""', ' AND v', '""', ',', ' ', 'columnIndex', ',', ' ', '""', ' = ? ', '""', ')', ';', '\n', '            ', 'columnIndex', '+', '+', ';', '\n', '        ', '}', '\n', '        ', 'int', ' ', 'rows', ' ', '=', ' ', 'jdbcTemplate', '.', 'update', '(', 'delSql', ',', ' ', 'params', '.', 'toArray', '(', ')', ')', ';', '\n', '        ', 'if', ' ', '(', 'rows', ' ', '<', ' ', '1', ')', ' ', '{', '\n', '            ', 'if', ' ', '(', 'casbinExceptionProperties', '.', 'isRemovePolicyFailed', '(', ')', ')', ' ', '{', '\n']"
+master,643063aedb1684a18e7c42c90412dc742f33a2ea,CasbinExceptionProperties.java,isRemovePolicyFailed,"    public boolean isRemovePolicyFailed() {
+        return removePolicyFailed;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/643063aedb1684a18e7c42c90412dc742f33a2ea,"    public boolean isRemovePolicyFailed() {
+        return removePolicyFailed;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isRemovePolicyFailed', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'removePolicyFailed', ';', '\n', '    ', '}', '\n']"
+master,643063aedb1684a18e7c42c90412dc742f33a2ea,CasbinProperties.java,isEnableCasbin,"    public boolean isEnableCasbin() {
+        return enableCasbin;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/643063aedb1684a18e7c42c90412dc742f33a2ea,"    public boolean isEnableCasbin() {
+        return enableCasbin;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isEnableCasbin', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'enableCasbin', ';', '\n', '    ', '}', '\n']"
+master,643063aedb1684a18e7c42c90412dc742f33a2ea,CasbinProperties.java,isUseSyncedEnforcer,"    public boolean isUseSyncedEnforcer() {
+        return useSyncedEnforcer;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/643063aedb1684a18e7c42c90412dc742f33a2ea,"    public boolean isUseSyncedEnforcer() {
+        return useSyncedEnforcer;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isUseSyncedEnforcer', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'useSyncedEnforcer', ';', '\n', '    ', '}', '\n']"
+master,643063aedb1684a18e7c42c90412dc742f33a2ea,CasbinProperties.java,isEnableWatcher,"    public boolean isEnableWatcher() {
+        return enableWatcher;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/643063aedb1684a18e7c42c90412dc742f33a2ea,"    public boolean isEnableWatcher() {
+        return enableWatcher;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isEnableWatcher', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'enableWatcher', ';', '\n', '    ', '}', '\n']"
+master,643063aedb1684a18e7c42c90412dc742f33a2ea,CasbinProperties.java,isAutoSave,"    public boolean isAutoSave() {
+        return autoSave;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/643063aedb1684a18e7c42c90412dc742f33a2ea,"    public boolean isAutoSave() {
+        return autoSave;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isAutoSave', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'autoSave', ';', '\n', '    ', '}', '\n']"
+master,643063aedb1684a18e7c42c90412dc742f33a2ea,CasbinProperties.java,isUseDefaultModelIfModelNotSetting,"    public boolean isUseDefaultModelIfModelNotSetting() {
+        return useDefaultModelIfModelNotSetting;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/643063aedb1684a18e7c42c90412dc742f33a2ea,"    public boolean isUseDefaultModelIfModelNotSetting() {
+        return useDefaultModelIfModelNotSetting;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isUseDefaultModelIfModelNotSetting', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'useDefaultModelIfModelNotSetting', ';', '\n', '    ', '}', '\n']"
+master,643063aedb1684a18e7c42c90412dc742f33a2ea,FileUtils.java,removePrefix,"    private static String removePrefix(String str, String prefix) {
+        if (str.startsWith(prefix)) {
+            return str.substring(prefix.length());
+        }
+        return str;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/643063aedb1684a18e7c42c90412dc742f33a2ea,"    private static String removePrefix(String str, String prefix) {
+        if (str.startsWith(prefix)) {
+            return str.substring(prefix.length());
+        }
+        return str;
+    }
+","['    ', 'private', ' ', 'static', ' ', 'String', ' ', 'removePrefix', '(', 'String', ' ', 'str', ',', ' ', 'String', ' ', 'prefix', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'str', '.', 'startsWith', '(', 'prefix', ')', ')', ' ', '{', '\n', '            ', 'return', ' ', 'str', '.', 'substring', '(', 'prefix', '.', 'length', '(', ')', ')', ';', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'str', ';', '\n', '    ', '}', '\n']"
+master,ee8b7b32368fc38a1f8635f363c8d787c1ac1a48,CasbinAutoConfiguration.java,autoConfigJdbcAdapter,"    public Adapter autoConfigJdbcAdapter(
+            @CasbinDataSource ObjectProvider<DataSource> casbinDataSource,
+            JdbcTemplate jdbcTemplate,
+            CasbinProperties properties,
+            CasbinExceptionProperties exceptionProperties
+    ) {
+        JdbcTemplate jdbcTemplateToUse = getJdbcTemplate(jdbcTemplate, casbinDataSource);
+        String databaseName = getDatabaseName(jdbcTemplateToUse.getDataSource());
+        CasbinDataSourceInitializationMode initializeSchema = properties.getInitializeSchema();
+        boolean autoCreateTable = initializeSchema == CasbinDataSourceInitializationMode.CREATE;
+        logger.info(""Casbin current use database product: {}"", databaseName);
+        switch (databaseName) {
+            case ""mysql"":",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/ee8b7b32368fc38a1f8635f363c8d787c1ac1a48,"    public Adapter autoConfigJdbcAdapter(
+            @CasbinDataSource ObjectProvider<DataSource> casbinDataSource,
+            JdbcTemplate jdbcTemplate,
+            CasbinProperties properties,
+            CasbinExceptionProperties exceptionProperties
+    ) {
+        JdbcTemplate jdbcTemplateToUse = getJdbcTemplate(jdbcTemplate, casbinDataSource);
+        String databaseName = getDatabaseName(jdbcTemplateToUse.getDataSource());
+        CasbinDataSourceInitializationMode initializeSchema = properties.getInitializeSchema();
+        boolean autoCreateTable = initializeSchema == CasbinDataSourceInitializationMode.CREATE;
+        logger.info(""Casbin current use database product: {}"", databaseName);
+        switch (databaseName) {
+            case ""mysql"":
+","['    ', 'public', ' ', 'Adapter', ' ', 'autoConfigJdbcAdapter', '(', '\n', '            ', '@CasbinDataSource', ' ', 'ObjectProvider', '<', 'DataSource', '>', ' ', 'casbinDataSource', ',', '\n', '            ', 'JdbcTemplate', ' ', 'jdbcTemplate', ',', '\n', '            ', 'CasbinProperties', ' ', 'properties', ',', '\n', '            ', 'CasbinExceptionProperties', ' ', 'exceptionProperties', '\n', '    ', ')', ' ', '{', '\n', '        ', 'JdbcTemplate', ' ', 'jdbcTemplateToUse', ' ', '=', ' ', 'getJdbcTemplate', '(', 'jdbcTemplate', ',', ' ', 'casbinDataSource', ')', ';', '\n', '        ', 'String', ' ', 'databaseName', ' ', '=', ' ', 'getDatabaseName', '(', 'jdbcTemplateToUse', '.', 'getDataSource', '(', ')', ')', ';', '\n', '        ', 'CasbinDataSourceInitializationMode', ' ', 'initializeSchema', ' ', '=', ' ', 'properties', '.', 'getInitializeSchema', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'autoCreateTable', ' ', '=', ' ', 'initializeSchema', ' ', '=', '=', ' ', 'CasbinDataSourceInitializationMode', '.', 'CREATE', ';', '\n', '        ', 'logger', '.', 'info', '(', '""', 'Casbin current use database product: {}', '""', ',', ' ', 'databaseName', ')', ';', '\n', '        ', 'switch', ' ', '(', 'databaseName', ')', ' ', '{', '\n', '            ', 'case', ' ', '""', 'mysql', '""', ':', '\n']"
+master,ee8b7b32368fc38a1f8635f363c8d787c1ac1a48,CasbinDataSourceConfiguration.java,casbinDataSource,"    public DataSource casbinDataSource() {
+        return DataSourceBuilder.create().url(""jdbc:h2:mem:casbin"").build();
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/ee8b7b32368fc38a1f8635f363c8d787c1ac1a48,"    public DataSource casbinDataSource() {
+        return DataSourceBuilder.create().url(""jdbc:h2:mem:casbin"").build();
+    }
+","['    ', 'public', ' ', 'DataSource', ' ', 'casbinDataSource', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'DataSourceBuilder', '.', 'create', '(', ')', '.', 'url', '(', '""', 'jdbc:h2:mem:casbin', '""', ')', '.', 'build', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,e84a5d8613f7703f31ae50ca797c30b54b312f11,JdbcAdapter.java,loadPolicy,"    public void loadPolicy(Model model) {
+        List<CasbinRule> casbinRules = jdbcTemplate.query(getLoadPolicySql(), BeanPropertyRowMapper.newInstance(CasbinRule.class));
+        // group the policies by ptype and merge the duplicate data
+        Map<String, List<ArrayList<String>>> policies = casbinRules.parallelStream().distinct()
+                .map(CasbinRule::toPolicy)
+                .collect(Collectors.toMap(x -> x.get(0), y -> {
+                    ArrayList<ArrayList<String>> lists = new ArrayList<>();
+                    // remove the first policy type in the list
+                    y.remove(0);
+                    lists.add(y);
+                    return lists;
+                }, (oldValue, newValue) -> {
+                    oldValue.addAll(newValue);
+                    return oldValue;
+                }));
+        // load grouped policies
+        policies.keySet().forEach(
+                k -> model.model.get(k.substring(0, 1)).get(k).policy.addAll(policies.get(k))
+        );
+        isFiltered = false;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/e84a5d8613f7703f31ae50ca797c30b54b312f11,"    public void loadPolicy(Model model) {
+        List<CasbinRule> casbinRules = jdbcTemplate.query(getLoadPolicySql(), BeanPropertyRowMapper.newInstance(CasbinRule.class));
+        
+        Map<String, List<ArrayList<String>>> policies = casbinRules.parallelStream().distinct()
+                .map(CasbinRule::toPolicy)
+                .collect(Collectors.toMap(x -> x.get(0), y -> {
+                    ArrayList<ArrayList<String>> lists = new ArrayList<>();
+                    
+                    y.remove(0);
+                    lists.add(y);
+                    return lists;
+                }, (oldValue, newValue) -> {
+                    oldValue.addAll(newValue);
+                    return oldValue;
+                }));
+        
+        policies.keySet().forEach(
+                k -> model.model.get(k.substring(0, 1)).get(k).policy.addAll(policies.get(k))
+        );
+        isFiltered = false;
+    }
+","['    ', 'public', ' ', 'void', ' ', 'loadPolicy', '(', 'Model', ' ', 'model', ')', ' ', '{', '\n', '        ', 'List', '<', 'CasbinRule', '>', ' ', 'casbinRules', ' ', '=', ' ', 'jdbcTemplate', '.', 'query', '(', 'getLoadPolicySql', '(', ')', ',', ' ', 'BeanPropertyRowMapper', '.', 'newInstance', '(', 'CasbinRule', '.', 'class', ')', ')', ';', '\n', '        ', '\n', '        ', 'Map', '<', 'String', ',', ' ', 'List', '<', 'ArrayList', '<', 'String', '>', '>', '>', ' ', 'policies', ' ', '=', ' ', 'casbinRules', '.', 'parallelStream', '(', ')', '.', 'distinct', '(', ')', '\n', '                ', '.', 'map', '(', 'CasbinRule', ':', ':', 'toPolicy', ')', '\n', '                ', '.', 'collect', '(', 'Collectors', '.', 'toMap', '(', 'x', ' ', '-', '>', ' ', 'x', '.', 'get', '(', '0', ')', ',', ' ', 'y', ' ', '-', '>', ' ', '{', '\n', '                    ', 'ArrayList', '<', 'ArrayList', '<', 'String', '>', '>', ' ', 'lists', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', ')', ';', '\n', '                    ', '\n', '                    ', 'y', '.', 'remove', '(', '0', ')', ';', '\n', '                    ', 'lists', '.', 'add', '(', 'y', ')', ';', '\n', '                    ', 'return', ' ', 'lists', ';', '\n', '                ', '}', ',', ' ', '(', 'oldValue', ',', ' ', 'newValue', ')', ' ', '-', '>', ' ', '{', '\n', '                    ', 'oldValue', '.', 'addAll', '(', 'newValue', ')', ';', '\n', '                    ', 'return', ' ', 'oldValue', ';', '\n', '                ', '}', ')', ')', ';', '\n', '        ', '\n', '        ', 'policies', '.', 'keySet', '(', ')', '.', 'forEach', '(', '\n', '                ', 'k', ' ', '-', '>', ' ', 'model', '.', 'model', '.', 'get', '(', 'k', '.', 'substring', '(', '0', ',', ' ', '1', ')', ')', '.', 'get', '(', 'k', ')', '.', 'policy', '.', 'addAll', '(', 'policies', '.', 'get', '(', 'k', ')', ')', '\n', '        ', ')', ';', '\n', '        ', 'isFiltered', ' ', '=', ' ', 'false', ';', '\n', '    ', '}', '\n']"
+master,e84a5d8613f7703f31ae50ca797c30b54b312f11,CasbinRedisWatcherAutoConfiguration.java,redisMessageListenerContainer,"    public RedisMessageListenerContainer redisMessageListenerContainer(
+            RedisConnectionFactory connectionFactory,
+            MessageListenerAdapter listenerAdapter
+    ) {
+        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+        container.setConnectionFactory(connectionFactory);
+        // subscribe to the CASBIN_POLICY_TOPIC channel
+        container.addMessageListener(listenerAdapter, new ChannelTopic(CASBIN_POLICY_TOPIC));
+        return container;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/e84a5d8613f7703f31ae50ca797c30b54b312f11,"    public RedisMessageListenerContainer redisMessageListenerContainer(
+            RedisConnectionFactory connectionFactory,
+            MessageListenerAdapter listenerAdapter
+    ) {
+        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+        container.setConnectionFactory(connectionFactory);
+        
+        container.addMessageListener(listenerAdapter, new ChannelTopic(CASBIN_POLICY_TOPIC));
+        return container;
+    }
+","['    ', 'public', ' ', 'RedisMessageListenerContainer', ' ', 'redisMessageListenerContainer', '(', '\n', '            ', 'RedisConnectionFactory', ' ', 'connectionFactory', ',', '\n', '            ', 'MessageListenerAdapter', ' ', 'listenerAdapter', '\n', '    ', ')', ' ', '{', '\n', '        ', 'RedisMessageListenerContainer', ' ', 'container', ' ', '=', ' ', 'new', ' ', 'RedisMessageListenerContainer', '(', ')', ';', '\n', '        ', 'container', '.', 'setConnectionFactory', '(', 'connectionFactory', ')', ';', '\n', '        ', '\n', '        ', 'container', '.', 'addMessageListener', '(', 'listenerAdapter', ',', ' ', 'new', ' ', 'ChannelTopic', '(', 'CASBIN_POLICY_TOPIC', ')', ')', ';', '\n', '        ', 'return', ' ', 'container', ';', '\n', '    ', '}', '\n']"
+master,e84a5d8613f7703f31ae50ca797c30b54b312f11,EnforcerTest.java,test1,"    public void test1() {
+        // user rights
+        enforcer.addPolicy(""alice"", ""data1"", ""read"");
+        enforcer.addPolicy(""bob"", ""data2"", ""write"");
+        // role Permissions
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""read"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        // grant alice the permissions owned by data2_admin
+        enforcer.addGroupingPolicy(""alice"", ""data2_admin"");
+
+        // Does bob have read access to data1? It must not be.
+        Assert.assertFalse(enforcer.enforce(""bob"", ""data1"", ""read""));
+
+        // Whether alice has read and write access to data2, it must be possible, otherwise, why is authorization used?
+        Assert.assertTrue(enforcer.enforce(""alice"", ""data2"", ""read""));
+        Assert.assertTrue(enforcer.enforce(""alice"", ""data2"", ""write""));
+
+        // repeat adding P strategy
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        // complete storage, built-in duplicate item filtering
+        enforcer.savePolicy();
+        // verify that duplicates are merged
+        Assert.assertEquals(4, enforcer.getNamedPolicy(""p"").size());
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/e84a5d8613f7703f31ae50ca797c30b54b312f11,"    public void test1() {
+        
+        enforcer.addPolicy(""alice"", ""data1"", ""read"");
+        enforcer.addPolicy(""bob"", ""data2"", ""write"");
+        
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""read"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        
+        enforcer.addGroupingPolicy(""alice"", ""data2_admin"");
+
+        
+        Assert.assertFalse(enforcer.enforce(""bob"", ""data1"", ""read""));
+
+        
+        Assert.assertTrue(enforcer.enforce(""alice"", ""data2"", ""read""));
+        Assert.assertTrue(enforcer.enforce(""alice"", ""data2"", ""write""));
+
+        
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        
+        enforcer.savePolicy();
+        
+        Assert.assertEquals(4, enforcer.getNamedPolicy(""p"").size());
+    }
+","['    ', 'public', ' ', 'void', ' ', 'test1', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'alice', '""', ',', ' ', '""', 'data1', '""', ',', ' ', '""', 'read', '""', ')', ';', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'bob', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'read', '""', ')', ';', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', '\n', '        ', 'enforcer', '.', 'addGroupingPolicy', '(', '""', 'alice', '""', ',', ' ', '""', 'data2_admin', '""', ')', ';', '\n', '\n', '        ', '\n', '        ', 'Assert', '.', 'assertFalse', '(', 'enforcer', '.', 'enforce', '(', '""', 'bob', '""', ',', ' ', '""', 'data1', '""', ',', ' ', '""', 'read', '""', ')', ')', ';', '\n', '\n', '        ', '\n', '        ', 'Assert', '.', 'assertTrue', '(', 'enforcer', '.', 'enforce', '(', '""', 'alice', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'read', '""', ')', ')', ';', '\n', '        ', 'Assert', '.', 'assertTrue', '(', 'enforcer', '.', 'enforce', '(', '""', 'alice', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ')', ';', '\n', '\n', '        ', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', '\n', '        ', 'enforcer', '.', 'savePolicy', '(', ')', ';', '\n', '        ', '\n', '        ', 'Assert', '.', 'assertEquals', '(', '4', ',', ' ', 'enforcer', '.', 'getNamedPolicy', '(', '""', 'p', '""', ')', '.', 'size', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,c5e289d6df5ba66be310c24ac1bce653c7ce8c3c,DB2Adapter.java,initTable,"    protected void initTable() {
+        try {
+            jdbcTemplate.queryForObject(getCheckTableSql(), Integer.class);",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/c5e289d6df5ba66be310c24ac1bce653c7ce8c3c,"    protected void initTable() {
+        try {
+            jdbcTemplate.queryForObject(getCheckTableSql(), Integer.class);
+","['    ', 'protected', ' ', 'void', ' ', 'initTable', '(', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'jdbcTemplate', '.', 'queryForObject', '(', 'getCheckTableSql', '(', ')', ',', ' ', 'Integer', '.', 'class', ')', ';', '\n']"
+master,c5e289d6df5ba66be310c24ac1bce653c7ce8c3c,JdbcAdapter.java,renderActualSql,"    protected String renderActualSql(String sql) {
+    	return sql.replace(DEFAULT_TABLE_NAME, tableName);
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/c5e289d6df5ba66be310c24ac1bce653c7ce8c3c,"    protected String renderActualSql(String sql) {
+    	return sql.replace(DEFAULT_TABLE_NAME, tableName);
+    }
+","['    ', 'protected', ' ', 'String', ' ', 'renderActualSql', '(', 'String', ' ', 'sql', ')', ' ', '{', '\n', '    \t', 'return', ' ', 'sql', '.', 'replace', '(', 'DEFAULT_TABLE_NAME', ',', ' ', 'tableName', ')', ';', '\n', '    ', '}', '\n']"
+master,c5e289d6df5ba66be310c24ac1bce653c7ce8c3c,JdbcAdapter.java,addPolicy,"    public void addPolicy(String sec, String ptype, List<String> rule) {
+        ArrayList<String> rules = new ArrayList<>(rule);
+        rules.add(0, ptype);
+        for (int i = 0; i < 6 - rule.size(); i++) {
+            rules.add(null);
+        }
+        int rows = jdbcTemplate.update(getInsertPolicySql(), rules.toArray());
+        if (rows != 1) {
+            throw new CasbinAdapterException(String.format(""Add policy error, add %d rows, expect %d rows"", rows, 1));",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/c5e289d6df5ba66be310c24ac1bce653c7ce8c3c,"    public void addPolicy(String sec, String ptype, List<String> rule) {
+        ArrayList<String> rules = new ArrayList<>(rule);
+        rules.add(0, ptype);
+        for (int i = 0; i < 6 - rule.size(); i++) {
+            rules.add(null);
+        }
+        int rows = jdbcTemplate.update(getInsertPolicySql(), rules.toArray());
+        if (rows != 1) {
+            throw new CasbinAdapterException(String.format(""Add policy error, add %d rows, expect %d rows"", rows, 1));
+","['    ', 'public', ' ', 'void', ' ', 'addPolicy', '(', 'String', ' ', 'sec', ',', ' ', 'String', ' ', 'ptype', ',', ' ', 'List', '<', 'String', '>', ' ', 'rule', ')', ' ', '{', '\n', '        ', 'ArrayList', '<', 'String', '>', ' ', 'rules', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', 'rule', ')', ';', '\n', '        ', 'rules', '.', 'add', '(', '0', ',', ' ', 'ptype', ')', ';', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '6', ' ', '-', ' ', 'rule', '.', 'size', '(', ')', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'rules', '.', 'add', '(', 'null', ')', ';', '\n', '        ', '}', '\n', '        ', 'int', ' ', 'rows', ' ', '=', ' ', 'jdbcTemplate', '.', 'update', '(', 'getInsertPolicySql', '(', ')', ',', ' ', 'rules', '.', 'toArray', '(', ')', ')', ';', '\n', '        ', 'if', ' ', '(', 'rows', ' ', '!', '=', ' ', '1', ')', ' ', '{', '\n', '            ', 'throw', ' ', 'new', ' ', 'CasbinAdapterException', '(', 'String', '.', 'format', '(', '""', 'Add policy error, add %d rows, expect %d rows', '""', ',', ' ', 'rows', ',', ' ', '1', ')', ')', ';', '\n']"
+master,c5e289d6df5ba66be310c24ac1bce653c7ce8c3c,JdbcAdapter.java,removeFilteredPolicy,"    public void removeFilteredPolicy(String sec, String ptype, int fieldIndex, String... fieldValues) {
+        if (fieldValues.length == 0) {
+            return;
+        }
+        List<String> params = new ArrayList<>(Arrays.asList(fieldValues));
+        params.add(0, ptype);
+        String delSql = getDeletePolicySql();
+        int columnIndex = fieldIndex;
+        for (int i = 0; i < fieldValues.length; i++) {
+            delSql = String.format(""%s%s%s%s"", delSql, "" AND v"", columnIndex, "" = ? "");
+            columnIndex++;
+        }
+        int rows = jdbcTemplate.update(delSql, params.toArray());
+        if (rows < 1) {
+            if (casbinExceptionProperties.isRemovePolicyFailed()) {",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/c5e289d6df5ba66be310c24ac1bce653c7ce8c3c,"    public void removeFilteredPolicy(String sec, String ptype, int fieldIndex, String... fieldValues) {
+        if (fieldValues.length == 0) {
+            return;
+        }
+        List<String> params = new ArrayList<>(Arrays.asList(fieldValues));
+        params.add(0, ptype);
+        String delSql = getDeletePolicySql();
+        int columnIndex = fieldIndex;
+        for (int i = 0; i < fieldValues.length; i++) {
+            delSql = String.format(""%s%s%s%s"", delSql, "" AND v"", columnIndex, "" = ? "");
+            columnIndex++;
+        }
+        int rows = jdbcTemplate.update(delSql, params.toArray());
+        if (rows < 1) {
+            if (casbinExceptionProperties.isRemovePolicyFailed()) {
+","['    ', 'public', ' ', 'void', ' ', 'removeFilteredPolicy', '(', 'String', ' ', 'sec', ',', ' ', 'String', ' ', 'ptype', ',', ' ', 'int', ' ', 'fieldIndex', ',', ' ', 'String', '.', '.', '.', ' ', 'fieldValues', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'fieldValues', '.', 'length', ' ', '=', '=', ' ', '0', ')', ' ', '{', '\n', '            ', 'return', ';', '\n', '        ', '}', '\n', '        ', 'List', '<', 'String', '>', ' ', 'params', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', 'Arrays', '.', 'asList', '(', 'fieldValues', ')', ')', ';', '\n', '        ', 'params', '.', 'add', '(', '0', ',', ' ', 'ptype', ')', ';', '\n', '        ', 'String', ' ', 'delSql', ' ', '=', ' ', 'getDeletePolicySql', '(', ')', ';', '\n', '        ', 'int', ' ', 'columnIndex', ' ', '=', ' ', 'fieldIndex', ';', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', 'fieldValues', '.', 'length', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'delSql', ' ', '=', ' ', 'String', '.', 'format', '(', '""', '%s%s%s%s', '""', ',', ' ', 'delSql', ',', ' ', '""', ' AND v', '""', ',', ' ', 'columnIndex', ',', ' ', '""', ' = ? ', '""', ')', ';', '\n', '            ', 'columnIndex', '+', '+', ';', '\n', '        ', '}', '\n', '        ', 'int', ' ', 'rows', ' ', '=', ' ', 'jdbcTemplate', '.', 'update', '(', 'delSql', ',', ' ', 'params', '.', 'toArray', '(', ')', ')', ';', '\n', '        ', 'if', ' ', '(', 'rows', ' ', '<', ' ', '1', ')', ' ', '{', '\n', '            ', 'if', ' ', '(', 'casbinExceptionProperties', '.', 'isRemovePolicyFailed', '(', ')', ')', ' ', '{', '\n']"
+master,c5e289d6df5ba66be310c24ac1bce653c7ce8c3c,OracleAdapter.java,initTable,"    protected void initTable() {
+        Integer count = jdbcTemplate.queryForObject(getCheckTableExistSql(), Integer.class);
+        if (count != null && count == 0) {
+            super.initTable();",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/c5e289d6df5ba66be310c24ac1bce653c7ce8c3c,"    protected void initTable() {
+        Integer count = jdbcTemplate.queryForObject(getCheckTableExistSql(), Integer.class);
+        if (count != null && count == 0) {
+            super.initTable();
+","['    ', 'protected', ' ', 'void', ' ', 'initTable', '(', ')', ' ', '{', '\n', '        ', 'Integer', ' ', 'count', ' ', '=', ' ', 'jdbcTemplate', '.', 'queryForObject', '(', 'getCheckTableExistSql', '(', ')', ',', ' ', 'Integer', '.', 'class', ')', ';', '\n', '        ', 'if', ' ', '(', 'count', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'count', ' ', '=', '=', ' ', '0', ')', ' ', '{', '\n', '            ', 'super', '.', 'initTable', '(', ')', ';', '\n']"
+master,c5e289d6df5ba66be310c24ac1bce653c7ce8c3c,CasbinAutoConfiguration.java,autoConfigJdbcAdapter,"    public Adapter autoConfigJdbcAdapter(
+            @CasbinDataSource ObjectProvider<DataSource> casbinDataSource,
+            JdbcTemplate jdbcTemplate,
+            CasbinProperties properties,
+            CasbinExceptionProperties exceptionProperties
+    ) {
+        JdbcTemplate jdbcTemplateToUse = getJdbcTemplate(jdbcTemplate, casbinDataSource);
+        String databaseName = getDatabaseName(jdbcTemplateToUse.getDataSource());
+        CasbinDataSourceInitializationMode initializeSchema = properties.getInitializeSchema();
+        boolean autoCreateTable = initializeSchema == CasbinDataSourceInitializationMode.CREATE;
+        String tableName = properties.getTableName();
+        logger.info(""Casbin current use database product: {}"", databaseName);
+        switch (databaseName) {
+            case ""mysql"":",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/c5e289d6df5ba66be310c24ac1bce653c7ce8c3c,"    public Adapter autoConfigJdbcAdapter(
+            @CasbinDataSource ObjectProvider<DataSource> casbinDataSource,
+            JdbcTemplate jdbcTemplate,
+            CasbinProperties properties,
+            CasbinExceptionProperties exceptionProperties
+    ) {
+        JdbcTemplate jdbcTemplateToUse = getJdbcTemplate(jdbcTemplate, casbinDataSource);
+        String databaseName = getDatabaseName(jdbcTemplateToUse.getDataSource());
+        CasbinDataSourceInitializationMode initializeSchema = properties.getInitializeSchema();
+        boolean autoCreateTable = initializeSchema == CasbinDataSourceInitializationMode.CREATE;
+        String tableName = properties.getTableName();
+        logger.info(""Casbin current use database product: {}"", databaseName);
+        switch (databaseName) {
+            case ""mysql"":
+","['    ', 'public', ' ', 'Adapter', ' ', 'autoConfigJdbcAdapter', '(', '\n', '            ', '@CasbinDataSource', ' ', 'ObjectProvider', '<', 'DataSource', '>', ' ', 'casbinDataSource', ',', '\n', '            ', 'JdbcTemplate', ' ', 'jdbcTemplate', ',', '\n', '            ', 'CasbinProperties', ' ', 'properties', ',', '\n', '            ', 'CasbinExceptionProperties', ' ', 'exceptionProperties', '\n', '    ', ')', ' ', '{', '\n', '        ', 'JdbcTemplate', ' ', 'jdbcTemplateToUse', ' ', '=', ' ', 'getJdbcTemplate', '(', 'jdbcTemplate', ',', ' ', 'casbinDataSource', ')', ';', '\n', '        ', 'String', ' ', 'databaseName', ' ', '=', ' ', 'getDatabaseName', '(', 'jdbcTemplateToUse', '.', 'getDataSource', '(', ')', ')', ';', '\n', '        ', 'CasbinDataSourceInitializationMode', ' ', 'initializeSchema', ' ', '=', ' ', 'properties', '.', 'getInitializeSchema', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'autoCreateTable', ' ', '=', ' ', 'initializeSchema', ' ', '=', '=', ' ', 'CasbinDataSourceInitializationMode', '.', 'CREATE', ';', '\n', '        ', 'String', ' ', 'tableName', ' ', '=', ' ', 'properties', '.', 'getTableName', '(', ')', ';', '\n', '        ', 'logger', '.', 'info', '(', '""', 'Casbin current use database product: {}', '""', ',', ' ', 'databaseName', ')', ';', '\n', '        ', 'switch', ' ', '(', 'databaseName', ')', ' ', '{', '\n', '            ', 'case', ' ', '""', 'mysql', '""', ':', '\n']"
+master,207d74175fa8e7b2519952ff520d3cbd36c73826,CasbinRedisWatcherAutoConfiguration.java,redisWatcher,"    public Watcher redisWatcher(StringRedisTemplate stringRedisTemplate, Enforcer enforcer, CasbinProperties casbinProperties) {
+        RedisWatcher watcher = new RedisWatcher(stringRedisTemplate, casbinProperties.getPolicyTopic());
+        enforcer.setWatcher(watcher);
+        logger.info(""Casbin set watcher: {}"", watcher.getClass().getName());
+        return watcher;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/207d74175fa8e7b2519952ff520d3cbd36c73826,"    public Watcher redisWatcher(StringRedisTemplate stringRedisTemplate, Enforcer enforcer, CasbinProperties casbinProperties) {
+        RedisWatcher watcher = new RedisWatcher(stringRedisTemplate, casbinProperties.getPolicyTopic());
+        enforcer.setWatcher(watcher);
+        logger.info(""Casbin set watcher: {}"", watcher.getClass().getName());
+        return watcher;
+    }
+","['    ', 'public', ' ', 'Watcher', ' ', 'redisWatcher', '(', 'StringRedisTemplate', ' ', 'stringRedisTemplate', ',', ' ', 'Enforcer', ' ', 'enforcer', ',', ' ', 'CasbinProperties', ' ', 'casbinProperties', ')', ' ', '{', '\n', '        ', 'RedisWatcher', ' ', 'watcher', ' ', '=', ' ', 'new', ' ', 'RedisWatcher', '(', 'stringRedisTemplate', ',', ' ', 'casbinProperties', '.', 'getPolicyTopic', '(', ')', ')', ';', '\n', '        ', 'enforcer', '.', 'setWatcher', '(', 'watcher', ')', ';', '\n', '        ', 'logger', '.', 'info', '(', '""', 'Casbin set watcher: {}', '""', ',', ' ', 'watcher', '.', 'getClass', '(', ')', '.', 'getName', '(', ')', ')', ';', '\n', '        ', 'return', ' ', 'watcher', ';', '\n', '    ', '}', '\n']"
+master,207d74175fa8e7b2519952ff520d3cbd36c73826,CasbinRedisWatcherAutoConfiguration.java,redisMessageListenerContainer,"    public RedisMessageListenerContainer redisMessageListenerContainer(
+            RedisConnectionFactory connectionFactory,
+            MessageListenerAdapter listenerAdapter,
+            CasbinProperties casbinProperties
+    ) {
+        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+        container.setConnectionFactory(connectionFactory);
+        // subscribe to the CASBIN_POLICY_TOPIC channel
+        container.addMessageListener(listenerAdapter, new ChannelTopic(casbinProperties.getPolicyTopic()));
+        return container;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/207d74175fa8e7b2519952ff520d3cbd36c73826,"    public RedisMessageListenerContainer redisMessageListenerContainer(
+            RedisConnectionFactory connectionFactory,
+            MessageListenerAdapter listenerAdapter,
+            CasbinProperties casbinProperties
+    ) {
+        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+        container.setConnectionFactory(connectionFactory);
+        
+        container.addMessageListener(listenerAdapter, new ChannelTopic(casbinProperties.getPolicyTopic()));
+        return container;
+    }
+","['    ', 'public', ' ', 'RedisMessageListenerContainer', ' ', 'redisMessageListenerContainer', '(', '\n', '            ', 'RedisConnectionFactory', ' ', 'connectionFactory', ',', '\n', '            ', 'MessageListenerAdapter', ' ', 'listenerAdapter', ',', '\n', '            ', 'CasbinProperties', ' ', 'casbinProperties', '\n', '    ', ')', ' ', '{', '\n', '        ', 'RedisMessageListenerContainer', ' ', 'container', ' ', '=', ' ', 'new', ' ', 'RedisMessageListenerContainer', '(', ')', ';', '\n', '        ', 'container', '.', 'setConnectionFactory', '(', 'connectionFactory', ')', ';', '\n', '        ', '\n', '        ', 'container', '.', 'addMessageListener', '(', 'listenerAdapter', ',', ' ', 'new', ' ', 'ChannelTopic', '(', 'casbinProperties', '.', 'getPolicyTopic', '(', ')', ')', ')', ';', '\n', '        ', 'return', ' ', 'container', ';', '\n', '    ', '}', '\n']"
+master,207d74175fa8e7b2519952ff520d3cbd36c73826,RedisWatcher.java,update,"    public void update() {
+        stringRedisTemplate.convertAndSend(
+                this.policyTopic,",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/207d74175fa8e7b2519952ff520d3cbd36c73826,"    public void update() {
+        stringRedisTemplate.convertAndSend(
+                this.policyTopic,
+","['    ', 'public', ' ', 'void', ' ', 'update', '(', ')', ' ', '{', '\n', '        ', 'stringRedisTemplate', '.', 'convertAndSend', '(', '\n', '                ', 'this', '.', 'policyTopic', ',', '\n']"
+master,5564a6232c82892c961b3c5dd44d8c13509474e3,JdbcAdapter.java,loadPolicy,"    public void loadPolicy(Model model) {
+        List<CasbinRule> casbinRules = jdbcTemplate.query(getLoadPolicySql(), BeanPropertyRowMapper.newInstance(CasbinRule.class));
+        // group the policies by ptype and merge the duplicate data
+        Map<String, List<ArrayList<String>>> policies = casbinRules.parallelStream().distinct()
+                .map(CasbinRule::toPolicy)
+                .collect(Collectors.toMap(x -> x.get(0), y -> {
+                    ArrayList<ArrayList<String>> lists = new ArrayList<>();
+                    // remove the first policy type in the list
+                    y.remove(0);
+                    lists.add(y);
+                    return lists;
+                }, (oldValue, newValue) -> {
+                    oldValue.addAll(newValue);
+                    return oldValue;
+                }));
+        // load grouped policies
+        policies.keySet().forEach(
+                k -> model.model.get(k.substring(0, 1)).get(k).policy.addAll(policies.get(k))",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/5564a6232c82892c961b3c5dd44d8c13509474e3,"    public void loadPolicy(Model model) {
+        List<CasbinRule> casbinRules = jdbcTemplate.query(getLoadPolicySql(), BeanPropertyRowMapper.newInstance(CasbinRule.class));
+        
+        Map<String, List<ArrayList<String>>> policies = casbinRules.parallelStream().distinct()
+                .map(CasbinRule::toPolicy)
+                .collect(Collectors.toMap(x -> x.get(0), y -> {
+                    ArrayList<ArrayList<String>> lists = new ArrayList<>();
+                    
+                    y.remove(0);
+                    lists.add(y);
+                    return lists;
+                }, (oldValue, newValue) -> {
+                    oldValue.addAll(newValue);
+                    return oldValue;
+                }));
+        
+        policies.keySet().forEach(
+                k -> model.model.get(k.substring(0, 1)).get(k).policy.addAll(policies.get(k))
+","['    ', 'public', ' ', 'void', ' ', 'loadPolicy', '(', 'Model', ' ', 'model', ')', ' ', '{', '\n', '        ', 'List', '<', 'CasbinRule', '>', ' ', 'casbinRules', ' ', '=', ' ', 'jdbcTemplate', '.', 'query', '(', 'getLoadPolicySql', '(', ')', ',', ' ', 'BeanPropertyRowMapper', '.', 'newInstance', '(', 'CasbinRule', '.', 'class', ')', ')', ';', '\n', '        ', '\n', '        ', 'Map', '<', 'String', ',', ' ', 'List', '<', 'ArrayList', '<', 'String', '>', '>', '>', ' ', 'policies', ' ', '=', ' ', 'casbinRules', '.', 'parallelStream', '(', ')', '.', 'distinct', '(', ')', '\n', '                ', '.', 'map', '(', 'CasbinRule', ':', ':', 'toPolicy', ')', '\n', '                ', '.', 'collect', '(', 'Collectors', '.', 'toMap', '(', 'x', ' ', '-', '>', ' ', 'x', '.', 'get', '(', '0', ')', ',', ' ', 'y', ' ', '-', '>', ' ', '{', '\n', '                    ', 'ArrayList', '<', 'ArrayList', '<', 'String', '>', '>', ' ', 'lists', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', ')', ';', '\n', '                    ', '\n', '                    ', 'y', '.', 'remove', '(', '0', ')', ';', '\n', '                    ', 'lists', '.', 'add', '(', 'y', ')', ';', '\n', '                    ', 'return', ' ', 'lists', ';', '\n', '                ', '}', ',', ' ', '(', 'oldValue', ',', ' ', 'newValue', ')', ' ', '-', '>', ' ', '{', '\n', '                    ', 'oldValue', '.', 'addAll', '(', 'newValue', ')', ';', '\n', '                    ', 'return', ' ', 'oldValue', ';', '\n', '                ', '}', ')', ')', ';', '\n', '        ', '\n', '        ', 'policies', '.', 'keySet', '(', ')', '.', 'forEach', '(', '\n', '                ', 'k', ' ', '-', '>', ' ', 'model', '.', 'model', '.', 'get', '(', 'k', '.', 'substring', '(', '0', ',', ' ', '1', ')', ')', '.', 'get', '(', 'k', ')', '.', 'policy', '.', 'addAll', '(', 'policies', '.', 'get', '(', 'k', ')', ')', '\n']"
+master,5564a6232c82892c961b3c5dd44d8c13509474e3,JdbcAdapter.java,loadFilteredPolicy,"    public void loadFilteredPolicy(Model model, Object filter) throws CasbinAdapterException {
+        if (filter == null) {
+            loadPolicy(model);
+            isFiltered = false;
+            return;
+        }
+        if (!(filter instanceof Filter)) {
+            isFiltered = false;
+            throw new CasbinAdapterException(""Invalid filter type."");
+        }
+        try {
+            loadFilteredPolicyFromJdbc(model, (Filter) filter);",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/5564a6232c82892c961b3c5dd44d8c13509474e3,"    public void loadFilteredPolicy(Model model, Object filter) throws CasbinAdapterException {
+        if (filter == null) {
+            loadPolicy(model);
+            isFiltered = false;
+            return;
+        }
+        if (!(filter instanceof Filter)) {
+            isFiltered = false;
+            throw new CasbinAdapterException(""Invalid filter type."");
+        }
+        try {
+            loadFilteredPolicyFromJdbc(model, (Filter) filter);
+","['    ', 'public', ' ', 'void', ' ', 'loadFilteredPolicy', '(', 'Model', ' ', 'model', ',', ' ', 'Object', ' ', 'filter', ')', ' ', 'throws', ' ', 'CasbinAdapterException', ' ', '{', '\n', '        ', 'if', ' ', '(', 'filter', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'loadPolicy', '(', 'model', ')', ';', '\n', '            ', 'isFiltered', ' ', '=', ' ', 'false', ';', '\n', '            ', 'return', ';', '\n', '        ', '}', '\n', '        ', 'if', ' ', '(', '!', '(', 'filter', ' ', 'instanceof', ' ', 'Filter', ')', ')', ' ', '{', '\n', '            ', 'isFiltered', ' ', '=', ' ', 'false', ';', '\n', '            ', 'throw', ' ', 'new', ' ', 'CasbinAdapterException', '(', '""', 'Invalid filter type.', '""', ')', ';', '\n', '        ', '}', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'loadFilteredPolicyFromJdbc', '(', 'model', ',', ' ', '(', 'Filter', ')', ' ', 'filter', ')', ';', '\n']"
+master,5564a6232c82892c961b3c5dd44d8c13509474e3,JdbcAdapter.java,loadFilteredPolicyFromJdbc,"    private void loadFilteredPolicyFromJdbc(Model model, Filter filter) {
+        // group the policies by ptype and merge the duplicate data.
+        List<CasbinRule> casbinRules = jdbcTemplate.query(getLoadPolicySql(), BeanPropertyRowMapper.newInstance(CasbinRule.class));
+        Map<String, List<ArrayList<String>>> policies = casbinRules.parallelStream().distinct()
+                .map(CasbinRule::toPolicy)
+                .collect(Collectors.toMap(x -> x.get(0), y -> {
+                    ArrayList<ArrayList<String>> lists = new ArrayList<>();
+                    if (!filterCasbinRule(y, filter)) {
+                        // remove the first policy type in the list.
+                        y.remove(0);
+                        lists.add(y);
+                    }
+                    return lists;
+                }, (oldValue, newValue) -> {
+                    oldValue.addAll(newValue);
+                    return oldValue;
+                }));
+        // load grouped policies
+        policies.keySet().forEach(
+                k -> model.model.get(k.substring(0, 1)).get(k).policy.addAll(policies.get(k))",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/5564a6232c82892c961b3c5dd44d8c13509474e3,"    private void loadFilteredPolicyFromJdbc(Model model, Filter filter) {
+        
+        List<CasbinRule> casbinRules = jdbcTemplate.query(getLoadPolicySql(), BeanPropertyRowMapper.newInstance(CasbinRule.class));
+        Map<String, List<ArrayList<String>>> policies = casbinRules.parallelStream().distinct()
+                .map(CasbinRule::toPolicy)
+                .collect(Collectors.toMap(x -> x.get(0), y -> {
+                    ArrayList<ArrayList<String>> lists = new ArrayList<>();
+                    if (!filterCasbinRule(y, filter)) {
+                        
+                        y.remove(0);
+                        lists.add(y);
+                    }
+                    return lists;
+                }, (oldValue, newValue) -> {
+                    oldValue.addAll(newValue);
+                    return oldValue;
+                }));
+        
+        policies.keySet().forEach(
+                k -> model.model.get(k.substring(0, 1)).get(k).policy.addAll(policies.get(k))
+","['    ', 'private', ' ', 'void', ' ', 'loadFilteredPolicyFromJdbc', '(', 'Model', ' ', 'model', ',', ' ', 'Filter', ' ', 'filter', ')', ' ', '{', '\n', '        ', '\n', '        ', 'List', '<', 'CasbinRule', '>', ' ', 'casbinRules', ' ', '=', ' ', 'jdbcTemplate', '.', 'query', '(', 'getLoadPolicySql', '(', ')', ',', ' ', 'BeanPropertyRowMapper', '.', 'newInstance', '(', 'CasbinRule', '.', 'class', ')', ')', ';', '\n', '        ', 'Map', '<', 'String', ',', ' ', 'List', '<', 'ArrayList', '<', 'String', '>', '>', '>', ' ', 'policies', ' ', '=', ' ', 'casbinRules', '.', 'parallelStream', '(', ')', '.', 'distinct', '(', ')', '\n', '                ', '.', 'map', '(', 'CasbinRule', ':', ':', 'toPolicy', ')', '\n', '                ', '.', 'collect', '(', 'Collectors', '.', 'toMap', '(', 'x', ' ', '-', '>', ' ', 'x', '.', 'get', '(', '0', ')', ',', ' ', 'y', ' ', '-', '>', ' ', '{', '\n', '                    ', 'ArrayList', '<', 'ArrayList', '<', 'String', '>', '>', ' ', 'lists', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', ')', ';', '\n', '                    ', 'if', ' ', '(', '!', 'filterCasbinRule', '(', 'y', ',', ' ', 'filter', ')', ')', ' ', '{', '\n', '                        ', '\n', '                        ', 'y', '.', 'remove', '(', '0', ')', ';', '\n', '                        ', 'lists', '.', 'add', '(', 'y', ')', ';', '\n', '                    ', '}', '\n', '                    ', 'return', ' ', 'lists', ';', '\n', '                ', '}', ',', ' ', '(', 'oldValue', ',', ' ', 'newValue', ')', ' ', '-', '>', ' ', '{', '\n', '                    ', 'oldValue', '.', 'addAll', '(', 'newValue', ')', ';', '\n', '                    ', 'return', ' ', 'oldValue', ';', '\n', '                ', '}', ')', ')', ';', '\n', '        ', '\n', '        ', 'policies', '.', 'keySet', '(', ')', '.', 'forEach', '(', '\n', '                ', 'k', ' ', '-', '>', ' ', 'model', '.', 'model', '.', 'get', '(', 'k', '.', 'substring', '(', '0', ',', ' ', '1', ')', ')', '.', 'get', '(', 'k', ')', '.', 'policy', '.', 'addAll', '(', 'policies', '.', 'get', '(', 'k', ')', ')', '\n']"
+master,5564a6232c82892c961b3c5dd44d8c13509474e3,RedisWatcher.java,updatePolicy,"    public void updatePolicy(String message) {
+        if (message.contains(REDIS_WATCHER_UUID)) {
+            logger.info(""This casbin policy update notification comes from the current redis watcher instance: {}"", REDIS_WATCHER_UUID);
+            return;
+        } else {
+            logger.info(message);
+        }
+
+        updateCallback.run();
+        if (consumer != null) {
+            consumer.accept(message);
+        }
+        logger.info(""Casbin policy updated."");
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/5564a6232c82892c961b3c5dd44d8c13509474e3,"    public void updatePolicy(String message) {
+        if (message.contains(REDIS_WATCHER_UUID)) {
+            logger.info(""This casbin policy update notification comes from the current redis watcher instance: {}"", REDIS_WATCHER_UUID);
+            return;
+        } else {
+            logger.info(message);
+        }
+
+        updateCallback.run();
+        if (consumer != null) {
+            consumer.accept(message);
+        }
+        logger.info(""Casbin policy updated."");
+    }
+","['    ', 'public', ' ', 'void', ' ', 'updatePolicy', '(', 'String', ' ', 'message', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'message', '.', 'contains', '(', 'REDIS_WATCHER_UUID', ')', ')', ' ', '{', '\n', '            ', 'logger', '.', 'info', '(', '""', 'This casbin policy update notification comes from the current redis watcher instance: {}', '""', ',', ' ', 'REDIS_WATCHER_UUID', ')', ';', '\n', '            ', 'return', ';', '\n', '        ', '}', ' ', 'else', ' ', '{', '\n', '            ', 'logger', '.', 'info', '(', 'message', ')', ';', '\n', '        ', '}', '\n', '\n', '        ', 'updateCallback', '.', 'run', '(', ')', ';', '\n', '        ', 'if', ' ', '(', 'consumer', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'consumer', '.', 'accept', '(', 'message', ')', ';', '\n', '        ', '}', '\n', '        ', 'logger', '.', 'info', '(', '""', 'Casbin policy updated.', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,b90f9615f813b09ba0edfc4421d4451f852d4995,CasbinAutoConfiguration.java,autoConfigJdbcAdapter,"    public Adapter autoConfigJdbcAdapter(
+            @CasbinDataSource ObjectProvider<DataSource> casbinDataSource,
+            JdbcTemplate jdbcTemplate,
+            CasbinProperties properties,
+            CasbinExceptionProperties exceptionProperties,
+            DataSourceProperties dataSourceProperties
+    ) throws Exception {
+        JdbcTemplate jdbcTemplateToUse = getJdbcTemplate(jdbcTemplate, casbinDataSource);
+        String databaseName = getDatabaseName(jdbcTemplateToUse.getDataSource());
+        CasbinDataSourceInitializationMode initializeSchema = properties.getInitializeSchema();
+        boolean autoCreateTable = initializeSchema == CasbinDataSourceInitializationMode.CREATE;
+        String tableName = properties.getTableName();
+        logger.info(""Casbin current use database product: {}"", databaseName);
+        return new JDBCAdapter(dataSourceProperties.getDriverClassName(), dataSourceProperties.getUrl(),
+                dataSourceProperties.getUsername(), dataSourceProperties.getPassword(),",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/b90f9615f813b09ba0edfc4421d4451f852d4995,"    public Adapter autoConfigJdbcAdapter(
+            @CasbinDataSource ObjectProvider<DataSource> casbinDataSource,
+            JdbcTemplate jdbcTemplate,
+            CasbinProperties properties,
+            CasbinExceptionProperties exceptionProperties,
+            DataSourceProperties dataSourceProperties
+    ) throws Exception {
+        JdbcTemplate jdbcTemplateToUse = getJdbcTemplate(jdbcTemplate, casbinDataSource);
+        String databaseName = getDatabaseName(jdbcTemplateToUse.getDataSource());
+        CasbinDataSourceInitializationMode initializeSchema = properties.getInitializeSchema();
+        boolean autoCreateTable = initializeSchema == CasbinDataSourceInitializationMode.CREATE;
+        String tableName = properties.getTableName();
+        logger.info(""Casbin current use database product: {}"", databaseName);
+        return new JDBCAdapter(dataSourceProperties.getDriverClassName(), dataSourceProperties.getUrl(),
+                dataSourceProperties.getUsername(), dataSourceProperties.getPassword(),
+","['    ', 'public', ' ', 'Adapter', ' ', 'autoConfigJdbcAdapter', '(', '\n', '            ', '@CasbinDataSource', ' ', 'ObjectProvider', '<', 'DataSource', '>', ' ', 'casbinDataSource', ',', '\n', '            ', 'JdbcTemplate', ' ', 'jdbcTemplate', ',', '\n', '            ', 'CasbinProperties', ' ', 'properties', ',', '\n', '            ', 'CasbinExceptionProperties', ' ', 'exceptionProperties', ',', '\n', '            ', 'DataSourceProperties', ' ', 'dataSourceProperties', '\n', '    ', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'JdbcTemplate', ' ', 'jdbcTemplateToUse', ' ', '=', ' ', 'getJdbcTemplate', '(', 'jdbcTemplate', ',', ' ', 'casbinDataSource', ')', ';', '\n', '        ', 'String', ' ', 'databaseName', ' ', '=', ' ', 'getDatabaseName', '(', 'jdbcTemplateToUse', '.', 'getDataSource', '(', ')', ')', ';', '\n', '        ', 'CasbinDataSourceInitializationMode', ' ', 'initializeSchema', ' ', '=', ' ', 'properties', '.', 'getInitializeSchema', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'autoCreateTable', ' ', '=', ' ', 'initializeSchema', ' ', '=', '=', ' ', 'CasbinDataSourceInitializationMode', '.', 'CREATE', ';', '\n', '        ', 'String', ' ', 'tableName', ' ', '=', ' ', 'properties', '.', 'getTableName', '(', ')', ';', '\n', '        ', 'logger', '.', 'info', '(', '""', 'Casbin current use database product: {}', '""', ',', ' ', 'databaseName', ')', ';', '\n', '        ', 'return', ' ', 'new', ' ', 'JDBCAdapter', '(', 'dataSourceProperties', '.', 'getDriverClassName', '(', ')', ',', ' ', 'dataSourceProperties', '.', 'getUrl', '(', ')', ',', '\n', '                ', 'dataSourceProperties', '.', 'getUsername', '(', ')', ',', ' ', 'dataSourceProperties', '.', 'getPassword', '(', ')', ',', '\n']"
+master,b90f9615f813b09ba0edfc4421d4451f852d4995,CasbinRedisWatcherAutoConfiguration.java,redisWatcher,"    public Watcher redisWatcher(RedisProperties redisProperties, Enforcer enforcer) {
+        int timeout = redisProperties.getTimeout() != null ? (int) redisProperties.getTimeout().toMillis() : 2000;
+        RedisWatcher watcher = new RedisWatcher(redisProperties.getHost(), redisProperties.getPort(), redisProperties.getClientName(), timeout, redisProperties.getPassword());
+        enforcer.setWatcher(watcher);
+        logger.info(""Casbin set watcher: {}"", watcher.getClass().getName());
+        return watcher;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/b90f9615f813b09ba0edfc4421d4451f852d4995,"    public Watcher redisWatcher(RedisProperties redisProperties, Enforcer enforcer) {
+        int timeout = redisProperties.getTimeout() != null ? (int) redisProperties.getTimeout().toMillis() : 2000;
+        RedisWatcher watcher = new RedisWatcher(redisProperties.getHost(), redisProperties.getPort(), redisProperties.getClientName(), timeout, redisProperties.getPassword());
+        enforcer.setWatcher(watcher);
+        logger.info(""Casbin set watcher: {}"", watcher.getClass().getName());
+        return watcher;
+    }
+","['    ', 'public', ' ', 'Watcher', ' ', 'redisWatcher', '(', 'RedisProperties', ' ', 'redisProperties', ',', ' ', 'Enforcer', ' ', 'enforcer', ')', ' ', '{', '\n', '        ', 'int', ' ', 'timeout', ' ', '=', ' ', 'redisProperties', '.', 'getTimeout', '(', ')', ' ', '!', '=', ' ', 'null', ' ', '?', ' ', '(', 'int', ')', ' ', 'redisProperties', '.', 'getTimeout', '(', ')', '.', 'toMillis', '(', ')', ' ', ':', ' ', '2000', ';', '\n', '        ', 'RedisWatcher', ' ', 'watcher', ' ', '=', ' ', 'new', ' ', 'RedisWatcher', '(', 'redisProperties', '.', 'getHost', '(', ')', ',', ' ', 'redisProperties', '.', 'getPort', '(', ')', ',', ' ', 'redisProperties', '.', 'getClientName', '(', ')', ',', ' ', 'timeout', ',', ' ', 'redisProperties', '.', 'getPassword', '(', ')', ')', ';', '\n', '        ', 'enforcer', '.', 'setWatcher', '(', 'watcher', ')', ';', '\n', '        ', 'logger', '.', 'info', '(', '""', 'Casbin set watcher: {}', '""', ',', ' ', 'watcher', '.', 'getClass', '(', ')', '.', 'getName', '(', ')', ')', ';', '\n', '        ', 'return', ' ', 'watcher', ';', '\n', '    ', '}', '\n']"
+master,6b4eef91dc9cafcf9bf2ceb4be2ad984d3f6db8f,CasbinAutoConfiguration.java,autoConfigJdbcAdapter,"    public Adapter autoConfigJdbcAdapter(
+            @CasbinDataSource ObjectProvider<DataSource> casbinDataSource,
+            JdbcTemplate jdbcTemplate,
+            CasbinProperties properties,
+            CasbinExceptionProperties exceptionProperties,
+            DataSourceProperties dataSourceProperties
+    ) throws Exception {
+        JdbcTemplate jdbcTemplateToUse = getJdbcTemplate(jdbcTemplate, casbinDataSource);
+        String databaseName = getDatabaseName(jdbcTemplateToUse.getDataSource());
+        CasbinDataSourceInitializationMode initializeSchema = properties.getInitializeSchema();
+        boolean autoCreateTable = initializeSchema == CasbinDataSourceInitializationMode.CREATE;
+        String tableName = properties.getTableName();
+        logger.info(""Casbin current use database product: {}"", databaseName);
+        return new JDBCAdapter(dataSourceProperties.determineDriverClassName(), dataSourceProperties.getUrl(),
+                dataSourceProperties.getUsername(), dataSourceProperties.getPassword(),",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/6b4eef91dc9cafcf9bf2ceb4be2ad984d3f6db8f,"    public Adapter autoConfigJdbcAdapter(
+            @CasbinDataSource ObjectProvider<DataSource> casbinDataSource,
+            JdbcTemplate jdbcTemplate,
+            CasbinProperties properties,
+            CasbinExceptionProperties exceptionProperties,
+            DataSourceProperties dataSourceProperties
+    ) throws Exception {
+        JdbcTemplate jdbcTemplateToUse = getJdbcTemplate(jdbcTemplate, casbinDataSource);
+        String databaseName = getDatabaseName(jdbcTemplateToUse.getDataSource());
+        CasbinDataSourceInitializationMode initializeSchema = properties.getInitializeSchema();
+        boolean autoCreateTable = initializeSchema == CasbinDataSourceInitializationMode.CREATE;
+        String tableName = properties.getTableName();
+        logger.info(""Casbin current use database product: {}"", databaseName);
+        return new JDBCAdapter(dataSourceProperties.determineDriverClassName(), dataSourceProperties.getUrl(),
+                dataSourceProperties.getUsername(), dataSourceProperties.getPassword(),
+","['    ', 'public', ' ', 'Adapter', ' ', 'autoConfigJdbcAdapter', '(', '\n', '            ', '@CasbinDataSource', ' ', 'ObjectProvider', '<', 'DataSource', '>', ' ', 'casbinDataSource', ',', '\n', '            ', 'JdbcTemplate', ' ', 'jdbcTemplate', ',', '\n', '            ', 'CasbinProperties', ' ', 'properties', ',', '\n', '            ', 'CasbinExceptionProperties', ' ', 'exceptionProperties', ',', '\n', '            ', 'DataSourceProperties', ' ', 'dataSourceProperties', '\n', '    ', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'JdbcTemplate', ' ', 'jdbcTemplateToUse', ' ', '=', ' ', 'getJdbcTemplate', '(', 'jdbcTemplate', ',', ' ', 'casbinDataSource', ')', ';', '\n', '        ', 'String', ' ', 'databaseName', ' ', '=', ' ', 'getDatabaseName', '(', 'jdbcTemplateToUse', '.', 'getDataSource', '(', ')', ')', ';', '\n', '        ', 'CasbinDataSourceInitializationMode', ' ', 'initializeSchema', ' ', '=', ' ', 'properties', '.', 'getInitializeSchema', '(', ')', ';', '\n', '        ', 'boolean', ' ', 'autoCreateTable', ' ', '=', ' ', 'initializeSchema', ' ', '=', '=', ' ', 'CasbinDataSourceInitializationMode', '.', 'CREATE', ';', '\n', '        ', 'String', ' ', 'tableName', ' ', '=', ' ', 'properties', '.', 'getTableName', '(', ')', ';', '\n', '        ', 'logger', '.', 'info', '(', '""', 'Casbin current use database product: {}', '""', ',', ' ', 'databaseName', ')', ';', '\n', '        ', 'return', ' ', 'new', ' ', 'JDBCAdapter', '(', 'dataSourceProperties', '.', 'determineDriverClassName', '(', ')', ',', ' ', 'dataSourceProperties', '.', 'getUrl', '(', ')', ',', '\n', '                ', 'dataSourceProperties', '.', 'getUsername', '(', ')', ',', ' ', 'dataSourceProperties', '.', 'getPassword', '(', ')', ',', '\n']"
+master,49f4dd9dc9e9786d429ce6a5e87384812982a303,EnforcerTest.java,test1,"    void test1() {
+        // user rights
+        enforcer.addPolicy(""alice"", ""data1"", ""read"");
+        enforcer.addPolicy(""bob"", ""data2"", ""write"");
+        // role Permissions
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""read"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        // grant alice the permissions owned by data2_admin
+        enforcer.addGroupingPolicy(""alice"", ""data2_admin"");
+
+        // Does bob have read access to data1? It must not be.
+        assertFalse(enforcer.enforce(""bob"", ""data1"", ""read""));
+
+        // Whether alice has read and write access to data2, it must be possible, otherwise, why is authorization used?
+        assertTrue(enforcer.enforce(""alice"", ""data2"", ""read""));
+        assertTrue(enforcer.enforce(""alice"", ""data2"", ""write""));
+
+        // repeat adding P strategy
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        // complete storage, built-in duplicate item filtering
+        enforcer.savePolicy();
+        // verify that duplicates are merged
+        assertEquals(4, enforcer.getNamedPolicy(""p"").size());
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/49f4dd9dc9e9786d429ce6a5e87384812982a303,"    void test1() {
+        
+        enforcer.addPolicy(""alice"", ""data1"", ""read"");
+        enforcer.addPolicy(""bob"", ""data2"", ""write"");
+        
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""read"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        
+        enforcer.addGroupingPolicy(""alice"", ""data2_admin"");
+
+        
+        assertFalse(enforcer.enforce(""bob"", ""data1"", ""read""));
+
+        
+        assertTrue(enforcer.enforce(""alice"", ""data2"", ""read""));
+        assertTrue(enforcer.enforce(""alice"", ""data2"", ""write""));
+
+        
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        
+        enforcer.savePolicy();
+        
+        assertEquals(4, enforcer.getNamedPolicy(""p"").size());
+    }
+","['    ', 'void', ' ', 'test1', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'alice', '""', ',', ' ', '""', 'data1', '""', ',', ' ', '""', 'read', '""', ')', ';', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'bob', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'read', '""', ')', ';', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', '\n', '        ', 'enforcer', '.', 'addGroupingPolicy', '(', '""', 'alice', '""', ',', ' ', '""', 'data2_admin', '""', ')', ';', '\n', '\n', '        ', '\n', '        ', 'assertFalse', '(', 'enforcer', '.', 'enforce', '(', '""', 'bob', '""', ',', ' ', '""', 'data1', '""', ',', ' ', '""', 'read', '""', ')', ')', ';', '\n', '\n', '        ', '\n', '        ', 'assertTrue', '(', 'enforcer', '.', 'enforce', '(', '""', 'alice', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'read', '""', ')', ')', ';', '\n', '        ', 'assertTrue', '(', 'enforcer', '.', 'enforce', '(', '""', 'alice', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ')', ';', '\n', '\n', '        ', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', '\n', '        ', 'enforcer', '.', 'savePolicy', '(', ')', ';', '\n', '        ', '\n', '        ', 'assertEquals', '(', '4', ',', ' ', 'enforcer', '.', 'getNamedPolicy', '(', '""', 'p', '""', ')', '.', 'size', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,49f4dd9dc9e9786d429ce6a5e87384812982a303,EnforcerTest.java,test2,"    void test2() {
+        enforcer.clearPolicy();
+
+        assertFalse(enforcer.enforce(""bob"", ""data1"", ""read""));
+        assertFalse(enforcer.enforce(""alice"", ""data2"", ""read""));
+        assertFalse(enforcer.enforce(""alice"", ""data2"", ""write""));
+",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/49f4dd9dc9e9786d429ce6a5e87384812982a303,"    void test2() {
+        enforcer.clearPolicy();
+
+        assertFalse(enforcer.enforce(""bob"", ""data1"", ""read""));
+        assertFalse(enforcer.enforce(""alice"", ""data2"", ""read""));
+        assertFalse(enforcer.enforce(""alice"", ""data2"", ""write""));
+","['    ', 'void', ' ', 'test2', '(', ')', ' ', '{', '\n', '        ', 'enforcer', '.', 'clearPolicy', '(', ')', ';', '\n', '\n', '        ', 'assertFalse', '(', 'enforcer', '.', 'enforce', '(', '""', 'bob', '""', ',', ' ', '""', 'data1', '""', ',', ' ', '""', 'read', '""', ')', ')', ';', '\n', '        ', 'assertFalse', '(', 'enforcer', '.', 'enforce', '(', '""', 'alice', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'read', '""', ')', ')', ';', '\n', '        ', 'assertFalse', '(', 'enforcer', '.', 'enforce', '(', '""', 'alice', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ')', ';', '\n']"
+master,49f4dd9dc9e9786d429ce6a5e87384812982a303,JdbcAdapterTest.java,testLoadFilteredPolicyEmptyFilter,"    public void testLoadFilteredPolicyEmptyFilter() {
+        init();
+        getLoadPolicyResult();
+        init();
+
+        // the filter is null, so the result is same as the loadPolicyResult.
+        this.filteredAdapter.loadFilteredPolicy(this.model, null);
+        assertEquals(this.loadPolicyResult, this.model.savePolicyToText());
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/49f4dd9dc9e9786d429ce6a5e87384812982a303,"    public void testLoadFilteredPolicyEmptyFilter() {
+        init();
+        getLoadPolicyResult();
+        init();
+
+        
+        this.filteredAdapter.loadFilteredPolicy(this.model, null);
+        assertEquals(this.loadPolicyResult, this.model.savePolicyToText());
+    }
+","['    ', 'public', ' ', 'void', ' ', 'testLoadFilteredPolicyEmptyFilter', '(', ')', ' ', '{', '\n', '        ', 'init', '(', ')', ';', '\n', '        ', 'getLoadPolicyResult', '(', ')', ';', '\n', '        ', 'init', '(', ')', ';', '\n', '\n', '        ', '\n', '        ', 'this', '.', 'filteredAdapter', '.', 'loadFilteredPolicy', '(', 'this', '.', 'model', ',', ' ', 'null', ')', ';', '\n', '        ', 'assertEquals', '(', 'this', '.', 'loadPolicyResult', ',', ' ', 'this', '.', 'model', '.', 'savePolicyToText', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,03a7f3581f4ec913a04852426d8dcb5330b14d52,CasbinRedisWatcherAutoConfiguration.java,redisWatcher,"    public Watcher redisWatcher(RedisProperties redisProperties, CasbinProperties casbinProperties, Enforcer enforcer) {
+        int timeout = redisProperties.getTimeout() != null ? (int) redisProperties.getTimeout().toMillis() : 2000;
+        RedisWatcher watcher = new RedisWatcher(redisProperties.getHost(), redisProperties.getPort(),
+                casbinProperties.getPolicyTopic(), timeout, redisProperties.getPassword());
+        enforcer.setWatcher(watcher);
+        logger.info(""Casbin set watcher: {}"", watcher.getClass().getName());
+        return watcher;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/03a7f3581f4ec913a04852426d8dcb5330b14d52,"    public Watcher redisWatcher(RedisProperties redisProperties, CasbinProperties casbinProperties, Enforcer enforcer) {
+        int timeout = redisProperties.getTimeout() != null ? (int) redisProperties.getTimeout().toMillis() : 2000;
+        RedisWatcher watcher = new RedisWatcher(redisProperties.getHost(), redisProperties.getPort(),
+                casbinProperties.getPolicyTopic(), timeout, redisProperties.getPassword());
+        enforcer.setWatcher(watcher);
+        logger.info(""Casbin set watcher: {}"", watcher.getClass().getName());
+        return watcher;
+    }
+","['    ', 'public', ' ', 'Watcher', ' ', 'redisWatcher', '(', 'RedisProperties', ' ', 'redisProperties', ',', ' ', 'CasbinProperties', ' ', 'casbinProperties', ',', ' ', 'Enforcer', ' ', 'enforcer', ')', ' ', '{', '\n', '        ', 'int', ' ', 'timeout', ' ', '=', ' ', 'redisProperties', '.', 'getTimeout', '(', ')', ' ', '!', '=', ' ', 'null', ' ', '?', ' ', '(', 'int', ')', ' ', 'redisProperties', '.', 'getTimeout', '(', ')', '.', 'toMillis', '(', ')', ' ', ':', ' ', '2000', ';', '\n', '        ', 'RedisWatcher', ' ', 'watcher', ' ', '=', ' ', 'new', ' ', 'RedisWatcher', '(', 'redisProperties', '.', 'getHost', '(', ')', ',', ' ', 'redisProperties', '.', 'getPort', '(', ')', ',', '\n', '                ', 'casbinProperties', '.', 'getPolicyTopic', '(', ')', ',', ' ', 'timeout', ',', ' ', 'redisProperties', '.', 'getPassword', '(', ')', ')', ';', '\n', '        ', 'enforcer', '.', 'setWatcher', '(', 'watcher', ')', ';', '\n', '        ', 'logger', '.', 'info', '(', '""', 'Casbin set watcher: {}', '""', ',', ' ', 'watcher', '.', 'getClass', '(', ')', '.', 'getName', '(', ')', ')', ';', '\n', '        ', 'return', ' ', 'watcher', ';', '\n', '    ', '}', '\n']"
+master,d1b6524faa2d0cc8f9a52bfb0117f97fbcbd88fe,CasbinRedisWatcherAutoConfiguration.java,txWatcher,"    public Watcher txWatcher(Watcher watcher, Enforcer enforcer) {
+        TxWatcher txWatcher = new TxWatcher(watcher);
+        enforcer.setWatcher(txWatcher);
+        logger.info(""TxWatcher proxy watcher: {}"", watcher.getClass().getName());
+        return txWatcher;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/d1b6524faa2d0cc8f9a52bfb0117f97fbcbd88fe,"    public Watcher txWatcher(Watcher watcher, Enforcer enforcer) {
+        TxWatcher txWatcher = new TxWatcher(watcher);
+        enforcer.setWatcher(txWatcher);
+        logger.info(""TxWatcher proxy watcher: {}"", watcher.getClass().getName());
+        return txWatcher;
+    }
+","['    ', 'public', ' ', 'Watcher', ' ', 'txWatcher', '(', 'Watcher', ' ', 'watcher', ',', ' ', 'Enforcer', ' ', 'enforcer', ')', ' ', '{', '\n', '        ', 'TxWatcher', ' ', 'txWatcher', ' ', '=', ' ', 'new', ' ', 'TxWatcher', '(', 'watcher', ')', ';', '\n', '        ', 'enforcer', '.', 'setWatcher', '(', 'txWatcher', ')', ';', '\n', '        ', 'logger', '.', 'info', '(', '""', 'TxWatcher proxy watcher: {}', '""', ',', ' ', 'watcher', '.', 'getClass', '(', ')', '.', 'getName', '(', ')', ')', ';', '\n', '        ', 'return', ' ', 'txWatcher', ';', '\n', '    ', '}', '\n']"
+master,d1b6524faa2d0cc8f9a52bfb0117f97fbcbd88fe,TxWatcher.java,update,"    public void update() {
+        if (isActualTransactionActive()) {
+            registerSynchronization(new TransactionSynchronization() {",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/d1b6524faa2d0cc8f9a52bfb0117f97fbcbd88fe,"    public void update() {
+        if (isActualTransactionActive()) {
+            registerSynchronization(new TransactionSynchronization() {
+","['    ', 'public', ' ', 'void', ' ', 'update', '(', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'isActualTransactionActive', '(', ')', ')', ' ', '{', '\n', '            ', 'registerSynchronization', '(', 'new', ' ', 'TransactionSynchronization', '(', ')', ' ', '{', '\n']"
+master,d1b6524faa2d0cc8f9a52bfb0117f97fbcbd88fe,TxWatcher.java,afterCommit,"                public void afterCommit() {
+                    watcher.update();
+                }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/d1b6524faa2d0cc8f9a52bfb0117f97fbcbd88fe,"                public void afterCommit() {
+                    watcher.update();
+                }
+","['                ', 'public', ' ', 'void', ' ', 'afterCommit', '(', ')', ' ', '{', '\n', '                    ', 'watcher', '.', 'update', '(', ')', ';', '\n', '                ', '}', '\n']"
+master,d1b6524faa2d0cc8f9a52bfb0117f97fbcbd88fe,CasbinProperties.java,isWatcherTxSupport,"    public boolean isWatcherTxSupport() {
+        return watcherTxSupport;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/d1b6524faa2d0cc8f9a52bfb0117f97fbcbd88fe,"    public boolean isWatcherTxSupport() {
+        return watcherTxSupport;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isWatcherTxSupport', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'watcherTxSupport', ';', '\n', '    ', '}', '\n']"
+master,aef3b87d4af0b8b5eb486f6ee55efe1d00ca9b79,TxWatcher.java,update,"    public void update() {
+        if (isActualTransactionActive()) {
+            registerSynchronization(afterCommitExecute);",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/aef3b87d4af0b8b5eb486f6ee55efe1d00ca9b79,"    public void update() {
+        if (isActualTransactionActive()) {
+            registerSynchronization(afterCommitExecute);
+","['    ', 'public', ' ', 'void', ' ', 'update', '(', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'isActualTransactionActive', '(', ')', ')', ' ', '{', '\n', '            ', 'registerSynchronization', '(', 'afterCommitExecute', ')', ';', '\n']"
+master,aef3b87d4af0b8b5eb486f6ee55efe1d00ca9b79,TxWatcher.java,afterCommit,"        public void afterCommit() {
+            watcher.update();
+        }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/aef3b87d4af0b8b5eb486f6ee55efe1d00ca9b79,"        public void afterCommit() {
+            watcher.update();
+        }
+","['        ', 'public', ' ', 'void', ' ', 'afterCommit', '(', ')', ' ', '{', '\n', '            ', 'watcher', '.', 'update', '(', ')', ';', '\n', '        ', '}', '\n']"
+master,dbfc31cc3074b27ca97a1278c9dcab838614608c,CasbinProperties.java,isUseDistributedEnforcer,"    public boolean isUseDistributedEnforcer() {
+        return useDistributedEnforcer;
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/dbfc31cc3074b27ca97a1278c9dcab838614608c,"    public boolean isUseDistributedEnforcer() {
+        return useDistributedEnforcer;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'isUseDistributedEnforcer', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'useDistributedEnforcer', ';', '\n', '    ', '}', '\n']"
+master,b100f55286bcf8a472dac944cb33c33594e6b815,EnforcerTest.java,test1,"    void test1() {
+        enforcer.clearPolicy();
+        // user rights
+        enforcer.addPolicy(""alice"", ""data1"", ""read"");
+        enforcer.addPolicy(""bob"", ""data2"", ""write"");
+        // role Permissions
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""read"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        // grant alice the permissions owned by data2_admin
+        enforcer.addGroupingPolicy(""alice"", ""data2_admin"");
+
+        // Does bob have read access to data1? It must not be.
+        assertFalse(enforcer.enforce(""bob"", ""data1"", ""read""));
+
+        // Whether alice has read and write access to data2, it must be possible, otherwise, why is authorization used?
+        assertTrue(enforcer.enforce(""alice"", ""data2"", ""read""));
+        assertTrue(enforcer.enforce(""alice"", ""data2"", ""write""));
+
+        // repeat adding P strategy
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        // complete storage, built-in duplicate item filtering
+        enforcer.savePolicy();
+        // verify that duplicates are merged
+        assertEquals(4, enforcer.getNamedPolicy(""p"").size());
+    }",https://www.github.com/jcasbin/casbin-spring-boot-starter/commit/b100f55286bcf8a472dac944cb33c33594e6b815,"    void test1() {
+        enforcer.clearPolicy();
+        
+        enforcer.addPolicy(""alice"", ""data1"", ""read"");
+        enforcer.addPolicy(""bob"", ""data2"", ""write"");
+        
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""read"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        
+        enforcer.addGroupingPolicy(""alice"", ""data2_admin"");
+
+        
+        assertFalse(enforcer.enforce(""bob"", ""data1"", ""read""));
+
+        
+        assertTrue(enforcer.enforce(""alice"", ""data2"", ""read""));
+        assertTrue(enforcer.enforce(""alice"", ""data2"", ""write""));
+
+        
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        enforcer.addPolicy(""data2_admin"", ""data2"", ""write"");
+        
+        enforcer.savePolicy();
+        
+        assertEquals(4, enforcer.getNamedPolicy(""p"").size());
+    }
+","['    ', 'void', ' ', 'test1', '(', ')', ' ', '{', '\n', '        ', 'enforcer', '.', 'clearPolicy', '(', ')', ';', '\n', '        ', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'alice', '""', ',', ' ', '""', 'data1', '""', ',', ' ', '""', 'read', '""', ')', ';', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'bob', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'read', '""', ')', ';', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', '\n', '        ', 'enforcer', '.', 'addGroupingPolicy', '(', '""', 'alice', '""', ',', ' ', '""', 'data2_admin', '""', ')', ';', '\n', '\n', '        ', '\n', '        ', 'assertFalse', '(', 'enforcer', '.', 'enforce', '(', '""', 'bob', '""', ',', ' ', '""', 'data1', '""', ',', ' ', '""', 'read', '""', ')', ')', ';', '\n', '\n', '        ', '\n', '        ', 'assertTrue', '(', 'enforcer', '.', 'enforce', '(', '""', 'alice', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'read', '""', ')', ')', ';', '\n', '        ', 'assertTrue', '(', 'enforcer', '.', 'enforce', '(', '""', 'alice', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ')', ';', '\n', '\n', '        ', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', 'enforcer', '.', 'addPolicy', '(', '""', 'data2_admin', '""', ',', ' ', '""', 'data2', '""', ',', ' ', '""', 'write', '""', ')', ';', '\n', '        ', '\n', '        ', 'enforcer', '.', 'savePolicy', '(', ')', ';', '\n', '        ', '\n', '        ', 'assertEquals', '(', '4', ',', ' ', 'enforcer', '.', 'getNamedPolicy', '(', '""', 'p', '""', ')', '.', 'size', '(', ')', ')', ';', '\n', '    ', '}', '\n']"

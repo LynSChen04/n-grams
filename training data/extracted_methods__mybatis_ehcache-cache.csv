@@ -1,0 +1,1739 @@
+Branch Name,Commit Hash,File Name,Method Name,Method Code,Commit Link,Method Code No Comments,Tokens
+master,fc8492b9ebe2f4f2c24b6ac2986b3a4b0f78ac48,EhcacheCache.java,createCacheManager,"    private static CacheManager createCacheManager() {
+        CacheManager cacheManager;
+        InputStream input = EhcacheCache.class.getResourceAsStream(""/ehcache.xml"");
+
+        if (input != null) {
+            try {
+                cacheManager = CacheManager.create(input);
+            } catch (Throwable t) {
+                cacheManager = CacheManager.create();
+            } finally {
+                try {
+                    input.close();
+                } catch (IOException e) {
+                }
+            }
+        } else {
+            cacheManager = CacheManager.create();
+        }
+
+        return cacheManager;
+    }",https://www.github.com/mybatis/ehcache-cache/commit/fc8492b9ebe2f4f2c24b6ac2986b3a4b0f78ac48,"    private static CacheManager createCacheManager() {
+        CacheManager cacheManager;
+        InputStream input = EhcacheCache.class.getResourceAsStream(""/ehcache.xml"");
+
+        if (input != null) {
+            try {
+                cacheManager = CacheManager.create(input);
+            } catch (Throwable t) {
+                cacheManager = CacheManager.create();
+            } finally {
+                try {
+                    input.close();
+                } catch (IOException e) {
+                }
+            }
+        } else {
+            cacheManager = CacheManager.create();
+        }
+
+        return cacheManager;
+    }
+","['    ', 'private', ' ', 'static', ' ', 'CacheManager', ' ', 'createCacheManager', '(', ')', ' ', '{', '\n', '        ', 'CacheManager', ' ', 'cacheManager', ';', '\n', '        ', 'InputStream', ' ', 'input', ' ', '=', ' ', 'EhcacheCache', '.', 'class', '.', 'getResourceAsStream', '(', '""', '/ehcache.xml', '""', ')', ';', '\n', '\n', '        ', 'if', ' ', '(', 'input', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'try', ' ', '{', '\n', '                ', 'cacheManager', ' ', '=', ' ', 'CacheManager', '.', 'create', '(', 'input', ')', ';', '\n', '            ', '}', ' ', 'catch', ' ', '(', 'Throwable', ' ', 't', ')', ' ', '{', '\n', '                ', 'cacheManager', ' ', '=', ' ', 'CacheManager', '.', 'create', '(', ')', ';', '\n', '            ', '}', ' ', 'finally', ' ', '{', '\n', '                ', 'try', ' ', '{', '\n', '                    ', 'input', '.', 'close', '(', ')', ';', '\n', '                ', '}', ' ', 'catch', ' ', '(', 'IOException', ' ', 'e', ')', ' ', '{', '\n', '                ', '}', '\n', '            ', '}', '\n', '        ', '}', ' ', 'else', ' ', '{', '\n', '            ', 'cacheManager', ' ', '=', ' ', 'CacheManager', '.', 'create', '(', ')', ';', '\n', '        ', '}', '\n', '\n', '        ', 'return', ' ', 'cacheManager', ';', '\n', '    ', '}', '\n']"
+master,fc8492b9ebe2f4f2c24b6ac2986b3a4b0f78ac48,EhcacheCache.java,clear,"    public void clear() {
+        this.getCache().removeAll();
+    }",https://www.github.com/mybatis/ehcache-cache/commit/fc8492b9ebe2f4f2c24b6ac2986b3a4b0f78ac48,"    public void clear() {
+        this.getCache().removeAll();
+    }
+","['    ', 'public', ' ', 'void', ' ', 'clear', '(', ')', ' ', '{', '\n', '        ', 'this', '.', 'getCache', '(', ')', '.', 'removeAll', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,fc8492b9ebe2f4f2c24b6ac2986b3a4b0f78ac48,EhcacheCache.java,putObject,"    public void putObject(Object key, Object value) {
+        try {
+            this.getCache().put(new Element(key, value));",https://www.github.com/mybatis/ehcache-cache/commit/fc8492b9ebe2f4f2c24b6ac2986b3a4b0f78ac48,"    public void putObject(Object key, Object value) {
+        try {
+            this.getCache().put(new Element(key, value));
+","['    ', 'public', ' ', 'void', ' ', 'putObject', '(', 'Object', ' ', 'key', ',', ' ', 'Object', ' ', 'value', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'this', '.', 'getCache', '(', ')', '.', 'put', '(', 'new', ' ', 'Element', '(', 'key', ',', ' ', 'value', ')', ')', ';', '\n']"
+master,fc8492b9ebe2f4f2c24b6ac2986b3a4b0f78ac48,EhcacheCache.java,removeObject,"    public Object removeObject(Object key) {
+        try {
+            Object obj = this.getObject(key);",https://www.github.com/mybatis/ehcache-cache/commit/fc8492b9ebe2f4f2c24b6ac2986b3a4b0f78ac48,"    public Object removeObject(Object key) {
+        try {
+            Object obj = this.getObject(key);
+","['    ', 'public', ' ', 'Object', ' ', 'removeObject', '(', 'Object', ' ', 'key', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'Object', ' ', 'obj', ' ', '=', ' ', 'this', '.', 'getObject', '(', 'key', ')', ';', '\n']"
+master,090bbefa903c4ce317e99f430076438f02afe13b,EhcacheCache.java,equals,"    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Cache)) {
+            return false;
+        }
+
+        Cache otherCache = (Cache) obj;
+        return this.id.equals(otherCache.getId());
+    }",https://www.github.com/mybatis/ehcache-cache/commit/090bbefa903c4ce317e99f430076438f02afe13b,"    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Cache)) {
+            return false;
+        }
+
+        Cache otherCache = (Cache) obj;
+        return this.id.equals(otherCache.getId());
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'equals', '(', 'Object', ' ', 'obj', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'this', ' ', '=', '=', ' ', 'obj', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '        ', 'if', ' ', '(', 'obj', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '        ', 'if', ' ', '(', '!', '(', 'obj', ' ', 'instanceof', ' ', 'Cache', ')', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', 'Cache', ' ', 'otherCache', ' ', '=', ' ', '(', 'Cache', ')', ' ', 'obj', ';', '\n', '        ', 'return', ' ', 'this', '.', 'id', '.', 'equals', '(', 'otherCache', '.', 'getId', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,090bbefa903c4ce317e99f430076438f02afe13b,EhcacheCache.java,hashCode,"    public int hashCode() {
+        return this.id.hashCode();
+    }",https://www.github.com/mybatis/ehcache-cache/commit/090bbefa903c4ce317e99f430076438f02afe13b,"    public int hashCode() {
+        return this.id.hashCode();
+    }
+","['    ', 'public', ' ', 'int', ' ', 'hashCode', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'id', '.', 'hashCode', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,090bbefa903c4ce317e99f430076438f02afe13b,EhcacheCache.java,toString,"    public String toString() {
+        return ""EHCache {""
+                + this.id",https://www.github.com/mybatis/ehcache-cache/commit/090bbefa903c4ce317e99f430076438f02afe13b,"    public String toString() {
+        return ""EHCache {""
+                + this.id
+","['    ', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', '""', 'EHCache {', '""', '\n', '                ', '+', ' ', 'this', '.', 'id', '\n']"
+master,039e9851a07d055915cf5f7a702883bf586b38eb,EhcacheTestCase.java,newCache,"    private static Cache newCache() {
+        return new EhcacheCache(DEFAULT_ID);
+    }",https://www.github.com/mybatis/ehcache-cache/commit/039e9851a07d055915cf5f7a702883bf586b38eb,"    private static Cache newCache() {
+        return new EhcacheCache(DEFAULT_ID);
+    }
+","['    ', 'private', ' ', 'static', ' ', 'Cache', ' ', 'newCache', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'new', ' ', 'EhcacheCache', '(', 'DEFAULT_ID', ')', ';', '\n', '    ', '}', '\n']"
+master,039e9851a07d055915cf5f7a702883bf586b38eb,EhcacheTestCase.java,shouldDemonstrateHowAllObjectsAreKept,"    public void shouldDemonstrateHowAllObjectsAreKept() {
+        Cache cache = newCache();
+        for (int i = 0; i < 100000; i++) {
+            cache.putObject(i, i);
+            assertEquals(i, cache.getObject(i));
+        }
+        assertEquals(100000, cache.getSize());
+    }",https://www.github.com/mybatis/ehcache-cache/commit/039e9851a07d055915cf5f7a702883bf586b38eb,"    public void shouldDemonstrateHowAllObjectsAreKept() {
+        Cache cache = newCache();
+        for (int i = 0; i < 100000; i++) {
+            cache.putObject(i, i);
+            assertEquals(i, cache.getObject(i));
+        }
+        assertEquals(100000, cache.getSize());
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldDemonstrateHowAllObjectsAreKept', '(', ')', ' ', '{', '\n', '        ', 'Cache', ' ', 'cache', ' ', '=', ' ', 'newCache', '(', ')', ';', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '100000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n', '            ', 'assertEquals', '(', 'i', ',', ' ', 'cache', '.', 'getObject', '(', 'i', ')', ')', ';', '\n', '        ', '}', '\n', '        ', 'assertEquals', '(', '100000', ',', ' ', 'cache', '.', 'getSize', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,039e9851a07d055915cf5f7a702883bf586b38eb,EhcacheTestCase.java,shouldDemonstrateCopiesAreEqual,"    public void shouldDemonstrateCopiesAreEqual() {
+        Cache cache = newCache();
+        for (int i = 0; i < 1000; i++) {
+            cache.putObject(i, i);",https://www.github.com/mybatis/ehcache-cache/commit/039e9851a07d055915cf5f7a702883bf586b38eb,"    public void shouldDemonstrateCopiesAreEqual() {
+        Cache cache = newCache();
+        for (int i = 0; i < 1000; i++) {
+            cache.putObject(i, i);
+","['    ', 'public', ' ', 'void', ' ', 'shouldDemonstrateCopiesAreEqual', '(', ')', ' ', '{', '\n', '        ', 'Cache', ' ', 'cache', ' ', '=', ' ', 'newCache', '(', ')', ';', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '1000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n']"
+master,039e9851a07d055915cf5f7a702883bf586b38eb,EhcacheTestCase.java,shouldRemoveItemOnDemand,"    public void shouldRemoveItemOnDemand() {
+        Cache cache = newCache();
+        cache.putObject(0, 0);
+        assertNotNull(cache.getObject(0));
+        cache.removeObject(0);
+        assertNull(cache.getObject(0));
+    }",https://www.github.com/mybatis/ehcache-cache/commit/039e9851a07d055915cf5f7a702883bf586b38eb,"    public void shouldRemoveItemOnDemand() {
+        Cache cache = newCache();
+        cache.putObject(0, 0);
+        assertNotNull(cache.getObject(0));
+        cache.removeObject(0);
+        assertNull(cache.getObject(0));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldRemoveItemOnDemand', '(', ')', ' ', '{', '\n', '        ', 'Cache', ' ', 'cache', ' ', '=', ' ', 'newCache', '(', ')', ';', '\n', '        ', 'cache', '.', 'putObject', '(', '0', ',', ' ', '0', ')', ';', '\n', '        ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '        ', 'cache', '.', 'removeObject', '(', '0', ')', ';', '\n', '        ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,039e9851a07d055915cf5f7a702883bf586b38eb,EhcacheTestCase.java,shouldFlushAllItemsOnDemand,"    public void shouldFlushAllItemsOnDemand() {
+        Cache cache = newCache();
+        for (int i = 0; i < 5; i++) {
+            cache.putObject(i, i);
+        }
+        assertNotNull(cache.getObject(0));
+        assertNotNull(cache.getObject(4));
+        cache.clear();
+        assertNull(cache.getObject(0));
+        assertNull(cache.getObject(4));
+    }",https://www.github.com/mybatis/ehcache-cache/commit/039e9851a07d055915cf5f7a702883bf586b38eb,"    public void shouldFlushAllItemsOnDemand() {
+        Cache cache = newCache();
+        for (int i = 0; i < 5; i++) {
+            cache.putObject(i, i);
+        }
+        assertNotNull(cache.getObject(0));
+        assertNotNull(cache.getObject(4));
+        cache.clear();
+        assertNull(cache.getObject(0));
+        assertNull(cache.getObject(4));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldFlushAllItemsOnDemand', '(', ')', ' ', '{', '\n', '        ', 'Cache', ' ', 'cache', ' ', '=', ' ', 'newCache', '(', ')', ';', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '5', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n', '        ', '}', '\n', '        ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '        ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '4', ')', ')', ';', '\n', '        ', 'cache', '.', 'clear', '(', ')', ';', '\n', '        ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '        ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '4', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,03a0d0d9a61bd57395043b7ee4b5399da812ab34,EhcacheCache.java,putObject,"    public void putObject(Object key, Object value) {
+        try {
+            this.getCache().put(new Element(key.hashCode(), value));",https://www.github.com/mybatis/ehcache-cache/commit/03a0d0d9a61bd57395043b7ee4b5399da812ab34,"    public void putObject(Object key, Object value) {
+        try {
+            this.getCache().put(new Element(key.hashCode(), value));
+","['    ', 'public', ' ', 'void', ' ', 'putObject', '(', 'Object', ' ', 'key', ',', ' ', 'Object', ' ', 'value', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'this', '.', 'getCache', '(', ')', '.', 'put', '(', 'new', ' ', 'Element', '(', 'key', '.', 'hashCode', '(', ')', ',', ' ', 'value', ')', ')', ';', '\n']"
+master,8d5176169de1dbf1aa5b875f91ea3eb3fa38982d,EhcacheCache.java,createCacheManager,"    private static CacheManager createCacheManager() {
+        CacheManager cacheManager;
+        InputStream input = EhcacheCache.class.getResourceAsStream(""/ehcache.xml"");
+
+        if (input != null) {
+            try {
+                cacheManager = CacheManager.create(input);
+            } catch (Throwable t) {
+                cacheManager = CacheManager.create();
+            } finally {
+                try {
+                    input.close();
+                } catch (IOException e) {
+                    // ignored
+                }
+            }
+        } else {
+            cacheManager = CacheManager.create();
+        }
+
+        return cacheManager;
+    }",https://www.github.com/mybatis/ehcache-cache/commit/8d5176169de1dbf1aa5b875f91ea3eb3fa38982d,"    private static CacheManager createCacheManager() {
+        CacheManager cacheManager;
+        InputStream input = EhcacheCache.class.getResourceAsStream(""/ehcache.xml"");
+
+        if (input != null) {
+            try {
+                cacheManager = CacheManager.create(input);
+            } catch (Throwable t) {
+                cacheManager = CacheManager.create();
+            } finally {
+                try {
+                    input.close();
+                } catch (IOException e) {
+                    
+                }
+            }
+        } else {
+            cacheManager = CacheManager.create();
+        }
+
+        return cacheManager;
+    }
+","['    ', 'private', ' ', 'static', ' ', 'CacheManager', ' ', 'createCacheManager', '(', ')', ' ', '{', '\n', '        ', 'CacheManager', ' ', 'cacheManager', ';', '\n', '        ', 'InputStream', ' ', 'input', ' ', '=', ' ', 'EhcacheCache', '.', 'class', '.', 'getResourceAsStream', '(', '""', '/ehcache.xml', '""', ')', ';', '\n', '\n', '        ', 'if', ' ', '(', 'input', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'try', ' ', '{', '\n', '                ', 'cacheManager', ' ', '=', ' ', 'CacheManager', '.', 'create', '(', 'input', ')', ';', '\n', '            ', '}', ' ', 'catch', ' ', '(', 'Throwable', ' ', 't', ')', ' ', '{', '\n', '                ', 'cacheManager', ' ', '=', ' ', 'CacheManager', '.', 'create', '(', ')', ';', '\n', '            ', '}', ' ', 'finally', ' ', '{', '\n', '                ', 'try', ' ', '{', '\n', '                    ', 'input', '.', 'close', '(', ')', ';', '\n', '                ', '}', ' ', 'catch', ' ', '(', 'IOException', ' ', 'e', ')', ' ', '{', '\n', '                    ', '\n', '                ', '}', '\n', '            ', '}', '\n', '        ', '}', ' ', 'else', ' ', '{', '\n', '            ', 'cacheManager', ' ', '=', ' ', 'CacheManager', '.', 'create', '(', ')', ';', '\n', '        ', '}', '\n', '\n', '        ', 'return', ' ', 'cacheManager', ';', '\n', '    ', '}', '\n']"
+master,8d5176169de1dbf1aa5b875f91ea3eb3fa38982d,EhcacheTestCase.java,newCache,"    public void newCache() {
+        cache = new EhcacheCache(DEFAULT_ID);
+    }",https://www.github.com/mybatis/ehcache-cache/commit/8d5176169de1dbf1aa5b875f91ea3eb3fa38982d,"    public void newCache() {
+        cache = new EhcacheCache(DEFAULT_ID);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'newCache', '(', ')', ' ', '{', '\n', '        ', 'cache', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', 'DEFAULT_ID', ')', ';', '\n', '    ', '}', '\n']"
+master,8d5176169de1dbf1aa5b875f91ea3eb3fa38982d,EhcacheTestCase.java,shouldDemonstrateHowAllObjectsAreKept,"    public void shouldDemonstrateHowAllObjectsAreKept() {
+        for (int i = 0; i < 100000; i++) {
+            cache.putObject(i, i);
+            assertEquals(i, cache.getObject(i));
+        }
+        assertEquals(100000, cache.getSize());
+    }",https://www.github.com/mybatis/ehcache-cache/commit/8d5176169de1dbf1aa5b875f91ea3eb3fa38982d,"    public void shouldDemonstrateHowAllObjectsAreKept() {
+        for (int i = 0; i < 100000; i++) {
+            cache.putObject(i, i);
+            assertEquals(i, cache.getObject(i));
+        }
+        assertEquals(100000, cache.getSize());
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldDemonstrateHowAllObjectsAreKept', '(', ')', ' ', '{', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '100000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n', '            ', 'assertEquals', '(', 'i', ',', ' ', 'cache', '.', 'getObject', '(', 'i', ')', ')', ';', '\n', '        ', '}', '\n', '        ', 'assertEquals', '(', '100000', ',', ' ', 'cache', '.', 'getSize', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,8d5176169de1dbf1aa5b875f91ea3eb3fa38982d,EhcacheTestCase.java,shouldDemonstrateCopiesAreEqual,"    public void shouldDemonstrateCopiesAreEqual() {
+        for (int i = 0; i < 1000; i++) {
+            cache.putObject(i, i);",https://www.github.com/mybatis/ehcache-cache/commit/8d5176169de1dbf1aa5b875f91ea3eb3fa38982d,"    public void shouldDemonstrateCopiesAreEqual() {
+        for (int i = 0; i < 1000; i++) {
+            cache.putObject(i, i);
+","['    ', 'public', ' ', 'void', ' ', 'shouldDemonstrateCopiesAreEqual', '(', ')', ' ', '{', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '1000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n']"
+master,8d5176169de1dbf1aa5b875f91ea3eb3fa38982d,EhcacheTestCase.java,shouldRemoveItemOnDemand,"    public void shouldRemoveItemOnDemand() {
+        cache.putObject(0, 0);
+        assertNotNull(cache.getObject(0));
+        cache.removeObject(0);
+        assertNull(cache.getObject(0));
+    }",https://www.github.com/mybatis/ehcache-cache/commit/8d5176169de1dbf1aa5b875f91ea3eb3fa38982d,"    public void shouldRemoveItemOnDemand() {
+        cache.putObject(0, 0);
+        assertNotNull(cache.getObject(0));
+        cache.removeObject(0);
+        assertNull(cache.getObject(0));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldRemoveItemOnDemand', '(', ')', ' ', '{', '\n', '        ', 'cache', '.', 'putObject', '(', '0', ',', ' ', '0', ')', ';', '\n', '        ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '        ', 'cache', '.', 'removeObject', '(', '0', ')', ';', '\n', '        ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,8d5176169de1dbf1aa5b875f91ea3eb3fa38982d,EhcacheTestCase.java,shouldFlushAllItemsOnDemand,"    public void shouldFlushAllItemsOnDemand() {
+        for (int i = 0; i < 5; i++) {
+            cache.putObject(i, i);
+        }
+        assertNotNull(cache.getObject(0));
+        assertNotNull(cache.getObject(4));
+        cache.clear();
+        assertNull(cache.getObject(0));
+        assertNull(cache.getObject(4));
+    }",https://www.github.com/mybatis/ehcache-cache/commit/8d5176169de1dbf1aa5b875f91ea3eb3fa38982d,"    public void shouldFlushAllItemsOnDemand() {
+        for (int i = 0; i < 5; i++) {
+            cache.putObject(i, i);
+        }
+        assertNotNull(cache.getObject(0));
+        assertNotNull(cache.getObject(4));
+        cache.clear();
+        assertNull(cache.getObject(0));
+        assertNull(cache.getObject(4));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldFlushAllItemsOnDemand', '(', ')', ' ', '{', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '5', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '            ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n', '        ', '}', '\n', '        ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '        ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '4', ')', ')', ';', '\n', '        ', 'cache', '.', 'clear', '(', ')', ';', '\n', '        ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '        ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '4', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,8d5176169de1dbf1aa5b875f91ea3eb3fa38982d,EhcacheTestCase.java,shouldChangeTimeToLive,"    public void shouldChangeTimeToLive() throws Exception {
+      cache.putObject(""test"", ""test"");
+      Thread.sleep(1200);
+      assertEquals(cache.getObject(""test""), ""test"");
+      cache.setTimeToLiveSeconds(1);
+      Thread.sleep(1200);
+      assertNull(cache.getObject(""test""));
+  }",https://www.github.com/mybatis/ehcache-cache/commit/8d5176169de1dbf1aa5b875f91ea3eb3fa38982d,"    public void shouldChangeTimeToLive() throws Exception {
+      cache.putObject(""test"", ""test"");
+      Thread.sleep(1200);
+      assertEquals(cache.getObject(""test""), ""test"");
+      cache.setTimeToLiveSeconds(1);
+      Thread.sleep(1200);
+      assertNull(cache.getObject(""test""));
+  }
+","['    ', 'public', ' ', 'void', ' ', 'shouldChangeTimeToLive', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '      ', 'cache', '.', 'putObject', '(', '""', 'test', '""', ',', ' ', '""', 'test', '""', ')', ';', '\n', '      ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '      ', 'assertEquals', '(', 'cache', '.', 'getObject', '(', '""', 'test', '""', ')', ',', ' ', '""', 'test', '""', ')', ';', '\n', '      ', 'cache', '.', 'setTimeToLiveSeconds', '(', '1', ')', ';', '\n', '      ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '      ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '""', 'test', '""', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,47cee968fcca6a1c9f614adc6119b44c20b58ea5,DummyReadWriteLock.java,writeLock,"    public Lock writeLock() {
+        return lock;
+    }",https://www.github.com/mybatis/ehcache-cache/commit/47cee968fcca6a1c9f614adc6119b44c20b58ea5,"    public Lock writeLock() {
+        return lock;
+    }
+","['    ', 'public', ' ', 'Lock', ' ', 'writeLock', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'lock', ';', '\n', '    ', '}', '\n']"
+master,47cee968fcca6a1c9f614adc6119b44c20b58ea5,DummyReadWriteLock.java,lock,"        public void lock() {
+        }
+
+        public void lockInterruptibly() throws InterruptedException {
+        }
+
+        public boolean tryLock() {
+            return true;
+        }
+
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        public void unlock() {
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/ehcache-cache/commit/47cee968fcca6a1c9f614adc6119b44c20b58ea5,"        public void lock() {
+        }
+
+        public void lockInterruptibly() throws InterruptedException {
+        }
+
+        public boolean tryLock() {
+            return true;
+        }
+
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        public void unlock() {
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'lock', '(', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'void', ' ', 'lockInterruptibly', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,47cee968fcca6a1c9f614adc6119b44c20b58ea5,DummyReadWriteLock.java,lockInterruptibly,"        public void lockInterruptibly() throws InterruptedException {
+        }
+
+        public boolean tryLock() {
+            return true;
+        }
+
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        public void unlock() {
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/ehcache-cache/commit/47cee968fcca6a1c9f614adc6119b44c20b58ea5,"        public void lockInterruptibly() throws InterruptedException {
+        }
+
+        public boolean tryLock() {
+            return true;
+        }
+
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        public void unlock() {
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'lockInterruptibly', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,47cee968fcca6a1c9f614adc6119b44c20b58ea5,DummyReadWriteLock.java,tryLock,"        public boolean tryLock() {
+            return true;
+        }",https://www.github.com/mybatis/ehcache-cache/commit/47cee968fcca6a1c9f614adc6119b44c20b58ea5,"        public boolean tryLock() {
+            return true;
+        }
+","['        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n']"
+master,47cee968fcca6a1c9f614adc6119b44c20b58ea5,DummyReadWriteLock.java,tryLock,"        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }",https://www.github.com/mybatis/ehcache-cache/commit/47cee968fcca6a1c9f614adc6119b44c20b58ea5,"        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+","['        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n']"
+master,47cee968fcca6a1c9f614adc6119b44c20b58ea5,DummyReadWriteLock.java,unlock,"        public void unlock() {
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/ehcache-cache/commit/47cee968fcca6a1c9f614adc6119b44c20b58ea5,"        public void unlock() {
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,47cee968fcca6a1c9f614adc6119b44c20b58ea5,DummyReadWriteLock.java,newCondition,"        public Condition newCondition() {
+            return null;
+        }",https://www.github.com/mybatis/ehcache-cache/commit/47cee968fcca6a1c9f614adc6119b44c20b58ea5,"        public Condition newCondition() {
+            return null;
+        }
+","['        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n']"
+master,47cee968fcca6a1c9f614adc6119b44c20b58ea5,EhcacheCache.java,clear,"    public void clear() {
+        cache.removeAll();
+    }",https://www.github.com/mybatis/ehcache-cache/commit/47cee968fcca6a1c9f614adc6119b44c20b58ea5,"    public void clear() {
+        cache.removeAll();
+    }
+","['    ', 'public', ' ', 'void', ' ', 'clear', '(', ')', ' ', '{', '\n', '        ', 'cache', '.', 'removeAll', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,47cee968fcca6a1c9f614adc6119b44c20b58ea5,EhcacheCache.java,putObject,"    public void putObject(Object key, Object value) {
+        cache.put(new Element(key, value));
+    }",https://www.github.com/mybatis/ehcache-cache/commit/47cee968fcca6a1c9f614adc6119b44c20b58ea5,"    public void putObject(Object key, Object value) {
+        cache.put(new Element(key, value));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'putObject', '(', 'Object', ' ', 'key', ',', ' ', 'Object', ' ', 'value', ')', ' ', '{', '\n', '        ', 'cache', '.', 'put', '(', 'new', ' ', 'Element', '(', 'key', ',', ' ', 'value', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,47cee968fcca6a1c9f614adc6119b44c20b58ea5,EhcacheCache.java,removeObject,"    public Object removeObject(Object key) {
+        Object obj = getObject(key);
+        cache.remove(key);
+        return obj;
+    }",https://www.github.com/mybatis/ehcache-cache/commit/47cee968fcca6a1c9f614adc6119b44c20b58ea5,"    public Object removeObject(Object key) {
+        Object obj = getObject(key);
+        cache.remove(key);
+        return obj;
+    }
+","['    ', 'public', ' ', 'Object', ' ', 'removeObject', '(', 'Object', ' ', 'key', ')', ' ', '{', '\n', '        ', 'Object', ' ', 'obj', ' ', '=', ' ', 'getObject', '(', 'key', ')', ';', '\n', '        ', 'cache', '.', 'remove', '(', 'key', ')', ';', '\n', '        ', 'return', ' ', 'obj', ';', '\n', '    ', '}', '\n']"
+master,47cee968fcca6a1c9f614adc6119b44c20b58ea5,EhcacheCache.java,equals,"    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Cache)) {
+            return false;
+        }
+
+        Cache otherCache = (Cache) obj;
+        return id.equals(otherCache.getId());
+    }",https://www.github.com/mybatis/ehcache-cache/commit/47cee968fcca6a1c9f614adc6119b44c20b58ea5,"    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Cache)) {
+            return false;
+        }
+
+        Cache otherCache = (Cache) obj;
+        return id.equals(otherCache.getId());
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'equals', '(', 'Object', ' ', 'obj', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'this', ' ', '=', '=', ' ', 'obj', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '        ', 'if', ' ', '(', 'obj', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '        ', 'if', ' ', '(', '!', '(', 'obj', ' ', 'instanceof', ' ', 'Cache', ')', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', 'Cache', ' ', 'otherCache', ' ', '=', ' ', '(', 'Cache', ')', ' ', 'obj', ';', '\n', '        ', 'return', ' ', 'id', '.', 'equals', '(', 'otherCache', '.', 'getId', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,47cee968fcca6a1c9f614adc6119b44c20b58ea5,EhcacheCache.java,hashCode,"    public int hashCode() {
+        return id.hashCode();
+    }",https://www.github.com/mybatis/ehcache-cache/commit/47cee968fcca6a1c9f614adc6119b44c20b58ea5,"    public int hashCode() {
+        return id.hashCode();
+    }
+","['    ', 'public', ' ', 'int', ' ', 'hashCode', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'id', '.', 'hashCode', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,47cee968fcca6a1c9f614adc6119b44c20b58ea5,EhcacheCache.java,toString,"    public String toString() {
+        return ""EHCache {""
+                + id",https://www.github.com/mybatis/ehcache-cache/commit/47cee968fcca6a1c9f614adc6119b44c20b58ea5,"    public String toString() {
+        return ""EHCache {""
+                + id
+","['    ', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', '""', 'EHCache {', '""', '\n', '                ', '+', ' ', 'id', '\n']"
+master,f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,EhcacheTestCase.java,shouldChangeTimeToLive,"    public void shouldChangeTimeToLive() throws Exception {
+      cache.putObject(""test"", ""test"");
+      Thread.sleep(1200);
+      assertEquals(""test"", cache.getObject(""test""));
+      cache.setTimeToLiveSeconds(1);
+      Thread.sleep(1200);
+      assertNull(cache.getObject(""test""));
+      this.resetCache();
+    }",https://www.github.com/mybatis/ehcache-cache/commit/f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,"    public void shouldChangeTimeToLive() throws Exception {
+      cache.putObject(""test"", ""test"");
+      Thread.sleep(1200);
+      assertEquals(""test"", cache.getObject(""test""));
+      cache.setTimeToLiveSeconds(1);
+      Thread.sleep(1200);
+      assertNull(cache.getObject(""test""));
+      this.resetCache();
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldChangeTimeToLive', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '      ', 'cache', '.', 'putObject', '(', '""', 'test', '""', ',', ' ', '""', 'test', '""', ')', ';', '\n', '      ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '      ', 'assertEquals', '(', '""', 'test', '""', ',', ' ', 'cache', '.', 'getObject', '(', '""', 'test', '""', ')', ')', ';', '\n', '      ', 'cache', '.', 'setTimeToLiveSeconds', '(', '1', ')', ';', '\n', '      ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '      ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '""', 'test', '""', ')', ')', ';', '\n', '      ', 'this', '.', 'resetCache', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,EhcacheTestCase.java,shouldChangeTimeToIdle,"    public void shouldChangeTimeToIdle() throws Exception {
+      cache.putObject(""test"", ""test"");
+      Thread.sleep(1200);
+      assertEquals(""test"", cache.getObject(""test""));
+      cache.setTimeToIdleSeconds(1);
+      Thread.sleep(1200);
+      assertNull(cache.getObject(""test""));
+      this.resetCache();
+    }",https://www.github.com/mybatis/ehcache-cache/commit/f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,"    public void shouldChangeTimeToIdle() throws Exception {
+      cache.putObject(""test"", ""test"");
+      Thread.sleep(1200);
+      assertEquals(""test"", cache.getObject(""test""));
+      cache.setTimeToIdleSeconds(1);
+      Thread.sleep(1200);
+      assertNull(cache.getObject(""test""));
+      this.resetCache();
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldChangeTimeToIdle', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '      ', 'cache', '.', 'putObject', '(', '""', 'test', '""', ',', ' ', '""', 'test', '""', ')', ';', '\n', '      ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '      ', 'assertEquals', '(', '""', 'test', '""', ',', ' ', 'cache', '.', 'getObject', '(', '""', 'test', '""', ')', ')', ';', '\n', '      ', 'cache', '.', 'setTimeToIdleSeconds', '(', '1', ')', ';', '\n', '      ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '      ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '""', 'test', '""', ')', ')', ';', '\n', '      ', 'this', '.', 'resetCache', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,EhcacheTestCase.java,shouldTestEvictionPolicy,"    public void shouldTestEvictionPolicy() throws Exception {
+      cache.clear();
+      cache.setMemoryStoreEvictionPolicy(""FIFO"");
+      cache.setMaxEntriesLocalHeap(1);
+      cache.setMaxEntriesLocalDisk(1);
+      cache.putObject(""eviction"", ""eviction"");
+      cache.putObject(""eviction2"", ""eviction2"");
+      cache.putObject(""eviction3"", ""eviction3"");
+      Thread.sleep(1200);
+      assertEquals(1, cache.getSize());
+      this.resetCache();
+    }",https://www.github.com/mybatis/ehcache-cache/commit/f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,"    public void shouldTestEvictionPolicy() throws Exception {
+      cache.clear();
+      cache.setMemoryStoreEvictionPolicy(""FIFO"");
+      cache.setMaxEntriesLocalHeap(1);
+      cache.setMaxEntriesLocalDisk(1);
+      cache.putObject(""eviction"", ""eviction"");
+      cache.putObject(""eviction2"", ""eviction2"");
+      cache.putObject(""eviction3"", ""eviction3"");
+      Thread.sleep(1200);
+      assertEquals(1, cache.getSize());
+      this.resetCache();
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldTestEvictionPolicy', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '      ', 'cache', '.', 'clear', '(', ')', ';', '\n', '      ', 'cache', '.', 'setMemoryStoreEvictionPolicy', '(', '""', 'FIFO', '""', ')', ';', '\n', '      ', 'cache', '.', 'setMaxEntriesLocalHeap', '(', '1', ')', ';', '\n', '      ', 'cache', '.', 'setMaxEntriesLocalDisk', '(', '1', ')', ';', '\n', '      ', 'cache', '.', 'putObject', '(', '""', 'eviction', '""', ',', ' ', '""', 'eviction', '""', ')', ';', '\n', '      ', 'cache', '.', 'putObject', '(', '""', 'eviction2', '""', ',', ' ', '""', 'eviction2', '""', ')', ';', '\n', '      ', 'cache', '.', 'putObject', '(', '""', 'eviction3', '""', ',', ' ', '""', 'eviction3', '""', ')', ';', '\n', '      ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '      ', 'assertEquals', '(', '1', ',', ' ', 'cache', '.', 'getSize', '(', ')', ')', ';', '\n', '      ', 'this', '.', 'resetCache', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,EhcacheTestCase.java,shouldNotCreateCache,"    public void shouldNotCreateCache() {
+      cache = new EhcacheCache(null);
+    }",https://www.github.com/mybatis/ehcache-cache/commit/f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,"    public void shouldNotCreateCache() {
+      cache = new EhcacheCache(null);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldNotCreateCache', '(', ')', ' ', '{', '\n', '      ', 'cache', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', 'null', ')', ';', '\n', '    ', '}', '\n']"
+master,f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,EhcacheTestCase.java,shouldVerifyCacheId,"    public void shouldVerifyCacheId() {
+      assertEquals(""EHCACHE"", cache.getId());
+    }",https://www.github.com/mybatis/ehcache-cache/commit/f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,"    public void shouldVerifyCacheId() {
+      assertEquals(""EHCACHE"", cache.getId());
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldVerifyCacheId', '(', ')', ' ', '{', '\n', '      ', 'assertEquals', '(', '""', 'EHCACHE', '""', ',', ' ', 'cache', '.', 'getId', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,EhcacheTestCase.java,shouldVerifyToString,"    public void shouldVerifyToString() {
+      assertEquals(""EHCache {EHCACHE}"", cache.toString());
+    }",https://www.github.com/mybatis/ehcache-cache/commit/f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,"    public void shouldVerifyToString() {
+      assertEquals(""EHCache {EHCACHE}"", cache.toString());
+    }
+","['    ', 'public', ' ', 'void', ' ', 'shouldVerifyToString', '(', ')', ' ', '{', '\n', '      ', 'assertEquals', '(', '""', 'EHCache {EHCACHE}', '""', ',', ' ', 'cache', '.', 'toString', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,EhcacheTestCase.java,equalsAndHashCodeSymmetricTest,"    public void equalsAndHashCodeSymmetricTest() {
+      // equals and hashCode check name field value
+      EhcacheCache x = new EhcacheCache(""EHCACHE"");
+      EhcacheCache y = new EhcacheCache(""EHCACHE"");
+      assertTrue(x.equals(y));
+      assertTrue(y.equals(x));
+      assertEquals(x.hashCode(), y.hashCode());
+      // dummy tests to cover edge cases
+      assertFalse(x.equals(new String()));
+      assertFalse(x.equals(null));
+      assertTrue(x.equals(x));
+    }",https://www.github.com/mybatis/ehcache-cache/commit/f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,"    public void equalsAndHashCodeSymmetricTest() {
+      
+      EhcacheCache x = new EhcacheCache(""EHCACHE"");
+      EhcacheCache y = new EhcacheCache(""EHCACHE"");
+      assertTrue(x.equals(y));
+      assertTrue(y.equals(x));
+      assertEquals(x.hashCode(), y.hashCode());
+      
+      assertFalse(x.equals(new String()));
+      assertFalse(x.equals(null));
+      assertTrue(x.equals(x));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'equalsAndHashCodeSymmetricTest', '(', ')', ' ', '{', '\n', '      ', '\n', '      ', 'EhcacheCache', ' ', 'x', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', '""', 'EHCACHE', '""', ')', ';', '\n', '      ', 'EhcacheCache', ' ', 'y', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', '""', 'EHCACHE', '""', ')', ';', '\n', '      ', 'assertTrue', '(', 'x', '.', 'equals', '(', 'y', ')', ')', ';', '\n', '      ', 'assertTrue', '(', 'y', '.', 'equals', '(', 'x', ')', ')', ';', '\n', '      ', 'assertEquals', '(', 'x', '.', 'hashCode', '(', ')', ',', ' ', 'y', '.', 'hashCode', '(', ')', ')', ';', '\n', '      ', '\n', '      ', 'assertFalse', '(', 'x', '.', 'equals', '(', 'new', ' ', 'String', '(', ')', ')', ')', ';', '\n', '      ', 'assertFalse', '(', 'x', '.', 'equals', '(', 'null', ')', ')', ';', '\n', '      ', 'assertTrue', '(', 'x', '.', 'equals', '(', 'x', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,EhcacheTestCase.java,shouldVerifyReadWriteLock,"    public void shouldVerifyReadWriteLock() throws InterruptedException {
+      assertThat(cache.getReadWriteLock(), instanceOf(DummyReadWriteLock.class));
+      assertTrue(cache.getReadWriteLock().readLock().tryLock());
+      assertTrue(cache.getReadWriteLock().readLock().tryLock(1, TimeUnit.SECONDS));
+      assertNull(cache.getReadWriteLock().readLock().newCondition());
+      assertTrue(cache.getReadWriteLock().writeLock().tryLock());
+      assertTrue(cache.getReadWriteLock().writeLock().tryLock(1, TimeUnit.SECONDS));
+      assertNull(cache.getReadWriteLock().writeLock().newCondition());
+      // Nothing to test, hitting empty code blocks
+      cache.getReadWriteLock().readLock().lock();
+      cache.getReadWriteLock().readLock().lockInterruptibly();
+      cache.getReadWriteLock().readLock().unlock();
+      ",https://www.github.com/mybatis/ehcache-cache/commit/f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,"    public void shouldVerifyReadWriteLock() throws InterruptedException {
+      assertThat(cache.getReadWriteLock(), instanceOf(DummyReadWriteLock.class));
+      assertTrue(cache.getReadWriteLock().readLock().tryLock());
+      assertTrue(cache.getReadWriteLock().readLock().tryLock(1, TimeUnit.SECONDS));
+      assertNull(cache.getReadWriteLock().readLock().newCondition());
+      assertTrue(cache.getReadWriteLock().writeLock().tryLock());
+      assertTrue(cache.getReadWriteLock().writeLock().tryLock(1, TimeUnit.SECONDS));
+      assertNull(cache.getReadWriteLock().writeLock().newCondition());
+      
+      cache.getReadWriteLock().readLock().lock();
+      cache.getReadWriteLock().readLock().lockInterruptibly();
+      cache.getReadWriteLock().readLock().unlock();
+      
+","['    ', 'public', ' ', 'void', ' ', 'shouldVerifyReadWriteLock', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '      ', 'assertThat', '(', 'cache', '.', 'getReadWriteLock', '(', ')', ',', ' ', 'instanceOf', '(', 'DummyReadWriteLock', '.', 'class', ')', ')', ';', '\n', '      ', 'assertTrue', '(', 'cache', '.', 'getReadWriteLock', '(', ')', '.', 'readLock', '(', ')', '.', 'tryLock', '(', ')', ')', ';', '\n', '      ', 'assertTrue', '(', 'cache', '.', 'getReadWriteLock', '(', ')', '.', 'readLock', '(', ')', '.', 'tryLock', '(', '1', ',', ' ', 'TimeUnit', '.', 'SECONDS', ')', ')', ';', '\n', '      ', 'assertNull', '(', 'cache', '.', 'getReadWriteLock', '(', ')', '.', 'readLock', '(', ')', '.', 'newCondition', '(', ')', ')', ';', '\n', '      ', 'assertTrue', '(', 'cache', '.', 'getReadWriteLock', '(', ')', '.', 'writeLock', '(', ')', '.', 'tryLock', '(', ')', ')', ';', '\n', '      ', 'assertTrue', '(', 'cache', '.', 'getReadWriteLock', '(', ')', '.', 'writeLock', '(', ')', '.', 'tryLock', '(', '1', ',', ' ', 'TimeUnit', '.', 'SECONDS', ')', ')', ';', '\n', '      ', 'assertNull', '(', 'cache', '.', 'getReadWriteLock', '(', ')', '.', 'writeLock', '(', ')', '.', 'newCondition', '(', ')', ')', ';', '\n', '      ', '\n', '      ', 'cache', '.', 'getReadWriteLock', '(', ')', '.', 'readLock', '(', ')', '.', 'lock', '(', ')', ';', '\n', '      ', 'cache', '.', 'getReadWriteLock', '(', ')', '.', 'readLock', '(', ')', '.', 'lockInterruptibly', '(', ')', ';', '\n', '      ', 'cache', '.', 'getReadWriteLock', '(', ')', '.', 'readLock', '(', ')', '.', 'unlock', '(', ')', ';', '\n', '      ', '\n']"
+master,f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,EhcacheTestCase.java,resetCache,"    private void resetCache() {
+        cache.setTimeToLiveSeconds(120);
+        cache.setTimeToIdleSeconds(120);
+        cache.setMemoryStoreEvictionPolicy(""LRU"");
+    }",https://www.github.com/mybatis/ehcache-cache/commit/f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,"    private void resetCache() {
+        cache.setTimeToLiveSeconds(120);
+        cache.setTimeToIdleSeconds(120);
+        cache.setMemoryStoreEvictionPolicy(""LRU"");
+    }
+","['    ', 'private', ' ', 'void', ' ', 'resetCache', '(', ')', ' ', '{', '\n', '        ', 'cache', '.', 'setTimeToLiveSeconds', '(', '120', ')', ';', '\n', '        ', 'cache', '.', 'setTimeToIdleSeconds', '(', '120', ')', ';', '\n', '        ', 'cache', '.', 'setMemoryStoreEvictionPolicy', '(', '""', 'LRU', '""', ')', ';', '\n', '    ', '}', '\n']"
+master,f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,LoggingEhcacheTestCase.java,newCache,"    public void newCache() {
+        cache = new LoggingEhcache(DEFAULT_ID);
+    }",https://www.github.com/mybatis/ehcache-cache/commit/f9fa0a54e27b0c787c14c7d3cc96092c2e8e0c38,"    public void newCache() {
+        cache = new LoggingEhcache(DEFAULT_ID);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'newCache', '(', ')', ' ', '{', '\n', '        ', 'cache', ' ', '=', ' ', 'new', ' ', 'LoggingEhcache', '(', 'DEFAULT_ID', ')', ';', '\n', '    ', '}', '\n']"
+master,ad21754e537008ff95c737918de99b5a33d7dbf5,DummyReadWriteLock.java,lock,"        public void lock() {
+            // Not implemented
+        }
+
+        public void lockInterruptibly() throws InterruptedException {
+            // Not implemented
+        }
+
+        public boolean tryLock() {
+            return true;
+        }
+
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        public void unlock() {
+           // Not implemented
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/ehcache-cache/commit/ad21754e537008ff95c737918de99b5a33d7dbf5,"        public void lock() {
+            
+        }
+
+        public void lockInterruptibly() throws InterruptedException {
+            
+        }
+
+        public boolean tryLock() {
+            return true;
+        }
+
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        public void unlock() {
+           
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'lock', '(', ')', ' ', '{', '\n', '            ', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'void', ' ', 'lockInterruptibly', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '           ', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,ad21754e537008ff95c737918de99b5a33d7dbf5,DummyReadWriteLock.java,lockInterruptibly,"        public void lockInterruptibly() throws InterruptedException {
+            // Not implemented
+        }
+
+        public boolean tryLock() {
+            return true;
+        }
+
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        public void unlock() {
+           // Not implemented
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/ehcache-cache/commit/ad21754e537008ff95c737918de99b5a33d7dbf5,"        public void lockInterruptibly() throws InterruptedException {
+            
+        }
+
+        public boolean tryLock() {
+            return true;
+        }
+
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        public void unlock() {
+           
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'lockInterruptibly', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '           ', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,ad21754e537008ff95c737918de99b5a33d7dbf5,DummyReadWriteLock.java,unlock,"        public void unlock() {
+           // Not implemented
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/ehcache-cache/commit/ad21754e537008ff95c737918de99b5a33d7dbf5,"        public void unlock() {
+           
+        }
+
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '           ', '\n', '        ', '}', '\n', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,c4e3beced403f1264151d3412bfe8fb2c507c3c4,EhcacheCache.java,putObject,"  public void putObject(Object key, Object value) {
+    if (value != null) {
+      cache.put(new Element(key, value));",https://www.github.com/mybatis/ehcache-cache/commit/c4e3beced403f1264151d3412bfe8fb2c507c3c4,"  public void putObject(Object key, Object value) {
+    if (value != null) {
+      cache.put(new Element(key, value));
+","['  ', 'public', ' ', 'void', ' ', 'putObject', '(', 'Object', ' ', 'key', ',', ' ', 'Object', ' ', 'value', ')', ' ', '{', '\n', '    ', 'if', ' ', '(', 'value', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '      ', 'cache', '.', 'put', '(', 'new', ' ', 'Element', '(', 'key', ',', ' ', 'value', ')', ')', ';', '\n']"
+master,c4e3beced403f1264151d3412bfe8fb2c507c3c4,EhcacheTestCase.java,equalsAndHashCodeSymmetricTest,"    public void equalsAndHashCodeSymmetricTest() {
+      // equals and hashCode check name field value
+      AbstractEhcacheCache x = new EhcacheCache(""EHCACHE"");
+      AbstractEhcacheCache y = new EhcacheCache(""EHCACHE"");
+      assertTrue(x.equals(y));
+      assertTrue(y.equals(x));
+      assertEquals(x.hashCode(), y.hashCode());
+      // dummy tests to cover edge cases
+      assertFalse(x.equals(new String()));
+      assertFalse(x.equals(null));
+      assertTrue(x.equals(x));
+    }",https://www.github.com/mybatis/ehcache-cache/commit/c4e3beced403f1264151d3412bfe8fb2c507c3c4,"    public void equalsAndHashCodeSymmetricTest() {
+      
+      AbstractEhcacheCache x = new EhcacheCache(""EHCACHE"");
+      AbstractEhcacheCache y = new EhcacheCache(""EHCACHE"");
+      assertTrue(x.equals(y));
+      assertTrue(y.equals(x));
+      assertEquals(x.hashCode(), y.hashCode());
+      
+      assertFalse(x.equals(new String()));
+      assertFalse(x.equals(null));
+      assertTrue(x.equals(x));
+    }
+","['    ', 'public', ' ', 'void', ' ', 'equalsAndHashCodeSymmetricTest', '(', ')', ' ', '{', '\n', '      ', '\n', '      ', 'AbstractEhcacheCache', ' ', 'x', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', '""', 'EHCACHE', '""', ')', ';', '\n', '      ', 'AbstractEhcacheCache', ' ', 'y', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', '""', 'EHCACHE', '""', ')', ';', '\n', '      ', 'assertTrue', '(', 'x', '.', 'equals', '(', 'y', ')', ')', ';', '\n', '      ', 'assertTrue', '(', 'y', '.', 'equals', '(', 'x', ')', ')', ';', '\n', '      ', 'assertEquals', '(', 'x', '.', 'hashCode', '(', ')', ',', ' ', 'y', '.', 'hashCode', '(', ')', ')', ';', '\n', '      ', '\n', '      ', 'assertFalse', '(', 'x', '.', 'equals', '(', 'new', ' ', 'String', '(', ')', ')', ')', ';', '\n', '      ', 'assertFalse', '(', 'x', '.', 'equals', '(', 'null', ')', ')', ';', '\n', '      ', 'assertTrue', '(', 'x', '.', 'equals', '(', 'x', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,7f3f6ceaca816a5318fb4f3aa1cedb0630d22bf8,EhBlockingCache.java,putObject,"  public void putObject(Object key, Object value) {
+    cache.put(new Element(key, value));
+  }",https://www.github.com/mybatis/ehcache-cache/commit/7f3f6ceaca816a5318fb4f3aa1cedb0630d22bf8,"  public void putObject(Object key, Object value) {
+    cache.put(new Element(key, value));
+  }
+","['  ', 'public', ' ', 'void', ' ', 'putObject', '(', 'Object', ' ', 'key', ',', ' ', 'Object', ' ', 'value', ')', ' ', '{', '\n', '    ', 'cache', '.', 'put', '(', 'new', ' ', 'Element', '(', 'key', ',', ' ', 'value', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,96895b0bb7fff82691ae385de15756eaea53f004,EhcacheCache.java,removeObject,"  public Object removeObject(Object key) {
+    cache.put(new Element(key, null));
+    return null;
+  }",https://www.github.com/mybatis/ehcache-cache/commit/96895b0bb7fff82691ae385de15756eaea53f004,"  public Object removeObject(Object key) {
+    cache.put(new Element(key, null));
+    return null;
+  }
+","['  ', 'public', ' ', 'Object', ' ', 'removeObject', '(', 'Object', ' ', 'key', ')', ' ', '{', '\n', '    ', 'cache', '.', 'put', '(', 'new', ' ', 'Element', '(', 'key', ',', ' ', 'null', ')', ')', ';', '\n', '    ', 'return', ' ', 'null', ';', '\n', '  ', '}', '\n']"
+master,d4483b74ac8cbcda016efe2dd513dba1f3373bf5,EhBlockingCache.java,removeObject,"  public Object removeObject(Object key) {
+    // this method is called during a rollback just to
+    // release any previous lock
+    cache.put(new Element(key, null));
+    return null;
+  }",https://www.github.com/mybatis/ehcache-cache/commit/d4483b74ac8cbcda016efe2dd513dba1f3373bf5,"  public Object removeObject(Object key) {
+    
+    
+    cache.put(new Element(key, null));
+    return null;
+  }
+","['  ', 'public', ' ', 'Object', ' ', 'removeObject', '(', 'Object', ' ', 'key', ')', ' ', '{', '\n', '    ', '\n', '    ', '\n', '    ', 'cache', '.', 'put', '(', 'new', ' ', 'Element', '(', 'key', ',', ' ', 'null', ')', ')', ';', '\n', '    ', 'return', ' ', 'null', ';', '\n', '  ', '}', '\n']"
+master,4d1a90f681d59c02fd3cad9756261ee580316542,DummyReadWriteLock.java,lock,"        public void lock() {
+            // Not implemented
+        }
+
+        @Override
+        public void lockInterruptibly() throws InterruptedException {
+            // Not implemented
+        }
+
+        @Override
+        public boolean tryLock() {
+            return true;
+        }
+
+        @Override
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        @Override
+        public void unlock() {
+           // Not implemented
+        }
+
+        @Override
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/ehcache-cache/commit/4d1a90f681d59c02fd3cad9756261ee580316542,"        public void lock() {
+            
+        }
+
+        @Override
+        public void lockInterruptibly() throws InterruptedException {
+            
+        }
+
+        @Override
+        public boolean tryLock() {
+            return true;
+        }
+
+        @Override
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        @Override
+        public void unlock() {
+           
+        }
+
+        @Override
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'lock', '(', ')', ' ', '{', '\n', '            ', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'lockInterruptibly', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '           ', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,4d1a90f681d59c02fd3cad9756261ee580316542,DummyReadWriteLock.java,lockInterruptibly,"        public void lockInterruptibly() throws InterruptedException {
+            // Not implemented
+        }
+
+        @Override
+        public boolean tryLock() {
+            return true;
+        }
+
+        @Override
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        @Override
+        public void unlock() {
+           // Not implemented
+        }
+
+        @Override
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/ehcache-cache/commit/4d1a90f681d59c02fd3cad9756261ee580316542,"        public void lockInterruptibly() throws InterruptedException {
+            
+        }
+
+        @Override
+        public boolean tryLock() {
+            return true;
+        }
+
+        @Override
+        public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+            return true;
+        }
+
+        @Override
+        public void unlock() {
+           
+        }
+
+        @Override
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'lockInterruptibly', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '            ', 'return', ' ', 'true', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '           ', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,4d1a90f681d59c02fd3cad9756261ee580316542,DummyReadWriteLock.java,unlock,"        public void unlock() {
+           // Not implemented
+        }
+
+        @Override
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}",https://www.github.com/mybatis/ehcache-cache/commit/4d1a90f681d59c02fd3cad9756261ee580316542,"        public void unlock() {
+           
+        }
+
+        @Override
+        public Condition newCondition() {
+            return null;
+        }
+    }
+
+}
+","['        ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '           ', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'null', ';', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,AbstractEhcacheCache.java,removeObject,"  public Object removeObject(Object key) {
+    Object obj = getObject(key);
+    cache.remove(key);
+    return obj;
+  }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public Object removeObject(Object key) {
+    Object obj = getObject(key);
+    cache.remove(key);
+    return obj;
+  }
+","['  ', 'public', ' ', 'Object', ' ', 'removeObject', '(', 'Object', ' ', 'key', ')', ' ', '{', '\n', '    ', 'Object', ' ', 'obj', ' ', '=', ' ', 'getObject', '(', 'key', ')', ';', '\n', '    ', 'cache', '.', 'remove', '(', 'key', ')', ';', '\n', '    ', 'return', ' ', 'obj', ';', '\n', '  ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,AbstractEhcacheCache.java,equals,"  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (!(obj instanceof Cache)) {
+      return false;
+    }
+
+    Cache otherCache = (Cache) obj;
+    return id.equals(otherCache.getId());
+  }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (!(obj instanceof Cache)) {
+      return false;
+    }
+
+    Cache otherCache = (Cache) obj;
+    return id.equals(otherCache.getId());
+  }
+","['  ', 'public', ' ', 'boolean', ' ', 'equals', '(', 'Object', ' ', 'obj', ')', ' ', '{', '\n', '    ', 'if', ' ', '(', 'this', ' ', '=', '=', ' ', 'obj', ')', ' ', '{', '\n', '      ', 'return', ' ', 'true', ';', '\n', '    ', '}', '\n', '    ', 'if', ' ', '(', 'obj', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '      ', 'return', ' ', 'false', ';', '\n', '    ', '}', '\n', '    ', 'if', ' ', '(', '!', '(', 'obj', ' ', 'instanceof', ' ', 'Cache', ')', ')', ' ', '{', '\n', '      ', 'return', ' ', 'false', ';', '\n', '    ', '}', '\n', '\n', '    ', 'Cache', ' ', 'otherCache', ' ', '=', ' ', '(', 'Cache', ')', ' ', 'obj', ';', '\n', '    ', 'return', ' ', 'id', '.', 'equals', '(', 'otherCache', '.', 'getId', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,AbstractEhcacheCache.java,toString,"  public String toString() {
+    return ""EHCache {""
+           + id",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public String toString() {
+    return ""EHCache {""
+           + id
+","['  ', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', '""', 'EHCache {', '""', '\n', '           ', '+', ' ', 'id', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,DummyReadWriteLock.java,lock,"    public void lock() {
+      // Not implemented
+    }
+
+    @Override
+    public void lockInterruptibly() throws InterruptedException {
+      // Not implemented
+    }
+
+    @Override
+    public boolean tryLock() {
+      return true;
+    }
+
+    @Override
+    public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+      return true;
+    }
+
+    @Override
+    public void unlock() {
+      // Not implemented
+    }
+
+    @Override
+    public Condition newCondition() {
+      return null;
+    }
+  }
+
+}",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"    public void lock() {
+      
+    }
+
+    @Override
+    public void lockInterruptibly() throws InterruptedException {
+      
+    }
+
+    @Override
+    public boolean tryLock() {
+      return true;
+    }
+
+    @Override
+    public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+      return true;
+    }
+
+    @Override
+    public void unlock() {
+      
+    }
+
+    @Override
+    public Condition newCondition() {
+      return null;
+    }
+  }
+
+}
+","['    ', 'public', ' ', 'void', ' ', 'lock', '(', ')', ' ', '{', '\n', '      ', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'void', ' ', 'lockInterruptibly', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '      ', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '      ', 'return', ' ', 'true', ';', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '      ', 'return', ' ', 'true', ';', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '      ', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '  ', '}', '\n', '\n', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,DummyReadWriteLock.java,lockInterruptibly,"    public void lockInterruptibly() throws InterruptedException {
+      // Not implemented
+    }
+
+    @Override
+    public boolean tryLock() {
+      return true;
+    }
+
+    @Override
+    public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+      return true;
+    }
+
+    @Override
+    public void unlock() {
+      // Not implemented
+    }
+
+    @Override
+    public Condition newCondition() {
+      return null;
+    }
+  }
+
+}",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"    public void lockInterruptibly() throws InterruptedException {
+      
+    }
+
+    @Override
+    public boolean tryLock() {
+      return true;
+    }
+
+    @Override
+    public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+      return true;
+    }
+
+    @Override
+    public void unlock() {
+      
+    }
+
+    @Override
+    public Condition newCondition() {
+      return null;
+    }
+  }
+
+}
+","['    ', 'public', ' ', 'void', ' ', 'lockInterruptibly', '(', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '      ', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', ')', ' ', '{', '\n', '      ', 'return', ' ', 'true', ';', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '      ', 'return', ' ', 'true', ';', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '      ', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '  ', '}', '\n', '\n', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,DummyReadWriteLock.java,tryLock,"    public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+      return true;
+    }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"    public boolean tryLock(long paramLong, TimeUnit paramTimeUnit) throws InterruptedException {
+      return true;
+    }
+","['    ', 'public', ' ', 'boolean', ' ', 'tryLock', '(', 'long', ' ', 'paramLong', ',', ' ', 'TimeUnit', ' ', 'paramTimeUnit', ')', ' ', 'throws', ' ', 'InterruptedException', ' ', '{', '\n', '      ', 'return', ' ', 'true', ';', '\n', '    ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,DummyReadWriteLock.java,unlock,"    public void unlock() {
+      // Not implemented
+    }
+
+    @Override
+    public Condition newCondition() {
+      return null;
+    }
+  }
+
+}",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"    public void unlock() {
+      
+    }
+
+    @Override
+    public Condition newCondition() {
+      return null;
+    }
+  }
+
+}
+","['    ', 'public', ' ', 'void', ' ', 'unlock', '(', ')', ' ', '{', '\n', '      ', '\n', '    ', '}', '\n', '\n', '    ', '@Override', '\n', '    ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '  ', '}', '\n', '\n', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,DummyReadWriteLock.java,newCondition,"    public Condition newCondition() {
+      return null;
+    }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"    public Condition newCondition() {
+      return null;
+    }
+","['    ', 'public', ' ', 'Condition', ' ', 'newCondition', '(', ')', ' ', '{', '\n', '      ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,EhcacheTestCase.java,newCache,"  public void newCache() {
+    cache = new EhcacheCache(DEFAULT_ID);
+  }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public void newCache() {
+    cache = new EhcacheCache(DEFAULT_ID);
+  }
+","['  ', 'public', ' ', 'void', ' ', 'newCache', '(', ')', ' ', '{', '\n', '    ', 'cache', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', 'DEFAULT_ID', ')', ';', '\n', '  ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,EhcacheTestCase.java,shouldDemonstrateHowAllObjectsAreKept,"  public void shouldDemonstrateHowAllObjectsAreKept() {
+    for (int i = 0; i < 100000; i++) {
+      cache.putObject(i, i);
+      assertEquals(i, cache.getObject(i));
+    }
+    assertEquals(100000, cache.getSize());
+  }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public void shouldDemonstrateHowAllObjectsAreKept() {
+    for (int i = 0; i < 100000; i++) {
+      cache.putObject(i, i);
+      assertEquals(i, cache.getObject(i));
+    }
+    assertEquals(100000, cache.getSize());
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldDemonstrateHowAllObjectsAreKept', '(', ')', ' ', '{', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '100000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '      ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n', '      ', 'assertEquals', '(', 'i', ',', ' ', 'cache', '.', 'getObject', '(', 'i', ')', ')', ';', '\n', '    ', '}', '\n', '    ', 'assertEquals', '(', '100000', ',', ' ', 'cache', '.', 'getSize', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,EhcacheTestCase.java,shouldDemonstrateCopiesAreEqual,"  public void shouldDemonstrateCopiesAreEqual() {
+    for (int i = 0; i < 1000; i++) {
+      cache.putObject(i, i);",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public void shouldDemonstrateCopiesAreEqual() {
+    for (int i = 0; i < 1000; i++) {
+      cache.putObject(i, i);
+","['  ', 'public', ' ', 'void', ' ', 'shouldDemonstrateCopiesAreEqual', '(', ')', ' ', '{', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '1000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '      ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,EhcacheTestCase.java,shouldRemoveItemOnDemand,"  public void shouldRemoveItemOnDemand() {
+    cache.putObject(0, 0);
+    assertNotNull(cache.getObject(0));
+    cache.removeObject(0);
+    assertNull(cache.getObject(0));
+  }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public void shouldRemoveItemOnDemand() {
+    cache.putObject(0, 0);
+    assertNotNull(cache.getObject(0));
+    cache.removeObject(0);
+    assertNull(cache.getObject(0));
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldRemoveItemOnDemand', '(', ')', ' ', '{', '\n', '    ', 'cache', '.', 'putObject', '(', '0', ',', ' ', '0', ')', ';', '\n', '    ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', 'cache', '.', 'removeObject', '(', '0', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,EhcacheTestCase.java,shouldFlushAllItemsOnDemand,"  public void shouldFlushAllItemsOnDemand() {
+    for (int i = 0; i < 5; i++) {
+      cache.putObject(i, i);
+    }
+    assertNotNull(cache.getObject(0));
+    assertNotNull(cache.getObject(4));
+    cache.clear();
+    assertNull(cache.getObject(0));
+    assertNull(cache.getObject(4));
+  }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public void shouldFlushAllItemsOnDemand() {
+    for (int i = 0; i < 5; i++) {
+      cache.putObject(i, i);
+    }
+    assertNotNull(cache.getObject(0));
+    assertNotNull(cache.getObject(4));
+    cache.clear();
+    assertNull(cache.getObject(0));
+    assertNull(cache.getObject(4));
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldFlushAllItemsOnDemand', '(', ')', ' ', '{', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '5', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '      ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n', '    ', '}', '\n', '    ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '4', ')', ')', ';', '\n', '    ', 'cache', '.', 'clear', '(', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '4', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,EhcacheTestCase.java,shouldChangeTimeToLive,"  public void shouldChangeTimeToLive() throws Exception {
+    cache.putObject(""test"", ""test"");
+    Thread.sleep(1200);
+    assertEquals(""test"", cache.getObject(""test""));
+    cache.setTimeToLiveSeconds(1);
+    Thread.sleep(1200);
+    assertNull(cache.getObject(""test""));
+    this.resetCache();
+  }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public void shouldChangeTimeToLive() throws Exception {
+    cache.putObject(""test"", ""test"");
+    Thread.sleep(1200);
+    assertEquals(""test"", cache.getObject(""test""));
+    cache.setTimeToLiveSeconds(1);
+    Thread.sleep(1200);
+    assertNull(cache.getObject(""test""));
+    this.resetCache();
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldChangeTimeToLive', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '    ', 'cache', '.', 'putObject', '(', '""', 'test', '""', ',', ' ', '""', 'test', '""', ')', ';', '\n', '    ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '    ', 'assertEquals', '(', '""', 'test', '""', ',', ' ', 'cache', '.', 'getObject', '(', '""', 'test', '""', ')', ')', ';', '\n', '    ', 'cache', '.', 'setTimeToLiveSeconds', '(', '1', ')', ';', '\n', '    ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '""', 'test', '""', ')', ')', ';', '\n', '    ', 'this', '.', 'resetCache', '(', ')', ';', '\n', '  ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,EhcacheTestCase.java,shouldChangeTimeToIdle,"  public void shouldChangeTimeToIdle() throws Exception {
+    cache.putObject(""test"", ""test"");
+    Thread.sleep(1200);
+    assertEquals(""test"", cache.getObject(""test""));
+    cache.setTimeToIdleSeconds(1);
+    Thread.sleep(1200);
+    assertNull(cache.getObject(""test""));
+    this.resetCache();
+  }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public void shouldChangeTimeToIdle() throws Exception {
+    cache.putObject(""test"", ""test"");
+    Thread.sleep(1200);
+    assertEquals(""test"", cache.getObject(""test""));
+    cache.setTimeToIdleSeconds(1);
+    Thread.sleep(1200);
+    assertNull(cache.getObject(""test""));
+    this.resetCache();
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldChangeTimeToIdle', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '    ', 'cache', '.', 'putObject', '(', '""', 'test', '""', ',', ' ', '""', 'test', '""', ')', ';', '\n', '    ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '    ', 'assertEquals', '(', '""', 'test', '""', ',', ' ', 'cache', '.', 'getObject', '(', '""', 'test', '""', ')', ')', ';', '\n', '    ', 'cache', '.', 'setTimeToIdleSeconds', '(', '1', ')', ';', '\n', '    ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '""', 'test', '""', ')', ')', ';', '\n', '    ', 'this', '.', 'resetCache', '(', ')', ';', '\n', '  ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,EhcacheTestCase.java,shouldTestEvictionPolicy,"  public void shouldTestEvictionPolicy() throws Exception {
+    cache.clear();
+    cache.setMemoryStoreEvictionPolicy(""FIFO"");
+    cache.setMaxEntriesLocalHeap(1);
+    cache.setMaxEntriesLocalDisk(1);
+    cache.putObject(""eviction"", ""eviction"");
+    cache.putObject(""eviction2"", ""eviction2"");
+    cache.putObject(""eviction3"", ""eviction3"");
+    Thread.sleep(1200);
+    assertEquals(1, cache.getSize());
+    this.resetCache();
+  }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public void shouldTestEvictionPolicy() throws Exception {
+    cache.clear();
+    cache.setMemoryStoreEvictionPolicy(""FIFO"");
+    cache.setMaxEntriesLocalHeap(1);
+    cache.setMaxEntriesLocalDisk(1);
+    cache.putObject(""eviction"", ""eviction"");
+    cache.putObject(""eviction2"", ""eviction2"");
+    cache.putObject(""eviction3"", ""eviction3"");
+    Thread.sleep(1200);
+    assertEquals(1, cache.getSize());
+    this.resetCache();
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldTestEvictionPolicy', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '    ', 'cache', '.', 'clear', '(', ')', ';', '\n', '    ', 'cache', '.', 'setMemoryStoreEvictionPolicy', '(', '""', 'FIFO', '""', ')', ';', '\n', '    ', 'cache', '.', 'setMaxEntriesLocalHeap', '(', '1', ')', ';', '\n', '    ', 'cache', '.', 'setMaxEntriesLocalDisk', '(', '1', ')', ';', '\n', '    ', 'cache', '.', 'putObject', '(', '""', 'eviction', '""', ',', ' ', '""', 'eviction', '""', ')', ';', '\n', '    ', 'cache', '.', 'putObject', '(', '""', 'eviction2', '""', ',', ' ', '""', 'eviction2', '""', ')', ';', '\n', '    ', 'cache', '.', 'putObject', '(', '""', 'eviction3', '""', ',', ' ', '""', 'eviction3', '""', ')', ';', '\n', '    ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '    ', 'assertEquals', '(', '1', ',', ' ', 'cache', '.', 'getSize', '(', ')', ')', ';', '\n', '    ', 'this', '.', 'resetCache', '(', ')', ';', '\n', '  ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,EhcacheTestCase.java,shouldNotCreateCache,"  public void shouldNotCreateCache() {
+    cache = new EhcacheCache(null);
+  }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public void shouldNotCreateCache() {
+    cache = new EhcacheCache(null);
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldNotCreateCache', '(', ')', ' ', '{', '\n', '    ', 'cache', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', 'null', ')', ';', '\n', '  ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,EhcacheTestCase.java,shouldVerifyCacheId,"  public void shouldVerifyCacheId() {
+    assertEquals(""EHCACHE"", cache.getId());
+  }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public void shouldVerifyCacheId() {
+    assertEquals(""EHCACHE"", cache.getId());
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldVerifyCacheId', '(', ')', ' ', '{', '\n', '    ', 'assertEquals', '(', '""', 'EHCACHE', '""', ',', ' ', 'cache', '.', 'getId', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,EhcacheTestCase.java,shouldVerifyToString,"  public void shouldVerifyToString() {
+    assertEquals(""EHCache {EHCACHE}"", cache.toString());
+  }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public void shouldVerifyToString() {
+    assertEquals(""EHCache {EHCACHE}"", cache.toString());
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldVerifyToString', '(', ')', ' ', '{', '\n', '    ', 'assertEquals', '(', '""', 'EHCache {EHCACHE}', '""', ',', ' ', 'cache', '.', 'toString', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,EhcacheTestCase.java,equalsAndHashCodeSymmetricTest,"  public void equalsAndHashCodeSymmetricTest() {
+    // equals and hashCode check name field value
+    AbstractEhcacheCache x = new EhcacheCache(""EHCACHE"");
+    AbstractEhcacheCache y = new EhcacheCache(""EHCACHE"");
+    assertTrue(x.equals(y));
+    assertTrue(y.equals(x));
+    assertEquals(x.hashCode(), y.hashCode());
+    // dummy tests to cover edge cases
+    assertFalse(x.equals(new String()));
+    assertFalse(x.equals(null));
+    assertTrue(x.equals(x));
+  }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  public void equalsAndHashCodeSymmetricTest() {
+    
+    AbstractEhcacheCache x = new EhcacheCache(""EHCACHE"");
+    AbstractEhcacheCache y = new EhcacheCache(""EHCACHE"");
+    assertTrue(x.equals(y));
+    assertTrue(y.equals(x));
+    assertEquals(x.hashCode(), y.hashCode());
+    
+    assertFalse(x.equals(new String()));
+    assertFalse(x.equals(null));
+    assertTrue(x.equals(x));
+  }
+","['  ', 'public', ' ', 'void', ' ', 'equalsAndHashCodeSymmetricTest', '(', ')', ' ', '{', '\n', '    ', '\n', '    ', 'AbstractEhcacheCache', ' ', 'x', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', '""', 'EHCACHE', '""', ')', ';', '\n', '    ', 'AbstractEhcacheCache', ' ', 'y', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', '""', 'EHCACHE', '""', ')', ';', '\n', '    ', 'assertTrue', '(', 'x', '.', 'equals', '(', 'y', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'y', '.', 'equals', '(', 'x', ')', ')', ';', '\n', '    ', 'assertEquals', '(', 'x', '.', 'hashCode', '(', ')', ',', ' ', 'y', '.', 'hashCode', '(', ')', ')', ';', '\n', '    ', '\n', '    ', 'assertFalse', '(', 'x', '.', 'equals', '(', 'new', ' ', 'String', '(', ')', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'x', '.', 'equals', '(', 'null', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'x', '.', 'equals', '(', 'x', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,302e173d3950b963c2e003d538ff4d36db896824,EhcacheTestCase.java,resetCache,"  private void resetCache() {
+    cache.setTimeToLiveSeconds(120);
+    cache.setTimeToIdleSeconds(120);
+    cache.setMemoryStoreEvictionPolicy(""LRU"");
+  }",https://www.github.com/mybatis/ehcache-cache/commit/302e173d3950b963c2e003d538ff4d36db896824,"  private void resetCache() {
+    cache.setTimeToLiveSeconds(120);
+    cache.setTimeToIdleSeconds(120);
+    cache.setMemoryStoreEvictionPolicy(""LRU"");
+  }
+","['  ', 'private', ' ', 'void', ' ', 'resetCache', '(', ')', ' ', '{', '\n', '    ', 'cache', '.', 'setTimeToLiveSeconds', '(', '120', ')', ';', '\n', '    ', 'cache', '.', 'setTimeToIdleSeconds', '(', '120', ')', ';', '\n', '    ', 'cache', '.', 'setMemoryStoreEvictionPolicy', '(', '""', 'LRU', '""', ')', ';', '\n', '  ', '}', '\n']"
+master,65fba132ce7a066845e3da2c62a86c9535fffb84,AbstractEhcacheCache.java,toString,"  public String toString() {
+    return ""EHCache {"" + id + ""}"";
+  }",https://www.github.com/mybatis/ehcache-cache/commit/65fba132ce7a066845e3da2c62a86c9535fffb84,"  public String toString() {
+    return ""EHCache {"" + id + ""}"";
+  }
+","['  ', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', '""', 'EHCache {', '""', ' ', '+', ' ', 'id', ' ', '+', ' ', '""', '}', '""', ';', '\n', '  ', '}', '\n']"
+master,b907f1eb25e7805c01910d391446a5f8a0db0510,MavenWrapperDownloader.java,downloadFileFromURL,"    private static void downloadFileFromURL(String urlString, File destination) throws Exception {
+        URL website = new URL(urlString);
+        ReadableByteChannel rbc;
+        rbc = Channels.newChannel(website.openStream());
+        FileOutputStream fos = new FileOutputStream(destination);
+        fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+        fos.close();
+        rbc.close();
+    }",https://www.github.com/mybatis/ehcache-cache/commit/b907f1eb25e7805c01910d391446a5f8a0db0510,"    private static void downloadFileFromURL(String urlString, File destination) throws Exception {
+        URL website = new URL(urlString);
+        ReadableByteChannel rbc;
+        rbc = Channels.newChannel(website.openStream());
+        FileOutputStream fos = new FileOutputStream(destination);
+        fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+        fos.close();
+        rbc.close();
+    }
+","['    ', 'private', ' ', 'static', ' ', 'void', ' ', 'downloadFileFromURL', '(', 'String', ' ', 'urlString', ',', ' ', 'File', ' ', 'destination', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'URL', ' ', 'website', ' ', '=', ' ', 'new', ' ', 'URL', '(', 'urlString', ')', ';', '\n', '        ', 'ReadableByteChannel', ' ', 'rbc', ';', '\n', '        ', 'rbc', ' ', '=', ' ', 'Channels', '.', 'newChannel', '(', 'website', '.', 'openStream', '(', ')', ')', ';', '\n', '        ', 'FileOutputStream', ' ', 'fos', ' ', '=', ' ', 'new', ' ', 'FileOutputStream', '(', 'destination', ')', ';', '\n', '        ', 'fos', '.', 'getChannel', '(', ')', '.', 'transferFrom', '(', 'rbc', ',', ' ', '0', ',', ' ', 'Long', '.', 'MAX_VALUE', ')', ';', '\n', '        ', 'fos', '.', 'close', '(', ')', ';', '\n', '        ', 'rbc', '.', 'close', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,3e54ba3ed07f19b35852d77d6a0af48d53f61801,EhcacheTestCase.java,shouldNotCreateCache,"  public void shouldNotCreateCache() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      cache = new EhcacheCache(null);",https://www.github.com/mybatis/ehcache-cache/commit/3e54ba3ed07f19b35852d77d6a0af48d53f61801,"  public void shouldNotCreateCache() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      cache = new EhcacheCache(null);
+","['  ', 'public', ' ', 'void', ' ', 'shouldNotCreateCache', '(', ')', ' ', '{', '\n', '    ', 'assertThrows', '(', 'IllegalArgumentException', '.', 'class', ',', ' ', '(', ')', ' ', '-', '>', ' ', '{', '\n', '      ', 'cache', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', 'null', ')', ';', '\n']"
+master,1193214b6ec93b711b9d45ad86a9c07e49c48378,EhBlockingCacheTestCase.java,newCache,"  public void newCache() {
+    cache = new EhBlockingCache(DEFAULT_ID);
+  }",https://www.github.com/mybatis/ehcache-cache/commit/1193214b6ec93b711b9d45ad86a9c07e49c48378,"  public void newCache() {
+    cache = new EhBlockingCache(DEFAULT_ID);
+  }
+","['  ', 'public', ' ', 'void', ' ', 'newCache', '(', ')', ' ', '{', '\n', '    ', 'cache', ' ', '=', ' ', 'new', ' ', 'EhBlockingCache', '(', 'DEFAULT_ID', ')', ';', '\n', '  ', '}', '\n']"
+master,1193214b6ec93b711b9d45ad86a9c07e49c48378,EhBlockingCacheTestCase.java,shouldNotCreateCache,"  public void shouldNotCreateCache() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      cache = new EhBlockingCache(null);",https://www.github.com/mybatis/ehcache-cache/commit/1193214b6ec93b711b9d45ad86a9c07e49c48378,"  public void shouldNotCreateCache() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      cache = new EhBlockingCache(null);
+","['  ', 'public', ' ', 'void', ' ', 'shouldNotCreateCache', '(', ')', ' ', '{', '\n', '    ', 'assertThrows', '(', 'IllegalArgumentException', '.', 'class', ',', ' ', '(', ')', ' ', '-', '>', ' ', '{', '\n', '      ', 'cache', ' ', '=', ' ', 'new', ' ', 'EhBlockingCache', '(', 'null', ')', ';', '\n']"
+master,1193214b6ec93b711b9d45ad86a9c07e49c48378,EhBlockingCacheTestCase.java,shouldVerifyCacheId,"  public void shouldVerifyCacheId() {
+    assertEquals(DEFAULT_ID, cache.getId());
+  }",https://www.github.com/mybatis/ehcache-cache/commit/1193214b6ec93b711b9d45ad86a9c07e49c48378,"  public void shouldVerifyCacheId() {
+    assertEquals(DEFAULT_ID, cache.getId());
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldVerifyCacheId', '(', ')', ' ', '{', '\n', '    ', 'assertEquals', '(', 'DEFAULT_ID', ',', ' ', 'cache', '.', 'getId', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,1193214b6ec93b711b9d45ad86a9c07e49c48378,EhBlockingCacheTestCase.java,shouldVerifyToString,"  public void shouldVerifyToString() {
+    assertEquals(""EHCache {EHBLOCKINGCACHE}"", cache.toString());
+  }",https://www.github.com/mybatis/ehcache-cache/commit/1193214b6ec93b711b9d45ad86a9c07e49c48378,"  public void shouldVerifyToString() {
+    assertEquals(""EHCache {EHBLOCKINGCACHE}"", cache.toString());
+  }
+","['  ', 'public', ' ', 'void', ' ', 'shouldVerifyToString', '(', ')', ' ', '{', '\n', '    ', 'assertEquals', '(', '""', 'EHCache {EHBLOCKINGCACHE}', '""', ',', ' ', 'cache', '.', 'toString', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,1193214b6ec93b711b9d45ad86a9c07e49c48378,EhBlockingCacheTestCase.java,equalsAndHashCodeSymmetricTest,"  public void equalsAndHashCodeSymmetricTest() {
+    // equals and hashCode check name field value
+    AbstractEhcacheCache x = new EhBlockingCache(DEFAULT_ID);
+    AbstractEhcacheCache y = new EhBlockingCache(DEFAULT_ID);
+    assertTrue(x.equals(y));
+    assertTrue(y.equals(x));
+    assertEquals(x.hashCode(), y.hashCode());
+    // dummy tests to cover edge cases
+    assertFalse(x.equals(new String()));
+    assertFalse(x.equals(null));
+    assertTrue(x.equals(x));
+  }",https://www.github.com/mybatis/ehcache-cache/commit/1193214b6ec93b711b9d45ad86a9c07e49c48378,"  public void equalsAndHashCodeSymmetricTest() {
+    
+    AbstractEhcacheCache x = new EhBlockingCache(DEFAULT_ID);
+    AbstractEhcacheCache y = new EhBlockingCache(DEFAULT_ID);
+    assertTrue(x.equals(y));
+    assertTrue(y.equals(x));
+    assertEquals(x.hashCode(), y.hashCode());
+    
+    assertFalse(x.equals(new String()));
+    assertFalse(x.equals(null));
+    assertTrue(x.equals(x));
+  }
+","['  ', 'public', ' ', 'void', ' ', 'equalsAndHashCodeSymmetricTest', '(', ')', ' ', '{', '\n', '    ', '\n', '    ', 'AbstractEhcacheCache', ' ', 'x', ' ', '=', ' ', 'new', ' ', 'EhBlockingCache', '(', 'DEFAULT_ID', ')', ';', '\n', '    ', 'AbstractEhcacheCache', ' ', 'y', ' ', '=', ' ', 'new', ' ', 'EhBlockingCache', '(', 'DEFAULT_ID', ')', ';', '\n', '    ', 'assertTrue', '(', 'x', '.', 'equals', '(', 'y', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'y', '.', 'equals', '(', 'x', ')', ')', ';', '\n', '    ', 'assertEquals', '(', 'x', '.', 'hashCode', '(', ')', ',', ' ', 'y', '.', 'hashCode', '(', ')', ')', ';', '\n', '    ', '\n', '    ', 'assertFalse', '(', 'x', '.', 'equals', '(', 'new', ' ', 'String', '(', ')', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'x', '.', 'equals', '(', 'null', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'x', '.', 'equals', '(', 'x', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhBlockingCacheTest.java,newCache,"  void newCache() {
+    cache = new EhBlockingCache(DEFAULT_ID);
+  }",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void newCache() {
+    cache = new EhBlockingCache(DEFAULT_ID);
+  }
+","['  ', 'void', ' ', 'newCache', '(', ')', ' ', '{', '\n', '    ', 'cache', ' ', '=', ' ', 'new', ' ', 'EhBlockingCache', '(', 'DEFAULT_ID', ')', ';', '\n', '  ', '}', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhBlockingCacheTest.java,shouldDemonstrateHowAllObjectsAreKept,"  void shouldDemonstrateHowAllObjectsAreKept() {
+    for (int i = 0; i < 100000; i++) {
+      cache.putObject(i, i);
+      assertEquals(i, cache.getObject(i));
+    }
+    assertEquals(100000, cache.getSize());
+  }",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void shouldDemonstrateHowAllObjectsAreKept() {
+    for (int i = 0; i < 100000; i++) {
+      cache.putObject(i, i);
+      assertEquals(i, cache.getObject(i));
+    }
+    assertEquals(100000, cache.getSize());
+  }
+","['  ', 'void', ' ', 'shouldDemonstrateHowAllObjectsAreKept', '(', ')', ' ', '{', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '100000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '      ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n', '      ', 'assertEquals', '(', 'i', ',', ' ', 'cache', '.', 'getObject', '(', 'i', ')', ')', ';', '\n', '    ', '}', '\n', '    ', 'assertEquals', '(', '100000', ',', ' ', 'cache', '.', 'getSize', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhBlockingCacheTest.java,shouldDemonstrateCopiesAreEqual,"  void shouldDemonstrateCopiesAreEqual() {
+    for (int i = 0; i < 1000; i++) {
+      cache.putObject(i, i);",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void shouldDemonstrateCopiesAreEqual() {
+    for (int i = 0; i < 1000; i++) {
+      cache.putObject(i, i);
+","['  ', 'void', ' ', 'shouldDemonstrateCopiesAreEqual', '(', ')', ' ', '{', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '1000', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '      ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhBlockingCacheTest.java,shouldRemoveItemOnDemand,"  void shouldRemoveItemOnDemand() {
+    cache.putObject(0, 0);
+    assertNotNull(cache.getObject(0));
+    cache.removeObject(0);
+    assertNull(cache.getObject(0));
+  }",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void shouldRemoveItemOnDemand() {
+    cache.putObject(0, 0);
+    assertNotNull(cache.getObject(0));
+    cache.removeObject(0);
+    assertNull(cache.getObject(0));
+  }
+","['  ', 'void', ' ', 'shouldRemoveItemOnDemand', '(', ')', ' ', '{', '\n', '    ', 'cache', '.', 'putObject', '(', '0', ',', ' ', '0', ')', ';', '\n', '    ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', 'cache', '.', 'removeObject', '(', '0', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhBlockingCacheTest.java,shouldFlushAllItemsOnDemand,"  void shouldFlushAllItemsOnDemand() {
+    for (int i = 0; i < 5; i++) {
+      cache.putObject(i, i);
+    }
+    assertNotNull(cache.getObject(0));
+    assertNotNull(cache.getObject(4));
+    cache.clear();
+    assertNull(cache.getObject(0));
+    assertNull(cache.getObject(4));
+  }",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void shouldFlushAllItemsOnDemand() {
+    for (int i = 0; i < 5; i++) {
+      cache.putObject(i, i);
+    }
+    assertNotNull(cache.getObject(0));
+    assertNotNull(cache.getObject(4));
+    cache.clear();
+    assertNull(cache.getObject(0));
+    assertNull(cache.getObject(4));
+  }
+","['  ', 'void', ' ', 'shouldFlushAllItemsOnDemand', '(', ')', ' ', '{', '\n', '    ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', '5', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '      ', 'cache', '.', 'putObject', '(', 'i', ',', ' ', 'i', ')', ';', '\n', '    ', '}', '\n', '    ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', 'assertNotNull', '(', 'cache', '.', 'getObject', '(', '4', ')', ')', ';', '\n', '    ', 'cache', '.', 'clear', '(', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '0', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '4', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhBlockingCacheTest.java,shouldChangeTimeToLive,"  void shouldChangeTimeToLive() throws Exception {
+    cache.putObject(""test"", ""test"");
+    Thread.sleep(1200);
+    assertEquals(""test"", cache.getObject(""test""));
+    cache.setTimeToLiveSeconds(1);
+    Thread.sleep(1200);
+    assertNull(cache.getObject(""test""));
+    this.resetCache();
+  }",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void shouldChangeTimeToLive() throws Exception {
+    cache.putObject(""test"", ""test"");
+    Thread.sleep(1200);
+    assertEquals(""test"", cache.getObject(""test""));
+    cache.setTimeToLiveSeconds(1);
+    Thread.sleep(1200);
+    assertNull(cache.getObject(""test""));
+    this.resetCache();
+  }
+","['  ', 'void', ' ', 'shouldChangeTimeToLive', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '    ', 'cache', '.', 'putObject', '(', '""', 'test', '""', ',', ' ', '""', 'test', '""', ')', ';', '\n', '    ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '    ', 'assertEquals', '(', '""', 'test', '""', ',', ' ', 'cache', '.', 'getObject', '(', '""', 'test', '""', ')', ')', ';', '\n', '    ', 'cache', '.', 'setTimeToLiveSeconds', '(', '1', ')', ';', '\n', '    ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '""', 'test', '""', ')', ')', ';', '\n', '    ', 'this', '.', 'resetCache', '(', ')', ';', '\n', '  ', '}', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhBlockingCacheTest.java,shouldChangeTimeToIdle,"  void shouldChangeTimeToIdle() throws Exception {
+    cache.putObject(""test"", ""test"");
+    Thread.sleep(1200);
+    assertEquals(""test"", cache.getObject(""test""));
+    cache.setTimeToIdleSeconds(1);
+    Thread.sleep(1200);
+    assertNull(cache.getObject(""test""));
+    this.resetCache();
+  }",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void shouldChangeTimeToIdle() throws Exception {
+    cache.putObject(""test"", ""test"");
+    Thread.sleep(1200);
+    assertEquals(""test"", cache.getObject(""test""));
+    cache.setTimeToIdleSeconds(1);
+    Thread.sleep(1200);
+    assertNull(cache.getObject(""test""));
+    this.resetCache();
+  }
+","['  ', 'void', ' ', 'shouldChangeTimeToIdle', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '    ', 'cache', '.', 'putObject', '(', '""', 'test', '""', ',', ' ', '""', 'test', '""', ')', ';', '\n', '    ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '    ', 'assertEquals', '(', '""', 'test', '""', ',', ' ', 'cache', '.', 'getObject', '(', '""', 'test', '""', ')', ')', ';', '\n', '    ', 'cache', '.', 'setTimeToIdleSeconds', '(', '1', ')', ';', '\n', '    ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '    ', 'assertNull', '(', 'cache', '.', 'getObject', '(', '""', 'test', '""', ')', ')', ';', '\n', '    ', 'this', '.', 'resetCache', '(', ')', ';', '\n', '  ', '}', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhBlockingCacheTest.java,shouldTestEvictionPolicy,"  void shouldTestEvictionPolicy() throws Exception {
+    cache.clear();
+    cache.setMemoryStoreEvictionPolicy(""FIFO"");
+    cache.setMaxEntriesLocalHeap(1);
+    cache.setMaxEntriesLocalDisk(1);
+    cache.putObject(""eviction"", ""eviction"");
+    cache.putObject(""eviction2"", ""eviction2"");
+    cache.putObject(""eviction3"", ""eviction3"");
+    Thread.sleep(1200);
+    assertEquals(1, cache.getSize());
+    this.resetCache();
+  }",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void shouldTestEvictionPolicy() throws Exception {
+    cache.clear();
+    cache.setMemoryStoreEvictionPolicy(""FIFO"");
+    cache.setMaxEntriesLocalHeap(1);
+    cache.setMaxEntriesLocalDisk(1);
+    cache.putObject(""eviction"", ""eviction"");
+    cache.putObject(""eviction2"", ""eviction2"");
+    cache.putObject(""eviction3"", ""eviction3"");
+    Thread.sleep(1200);
+    assertEquals(1, cache.getSize());
+    this.resetCache();
+  }
+","['  ', 'void', ' ', 'shouldTestEvictionPolicy', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '    ', 'cache', '.', 'clear', '(', ')', ';', '\n', '    ', 'cache', '.', 'setMemoryStoreEvictionPolicy', '(', '""', 'FIFO', '""', ')', ';', '\n', '    ', 'cache', '.', 'setMaxEntriesLocalHeap', '(', '1', ')', ';', '\n', '    ', 'cache', '.', 'setMaxEntriesLocalDisk', '(', '1', ')', ';', '\n', '    ', 'cache', '.', 'putObject', '(', '""', 'eviction', '""', ',', ' ', '""', 'eviction', '""', ')', ';', '\n', '    ', 'cache', '.', 'putObject', '(', '""', 'eviction2', '""', ',', ' ', '""', 'eviction2', '""', ')', ';', '\n', '    ', 'cache', '.', 'putObject', '(', '""', 'eviction3', '""', ',', ' ', '""', 'eviction3', '""', ')', ';', '\n', '    ', 'Thread', '.', 'sleep', '(', '1200', ')', ';', '\n', '    ', 'assertEquals', '(', '1', ',', ' ', 'cache', '.', 'getSize', '(', ')', ')', ';', '\n', '    ', 'this', '.', 'resetCache', '(', ')', ';', '\n', '  ', '}', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhBlockingCacheTest.java,shouldNotCreateCache,"  void shouldNotCreateCache() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      cache = new EhBlockingCache(null);",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void shouldNotCreateCache() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      cache = new EhBlockingCache(null);
+","['  ', 'void', ' ', 'shouldNotCreateCache', '(', ')', ' ', '{', '\n', '    ', 'assertThrows', '(', 'IllegalArgumentException', '.', 'class', ',', ' ', '(', ')', ' ', '-', '>', ' ', '{', '\n', '      ', 'cache', ' ', '=', ' ', 'new', ' ', 'EhBlockingCache', '(', 'null', ')', ';', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhBlockingCacheTest.java,shouldVerifyCacheId,"  void shouldVerifyCacheId() {
+    assertEquals(DEFAULT_ID, cache.getId());
+  }",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void shouldVerifyCacheId() {
+    assertEquals(DEFAULT_ID, cache.getId());
+  }
+","['  ', 'void', ' ', 'shouldVerifyCacheId', '(', ')', ' ', '{', '\n', '    ', 'assertEquals', '(', 'DEFAULT_ID', ',', ' ', 'cache', '.', 'getId', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhBlockingCacheTest.java,shouldVerifyToString,"  void shouldVerifyToString() {
+    assertEquals(""EHCache {EHBLOCKINGCACHE}"", cache.toString());
+  }",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void shouldVerifyToString() {
+    assertEquals(""EHCache {EHBLOCKINGCACHE}"", cache.toString());
+  }
+","['  ', 'void', ' ', 'shouldVerifyToString', '(', ')', ' ', '{', '\n', '    ', 'assertEquals', '(', '""', 'EHCache {EHBLOCKINGCACHE}', '""', ',', ' ', 'cache', '.', 'toString', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhBlockingCacheTest.java,equalsAndHashCodeSymmetricTest,"  void equalsAndHashCodeSymmetricTest() {
+    // equals and hashCode check name field value
+    AbstractEhcacheCache x = new EhBlockingCache(DEFAULT_ID);
+    AbstractEhcacheCache y = new EhBlockingCache(DEFAULT_ID);
+    assertEquals(x, y);
+    assertEquals(y, x);
+    assertEquals(x.hashCode(), y.hashCode());
+    // dummy tests to cover edge cases
+    assertNotEquals(x, new String());
+    assertNotNull(x);
+    assertEquals(x, x);
+  }",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void equalsAndHashCodeSymmetricTest() {
+    
+    AbstractEhcacheCache x = new EhBlockingCache(DEFAULT_ID);
+    AbstractEhcacheCache y = new EhBlockingCache(DEFAULT_ID);
+    assertEquals(x, y);
+    assertEquals(y, x);
+    assertEquals(x.hashCode(), y.hashCode());
+    
+    assertNotEquals(x, new String());
+    assertNotNull(x);
+    assertEquals(x, x);
+  }
+","['  ', 'void', ' ', 'equalsAndHashCodeSymmetricTest', '(', ')', ' ', '{', '\n', '    ', '\n', '    ', 'AbstractEhcacheCache', ' ', 'x', ' ', '=', ' ', 'new', ' ', 'EhBlockingCache', '(', 'DEFAULT_ID', ')', ';', '\n', '    ', 'AbstractEhcacheCache', ' ', 'y', ' ', '=', ' ', 'new', ' ', 'EhBlockingCache', '(', 'DEFAULT_ID', ')', ';', '\n', '    ', 'assertEquals', '(', 'x', ',', ' ', 'y', ')', ';', '\n', '    ', 'assertEquals', '(', 'y', ',', ' ', 'x', ')', ';', '\n', '    ', 'assertEquals', '(', 'x', '.', 'hashCode', '(', ')', ',', ' ', 'y', '.', 'hashCode', '(', ')', ')', ';', '\n', '    ', '\n', '    ', 'assertNotEquals', '(', 'x', ',', ' ', 'new', ' ', 'String', '(', ')', ')', ';', '\n', '    ', 'assertNotNull', '(', 'x', ')', ';', '\n', '    ', 'assertEquals', '(', 'x', ',', ' ', 'x', ')', ';', '\n', '  ', '}', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhcacheTest.java,newCache,"  void newCache() {
+    cache = new EhcacheCache(DEFAULT_ID);
+  }",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void newCache() {
+    cache = new EhcacheCache(DEFAULT_ID);
+  }
+","['  ', 'void', ' ', 'newCache', '(', ')', ' ', '{', '\n', '    ', 'cache', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', 'DEFAULT_ID', ')', ';', '\n', '  ', '}', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhcacheTest.java,shouldNotCreateCache,"  void shouldNotCreateCache() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      cache = new EhcacheCache(null);",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void shouldNotCreateCache() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      cache = new EhcacheCache(null);
+","['  ', 'void', ' ', 'shouldNotCreateCache', '(', ')', ' ', '{', '\n', '    ', 'assertThrows', '(', 'IllegalArgumentException', '.', 'class', ',', ' ', '(', ')', ' ', '-', '>', ' ', '{', '\n', '      ', 'cache', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', 'null', ')', ';', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhcacheTest.java,shouldVerifyCacheId,"  void shouldVerifyCacheId() {
+    assertEquals(""EHCACHE"", cache.getId());
+  }",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void shouldVerifyCacheId() {
+    assertEquals(""EHCACHE"", cache.getId());
+  }
+","['  ', 'void', ' ', 'shouldVerifyCacheId', '(', ')', ' ', '{', '\n', '    ', 'assertEquals', '(', '""', 'EHCACHE', '""', ',', ' ', 'cache', '.', 'getId', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhcacheTest.java,shouldVerifyToString,"  void shouldVerifyToString() {
+    assertEquals(""EHCache {EHCACHE}"", cache.toString());
+  }",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void shouldVerifyToString() {
+    assertEquals(""EHCache {EHCACHE}"", cache.toString());
+  }
+","['  ', 'void', ' ', 'shouldVerifyToString', '(', ')', ' ', '{', '\n', '    ', 'assertEquals', '(', '""', 'EHCache {EHCACHE}', '""', ',', ' ', 'cache', '.', 'toString', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+master,b3e91686cdcc6477e536f6d0415d690e2724db4d,EhcacheTest.java,equalsAndHashCodeSymmetricTest,"  void equalsAndHashCodeSymmetricTest() {
+    // equals and hashCode check name field value
+    AbstractEhcacheCache x = new EhcacheCache(""EHCACHE"");
+    AbstractEhcacheCache y = new EhcacheCache(""EHCACHE"");
+    assertEquals(x, y);
+    assertEquals(y, x);
+    assertEquals(x.hashCode(), y.hashCode());
+    // dummy tests to cover edge cases
+    assertNotEquals(x, new String());
+    assertNotNull(x);
+    assertEquals(x, x);
+  }",https://www.github.com/mybatis/ehcache-cache/commit/b3e91686cdcc6477e536f6d0415d690e2724db4d,"  void equalsAndHashCodeSymmetricTest() {
+    
+    AbstractEhcacheCache x = new EhcacheCache(""EHCACHE"");
+    AbstractEhcacheCache y = new EhcacheCache(""EHCACHE"");
+    assertEquals(x, y);
+    assertEquals(y, x);
+    assertEquals(x.hashCode(), y.hashCode());
+    
+    assertNotEquals(x, new String());
+    assertNotNull(x);
+    assertEquals(x, x);
+  }
+","['  ', 'void', ' ', 'equalsAndHashCodeSymmetricTest', '(', ')', ' ', '{', '\n', '    ', '\n', '    ', 'AbstractEhcacheCache', ' ', 'x', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', '""', 'EHCACHE', '""', ')', ';', '\n', '    ', 'AbstractEhcacheCache', ' ', 'y', ' ', '=', ' ', 'new', ' ', 'EhcacheCache', '(', '""', 'EHCACHE', '""', ')', ';', '\n', '    ', 'assertEquals', '(', 'x', ',', ' ', 'y', ')', ';', '\n', '    ', 'assertEquals', '(', 'y', ',', ' ', 'x', ')', ';', '\n', '    ', 'assertEquals', '(', 'x', '.', 'hashCode', '(', ')', ',', ' ', 'y', '.', 'hashCode', '(', ')', ')', ';', '\n', '    ', '\n', '    ', 'assertNotEquals', '(', 'x', ',', ' ', 'new', ' ', 'String', '(', ')', ')', ';', '\n', '    ', 'assertNotNull', '(', 'x', ')', ';', '\n', '    ', 'assertEquals', '(', 'x', ',', ' ', 'x', ')', ';', '\n', '  ', '}', '\n']"
+master,417ed17b2174b37188ae64c16c7c9aa381da82c6,MavenWrapperDownloader.java,main,"    public static void main( String[] args )
+    {
+        if ( args.length == 0 )
+        {
+            System.err.println( "" - ERROR projectBasedir parameter missing"" );
+            System.exit( 1 );
+        }
+
+        log( "" - Downloader started"" );
+        final String dir = args[0].replace( "".."", """" ); // Sanitize path
+        final Path projectBasedir = Paths.get( dir ).toAbsolutePath().normalize();
+        if ( !Files.isDirectory( projectBasedir, LinkOption.NOFOLLOW_LINKS ) )
+        {
+            System.err.println( "" - ERROR projectBasedir not exists: "" + projectBasedir );
+            System.exit( 1 );
+        }
+
+        log( "" - Using base directory: "" + projectBasedir );
+
+        // If the maven-wrapper.properties exists, read it and check if it contains a custom
+        // wrapperUrl parameter.
+        Path mavenWrapperPropertyFile = projectBasedir.resolve( MAVEN_WRAPPER_PROPERTIES_PATH );
+        String url = readWrapperUrl( mavenWrapperPropertyFile );
+
+        try
+        {",https://www.github.com/mybatis/ehcache-cache/commit/417ed17b2174b37188ae64c16c7c9aa381da82c6,"    public static void main( String[] args )
+    {
+        if ( args.length == 0 )
+        {
+            System.err.println( "" - ERROR projectBasedir parameter missing"" );
+            System.exit( 1 );
+        }
+
+        log( "" - Downloader started"" );
+        final String dir = args[0].replace( "".."", """" ); 
+        final Path projectBasedir = Paths.get( dir ).toAbsolutePath().normalize();
+        if ( !Files.isDirectory( projectBasedir, LinkOption.NOFOLLOW_LINKS ) )
+        {
+            System.err.println( "" - ERROR projectBasedir not exists: "" + projectBasedir );
+            System.exit( 1 );
+        }
+
+        log( "" - Using base directory: "" + projectBasedir );
+
+        
+        
+        Path mavenWrapperPropertyFile = projectBasedir.resolve( MAVEN_WRAPPER_PROPERTIES_PATH );
+        String url = readWrapperUrl( mavenWrapperPropertyFile );
+
+        try
+        {
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', ' ', 'String', '[', ']', ' ', 'args', ' ', ')', '\n', '    ', '{', '\n', '        ', 'if', ' ', '(', ' ', 'args', '.', 'length', ' ', '=', '=', ' ', '0', ' ', ')', '\n', '        ', '{', '\n', '            ', 'System', '.', 'err', '.', 'println', '(', ' ', '""', ' - ERROR projectBasedir parameter missing', '""', ' ', ')', ';', '\n', '            ', 'System', '.', 'exit', '(', ' ', '1', ' ', ')', ';', '\n', '        ', '}', '\n', '\n', '        ', 'log', '(', ' ', '""', ' - Downloader started', '""', ' ', ')', ';', '\n', '        ', 'final', ' ', 'String', ' ', 'dir', ' ', '=', ' ', 'args', '[', '0', ']', '.', 'replace', '(', ' ', '""', '..', '""', ',', ' ', '""', '""', ' ', ')', ';', ' ', '\n', '        ', 'final', ' ', 'Path', ' ', 'projectBasedir', ' ', '=', ' ', 'Paths', '.', 'get', '(', ' ', 'dir', ' ', ')', '.', 'toAbsolutePath', '(', ')', '.', 'normalize', '(', ')', ';', '\n', '        ', 'if', ' ', '(', ' ', '!', 'Files', '.', 'isDirectory', '(', ' ', 'projectBasedir', ',', ' ', 'LinkOption', '.', 'NOFOLLOW_LINKS', ' ', ')', ' ', ')', '\n', '        ', '{', '\n', '            ', 'System', '.', 'err', '.', 'println', '(', ' ', '""', ' - ERROR projectBasedir not exists: ', '""', ' ', '+', ' ', 'projectBasedir', ' ', ')', ';', '\n', '            ', 'System', '.', 'exit', '(', ' ', '1', ' ', ')', ';', '\n', '        ', '}', '\n', '\n', '        ', 'log', '(', ' ', '""', ' - Using base directory: ', '""', ' ', '+', ' ', 'projectBasedir', ' ', ')', ';', '\n', '\n', '        ', '\n', '        ', '\n', '        ', 'Path', ' ', 'mavenWrapperPropertyFile', ' ', '=', ' ', 'projectBasedir', '.', 'resolve', '(', ' ', 'MAVEN_WRAPPER_PROPERTIES_PATH', ' ', ')', ';', '\n', '        ', 'String', ' ', 'url', ' ', '=', ' ', 'readWrapperUrl', '(', ' ', 'mavenWrapperPropertyFile', ' ', ')', ';', '\n', '\n', '        ', 'try', '\n', '        ', '{', '\n']"
+master,417ed17b2174b37188ae64c16c7c9aa381da82c6,MavenWrapperDownloader.java,createDirectories,"    private static void createDirectories(Path outputPath) throws IOException
+    {
+        if ( !Files.isDirectory( outputPath, LinkOption.NOFOLLOW_LINKS ) ) {
+            Path createDirectories = Files.createDirectories( outputPath );",https://www.github.com/mybatis/ehcache-cache/commit/417ed17b2174b37188ae64c16c7c9aa381da82c6,"    private static void createDirectories(Path outputPath) throws IOException
+    {
+        if ( !Files.isDirectory( outputPath, LinkOption.NOFOLLOW_LINKS ) ) {
+            Path createDirectories = Files.createDirectories( outputPath );
+","['    ', 'private', ' ', 'static', ' ', 'void', ' ', 'createDirectories', '(', 'Path', ' ', 'outputPath', ')', ' ', 'throws', ' ', 'IOException', '\n', '    ', '{', '\n', '        ', 'if', ' ', '(', ' ', '!', 'Files', '.', 'isDirectory', '(', ' ', 'outputPath', ',', ' ', 'LinkOption', '.', 'NOFOLLOW_LINKS', ' ', ')', ' ', ')', ' ', '{', '\n', '            ', 'Path', ' ', 'createDirectories', ' ', '=', ' ', 'Files', '.', 'createDirectories', '(', ' ', 'outputPath', ' ', ')', ';', '\n']"
+master,417ed17b2174b37188ae64c16c7c9aa381da82c6,MavenWrapperDownloader.java,readWrapperUrl,"    private static String readWrapperUrl( Path mavenWrapperPropertyFile )
+    {
+        String url = DEFAULT_DOWNLOAD_URL;
+        if ( Files.exists( mavenWrapperPropertyFile, LinkOption.NOFOLLOW_LINKS ) )
+        {
+            log( "" - Reading property file: "" + mavenWrapperPropertyFile );
+            try ( InputStream in = Files.newInputStream( mavenWrapperPropertyFile, StandardOpenOption.READ ) )
+            {
+                Properties mavenWrapperProperties = new Properties();
+                mavenWrapperProperties.load( in );
+                url = mavenWrapperProperties.getProperty( PROPERTY_NAME_WRAPPER_URL, DEFAULT_DOWNLOAD_URL );
+            }
+            catch ( IOException e )
+            {
+                System.err.println( "" - ERROR loading '"" + MAVEN_WRAPPER_PROPERTIES_PATH + ""'"" );
+            }
+        }
+        log( "" - Downloading from: "" + url );
+        return url;
+    }",https://www.github.com/mybatis/ehcache-cache/commit/417ed17b2174b37188ae64c16c7c9aa381da82c6,"    private static String readWrapperUrl( Path mavenWrapperPropertyFile )
+    {
+        String url = DEFAULT_DOWNLOAD_URL;
+        if ( Files.exists( mavenWrapperPropertyFile, LinkOption.NOFOLLOW_LINKS ) )
+        {
+            log( "" - Reading property file: "" + mavenWrapperPropertyFile );
+            try ( InputStream in = Files.newInputStream( mavenWrapperPropertyFile, StandardOpenOption.READ ) )
+            {
+                Properties mavenWrapperProperties = new Properties();
+                mavenWrapperProperties.load( in );
+                url = mavenWrapperProperties.getProperty( PROPERTY_NAME_WRAPPER_URL, DEFAULT_DOWNLOAD_URL );
+            }
+            catch ( IOException e )
+            {
+                System.err.println( "" - ERROR loading '"" + MAVEN_WRAPPER_PROPERTIES_PATH + ""'"" );
+            }
+        }
+        log( "" - Downloading from: "" + url );
+        return url;
+    }
+","['    ', 'private', ' ', 'static', ' ', 'String', ' ', 'readWrapperUrl', '(', ' ', 'Path', ' ', 'mavenWrapperPropertyFile', ' ', ')', '\n', '    ', '{', '\n', '        ', 'String', ' ', 'url', ' ', '=', ' ', 'DEFAULT_DOWNLOAD_URL', ';', '\n', '        ', 'if', ' ', '(', ' ', 'Files', '.', 'exists', '(', ' ', 'mavenWrapperPropertyFile', ',', ' ', 'LinkOption', '.', 'NOFOLLOW_LINKS', ' ', ')', ' ', ')', '\n', '        ', '{', '\n', '            ', 'log', '(', ' ', '""', ' - Reading property file: ', '""', ' ', '+', ' ', 'mavenWrapperPropertyFile', ' ', ')', ';', '\n', '            ', 'try', ' ', '(', ' ', 'InputStream', ' ', 'in', ' ', '=', ' ', 'Files', '.', 'newInputStream', '(', ' ', 'mavenWrapperPropertyFile', ',', ' ', 'StandardOpenOption', '.', 'READ', ' ', ')', ' ', ')', '\n', '            ', '{', '\n', '                ', 'Properties', ' ', 'mavenWrapperProperties', ' ', '=', ' ', 'new', ' ', 'Properties', '(', ')', ';', '\n', '                ', 'mavenWrapperProperties', '.', 'load', '(', ' ', 'in', ' ', ')', ';', '\n', '                ', 'url', ' ', '=', ' ', 'mavenWrapperProperties', '.', 'getProperty', '(', ' ', 'PROPERTY_NAME_WRAPPER_URL', ',', ' ', 'DEFAULT_DOWNLOAD_URL', ' ', ')', ';', '\n', '            ', '}', '\n', '            ', 'catch', ' ', '(', ' ', 'IOException', ' ', 'e', ' ', ')', '\n', '            ', '{', '\n', '                ', 'System', '.', 'err', '.', 'println', '(', ' ', '""', "" - ERROR loading '"", '""', ' ', '+', ' ', 'MAVEN_WRAPPER_PROPERTIES_PATH', ' ', '+', ' ', '""', ""'"", '""', ' ', ')', ';', '\n', '            ', '}', '\n', '        ', '}', '\n', '        ', 'log', '(', ' ', '""', ' - Downloading from: ', '""', ' ', '+', ' ', 'url', ' ', ')', ';', '\n', '        ', 'return', ' ', 'url', ';', '\n', '    ', '}', '\n']"
+master,417ed17b2174b37188ae64c16c7c9aa381da82c6,MavenWrapperDownloader.java,log,"    private static void log( String msg )
+    {
+        if ( VERBOSE )
+        {",https://www.github.com/mybatis/ehcache-cache/commit/417ed17b2174b37188ae64c16c7c9aa381da82c6,"    private static void log( String msg )
+    {
+        if ( VERBOSE )
+        {
+","['    ', 'private', ' ', 'static', ' ', 'void', ' ', 'log', '(', ' ', 'String', ' ', 'msg', ' ', ')', '\n', '    ', '{', '\n', '        ', 'if', ' ', '(', ' ', 'VERBOSE', ' ', ')', '\n', '        ', '{', '\n']"
+master,47b5c078a54151278ca040d2cc256284c2966c44,MavenWrapperDownloader.java,main,"    public static void main( String[] args )
+    {
+        log( ""Apache Maven Wrapper Downloader "" + WRAPPER_VERSION );
+
+        if ( args.length != 2 )
+        {
+            System.err.println( "" - ERROR wrapperUrl or wrapperJarPath parameter missing"" );
+            System.exit( 1 );
+        }
+
+        try
+        {",https://www.github.com/mybatis/ehcache-cache/commit/47b5c078a54151278ca040d2cc256284c2966c44,"    public static void main( String[] args )
+    {
+        log( ""Apache Maven Wrapper Downloader "" + WRAPPER_VERSION );
+
+        if ( args.length != 2 )
+        {
+            System.err.println( "" - ERROR wrapperUrl or wrapperJarPath parameter missing"" );
+            System.exit( 1 );
+        }
+
+        try
+        {
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', ' ', 'String', '[', ']', ' ', 'args', ' ', ')', '\n', '    ', '{', '\n', '        ', 'log', '(', ' ', '""', 'Apache Maven Wrapper Downloader ', '""', ' ', '+', ' ', 'WRAPPER_VERSION', ' ', ')', ';', '\n', '\n', '        ', 'if', ' ', '(', ' ', 'args', '.', 'length', ' ', '!', '=', ' ', '2', ' ', ')', '\n', '        ', '{', '\n', '            ', 'System', '.', 'err', '.', 'println', '(', ' ', '""', ' - ERROR wrapperUrl or wrapperJarPath parameter missing', '""', ' ', ')', ';', '\n', '            ', 'System', '.', 'exit', '(', ' ', '1', ' ', ')', ';', '\n', '        ', '}', '\n', '\n', '        ', 'try', '\n', '        ', '{', '\n']"
+master,b6ed14a8b3898285d4b9e4e302454d3015ba4b23,MavenWrapperDownloader.java,main,"    public static void main(String[] args) {
+        log(""Apache Maven Wrapper Downloader "" + WRAPPER_VERSION);
+
+        if (args.length != 2) {
+            System.err.println("" - ERROR wrapperUrl or wrapperJarPath parameter missing"");
+            System.exit(1);
+        }
+
+        try {
+            log("" - Downloader started"");",https://www.github.com/mybatis/ehcache-cache/commit/b6ed14a8b3898285d4b9e4e302454d3015ba4b23,"    public static void main(String[] args) {
+        log(""Apache Maven Wrapper Downloader "" + WRAPPER_VERSION);
+
+        if (args.length != 2) {
+            System.err.println("" - ERROR wrapperUrl or wrapperJarPath parameter missing"");
+            System.exit(1);
+        }
+
+        try {
+            log("" - Downloader started"");
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'log', '(', '""', 'Apache Maven Wrapper Downloader ', '""', ' ', '+', ' ', 'WRAPPER_VERSION', ')', ';', '\n', '\n', '        ', 'if', ' ', '(', 'args', '.', 'length', ' ', '!', '=', ' ', '2', ')', ' ', '{', '\n', '            ', 'System', '.', 'err', '.', 'println', '(', '""', ' - ERROR wrapperUrl or wrapperJarPath parameter missing', '""', ')', ';', '\n', '            ', 'System', '.', 'exit', '(', '1', ')', ';', '\n', '        ', '}', '\n', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'log', '(', '""', ' - Downloader started', '""', ')', ';', '\n']"
+master,b6ed14a8b3898285d4b9e4e302454d3015ba4b23,MavenWrapperDownloader.java,log,"    private static void log(String msg) {
+        if (VERBOSE) {
+            System.out.println(msg);",https://www.github.com/mybatis/ehcache-cache/commit/b6ed14a8b3898285d4b9e4e302454d3015ba4b23,"    private static void log(String msg) {
+        if (VERBOSE) {
+            System.out.println(msg);
+","['    ', 'private', ' ', 'static', ' ', 'void', ' ', 'log', '(', 'String', ' ', 'msg', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'VERBOSE', ')', ' ', '{', '\n', '            ', 'System', '.', 'out', '.', 'println', '(', 'msg', ')', ';', '\n']"

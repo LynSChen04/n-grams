@@ -1,0 +1,549 @@
+Branch Name,Commit Hash,File Name,Method Name,Method Code,Commit Link,Method Code No Comments,Tokens
+master,b60e5ecd3c98f733118fd9c8b4dfd0b64c07ac97,ExampleInstrumentedTest.java,useAppContext,"    public void useAppContext() throws Exception {
+        // Context of the app under test.
+        Context appContext = InstrumentationRegistry.getTargetContext();
+
+        assertEquals(""me.virtualiz.blurshadowimageview"", appContext.getPackageName());
+    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/b60e5ecd3c98f733118fd9c8b4dfd0b64c07ac97,"    public void useAppContext() throws Exception {
+        
+        Context appContext = InstrumentationRegistry.getTargetContext();
+
+        assertEquals(""me.virtualiz.blurshadowimageview"", appContext.getPackageName());
+    }
+","['    ', 'public', ' ', 'void', ' ', 'useAppContext', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', '\n', '        ', 'Context', ' ', 'appContext', ' ', '=', ' ', 'InstrumentationRegistry', '.', 'getTargetContext', '(', ')', ';', '\n', '\n', '        ', 'assertEquals', '(', '""', 'me.virtualiz.blurshadowimageview', '""', ',', ' ', 'appContext', '.', 'getPackageName', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,b60e5ecd3c98f733118fd9c8b4dfd0b64c07ac97,MainActivity.java,onClick,"            public void onClick(View v) {
+                Uri uri = Uri.parse(""https://www.github.com/vivekverma007/BlurShadowImageView"");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }",https://www.github.com/virtualvivek/blurshadowimageview/commit/b60e5ecd3c98f733118fd9c8b4dfd0b64c07ac97,"            public void onClick(View v) {
+                Uri uri = Uri.parse(""https://www.github.com/vivekverma007/BlurShadowImageView"");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'v', ')', ' ', '{', '\n', '                ', 'Uri', ' ', 'uri', ' ', '=', ' ', 'Uri', '.', 'parse', '(', '""', 'https://www.github.com/vivekverma007/BlurShadowImageView', '""', ')', ';', '\n', '                ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'Intent', '.', 'ACTION_VIEW', ',', ' ', 'uri', ')', ';', '\n', '                ', 'startActivity', '(', 'intent', ')', ';', '\n', '            ', '}', '\n']"
+master,b60e5ecd3c98f733118fd9c8b4dfd0b64c07ac97,ExampleUnitTest.java,addition_isCorrect,"    public void addition_isCorrect() throws Exception {
+        assertEquals(4, 2 + 2);
+    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/b60e5ecd3c98f733118fd9c8b4dfd0b64c07ac97,"    public void addition_isCorrect() throws Exception {
+        assertEquals(4, 2 + 2);
+    }
+","['    ', 'public', ' ', 'void', ' ', 'addition_isCorrect', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', 'assertEquals', '(', '4', ',', ' ', '2', ' ', '+', ' ', '2', ')', ';', '\n', '    ', '}', '\n']"
+master,3a00764dd4eb4f8a321a38a235b3de7589090eb6,ExampleInstrumentedTest.java,useAppContext,"    public void useAppContext() throws Exception {
+        // Context of the app under test.
+        Context appContext = InstrumentationRegistry.getTargetContext();
+
+        assertEquals(""me.virtualiz.blurshadowimageview.test"", appContext.getPackageName());
+    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/3a00764dd4eb4f8a321a38a235b3de7589090eb6,"    public void useAppContext() throws Exception {
+        
+        Context appContext = InstrumentationRegistry.getTargetContext();
+
+        assertEquals(""me.virtualiz.blurshadowimageview.test"", appContext.getPackageName());
+    }
+","['    ', 'public', ' ', 'void', ' ', 'useAppContext', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', '\n', '        ', 'Context', ' ', 'appContext', ' ', '=', ' ', 'InstrumentationRegistry', '.', 'getTargetContext', '(', ')', ';', '\n', '\n', '        ', 'assertEquals', '(', '""', 'me.virtualiz.blurshadowimageview.test', '""', ',', ' ', 'appContext', '.', 'getPackageName', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+master,3a00764dd4eb4f8a321a38a235b3de7589090eb6,BlurShadowImageView.java,dpToPx,"    public static int dpToPx(int dp){
+        return (int) (dp* Resources.getSystem().getDisplayMetrics().density);
+    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/3a00764dd4eb4f8a321a38a235b3de7589090eb6,"    public static int dpToPx(int dp){
+        return (int) (dp* Resources.getSystem().getDisplayMetrics().density);
+    }
+","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'dpToPx', '(', 'int', ' ', 'dp', ')', '{', '\n', '        ', 'return', ' ', '(', 'int', ')', ' ', '(', 'dp', '*', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getDisplayMetrics', '(', ')', '.', 'density', ')', ';', '\n', '    ', '}', '\n']"
+master,3a00764dd4eb4f8a321a38a235b3de7589090eb6,BlurShadowImageView.java,onGlobalLayout,"            public void onGlobalLayout() {
+                int N = getChildCount();
+                for (int i = 0; i < N; i++) {
+                    N = getChildCount();
+                }
+                ((RoundImageView) getChildAt(1)).setRound(imageRound);
+                mInvalidat = true;
+            }",https://www.github.com/virtualvivek/blurshadowimageview/commit/3a00764dd4eb4f8a321a38a235b3de7589090eb6,"            public void onGlobalLayout() {
+                int N = getChildCount();
+                for (int i = 0; i < N; i++) {
+                    N = getChildCount();
+                }
+                ((RoundImageView) getChildAt(1)).setRound(imageRound);
+                mInvalidat = true;
+            }
+","['            ', 'public', ' ', 'void', ' ', 'onGlobalLayout', '(', ')', ' ', '{', '\n', '                ', 'int', ' ', 'N', ' ', '=', ' ', 'getChildCount', '(', ')', ';', '\n', '                ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', 'N', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '                    ', 'N', ' ', '=', ' ', 'getChildCount', '(', ')', ';', '\n', '                ', '}', '\n', '                ', '(', '(', 'RoundImageView', ')', ' ', 'getChildAt', '(', '1', ')', ')', '.', 'setRound', '(', 'imageRound', ')', ';', '\n', '                ', 'mInvalidat', ' ', '=', ' ', 'true', ';', '\n', '            ', '}', '\n']"
+master,3a00764dd4eb4f8a321a38a235b3de7589090eb6,FadingImageView.java,init,"    private void init() {
+        // Enable horizontal fading
+        this.setHorizontalFadingEdgeEnabled(true);
+        this.setVerticalFadingEdgeEnabled(true);
+        // Apply default fading length
+        this.setEdgeLength(78);
+        // Apply default side
+        this.setFadeRight(true);
+        this.setFadeLeft(true);
+        this.setFadeBottom(true);
+        this.setFadeTop(true);
+
+        //code to round the fadded view
+        paint = new Paint();
+        paint.setColor(Color.WHITE);
+        paint.setAntiAlias(true);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+
+        paint2 = new Paint();
+        paint2.setXfermode(null);
+    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/3a00764dd4eb4f8a321a38a235b3de7589090eb6,"    private void init() {
+        
+        this.setHorizontalFadingEdgeEnabled(true);
+        this.setVerticalFadingEdgeEnabled(true);
+        
+        this.setEdgeLength(78);
+        
+        this.setFadeRight(true);
+        this.setFadeLeft(true);
+        this.setFadeBottom(true);
+        this.setFadeTop(true);
+
+        
+        paint = new Paint();
+        paint.setColor(Color.WHITE);
+        paint.setAntiAlias(true);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+
+        paint2 = new Paint();
+        paint2.setXfermode(null);
+    }
+","['    ', 'private', ' ', 'void', ' ', 'init', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', 'this', '.', 'setHorizontalFadingEdgeEnabled', '(', 'true', ')', ';', '\n', '        ', 'this', '.', 'setVerticalFadingEdgeEnabled', '(', 'true', ')', ';', '\n', '        ', '\n', '        ', 'this', '.', 'setEdgeLength', '(', '78', ')', ';', '\n', '        ', '\n', '        ', 'this', '.', 'setFadeRight', '(', 'true', ')', ';', '\n', '        ', 'this', '.', 'setFadeLeft', '(', 'true', ')', ';', '\n', '        ', 'this', '.', 'setFadeBottom', '(', 'true', ')', ';', '\n', '        ', 'this', '.', 'setFadeTop', '(', 'true', ')', ';', '\n', '\n', '        ', '\n', '        ', 'paint', ' ', '=', ' ', 'new', ' ', 'Paint', '(', ')', ';', '\n', '        ', 'paint', '.', 'setColor', '(', 'Color', '.', 'WHITE', ')', ';', '\n', '        ', 'paint', '.', 'setAntiAlias', '(', 'true', ')', ';', '\n', '        ', 'paint', '.', 'setXfermode', '(', 'new', ' ', 'PorterDuffXfermode', '(', 'PorterDuff', '.', 'Mode', '.', 'DST_OUT', ')', ')', ';', '\n', '\n', '        ', 'paint2', ' ', '=', ' ', 'new', ' ', 'Paint', '(', ')', ';', '\n', '        ', 'paint2', '.', 'setXfermode', '(', 'null', ')', ';', '\n', '    ', '}', '\n']"
+master,3a00764dd4eb4f8a321a38a235b3de7589090eb6,FadingImageView.java,draw,"    public void draw(Canvas canvas) {
+        Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas2 = new Canvas(bitmap);
+        super.draw(canvas2);
+        canvas.drawBitmap(bitmap, 0, 0, paint2);
+        bitmap.recycle();
+    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/3a00764dd4eb4f8a321a38a235b3de7589090eb6,"    public void draw(Canvas canvas) {
+        Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas2 = new Canvas(bitmap);
+        super.draw(canvas2);
+        canvas.drawBitmap(bitmap, 0, 0, paint2);
+        bitmap.recycle();
+    }
+","['    ', 'public', ' ', 'void', ' ', 'draw', '(', 'Canvas', ' ', 'canvas', ')', ' ', '{', '\n', '        ', 'Bitmap', ' ', 'bitmap', ' ', '=', ' ', 'Bitmap', '.', 'createBitmap', '(', 'getWidth', '(', ')', ',', ' ', 'getHeight', '(', ')', ',', ' ', 'Bitmap', '.', 'Config', '.', 'ARGB_8888', ')', ';', '\n', '        ', 'Canvas', ' ', 'canvas2', ' ', '=', ' ', 'new', ' ', 'Canvas', '(', 'bitmap', ')', ';', '\n', '        ', 'super', '.', 'draw', '(', 'canvas2', ')', ';', '\n', '        ', 'canvas', '.', 'drawBitmap', '(', 'bitmap', ',', ' ', '0', ',', ' ', '0', ',', ' ', 'paint2', ')', ';', '\n', '        ', 'bitmap', '.', 'recycle', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,3a00764dd4eb4f8a321a38a235b3de7589090eb6,RoundImageView.java,init,"    private void init(Context context) {
+        paint = new Paint();
+        paint.setColor(Color.WHITE);
+        paint.setAntiAlias(true);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+
+        paint2 = new Paint();
+        paint2.setXfermode(null);
+    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/3a00764dd4eb4f8a321a38a235b3de7589090eb6,"    private void init(Context context) {
+        paint = new Paint();
+        paint.setColor(Color.WHITE);
+        paint.setAntiAlias(true);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+
+        paint2 = new Paint();
+        paint2.setXfermode(null);
+    }
+","['    ', 'private', ' ', 'void', ' ', 'init', '(', 'Context', ' ', 'context', ')', ' ', '{', '\n', '        ', 'paint', ' ', '=', ' ', 'new', ' ', 'Paint', '(', ')', ';', '\n', '        ', 'paint', '.', 'setColor', '(', 'Color', '.', 'WHITE', ')', ';', '\n', '        ', 'paint', '.', 'setAntiAlias', '(', 'true', ')', ';', '\n', '        ', 'paint', '.', 'setXfermode', '(', 'new', ' ', 'PorterDuffXfermode', '(', 'PorterDuff', '.', 'Mode', '.', 'DST_OUT', ')', ')', ';', '\n', '\n', '        ', 'paint2', ' ', '=', ' ', 'new', ' ', 'Paint', '(', ')', ';', '\n', '        ', 'paint2', '.', 'setXfermode', '(', 'null', ')', ';', '\n', '    ', '}', '\n']"
+master,3a00764dd4eb4f8a321a38a235b3de7589090eb6,RoundImageView.java,draw,"    public void draw(Canvas canvas) {
+        Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas2 = new Canvas(bitmap);
+        super.draw(canvas2);
+        drawLiftUp(canvas2);
+        drawLiftDown(canvas2);
+        drawRightUp(canvas2);
+        drawRightDown(canvas2);
+        canvas.drawBitmap(bitmap, 0, 0, paint2);
+        bitmap.recycle();
+    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/3a00764dd4eb4f8a321a38a235b3de7589090eb6,"    public void draw(Canvas canvas) {
+        Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas2 = new Canvas(bitmap);
+        super.draw(canvas2);
+        drawLiftUp(canvas2);
+        drawLiftDown(canvas2);
+        drawRightUp(canvas2);
+        drawRightDown(canvas2);
+        canvas.drawBitmap(bitmap, 0, 0, paint2);
+        bitmap.recycle();
+    }
+","['    ', 'public', ' ', 'void', ' ', 'draw', '(', 'Canvas', ' ', 'canvas', ')', ' ', '{', '\n', '        ', 'Bitmap', ' ', 'bitmap', ' ', '=', ' ', 'Bitmap', '.', 'createBitmap', '(', 'getWidth', '(', ')', ',', ' ', 'getHeight', '(', ')', ',', ' ', 'Bitmap', '.', 'Config', '.', 'ARGB_8888', ')', ';', '\n', '        ', 'Canvas', ' ', 'canvas2', ' ', '=', ' ', 'new', ' ', 'Canvas', '(', 'bitmap', ')', ';', '\n', '        ', 'super', '.', 'draw', '(', 'canvas2', ')', ';', '\n', '        ', 'drawLiftUp', '(', 'canvas2', ')', ';', '\n', '        ', 'drawLiftDown', '(', 'canvas2', ')', ';', '\n', '        ', 'drawRightUp', '(', 'canvas2', ')', ';', '\n', '        ', 'drawRightDown', '(', 'canvas2', ')', ';', '\n', '        ', 'canvas', '.', 'drawBitmap', '(', 'bitmap', ',', ' ', '0', ',', ' ', '0', ',', ' ', 'paint2', ')', ';', '\n', '        ', 'bitmap', '.', 'recycle', '(', ')', ';', '\n', '    ', '}', '\n']"
+master,3a00764dd4eb4f8a321a38a235b3de7589090eb6,RoundImageView.java,drawLiftUp,"    private void drawLiftUp(Canvas canvas) {
+        Path path = new Path();
+        path.moveTo(0, roundHeight);
+        path.lineTo(0, 0);
+        path.lineTo(roundWidth, 0);
+        path.arcTo(new RectF(0, 0, roundWidth * 2, roundHeight * 2), -90, -90);
+        path.close();
+        canvas.drawPath(path, paint);
+    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/3a00764dd4eb4f8a321a38a235b3de7589090eb6,"    private void drawLiftUp(Canvas canvas) {
+        Path path = new Path();
+        path.moveTo(0, roundHeight);
+        path.lineTo(0, 0);
+        path.lineTo(roundWidth, 0);
+        path.arcTo(new RectF(0, 0, roundWidth * 2, roundHeight * 2), -90, -90);
+        path.close();
+        canvas.drawPath(path, paint);
+    }
+","['    ', 'private', ' ', 'void', ' ', 'drawLiftUp', '(', 'Canvas', ' ', 'canvas', ')', ' ', '{', '\n', '        ', 'Path', ' ', 'path', ' ', '=', ' ', 'new', ' ', 'Path', '(', ')', ';', '\n', '        ', 'path', '.', 'moveTo', '(', '0', ',', ' ', 'roundHeight', ')', ';', '\n', '        ', 'path', '.', 'lineTo', '(', '0', ',', ' ', '0', ')', ';', '\n', '        ', 'path', '.', 'lineTo', '(', 'roundWidth', ',', ' ', '0', ')', ';', '\n', '        ', 'path', '.', 'arcTo', '(', 'new', ' ', 'RectF', '(', '0', ',', ' ', '0', ',', ' ', 'roundWidth', ' ', '*', ' ', '2', ',', ' ', 'roundHeight', ' ', '*', ' ', '2', ')', ',', ' ', '-', '90', ',', ' ', '-', '90', ')', ';', '\n', '        ', 'path', '.', 'close', '(', ')', ';', '\n', '        ', 'canvas', '.', 'drawPath', '(', 'path', ',', ' ', 'paint', ')', ';', '\n', '    ', '}', '\n']"
+master,3a00764dd4eb4f8a321a38a235b3de7589090eb6,RoundImageView.java,drawLiftDown,"    private void drawLiftDown(Canvas canvas) {
+        Path path = new Path();
+        path.moveTo(0, getHeight() - roundHeight);
+        path.lineTo(0, getHeight());
+        path.lineTo(roundWidth, getHeight());
+        path.arcTo(new RectF(0, getHeight() - roundHeight * 2, roundWidth * 2, getHeight()), 90, 90);
+        path.close();
+        canvas.drawPath(path, paint);
+    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/3a00764dd4eb4f8a321a38a235b3de7589090eb6,"    private void drawLiftDown(Canvas canvas) {
+        Path path = new Path();
+        path.moveTo(0, getHeight() - roundHeight);
+        path.lineTo(0, getHeight());
+        path.lineTo(roundWidth, getHeight());
+        path.arcTo(new RectF(0, getHeight() - roundHeight * 2, roundWidth * 2, getHeight()), 90, 90);
+        path.close();
+        canvas.drawPath(path, paint);
+    }
+","['    ', 'private', ' ', 'void', ' ', 'drawLiftDown', '(', 'Canvas', ' ', 'canvas', ')', ' ', '{', '\n', '        ', 'Path', ' ', 'path', ' ', '=', ' ', 'new', ' ', 'Path', '(', ')', ';', '\n', '        ', 'path', '.', 'moveTo', '(', '0', ',', ' ', 'getHeight', '(', ')', ' ', '-', ' ', 'roundHeight', ')', ';', '\n', '        ', 'path', '.', 'lineTo', '(', '0', ',', ' ', 'getHeight', '(', ')', ')', ';', '\n', '        ', 'path', '.', 'lineTo', '(', 'roundWidth', ',', ' ', 'getHeight', '(', ')', ')', ';', '\n', '        ', 'path', '.', 'arcTo', '(', 'new', ' ', 'RectF', '(', '0', ',', ' ', 'getHeight', '(', ')', ' ', '-', ' ', 'roundHeight', ' ', '*', ' ', '2', ',', ' ', 'roundWidth', ' ', '*', ' ', '2', ',', ' ', 'getHeight', '(', ')', ')', ',', ' ', '90', ',', ' ', '90', ')', ';', '\n', '        ', 'path', '.', 'close', '(', ')', ';', '\n', '        ', 'canvas', '.', 'drawPath', '(', 'path', ',', ' ', 'paint', ')', ';', '\n', '    ', '}', '\n']"
+master,3a00764dd4eb4f8a321a38a235b3de7589090eb6,RoundImageView.java,drawRightDown,"    private void drawRightDown(Canvas canvas) {
+        Path path = new Path();
+        path.moveTo(getWidth() - roundWidth, getHeight());
+        path.lineTo(getWidth(), getHeight());
+        path.lineTo(getWidth(), getHeight() - roundHeight);
+        path.arcTo(new RectF(getWidth() - roundWidth * 2, getHeight() - roundHeight * 2, getWidth(), getHeight()), -0, 90);
+        path.close();
+        canvas.drawPath(path, paint);
+    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/3a00764dd4eb4f8a321a38a235b3de7589090eb6,"    private void drawRightDown(Canvas canvas) {
+        Path path = new Path();
+        path.moveTo(getWidth() - roundWidth, getHeight());
+        path.lineTo(getWidth(), getHeight());
+        path.lineTo(getWidth(), getHeight() - roundHeight);
+        path.arcTo(new RectF(getWidth() - roundWidth * 2, getHeight() - roundHeight * 2, getWidth(), getHeight()), -0, 90);
+        path.close();
+        canvas.drawPath(path, paint);
+    }
+","['    ', 'private', ' ', 'void', ' ', 'drawRightDown', '(', 'Canvas', ' ', 'canvas', ')', ' ', '{', '\n', '        ', 'Path', ' ', 'path', ' ', '=', ' ', 'new', ' ', 'Path', '(', ')', ';', '\n', '        ', 'path', '.', 'moveTo', '(', 'getWidth', '(', ')', ' ', '-', ' ', 'roundWidth', ',', ' ', 'getHeight', '(', ')', ')', ';', '\n', '        ', 'path', '.', 'lineTo', '(', 'getWidth', '(', ')', ',', ' ', 'getHeight', '(', ')', ')', ';', '\n', '        ', 'path', '.', 'lineTo', '(', 'getWidth', '(', ')', ',', ' ', 'getHeight', '(', ')', ' ', '-', ' ', 'roundHeight', ')', ';', '\n', '        ', 'path', '.', 'arcTo', '(', 'new', ' ', 'RectF', '(', 'getWidth', '(', ')', ' ', '-', ' ', 'roundWidth', ' ', '*', ' ', '2', ',', ' ', 'getHeight', '(', ')', ' ', '-', ' ', 'roundHeight', ' ', '*', ' ', '2', ',', ' ', 'getWidth', '(', ')', ',', ' ', 'getHeight', '(', ')', ')', ',', ' ', '-', '0', ',', ' ', '90', ')', ';', '\n', '        ', 'path', '.', 'close', '(', ')', ';', '\n', '        ', 'canvas', '.', 'drawPath', '(', 'path', ',', ' ', 'paint', ')', ';', '\n', '    ', '}', '\n']"
+master,3a00764dd4eb4f8a321a38a235b3de7589090eb6,RoundImageView.java,drawRightUp,"    private void drawRightUp(Canvas canvas) {
+        Path path = new Path();
+        path.moveTo(getWidth(), roundHeight);
+        path.lineTo(getWidth(), 0);
+        path.lineTo(getWidth() - roundWidth, 0);
+        path.arcTo(new RectF(getWidth() - roundWidth * 2, 0, getWidth(), 0 + roundHeight * 2), -90, 90);
+        path.close();
+        canvas.drawPath(path, paint);
+    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/3a00764dd4eb4f8a321a38a235b3de7589090eb6,"    private void drawRightUp(Canvas canvas) {
+        Path path = new Path();
+        path.moveTo(getWidth(), roundHeight);
+        path.lineTo(getWidth(), 0);
+        path.lineTo(getWidth() - roundWidth, 0);
+        path.arcTo(new RectF(getWidth() - roundWidth * 2, 0, getWidth(), 0 + roundHeight * 2), -90, 90);
+        path.close();
+        canvas.drawPath(path, paint);
+    }
+","['    ', 'private', ' ', 'void', ' ', 'drawRightUp', '(', 'Canvas', ' ', 'canvas', ')', ' ', '{', '\n', '        ', 'Path', ' ', 'path', ' ', '=', ' ', 'new', ' ', 'Path', '(', ')', ';', '\n', '        ', 'path', '.', 'moveTo', '(', 'getWidth', '(', ')', ',', ' ', 'roundHeight', ')', ';', '\n', '        ', 'path', '.', 'lineTo', '(', 'getWidth', '(', ')', ',', ' ', '0', ')', ';', '\n', '        ', 'path', '.', 'lineTo', '(', 'getWidth', '(', ')', ' ', '-', ' ', 'roundWidth', ',', ' ', '0', ')', ';', '\n', '        ', 'path', '.', 'arcTo', '(', 'new', ' ', 'RectF', '(', 'getWidth', '(', ')', ' ', '-', ' ', 'roundWidth', ' ', '*', ' ', '2', ',', ' ', '0', ',', ' ', 'getWidth', '(', ')', ',', ' ', '0', ' ', '+', ' ', 'roundHeight', ' ', '*', ' ', '2', ')', ',', ' ', '-', '90', ',', ' ', '90', ')', ';', '\n', '        ', 'path', '.', 'close', '(', ')', ';', '\n', '        ', 'canvas', '.', 'drawPath', '(', 'path', ',', ' ', 'paint', ')', ';', '\n', '    ', '}', '\n']"
+master,096e9f0263533395ca08b45e426f6612d11187f3,MainActivity.java,onBitmapLoaded,"                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom loadedFrom) {
+                        demo_img.setImageBitmap(bitmap);
+                    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/096e9f0263533395ca08b45e426f6612d11187f3,"                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom loadedFrom) {
+                        demo_img.setImageBitmap(bitmap);
+                    }
+","['                    ', 'public', ' ', 'void', ' ', 'onBitmapLoaded', '(', 'Bitmap', ' ', 'bitmap', ',', ' ', 'Picasso', '.', 'LoadedFrom', ' ', 'loadedFrom', ')', ' ', '{', '\n', '                        ', 'demo_img', '.', 'setImageBitmap', '(', 'bitmap', ')', ';', '\n', '                    ', '}', '\n']"
+master,096e9f0263533395ca08b45e426f6612d11187f3,MainActivity.java,onClick,"            public void onClick(View v) {
+                Uri uri = Uri.parse(""https://www.github.com/virtualvivek/BlurShadowImageView"");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }",https://www.github.com/virtualvivek/blurshadowimageview/commit/096e9f0263533395ca08b45e426f6612d11187f3,"            public void onClick(View v) {
+                Uri uri = Uri.parse(""https://www.github.com/virtualvivek/BlurShadowImageView"");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'v', ')', ' ', '{', '\n', '                ', 'Uri', ' ', 'uri', ' ', '=', ' ', 'Uri', '.', 'parse', '(', '""', 'https://www.github.com/virtualvivek/BlurShadowImageView', '""', ')', ';', '\n', '                ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'Intent', '.', 'ACTION_VIEW', ',', ' ', 'uri', ')', ';', '\n', '                ', 'startActivity', '(', 'intent', ')', ';', '\n', '            ', '}', '\n']"
+master,096e9f0263533395ca08b45e426f6612d11187f3,BlurShadowImageView.java,onGlobalLayout,"            public void onGlobalLayout() {
+                int N = getChildCount();
+                for (int i = 0; i < N; i++) {
+                    N = getChildCount();
+                }
+                ((RoundImageView) getChildAt(1)).setRound(imageRound);
+
+                mInvalidat = true;
+            }",https://www.github.com/virtualvivek/blurshadowimageview/commit/096e9f0263533395ca08b45e426f6612d11187f3,"            public void onGlobalLayout() {
+                int N = getChildCount();
+                for (int i = 0; i < N; i++) {
+                    N = getChildCount();
+                }
+                ((RoundImageView) getChildAt(1)).setRound(imageRound);
+
+                mInvalidat = true;
+            }
+","['            ', 'public', ' ', 'void', ' ', 'onGlobalLayout', '(', ')', ' ', '{', '\n', '                ', 'int', ' ', 'N', ' ', '=', ' ', 'getChildCount', '(', ')', ';', '\n', '                ', 'for', ' ', '(', 'int', ' ', 'i', ' ', '=', ' ', '0', ';', ' ', 'i', ' ', '<', ' ', 'N', ';', ' ', 'i', '+', '+', ')', ' ', '{', '\n', '                    ', 'N', ' ', '=', ' ', 'getChildCount', '(', ')', ';', '\n', '                ', '}', '\n', '                ', '(', '(', 'RoundImageView', ')', ' ', 'getChildAt', '(', '1', ')', ')', '.', 'setRound', '(', 'imageRound', ')', ';', '\n', '\n', '                ', 'mInvalidat', ' ', '=', ' ', 'true', ';', '\n', '            ', '}', '\n']"
+master,1414a04ce74974ce275d6cd02621d46a29c2e5a5,MainActivity.java,onClick,"            public void onClick(View v) {
+                Target target = new Target() {
+                    @Override
+                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                        // Bitmap is loaded, use image here
+                        demo_img.setImageBitmap(bitmap);
+                    }
+                    @Override
+                    public void onBitmapFailed(Exception e, Drawable d) {
+                        // Fires if bitmap couldn't be loaded.
+                    }
+                    @Override
+                    public void onPrepareLoad(Drawable d){
+                        // Fires bitmap on prepare.
+                    }
+                };
+                Picasso.get().load(""https://i.imgur.com/DvpvklR.png"").into(target);
+            }",https://www.github.com/virtualvivek/blurshadowimageview/commit/1414a04ce74974ce275d6cd02621d46a29c2e5a5,"            public void onClick(View v) {
+                Target target = new Target() {
+                    @Override
+                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                        
+                        demo_img.setImageBitmap(bitmap);
+                    }
+                    @Override
+                    public void onBitmapFailed(Exception e, Drawable d) {
+                        
+                    }
+                    @Override
+                    public void onPrepareLoad(Drawable d){
+                        
+                    }
+                };
+                Picasso.get().load(""https://i.imgur.com/DvpvklR.png"").into(target);
+            }
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'v', ')', ' ', '{', '\n', '                ', 'Target', ' ', 'target', ' ', '=', ' ', 'new', ' ', 'Target', '(', ')', ' ', '{', '\n', '                    ', '@Override', '\n', '                    ', 'public', ' ', 'void', ' ', 'onBitmapLoaded', '(', 'Bitmap', ' ', 'bitmap', ',', ' ', 'Picasso', '.', 'LoadedFrom', ' ', 'from', ')', ' ', '{', '\n', '                        ', '\n', '                        ', 'demo_img', '.', 'setImageBitmap', '(', 'bitmap', ')', ';', '\n', '                    ', '}', '\n', '                    ', '@Override', '\n', '                    ', 'public', ' ', 'void', ' ', 'onBitmapFailed', '(', 'Exception', ' ', 'e', ',', ' ', 'Drawable', ' ', 'd', ')', ' ', '{', '\n', '                        ', '\n', '                    ', '}', '\n', '                    ', '@Override', '\n', '                    ', 'public', ' ', 'void', ' ', 'onPrepareLoad', '(', 'Drawable', ' ', 'd', ')', '{', '\n', '                        ', '\n', '                    ', '}', '\n', '                ', '}', ';', '\n', '                ', 'Picasso', '.', 'get', '(', ')', '.', 'load', '(', '""', 'https://i.imgur.com/DvpvklR.png', '""', ')', '.', 'into', '(', 'target', ')', ';', '\n', '            ', '}', '\n']"
+master,1414a04ce74974ce275d6cd02621d46a29c2e5a5,MainActivity.java,onBitmapLoaded,"                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                        // Bitmap is loaded, use image here
+                        demo_img.setImageBitmap(bitmap);
+                    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/1414a04ce74974ce275d6cd02621d46a29c2e5a5,"                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                        
+                        demo_img.setImageBitmap(bitmap);
+                    }
+","['                    ', 'public', ' ', 'void', ' ', 'onBitmapLoaded', '(', 'Bitmap', ' ', 'bitmap', ',', ' ', 'Picasso', '.', 'LoadedFrom', ' ', 'from', ')', ' ', '{', '\n', '                        ', '\n', '                        ', 'demo_img', '.', 'setImageBitmap', '(', 'bitmap', ')', ';', '\n', '                    ', '}', '\n']"
+master,1414a04ce74974ce275d6cd02621d46a29c2e5a5,FadingImageView.java,init,"    private void init() {
+        Paint paint;
+        // Enable horizontal fading
+        this.setHorizontalFadingEdgeEnabled(true);
+        this.setVerticalFadingEdgeEnabled(true);
+        // Apply default fading length
+        this.setEdgeLength(78);
+        // Apply default side
+        this.setFadeRight(true);
+        this.setFadeLeft(true);
+        this.setFadeBottom(true);
+        this.setFadeTop(true);
+
+        //code to round the fadded view
+        paint = new Paint();
+        paint.setColor(Color.WHITE);
+        paint.setAntiAlias(true);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+
+        paint2 = new Paint();
+        paint2.setXfermode(null);
+    }",https://www.github.com/virtualvivek/blurshadowimageview/commit/1414a04ce74974ce275d6cd02621d46a29c2e5a5,"    private void init() {
+        Paint paint;
+        
+        this.setHorizontalFadingEdgeEnabled(true);
+        this.setVerticalFadingEdgeEnabled(true);
+        
+        this.setEdgeLength(78);
+        
+        this.setFadeRight(true);
+        this.setFadeLeft(true);
+        this.setFadeBottom(true);
+        this.setFadeTop(true);
+
+        
+        paint = new Paint();
+        paint.setColor(Color.WHITE);
+        paint.setAntiAlias(true);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+
+        paint2 = new Paint();
+        paint2.setXfermode(null);
+    }
+","['    ', 'private', ' ', 'void', ' ', 'init', '(', ')', ' ', '{', '\n', '        ', 'Paint', ' ', 'paint', ';', '\n', '        ', '\n', '        ', 'this', '.', 'setHorizontalFadingEdgeEnabled', '(', 'true', ')', ';', '\n', '        ', 'this', '.', 'setVerticalFadingEdgeEnabled', '(', 'true', ')', ';', '\n', '        ', '\n', '        ', 'this', '.', 'setEdgeLength', '(', '78', ')', ';', '\n', '        ', '\n', '        ', 'this', '.', 'setFadeRight', '(', 'true', ')', ';', '\n', '        ', 'this', '.', 'setFadeLeft', '(', 'true', ')', ';', '\n', '        ', 'this', '.', 'setFadeBottom', '(', 'true', ')', ';', '\n', '        ', 'this', '.', 'setFadeTop', '(', 'true', ')', ';', '\n', '\n', '        ', '\n', '        ', 'paint', ' ', '=', ' ', 'new', ' ', 'Paint', '(', ')', ';', '\n', '        ', 'paint', '.', 'setColor', '(', 'Color', '.', 'WHITE', ')', ';', '\n', '        ', 'paint', '.', 'setAntiAlias', '(', 'true', ')', ';', '\n', '        ', 'paint', '.', 'setXfermode', '(', 'new', ' ', 'PorterDuffXfermode', '(', 'PorterDuff', '.', 'Mode', '.', 'DST_OUT', ')', ')', ';', '\n', '\n', '        ', 'paint2', ' ', '=', ' ', 'new', ' ', 'Paint', '(', ')', ';', '\n', '        ', 'paint2', '.', 'setXfermode', '(', 'null', ')', ';', '\n', '    ', '}', '\n']"
+master,3b3fbd0a582abc9456c0b6ae62187a0fd8902799,MainActivity.java,onCreate,"    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        getSupportActionBar().hide();
+
+        Button buttonLink = findViewById(R.id.buttonLink);
+        final BlurShadowImageView demo_img = findViewById(R.id.demo_img);
+        Button load_image_button = findViewById(R.id.buttonLoadImg);
+
+
+        demo_img.setImageResource(R.drawable.ironman_80);
+
+        load_image_button.setOnClickListener((View v)-> {
+                Target target = new Target() {
+                    @Override
+                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                        // Bitmap is loaded, use image here
+                        demo_img.setImageBitmap(bitmap);
+                    }
+                    @Override
+                    public void onBitmapFailed(Exception e, Drawable d) {
+                        // Fires if bitmap couldn't be loaded.
+                    }
+                    @Override
+                    public void onPrepareLoad(Drawable d){
+                        // Fires bitmap on prepare.
+                    }
+                };
+                Picasso.get().load(""https://i.imgur.com/DvpvklR.png"").into(target);
+        });
+
+
+        buttonLink.setOnClickListener((View v)-> {
+                Uri uri = Uri.parse(""https://www.github.com/virtualvivek/BlurShadowImageView"");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+        });
+
+
+
+        TextView link_text = findViewById(R.id.link_text);
+        link_text.setOnClickListener((View v)-> {
+                Uri uri = Uri.parse(""https://www.github.com/virtualvivek/BlurShadowImageView"");",https://www.github.com/virtualvivek/blurshadowimageview/commit/3b3fbd0a582abc9456c0b6ae62187a0fd8902799,"    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        getSupportActionBar().hide();
+
+        Button buttonLink = findViewById(R.id.buttonLink);
+        final BlurShadowImageView demo_img = findViewById(R.id.demo_img);
+        Button load_image_button = findViewById(R.id.buttonLoadImg);
+
+
+        demo_img.setImageResource(R.drawable.ironman_80);
+
+        load_image_button.setOnClickListener((View v)-> {
+                Target target = new Target() {
+                    @Override
+                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                        
+                        demo_img.setImageBitmap(bitmap);
+                    }
+                    @Override
+                    public void onBitmapFailed(Exception e, Drawable d) {
+                        
+                    }
+                    @Override
+                    public void onPrepareLoad(Drawable d){
+                        
+                    }
+                };
+                Picasso.get().load(""https://i.imgur.com/DvpvklR.png"").into(target);
+        });
+
+
+        buttonLink.setOnClickListener((View v)-> {
+                Uri uri = Uri.parse(""https://www.github.com/virtualvivek/BlurShadowImageView"");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+        });
+
+
+
+        TextView link_text = findViewById(R.id.link_text);
+        link_text.setOnClickListener((View v)-> {
+                Uri uri = Uri.parse(""https://www.github.com/virtualvivek/BlurShadowImageView"");
+","['    ', 'protected', ' ', 'void', ' ', 'onCreate', '(', 'Bundle', ' ', 'savedInstanceState', ')', ' ', '{', '\n', '        ', 'super', '.', 'onCreate', '(', 'savedInstanceState', ')', ';', '\n', '        ', 'setContentView', '(', 'R', '.', 'layout', '.', 'activity_main', ')', ';', '\n', '\n', '        ', 'getSupportActionBar', '(', ')', '.', 'hide', '(', ')', ';', '\n', '\n', '        ', 'Button', ' ', 'buttonLink', ' ', '=', ' ', 'findViewById', '(', 'R', '.', 'id', '.', 'buttonLink', ')', ';', '\n', '        ', 'final', ' ', 'BlurShadowImageView', ' ', 'demo_img', ' ', '=', ' ', 'findViewById', '(', 'R', '.', 'id', '.', 'demo_img', ')', ';', '\n', '        ', 'Button', ' ', 'load_image_button', ' ', '=', ' ', 'findViewById', '(', 'R', '.', 'id', '.', 'buttonLoadImg', ')', ';', '\n', '\n', '\n', '        ', 'demo_img', '.', 'setImageResource', '(', 'R', '.', 'drawable', '.', 'ironman_80', ')', ';', '\n', '\n', '        ', 'load_image_button', '.', 'setOnClickListener', '(', '(', 'View', ' ', 'v', ')', '-', '>', ' ', '{', '\n', '                ', 'Target', ' ', 'target', ' ', '=', ' ', 'new', ' ', 'Target', '(', ')', ' ', '{', '\n', '                    ', '@Override', '\n', '                    ', 'public', ' ', 'void', ' ', 'onBitmapLoaded', '(', 'Bitmap', ' ', 'bitmap', ',', ' ', 'Picasso', '.', 'LoadedFrom', ' ', 'from', ')', ' ', '{', '\n', '                        ', '\n', '                        ', 'demo_img', '.', 'setImageBitmap', '(', 'bitmap', ')', ';', '\n', '                    ', '}', '\n', '                    ', '@Override', '\n', '                    ', 'public', ' ', 'void', ' ', 'onBitmapFailed', '(', 'Exception', ' ', 'e', ',', ' ', 'Drawable', ' ', 'd', ')', ' ', '{', '\n', '                        ', '\n', '                    ', '}', '\n', '                    ', '@Override', '\n', '                    ', 'public', ' ', 'void', ' ', 'onPrepareLoad', '(', 'Drawable', ' ', 'd', ')', '{', '\n', '                        ', '\n', '                    ', '}', '\n', '                ', '}', ';', '\n', '                ', 'Picasso', '.', 'get', '(', ')', '.', 'load', '(', '""', 'https://i.imgur.com/DvpvklR.png', '""', ')', '.', 'into', '(', 'target', ')', ';', '\n', '        ', '}', ')', ';', '\n', '\n', '\n', '        ', 'buttonLink', '.', 'setOnClickListener', '(', '(', 'View', ' ', 'v', ')', '-', '>', ' ', '{', '\n', '                ', 'Uri', ' ', 'uri', ' ', '=', ' ', 'Uri', '.', 'parse', '(', '""', 'https://www.github.com/virtualvivek/BlurShadowImageView', '""', ')', ';', '\n', '                ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'Intent', '.', 'ACTION_VIEW', ',', ' ', 'uri', ')', ';', '\n', '                ', 'startActivity', '(', 'intent', ')', ';', '\n', '        ', '}', ')', ';', '\n', '\n', '\n', '\n', '        ', 'TextView', ' ', 'link_text', ' ', '=', ' ', 'findViewById', '(', 'R', '.', 'id', '.', 'link_text', ')', ';', '\n', '        ', 'link_text', '.', 'setOnClickListener', '(', '(', 'View', ' ', 'v', ')', '-', '>', ' ', '{', '\n', '                ', 'Uri', ' ', 'uri', ' ', '=', ' ', 'Uri', '.', 'parse', '(', '""', 'https://www.github.com/virtualvivek/BlurShadowImageView', '""', ')', ';', '\n']"
+master,3b3fbd0a582abc9456c0b6ae62187a0fd8902799,MainActivity.java,onBitmapFailed,"                    public void onBitmapFailed(Exception e, Drawable d) {
+                        // Fires if bitmap couldn't be loaded.
+                    }
+                    @Override
+                    public void onPrepareLoad(Drawable d){
+                        // Fires bitmap on prepare.
+                    }
+                };
+                Picasso.get().load(""https://i.imgur.com/DvpvklR.png"").into(target);
+        });
+
+
+        buttonLink.setOnClickListener((View v)-> {
+                Uri uri = Uri.parse(""https://www.github.com/virtualvivek/BlurShadowImageView"");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+        });
+
+
+
+        TextView link_text = findViewById(R.id.link_text);
+        link_text.setOnClickListener((View v)-> {
+                Uri uri = Uri.parse(""https://www.github.com/virtualvivek/BlurShadowImageView"");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+        });
+
+    }
+}",https://www.github.com/virtualvivek/blurshadowimageview/commit/3b3fbd0a582abc9456c0b6ae62187a0fd8902799,"                    public void onBitmapFailed(Exception e, Drawable d) {
+                        
+                    }
+                    @Override
+                    public void onPrepareLoad(Drawable d){
+                        
+                    }
+                };
+                Picasso.get().load(""https://i.imgur.com/DvpvklR.png"").into(target);
+        });
+
+
+        buttonLink.setOnClickListener((View v)-> {
+                Uri uri = Uri.parse(""https://www.github.com/virtualvivek/BlurShadowImageView"");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+        });
+
+
+
+        TextView link_text = findViewById(R.id.link_text);
+        link_text.setOnClickListener((View v)-> {
+                Uri uri = Uri.parse(""https://www.github.com/virtualvivek/BlurShadowImageView"");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+        });
+
+    }
+}
+","['                    ', 'public', ' ', 'void', ' ', 'onBitmapFailed', '(', 'Exception', ' ', 'e', ',', ' ', 'Drawable', ' ', 'd', ')', ' ', '{', '\n', '                        ', '\n', '                    ', '}', '\n', '                    ', '@Override', '\n', '                    ', 'public', ' ', 'void', ' ', 'onPrepareLoad', '(', 'Drawable', ' ', 'd', ')', '{', '\n', '                        ', '\n', '                    ', '}', '\n', '                ', '}', ';', '\n', '                ', 'Picasso', '.', 'get', '(', ')', '.', 'load', '(', '""', 'https://i.imgur.com/DvpvklR.png', '""', ')', '.', 'into', '(', 'target', ')', ';', '\n', '        ', '}', ')', ';', '\n', '\n', '\n', '        ', 'buttonLink', '.', 'setOnClickListener', '(', '(', 'View', ' ', 'v', ')', '-', '>', ' ', '{', '\n', '                ', 'Uri', ' ', 'uri', ' ', '=', ' ', 'Uri', '.', 'parse', '(', '""', 'https://www.github.com/virtualvivek/BlurShadowImageView', '""', ')', ';', '\n', '                ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'Intent', '.', 'ACTION_VIEW', ',', ' ', 'uri', ')', ';', '\n', '                ', 'startActivity', '(', 'intent', ')', ';', '\n', '        ', '}', ')', ';', '\n', '\n', '\n', '\n', '        ', 'TextView', ' ', 'link_text', ' ', '=', ' ', 'findViewById', '(', 'R', '.', 'id', '.', 'link_text', ')', ';', '\n', '        ', 'link_text', '.', 'setOnClickListener', '(', '(', 'View', ' ', 'v', ')', '-', '>', ' ', '{', '\n', '                ', 'Uri', ' ', 'uri', ' ', '=', ' ', 'Uri', '.', 'parse', '(', '""', 'https://www.github.com/virtualvivek/BlurShadowImageView', '""', ')', ';', '\n', '                ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'Intent', '.', 'ACTION_VIEW', ',', ' ', 'uri', ')', ';', '\n', '                ', 'startActivity', '(', 'intent', ')', ';', '\n', '        ', '}', ')', ';', '\n', '\n', '    ', '}', '\n', '}', '\n']"
+master,3b3fbd0a582abc9456c0b6ae62187a0fd8902799,MainActivity.java,onPrepareLoad,"                    public void onPrepareLoad(Drawable d){
+                        // Fires bitmap on prepare.
+                    }
+                };
+                Picasso.get().load(""https://i.imgur.com/DvpvklR.png"").into(target);
+        });
+
+
+        buttonLink.setOnClickListener((View v)-> {
+                Uri uri = Uri.parse(""https://www.github.com/virtualvivek/BlurShadowImageView"");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+        });
+
+
+
+        TextView link_text = findViewById(R.id.link_text);
+        link_text.setOnClickListener((View v)-> {
+                Uri uri = Uri.parse(""https://www.github.com/virtualvivek/BlurShadowImageView"");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+        });
+
+    }
+}",https://www.github.com/virtualvivek/blurshadowimageview/commit/3b3fbd0a582abc9456c0b6ae62187a0fd8902799,"                    public void onPrepareLoad(Drawable d){
+                        
+                    }
+                };
+                Picasso.get().load(""https://i.imgur.com/DvpvklR.png"").into(target);
+        });
+
+
+        buttonLink.setOnClickListener((View v)-> {
+                Uri uri = Uri.parse(""https://www.github.com/virtualvivek/BlurShadowImageView"");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+        });
+
+
+
+        TextView link_text = findViewById(R.id.link_text);
+        link_text.setOnClickListener((View v)-> {
+                Uri uri = Uri.parse(""https://www.github.com/virtualvivek/BlurShadowImageView"");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+        });
+
+    }
+}
+","['                    ', 'public', ' ', 'void', ' ', 'onPrepareLoad', '(', 'Drawable', ' ', 'd', ')', '{', '\n', '                        ', '\n', '                    ', '}', '\n', '                ', '}', ';', '\n', '                ', 'Picasso', '.', 'get', '(', ')', '.', 'load', '(', '""', 'https://i.imgur.com/DvpvklR.png', '""', ')', '.', 'into', '(', 'target', ')', ';', '\n', '        ', '}', ')', ';', '\n', '\n', '\n', '        ', 'buttonLink', '.', 'setOnClickListener', '(', '(', 'View', ' ', 'v', ')', '-', '>', ' ', '{', '\n', '                ', 'Uri', ' ', 'uri', ' ', '=', ' ', 'Uri', '.', 'parse', '(', '""', 'https://www.github.com/virtualvivek/BlurShadowImageView', '""', ')', ';', '\n', '                ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'Intent', '.', 'ACTION_VIEW', ',', ' ', 'uri', ')', ';', '\n', '                ', 'startActivity', '(', 'intent', ')', ';', '\n', '        ', '}', ')', ';', '\n', '\n', '\n', '\n', '        ', 'TextView', ' ', 'link_text', ' ', '=', ' ', 'findViewById', '(', 'R', '.', 'id', '.', 'link_text', ')', ';', '\n', '        ', 'link_text', '.', 'setOnClickListener', '(', '(', 'View', ' ', 'v', ')', '-', '>', ' ', '{', '\n', '                ', 'Uri', ' ', 'uri', ' ', '=', ' ', 'Uri', '.', 'parse', '(', '""', 'https://www.github.com/virtualvivek/BlurShadowImageView', '""', ')', ';', '\n', '                ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'Intent', '.', 'ACTION_VIEW', ',', ' ', 'uri', ')', ';', '\n', '                ', 'startActivity', '(', 'intent', ')', ';', '\n', '        ', '}', ')', ';', '\n', '\n', '    ', '}', '\n', '}', '\n']"
