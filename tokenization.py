@@ -14,10 +14,13 @@ def add_tokens_to_csv_files(directory):
     for filename in os.listdir(directory):
         if filename.endswith(".csv"):
             filepath = os.path.join(directory, filename)
-            df = pd.read_csv(filepath)
-            if "Method Code No Comments" in df.columns:
-                df["Tokens"] = df["Method Code No Comments"].apply(tokenize_code)                    
-            df.to_csv(filepath, index=False)
+            try:
+                df = pd.read_csv(filepath)
+                if "Method Code No Comments" in df.columns:
+                    df["Tokens"] = df["Method Code No Comments"].apply(tokenize_code)                    
+                df.to_csv(filepath, index=False)
+            except Exception as e:
+                print(f"Error processing file {filepath}: {e}")
 
 
 # Example usage
