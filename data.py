@@ -6,7 +6,7 @@ import javalang
 from javalang.parse import parse
 from javalang.tree import MethodDeclaration 
 
-df_res = pd.read_csv('ghs-repos.csv')
+df_res = pd.read_csv('results.csv')
 
 repoList = []
 for idx, row in df_res.iterrows():
@@ -62,7 +62,8 @@ def extract_methods_to_csv_from_master(repo_path, output_csv):
         csv_writer = csv.writer(csvfile)
         csv_writer.writerow(['Commit Hash', 'File Name', 'Method Name', 'Method Code', 'Commit Link'])
 
-        for commit in Repository(repo_path, only_in_branch='master').traverse_commits():
+        branch_name = row['defaultBranch']
+        for commit in Repository(repo_path, only_in_branch=branch_name).traverse_commits():
             print(f"Processing commit: {commit.hash}")
 
             for modified_file in commit.modified_files:
@@ -88,7 +89,7 @@ def extract_methods_to_csv(repo_path, output_csv):
         csv_writer = csv.writer(csvfile)
         csv_writer.writerow(["Branch Name", "Commit Hash", "File Name", "Method Name", "Method Code", "Commit Link"])
 
-        branch_name = "master"
+        branch_name = row['defaultBranch']
         for commit in Repository(repo_path, only_in_branch=branch_name).traverse_commits():
             print(f"Processing commit: {commit.hash}")
 
@@ -102,35 +103,28 @@ def extract_methods_to_csv(repo_path, output_csv):
                     
                     print(f"Extracted methods from {modified_file.filename} in commit {commit.hash}")
 
-
-for repo in repoList[0:1]:
+#problems in row 9 spring-cloud/spring-cloud-config
+for repo in repoList[0:45]:
     fileNameToSave = ''.join(repo.split('github.com')[1:])
     fileNameToSave = fileNameToSave.replace('/', '_')
 
     output_csv_file = os.path.join("data", "extracted_methods_{}.csv".format(fileNameToSave))
 
-    extract_methods_to_csv_from_master(repo, output_csv_file)
+    extract_methods_to_csv(repo, output_csv_file)
 
     print(repo)
 
 #N-grams pseudocode (creation of probability model)
 
-#tokenize the corpus (above)
+#tokenize the corpus
 
 #creating the n-gram model (pseudocode for just n)
 
 #generate_ngram(corpus, N):
-#	#corpus is an array of all the consecutive tokens in the corpus
-#	result = [] #2D array
-#   ngram = []
-#   idx = 0
-#	for token in corpus:
-#      if idx % N != 0:
-#         ngram.append(token)
-#      else:
-#         result.append(ngram)
-#         ngram.clear()
-#         ngram.append(token)
+#	tokens = array of tokens in corpus
+#	result = []
+#	for every consecutive n tokens:
+#		add the n consecutive tokens to result
 #	return result
 
 #ngram = generate_ngram(corpus, N)
