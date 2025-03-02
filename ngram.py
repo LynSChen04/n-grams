@@ -5,12 +5,17 @@ from nltk import ngrams
 
 
 train_dir = os.fsencode("training data/")
+ngram = pd.Series
 
-for file in os.listdir(train_dir):
-    file_name = os.fsdecode(file)
-    if file_name.endswith(".csv"):
-        file_df = pd.read_csv(file_name)
-        print(file_df.head())
+def build_ngram(n):
+    for file in os.listdir(train_dir):
+        file_name = os.fsdecode(file)
+        if file_name.endswith(".csv"):
+            file_df = pd.read_csv("./training data/"+file_name)
+            ngram.add(pd.Series(ngrams(file_df, n)).valueCounts())
+
+    print(ngram)
+
 
 #ngram = pd.Series(ngrams(corpus, N)).valueCounts()
 
