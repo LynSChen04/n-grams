@@ -12,8 +12,6 @@ from pygments.lexers.jvm import JavaLexer
 from pygments.lexers import get_lexer_by_name
 from pygments.token import Token
 
-from nltk import ngrams
-
 df_res = pd.read_csv('results.csv')
 
 repoList = []
@@ -111,7 +109,7 @@ def extract_methods_to_csv(repo_path, output_csv):
                     
                     print(f"Extracted methods from {modified_file.filename} in commit {commit.hash}")
 
-for repo in repoList[0:40]:
+for repo in repoList[41:]:
     fileNameToSave = ''.join(repo.split('github.com')[1:])
     fileNameToSave = fileNameToSave.replace('/', '_')
 
@@ -248,9 +246,18 @@ directory_path = 'data/'
 add_tokens_to_csv_files(directory_path)
 #N-grams pseudocode (creation of probability model)
 
+#tokenize the corpus
+
 #creating the n-gram model (pseudocode for just n)
 
-#ngram = pd.Series(ngrams(corpus, N)).valueCounts()
+#generate_ngram(corpus, N):
+#	tokens = array of tokens in corpus
+#	result = []
+#	for every consecutive n tokens:
+#		add the n consecutive tokens to result
+#	return result
+
+#ngram = generate_ngram(corpus, N)
 
 #build a n-gram model using the ngram - may use lambda method?
 
