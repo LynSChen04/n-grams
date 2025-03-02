@@ -41,34 +41,6 @@ import math
 
 import pandas as pd
 
-def next_word(n_gram_series, n_prior_words):
-    """
-    Predicts the next word given n preceding words from a Pandas Series.
-
-    Args:
-        n_gram_series (pd.Series): A Series where:
-            - Index = n-gram tuple (words).
-            - Values = Probability or frequency of the next word.
-        n_prior_words (list): The preceding words (n-1 words).
-
-    Returns:
-        str or None: The predicted next word based on the probabilities.
-    """
-    key = tuple(n_prior_words)  # Convert list to tuple to match the Series index
-    
-    # Look up the probability of the next word in the Series
-    candidates = n_gram_series[n_gram_series.index.str.startswith(str(key))]
-
-    if not candidates.empty:
-        # Select the next word with the highest probability/frequency
-        next_word = candidates.idxmax()  # Get the index with the max value
-        return next_word[-1]  # Return the actual next word
-    else:
-        return None
-
-
-
-
 def perplexity(n_gram_series):
     """
     Calculate the perplexity of the n-gram model using a Pandas Series of probabilities .
