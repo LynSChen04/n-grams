@@ -156,31 +156,51 @@ for repo in repoList[0:1]:
 #Evaluation method: 
 
 def next_word(data, n_prior_words):
-#search df for most predicted next word (data frame) using n_prior_words. 
-#if next predicted token is nothing, stop function
-#else rerun next_word after removing first word and append predicted next word
-#returns fully completed method
+    """
+    Predicts the next word given n preceding words.
 
-#predicts the next word given n preceding words. Outputs #expected next word
+    Args:
+        data (dict): The n-gram model data.
+        n_prior_words (list): The preceding words.
 
+    Returns:
+        str: The predicted next word.
+    """
+    key = tuple(n_prior_words)
+    if key in data:
+        return max(data[key], key=data[key].get)
+    else:
+        return None
 
-#Def accuracy(test_data (dictionary/list?), probabilities (dictionary))
-#for each method in the training data
-#   call next_word to finish the method
-#   put finished sentence in dataframe/list
-#   compare finished method to test_data's method
-#   store accuracy of method in next column of df
-#Add up all the accuracies in list, divide by len of list
-# return accuracy
+def accuracy(test_data, probabilities):
+    """
+    Calculate the accuracy of the n-gram model.
 
-#using assigned training data (dictionary), test the accuracy of the n-gram #model, returns accuracy as value out of 100
+    Args:
+        test_data (list): The test data.
+        probabilities (dict): The n-gram model probabilities.
 
+    Returns:
+        float: The accuracy of the model.
+    """
+    correct_predictions = 0
+    total_predictions = 0
 
-#main code 
-#intake a corpus from a txt file on the command line
-#preprocess the method and make it ready for training
-#for n = 1-10, train each possible n-gram model
-#keep only the most accurate model, 
+    for method in test_data:
+        words = method.split()
+        for i in range(len(words) - 1):
+            n_prior_words = words[:i+1]
+            predicted_word = next_word(probabilities, n_prior_words)
+            if predicted_word == words[i+1]:
+                correct_predictions += 1
+            total_predictions += 1
 
+    return (correct_predictions / total_predictions) * 100
 
-#use general code to produce accuracy of 1-k n-grams, and pick #the one with the best accuracy. 
+# main code 
+# intake a corpus from a txt file on the command line
+# preprocess the method and make it ready for training
+# for n = 1-10, train each possible n-gram model
+# keep only the most accurate model, 
+
+# use general code to produce accuracy of 1-k n-grams, and pick the one with the best accuracy.
