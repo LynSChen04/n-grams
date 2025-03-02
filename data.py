@@ -11,6 +11,9 @@ import re
 from pygments.lexers.jvm import JavaLexer
 from pygments.lexers import get_lexer_by_name
 from pygments.token import Token
+from collections import Counter
+from nltk.translate.bleu_score import sentence_bleu
+from nltk import ngrams
 
 df_res = pd.read_csv('results.csv')
 
@@ -109,7 +112,7 @@ def extract_methods_to_csv(repo_path, output_csv):
                     
                     print(f"Extracted methods from {modified_file.filename} in commit {commit.hash}")
 
-for repo in repoList[41:]:
+for repo in repoList[0:40]:
     fileNameToSave = ''.join(repo.split('github.com')[1:])
     fileNameToSave = fileNameToSave.replace('/', '_')
 
@@ -246,18 +249,9 @@ directory_path = 'data/'
 add_tokens_to_csv_files(directory_path)
 #N-grams pseudocode (creation of probability model)
 
-#tokenize the corpus
-
 #creating the n-gram model (pseudocode for just n)
 
-#generate_ngram(corpus, N):
-#	tokens = array of tokens in corpus
-#	result = []
-#	for every consecutive n tokens:
-#		add the n consecutive tokens to result
-#	return result
-
-#ngram = generate_ngram(corpus, N)
+#ngram = pd.Series(ngrams(corpus, N)).valueCounts()
 
 #build a n-gram model using the ngram - may use lambda method?
 
@@ -286,30 +280,33 @@ add_tokens_to_csv_files(directory_path)
 
 #Evaluation method: 
 
-#Def next_word(Dictionary)
-
-#take n last tokens from given data set
-#search dictionary for most predicted next word. 
-#if next predicted token is nothing, stop function
-#else rerun next_word
-#returns fully completed line of code
+def finish_method(data, n_prior_words):
+    method = list(n_prior_words)
+    while method[-1] != "":
+        next_word = predict_token(data, method)
+        method.append(next_word)
+    return method #returns as a list
 
 #predicts the next word given n preceding words. Outputs #expected next word
 
-#we need a token for the end of a line...
-
-
-#Def accuracy(training data (dictionary/list?), probabilities (dictionary))
-#(assuming training data is ready to use) for each line in the training data
-#   call next_word to finish the sentence
-#   put finished sentence in var
-#   compare finished sentence to training data's sentence
-#   store accuracy of sentence in list
-#Add up all the accuracies in list, divide by len of list
-# return accuracy
+def accuracy(data, n_val):
+    accuracy = []
+    for i in data["evaluation methods"]: #assuming i is a list of tokens for that method
+        predicted_method = finish_method(data, i[:n_val])
+        actual_method = i
+        blue_score = sentence_bleu([actual_method], predicted_method)
+        accuracy.append(blue_score)
+        return sum(accuracy)/len
 
 #using assigned training data (dictionary), test the accuracy of the n-gram #model, returns accuracy as value out of 100
 
+
+#main code 
+
+#intake a corpus from a txt file on the command line
+#preprocess the method and make it ready for training
+#for n = 1-10, train each possible n-gram model
+#keep only the most accurate model, 
 
 
 #use general code to produce accuracy of 1-k n-grams, and pick #the one with the best accuracy. 
