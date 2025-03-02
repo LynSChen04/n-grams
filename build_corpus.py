@@ -161,6 +161,7 @@ lexer = JavaLexer()
 
 def tokenize_code(code):
     tokens = [t[1] for t in lexer.get_tokens(code)]
+    tokens.append("<END>")
     return tokens
 
 def add_tokens_to_csv_files(directory):
