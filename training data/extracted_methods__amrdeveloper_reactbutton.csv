@@ -10,7 +10,7 @@ master,430195a4c39fb8e8f1ad7ce63a519774962a8d35,ExampleInstrumentedTest.java,use
 
         assertEquals(""com.amrdeveloper.reactbuttonlibrary"", appContext.getPackageName());
     }
-","['    ', 'public', ' ', 'void', ' ', 'useAppContext', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', '\n', '        ', 'Context', ' ', 'appContext', ' ', '=', ' ', 'InstrumentationRegistry', '.', 'getTargetContext', '(', ')', ';', '\n', '\n', '        ', 'assertEquals', '(', '""', 'com.amrdeveloper.reactbuttonlibrary', '""', ',', ' ', 'appContext', '.', 'getPackageName', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'useAppContext', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', '\n', '        ', 'Context', ' ', 'appContext', ' ', '=', ' ', 'InstrumentationRegistry', '.', 'getTargetContext', '(', ')', ';', '\n', '\n', '        ', 'assertEquals', '(', '""', 'com.amrdeveloper.reactbuttonlibrary', '""', ',', ' ', 'appContext', '.', 'getPackageName', '(', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,430195a4c39fb8e8f1ad7ce63a519774962a8d35,MainActivity.java,onCreate,"    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -18,7 +18,7 @@ master,430195a4c39fb8e8f1ad7ce63a519774962a8d35,MainActivity.java,onCreate,"    
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-","['    ', 'protected', ' ', 'void', ' ', 'onCreate', '(', 'Bundle', ' ', 'savedInstanceState', ')', ' ', '{', '\n', '        ', 'super', '.', 'onCreate', '(', 'savedInstanceState', ')', ';', '\n', '        ', 'setContentView', '(', 'R', '.', 'layout', '.', 'activity_main', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'protected', ' ', 'void', ' ', 'onCreate', '(', 'Bundle', ' ', 'savedInstanceState', ')', ' ', '{', '\n', '        ', 'super', '.', 'onCreate', '(', 'savedInstanceState', ')', ';', '\n', '        ', 'setContentView', '(', 'R', '.', 'layout', '.', 'activity_main', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,430195a4c39fb8e8f1ad7ce63a519774962a8d35,ExampleInstrumentedTest.java,useAppContext,"    public void useAppContext() throws Exception {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
@@ -30,7 +30,7 @@ master,430195a4c39fb8e8f1ad7ce63a519774962a8d35,ExampleInstrumentedTest.java,use
 
         assertEquals(""com.amrdeveloper.reactbutton.test"", appContext.getPackageName());
     }
-","['    ', 'public', ' ', 'void', ' ', 'useAppContext', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', '\n', '        ', 'Context', ' ', 'appContext', ' ', '=', ' ', 'InstrumentationRegistry', '.', 'getTargetContext', '(', ')', ';', '\n', '\n', '        ', 'assertEquals', '(', '""', 'com.amrdeveloper.reactbutton.test', '""', ',', ' ', 'appContext', '.', 'getPackageName', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'useAppContext', '(', ')', ' ', 'throws', ' ', 'Exception', ' ', '{', '\n', '        ', '\n', '        ', 'Context', ' ', 'appContext', ' ', '=', ' ', 'InstrumentationRegistry', '.', 'getTargetContext', '(', ')', ';', '\n', '\n', '        ', 'assertEquals', '(', '""', 'com.amrdeveloper.reactbutton.test', '""', ',', ' ', 'appContext', '.', 'getPackageName', '(', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,430195a4c39fb8e8f1ad7ce63a519774962a8d35,ReactButton.java,onClick,"    public void onClick(View view) {
         //Code When User Click On Button
         //If State is true , dislike The Button And Return To Default State
@@ -40,7 +40,7 @@ master,430195a4c39fb8e8f1ad7ce63a519774962a8d35,ReactButton.java,onClick,"    pu
         
         if(reactState){
             reactState = false;
-","['    ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '        ', '\n', '        ', '\n', '        ', 'if', '(', 'reactState', ')', '{', '\n', '            ', 'reactState', ' ', '=', ' ', 'false', ';', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '        ', '\n', '        ', '\n', '        ', 'if', '(', 'reactState', ')', '{', '\n', '            ', 'reactState', ' ', '=', ' ', 'false', ';', '\n', '<END>']"
 master,430195a4c39fb8e8f1ad7ce63a519774962a8d35,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactState = true;
                 emojiType = ReactConstance.LIKE_TEXT;
@@ -56,7 +56,7 @@ master,430195a4c39fb8e8f1ad7ce63a519774962a8d35,ReactButton.java,onClick,"      
                 reactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_like,0,0,0);
                 alertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '                ', 'emojiType', ' ', '=', ' ', 'ReactConstance', '.', 'LIKE_TEXT', ';', '\n', '                ', 'reactButton', '.', 'setText', '(', 'emojiType', ')', ';', '\n', '                ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'BLUE', ')', ')', ';', '\n', '                ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_like', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '                ', 'alertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '                ', 'emojiType', ' ', '=', ' ', 'ReactConstance', '.', 'LIKE_TEXT', ';', '\n', '                ', 'reactButton', '.', 'setText', '(', 'emojiType', ')', ';', '\n', '                ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'BLUE', ')', ')', ';', '\n', '                ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_like', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '                ', 'alertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,430195a4c39fb8e8f1ad7ce63a519774962a8d35,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactState = true;
                 emojiType = ReactConstance.SMILE_TEXT;
@@ -71,7 +71,7 @@ master,430195a4c39fb8e8f1ad7ce63a519774962a8d35,ReactButton.java,onClick,"      
                 reactButton.setTextColor(ReactConstance.getColor(ReactConstance.YELLOW_HAHA));
                 reactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_haha,0,0,0);
                 alertDialog.dismiss();
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '                ', 'emojiType', ' ', '=', ' ', 'ReactConstance', '.', 'SMILE_TEXT', ';', '\n', '                ', 'reactButton', '.', 'setText', '(', 'emojiType', ')', ';', '\n', '                ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '                ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_haha', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '                ', 'alertDialog', '.', 'dismiss', '(', ')', ';', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '                ', 'emojiType', ' ', '=', ' ', 'ReactConstance', '.', 'SMILE_TEXT', ';', '\n', '                ', 'reactButton', '.', 'setText', '(', 'emojiType', ')', ';', '\n', '                ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '                ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_haha', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '                ', 'alertDialog', '.', 'dismiss', '(', ')', ';', '\n', '<END>']"
 master,a44c0a05a164fd4421768d7713666f9e6b3b6091,ReactButton.java,onClickLikeAndDisLike,"    private void onClickLikeAndDisLike(){
         //Code When User Click On Button
         //If State is true , dislike The Button And Return To Default State
@@ -81,7 +81,7 @@ master,a44c0a05a164fd4421768d7713666f9e6b3b6091,ReactButton.java,onClickLikeAndD
         
         if(reactState){
             reactState = false;
-","['    ', 'private', ' ', 'void', ' ', 'onClickLikeAndDisLike', '(', ')', '{', '\n', '        ', '\n', '        ', '\n', '        ', 'if', '(', 'reactState', ')', '{', '\n', '            ', 'reactState', ' ', '=', ' ', 'false', ';', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'onClickLikeAndDisLike', '(', ')', '{', '\n', '        ', '\n', '        ', '\n', '        ', 'if', '(', 'reactState', ')', '{', '\n', '            ', 'reactState', ' ', '=', ' ', 'false', ';', '\n', '<END>']"
 master,a44c0a05a164fd4421768d7713666f9e6b3b6091,ReactButton.java,onClick,"            public void onClick(View view) {
                 //The Developer OnClick Code
                 currentListener.onClick(view);
@@ -93,7 +93,7 @@ master,a44c0a05a164fd4421768d7713666f9e6b3b6091,ReactButton.java,onClick,"      
                 
                 onClickLikeAndDisLike();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', '\n', '                ', 'currentListener', '.', 'onClick', '(', 'view', ')', ';', '\n', '                ', '\n', '                ', 'onClickLikeAndDisLike', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', '\n', '                ', 'currentListener', '.', 'onClick', '(', 'view', ')', ';', '\n', '                ', '\n', '                ', 'onClickLikeAndDisLike', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,a44c0a05a164fd4421768d7713666f9e6b3b6091,ReactButton.java,onLongClick,"            public boolean onLongClick(View view) {
                 //Developer Current Code
                 currentLongClick.onLongClick(view);
@@ -107,7 +107,7 @@ master,a44c0a05a164fd4421768d7713666f9e6b3b6091,ReactButton.java,onLongClick,"  
                 onLongClickDialog();
                 return true;
             }
-","['            ', 'public', ' ', 'boolean', ' ', 'onLongClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', '\n', '                ', 'currentLongClick', '.', 'onLongClick', '(', 'view', ')', ';', '\n', '                ', '\n', '                ', 'onLongClickDialog', '(', ')', ';', '\n', '                ', 'return', ' ', 'true', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'boolean', ' ', 'onLongClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', '\n', '                ', 'currentLongClick', '.', 'onLongClick', '(', 'view', ')', ';', '\n', '                ', '\n', '                ', 'onLongClickDialog', '(', ')', ';', '\n', '                ', 'return', ' ', 'true', ';', '\n', '            ', '}', '\n', '<END>']"
 master,3eaebc03428eef8a3d1c4c7a354d10f3494364e5,ReactButton.java,onClick,"            public void onClick(View view) {
                 //The Library OnClick
                 onClickLikeAndDisLike();
@@ -119,7 +119,7 @@ master,3eaebc03428eef8a3d1c4c7a354d10f3494364e5,ReactButton.java,onClick,"      
                 
                 currentListener.onClick(view);
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', '\n', '                ', 'onClickLikeAndDisLike', '(', ')', ';', '\n', '                ', '\n', '                ', 'currentListener', '.', 'onClick', '(', 'view', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', '\n', '                ', 'onClickLikeAndDisLike', '(', ')', ';', '\n', '                ', '\n', '                ', 'currentListener', '.', 'onClick', '(', 'view', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,3eaebc03428eef8a3d1c4c7a354d10f3494364e5,ReactButton.java,onLongClick,"            public boolean onLongClick(View view) {
                 //Library OnClick Code
                 onLongClickDialog();
@@ -133,7 +133,7 @@ master,3eaebc03428eef8a3d1c4c7a354d10f3494364e5,ReactButton.java,onLongClick,"  
                 currentLongClick.onLongClick(view);
                 return true;
             }
-","['            ', 'public', ' ', 'boolean', ' ', 'onLongClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', '\n', '                ', 'onLongClickDialog', '(', ')', ';', '\n', '                ', '\n', '                ', 'currentLongClick', '.', 'onLongClick', '(', 'view', ')', ';', '\n', '                ', 'return', ' ', 'true', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'boolean', ' ', 'onLongClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', '\n', '                ', 'onLongClickDialog', '(', ')', ';', '\n', '                ', '\n', '                ', 'currentLongClick', '.', 'onLongClick', '(', 'view', ')', ';', '\n', '                ', 'return', ' ', 'true', ';', '\n', '            ', '}', '\n', '<END>']"
 master,84a77b0b8a26953bec8e9e1cff36d407bad14985,ReactButton.java,onClick,"    public void onClick(View view) {
         //The Library OnClick
         onClickLikeAndDisLike();
@@ -145,7 +145,7 @@ master,84a77b0b8a26953bec8e9e1cff36d407bad14985,ReactButton.java,onClick,"    pu
         
         if(onClickListener != null){
             onClickListener.onClick(view);
-","['    ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '        ', '\n', '        ', 'onClickLikeAndDisLike', '(', ')', ';', '\n', '        ', '\n', '        ', 'if', '(', 'onClickListener', ' ', '!', '=', ' ', 'null', ')', '{', '\n', '            ', 'onClickListener', '.', 'onClick', '(', 'view', ')', ';', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '        ', '\n', '        ', 'onClickLikeAndDisLike', '(', ')', ';', '\n', '        ', '\n', '        ', 'if', '(', 'onClickListener', ' ', '!', '=', ' ', 'null', ')', '{', '\n', '            ', 'onClickListener', '.', 'onClick', '(', 'view', ')', ';', '\n', '<END>']"
 master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,onClickLikeAndDisLike,"    private void onClickLikeAndDisLike(){
         //Code When User Click On Button
         //If State is true , dislike The Button And Return To Default State
@@ -155,7 +155,7 @@ master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,onClickLikeAndD
         
         if(reactState){
             reactButtonDefaultState();
-","['    ', 'private', ' ', 'void', ' ', 'onClickLikeAndDisLike', '(', ')', '{', '\n', '        ', '\n', '        ', '\n', '        ', 'if', '(', 'reactState', ')', '{', '\n', '            ', 'reactButtonDefaultState', '(', ')', ';', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'onClickLikeAndDisLike', '(', ')', '{', '\n', '        ', '\n', '        ', '\n', '        ', 'if', '(', 'reactState', ')', '{', '\n', '            ', 'reactButtonDefaultState', '(', ')', ';', '\n', '<END>']"
 master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonLikeState();
                 alertDialog.dismiss();
@@ -163,7 +163,7 @@ master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,onClick,"      
                 reactButtonLikeState();
                 alertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonLikeState', '(', ')', ';', '\n', '                ', 'alertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonLikeState', '(', ')', ';', '\n', '                ', 'alertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonLoveState();
                 alertDialog.dismiss();
@@ -171,7 +171,7 @@ master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,onClick,"      
                 reactButtonLoveState();
                 alertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonLoveState', '(', ')', ';', '\n', '                ', 'alertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonLoveState', '(', ')', ';', '\n', '                ', 'alertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonWowState();
                 alertDialog.dismiss();
@@ -179,7 +179,7 @@ master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,onClick,"      
                 reactButtonWowState();
                 alertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonWowState', '(', ')', ';', '\n', '                ', 'alertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonWowState', '(', ')', ';', '\n', '                ', 'alertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonSadState();
                 alertDialog.dismiss();
@@ -187,7 +187,7 @@ master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,onClick,"      
                 reactButtonSadState();
                 alertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonSadState', '(', ')', ';', '\n', '                ', 'alertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonSadState', '(', ')', ';', '\n', '                ', 'alertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonAngryState();
                 alertDialog.dismiss();
@@ -195,7 +195,7 @@ master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,onClick,"      
                 reactButtonAngryState();
                 alertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonAngryState', '(', ')', ';', '\n', '                ', 'alertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonAngryState', '(', ')', ';', '\n', '                ', 'alertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,reactButtonDefaultState,"    private void reactButtonDefaultState(){
         reactState = false;
         emojiType = DEFAULT;
@@ -209,7 +209,7 @@ master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,reactButtonDefa
         reactButton.setTextColor(ReactConstance.getColor(ReactConstance.DEFAULT));
         reactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_default,0,0,0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultState', '(', ')', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'false', ';', '\n', '        ', 'emojiType', ' ', '=', ' ', 'DEFAULT', ';', '\n', '        ', 'reactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'DEFAULT', ')', ')', ';', '\n', '        ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_default', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultState', '(', ')', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'false', ';', '\n', '        ', 'emojiType', ' ', '=', ' ', 'DEFAULT', ';', '\n', '        ', 'reactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'DEFAULT', ')', ')', ';', '\n', '        ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_default', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,reactButtonLikeState,"    private void reactButtonLikeState(){
         reactState = true;
         emojiType = LIKE;
@@ -223,7 +223,7 @@ master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,reactButtonLike
         reactButton.setTextColor(ReactConstance.getColor(ReactConstance.BLUE));
         reactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_like,0,0,0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonLikeState', '(', ')', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'emojiType', ' ', '=', ' ', 'LIKE', ';', '\n', '        ', 'reactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'BLUE', ')', ')', ';', '\n', '        ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_like', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonLikeState', '(', ')', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'emojiType', ' ', '=', ' ', 'LIKE', ';', '\n', '        ', 'reactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'BLUE', ')', ')', ';', '\n', '        ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_like', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,reactButtonLoveState,"    private void reactButtonLoveState(){
         reactState = true;
         emojiType = LOVE;
@@ -237,7 +237,7 @@ master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,reactButtonLove
         reactButton.setTextColor(ReactConstance.getColor(ReactConstance.RED_LOVE));
         reactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_love,0,0,0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonLoveState', '(', ')', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'emojiType', ' ', '=', ' ', 'LOVE', ';', '\n', '        ', 'reactButton', '.', 'setText', '(', 'emojiType', ')', ';', '\n', '        ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_LOVE', ')', ')', ';', '\n', '        ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_love', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonLoveState', '(', ')', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'emojiType', ' ', '=', ' ', 'LOVE', ';', '\n', '        ', 'reactButton', '.', 'setText', '(', 'emojiType', ')', ';', '\n', '        ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_LOVE', ')', ')', ';', '\n', '        ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_love', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,reactButtonSmileState,"    private void reactButtonSmileState(){
         reactState = true;
         emojiType = SMILE;
@@ -251,7 +251,7 @@ master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,reactButtonSmil
         reactButton.setTextColor(ReactConstance.getColor(ReactConstance.YELLOW_HAHA));
         reactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_haha,0,0,0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonSmileState', '(', ')', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'emojiType', ' ', '=', ' ', 'SMILE', ';', '\n', '        ', 'reactButton', '.', 'setText', '(', 'emojiType', ')', ';', '\n', '        ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_haha', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonSmileState', '(', ')', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'emojiType', ' ', '=', ' ', 'SMILE', ';', '\n', '        ', 'reactButton', '.', 'setText', '(', 'emojiType', ')', ';', '\n', '        ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_haha', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,reactButtonWowState,"    private void reactButtonWowState(){
         reactState = true;
         emojiType = WOW;
@@ -265,7 +265,7 @@ master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,reactButtonWowS
         reactButton.setTextColor(ReactConstance.getColor(ReactConstance.YELLOW_WOW));
         reactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_wow,0,0,0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonWowState', '(', ')', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'emojiType', ' ', '=', ' ', 'WOW', ';', '\n', '        ', 'reactButton', '.', 'setText', '(', 'emojiType', ')', ';', '\n', '        ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_WOW', ')', ')', ';', '\n', '        ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_wow', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonWowState', '(', ')', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'emojiType', ' ', '=', ' ', 'WOW', ';', '\n', '        ', 'reactButton', '.', 'setText', '(', 'emojiType', ')', ';', '\n', '        ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_WOW', ')', ')', ';', '\n', '        ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_wow', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,reactButtonSadState,"    private void reactButtonSadState(){
         reactState = true;
         emojiType = SAD;
@@ -279,7 +279,7 @@ master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,reactButtonSadS
         reactButton.setTextColor(ReactConstance.getColor(ReactConstance.YELLOW_HAHA));
         reactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_sad,0,0,0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonSadState', '(', ')', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'emojiType', ' ', '=', ' ', 'SAD', ';', '\n', '        ', 'reactButton', '.', 'setText', '(', 'emojiType', ')', ';', '\n', '        ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_sad', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonSadState', '(', ')', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'emojiType', ' ', '=', ' ', 'SAD', ';', '\n', '        ', 'reactButton', '.', 'setText', '(', 'emojiType', ')', ';', '\n', '        ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_sad', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,reactButtonAngryState,"    private void reactButtonAngryState(){
         reactState = true;
         emojiType = ANGRY;
@@ -293,7 +293,7 @@ master,aff1b28d694b3145457b08a08d750fb0b8acc582,ReactButton.java,reactButtonAngr
         reactButton.setTextColor(ReactConstance.getColor(ReactConstance.RED_ANGRY));
         reactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_angry,0,0,0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonAngryState', '(', ')', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'emojiType', ' ', '=', ' ', 'ANGRY', ';', '\n', '        ', 'reactButton', '.', 'setText', '(', 'emojiType', ')', ';', '\n', '        ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_ANGRY', ')', ')', ';', '\n', '        ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_angry', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonAngryState', '(', ')', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'emojiType', ' ', '=', ' ', 'ANGRY', ';', '\n', '        ', 'reactButton', '.', 'setText', '(', 'emojiType', ')', ';', '\n', '        ', 'reactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_ANGRY', ')', ')', ';', '\n', '        ', 'reactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_angry', ',', '0', ',', '0', ',', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClickLikeAndDisLike,"    private void onClickLikeAndDisLike() {
         //Code When User Click On Button
         //If State is true , dislike The Button And Return To Default State
@@ -303,7 +303,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClickLikeAndD
         
         if (reactState) {
             reactButtonDefaultState();
-","['    ', 'private', ' ', 'void', ' ', 'onClickLikeAndDisLike', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'reactState', ')', ' ', '{', '\n', '            ', 'reactButtonDefaultState', '(', ')', ';', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'onClickLikeAndDisLike', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'reactState', ')', ' ', '{', '\n', '            ', 'reactButtonDefaultState', '(', ')', ';', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,initializingTextViews,"    private void initializingTextViews(View currentView) {
         likeFace = currentView.findViewById(R.id.likeFace);
         loveFace = currentView.findViewById(R.id.loveFace);
@@ -319,7 +319,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,initializingTex
         sadFace = currentView.findViewById(R.id.sadFace);
         angryFace = currentView.findViewById(R.id.angryFace);
     }
-","['    ', 'private', ' ', 'void', ' ', 'initializingTextViews', '(', 'View', ' ', 'currentView', ')', ' ', '{', '\n', '        ', 'likeFace', ' ', '=', ' ', 'currentView', '.', 'findViewById', '(', 'R', '.', 'id', '.', 'likeFace', ')', ';', '\n', '        ', 'loveFace', ' ', '=', ' ', 'currentView', '.', 'findViewById', '(', 'R', '.', 'id', '.', 'loveFace', ')', ';', '\n', '        ', 'smileFace', ' ', '=', ' ', 'currentView', '.', 'findViewById', '(', 'R', '.', 'id', '.', 'smileFace', ')', ';', '\n', '        ', 'wowFace', ' ', '=', ' ', 'currentView', '.', 'findViewById', '(', 'R', '.', 'id', '.', 'wowFace', ')', ';', '\n', '        ', 'sadFace', ' ', '=', ' ', 'currentView', '.', 'findViewById', '(', 'R', '.', 'id', '.', 'sadFace', ')', ';', '\n', '        ', 'angryFace', ' ', '=', ' ', 'currentView', '.', 'findViewById', '(', 'R', '.', 'id', '.', 'angryFace', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'initializingTextViews', '(', 'View', ' ', 'currentView', ')', ' ', '{', '\n', '        ', 'likeFace', ' ', '=', ' ', 'currentView', '.', 'findViewById', '(', 'R', '.', 'id', '.', 'likeFace', ')', ';', '\n', '        ', 'loveFace', ' ', '=', ' ', 'currentView', '.', 'findViewById', '(', 'R', '.', 'id', '.', 'loveFace', ')', ';', '\n', '        ', 'smileFace', ' ', '=', ' ', 'currentView', '.', 'findViewById', '(', 'R', '.', 'id', '.', 'smileFace', ')', ';', '\n', '        ', 'wowFace', ' ', '=', ' ', 'currentView', '.', 'findViewById', '(', 'R', '.', 'id', '.', 'wowFace', ')', ';', '\n', '        ', 'sadFace', ' ', '=', ' ', 'currentView', '.', 'findViewById', '(', 'R', '.', 'id', '.', 'sadFace', ')', ';', '\n', '        ', 'angryFace', ' ', '=', ' ', 'currentView', '.', 'findViewById', '(', 'R', '.', 'id', '.', 'angryFace', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonLikeState();
                 emojisAlertDialog.dismiss();
@@ -327,7 +327,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClick,"      
                 reactButtonLikeState();
                 emojisAlertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonLikeState', '(', ')', ';', '\n', '                ', 'emojisAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonLikeState', '(', ')', ';', '\n', '                ', 'emojisAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonLoveState();
                 emojisAlertDialog.dismiss();
@@ -335,7 +335,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClick,"      
                 reactButtonLoveState();
                 emojisAlertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonLoveState', '(', ')', ';', '\n', '                ', 'emojisAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonLoveState', '(', ')', ';', '\n', '                ', 'emojisAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonSmileState();
                 emojisAlertDialog.dismiss();
@@ -343,7 +343,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClick,"      
                 reactButtonSmileState();
                 emojisAlertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonSmileState', '(', ')', ';', '\n', '                ', 'emojisAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonSmileState', '(', ')', ';', '\n', '                ', 'emojisAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonWowState();
                 emojisAlertDialog.dismiss();
@@ -351,7 +351,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClick,"      
                 reactButtonWowState();
                 emojisAlertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonWowState', '(', ')', ';', '\n', '                ', 'emojisAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonWowState', '(', ')', ';', '\n', '                ', 'emojisAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonSadState();
                 emojisAlertDialog.dismiss();
@@ -359,7 +359,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClick,"      
                 reactButtonSadState();
                 emojisAlertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonSadState', '(', ')', ';', '\n', '                ', 'emojisAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonSadState', '(', ')', ';', '\n', '                ', 'emojisAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonAngryState();
                 emojisAlertDialog.dismiss();
@@ -367,7 +367,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClick,"      
                 reactButtonAngryState();
                 emojisAlertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonAngryState', '(', ')', ';', '\n', '                ', 'emojisAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonAngryState', '(', ')', ';', '\n', '                ', 'emojisAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonDefaultState,"    private void reactButtonDefaultState() {
         reactState = false;
         currentEmojiType = DEFAULT;
@@ -381,7 +381,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonDefa
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.DEFAULT));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_default, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultState', '(', ')', ' ', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'false', ';', '\n', '        ', 'currentEmojiType', ' ', '=', ' ', 'DEFAULT', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'DEFAULT', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_default', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultState', '(', ')', ' ', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'false', ';', '\n', '        ', 'currentEmojiType', ' ', '=', ' ', 'DEFAULT', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'DEFAULT', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_default', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonLikeState,"    private void reactButtonLikeState() {
         reactState = true;
         currentEmojiType = LIKE;
@@ -395,7 +395,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonLike
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.BLUE));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_like, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonLikeState', '(', ')', ' ', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'currentEmojiType', ' ', '=', ' ', 'LIKE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'BLUE', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_like', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonLikeState', '(', ')', ' ', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'currentEmojiType', ' ', '=', ' ', 'LIKE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'BLUE', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_like', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonLoveState,"    private void reactButtonLoveState() {
         reactState = true;
         currentEmojiType = LOVE;
@@ -409,7 +409,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonLove
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.RED_LOVE));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_love, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonLoveState', '(', ')', ' ', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'currentEmojiType', ' ', '=', ' ', 'LOVE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'currentEmojiType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_LOVE', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_love', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonLoveState', '(', ')', ' ', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'currentEmojiType', ' ', '=', ' ', 'LOVE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'currentEmojiType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_LOVE', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_love', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonSmileState,"    private void reactButtonSmileState() {
         reactState = true;
         currentEmojiType = SMILE;
@@ -423,7 +423,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonSmil
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.YELLOW_HAHA));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_haha, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonSmileState', '(', ')', ' ', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'currentEmojiType', ' ', '=', ' ', 'SMILE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'currentEmojiType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_haha', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonSmileState', '(', ')', ' ', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'currentEmojiType', ' ', '=', ' ', 'SMILE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'currentEmojiType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_haha', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonWowState,"    private void reactButtonWowState() {
         reactState = true;
         currentEmojiType = WOW;
@@ -437,7 +437,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonWowS
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.YELLOW_WOW));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_wow, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonWowState', '(', ')', ' ', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'currentEmojiType', ' ', '=', ' ', 'WOW', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'currentEmojiType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_WOW', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_wow', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonWowState', '(', ')', ' ', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'currentEmojiType', ' ', '=', ' ', 'WOW', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'currentEmojiType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_WOW', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_wow', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonSadState,"    private void reactButtonSadState() {
         reactState = true;
         currentEmojiType = SAD;
@@ -451,7 +451,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonSadS
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.YELLOW_HAHA));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_sad, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonSadState', '(', ')', ' ', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'currentEmojiType', ' ', '=', ' ', 'SAD', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'currentEmojiType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_sad', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonSadState', '(', ')', ' ', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'currentEmojiType', ' ', '=', ' ', 'SAD', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'currentEmojiType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_sad', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonAngryState,"    private void reactButtonAngryState() {
         reactState = true;
         currentEmojiType = ANGRY;
@@ -465,7 +465,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonAngr
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.RED_ANGRY));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_angry, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonAngryState', '(', ')', ' ', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'currentEmojiType', ' ', '=', ' ', 'ANGRY', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'currentEmojiType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_ANGRY', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_angry', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonAngryState', '(', ')', ' ', '{', '\n', '        ', 'reactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'currentEmojiType', ' ', '=', ' ', 'ANGRY', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'currentEmojiType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_ANGRY', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_angry', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonDefaultSetting,"    private void reactButtonDefaultSetting() {
         mReactButton.setText(LIKE);
         mReactButton.setOnClickListener(this);
@@ -477,7 +477,7 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,reactButtonDefa
         mReactButton.setOnLongClickListener(this);
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reactbutton_default, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultSetting', '(', ')', ' ', '{', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnLongClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_default', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultSetting', '(', ')', ' ', '{', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnLongClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reactbutton_default', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClick,"    public void onClick(View view) {
         //The Library OnClick
         onClickLikeAndDisLike();
@@ -489,13 +489,13 @@ master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onClick,"    pu
         
         if (onClickListener != null) {
             onClickListener.onClick(view);
-","['    ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '        ', '\n', '        ', 'onClickLikeAndDisLike', '(', ')', ';', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'onClickListener', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'onClickListener', '.', 'onClick', '(', 'view', ')', ';', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '        ', '\n', '        ', 'onClickLikeAndDisLike', '(', ')', ';', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'onClickListener', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'onClickListener', '.', 'onClick', '(', 'view', ')', ';', '\n', '<END>']"
 master,26098d2af453f8222b3688c6f24970558365eb1a,ReactButton.java,onDismiss,"            public void onDismiss(DialogInterface dialogInterface) {
                 if (onDismissListener != null) {
                     //User OnLongClick Implementation",https://www.github.com/amrdeveloper/reactbutton/commit/26098d2af453f8222b3688c6f24970558365eb1a,"            public void onDismiss(DialogInterface dialogInterface) {
                 if (onDismissListener != null) {
                     
-","['            ', 'public', ' ', 'void', ' ', 'onDismiss', '(', 'DialogInterface', ' ', 'dialogInterface', ')', ' ', '{', '\n', '                ', 'if', ' ', '(', 'onDismissListener', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '                    ', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onDismiss', '(', 'DialogInterface', ' ', 'dialogInterface', ')', ' ', '{', '\n', '                ', 'if', ' ', '(', 'onDismissListener', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '                    ', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,onClickLikeAndDisLike,"    private void onClickLikeAndDisLike() {
         //Code When User Click On Button
         //If State is true , dislike The Button And Return To Default State
@@ -505,7 +505,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,onClickLikeAndD
         
         if (mCurrentReactState) {
             reactButtonDefaultState();
-","['    ', 'private', ' ', 'void', ' ', 'onClickLikeAndDisLike', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'mCurrentReactState', ')', ' ', '{', '\n', '            ', 'reactButtonDefaultState', '(', ')', ';', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'onClickLikeAndDisLike', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'mCurrentReactState', ')', ' ', '{', '\n', '            ', 'reactButtonDefaultState', '(', ')', ';', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonLikeState();
                 mReactAlertDialog.dismiss();
@@ -513,7 +513,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,onClick,"      
                 reactButtonLikeState();
                 mReactAlertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonLikeState', '(', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonLikeState', '(', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonLoveState();
                 mReactAlertDialog.dismiss();
@@ -521,7 +521,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,onClick,"      
                 reactButtonLoveState();
                 mReactAlertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonLoveState', '(', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonLoveState', '(', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonSmileState();
                 mReactAlertDialog.dismiss();
@@ -529,7 +529,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,onClick,"      
                 reactButtonSmileState();
                 mReactAlertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonSmileState', '(', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonSmileState', '(', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonWowState();
                 mReactAlertDialog.dismiss();
@@ -537,7 +537,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,onClick,"      
                 reactButtonWowState();
                 mReactAlertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonWowState', '(', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonWowState', '(', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonSadState();
                 mReactAlertDialog.dismiss();
@@ -545,7 +545,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,onClick,"      
                 reactButtonSadState();
                 mReactAlertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonSadState', '(', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonSadState', '(', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,onClick,"            public void onClick(View view) {
                 reactButtonAngryState();
                 mReactAlertDialog.dismiss();
@@ -553,7 +553,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,onClick,"      
                 reactButtonAngryState();
                 mReactAlertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonAngryState', '(', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'view', ')', ' ', '{', '\n', '                ', 'reactButtonAngryState', '(', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonDefaultState,"    private void reactButtonDefaultState() {
         mCurrentReactState = false;
         mCurrentReactType = DEFAULT;
@@ -567,7 +567,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonDefa
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.DEFAULT));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reset, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'false', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'DEFAULT', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'DEFAULT', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reset', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'false', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'DEFAULT', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'DEFAULT', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reset', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonLikeState,"    private void reactButtonLikeState() {
         mCurrentReactState = true;
         mCurrentReactType = LIKE;
@@ -581,7 +581,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonLike
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.BLUE));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.like, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonLikeState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'LIKE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'BLUE', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'like', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonLikeState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'LIKE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'BLUE', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'like', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonLoveState,"    private void reactButtonLoveState() {
         mCurrentReactState = true;
         mCurrentReactType = LOVE;
@@ -595,7 +595,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonLove
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.RED_LOVE));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.love, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonLoveState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'LOVE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_LOVE', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'love', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonLoveState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'LOVE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_LOVE', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'love', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonSmileState,"    private void reactButtonSmileState() {
         mCurrentReactState = true;
         mCurrentReactType = SMILE;
@@ -609,7 +609,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonSmil
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.YELLOW_HAHA));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.smile, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonSmileState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'SMILE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'smile', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonSmileState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'SMILE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'smile', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonWowState,"    private void reactButtonWowState() {
         mCurrentReactState = true;
         mCurrentReactType = WOW;
@@ -623,7 +623,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonWowS
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.YELLOW_WOW));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.wow, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonWowState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'WOW', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_WOW', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'wow', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonWowState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'WOW', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_WOW', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'wow', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonSadState,"    private void reactButtonSadState() {
         mCurrentReactState = true;
         mCurrentReactType = SAD;
@@ -637,7 +637,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonSadS
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.YELLOW_HAHA));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.sad, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonSadState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'SAD', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'sad', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonSadState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'SAD', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'sad', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonAngryState,"    private void reactButtonAngryState() {
         mCurrentReactState = true;
         mCurrentReactType = ANGRY;
@@ -651,7 +651,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonAngr
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.RED_ANGRY));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.angry, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonAngryState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'ANGRY', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_ANGRY', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'angry', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonAngryState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'ANGRY', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_ANGRY', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'angry', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonDefaultSetting,"    private void reactButtonDefaultSetting() {
         mReactButton.setText(LIKE);
         mReactButton.setOnClickListener(this);
@@ -663,7 +663,7 @@ master,350d3896970246aa8c821e623de0487adfdb1105,ReactButton.java,reactButtonDefa
         mReactButton.setOnLongClickListener(this);
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.reset, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultSetting', '(', ')', ' ', '{', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnLongClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reset', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultSetting', '(', ')', ' ', '{', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnLongClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'mipmap', '.', 'reset', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonDefaultState,"    private void reactButtonDefaultState() {
         mCurrentReactState = false;
         mCurrentReactType = DEFAULT;
@@ -677,7 +677,7 @@ master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonDefa
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.DEFAULT));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_gray_like, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'false', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'DEFAULT', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'DEFAULT', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_gray_like', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'false', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'DEFAULT', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'DEFAULT', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_gray_like', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonLikeState,"    private void reactButtonLikeState() {
         mCurrentReactState = true;
         mCurrentReactType = LIKE;
@@ -691,7 +691,7 @@ master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonLike
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.BLUE));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_gray_like, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonLikeState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'LIKE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'BLUE', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_gray_like', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonLikeState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'LIKE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'BLUE', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_gray_like', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonLoveState,"    private void reactButtonLoveState() {
         mCurrentReactState = true;
         mCurrentReactType = LOVE;
@@ -705,7 +705,7 @@ master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonLove
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.RED_LOVE));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_heart, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonLoveState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'LOVE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_LOVE', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_heart', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonLoveState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'LOVE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_LOVE', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_heart', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonSmileState,"    private void reactButtonSmileState() {
         mCurrentReactState = true;
         mCurrentReactType = SMILE;
@@ -719,7 +719,7 @@ master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonSmil
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.YELLOW_HAHA));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_happy, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonSmileState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'SMILE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_happy', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonSmileState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'SMILE', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_happy', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonWowState,"    private void reactButtonWowState() {
         mCurrentReactState = true;
         mCurrentReactType = WOW;
@@ -733,7 +733,7 @@ master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonWowS
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.YELLOW_WOW));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_surprise, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonWowState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'WOW', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_WOW', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_surprise', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonWowState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'WOW', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_WOW', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_surprise', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonSadState,"    private void reactButtonSadState() {
         mCurrentReactState = true;
         mCurrentReactType = SAD;
@@ -747,7 +747,7 @@ master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonSadS
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.YELLOW_HAHA));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_sad, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonSadState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'SAD', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_sad', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonSadState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'SAD', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'YELLOW_HAHA', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_sad', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonAngryState,"    private void reactButtonAngryState() {
         mCurrentReactState = true;
         mCurrentReactType = ANGRY;
@@ -761,7 +761,7 @@ master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonAngr
         mReactButton.setTextColor(ReactConstance.getColor(ReactConstance.RED_ANGRY));
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_angry, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonAngryState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'ANGRY', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_ANGRY', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_angry', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonAngryState', '(', ')', ' ', '{', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', 'true', ';', '\n', '        ', 'mCurrentReactType', ' ', '=', ' ', 'ANGRY', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mCurrentReactType', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'ReactConstance', '.', 'getColor', '(', 'ReactConstance', '.', 'RED_ANGRY', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_angry', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonDefaultSetting,"    private void reactButtonDefaultSetting() {
         mReactButton.setText(LIKE);
         mReactButton.setOnClickListener(this);
@@ -773,7 +773,7 @@ master,3f3bd35d5aea81d306af28f9761f163ddad41021,ReactButton.java,reactButtonDefa
         mReactButton.setOnLongClickListener(this);
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_gray_like, 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultSetting', '(', ')', ' ', '{', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnLongClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_gray_like', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultSetting', '(', ')', ' ', '{', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'LIKE', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnLongClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'R', '.', 'drawable', '.', 'ic_gray_like', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,46fb8a22aac811ba8506110eb83c2cf26a02ba3d,ReactButton.java,onClickLikeAndDisLike,"    private void onClickLikeAndDisLike() {
         //Code When User Click On Button
         //If State is true , dislike The Button And Return To Default State
@@ -783,7 +783,7 @@ master,46fb8a22aac811ba8506110eb83c2cf26a02ba3d,ReactButton.java,onClickLikeAndD
         
         if (mCurrentReactState) {
             updateReactButtonByReaction(mDefaultReaction);
-","['    ', 'private', ' ', 'void', ' ', 'onClickLikeAndDisLike', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'mCurrentReactState', ')', ' ', '{', '\n', '            ', 'updateReactButtonByReaction', '(', 'mDefaultReaction', ')', ';', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'onClickLikeAndDisLike', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'mCurrentReactState', ')', ' ', '{', '\n', '            ', 'updateReactButtonByReaction', '(', 'mDefaultReaction', ')', ';', '\n', '<END>']"
 master,46fb8a22aac811ba8506110eb83c2cf26a02ba3d,ReactButton.java,onClickImageButtons,"    private void onClickImageButtons() {
         imgButtonSetListener(mImgButtonOne, 0);
         imgButtonSetListener(mImgButtonTwo, 1);
@@ -799,7 +799,7 @@ master,46fb8a22aac811ba8506110eb83c2cf26a02ba3d,ReactButton.java,onClickImageBut
         imgButtonSetListener(mImgButtonFive, 4);
         imgButtonSetListener(mImgButtonSix, 5);
     }
-","['    ', 'private', ' ', 'void', ' ', 'onClickImageButtons', '(', ')', ' ', '{', '\n', '        ', 'imgButtonSetListener', '(', 'mImgButtonOne', ',', ' ', '0', ')', ';', '\n', '        ', 'imgButtonSetListener', '(', 'mImgButtonTwo', ',', ' ', '1', ')', ';', '\n', '        ', 'imgButtonSetListener', '(', 'mImgButtonThree', ',', ' ', '2', ')', ';', '\n', '        ', 'imgButtonSetListener', '(', 'mImgButtonFour', ',', ' ', '3', ')', ';', '\n', '        ', 'imgButtonSetListener', '(', 'mImgButtonFive', ',', ' ', '4', ')', ';', '\n', '        ', 'imgButtonSetListener', '(', 'mImgButtonSix', ',', ' ', '5', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'onClickImageButtons', '(', ')', ' ', '{', '\n', '        ', 'imgButtonSetListener', '(', 'mImgButtonOne', ',', ' ', '0', ')', ';', '\n', '        ', 'imgButtonSetListener', '(', 'mImgButtonTwo', ',', ' ', '1', ')', ';', '\n', '        ', 'imgButtonSetListener', '(', 'mImgButtonThree', ',', ' ', '2', ')', ';', '\n', '        ', 'imgButtonSetListener', '(', 'mImgButtonFour', ',', ' ', '3', ')', ';', '\n', '        ', 'imgButtonSetListener', '(', 'mImgButtonFive', ',', ' ', '4', ')', ';', '\n', '        ', 'imgButtonSetListener', '(', 'mImgButtonSix', ',', ' ', '5', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,46fb8a22aac811ba8506110eb83c2cf26a02ba3d,ReactButton.java,onClick,"            public void onClick(View v) {
                 updateReactButtonByReaction(mReactionPack[reactIndex]);
                 mReactAlertDialog.dismiss();
@@ -807,13 +807,13 @@ master,46fb8a22aac811ba8506110eb83c2cf26a02ba3d,ReactButton.java,onClick,"      
                 updateReactButtonByReaction(mReactionPack[reactIndex]);
                 mReactAlertDialog.dismiss();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'v', ')', ' ', '{', '\n', '                ', 'updateReactButtonByReaction', '(', 'mReactionPack', '[', 'reactIndex', ']', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'v', ')', ' ', '{', '\n', '                ', 'updateReactButtonByReaction', '(', 'mReactionPack', '[', 'reactIndex', ']', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'dismiss', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,46fb8a22aac811ba8506110eb83c2cf26a02ba3d,ReactButton.java,resetReactionsIcons,"    private void resetReactionsIcons() {
         for (int index = 0; index < REACTIONS_NUMBER; index++) {
             mReactImgArray[index].setImageResource(mReactionPack[index].getReactIconId());",https://www.github.com/amrdeveloper/reactbutton/commit/46fb8a22aac811ba8506110eb83c2cf26a02ba3d,"    private void resetReactionsIcons() {
         for (int index = 0; index < REACTIONS_NUMBER; index++) {
             mReactImgArray[index].setImageResource(mReactionPack[index].getReactIconId());
-","['    ', 'private', ' ', 'void', ' ', 'resetReactionsIcons', '(', ')', ' ', '{', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'index', ' ', '=', ' ', '0', ';', ' ', 'index', ' ', '<', ' ', 'REACTIONS_NUMBER', ';', ' ', 'index', '+', '+', ')', ' ', '{', '\n', '            ', 'mReactImgArray', '[', 'index', ']', '.', 'setImageResource', '(', 'mReactionPack', '[', 'index', ']', '.', 'getReactIconId', '(', ')', ')', ';', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'resetReactionsIcons', '(', ')', ' ', '{', '\n', '        ', 'for', ' ', '(', 'int', ' ', 'index', ' ', '=', ' ', '0', ';', ' ', 'index', ' ', '<', ' ', 'REACTIONS_NUMBER', ';', ' ', 'index', '+', '+', ')', ' ', '{', '\n', '            ', 'mReactImgArray', '[', 'index', ']', '.', 'setImageResource', '(', 'mReactionPack', '[', 'index', ']', '.', 'getReactIconId', '(', ')', ')', ';', '\n', '<END>']"
 master,46fb8a22aac811ba8506110eb83c2cf26a02ba3d,ReactButton.java,reactButtonDefaultSetting,"    private void reactButtonDefaultSetting() {
         mReactButton.setText(mDefaultReaction.getReactText());
         mReactButton.setOnClickListener(this);
@@ -825,7 +825,7 @@ master,46fb8a22aac811ba8506110eb83c2cf26a02ba3d,ReactButton.java,reactButtonDefa
         mReactButton.setOnLongClickListener(this);
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(mDefaultReaction.getReactIconId(), 0, 0, 0);
     }
-","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultSetting', '(', ')', ' ', '{', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mDefaultReaction', '.', 'getReactText', '(', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnLongClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'mDefaultReaction', '.', 'getReactIconId', '(', ')', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'reactButtonDefaultSetting', '(', ')', ' ', '{', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'mDefaultReaction', '.', 'getReactText', '(', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnLongClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'mDefaultReaction', '.', 'getReactIconId', '(', ')', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,46fb8a22aac811ba8506110eb83c2cf26a02ba3d,ReactButton.java,updateReactButtonByReaction,"    private void updateReactButtonByReaction(Reaction react) {
         mCurrentReaction = react;
         mReactButton.setText(react.getReactText());
@@ -839,7 +839,7 @@ master,46fb8a22aac811ba8506110eb83c2cf26a02ba3d,ReactButton.java,updateReactButt
         mReactButton.setCompoundDrawablesWithIntrinsicBounds(react.getReactIconId(), 0, 0, 0);
         mCurrentReactState = !react.getReactType().equals(mDefaultReaction.getReactType());
     }
-","['    ', 'private', ' ', 'void', ' ', 'updateReactButtonByReaction', '(', 'Reaction', ' ', 'react', ')', ' ', '{', '\n', '        ', 'mCurrentReaction', ' ', '=', ' ', 'react', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'react', '.', 'getReactText', '(', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'Color', '.', 'parseColor', '(', 'react', '.', 'getReactTextColor', '(', ')', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'react', '.', 'getReactIconId', '(', ')', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', '!', 'react', '.', 'getReactType', '(', ')', '.', 'equals', '(', 'mDefaultReaction', '.', 'getReactType', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'updateReactButtonByReaction', '(', 'Reaction', ' ', 'react', ')', ' ', '{', '\n', '        ', 'mCurrentReaction', ' ', '=', ' ', 'react', ';', '\n', '        ', 'mReactButton', '.', 'setText', '(', 'react', '.', 'getReactText', '(', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setTextColor', '(', 'Color', '.', 'parseColor', '(', 'react', '.', 'getReactTextColor', '(', ')', ')', ')', ';', '\n', '        ', 'mReactButton', '.', 'setCompoundDrawablesWithIntrinsicBounds', '(', 'react', '.', 'getReactIconId', '(', ')', ',', ' ', '0', ',', ' ', '0', ',', ' ', '0', ')', ';', '\n', '        ', 'mCurrentReactState', ' ', '=', ' ', '!', 'react', '.', 'getReactType', '(', ')', '.', 'equals', '(', 'mDefaultReaction', '.', 'getReactType', '(', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,46fb8a22aac811ba8506110eb83c2cf26a02ba3d,Reaction.java,equals,"    public boolean equals(Object object) {
         //Assert that obj type is Reaction
         if (object instanceof Reaction) {
@@ -859,13 +859,13 @@ master,46fb8a22aac811ba8506110eb83c2cf26a02ba3d,Reaction.java,equals,"    public
         }
         return false;
     }
-","['    ', 'public', ' ', 'boolean', ' ', 'equals', '(', 'Object', ' ', 'object', ')', ' ', '{', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'object', ' ', 'instanceof', ' ', 'Reaction', ')', ' ', '{', '\n', '            ', '\n', '            ', 'Reaction', ' ', 'react', ' ', '=', ' ', '(', 'Reaction', ')', ' ', 'object', ';', '\n', '            ', '\n', '            ', 'return', ' ', 'react', '.', 'getReactType', '(', ')', '.', 'equals', '(', 'reactType', ')', ';', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'false', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'boolean', ' ', 'equals', '(', 'Object', ' ', 'object', ')', ' ', '{', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'object', ' ', 'instanceof', ' ', 'Reaction', ')', ' ', '{', '\n', '            ', '\n', '            ', 'Reaction', ' ', 'react', ' ', '=', ' ', '(', 'Reaction', ')', ' ', 'object', ';', '\n', '            ', '\n', '            ', 'return', ' ', 'react', '.', 'getReactType', '(', ')', '.', 'equals', '(', 'reactType', ')', ';', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'false', ';', '\n', '    ', '}', '\n', '<END>']"
 master,b27489d920879f8038acd24afd49da72f61c4860,MainActivity.java,onReactionChange,"            public void onReactionChange(Reaction reaction) {
                 Log.d(TAG, ""onReactionChange: "" + reaction.getReactText());
             }",https://www.github.com/amrdeveloper/reactbutton/commit/b27489d920879f8038acd24afd49da72f61c4860,"            public void onReactionChange(Reaction reaction) {
                 Log.d(TAG, ""onReactionChange: "" + reaction.getReactText());
             }
-","['            ', 'public', ' ', 'void', ' ', 'onReactionChange', '(', 'Reaction', ' ', 'reaction', ')', ' ', '{', '\n', '                ', 'Log', '.', 'd', '(', 'TAG', ',', ' ', '""', 'onReactionChange: ', '""', ' ', '+', ' ', 'reaction', '.', 'getReactText', '(', ')', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onReactionChange', '(', 'Reaction', ' ', 'reaction', ')', ' ', '{', '\n', '                ', 'Log', '.', 'd', '(', 'TAG', ',', ' ', '""', 'onReactionChange: ', '""', ' ', '+', ' ', 'reaction', '.', 'getReactText', '(', ')', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,b27489d920879f8038acd24afd49da72f61c4860,ReactButton.java,setupReactButtonDefaultSettings,"    private void setupReactButtonDefaultSettings() {
         mReactButton.setOnClickListener(this);
         mReactButton.setOnLongClickListener(this);
@@ -879,7 +879,7 @@ master,b27489d920879f8038acd24afd49da72f61c4860,ReactButton.java,setupReactButto
         
         if (mReactAlertDialog != null && mReactAlertDialog.isShowing()) {
             mReactAlertDialog.cancel();
-","['    ', 'private', ' ', 'void', ' ', 'setupReactButtonDefaultSettings', '(', ')', ' ', '{', '\n', '        ', 'mReactButton', '.', 'setOnClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnLongClickListener', '(', 'this', ')', ';', '\n', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'mReactAlertDialog', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'mReactAlertDialog', '.', 'isShowing', '(', ')', ')', ' ', '{', '\n', '            ', 'mReactAlertDialog', '.', 'cancel', '(', ')', ';', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'setupReactButtonDefaultSettings', '(', ')', ' ', '{', '\n', '        ', 'mReactButton', '.', 'setOnClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnLongClickListener', '(', 'this', ')', ';', '\n', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'mReactAlertDialog', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'mReactAlertDialog', '.', 'isShowing', '(', ')', ')', ' ', '{', '\n', '            ', 'mReactAlertDialog', '.', 'cancel', '(', ')', ';', '\n', '<END>']"
 master,b27489d920879f8038acd24afd49da72f61c4860,ReactButton.java,onReactionButtonClick,"    private void onReactionButtonClick() {
         Reaction reaction = isReactButtonUpdated ? mDefaultReaction : mReactions.get(0);
         updateReactButtonByReaction(reaction);
@@ -887,7 +887,7 @@ master,b27489d920879f8038acd24afd49da72f61c4860,ReactButton.java,onReactionButto
         Reaction reaction = isReactButtonUpdated ? mDefaultReaction : mReactions.get(0);
         updateReactButtonByReaction(reaction);
     }
-","['    ', 'private', ' ', 'void', ' ', 'onReactionButtonClick', '(', ')', ' ', '{', '\n', '        ', 'Reaction', ' ', 'reaction', ' ', '=', ' ', 'isReactButtonUpdated', ' ', '?', ' ', 'mDefaultReaction', ' ', ':', ' ', 'mReactions', '.', 'get', '(', '0', ')', ';', '\n', '        ', 'updateReactButtonByReaction', '(', 'reaction', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'onReactionButtonClick', '(', ')', ' ', '{', '\n', '        ', 'Reaction', ' ', 'reaction', ' ', '=', ' ', 'isReactButtonUpdated', ' ', '?', ' ', 'mDefaultReaction', ' ', ':', ' ', 'mReactions', '.', 'get', '(', '0', ')', ';', '\n', '        ', 'updateReactButtonByReaction', '(', 'reaction', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,b27489d920879f8038acd24afd49da72f61c4860,ReactButton.java,onItemClick,"            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Reaction currentReaction = mReactions.get(position);
                 updateReactButtonByReaction(currentReaction);
@@ -897,13 +897,13 @@ master,b27489d920879f8038acd24afd49da72f61c4860,ReactButton.java,onItemClick,"  
                 updateReactButtonByReaction(currentReaction);
                 mReactAlertDialog.cancel();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onItemClick', '(', 'AdapterView', '<', '?', '>', ' ', 'parent', ',', ' ', 'View', ' ', 'v', ',', ' ', 'int', ' ', 'position', ',', ' ', 'long', ' ', 'id', ')', ' ', '{', '\n', '                ', 'Reaction', ' ', 'currentReaction', ' ', '=', ' ', 'mReactions', '.', 'get', '(', 'position', ')', ';', '\n', '                ', 'updateReactButtonByReaction', '(', 'currentReaction', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'cancel', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onItemClick', '(', 'AdapterView', '<', '?', '>', ' ', 'parent', ',', ' ', 'View', ' ', 'v', ',', ' ', 'int', ' ', 'position', ',', ' ', 'long', ' ', 'id', ')', ' ', '{', '\n', '                ', 'Reaction', ' ', 'currentReaction', ' ', '=', ' ', 'mReactions', '.', 'get', '(', 'position', ')', ';', '\n', '                ', 'updateReactButtonByReaction', '(', 'currentReaction', ')', ';', '\n', '                ', 'mReactAlertDialog', '.', 'cancel', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,b27489d920879f8038acd24afd49da72f61c4860,ReactButton.java,onDismiss,"            public void onDismiss(DialogInterface dialogInterface) {
                 if (mOnReactionDialogStateListener != null) {
                     mOnReactionDialogStateListener.onDialogDismiss();",https://www.github.com/amrdeveloper/reactbutton/commit/b27489d920879f8038acd24afd49da72f61c4860,"            public void onDismiss(DialogInterface dialogInterface) {
                 if (mOnReactionDialogStateListener != null) {
                     mOnReactionDialogStateListener.onDialogDismiss();
-","['            ', 'public', ' ', 'void', ' ', 'onDismiss', '(', 'DialogInterface', ' ', 'dialogInterface', ')', ' ', '{', '\n', '                ', 'if', ' ', '(', 'mOnReactionDialogStateListener', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '                    ', 'mOnReactionDialogStateListener', '.', 'onDialogDismiss', '(', ')', ';', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onDismiss', '(', 'DialogInterface', ' ', 'dialogInterface', ')', ' ', '{', '\n', '                ', 'if', ' ', '(', 'mOnReactionDialogStateListener', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '                    ', 'mOnReactionDialogStateListener', '.', 'onDialogDismiss', '(', ')', ';', '\n', '<END>']"
 master,b27489d920879f8038acd24afd49da72f61c4860,Reaction.java,equals,"    public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -915,7 +915,7 @@ master,b27489d920879f8038acd24afd49da72f61c4860,Reaction.java,equals,"    public
         Reaction reaction = (Reaction) o;
         return reactIconId == reaction.reactIconId &&
                 (reactText != null && reactText.equals(reaction.reactText)) &&
-","['    ', 'public', ' ', 'boolean', ' ', 'equals', '(', 'Object', ' ', 'o', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'this', ' ', '=', '=', ' ', 'o', ')', ' ', 'return', ' ', 'true', ';', '\n', '        ', 'if', ' ', '(', 'o', ' ', '=', '=', ' ', 'null', ' ', '|', '|', ' ', 'getClass', '(', ')', ' ', '!', '=', ' ', 'o', '.', 'getClass', '(', ')', ')', ' ', 'return', ' ', 'false', ';', '\n', '        ', 'Reaction', ' ', 'reaction', ' ', '=', ' ', '(', 'Reaction', ')', ' ', 'o', ';', '\n', '        ', 'return', ' ', 'reactIconId', ' ', '=', '=', ' ', 'reaction', '.', 'reactIconId', ' ', '&', '&', '\n', '                ', '(', 'reactText', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'reactText', '.', 'equals', '(', 'reaction', '.', 'reactText', ')', ')', ' ', '&', '&', '\n']"
+","['    ', 'public', ' ', 'boolean', ' ', 'equals', '(', 'Object', ' ', 'o', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'this', ' ', '=', '=', ' ', 'o', ')', ' ', 'return', ' ', 'true', ';', '\n', '        ', 'if', ' ', '(', 'o', ' ', '=', '=', ' ', 'null', ' ', '|', '|', ' ', 'getClass', '(', ')', ' ', '!', '=', ' ', 'o', '.', 'getClass', '(', ')', ')', ' ', 'return', ' ', 'false', ';', '\n', '        ', 'Reaction', ' ', 'reaction', ' ', '=', ' ', '(', 'Reaction', ')', ' ', 'o', ';', '\n', '        ', 'return', ' ', 'reactIconId', ' ', '=', '=', ' ', 'reaction', '.', 'reactIconId', ' ', '&', '&', '\n', '                ', '(', 'reactText', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'reactText', '.', 'equals', '(', 'reaction', '.', 'reactText', ')', ')', ' ', '&', '&', '\n', '<END>']"
 master,b57b2206f4866bdc72b5a149d2f553c62487c43e,ReactButton.java,onDetachedFromWindow,"    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
 
@@ -927,7 +927,7 @@ master,b57b2206f4866bdc72b5a149d2f553c62487c43e,ReactButton.java,onDetachedFromW
         
         if (mReactAlertDialog != null && mReactAlertDialog.isShowing()) mReactAlertDialog.cancel();
     }
-","['    ', 'protected', ' ', 'void', ' ', 'onDetachedFromWindow', '(', ')', ' ', '{', '\n', '        ', 'super', '.', 'onDetachedFromWindow', '(', ')', ';', '\n', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'mReactAlertDialog', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'mReactAlertDialog', '.', 'isShowing', '(', ')', ')', ' ', 'mReactAlertDialog', '.', 'cancel', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'protected', ' ', 'void', ' ', 'onDetachedFromWindow', '(', ')', ' ', '{', '\n', '        ', 'super', '.', 'onDetachedFromWindow', '(', ')', ';', '\n', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'mReactAlertDialog', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'mReactAlertDialog', '.', 'isShowing', '(', ')', ')', ' ', 'mReactAlertDialog', '.', 'cancel', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,b57b2206f4866bdc72b5a149d2f553c62487c43e,ReactButton.java,setupReactButtonDefaultSettings,"    private void setupReactButtonDefaultSettings() {
         mReactButton.setOnClickListener(this);
         mReactButton.setOnLongClickListener(this);
@@ -935,7 +935,7 @@ master,b57b2206f4866bdc72b5a149d2f553c62487c43e,ReactButton.java,setupReactButto
         mReactButton.setOnClickListener(this);
         mReactButton.setOnLongClickListener(this);
     }
-","['    ', 'private', ' ', 'void', ' ', 'setupReactButtonDefaultSettings', '(', ')', ' ', '{', '\n', '        ', 'mReactButton', '.', 'setOnClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnLongClickListener', '(', 'this', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'setupReactButtonDefaultSettings', '(', ')', ' ', '{', '\n', '        ', 'mReactButton', '.', 'setOnClickListener', '(', 'this', ')', ';', '\n', '        ', 'mReactButton', '.', 'setOnLongClickListener', '(', 'this', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,66a2267225d26b249f12bf2d1582071df8e278fc,ReactButton.java,addReactions,"    public void addReactions(Reaction... reactions) {
         mReactions.addAll(Arrays.asList(reactions));
         if (mDialogColumnsNumber == 0)
@@ -943,4 +943,4 @@ master,66a2267225d26b249f12bf2d1582071df8e278fc,ReactButton.java,addReactions," 
         mReactions.addAll(Arrays.asList(reactions));
         if (mDialogColumnsNumber == 0)
             mDialogColumnsNumber = mReactions.size();
-","['    ', 'public', ' ', 'void', ' ', 'addReactions', '(', 'Reaction', '.', '.', '.', ' ', 'reactions', ')', ' ', '{', '\n', '        ', 'mReactions', '.', 'addAll', '(', 'Arrays', '.', 'asList', '(', 'reactions', ')', ')', ';', '\n', '        ', 'if', ' ', '(', 'mDialogColumnsNumber', ' ', '=', '=', ' ', '0', ')', '\n', '            ', 'mDialogColumnsNumber', ' ', '=', ' ', 'mReactions', '.', 'size', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'addReactions', '(', 'Reaction', '.', '.', '.', ' ', 'reactions', ')', ' ', '{', '\n', '        ', 'mReactions', '.', 'addAll', '(', 'Arrays', '.', 'asList', '(', 'reactions', ')', ')', ';', '\n', '        ', 'if', ' ', '(', 'mDialogColumnsNumber', ' ', '=', '=', ' ', '0', ')', '\n', '            ', 'mDialogColumnsNumber', ' ', '=', ' ', 'mReactions', '.', 'size', '(', ')', ';', '\n', '<END>']"

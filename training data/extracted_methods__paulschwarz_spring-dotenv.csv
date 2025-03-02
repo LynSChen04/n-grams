@@ -4,19 +4,19 @@ master,5ebbbd51352c8a61a271814aca5dcb4a29298db4,DemoApplication.java,home,"  pub
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/5ebbbd51352c8a61a271814aca5dcb4a29298db4,"  public String home() {
     return ""Hello, "" + name;
   }
-","['  ', 'public', ' ', 'String', ' ', 'home', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', '""', 'Hello, ', '""', ' ', '+', ' ', 'name', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'String', ' ', 'home', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', '""', 'Hello, ', '""', ' ', '+', ' ', 'name', ';', '\n', '  ', '}', '\n', '<END>']"
 master,5ebbbd51352c8a61a271814aca5dcb4a29298db4,DemoApplication.java,main,"  public static void main(String[] args) {
     SpringApplication.run(DemoApplication.class, args);
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/5ebbbd51352c8a61a271814aca5dcb4a29298db4,"  public static void main(String[] args) {
     SpringApplication.run(DemoApplication.class, args);
   }
-","['  ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '    ', 'SpringApplication', '.', 'run', '(', 'DemoApplication', '.', 'class', ',', ' ', 'args', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '    ', 'SpringApplication', '.', 'run', '(', 'DemoApplication', '.', 'class', ',', ' ', 'args', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,5ebbbd51352c8a61a271814aca5dcb4a29298db4,DotenvApplicationInitializer.java,initialize,"  public void initialize(final ConfigurableApplicationContext applicationContext) {
     DotenvPropertySource.addToEnvironment(applicationContext.getEnvironment());
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/5ebbbd51352c8a61a271814aca5dcb4a29298db4,"  public void initialize(final ConfigurableApplicationContext applicationContext) {
     DotenvPropertySource.addToEnvironment(applicationContext.getEnvironment());
   }
-","['  ', 'public', ' ', 'void', ' ', 'initialize', '(', 'final', ' ', 'ConfigurableApplicationContext', ' ', 'applicationContext', ')', ' ', '{', '\n', '    ', 'DotenvPropertySource', '.', 'addToEnvironment', '(', 'applicationContext', '.', 'getEnvironment', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'void', ' ', 'initialize', '(', 'final', ' ', 'ConfigurableApplicationContext', ' ', 'applicationContext', ')', ' ', '{', '\n', '    ', 'DotenvPropertySource', '.', 'addToEnvironment', '(', 'applicationContext', '.', 'getEnvironment', '(', ')', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,5ebbbd51352c8a61a271814aca5dcb4a29298db4,DotenvPropertySource.java,addToEnvironment,"  public static void addToEnvironment(ConfigurableEnvironment environment) {
     environment
         .getPropertySources()
@@ -34,7 +34,7 @@ master,5ebbbd51352c8a61a271814aca5dcb4a29298db4,DotenvPropertySource.java,addToE
 
     logger.trace(""DotenvPropertySource add to Environment"");
   }
-","['  ', 'public', ' ', 'static', ' ', 'void', ' ', 'addToEnvironment', '(', 'ConfigurableEnvironment', ' ', 'environment', ')', ' ', '{', '\n', '    ', 'environment', '\n', '        ', '.', 'getPropertySources', '(', ')', '\n', '        ', '.', 'addAfter', '(', '\n', '            ', 'StandardEnvironment', '.', 'SYSTEM_ENVIRONMENT_PROPERTY_SOURCE_NAME', ',', '\n', '            ', 'new', ' ', 'DotenvPropertySource', '(', 'DOTENV_PROPERTY_SOURCE_NAME', ')', ')', ';', '\n', '\n', '    ', 'logger', '.', 'trace', '(', '""', 'DotenvPropertySource add to Environment', '""', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'static', ' ', 'void', ' ', 'addToEnvironment', '(', 'ConfigurableEnvironment', ' ', 'environment', ')', ' ', '{', '\n', '    ', 'environment', '\n', '        ', '.', 'getPropertySources', '(', ')', '\n', '        ', '.', 'addAfter', '(', '\n', '            ', 'StandardEnvironment', '.', 'SYSTEM_ENVIRONMENT_PROPERTY_SOURCE_NAME', ',', '\n', '            ', 'new', ' ', 'DotenvPropertySource', '(', 'DOTENV_PROPERTY_SOURCE_NAME', ')', ')', ';', '\n', '\n', '    ', 'logger', '.', 'trace', '(', '""', 'DotenvPropertySource add to Environment', '""', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,ee24f1651ede1f00f79aec2ffe59390b59823ac2,DemoApplicationTest.java,fromValueAnnotation,"  void fromValueAnnotation() {
     assertThat(fromValueAnnotation.getValue1()).isEqualTo(""Message 1 from .env"");
     assertThat(fromValueAnnotation.getValue2()).isEqualTo(""Message 2 from system environment"");
@@ -44,7 +44,7 @@ master,ee24f1651ede1f00f79aec2ffe59390b59823ac2,DemoApplicationTest.java,fromVal
     assertThat(fromValueAnnotation.getValue2()).isEqualTo(""Message 2 from system environment"");
     assertThat(fromValueAnnotation.getValue3()).isEqualTo(""Message 3 from system environment"");
   }
-","['  ', 'void', ' ', 'fromValueAnnotation', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue1', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 1 from .env', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue2', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 2 from system environment', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue3', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'fromValueAnnotation', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue1', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 1 from .env', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue2', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 2 from system environment', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue3', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,ee24f1651ede1f00f79aec2ffe59390b59823ac2,DemoApplicationTest.java,fromProperties,"  void fromProperties() {
     assertThat(fromProperties.getValue1()).isEqualTo(""Message 1 from .env"");
     assertThat(fromProperties.getValue2()).isEqualTo(""Message 2 from system environment"");
@@ -54,7 +54,7 @@ master,ee24f1651ede1f00f79aec2ffe59390b59823ac2,DemoApplicationTest.java,fromPro
     assertThat(fromProperties.getValue2()).isEqualTo(""Message 2 from system environment"");
     assertThat(fromProperties.getValue3()).isEqualTo(""Message 3 from system environment"");
   }
-","['  ', 'void', ' ', 'fromProperties', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'fromProperties', '.', 'getValue1', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 1 from .env', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromProperties', '.', 'getValue2', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 2 from system environment', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromProperties', '.', 'getValue3', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'fromProperties', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'fromProperties', '.', 'getValue1', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 1 from .env', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromProperties', '.', 'getValue2', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 2 from system environment', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromProperties', '.', 'getValue3', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,ee24f1651ede1f00f79aec2ffe59390b59823ac2,DemoApplicationTest.java,fromWiredBean,"  void fromWiredBean() {
     assertThat(fromWiredBean.getValue1()).isEqualTo(""Message 1 from .env"");
     assertThat(fromWiredBean.getValue2()).isEqualTo(""Message 2 from system environment"");
@@ -64,43 +64,43 @@ master,ee24f1651ede1f00f79aec2ffe59390b59823ac2,DemoApplicationTest.java,fromWir
     assertThat(fromWiredBean.getValue2()).isEqualTo(""Message 2 from system environment"");
     assertThat(fromWiredBean.getValue3()).isEqualTo(""Message 3 from system environment"");
   }
-","['  ', 'void', ' ', 'fromWiredBean', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'fromWiredBean', '.', 'getValue1', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 1 from .env', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromWiredBean', '.', 'getValue2', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 2 from system environment', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromWiredBean', '.', 'getValue3', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'fromWiredBean', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'fromWiredBean', '.', 'getValue1', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 1 from .env', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromWiredBean', '.', 'getValue2', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 2 from system environment', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromWiredBean', '.', 'getValue3', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,ee24f1651ede1f00f79aec2ffe59390b59823ac2,DotenvPropertySourceTest.java,irrelevant,"  void irrelevant() {
     assertThat(source.getProperty(""other.VALUE"")).isNull();
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/ee24f1651ede1f00f79aec2ffe59390b59823ac2,"  void irrelevant() {
     assertThat(source.getProperty(""other.VALUE"")).isNull();
   }
-","['  ', 'void', ' ', 'irrelevant', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'other.VALUE', '""', ')', ')', '.', 'isNull', '(', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'irrelevant', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'other.VALUE', '""', ')', ')', '.', 'isNull', '(', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,ee24f1651ede1f00f79aec2ffe59390b59823ac2,DotenvPropertySourceTest.java,missing,"  void missing() {
     assertThat(source.getProperty(""env.MISSING"")).isNull();
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/ee24f1651ede1f00f79aec2ffe59390b59823ac2,"  void missing() {
     assertThat(source.getProperty(""env.MISSING"")).isNull();
   }
-","['  ', 'void', ' ', 'missing', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'env.MISSING', '""', ')', ')', '.', 'isNull', '(', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'missing', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'env.MISSING', '""', ')', ')', '.', 'isNull', '(', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,ee24f1651ede1f00f79aec2ffe59390b59823ac2,DotenvPropertySourceTest.java,valueFromDotenv,"  void valueFromDotenv() {
     assertThat(source.getProperty(""env.EXAMPLE_MESSAGE_1"")).isEqualTo(""Message 1 from .env"");
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/ee24f1651ede1f00f79aec2ffe59390b59823ac2,"  void valueFromDotenv() {
     assertThat(source.getProperty(""env.EXAMPLE_MESSAGE_1"")).isEqualTo(""Message 1 from .env"");
   }
-","['  ', 'void', ' ', 'valueFromDotenv', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'env.EXAMPLE_MESSAGE_1', '""', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 1 from .env', '""', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'valueFromDotenv', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'env.EXAMPLE_MESSAGE_1', '""', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 1 from .env', '""', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,ee24f1651ede1f00f79aec2ffe59390b59823ac2,DotenvPropertySourceTest.java,valueFromEnvironment,"  void valueFromEnvironment() {
     assertThat(source.getProperty(""env.EXAMPLE_MESSAGE_2"")).isEqualTo(""Message 2 from system environment"");
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/ee24f1651ede1f00f79aec2ffe59390b59823ac2,"  void valueFromEnvironment() {
     assertThat(source.getProperty(""env.EXAMPLE_MESSAGE_2"")).isEqualTo(""Message 2 from system environment"");
   }
-","['  ', 'void', ' ', 'valueFromEnvironment', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'env.EXAMPLE_MESSAGE_2', '""', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 2 from system environment', '""', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'valueFromEnvironment', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'env.EXAMPLE_MESSAGE_2', '""', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 2 from system environment', '""', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,ee24f1651ede1f00f79aec2ffe59390b59823ac2,DotenvPropertySourceTest.java,valueFromEnvironmentOverride,"  void valueFromEnvironmentOverride() {
     assertThat(source.getProperty(""env.EXAMPLE_MESSAGE_3"")).isEqualTo(""Message 3 from system environment"");
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/ee24f1651ede1f00f79aec2ffe59390b59823ac2,"  void valueFromEnvironmentOverride() {
     assertThat(source.getProperty(""env.EXAMPLE_MESSAGE_3"")).isEqualTo(""Message 3 from system environment"");
   }
-","['  ', 'void', ' ', 'valueFromEnvironmentOverride', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'env.EXAMPLE_MESSAGE_3', '""', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'valueFromEnvironmentOverride', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'env.EXAMPLE_MESSAGE_3', '""', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,816fac8a12bbbe2e6c7059fc61e5d70b2fffa2ea,DotenvConfig.java,toString,"  public String toString() {
     return ""DotenvConfig{"" +
         ""directory="" + getDirectoryOptional().map(value -> ""'"" + value + ""'"").orElse(""null"") +",https://www.github.com/paulschwarz/spring-dotenv/commit/816fac8a12bbbe2e6c7059fc61e5d70b2fffa2ea,"  public String toString() {
     return ""DotenvConfig{"" +
         ""directory="" + getDirectoryOptional().map(value -> ""'"" + value + ""'"").orElse(""null"") +
-","['  ', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', '""', 'DotenvConfig{', '""', ' ', '+', '\n', '        ', '""', 'directory=', '""', ' ', '+', ' ', 'getDirectoryOptional', '(', ')', '.', 'map', '(', 'value', ' ', '-', '>', ' ', '""', ""'"", '""', ' ', '+', ' ', 'value', ' ', '+', ' ', '""', ""'"", '""', ')', '.', 'orElse', '(', '""', 'null', '""', ')', ' ', '+', '\n']"
+","['  ', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', '""', 'DotenvConfig{', '""', ' ', '+', '\n', '        ', '""', 'directory=', '""', ' ', '+', ' ', 'getDirectoryOptional', '(', ')', '.', 'map', '(', 'value', ' ', '-', '>', ' ', '""', ""'"", '""', ' ', '+', ' ', 'value', ' ', '+', ' ', '""', ""'"", '""', ')', '.', 'orElse', '(', '""', 'null', '""', ')', ' ', '+', '\n', '<END>']"
 master,816fac8a12bbbe2e6c7059fc61e5d70b2fffa2ea,DotenvPropertySource.java,addToEnvironment,"  public static void addToEnvironment(ConfigurableEnvironment environment) {
     DotenvConfig dotenvConfig = new DotenvConfig(environment);
     logger.info(""Initializing Dotenv with "" + dotenvConfig);
@@ -124,7 +124,7 @@ master,816fac8a12bbbe2e6c7059fc61e5d70b2fffa2ea,DotenvPropertySource.java,addToE
 
     logger.trace(""DotenvPropertySource added to Environment"");
   }
-","['  ', 'public', ' ', 'static', ' ', 'void', ' ', 'addToEnvironment', '(', 'ConfigurableEnvironment', ' ', 'environment', ')', ' ', '{', '\n', '    ', 'DotenvConfig', ' ', 'dotenvConfig', ' ', '=', ' ', 'new', ' ', 'DotenvConfig', '(', 'environment', ')', ';', '\n', '    ', 'logger', '.', 'info', '(', '""', 'Initializing Dotenv with ', '""', ' ', '+', ' ', 'dotenvConfig', ')', ';', '\n', '\n', '    ', 'environment', '\n', '        ', '.', 'getPropertySources', '(', ')', '\n', '        ', '.', 'addAfter', '(', '\n', '            ', 'StandardEnvironment', '.', 'SYSTEM_ENVIRONMENT_PROPERTY_SOURCE_NAME', ',', '\n', '            ', 'new', ' ', 'DotenvPropertySource', '(', 'dotenvConfig', ')', ')', ';', '\n', '\n', '    ', 'logger', '.', 'trace', '(', '""', 'DotenvPropertySource added to Environment', '""', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'static', ' ', 'void', ' ', 'addToEnvironment', '(', 'ConfigurableEnvironment', ' ', 'environment', ')', ' ', '{', '\n', '    ', 'DotenvConfig', ' ', 'dotenvConfig', ' ', '=', ' ', 'new', ' ', 'DotenvConfig', '(', 'environment', ')', ';', '\n', '    ', 'logger', '.', 'info', '(', '""', 'Initializing Dotenv with ', '""', ' ', '+', ' ', 'dotenvConfig', ')', ';', '\n', '\n', '    ', 'environment', '\n', '        ', '.', 'getPropertySources', '(', ')', '\n', '        ', '.', 'addAfter', '(', '\n', '            ', 'StandardEnvironment', '.', 'SYSTEM_ENVIRONMENT_PROPERTY_SOURCE_NAME', ',', '\n', '            ', 'new', ' ', 'DotenvPropertySource', '(', 'dotenvConfig', ')', ')', ';', '\n', '\n', '    ', 'logger', '.', 'trace', '(', '""', 'DotenvPropertySource added to Environment', '""', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,816fac8a12bbbe2e6c7059fc61e5d70b2fffa2ea,DotenvConfigTest.java,defaults,"  void defaults() {
     DotenvConfig dotenvConfig = new DotenvConfig(null);
 
@@ -146,7 +146,7 @@ master,816fac8a12bbbe2e6c7059fc61e5d70b2fffa2ea,DotenvConfigTest.java,defaults,"
 
     assertTrue(dotenvConfig.getIgnoreIfMissingTruth().get());
   }
-","['  ', 'void', ' ', 'defaults', '(', ')', ' ', '{', '\n', '    ', 'DotenvConfig', ' ', 'dotenvConfig', ' ', '=', ' ', 'new', ' ', 'DotenvConfig', '(', 'null', ')', ';', '\n', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getDirectoryOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getFilenameOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getIgnoreIfMalformedTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'getIgnoreIfMissingTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getSystemPropertiesTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'getIgnoreIfMissingTruth', '(', ')', '.', 'get', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'defaults', '(', ')', ' ', '{', '\n', '    ', 'DotenvConfig', ' ', 'dotenvConfig', ' ', '=', ' ', 'new', ' ', 'DotenvConfig', '(', 'null', ')', ';', '\n', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getDirectoryOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getFilenameOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getIgnoreIfMalformedTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'getIgnoreIfMissingTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getSystemPropertiesTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'getIgnoreIfMissingTruth', '(', ')', '.', 'get', '(', ')', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,DemoApplicationTest.java,fromValueAnnotation,"  void fromValueAnnotation() {
     assertThat(fromValueAnnotation.getValue1()).isEqualTo(""Message 1 from .env"");
     assertThat(fromValueAnnotation.getValue2()).isEqualTo(""Message 2 from system environment"");
@@ -162,7 +162,7 @@ master,f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,DemoApplicationTest.java,fromVal
     assertThat(fromValueAnnotation.getValue2v2()).isEqualTo(""Message 2 from system environment"");
     assertThat(fromValueAnnotation.getValue3v2()).isEqualTo(""Message 3 from system environment"");
   }
-","['  ', 'void', ' ', 'fromValueAnnotation', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue1', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 1 from .env', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue2', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 2 from system environment', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue3', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue1v2', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 1 from .env', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue2v2', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 2 from system environment', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue3v2', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'fromValueAnnotation', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue1', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 1 from .env', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue2', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 2 from system environment', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue3', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue1v2', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 1 from .env', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue2v2', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 2 from system environment', '""', ')', ';', '\n', '    ', 'assertThat', '(', 'fromValueAnnotation', '.', 'getValue3v2', '(', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,DotenvConfigTest.java,defaults,"  void defaults() {
     DotenvConfig dotenvConfig = new DotenvConfig(null);
 
@@ -183,7 +183,7 @@ master,f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,DotenvConfigTest.java,defaults,"
     assertFalse(dotenvConfig.getSystemPropertiesTruth().isPresent());
     assertTrue(dotenvConfig.getIgnoreIfMissingTruth().get());
     assertFalse(dotenvConfig.getPrefixPropertyOptional().isPresent());
-","['  ', 'void', ' ', 'defaults', '(', ')', ' ', '{', '\n', '    ', 'DotenvConfig', ' ', 'dotenvConfig', ' ', '=', ' ', 'new', ' ', 'DotenvConfig', '(', 'null', ')', ';', '\n', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getDirectoryOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getFilenameOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getIgnoreIfMalformedTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'getIgnoreIfMissingTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getSystemPropertiesTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'getIgnoreIfMissingTruth', '(', ')', '.', 'get', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getPrefixPropertyOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n']"
+","['  ', 'void', ' ', 'defaults', '(', ')', ' ', '{', '\n', '    ', 'DotenvConfig', ' ', 'dotenvConfig', ' ', '=', ' ', 'new', ' ', 'DotenvConfig', '(', 'null', ')', ';', '\n', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getDirectoryOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getFilenameOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getIgnoreIfMalformedTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'getIgnoreIfMissingTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getSystemPropertiesTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'getIgnoreIfMissingTruth', '(', ')', '.', 'get', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getPrefixPropertyOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '<END>']"
 master,f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,DotenvPropertySourceEnvironmentTest.java,init,"  void init(){
     configurableEnvironment = mock(ConfigurableEnvironment.class);
     doReturn("""").when(configurableEnvironment).getProperty("".env.prefixProperty"", (String)null);
@@ -193,43 +193,43 @@ master,f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,DotenvPropertySourceEnvironmentT
     doReturn("""").when(configurableEnvironment).getProperty("".env.prefixProperty"", (String)null);
     source = new DotenvPropertySource(new DotenvConfig(configurableEnvironment));
   }
-","['  ', 'void', ' ', 'init', '(', ')', '{', '\n', '    ', 'configurableEnvironment', ' ', '=', ' ', 'mock', '(', 'ConfigurableEnvironment', '.', 'class', ')', ';', '\n', '    ', 'doReturn', '(', '""', '""', ')', '.', 'when', '(', 'configurableEnvironment', ')', '.', 'getProperty', '(', '""', '.env.prefixProperty', '""', ',', ' ', '(', 'String', ')', 'null', ')', ';', '\n', '    ', 'source', ' ', '=', ' ', 'new', ' ', 'DotenvPropertySource', '(', 'new', ' ', 'DotenvConfig', '(', 'configurableEnvironment', ')', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'init', '(', ')', '{', '\n', '    ', 'configurableEnvironment', ' ', '=', ' ', 'mock', '(', 'ConfigurableEnvironment', '.', 'class', ')', ';', '\n', '    ', 'doReturn', '(', '""', '""', ')', '.', 'when', '(', 'configurableEnvironment', ')', '.', 'getProperty', '(', '""', '.env.prefixProperty', '""', ',', ' ', '(', 'String', ')', 'null', ')', ';', '\n', '    ', 'source', ' ', '=', ' ', 'new', ' ', 'DotenvPropertySource', '(', 'new', ' ', 'DotenvConfig', '(', 'configurableEnvironment', ')', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,DotenvPropertySourceEnvironmentTest.java,missing,"  void missing() {
     assertThat(source.getProperty(""MISSING"")).isNull();
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,"  void missing() {
     assertThat(source.getProperty(""MISSING"")).isNull();
   }
-","['  ', 'void', ' ', 'missing', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'MISSING', '""', ')', ')', '.', 'isNull', '(', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'missing', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'MISSING', '""', ')', ')', '.', 'isNull', '(', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,DotenvPropertySourceEnvironmentTest.java,valueFromDotenv,"  void valueFromDotenv() {
     assertThat(source.getProperty(""EXAMPLE_MESSAGE_1"")).isEqualTo(""Message 1 from .env"");
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,"  void valueFromDotenv() {
     assertThat(source.getProperty(""EXAMPLE_MESSAGE_1"")).isEqualTo(""Message 1 from .env"");
   }
-","['  ', 'void', ' ', 'valueFromDotenv', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'EXAMPLE_MESSAGE_1', '""', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 1 from .env', '""', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'valueFromDotenv', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'EXAMPLE_MESSAGE_1', '""', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 1 from .env', '""', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,DotenvPropertySourceEnvironmentTest.java,givenPrefixEnv_valueIsNull,"  void givenPrefixEnv_valueIsNull() {
     assertThat(source.getProperty(""env.EXAMPLE_MESSAGE_1"")).isNull();
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,"  void givenPrefixEnv_valueIsNull() {
     assertThat(source.getProperty(""env.EXAMPLE_MESSAGE_1"")).isNull();
   }
-","['  ', 'void', ' ', 'givenPrefixEnv_valueIsNull', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'env.EXAMPLE_MESSAGE_1', '""', ')', ')', '.', 'isNull', '(', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'givenPrefixEnv_valueIsNull', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'env.EXAMPLE_MESSAGE_1', '""', ')', ')', '.', 'isNull', '(', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,DotenvPropertySourceEnvironmentTest.java,valueFromEnvironment,"  void valueFromEnvironment() {
     assertThat(source.getProperty(""EXAMPLE_MESSAGE_2"")).isEqualTo(""Message 2 from system environment"");
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,"  void valueFromEnvironment() {
     assertThat(source.getProperty(""EXAMPLE_MESSAGE_2"")).isEqualTo(""Message 2 from system environment"");
   }
-","['  ', 'void', ' ', 'valueFromEnvironment', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'EXAMPLE_MESSAGE_2', '""', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 2 from system environment', '""', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'valueFromEnvironment', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'EXAMPLE_MESSAGE_2', '""', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 2 from system environment', '""', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,DotenvPropertySourceEnvironmentTest.java,valueFromEnvironmentOverride,"  void valueFromEnvironmentOverride() {
     assertThat(source.getProperty(""EXAMPLE_MESSAGE_3"")).isEqualTo(""Message 3 from system environment"");
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,"  void valueFromEnvironmentOverride() {
     assertThat(source.getProperty(""EXAMPLE_MESSAGE_3"")).isEqualTo(""Message 3 from system environment"");
   }
-","['  ', 'void', ' ', 'valueFromEnvironmentOverride', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'EXAMPLE_MESSAGE_3', '""', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'valueFromEnvironmentOverride', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'EXAMPLE_MESSAGE_3', '""', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,DotenvPropertySourceEnvironmentTest.java,valueFromDotEnv,"  void valueFromDotEnv() {
     assertThat(source.getProperty(""EXAMPLE_MESSAGE_3"")).isEqualTo(""Message 3 from system environment"");
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/f9541636de9de7b72b6ffcaae6ef0d75aa8c909e,"  void valueFromDotEnv() {
     assertThat(source.getProperty(""EXAMPLE_MESSAGE_3"")).isEqualTo(""Message 3 from system environment"");
   }
-","['  ', 'void', ' ', 'valueFromDotEnv', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'EXAMPLE_MESSAGE_3', '""', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'valueFromDotEnv', '(', ')', ' ', '{', '\n', '    ', 'assertThat', '(', 'source', '.', 'getProperty', '(', '""', 'EXAMPLE_MESSAGE_3', '""', ')', ')', '.', 'isEqualTo', '(', '""', 'Message 3 from system environment', '""', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,3950192d3b11c8c4549a15c66e2696855a2822b0,DotenvConfigTest.java,defaults,"  void defaults() {
     DotenvConfig dotenvConfig = new DotenvConfig(null);
 
@@ -250,7 +250,7 @@ master,3950192d3b11c8c4549a15c66e2696855a2822b0,DotenvConfigTest.java,defaults,"
     assertFalse(dotenvConfig.getSystemPropertiesTruth().isPresent());
     assertTrue(dotenvConfig.getIgnoreIfMissingTruth().get());
     assertFalse(dotenvConfig.getPrefixOptional().isPresent());
-","['  ', 'void', ' ', 'defaults', '(', ')', ' ', '{', '\n', '    ', 'DotenvConfig', ' ', 'dotenvConfig', ' ', '=', ' ', 'new', ' ', 'DotenvConfig', '(', 'null', ')', ';', '\n', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getDirectoryOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getFilenameOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getIgnoreIfMalformedTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'getIgnoreIfMissingTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getSystemPropertiesTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'getIgnoreIfMissingTruth', '(', ')', '.', 'get', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getPrefixOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n']"
+","['  ', 'void', ' ', 'defaults', '(', ')', ' ', '{', '\n', '    ', 'DotenvConfig', ' ', 'dotenvConfig', ' ', '=', ' ', 'new', ' ', 'DotenvConfig', '(', 'null', ')', ';', '\n', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getDirectoryOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getFilenameOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getIgnoreIfMalformedTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'getIgnoreIfMissingTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getSystemPropertiesTruth', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'getIgnoreIfMissingTruth', '(', ')', '.', 'get', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'getPrefixOptional', '(', ')', '.', 'isPresent', '(', ')', ')', ';', '\n', '<END>']"
 master,3950192d3b11c8c4549a15c66e2696855a2822b0,DotenvPropertySourceEnvironmentTest.java,init,"  void init() {
     configurableEnvironment = mock(ConfigurableEnvironment.class);
     doReturn("""").when(configurableEnvironment).getProperty("".env.prefix"", (String) null);
@@ -260,13 +260,13 @@ master,3950192d3b11c8c4549a15c66e2696855a2822b0,DotenvPropertySourceEnvironmentT
     doReturn("""").when(configurableEnvironment).getProperty("".env.prefix"", (String) null);
     source = new DotenvPropertySource(new DotenvConfig(configurableEnvironment));
   }
-","['  ', 'void', ' ', 'init', '(', ')', ' ', '{', '\n', '    ', 'configurableEnvironment', ' ', '=', ' ', 'mock', '(', 'ConfigurableEnvironment', '.', 'class', ')', ';', '\n', '    ', 'doReturn', '(', '""', '""', ')', '.', 'when', '(', 'configurableEnvironment', ')', '.', 'getProperty', '(', '""', '.env.prefix', '""', ',', ' ', '(', 'String', ')', ' ', 'null', ')', ';', '\n', '    ', 'source', ' ', '=', ' ', 'new', ' ', 'DotenvPropertySource', '(', 'new', ' ', 'DotenvConfig', '(', 'configurableEnvironment', ')', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'init', '(', ')', ' ', '{', '\n', '    ', 'configurableEnvironment', ' ', '=', ' ', 'mock', '(', 'ConfigurableEnvironment', '.', 'class', ')', ';', '\n', '    ', 'doReturn', '(', '""', '""', ')', '.', 'when', '(', 'configurableEnvironment', ')', '.', 'getProperty', '(', '""', '.env.prefix', '""', ',', ' ', '(', 'String', ')', ' ', 'null', ')', ';', '\n', '    ', 'source', ' ', '=', ' ', 'new', ' ', 'DotenvPropertySource', '(', 'new', ' ', 'DotenvConfig', '(', 'configurableEnvironment', ')', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,09c26e2e3c46e8475579c13b2fd70aafdbbcc54a,DemoApplication.java,run,"  public void run(ApplicationArguments args) {
     logger.info(""Hello, {}"", name);
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/09c26e2e3c46e8475579c13b2fd70aafdbbcc54a,"  public void run(ApplicationArguments args) {
     logger.info(""Hello, {}"", name);
   }
-","['  ', 'public', ' ', 'void', ' ', 'run', '(', 'ApplicationArguments', ' ', 'args', ')', ' ', '{', '\n', '    ', 'logger', '.', 'info', '(', '""', 'Hello, {}', '""', ',', ' ', 'name', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'void', ' ', 'run', '(', 'ApplicationArguments', ' ', 'args', ')', ' ', '{', '\n', '    ', 'logger', '.', 'info', '(', '""', 'Hello, {}', '""', ',', ' ', 'name', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,09c26e2e3c46e8475579c13b2fd70aafdbbcc54a,DotenvPropertySourceEnvironmentTest.java,init,"  void init() {
     ConfigurableEnvironment configurableEnvironment = mock(ConfigurableEnvironment.class);
     doReturn("""").when(configurableEnvironment).getProperty("".env.prefix"", (String) null);
@@ -276,7 +276,7 @@ master,09c26e2e3c46e8475579c13b2fd70aafdbbcc54a,DotenvPropertySourceEnvironmentT
     doReturn("""").when(configurableEnvironment).getProperty("".env.prefix"", (String) null);
     source = new DotenvPropertySource(new DotenvConfig(configurableEnvironment));
   }
-","['  ', 'void', ' ', 'init', '(', ')', ' ', '{', '\n', '    ', 'ConfigurableEnvironment', ' ', 'configurableEnvironment', ' ', '=', ' ', 'mock', '(', 'ConfigurableEnvironment', '.', 'class', ')', ';', '\n', '    ', 'doReturn', '(', '""', '""', ')', '.', 'when', '(', 'configurableEnvironment', ')', '.', 'getProperty', '(', '""', '.env.prefix', '""', ',', ' ', '(', 'String', ')', ' ', 'null', ')', ';', '\n', '    ', 'source', ' ', '=', ' ', 'new', ' ', 'DotenvPropertySource', '(', 'new', ' ', 'DotenvConfig', '(', 'configurableEnvironment', ')', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'init', '(', ')', ' ', '{', '\n', '    ', 'ConfigurableEnvironment', ' ', 'configurableEnvironment', ' ', '=', ' ', 'mock', '(', 'ConfigurableEnvironment', '.', 'class', ')', ';', '\n', '    ', 'doReturn', '(', '""', '""', ')', '.', 'when', '(', 'configurableEnvironment', ')', '.', 'getProperty', '(', '""', '.env.prefix', '""', ',', ' ', '(', 'String', ')', ' ', 'null', ')', ';', '\n', '    ', 'source', ' ', '=', ' ', 'new', ' ', 'DotenvPropertySource', '(', 'new', ' ', 'DotenvConfig', '(', 'configurableEnvironment', ')', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,SpringAppDemoApplication.java,main,"  public static void main(String[] args) {
     AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
 
@@ -300,55 +300,55 @@ master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,SpringAppDemoApplication.java,ma
     Config config = applicationContext.getBean(Config.class);
     log.info(""Hello, {}"", config.name);
   }
-","['  ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '    ', 'AnnotationConfigApplicationContext', ' ', 'applicationContext', ' ', '=', ' ', 'new', ' ', 'AnnotationConfigApplicationContext', '(', ')', ';', '\n', '\n', '    ', '\n', '    ', 'DotenvPropertySource', '.', 'addToEnvironment', '(', 'applicationContext', '.', 'getEnvironment', '(', ')', ')', ';', '\n', '\n', '    ', 'applicationContext', '.', 'register', '(', 'Config', '.', 'class', ')', ';', '\n', '    ', 'applicationContext', '.', 'refresh', '(', ')', ';', '\n', '\n', '    ', 'Config', ' ', 'config', ' ', '=', ' ', 'applicationContext', '.', 'getBean', '(', 'Config', '.', 'class', ')', ';', '\n', '    ', 'log', '.', 'info', '(', '""', 'Hello, {}', '""', ',', ' ', 'config', '.', 'name', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '    ', 'AnnotationConfigApplicationContext', ' ', 'applicationContext', ' ', '=', ' ', 'new', ' ', 'AnnotationConfigApplicationContext', '(', ')', ';', '\n', '\n', '    ', '\n', '    ', 'DotenvPropertySource', '.', 'addToEnvironment', '(', 'applicationContext', '.', 'getEnvironment', '(', ')', ')', ';', '\n', '\n', '    ', 'applicationContext', '.', 'register', '(', 'Config', '.', 'class', ')', ';', '\n', '    ', 'applicationContext', '.', 'refresh', '(', ')', ';', '\n', '\n', '    ', 'Config', ' ', 'config', ' ', '=', ' ', 'applicationContext', '.', 'getBean', '(', 'Config', '.', 'class', ')', ';', '\n', '    ', 'log', '.', 'info', '(', '""', 'Hello, {}', '""', ',', ' ', 'config', '.', 'name', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,SpringBootDemoApplication.java,main,"  public static void main(String[] args) {
     SpringApplication.run(SpringBootDemoApplication.class, args);
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/a7a23de0b938067bbbff3a23e00ae35b3a6928a4,"  public static void main(String[] args) {
     SpringApplication.run(SpringBootDemoApplication.class, args);
   }
-","['  ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '    ', 'SpringApplication', '.', 'run', '(', 'SpringBootDemoApplication', '.', 'class', ',', ' ', 'args', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '    ', 'SpringApplication', '.', 'run', '(', 'SpringBootDemoApplication', '.', 'class', ',', ' ', 'args', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,SpringBootDemoApplication.java,run,"  public void run(ApplicationArguments args) {
     log.info(""Hello, {}"", name);
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/a7a23de0b938067bbbff3a23e00ae35b3a6928a4,"  public void run(ApplicationArguments args) {
     log.info(""Hello, {}"", name);
   }
-","['  ', 'public', ' ', 'void', ' ', 'run', '(', 'ApplicationArguments', ' ', 'args', ')', ' ', '{', '\n', '    ', 'log', '.', 'info', '(', '""', 'Hello, {}', '""', ',', ' ', 'name', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'void', ' ', 'run', '(', 'ApplicationArguments', ' ', 'args', ')', ' ', '{', '\n', '    ', 'log', '.', 'info', '(', '""', 'Hello, {}', '""', ',', ' ', 'name', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,ExampleController.java,home,"  public String home() {
     return String.format(""Hello, <b>%s</b>"", name);
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/a7a23de0b938067bbbff3a23e00ae35b3a6928a4,"  public String home() {
     return String.format(""Hello, <b>%s</b>"", name);
   }
-","['  ', 'public', ' ', 'String', ' ', 'home', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', 'String', '.', 'format', '(', '""', 'Hello, <b>%s</b>', '""', ',', ' ', 'name', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'String', ' ', 'home', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', 'String', '.', 'format', '(', '""', 'Hello, <b>%s</b>', '""', ',', ' ', 'name', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvConfig.java,ignoreIfMalformed,"  public boolean ignoreIfMalformed() {
     return ignoreIfMalformed;
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/a7a23de0b938067bbbff3a23e00ae35b3a6928a4,"  public boolean ignoreIfMalformed() {
     return ignoreIfMalformed;
   }
-","['  ', 'public', ' ', 'boolean', ' ', 'ignoreIfMalformed', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', 'ignoreIfMalformed', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'boolean', ' ', 'ignoreIfMalformed', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', 'ignoreIfMalformed', ';', '\n', '  ', '}', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvConfig.java,ignoreIfMissing,"  public boolean ignoreIfMissing() {
     return ignoreIfMissing;
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/a7a23de0b938067bbbff3a23e00ae35b3a6928a4,"  public boolean ignoreIfMissing() {
     return ignoreIfMissing;
   }
-","['  ', 'public', ' ', 'boolean', ' ', 'ignoreIfMissing', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', 'ignoreIfMissing', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'boolean', ' ', 'ignoreIfMissing', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', 'ignoreIfMissing', ';', '\n', '  ', '}', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvConfig.java,systemProperties,"  public boolean systemProperties() {
     return systemProperties;
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/a7a23de0b938067bbbff3a23e00ae35b3a6928a4,"  public boolean systemProperties() {
     return systemProperties;
   }
-","['  ', 'public', ' ', 'boolean', ' ', 'systemProperties', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', 'systemProperties', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'boolean', ' ', 'systemProperties', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', 'systemProperties', ';', '\n', '  ', '}', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvConfig.java,suppressPrefixDeprecationWarning,"  public boolean suppressPrefixDeprecationWarning() {
     return suppressPrefixDeprecationWarning;
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/a7a23de0b938067bbbff3a23e00ae35b3a6928a4,"  public boolean suppressPrefixDeprecationWarning() {
     return suppressPrefixDeprecationWarning;
   }
-","['  ', 'public', ' ', 'boolean', ' ', 'suppressPrefixDeprecationWarning', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', 'suppressPrefixDeprecationWarning', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'boolean', ' ', 'suppressPrefixDeprecationWarning', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', 'suppressPrefixDeprecationWarning', ';', '\n', '  ', '}', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvConfig.java,toString,"  public String toString() {
     return ""DotenvConfig{"" +
         ""directory="" + directory +",https://www.github.com/paulschwarz/spring-dotenv/commit/a7a23de0b938067bbbff3a23e00ae35b3a6928a4,"  public String toString() {
     return ""DotenvConfig{"" +
         ""directory="" + directory +
-","['  ', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', '""', 'DotenvConfig{', '""', ' ', '+', '\n', '        ', '""', 'directory=', '""', ' ', '+', ' ', 'directory', ' ', '+', '\n']"
+","['  ', 'public', ' ', 'String', ' ', 'toString', '(', ')', ' ', '{', '\n', '    ', 'return', ' ', '""', 'DotenvConfig{', '""', ' ', '+', '\n', '        ', '""', 'directory=', '""', ' ', '+', ' ', 'directory', ' ', '+', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvPropertySource.java,addToEnvironment,"  public static void addToEnvironment(ConfigurableEnvironment environment) {
     DotenvConfig dotenvConfig = new DotenvConfig(DotenvConfigProperties.loadProperties());
     DotenvPropertySource dotenvPropertySource = new DotenvPropertySource(dotenvConfig);
@@ -364,7 +364,7 @@ master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvPropertySource.java,addToE
 
     if (dotenvConfig.systemProperties()) {
       log.trace(""Dotenv environment available as system properties"");
-","['  ', 'public', ' ', 'static', ' ', 'void', ' ', 'addToEnvironment', '(', 'ConfigurableEnvironment', ' ', 'environment', ')', ' ', '{', '\n', '    ', 'DotenvConfig', ' ', 'dotenvConfig', ' ', '=', ' ', 'new', ' ', 'DotenvConfig', '(', 'DotenvConfigProperties', '.', 'loadProperties', '(', ')', ')', ';', '\n', '    ', 'DotenvPropertySource', ' ', 'dotenvPropertySource', ' ', '=', ' ', 'new', ' ', 'DotenvPropertySource', '(', 'dotenvConfig', ')', ';', '\n', '\n', '    ', 'log', '.', 'info', '(', 'LogMessage', '.', 'format', '(', '""', 'Initialized Dotenv with %s', '""', ',', ' ', 'dotenvConfig', ')', ')', ';', '\n', '\n', '    ', 'if', ' ', '(', 'dotenvConfig', '.', 'systemProperties', '(', ')', ')', ' ', '{', '\n', '      ', 'log', '.', 'trace', '(', '""', 'Dotenv environment available as system properties', '""', ')', ';', '\n']"
+","['  ', 'public', ' ', 'static', ' ', 'void', ' ', 'addToEnvironment', '(', 'ConfigurableEnvironment', ' ', 'environment', ')', ' ', '{', '\n', '    ', 'DotenvConfig', ' ', 'dotenvConfig', ' ', '=', ' ', 'new', ' ', 'DotenvConfig', '(', 'DotenvConfigProperties', '.', 'loadProperties', '(', ')', ')', ';', '\n', '    ', 'DotenvPropertySource', ' ', 'dotenvPropertySource', ' ', '=', ' ', 'new', ' ', 'DotenvPropertySource', '(', 'dotenvConfig', ')', ';', '\n', '\n', '    ', 'log', '.', 'info', '(', 'LogMessage', '.', 'format', '(', '""', 'Initialized Dotenv with %s', '""', ',', ' ', 'dotenvConfig', ')', ')', ';', '\n', '\n', '    ', 'if', ' ', '(', 'dotenvConfig', '.', 'systemProperties', '(', ')', ')', ' ', '{', '\n', '      ', 'log', '.', 'trace', '(', '""', 'Dotenv environment available as system properties', '""', ')', ';', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvJakartaApplicationListener.java,contextInitialized,"  public void contextInitialized(ServletContextEvent sce) {
     Object obj = sce.getServletContext().getAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);
 
@@ -374,13 +374,13 @@ master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvJakartaApplicationListener
 
     if (obj instanceof ConfigurableApplicationContext) {
       ConfigurableApplicationContext context = (ConfigurableApplicationContext) obj;
-","['  ', 'public', ' ', 'void', ' ', 'contextInitialized', '(', 'ServletContextEvent', ' ', 'sce', ')', ' ', '{', '\n', '    ', 'Object', ' ', 'obj', ' ', '=', ' ', 'sce', '.', 'getServletContext', '(', ')', '.', 'getAttribute', '(', 'WebApplicationContext', '.', 'ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE', ')', ';', '\n', '\n', '    ', 'if', ' ', '(', 'obj', ' ', 'instanceof', ' ', 'ConfigurableApplicationContext', ')', ' ', '{', '\n', '      ', 'ConfigurableApplicationContext', ' ', 'context', ' ', '=', ' ', '(', 'ConfigurableApplicationContext', ')', ' ', 'obj', ';', '\n']"
+","['  ', 'public', ' ', 'void', ' ', 'contextInitialized', '(', 'ServletContextEvent', ' ', 'sce', ')', ' ', '{', '\n', '    ', 'Object', ' ', 'obj', ' ', '=', ' ', 'sce', '.', 'getServletContext', '(', ')', '.', 'getAttribute', '(', 'WebApplicationContext', '.', 'ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE', ')', ';', '\n', '\n', '    ', 'if', ' ', '(', 'obj', ' ', 'instanceof', ' ', 'ConfigurableApplicationContext', ')', ' ', '{', '\n', '      ', 'ConfigurableApplicationContext', ' ', 'context', ' ', '=', ' ', '(', 'ConfigurableApplicationContext', ')', ' ', 'obj', ';', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvJakartaApplicationListener.java,contextDestroyed,"  public void contextDestroyed(ServletContextEvent sce) {
     ServletContextListener.super.contextDestroyed(sce);
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/a7a23de0b938067bbbff3a23e00ae35b3a6928a4,"  public void contextDestroyed(ServletContextEvent sce) {
     ServletContextListener.super.contextDestroyed(sce);
   }
-","['  ', 'public', ' ', 'void', ' ', 'contextDestroyed', '(', 'ServletContextEvent', ' ', 'sce', ')', ' ', '{', '\n', '    ', 'ServletContextListener', '.', 'super', '.', 'contextDestroyed', '(', 'sce', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'void', ' ', 'contextDestroyed', '(', 'ServletContextEvent', ' ', 'sce', ')', ' ', '{', '\n', '    ', 'ServletContextListener', '.', 'super', '.', 'contextDestroyed', '(', 'sce', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvApplicationRunListener.java,environmentPrepared,"  public void environmentPrepared(ConfigurableBootstrapContext bootstrapContext, ConfigurableEnvironment environment) {
     DotenvPropertySource.addToEnvironment(environment);
     SpringApplicationRunListener.super.environmentPrepared(bootstrapContext, environment);
@@ -388,7 +388,7 @@ master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvApplicationRunListener.jav
     DotenvPropertySource.addToEnvironment(environment);
     SpringApplicationRunListener.super.environmentPrepared(bootstrapContext, environment);
   }
-","['  ', 'public', ' ', 'void', ' ', 'environmentPrepared', '(', 'ConfigurableBootstrapContext', ' ', 'bootstrapContext', ',', ' ', 'ConfigurableEnvironment', ' ', 'environment', ')', ' ', '{', '\n', '    ', 'DotenvPropertySource', '.', 'addToEnvironment', '(', 'environment', ')', ';', '\n', '    ', 'SpringApplicationRunListener', '.', 'super', '.', 'environmentPrepared', '(', 'bootstrapContext', ',', ' ', 'environment', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'public', ' ', 'void', ' ', 'environmentPrepared', '(', 'ConfigurableBootstrapContext', ' ', 'bootstrapContext', ',', ' ', 'ConfigurableEnvironment', ' ', 'environment', ')', ' ', '{', '\n', '    ', 'DotenvPropertySource', '.', 'addToEnvironment', '(', 'environment', ')', ';', '\n', '    ', 'SpringApplicationRunListener', '.', 'super', '.', 'environmentPrepared', '(', 'bootstrapContext', ',', ' ', 'environment', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvConfigTest.java,defaults,"  void defaults() {
     DotenvConfig dotenvConfig = new DotenvConfig(new Properties());
 
@@ -408,7 +408,7 @@ master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvConfigTest.java,defaults,"
     assertFalse(dotenvConfig.systemProperties());
     assertNull(dotenvConfig.getPrefix());
   }
-","['  ', 'void', ' ', 'defaults', '(', ')', ' ', '{', '\n', '    ', 'DotenvConfig', ' ', 'dotenvConfig', ' ', '=', ' ', 'new', ' ', 'DotenvConfig', '(', 'new', ' ', 'Properties', '(', ')', ')', ';', '\n', '\n', '    ', 'assertNull', '(', 'dotenvConfig', '.', 'getDirectory', '(', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'dotenvConfig', '.', 'getFilename', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'ignoreIfMalformed', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'ignoreIfMissing', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'systemProperties', '(', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'dotenvConfig', '.', 'getPrefix', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'defaults', '(', ')', ' ', '{', '\n', '    ', 'DotenvConfig', ' ', 'dotenvConfig', ' ', '=', ' ', 'new', ' ', 'DotenvConfig', '(', 'new', ' ', 'Properties', '(', ')', ')', ';', '\n', '\n', '    ', 'assertNull', '(', 'dotenvConfig', '.', 'getDirectory', '(', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'dotenvConfig', '.', 'getFilename', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'ignoreIfMalformed', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'ignoreIfMissing', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'systemProperties', '(', ')', ')', ';', '\n', '    ', 'assertNull', '(', 'dotenvConfig', '.', 'getPrefix', '(', ')', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvConfigTest.java,withValues,"  void withValues() {
     Properties properties = mock(Properties.class);
 
@@ -446,10 +446,10 @@ master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvConfigTest.java,withValues
     assertTrue(dotenvConfig.systemProperties());
     assertEquals("""", dotenvConfig.getPrefix());
   }
-","['  ', 'void', ' ', 'withValues', '(', ')', ' ', '{', '\n', '    ', 'Properties', ' ', 'properties', ' ', '=', ' ', 'mock', '(', 'Properties', '.', 'class', ')', ';', '\n', '\n', '    ', 'doReturn', '(', '""', './some/path', '""', ')', '.', 'when', '(', 'properties', ')', '.', 'getProperty', '(', '""', 'directory', '""', ')', ';', '\n', '    ', 'doReturn', '(', '""', '.env', '""', ')', '.', 'when', '(', 'properties', ')', '.', 'getProperty', '(', '""', 'filename', '""', ')', ';', '\n', '    ', 'doReturn', '(', '""', 'true', '""', ')', '.', 'when', '(', 'properties', ')', '.', 'getProperty', '(', '""', 'ignoreIfMalformed', '""', ',', ' ', '""', 'false', '""', ')', ';', '\n', '    ', 'doReturn', '(', '""', 'false', '""', ')', '.', 'when', '(', 'properties', ')', '.', 'getProperty', '(', '""', 'ignoreIfMissing', '""', ',', ' ', '""', 'true', '""', ')', ';', '\n', '    ', 'doReturn', '(', '""', 'true', '""', ')', '.', 'when', '(', 'properties', ')', '.', 'getProperty', '(', '""', 'systemProperties', '""', ',', ' ', '""', 'false', '""', ')', ';', '\n', '    ', 'doReturn', '(', '""', '""', ')', '.', 'when', '(', 'properties', ')', '.', 'getProperty', '(', '""', 'prefix', '""', ')', ';', '\n', '\n', '    ', 'DotenvConfig', ' ', 'dotenvConfig', ' ', '=', ' ', 'new', ' ', 'DotenvConfig', '(', 'properties', ')', ';', '\n', '\n', '    ', 'assertEquals', '(', '""', './some/path', '""', ',', ' ', 'dotenvConfig', '.', 'getDirectory', '(', ')', ')', ';', '\n', '    ', 'assertEquals', '(', '""', '.env', '""', ',', ' ', 'dotenvConfig', '.', 'getFilename', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'ignoreIfMalformed', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'ignoreIfMissing', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'systemProperties', '(', ')', ')', ';', '\n', '    ', 'assertEquals', '(', '""', '""', ',', ' ', 'dotenvConfig', '.', 'getPrefix', '(', ')', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'withValues', '(', ')', ' ', '{', '\n', '    ', 'Properties', ' ', 'properties', ' ', '=', ' ', 'mock', '(', 'Properties', '.', 'class', ')', ';', '\n', '\n', '    ', 'doReturn', '(', '""', './some/path', '""', ')', '.', 'when', '(', 'properties', ')', '.', 'getProperty', '(', '""', 'directory', '""', ')', ';', '\n', '    ', 'doReturn', '(', '""', '.env', '""', ')', '.', 'when', '(', 'properties', ')', '.', 'getProperty', '(', '""', 'filename', '""', ')', ';', '\n', '    ', 'doReturn', '(', '""', 'true', '""', ')', '.', 'when', '(', 'properties', ')', '.', 'getProperty', '(', '""', 'ignoreIfMalformed', '""', ',', ' ', '""', 'false', '""', ')', ';', '\n', '    ', 'doReturn', '(', '""', 'false', '""', ')', '.', 'when', '(', 'properties', ')', '.', 'getProperty', '(', '""', 'ignoreIfMissing', '""', ',', ' ', '""', 'true', '""', ')', ';', '\n', '    ', 'doReturn', '(', '""', 'true', '""', ')', '.', 'when', '(', 'properties', ')', '.', 'getProperty', '(', '""', 'systemProperties', '""', ',', ' ', '""', 'false', '""', ')', ';', '\n', '    ', 'doReturn', '(', '""', '""', ')', '.', 'when', '(', 'properties', ')', '.', 'getProperty', '(', '""', 'prefix', '""', ')', ';', '\n', '\n', '    ', 'DotenvConfig', ' ', 'dotenvConfig', ' ', '=', ' ', 'new', ' ', 'DotenvConfig', '(', 'properties', ')', ';', '\n', '\n', '    ', 'assertEquals', '(', '""', './some/path', '""', ',', ' ', 'dotenvConfig', '.', 'getDirectory', '(', ')', ')', ';', '\n', '    ', 'assertEquals', '(', '""', '.env', '""', ',', ' ', 'dotenvConfig', '.', 'getFilename', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'ignoreIfMalformed', '(', ')', ')', ';', '\n', '    ', 'assertFalse', '(', 'dotenvConfig', '.', 'ignoreIfMissing', '(', ')', ')', ';', '\n', '    ', 'assertTrue', '(', 'dotenvConfig', '.', 'systemProperties', '(', ')', ')', ';', '\n', '    ', 'assertEquals', '(', '""', '""', ',', ' ', 'dotenvConfig', '.', 'getPrefix', '(', ')', ')', ';', '\n', '  ', '}', '\n', '<END>']"
 master,a7a23de0b938067bbbff3a23e00ae35b3a6928a4,DotenvPropertySourceEnvironmentTest.java,init,"  void init() {
     source = new DotenvPropertySource(new DotenvConfig(new Properties()));
   }",https://www.github.com/paulschwarz/spring-dotenv/commit/a7a23de0b938067bbbff3a23e00ae35b3a6928a4,"  void init() {
     source = new DotenvPropertySource(new DotenvConfig(new Properties()));
   }
-","['  ', 'void', ' ', 'init', '(', ')', ' ', '{', '\n', '    ', 'source', ' ', '=', ' ', 'new', ' ', 'DotenvPropertySource', '(', 'new', ' ', 'DotenvConfig', '(', 'new', ' ', 'Properties', '(', ')', ')', ')', ';', '\n', '  ', '}', '\n']"
+","['  ', 'void', ' ', 'init', '(', ')', ' ', '{', '\n', '    ', 'source', ' ', '=', ' ', 'new', ' ', 'DotenvPropertySource', '(', 'new', ' ', 'DotenvConfig', '(', 'new', ' ', 'Properties', '(', ')', ')', ')', ';', '\n', '  ', '}', '\n', '<END>']"

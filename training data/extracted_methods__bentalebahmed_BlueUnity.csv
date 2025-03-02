@@ -10,25 +10,25 @@ master,fb2841581ff2a912771ce92e4f8ee1e8602fdcaf,ExampleInstrumentedTest.java,use
 
         assertEquals(""com.example.bluetoothplugin"", appContext.getPackageName());
     }
-","['    ', 'public', ' ', 'void', ' ', 'useAppContext', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', 'Context', ' ', 'appContext', ' ', '=', ' ', 'InstrumentationRegistry', '.', 'getTargetContext', '(', ')', ';', '\n', '\n', '        ', 'assertEquals', '(', '""', 'com.example.bluetoothplugin', '""', ',', ' ', 'appContext', '.', 'getPackageName', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'useAppContext', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', 'Context', ' ', 'appContext', ' ', '=', ' ', 'InstrumentationRegistry', '.', 'getTargetContext', '(', ')', ';', '\n', '\n', '        ', 'assertEquals', '(', '""', 'com.example.bluetoothplugin', '""', ',', ' ', 'appContext', '.', 'getPackageName', '(', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,fb2841581ff2a912771ce92e4f8ee1e8602fdcaf,ExampleUnitTest.java,addition_isCorrect,"    public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }",https://www.github.com/bentalebahmed/BlueUnity/commit/fb2841581ff2a912771ce92e4f8ee1e8602fdcaf,"    public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
-","['    ', 'public', ' ', 'void', ' ', 'addition_isCorrect', '(', ')', ' ', '{', '\n', '        ', 'assertEquals', '(', '4', ',', ' ', '2', ' ', '+', ' ', '2', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'addition_isCorrect', '(', ')', ' ', '{', '\n', '        ', 'assertEquals', '(', '4', ',', ' ', '2', ' ', '+', ' ', '2', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,88efabb34dc6043ef7e7e83f878b690c41335c4d,BluetoothConnector.java,GetBluetoothDevices,"    public String[] GetBluetoothDevices(){
         try{
             devices_true.clear();",https://www.github.com/bentalebahmed/BlueUnity/commit/88efabb34dc6043ef7e7e83f878b690c41335c4d,"    public String[] GetBluetoothDevices(){
         try{
             devices_true.clear();
-","['    ', 'public', ' ', 'String', '[', ']', ' ', 'GetBluetoothDevices', '(', ')', '{', '\n', '        ', 'try', '{', '\n', '            ', 'devices_true', '.', 'clear', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'String', '[', ']', ' ', 'GetBluetoothDevices', '(', ')', '{', '\n', '        ', 'try', '{', '\n', '            ', 'devices_true', '.', 'clear', '(', ')', ';', '\n', '<END>']"
 master,88efabb34dc6043ef7e7e83f878b690c41335c4d,BluetoothConnector.java,StartBluetoothConnection,"    public String StartBluetoothConnection(String DeviceName){
         try{
             devices_true.clear();",https://www.github.com/bentalebahmed/BlueUnity/commit/88efabb34dc6043ef7e7e83f878b690c41335c4d,"    public String StartBluetoothConnection(String DeviceName){
         try{
             devices_true.clear();
-","['    ', 'public', ' ', 'String', ' ', 'StartBluetoothConnection', '(', 'String', ' ', 'DeviceName', ')', '{', '\n', '        ', 'try', '{', '\n', '            ', 'devices_true', '.', 'clear', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'String', ' ', 'StartBluetoothConnection', '(', 'String', ' ', 'DeviceName', ')', '{', '\n', '        ', 'try', '{', '\n', '            ', 'devices_true', '.', 'clear', '(', ')', ';', '\n', '<END>']"
 master,88efabb34dc6043ef7e7e83f878b690c41335c4d,BluetoothConnector.java,ReadData,"    public String ReadData(){
 
         try {
@@ -36,25 +36,25 @@ master,88efabb34dc6043ef7e7e83f878b690c41335c4d,BluetoothConnector.java,ReadData
 
         try {
             if(inputStream.available() > 0){
-","['    ', 'public', ' ', 'String', ' ', 'ReadData', '(', ')', '{', '\n', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'if', '(', 'inputStream', '.', 'available', '(', ')', ' ', '>', ' ', '0', ')', '{', '\n']"
+","['    ', 'public', ' ', 'String', ' ', 'ReadData', '(', ')', '{', '\n', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'if', '(', 'inputStream', '.', 'available', '(', ')', ' ', '>', ' ', '0', ')', '{', '\n', '<END>']"
 master,88efabb34dc6043ef7e7e83f878b690c41335c4d,BluetoothConnector.java,WriteData,"    public void WriteData(String data){
         try {
             outputStream.write(data.getBytes());",https://www.github.com/bentalebahmed/BlueUnity/commit/88efabb34dc6043ef7e7e83f878b690c41335c4d,"    public void WriteData(String data){
         try {
             outputStream.write(data.getBytes());
-","['    ', 'public', ' ', 'void', ' ', 'WriteData', '(', 'String', ' ', 'data', ')', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'outputStream', '.', 'write', '(', 'data', '.', 'getBytes', '(', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'WriteData', '(', 'String', ' ', 'data', ')', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'outputStream', '.', 'write', '(', 'data', '.', 'getBytes', '(', ')', ')', ';', '\n', '<END>']"
 master,88efabb34dc6043ef7e7e83f878b690c41335c4d,BluetoothConnector.java,StopBluetoothConnection,"    public void StopBluetoothConnection(){
         try {
             if(inputStream != null) inputStream.close();",https://www.github.com/bentalebahmed/BlueUnity/commit/88efabb34dc6043ef7e7e83f878b690c41335c4d,"    public void StopBluetoothConnection(){
         try {
             if(inputStream != null) inputStream.close();
-","['    ', 'public', ' ', 'void', ' ', 'StopBluetoothConnection', '(', ')', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'if', '(', 'inputStream', ' ', '!', '=', ' ', 'null', ')', ' ', 'inputStream', '.', 'close', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'StopBluetoothConnection', '(', ')', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'if', '(', 'inputStream', ' ', '!', '=', ' ', 'null', ')', ' ', 'inputStream', '.', 'close', '(', ')', ';', '\n', '<END>']"
 master,88efabb34dc6043ef7e7e83f878b690c41335c4d,BluetoothConnector.java,PrintOnScreen,"    public void PrintOnScreen(Context context, String info){
         Toast.makeText(context, info,Toast.LENGTH_SHORT).show();
     }",https://www.github.com/bentalebahmed/BlueUnity/commit/88efabb34dc6043ef7e7e83f878b690c41335c4d,"    public void PrintOnScreen(Context context, String info){
         Toast.makeText(context, info,Toast.LENGTH_SHORT).show();
     }
-","['    ', 'public', ' ', 'void', ' ', 'PrintOnScreen', '(', 'Context', ' ', 'context', ',', ' ', 'String', ' ', 'info', ')', '{', '\n', '        ', 'Toast', '.', 'makeText', '(', 'context', ',', ' ', 'info', ',', 'Toast', '.', 'LENGTH_SHORT', ')', '.', 'show', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'PrintOnScreen', '(', 'Context', ' ', 'context', ',', ' ', 'String', ' ', 'info', ')', '{', '\n', '        ', 'Toast', '.', 'makeText', '(', 'context', ',', ' ', 'info', ',', 'Toast', '.', 'LENGTH_SHORT', ')', '.', 'show', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,e865354c98e536990c0645ac08566b5d558a4a57,BluetoothConnector.java,onReceive,"            public void onReceive(Context context, Intent intent) {
                 String action = intent.getAction();
                 if (BluetoothDevice.ACTION_FOUND.equals(action)) {
@@ -62,7 +62,7 @@ master,e865354c98e536990c0645ac08566b5d558a4a57,BluetoothConnector.java,onReceiv
                 String action = intent.getAction();
                 if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                     BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-","['            ', 'public', ' ', 'void', ' ', 'onReceive', '(', 'Context', ' ', 'context', ',', ' ', 'Intent', ' ', 'intent', ')', ' ', '{', '\n', '                ', 'String', ' ', 'action', ' ', '=', ' ', 'intent', '.', 'getAction', '(', ')', ';', '\n', '                ', 'if', ' ', '(', 'BluetoothDevice', '.', 'ACTION_FOUND', '.', 'equals', '(', 'action', ')', ')', ' ', '{', '\n', '                    ', 'BluetoothDevice', ' ', 'device', ' ', '=', ' ', 'intent', '.', 'getParcelableExtra', '(', 'BluetoothDevice', '.', 'EXTRA_DEVICE', ')', ';', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onReceive', '(', 'Context', ' ', 'context', ',', ' ', 'Intent', ' ', 'intent', ')', ' ', '{', '\n', '                ', 'String', ' ', 'action', ' ', '=', ' ', 'intent', '.', 'getAction', '(', ')', ';', '\n', '                ', 'if', ' ', '(', 'BluetoothDevice', '.', 'ACTION_FOUND', '.', 'equals', '(', 'action', ')', ')', ' ', '{', '\n', '                    ', 'BluetoothDevice', ' ', 'device', ' ', '=', ' ', 'intent', '.', 'getParcelableExtra', '(', 'BluetoothDevice', '.', 'EXTRA_DEVICE', ')', ';', '\n', '<END>']"
 master,e865354c98e536990c0645ac08566b5d558a4a57,BluetoothConnector.java,StopScanDevices,"    private static void StopScanDevices() {
         // Check if discovery is already in progress, and cancel if so
         if (mBluetoothAdapter.isDiscovering()) {
@@ -70,13 +70,13 @@ master,e865354c98e536990c0645ac08566b5d558a4a57,BluetoothConnector.java,StopScan
         
         if (mBluetoothAdapter.isDiscovering()) {
             mBluetoothAdapter.cancelDiscovery();
-","['    ', 'private', ' ', 'static', ' ', 'void', ' ', 'StopScanDevices', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'mBluetoothAdapter', '.', 'isDiscovering', '(', ')', ')', ' ', '{', '\n', '            ', 'mBluetoothAdapter', '.', 'cancelDiscovery', '(', ')', ';', '\n']"
+","['    ', 'private', ' ', 'static', ' ', 'void', ' ', 'StopScanDevices', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', 'if', ' ', '(', 'mBluetoothAdapter', '.', 'isDiscovering', '(', ')', ')', ' ', '{', '\n', '            ', 'mBluetoothAdapter', '.', 'cancelDiscovery', '(', ')', ';', '\n', '<END>']"
 master,e865354c98e536990c0645ac08566b5d558a4a57,BluetoothConnector.java,GetPairedDevices,"    public static String[] GetPairedDevices() {
         try {
             ArrayList<String> paired_devices = new ArrayList<>();",https://www.github.com/bentalebahmed/BlueUnity/commit/e865354c98e536990c0645ac08566b5d558a4a57,"    public static String[] GetPairedDevices() {
         try {
             ArrayList<String> paired_devices = new ArrayList<>();
-","['    ', 'public', ' ', 'static', ' ', 'String', '[', ']', ' ', 'GetPairedDevices', '(', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'ArrayList', '<', 'String', '>', ' ', 'paired_devices', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'String', '[', ']', ' ', 'GetPairedDevices', '(', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'ArrayList', '<', 'String', '>', ' ', 'paired_devices', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', ')', ';', '\n', '<END>']"
 master,e865354c98e536990c0645ac08566b5d558a4a57,BluetoothConnector.java,StartConnection,"    public static void StartConnection(String DeviceAdd){
         UnityPlayer.UnitySendMessage(""BluetoothManager"", ""ConnectionStatus"", ""connecting"");
         try{
@@ -84,22 +84,22 @@ master,e865354c98e536990c0645ac08566b5d558a4a57,BluetoothConnector.java,StartCon
         UnityPlayer.UnitySendMessage(""BluetoothManager"", ""ConnectionStatus"", ""connecting"");
         try{
             if(!BluetoothAdapter.checkBluetoothAddress(DeviceAdd))
-","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'StartConnection', '(', 'String', ' ', 'DeviceAdd', ')', '{', '\n', '        ', 'UnityPlayer', '.', 'UnitySendMessage', '(', '""', 'BluetoothManager', '""', ',', ' ', '""', 'ConnectionStatus', '""', ',', ' ', '""', 'connecting', '""', ')', ';', '\n', '        ', 'try', '{', '\n', '            ', 'if', '(', '!', 'BluetoothAdapter', '.', 'checkBluetoothAddress', '(', 'DeviceAdd', ')', ')', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'StartConnection', '(', 'String', ' ', 'DeviceAdd', ')', '{', '\n', '        ', 'UnityPlayer', '.', 'UnitySendMessage', '(', '""', 'BluetoothManager', '""', ',', ' ', '""', 'ConnectionStatus', '""', ',', ' ', '""', 'connecting', '""', ')', ';', '\n', '        ', 'try', '{', '\n', '            ', 'if', '(', '!', 'BluetoothAdapter', '.', 'checkBluetoothAddress', '(', 'DeviceAdd', ')', ')', '\n', '<END>']"
 master,e865354c98e536990c0645ac08566b5d558a4a57,BluetoothConnector.java,StopConnection,"    public static void StopConnection(){
         try {
             ReadDatathread.interrupt();",https://www.github.com/bentalebahmed/BlueUnity/commit/e865354c98e536990c0645ac08566b5d558a4a57,"    public static void StopConnection(){
         try {
             ReadDatathread.interrupt();
-","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'StopConnection', '(', ')', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'ReadDatathread', '.', 'interrupt', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'StopConnection', '(', ')', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'ReadDatathread', '.', 'interrupt', '(', ')', ';', '\n', '<END>']"
 master,e865354c98e536990c0645ac08566b5d558a4a57,BluetoothConnector.java,WriteData,"    public static void WriteData(String data) {
         try {
             if (skt.isConnected()) {",https://www.github.com/bentalebahmed/BlueUnity/commit/e865354c98e536990c0645ac08566b5d558a4a57,"    public static void WriteData(String data) {
         try {
             if (skt.isConnected()) {
-","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'WriteData', '(', 'String', ' ', 'data', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'if', ' ', '(', 'skt', '.', 'isConnected', '(', ')', ')', ' ', '{', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'WriteData', '(', 'String', ' ', 'data', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'if', ' ', '(', 'skt', '.', 'isConnected', '(', ')', ')', ' ', '{', '\n', '<END>']"
 master,e865354c98e536990c0645ac08566b5d558a4a57,BluetoothConnector.java,Toast,"    public static void Toast(String info){
         Toast.makeText(UnityPlayer.currentActivity.getApplicationContext(), info,Toast.LENGTH_SHORT).show();
     }",https://www.github.com/bentalebahmed/BlueUnity/commit/e865354c98e536990c0645ac08566b5d558a4a57,"    public static void Toast(String info){
         Toast.makeText(UnityPlayer.currentActivity.getApplicationContext(), info,Toast.LENGTH_SHORT).show();
     }
-","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'Toast', '(', 'String', ' ', 'info', ')', '{', '\n', '        ', 'Toast', '.', 'makeText', '(', 'UnityPlayer', '.', 'currentActivity', '.', 'getApplicationContext', '(', ')', ',', ' ', 'info', ',', 'Toast', '.', 'LENGTH_SHORT', ')', '.', 'show', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'Toast', '(', 'String', ' ', 'info', ')', '{', '\n', '        ', 'Toast', '.', 'makeText', '(', 'UnityPlayer', '.', 'currentActivity', '.', 'getApplicationContext', '(', ')', ',', ' ', 'info', ',', 'Toast', '.', 'LENGTH_SHORT', ')', '.', 'show', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"

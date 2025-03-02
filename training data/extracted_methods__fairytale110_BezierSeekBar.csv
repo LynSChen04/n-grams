@@ -10,25 +10,25 @@ master,823121548b642301e852931ba74470bdf1f35030,ExampleInstrumentedTest.java,use
 
         assertEquals(""tech.nicesky.bezierseekbardemo"", appContext.getPackageName());
     }
-","['    ', 'public', ' ', 'void', ' ', 'useAppContext', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', 'Context', ' ', 'appContext', ' ', '=', ' ', 'InstrumentationRegistry', '.', 'getTargetContext', '(', ')', ';', '\n', '\n', '        ', 'assertEquals', '(', '""', 'tech.nicesky.bezierseekbardemo', '""', ',', ' ', 'appContext', '.', 'getPackageName', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'useAppContext', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', 'Context', ' ', 'appContext', ' ', '=', ' ', 'InstrumentationRegistry', '.', 'getTargetContext', '(', ')', ';', '\n', '\n', '        ', 'assertEquals', '(', '""', 'tech.nicesky.bezierseekbardemo', '""', ',', ' ', 'appContext', '.', 'getPackageName', '(', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,823121548b642301e852931ba74470bdf1f35030,MainActivity.java,onSelected,"            public void onSelected(int value) {
                 checkWeight(value);
             }",https://www.github.com/fairytale110/BezierSeekBar/commit/823121548b642301e852931ba74470bdf1f35030,"            public void onSelected(int value) {
                 checkWeight(value);
             }
-","['            ', 'public', ' ', 'void', ' ', 'onSelected', '(', 'int', ' ', 'value', ')', ' ', '{', '\n', '                ', 'checkWeight', '(', 'value', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onSelected', '(', 'int', ' ', 'value', ')', ' ', '{', '\n', '                ', 'checkWeight', '(', 'value', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,823121548b642301e852931ba74470bdf1f35030,MainActivity.java,onSelected,"            public void onSelected(int value) {
                 checkLength(value);
             }",https://www.github.com/fairytale110/BezierSeekBar/commit/823121548b642301e852931ba74470bdf1f35030,"            public void onSelected(int value) {
                 checkLength(value);
             }
-","['            ', 'public', ' ', 'void', ' ', 'onSelected', '(', 'int', ' ', 'value', ')', ' ', '{', '\n', '                ', 'checkLength', '(', 'value', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onSelected', '(', 'int', ' ', 'value', ')', ' ', '{', '\n', '                ', 'checkLength', '(', 'value', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,823121548b642301e852931ba74470bdf1f35030,ExampleUnitTest.java,addition_isCorrect,"    public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }",https://www.github.com/fairytale110/BezierSeekBar/commit/823121548b642301e852931ba74470bdf1f35030,"    public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
-","['    ', 'public', ' ', 'void', ' ', 'addition_isCorrect', '(', ')', ' ', '{', '\n', '        ', 'assertEquals', '(', '4', ',', ' ', '2', ' ', '+', ' ', '2', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'addition_isCorrect', '(', ')', ' ', '{', '\n', '        ', 'assertEquals', '(', '4', ',', ' ', '2', ' ', '+', ' ', '2', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,823121548b642301e852931ba74470bdf1f35030,ExampleInstrumentedTest.java,useAppContext,"    public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
@@ -40,7 +40,7 @@ master,823121548b642301e852931ba74470bdf1f35030,ExampleInstrumentedTest.java,use
 
         assertEquals(""tech.nicesky.bezierseekbar"", appContext.getPackageName());
     }
-","['    ', 'public', ' ', 'void', ' ', 'useAppContext', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', 'Context', ' ', 'appContext', ' ', '=', ' ', 'InstrumentationRegistry', '.', 'getTargetContext', '(', ')', ';', '\n', '\n', '        ', 'assertEquals', '(', '""', 'tech.nicesky.bezierseekbar', '""', ',', ' ', 'appContext', '.', 'getPackageName', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'useAppContext', '(', ')', ' ', '{', '\n', '        ', '\n', '        ', 'Context', ' ', 'appContext', ' ', '=', ' ', 'InstrumentationRegistry', '.', 'getTargetContext', '(', ')', ';', '\n', '\n', '        ', 'assertEquals', '(', '""', 'tech.nicesky.bezierseekbar', '""', ',', ' ', 'appContext', '.', 'getPackageName', '(', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,823121548b642301e852931ba74470bdf1f35030,BezierSeekBar.java,onAnimationUpdate,"            public void onAnimationUpdate(ValueAnimator animation) {
                 float progress = (float) animation.getAnimatedValue();
 
@@ -72,13 +72,13 @@ master,823121548b642301e852931ba74470bdf1f35030,BezierSeekBar.java,onAnimationUp
                 spaceToLine = circleRadiusMin * 2 * (1F - progress);
                 postInvalidate();
             }
-","['            ', 'public', ' ', 'void', ' ', 'onAnimationUpdate', '(', 'ValueAnimator', ' ', 'animation', ')', ' ', '{', '\n', '                ', 'float', ' ', 'progress', ' ', '=', ' ', '(', 'float', ')', ' ', 'animation', '.', 'getAnimatedValue', '(', ')', ';', '\n', '\n', '                ', 'animInFinshed', ' ', '=', ' ', '(', 'progress', ' ', '>', '=', ' ', '0.15F', ')', ';', '\n', '                ', 'txtSelectedBgPaint', '.', 'setAlpha', '(', '(', 'int', ')', ' ', '(', '255', ' ', '*', ' ', '(', 'progress', ' ', '-', ' ', '0.15F', ')', ')', ')', ';', '\n', '                ', 'if', ' ', '(', 'progress', ' ', '>', '=', ' ', '0.95F', ')', ' ', '{', '\n', '                    ', 'textPaint', '.', 'setColor', '(', 'colorValueSelected', ')', ';', '\n', '                ', '}', ' ', 'else', ' ', '{', '\n', '                    ', 'textPaint', '.', 'setColor', '(', 'colorValue', ')', ';', '\n', '                ', '}', '\n', '\n', '                ', 'bezierHeight', ' ', '=', ' ', 'circleRadiusMax', ' ', '*', ' ', '1.5F', ' ', '*', ' ', 'progress', ';', '\n', '                ', 'circleRadius', ' ', '=', ' ', 'circleRadiusMin', ' ', '+', ' ', '(', 'circleRadiusMax', ' ', '-', ' ', 'circleRadiusMin', ')', ' ', '*', ' ', 'progress', ';', '\n', '                ', 'spaceToLine', ' ', '=', ' ', 'circleRadiusMin', ' ', '*', ' ', '2', ' ', '*', ' ', '(', '1F', ' ', '-', ' ', 'progress', ')', ';', '\n', '                ', 'postInvalidate', '(', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onAnimationUpdate', '(', 'ValueAnimator', ' ', 'animation', ')', ' ', '{', '\n', '                ', 'float', ' ', 'progress', ' ', '=', ' ', '(', 'float', ')', ' ', 'animation', '.', 'getAnimatedValue', '(', ')', ';', '\n', '\n', '                ', 'animInFinshed', ' ', '=', ' ', '(', 'progress', ' ', '>', '=', ' ', '0.15F', ')', ';', '\n', '                ', 'txtSelectedBgPaint', '.', 'setAlpha', '(', '(', 'int', ')', ' ', '(', '255', ' ', '*', ' ', '(', 'progress', ' ', '-', ' ', '0.15F', ')', ')', ')', ';', '\n', '                ', 'if', ' ', '(', 'progress', ' ', '>', '=', ' ', '0.95F', ')', ' ', '{', '\n', '                    ', 'textPaint', '.', 'setColor', '(', 'colorValueSelected', ')', ';', '\n', '                ', '}', ' ', 'else', ' ', '{', '\n', '                    ', 'textPaint', '.', 'setColor', '(', 'colorValue', ')', ';', '\n', '                ', '}', '\n', '\n', '                ', 'bezierHeight', ' ', '=', ' ', 'circleRadiusMax', ' ', '*', ' ', '1.5F', ' ', '*', ' ', 'progress', ';', '\n', '                ', 'circleRadius', ' ', '=', ' ', 'circleRadiusMin', ' ', '+', ' ', '(', 'circleRadiusMax', ' ', '-', ' ', 'circleRadiusMin', ')', ' ', '*', ' ', 'progress', ';', '\n', '                ', 'spaceToLine', ' ', '=', ' ', 'circleRadiusMin', ' ', '*', ' ', '2', ' ', '*', ' ', '(', '1F', ' ', '-', ' ', 'progress', ')', ';', '\n', '                ', 'postInvalidate', '(', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,823121548b642301e852931ba74470bdf1f35030,BezierSeekBar.java,initAttr,"    private void initAttr(Context context, AttributeSet attrs) {
         if (attrs != null) {
             TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.BezierSeekBar);",https://www.github.com/fairytale110/BezierSeekBar/commit/823121548b642301e852931ba74470bdf1f35030,"    private void initAttr(Context context, AttributeSet attrs) {
         if (attrs != null) {
             TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.BezierSeekBar);
-","['    ', 'private', ' ', 'void', ' ', 'initAttr', '(', 'Context', ' ', 'context', ',', ' ', 'AttributeSet', ' ', 'attrs', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'attrs', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'TypedArray', ' ', 'attributes', ' ', '=', ' ', 'context', '.', 'obtainStyledAttributes', '(', 'attrs', ',', ' ', 'R', '.', 'styleable', '.', 'BezierSeekBar', ')', ';', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'initAttr', '(', 'Context', ' ', 'context', ',', ' ', 'AttributeSet', ' ', 'attrs', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'attrs', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '            ', 'TypedArray', ' ', 'attributes', ' ', '=', ' ', 'context', '.', 'obtainStyledAttributes', '(', 'attrs', ',', ' ', 'R', '.', 'styleable', '.', 'BezierSeekBar', ')', ';', '\n', '<END>']"
 master,823121548b642301e852931ba74470bdf1f35030,BezierSeekBar.java,onLayout,"    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
 
@@ -98,7 +98,7 @@ master,823121548b642301e852931ba74470bdf1f35030,BezierSeekBar.java,onLayout,"   
 
         bezierHeight = 0;
     }
-","['    ', 'protected', ' ', 'void', ' ', 'onLayout', '(', 'boolean', ' ', 'changed', ',', ' ', 'int', ' ', 'left', ',', ' ', 'int', ' ', 'top', ',', ' ', 'int', ' ', 'right', ',', ' ', 'int', ' ', 'bottom', ')', ' ', '{', '\n', '        ', 'super', '.', 'onLayout', '(', 'changed', ',', ' ', 'left', ',', ' ', 'top', ',', ' ', 'right', ',', ' ', 'bottom', ')', ';', '\n', '\n', '        ', 'mPaddingStart', ' ', '=', ' ', 'getPaddingStart', '(', ')', ';', '\n', '        ', 'mPaddingEnd', ' ', '=', ' ', 'getPaddingEnd', '(', ')', ';', '\n', '        ', 'mPaddingTop', ' ', '=', ' ', 'getPaddingTop', '(', ')', ';', '\n', '        ', 'mPaddingBottom', ' ', '=', ' ', 'getPaddingBottom', '(', ')', ';', '\n', '\n', '        ', 'bezierHeight', ' ', '=', ' ', '0', ';', '\n', '    ', '}', '\n']"
+","['    ', 'protected', ' ', 'void', ' ', 'onLayout', '(', 'boolean', ' ', 'changed', ',', ' ', 'int', ' ', 'left', ',', ' ', 'int', ' ', 'top', ',', ' ', 'int', ' ', 'right', ',', ' ', 'int', ' ', 'bottom', ')', ' ', '{', '\n', '        ', 'super', '.', 'onLayout', '(', 'changed', ',', ' ', 'left', ',', ' ', 'top', ',', ' ', 'right', ',', ' ', 'bottom', ')', ';', '\n', '\n', '        ', 'mPaddingStart', ' ', '=', ' ', 'getPaddingStart', '(', ')', ';', '\n', '        ', 'mPaddingEnd', ' ', '=', ' ', 'getPaddingEnd', '(', ')', ';', '\n', '        ', 'mPaddingTop', ' ', '=', ' ', 'getPaddingTop', '(', ')', ';', '\n', '        ', 'mPaddingBottom', ' ', '=', ' ', 'getPaddingBottom', '(', ')', ';', '\n', '\n', '        ', 'bezierHeight', ' ', '=', ' ', '0', ';', '\n', '    ', '}', '\n', '<END>']"
 master,823121548b642301e852931ba74470bdf1f35030,BezierSeekBar.java,px2dp,"    private float px2dp(Context context, float px) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return px / scale + 0.5f;
@@ -106,7 +106,7 @@ master,823121548b642301e852931ba74470bdf1f35030,BezierSeekBar.java,px2dp,"    pr
         final float scale = context.getResources().getDisplayMetrics().density;
         return px / scale + 0.5f;
     }
-","['    ', 'private', ' ', 'float', ' ', 'px2dp', '(', 'Context', ' ', 'context', ',', ' ', 'float', ' ', 'px', ')', ' ', '{', '\n', '        ', 'final', ' ', 'float', ' ', 'scale', ' ', '=', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getDisplayMetrics', '(', ')', '.', 'density', ';', '\n', '        ', 'return', ' ', 'px', ' ', '/', ' ', 'scale', ' ', '+', ' ', '0.5f', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'float', ' ', 'px2dp', '(', 'Context', ' ', 'context', ',', ' ', 'float', ' ', 'px', ')', ' ', '{', '\n', '        ', 'final', ' ', 'float', ' ', 'scale', ' ', '=', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getDisplayMetrics', '(', ')', '.', 'density', ';', '\n', '        ', 'return', ' ', 'px', ' ', '/', ' ', 'scale', ' ', '+', ' ', '0.5f', ';', '\n', '    ', '}', '\n', '<END>']"
 master,823121548b642301e852931ba74470bdf1f35030,BezierSeekBar.java,dp2px,"    private float dp2px(Context context, float dp) {
 
         final float scale = context.getResources().getDisplayMetrics().density;
@@ -116,7 +116,7 @@ master,823121548b642301e852931ba74470bdf1f35030,BezierSeekBar.java,dp2px,"    pr
         final float scale = context.getResources().getDisplayMetrics().density;
         return dp * scale + 0.5f;
     }
-","['    ', 'private', ' ', 'float', ' ', 'dp2px', '(', 'Context', ' ', 'context', ',', ' ', 'float', ' ', 'dp', ')', ' ', '{', '\n', '\n', '        ', 'final', ' ', 'float', ' ', 'scale', ' ', '=', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getDisplayMetrics', '(', ')', '.', 'density', ';', '\n', '        ', 'return', ' ', 'dp', ' ', '*', ' ', 'scale', ' ', '+', ' ', '0.5f', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'float', ' ', 'dp2px', '(', 'Context', ' ', 'context', ',', ' ', 'float', ' ', 'dp', ')', ' ', '{', '\n', '\n', '        ', 'final', ' ', 'float', ' ', 'scale', ' ', '=', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getDisplayMetrics', '(', ')', '.', 'density', ';', '\n', '        ', 'return', ' ', 'dp', ' ', '*', ' ', 'scale', ' ', '+', ' ', '0.5f', ';', '\n', '    ', '}', '\n', '<END>']"
 master,7942d8b674600d09cb3f70c41af30bb04817121a,MainActivity.java,onClick,"            public void onClick(View v) {
                 int value2Show = (int)(Math.random()*(max-min+1)+min);
                 seekBarInView.setValueSelected(value2Show);
@@ -126,10 +126,10 @@ master,7942d8b674600d09cb3f70c41af30bb04817121a,MainActivity.java,onClick,"     
                 seekBarInView.setValueSelected(value2Show);
                 seekBarCreated.setValueSelected(value2Show);
             }
-","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'v', ')', ' ', '{', '\n', '                ', 'int', ' ', 'value2Show', ' ', '=', ' ', '(', 'int', ')', '(', 'Math', '.', 'random', '(', ')', '*', '(', 'max', '-', 'min', '+', '1', ')', '+', 'min', ')', ';', '\n', '                ', 'seekBarInView', '.', 'setValueSelected', '(', 'value2Show', ')', ';', '\n', '                ', 'seekBarCreated', '.', 'setValueSelected', '(', 'value2Show', ')', ';', '\n', '            ', '}', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onClick', '(', 'View', ' ', 'v', ')', ' ', '{', '\n', '                ', 'int', ' ', 'value2Show', ' ', '=', ' ', '(', 'int', ')', '(', 'Math', '.', 'random', '(', ')', '*', '(', 'max', '-', 'min', '+', '1', ')', '+', 'min', ')', ';', '\n', '                ', 'seekBarInView', '.', 'setValueSelected', '(', 'value2Show', ')', ';', '\n', '                ', 'seekBarCreated', '.', 'setValueSelected', '(', 'value2Show', ')', ';', '\n', '            ', '}', '\n', '<END>']"
 master,508e8fb368ac589d8f655759703afc0e3040b83c,BezierSeekBar.java,isRobTouchEvent,"    public boolean isRobTouchEvent() {
         return robTouchEvent;
     }",https://www.github.com/fairytale110/BezierSeekBar/commit/508e8fb368ac589d8f655759703afc0e3040b83c,"    public boolean isRobTouchEvent() {
         return robTouchEvent;
     }
-","['    ', 'public', ' ', 'boolean', ' ', 'isRobTouchEvent', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'robTouchEvent', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'boolean', ' ', 'isRobTouchEvent', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'robTouchEvent', ';', '\n', '    ', '}', '\n', '<END>']"

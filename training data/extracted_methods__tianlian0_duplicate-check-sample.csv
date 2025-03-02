@@ -4,13 +4,13 @@ master,e374269774dfc46c3b0ed9f9a0ab4def7e22d2ac,CheckStateImp.java,fail,"    pub
     }",https://www.github.com/tianlian0/duplicate-check-sample/commit/e374269774dfc46c3b0ed9f9a0ab4def7e22d2ac,"    public void fail(String uid, Paper paper, Integer code, String msg) {
         System.out.println(""fail:"" + uid + "" cdoe:"" + code + "" msg:"" + msg);
     }
-","['    ', 'public', ' ', 'void', ' ', 'fail', '(', 'String', ' ', 'uid', ',', ' ', 'Paper', ' ', 'paper', ',', ' ', 'Integer', ' ', 'code', ',', ' ', 'String', ' ', 'msg', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'fail:', '""', ' ', '+', ' ', 'uid', ' ', '+', ' ', '""', ' cdoe:', '""', ' ', '+', ' ', 'code', ' ', '+', ' ', '""', ' msg:', '""', ' ', '+', ' ', 'msg', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'fail', '(', 'String', ' ', 'uid', ',', ' ', 'Paper', ' ', 'paper', ',', ' ', 'Integer', ' ', 'code', ',', ' ', 'String', ' ', 'msg', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'fail:', '""', ' ', '+', ' ', 'uid', ' ', '+', ' ', '""', ' cdoe:', '""', ' ', '+', ' ', 'code', ' ', '+', ' ', '""', ' msg:', '""', ' ', '+', ' ', 'msg', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,d25d402af0562bcc1a5cee8f0e7dde2d90c87506,CheckStateImp.java,fail,"    public void fail(String uid, Paper paper, int code, String msg) {
         System.out.println(""fail:"" + uid + "" cdoe:"" + code + "" msg:"" + msg);
     }",https://www.github.com/tianlian0/duplicate-check-sample/commit/d25d402af0562bcc1a5cee8f0e7dde2d90c87506,"    public void fail(String uid, Paper paper, int code, String msg) {
         System.out.println(""fail:"" + uid + "" cdoe:"" + code + "" msg:"" + msg);
     }
-","['    ', 'public', ' ', 'void', ' ', 'fail', '(', 'String', ' ', 'uid', ',', ' ', 'Paper', ' ', 'paper', ',', ' ', 'int', ' ', 'code', ',', ' ', 'String', ' ', 'msg', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'fail:', '""', ' ', '+', ' ', 'uid', ' ', '+', ' ', '""', ' cdoe:', '""', ' ', '+', ' ', 'code', ' ', '+', ' ', '""', ' msg:', '""', ' ', '+', ' ', 'msg', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'fail', '(', 'String', ' ', 'uid', ',', ' ', 'Paper', ' ', 'paper', ',', ' ', 'int', ' ', 'code', ',', ' ', 'String', ' ', 'msg', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'fail:', '""', ' ', '+', ' ', 'uid', ' ', '+', ' ', '""', ' cdoe:', '""', ' ', '+', ' ', 'code', ' ', '+', ' ', '""', ' msg:', '""', ' ', '+', ' ', 'msg', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,daa6a5e7ee805dbe8c5fa987c40ff49ebcc85558,CheckStateImp.java,fail,"    public void fail(String uid, Paper paper, int code, Exception e) {
         e.printStackTrace();
         System.out.println(""fail:"" + uid + "" cdoe:"" + code + "" msg:"" + e.getMessage());
@@ -18,25 +18,25 @@ master,daa6a5e7ee805dbe8c5fa987c40ff49ebcc85558,CheckStateImp.java,fail,"    pub
         e.printStackTrace();
         System.out.println(""fail:"" + uid + "" cdoe:"" + code + "" msg:"" + e.getMessage());
     }
-","['    ', 'public', ' ', 'void', ' ', 'fail', '(', 'String', ' ', 'uid', ',', ' ', 'Paper', ' ', 'paper', ',', ' ', 'int', ' ', 'code', ',', ' ', 'Exception', ' ', 'e', ')', ' ', '{', '\n', '        ', 'e', '.', 'printStackTrace', '(', ')', ';', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'fail:', '""', ' ', '+', ' ', 'uid', ' ', '+', ' ', '""', ' cdoe:', '""', ' ', '+', ' ', 'code', ' ', '+', ' ', '""', ' msg:', '""', ' ', '+', ' ', 'e', '.', 'getMessage', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'fail', '(', 'String', ' ', 'uid', ',', ' ', 'Paper', ' ', 'paper', ',', ' ', 'int', ' ', 'code', ',', ' ', 'Exception', ' ', 'e', ')', ' ', '{', '\n', '        ', 'e', '.', 'printStackTrace', '(', ')', ';', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'fail:', '""', ' ', '+', ' ', 'uid', ' ', '+', ' ', '""', ' cdoe:', '""', ' ', '+', ' ', 'code', ' ', '+', ' ', '""', ' msg:', '""', ' ', '+', ' ', 'e', '.', 'getMessage', '(', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,97b1b4132b8ee42dc86593cfd17c07cc2cf0c04c,CheckStateImp.java,taskStart,"    public void taskStart(String uid, List<Paper> toCheckPapers, String context) {
         System.out.println(""task start:"" + uid);
     }",https://www.github.com/tianlian0/duplicate-check-sample/commit/97b1b4132b8ee42dc86593cfd17c07cc2cf0c04c,"    public void taskStart(String uid, List<Paper> toCheckPapers, String context) {
         System.out.println(""task start:"" + uid);
     }
-","['    ', 'public', ' ', 'void', ' ', 'taskStart', '(', 'String', ' ', 'uid', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'toCheckPapers', ',', ' ', 'String', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'task start:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'taskStart', '(', 'String', ' ', 'uid', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'toCheckPapers', ',', ' ', 'String', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'task start:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,97b1b4132b8ee42dc86593cfd17c07cc2cf0c04c,CheckStateImp.java,taskFinish,"    public void taskFinish(String uid, List<Reporter> reporters, List<Paper> failedPapers, String context) {
         System.out.println(""task finish:"" + uid);
     }",https://www.github.com/tianlian0/duplicate-check-sample/commit/97b1b4132b8ee42dc86593cfd17c07cc2cf0c04c,"    public void taskFinish(String uid, List<Reporter> reporters, List<Paper> failedPapers, String context) {
         System.out.println(""task finish:"" + uid);
     }
-","['    ', 'public', ' ', 'void', ' ', 'taskFinish', '(', 'String', ' ', 'uid', ',', ' ', 'List', '<', 'Reporter', '>', ' ', 'reporters', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'failedPapers', ',', ' ', 'String', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'task finish:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'taskFinish', '(', 'String', ' ', 'uid', ',', ' ', 'List', '<', 'Reporter', '>', ' ', 'reporters', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'failedPapers', ',', ' ', 'String', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'task finish:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,97b1b4132b8ee42dc86593cfd17c07cc2cf0c04c,CheckStateImp.java,paperStart,"    public void paperStart(String uid, Paper paper, String context) {
         System.out.println(""paper start:"" + uid);
     }",https://www.github.com/tianlian0/duplicate-check-sample/commit/97b1b4132b8ee42dc86593cfd17c07cc2cf0c04c,"    public void paperStart(String uid, Paper paper, String context) {
         System.out.println(""paper start:"" + uid);
     }
-","['    ', 'public', ' ', 'void', ' ', 'paperStart', '(', 'String', ' ', 'uid', ',', ' ', 'Paper', ' ', 'paper', ',', ' ', 'String', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'paper start:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'paperStart', '(', 'String', ' ', 'uid', ',', ' ', 'Paper', ' ', 'paper', ',', ' ', 'String', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'paper start:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,97b1b4132b8ee42dc86593cfd17c07cc2cf0c04c,CheckStateImp.java,paperFailed,"    public void paperFailed(String uid, Paper paper, int code, Throwable t, String context) {
         System.out.println(""paper failed:"" + uid);
         t.printStackTrace();
@@ -44,19 +44,19 @@ master,97b1b4132b8ee42dc86593cfd17c07cc2cf0c04c,CheckStateImp.java,paperFailed,"
         System.out.println(""paper failed:"" + uid);
         t.printStackTrace();
     }
-","['    ', 'public', ' ', 'void', ' ', 'paperFailed', '(', 'String', ' ', 'uid', ',', ' ', 'Paper', ' ', 'paper', ',', ' ', 'int', ' ', 'code', ',', ' ', 'Throwable', ' ', 't', ',', ' ', 'String', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'paper failed:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '        ', 't', '.', 'printStackTrace', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'paperFailed', '(', 'String', ' ', 'uid', ',', ' ', 'Paper', ' ', 'paper', ',', ' ', 'int', ' ', 'code', ',', ' ', 'Throwable', ' ', 't', ',', ' ', 'String', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'paper failed:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '        ', 't', '.', 'printStackTrace', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,97b1b4132b8ee42dc86593cfd17c07cc2cf0c04c,CheckStateImp.java,taskStart,"    public void taskStart(String uid, List<Paper> toCheckPapers, Context context) {
         System.out.println(""task start:"" + uid);
     }",https://www.github.com/tianlian0/duplicate-check-sample/commit/97b1b4132b8ee42dc86593cfd17c07cc2cf0c04c,"    public void taskStart(String uid, List<Paper> toCheckPapers, Context context) {
         System.out.println(""task start:"" + uid);
     }
-","['    ', 'public', ' ', 'void', ' ', 'taskStart', '(', 'String', ' ', 'uid', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'toCheckPapers', ',', ' ', 'Context', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'task start:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'taskStart', '(', 'String', ' ', 'uid', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'toCheckPapers', ',', ' ', 'Context', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'task start:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,97b1b4132b8ee42dc86593cfd17c07cc2cf0c04c,CheckStateImp.java,paperStart,"    public void paperStart(String uid, Paper paper, Context context) {
         System.out.println(""paper start:"" + uid);
     }",https://www.github.com/tianlian0/duplicate-check-sample/commit/97b1b4132b8ee42dc86593cfd17c07cc2cf0c04c,"    public void paperStart(String uid, Paper paper, Context context) {
         System.out.println(""paper start:"" + uid);
     }
-","['    ', 'public', ' ', 'void', ' ', 'paperStart', '(', 'String', ' ', 'uid', ',', ' ', 'Paper', ' ', 'paper', ',', ' ', 'Context', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'paper start:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'paperStart', '(', 'String', ' ', 'uid', ',', ' ', 'Paper', ' ', 'paper', ',', ' ', 'Context', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'paper start:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,97b1b4132b8ee42dc86593cfd17c07cc2cf0c04c,CheckStateImp.java,paperFailed,"    public void paperFailed(String uid, Paper paper, int code, Throwable t, Context context) {
         System.out.println(""paper failed:"" + uid);
         t.printStackTrace();
@@ -64,28 +64,28 @@ master,97b1b4132b8ee42dc86593cfd17c07cc2cf0c04c,CheckStateImp.java,paperFailed,"
         System.out.println(""paper failed:"" + uid);
         t.printStackTrace();
     }
-","['    ', 'public', ' ', 'void', ' ', 'paperFailed', '(', 'String', ' ', 'uid', ',', ' ', 'Paper', ' ', 'paper', ',', ' ', 'int', ' ', 'code', ',', ' ', 'Throwable', ' ', 't', ',', ' ', 'Context', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'paper failed:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '        ', 't', '.', 'printStackTrace', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'paperFailed', '(', 'String', ' ', 'uid', ',', ' ', 'Paper', ' ', 'paper', ',', ' ', 'int', ' ', 'code', ',', ' ', 'Throwable', ' ', 't', ',', ' ', 'Context', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'paper failed:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '        ', 't', '.', 'printStackTrace', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,c03e8de19f241a84ac63275ec10cc84b7b055c7a,CheckStateImp.java,taskFinish,"    public void taskFinish(String uid, List<Paper> toCheckPapers, List<Reporter> reporters, List<Paper> failedPapers, String context) {
         System.out.println(""task finish:"" + uid);
     }",https://www.github.com/tianlian0/duplicate-check-sample/commit/c03e8de19f241a84ac63275ec10cc84b7b055c7a,"    public void taskFinish(String uid, List<Paper> toCheckPapers, List<Reporter> reporters, List<Paper> failedPapers, String context) {
         System.out.println(""task finish:"" + uid);
     }
-","['    ', 'public', ' ', 'void', ' ', 'taskFinish', '(', 'String', ' ', 'uid', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'toCheckPapers', ',', ' ', 'List', '<', 'Reporter', '>', ' ', 'reporters', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'failedPapers', ',', ' ', 'String', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'task finish:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'taskFinish', '(', 'String', ' ', 'uid', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'toCheckPapers', ',', ' ', 'List', '<', 'Reporter', '>', ' ', 'reporters', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'failedPapers', ',', ' ', 'String', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'task finish:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,8a5fddf55c4414a17f3b60ab808aa936f8a9c5eb,CheckStateImp.java,taskStart,"    public void taskStart(String uid, List<Paper> checkPapers, Context context) {
         System.out.println(""task start:"" + uid);
     }",https://www.github.com/tianlian0/duplicate-check-sample/commit/8a5fddf55c4414a17f3b60ab808aa936f8a9c5eb,"    public void taskStart(String uid, List<Paper> checkPapers, Context context) {
         System.out.println(""task start:"" + uid);
     }
-","['    ', 'public', ' ', 'void', ' ', 'taskStart', '(', 'String', ' ', 'uid', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'checkPapers', ',', ' ', 'Context', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'task start:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'taskStart', '(', 'String', ' ', 'uid', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'checkPapers', ',', ' ', 'Context', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'task start:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,8a5fddf55c4414a17f3b60ab808aa936f8a9c5eb,CheckStateImp.java,taskStart,"    public void taskStart(String uid, List<Paper> checkPapers, String context) {
         System.out.println(""task start:"" + uid);
     }",https://www.github.com/tianlian0/duplicate-check-sample/commit/8a5fddf55c4414a17f3b60ab808aa936f8a9c5eb,"    public void taskStart(String uid, List<Paper> checkPapers, String context) {
         System.out.println(""task start:"" + uid);
     }
-","['    ', 'public', ' ', 'void', ' ', 'taskStart', '(', 'String', ' ', 'uid', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'checkPapers', ',', ' ', 'String', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'task start:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'taskStart', '(', 'String', ' ', 'uid', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'checkPapers', ',', ' ', 'String', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'task start:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,8a5fddf55c4414a17f3b60ab808aa936f8a9c5eb,CheckStateImp.java,taskFinish,"    public void taskFinish(String uid, List<Paper> checkPapers, List<Reporter> reporters, List<Paper> failedPapers, String context) {
         System.out.println(""task finish:"" + uid);
     }",https://www.github.com/tianlian0/duplicate-check-sample/commit/8a5fddf55c4414a17f3b60ab808aa936f8a9c5eb,"    public void taskFinish(String uid, List<Paper> checkPapers, List<Reporter> reporters, List<Paper> failedPapers, String context) {
         System.out.println(""task finish:"" + uid);
     }
-","['    ', 'public', ' ', 'void', ' ', 'taskFinish', '(', 'String', ' ', 'uid', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'checkPapers', ',', ' ', 'List', '<', 'Reporter', '>', ' ', 'reporters', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'failedPapers', ',', ' ', 'String', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'task finish:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'taskFinish', '(', 'String', ' ', 'uid', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'checkPapers', ',', ' ', 'List', '<', 'Reporter', '>', ' ', 'reporters', ',', ' ', 'List', '<', 'Paper', '>', ' ', 'failedPapers', ',', ' ', 'String', ' ', 'context', ')', ' ', '{', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'task finish:', '""', ' ', '+', ' ', 'uid', ')', ';', '\n', '    ', '}', '\n', '<END>']"

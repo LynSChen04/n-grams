@@ -4,7 +4,7 @@ master,d7d15806a76df57a1e259e5e14da952be25119c5,SystemThemeDetector.java,isWin10
                 Double.parseDouble(System.getProperty(""os.version"")) >= 10;",https://www.github.com/dansoftowner/jsystemthemedetector/commit/d7d15806a76df57a1e259e5e14da952be25119c5,"    static boolean isWin10() {
         return System.getProperty(""os.name"").startsWith(""Windows"") &&
                 Double.parseDouble(System.getProperty(""os.version"")) >= 10;
-","['    ', 'static', ' ', 'boolean', ' ', 'isWin10', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'System', '.', 'getProperty', '(', '""', 'os.name', '""', ')', '.', 'startsWith', '(', '""', 'Windows', '""', ')', ' ', '&', '&', '\n', '                ', 'Double', '.', 'parseDouble', '(', 'System', '.', 'getProperty', '(', '""', 'os.version', '""', ')', ')', ' ', '>', '=', ' ', '10', ';', '\n']"
+","['    ', 'static', ' ', 'boolean', ' ', 'isWin10', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'System', '.', 'getProperty', '(', '""', 'os.name', '""', ')', '.', 'startsWith', '(', '""', 'Windows', '""', ')', ' ', '&', '&', '\n', '                ', 'Double', '.', 'parseDouble', '(', 'System', '.', 'getProperty', '(', '""', 'os.version', '""', ')', ')', ' ', '>', '=', ' ', '10', ';', '\n', '<END>']"
 master,d7d15806a76df57a1e259e5e14da952be25119c5,SystemThemeDetector.java,isDark,"        public boolean isDark() {
             RegistryValue registryValue = registryPath.getValue(REGISTRY_VALUE);
             if (registryValue != null) {
@@ -26,7 +26,7 @@ master,d7d15806a76df57a1e259e5e14da952be25119c5,SystemThemeDetector.java,isDark,
             }
             return false;
         }
-","['        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'RegistryValue', ' ', 'registryValue', ' ', '=', ' ', 'registryPath', '.', 'getValue', '(', 'REGISTRY_VALUE', ')', ';', '\n', '            ', 'if', ' ', '(', 'registryValue', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '                ', 'byte', '[', ']', ' ', 'byteData', ' ', '=', ' ', 'registryValue', '.', 'getByteData', '(', ')', ';', '\n', '                ', 'if', ' ', '(', 'byteData', '.', 'length', ' ', '>', ' ', '0', ')', ' ', '{', '\n', '                    ', 'int', ' ', 'value', ' ', '=', ' ', 'byteData', '[', '0', ']', ';', '\n', '                    ', 'return', ' ', 'value', ' ', '=', '=', ' ', '0', ';', '\n', '                ', '}', '\n', '            ', '}', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'RegistryValue', ' ', 'registryValue', ' ', '=', ' ', 'registryPath', '.', 'getValue', '(', 'REGISTRY_VALUE', ')', ';', '\n', '            ', 'if', ' ', '(', 'registryValue', ' ', '!', '=', ' ', 'null', ')', ' ', '{', '\n', '                ', 'byte', '[', ']', ' ', 'byteData', ' ', '=', ' ', 'registryValue', '.', 'getByteData', '(', ')', ';', '\n', '                ', 'if', ' ', '(', 'byteData', '.', 'length', ' ', '>', ' ', '0', ')', ' ', '{', '\n', '                    ', 'int', ' ', 'value', ' ', '=', ' ', 'byteData', '[', '0', ']', ';', '\n', '                    ', 'return', ' ', 'value', ' ', '=', '=', ' ', '0', ';', '\n', '                ', '}', '\n', '            ', '}', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '<END>']"
 master,d7d15806a76df57a1e259e5e14da952be25119c5,SystemThemeDetector.java,registerListener,"        public void registerListener(Consumer<Boolean> darkThemeListener) {
             RegistryListener registryListener = registryEvent -> {
                 RegistryKey key = registryEvent.getKey();
@@ -47,7 +47,7 @@ master,d7d15806a76df57a1e259e5e14da952be25119c5,SystemThemeDetector.java,registe
             RegistryWatcher.addRegistryListener(registryListener);
             RegistryWatcher.watchKey(registryPath);
             listeners.put(darkThemeListener, registryListener);
-","['        ', 'public', ' ', 'void', ' ', 'registerListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '            ', 'RegistryListener', ' ', 'registryListener', ' ', '=', ' ', 'registryEvent', ' ', '-', '>', ' ', '{', '\n', '                ', 'RegistryKey', ' ', 'key', ' ', '=', ' ', 'registryEvent', '.', 'getKey', '(', ')', ';', '\n', '                ', 'if', ' ', '(', 'key', '.', 'equals', '(', 'registryPath', ')', ')', ' ', '{', '\n', '                    ', 'darkThemeListener', '.', 'accept', '(', 'isDark', '(', ')', ')', ';', '\n', '                ', '}', '\n', '            ', '}', ';', '\n', '            ', 'RegistryWatcher', '.', 'addRegistryListener', '(', 'registryListener', ')', ';', '\n', '            ', 'RegistryWatcher', '.', 'watchKey', '(', 'registryPath', ')', ';', '\n', '            ', 'listeners', '.', 'put', '(', 'darkThemeListener', ',', ' ', 'registryListener', ')', ';', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'registerListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '            ', 'RegistryListener', ' ', 'registryListener', ' ', '=', ' ', 'registryEvent', ' ', '-', '>', ' ', '{', '\n', '                ', 'RegistryKey', ' ', 'key', ' ', '=', ' ', 'registryEvent', '.', 'getKey', '(', ')', ';', '\n', '                ', 'if', ' ', '(', 'key', '.', 'equals', '(', 'registryPath', ')', ')', ' ', '{', '\n', '                    ', 'darkThemeListener', '.', 'accept', '(', 'isDark', '(', ')', ')', ';', '\n', '                ', '}', '\n', '            ', '}', ';', '\n', '            ', 'RegistryWatcher', '.', 'addRegistryListener', '(', 'registryListener', ')', ';', '\n', '            ', 'RegistryWatcher', '.', 'watchKey', '(', 'registryPath', ')', ';', '\n', '            ', 'listeners', '.', 'put', '(', 'darkThemeListener', ',', ' ', 'registryListener', ')', ';', '\n', '<END>']"
 master,d7d15806a76df57a1e259e5e14da952be25119c5,SystemThemeDetector.java,removeListener,"        public void removeListener(Consumer<Boolean> darkThemeListener) {
             RegistryListener removed = listeners.remove(darkThemeListener);
             RegistryWatcher.removeRegistryListener(removed);
@@ -57,7 +57,7 @@ master,d7d15806a76df57a1e259e5e14da952be25119c5,SystemThemeDetector.java,removeL
             RegistryWatcher.removeRegistryListener(removed);
             if (listeners.isEmpty()) {
                 RegistryWatcher.removeKey(registryPath);
-","['        ', 'public', ' ', 'void', ' ', 'removeListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '            ', 'RegistryListener', ' ', 'removed', ' ', '=', ' ', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n', '            ', 'RegistryWatcher', '.', 'removeRegistryListener', '(', 'removed', ')', ';', '\n', '            ', 'if', ' ', '(', 'listeners', '.', 'isEmpty', '(', ')', ')', ' ', '{', '\n', '                ', 'RegistryWatcher', '.', 'removeKey', '(', 'registryPath', ')', ';', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'removeListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '            ', 'RegistryListener', ' ', 'removed', ' ', '=', ' ', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n', '            ', 'RegistryWatcher', '.', 'removeRegistryListener', '(', 'removed', ')', ';', '\n', '            ', 'if', ' ', '(', 'listeners', '.', 'isEmpty', '(', ')', ')', ' ', '{', '\n', '                ', 'RegistryWatcher', '.', 'removeKey', '(', 'registryPath', ')', ';', '\n', '<END>']"
 master,d7d15806a76df57a1e259e5e14da952be25119c5,SystemThemeDetector.java,removeAllListeners,"        public void removeAllListeners() {
             this.listeners.values().forEach(RegistryWatcher::removeRegistryListener);
             this.listeners.clear();
@@ -65,13 +65,13 @@ master,d7d15806a76df57a1e259e5e14da952be25119c5,SystemThemeDetector.java,removeA
             this.listeners.values().forEach(RegistryWatcher::removeRegistryListener);
             this.listeners.clear();
         }
-","['        ', 'public', ' ', 'void', ' ', 'removeAllListeners', '(', ')', ' ', '{', '\n', '            ', 'this', '.', 'listeners', '.', 'values', '(', ')', '.', 'forEach', '(', 'RegistryWatcher', ':', ':', 'removeRegistryListener', ')', ';', '\n', '            ', 'this', '.', 'listeners', '.', 'clear', '(', ')', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'removeAllListeners', '(', ')', ' ', '{', '\n', '            ', 'this', '.', 'listeners', '.', 'values', '(', ')', '.', 'forEach', '(', 'RegistryWatcher', ':', ':', 'removeRegistryListener', ')', ';', '\n', '            ', 'this', '.', 'listeners', '.', 'clear', '(', ')', ';', '\n', '        ', '}', '\n', '<END>']"
 master,d7d15806a76df57a1e259e5e14da952be25119c5,SystemThemeDetector.java,isDark,"        public boolean isDark() {
             return false;
         }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/d7d15806a76df57a1e259e5e14da952be25119c5,"        public boolean isDark() {
             return false;
         }
-","['        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '<END>']"
 master,d7d15806a76df57a1e259e5e14da952be25119c5,SystemThemeDetector.java,registerListener,"        public void registerListener(Consumer<Boolean> darkThemeListener) {
         }
 
@@ -97,7 +97,7 @@ master,d7d15806a76df57a1e259e5e14da952be25119c5,SystemThemeDetector.java,registe
     }
 
 }
-","['        ', 'public', ' ', 'void', ' ', 'registerListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeAllListeners', '(', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'registerListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeAllListeners', '(', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n', '<END>']"
 master,d7d15806a76df57a1e259e5e14da952be25119c5,SystemThemeDetector.java,removeListener,"        public void removeListener(Consumer<Boolean> darkThemeListener) {
         }
 
@@ -115,7 +115,7 @@ master,d7d15806a76df57a1e259e5e14da952be25119c5,SystemThemeDetector.java,removeL
     }
 
 }
-","['        ', 'public', ' ', 'void', ' ', 'removeListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeAllListeners', '(', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'removeListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeAllListeners', '(', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '\n', '}', '\n', '<END>']"
 master,d7d15806a76df57a1e259e5e14da952be25119c5,Demo.java,main,"    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println(""Watching system theme change:"");
@@ -129,13 +129,13 @@ master,d7d15806a76df57a1e259e5e14da952be25119c5,Demo.java,main,"    public stati
         detector.registerListener(isDark -> System.out.println(isDark ? ""It's just switched to DARK"" : ""It's just switched to LIGHT""));
         while(true) {
             String line = scanner.nextLine();
-","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'Scanner', ' ', 'scanner', ' ', '=', ' ', 'new', ' ', 'Scanner', '(', 'System', '.', 'in', ')', ';', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'Watching system theme change:', '""', ')', ';', '\n', '        ', 'SystemThemeDetector', ' ', 'detector', ' ', '=', ' ', 'SystemThemeDetector', '.', 'getDetector', '(', ')', ';', '\n', '        ', 'detector', '.', 'registerListener', '(', 'isDark', ' ', '-', '>', ' ', 'System', '.', 'out', '.', 'println', '(', 'isDark', ' ', '?', ' ', '""', ""It's just switched to DARK"", '""', ' ', ':', ' ', '""', ""It's just switched to LIGHT"", '""', ')', ')', ';', '\n', '        ', 'while', '(', 'true', ')', ' ', '{', '\n', '            ', 'String', ' ', 'line', ' ', '=', ' ', 'scanner', '.', 'nextLine', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'Scanner', ' ', 'scanner', ' ', '=', ' ', 'new', ' ', 'Scanner', '(', 'System', '.', 'in', ')', ';', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'Watching system theme change:', '""', ')', ';', '\n', '        ', 'SystemThemeDetector', ' ', 'detector', ' ', '=', ' ', 'SystemThemeDetector', '.', 'getDetector', '(', ')', ';', '\n', '        ', 'detector', '.', 'registerListener', '(', 'isDark', ' ', '-', '>', ' ', 'System', '.', 'out', '.', 'println', '(', 'isDark', ' ', '?', ' ', '""', ""It's just switched to DARK"", '""', ' ', ':', ' ', '""', ""It's just switched to LIGHT"", '""', ')', ')', ';', '\n', '        ', 'while', '(', 'true', ')', ' ', '{', '\n', '            ', 'String', ' ', 'line', ' ', '=', ' ', 'scanner', '.', 'nextLine', '(', ')', ';', '\n', '<END>']"
 master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeDetector.java,isDark,"        public boolean isDark() {
             try {
                 return Advapi32Util.registryValueExists(WinReg.HKEY_CURRENT_USER, REGISTRY_PATH, REGISTRY_VALUE) &&",https://www.github.com/dansoftowner/jsystemthemedetector/commit/985d1f21fbf752c040aec740c4346989a71da9e5,"        public boolean isDark() {
             try {
                 return Advapi32Util.registryValueExists(WinReg.HKEY_CURRENT_USER, REGISTRY_PATH, REGISTRY_VALUE) &&
-","['        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'try', ' ', '{', '\n', '                ', 'return', ' ', 'Advapi32Util', '.', 'registryValueExists', '(', 'WinReg', '.', 'HKEY_CURRENT_USER', ',', ' ', 'REGISTRY_PATH', ',', ' ', 'REGISTRY_VALUE', ')', ' ', '&', '&', '\n']"
+","['        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'try', ' ', '{', '\n', '                ', 'return', ' ', 'Advapi32Util', '.', 'registryValueExists', '(', 'WinReg', '.', 'HKEY_CURRENT_USER', ',', ' ', 'REGISTRY_PATH', ',', ' ', 'REGISTRY_VALUE', ')', ' ', '&', '&', '\n', '<END>']"
 master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeDetector.java,registerListener,"        public void registerListener(Consumer<Boolean> darkThemeListener) {
             Objects.requireNonNull(darkThemeListener, ""Listener shouldn't be null"");
             if (this.listeners.add(darkThemeListener)) {
@@ -143,7 +143,7 @@ master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeDetector.java,registe
             Objects.requireNonNull(darkThemeListener, ""Listener shouldn't be null"");
             if (this.listeners.add(darkThemeListener)) {
                 startWorker(darkThemeListener);
-","['        ', 'public', ' ', 'void', ' ', 'registerListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '            ', 'Objects', '.', 'requireNonNull', '(', 'darkThemeListener', ',', ' ', '""', ""Listener shouldn't be null"", '""', ')', ';', '\n', '            ', 'if', ' ', '(', 'this', '.', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ')', ' ', '{', '\n', '                ', 'startWorker', '(', 'darkThemeListener', ')', ';', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'registerListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '            ', 'Objects', '.', 'requireNonNull', '(', 'darkThemeListener', ',', ' ', '""', ""Listener shouldn't be null"", '""', ')', ';', '\n', '            ', 'if', ' ', '(', 'this', '.', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ')', ' ', '{', '\n', '                ', 'startWorker', '(', 'darkThemeListener', ')', ';', '\n', '<END>']"
 master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeDetector.java,removeListener,"        public void removeListener(Consumer<Boolean> darkThemeListener) {
             this.removeFromWorker(darkThemeListener);
             this.listeners.remove(darkThemeListener);
@@ -151,7 +151,7 @@ master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeDetector.java,removeL
             this.removeFromWorker(darkThemeListener);
             this.listeners.remove(darkThemeListener);
         }
-","['        ', 'public', ' ', 'void', ' ', 'removeListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '            ', 'this', '.', 'removeFromWorker', '(', 'darkThemeListener', ')', ';', '\n', '            ', 'this', '.', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'removeListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '            ', 'this', '.', 'removeFromWorker', '(', 'darkThemeListener', ')', ';', '\n', '            ', 'this', '.', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n', '        ', '}', '\n', '<END>']"
 master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeDetector.java,removeAllListeners,"        public void removeAllListeners() {
             removeAllListenersFromWorker();
             this.listeners.clear();
@@ -159,43 +159,43 @@ master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeDetector.java,removeA
             removeAllListenersFromWorker();
             this.listeners.clear();
         }
-","['        ', 'public', ' ', 'void', ' ', 'removeAllListeners', '(', ')', ' ', '{', '\n', '            ', 'removeAllListenersFromWorker', '(', ')', ';', '\n', '            ', 'this', '.', 'listeners', '.', 'clear', '(', ')', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'removeAllListeners', '(', ')', ' ', '{', '\n', '            ', 'removeAllListenersFromWorker', '(', ')', ';', '\n', '            ', 'this', '.', 'listeners', '.', 'clear', '(', ')', ';', '\n', '        ', '}', '\n', '<END>']"
 master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeDetector.java,startWorker,"        private void startWorker(Consumer<Boolean> listener) {
             if (this.listenerThread.isTerminated() || this.listenerThread.isInterrupted()) {
                 this.listenerThread = new SystemThemeListenerThread(this);",https://www.github.com/dansoftowner/jsystemthemedetector/commit/985d1f21fbf752c040aec740c4346989a71da9e5,"        private void startWorker(Consumer<Boolean> listener) {
             if (this.listenerThread.isTerminated() || this.listenerThread.isInterrupted()) {
                 this.listenerThread = new SystemThemeListenerThread(this);
-","['        ', 'private', ' ', 'void', ' ', 'startWorker', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'listener', ')', ' ', '{', '\n', '            ', 'if', ' ', '(', 'this', '.', 'listenerThread', '.', 'isTerminated', '(', ')', ' ', '|', '|', ' ', 'this', '.', 'listenerThread', '.', 'isInterrupted', '(', ')', ')', ' ', '{', '\n', '                ', 'this', '.', 'listenerThread', ' ', '=', ' ', 'new', ' ', 'SystemThemeListenerThread', '(', 'this', ')', ';', '\n']"
+","['        ', 'private', ' ', 'void', ' ', 'startWorker', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'listener', ')', ' ', '{', '\n', '            ', 'if', ' ', '(', 'this', '.', 'listenerThread', '.', 'isTerminated', '(', ')', ' ', '|', '|', ' ', 'this', '.', 'listenerThread', '.', 'isInterrupted', '(', ')', ')', ' ', '{', '\n', '                ', 'this', '.', 'listenerThread', ' ', '=', ' ', 'new', ' ', 'SystemThemeListenerThread', '(', 'this', ')', ';', '\n', '<END>']"
 master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeDetector.java,removeFromWorker,"        private void removeFromWorker(Consumer<Boolean> listener) {
             if (!this.listenerThread.isTerminated())
                 this.listenerThread.removeListener(listener);",https://www.github.com/dansoftowner/jsystemthemedetector/commit/985d1f21fbf752c040aec740c4346989a71da9e5,"        private void removeFromWorker(Consumer<Boolean> listener) {
             if (!this.listenerThread.isTerminated())
                 this.listenerThread.removeListener(listener);
-","['        ', 'private', ' ', 'void', ' ', 'removeFromWorker', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'listener', ')', ' ', '{', '\n', '            ', 'if', ' ', '(', '!', 'this', '.', 'listenerThread', '.', 'isTerminated', '(', ')', ')', '\n', '                ', 'this', '.', 'listenerThread', '.', 'removeListener', '(', 'listener', ')', ';', '\n']"
+","['        ', 'private', ' ', 'void', ' ', 'removeFromWorker', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'listener', ')', ' ', '{', '\n', '            ', 'if', ' ', '(', '!', 'this', '.', 'listenerThread', '.', 'isTerminated', '(', ')', ')', '\n', '                ', 'this', '.', 'listenerThread', '.', 'removeListener', '(', 'listener', ')', ';', '\n', '<END>']"
 master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeDetector.java,removeAllListenersFromWorker,"        private void removeAllListenersFromWorker() {
             if (!this.listenerThread.isTerminated())
                 this.listenerThread.removeAllListener();",https://www.github.com/dansoftowner/jsystemthemedetector/commit/985d1f21fbf752c040aec740c4346989a71da9e5,"        private void removeAllListenersFromWorker() {
             if (!this.listenerThread.isTerminated())
                 this.listenerThread.removeAllListener();
-","['        ', 'private', ' ', 'void', ' ', 'removeAllListenersFromWorker', '(', ')', ' ', '{', '\n', '            ', 'if', ' ', '(', '!', 'this', '.', 'listenerThread', '.', 'isTerminated', '(', ')', ')', '\n', '                ', 'this', '.', 'listenerThread', '.', 'removeAllListener', '(', ')', ';', '\n']"
+","['        ', 'private', ' ', 'void', ' ', 'removeAllListenersFromWorker', '(', ')', ' ', '{', '\n', '            ', 'if', ' ', '(', '!', 'this', '.', 'listenerThread', '.', 'isTerminated', '(', ')', ')', '\n', '                ', 'this', '.', 'listenerThread', '.', 'removeAllListener', '(', ')', ';', '\n', '<END>']"
 master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeListenerThread.java,addListener,"    public void addListener(Consumer<Boolean> listener) {
         this.listeners.add(listener);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/985d1f21fbf752c040aec740c4346989a71da9e5,"    public void addListener(Consumer<Boolean> listener) {
         this.listeners.add(listener);
     }
-","['    ', 'public', ' ', 'void', ' ', 'addListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'listener', ')', ' ', '{', '\n', '        ', 'this', '.', 'listeners', '.', 'add', '(', 'listener', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'addListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'listener', ')', ' ', '{', '\n', '        ', 'this', '.', 'listeners', '.', 'add', '(', 'listener', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeListenerThread.java,removeListener,"    public void removeListener(Consumer<Boolean> listener) {
         this.listeners.remove(listener);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/985d1f21fbf752c040aec740c4346989a71da9e5,"    public void removeListener(Consumer<Boolean> listener) {
         this.listeners.remove(listener);
     }
-","['    ', 'public', ' ', 'void', ' ', 'removeListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'listener', ')', ' ', '{', '\n', '        ', 'this', '.', 'listeners', '.', 'remove', '(', 'listener', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'removeListener', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'listener', ')', ' ', '{', '\n', '        ', 'this', '.', 'listeners', '.', 'remove', '(', 'listener', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeListenerThread.java,removeAllListener,"    public void removeAllListener() {
         this.listeners.clear();
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/985d1f21fbf752c040aec740c4346989a71da9e5,"    public void removeAllListener() {
         this.listeners.clear();
     }
-","['    ', 'public', ' ', 'void', ' ', 'removeAllListener', '(', ')', ' ', '{', '\n', '        ', 'this', '.', 'listeners', '.', 'clear', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'removeAllListener', '(', ')', ' ', '{', '\n', '        ', 'this', '.', 'listeners', '.', 'clear', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeListenerThread.java,run,"    public void run() {
         while (!this.isInterrupted() && !listeners.isEmpty()) {
             boolean lastValue = systemThemeDetector.isDark();
@@ -219,13 +219,13 @@ master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeListenerThread.java,r
 
         terminated = true;
     }
-","['    ', 'public', ' ', 'void', ' ', 'run', '(', ')', ' ', '{', '\n', '        ', 'while', ' ', '(', '!', 'this', '.', 'isInterrupted', '(', ')', ' ', '&', '&', ' ', '!', 'listeners', '.', 'isEmpty', '(', ')', ')', ' ', '{', '\n', '            ', 'boolean', ' ', 'lastValue', ' ', '=', ' ', 'systemThemeDetector', '.', 'isDark', '(', ')', ';', '\n', '            ', 'if', ' ', '(', 'this', '.', 'lastValue', ' ', '!', '=', ' ', 'lastValue', ')', ' ', '{', '\n', '                ', 'listeners', '.', 'forEach', '(', 'listener', ' ', '-', '>', ' ', 'listener', '.', 'accept', '(', 'lastValue', ')', ')', ';', '\n', '            ', '}', '\n', '\n', '            ', 'this', '.', 'lastValue', ' ', '=', ' ', 'lastValue', ';', '\n', '        ', '}', '\n', '\n', '        ', 'terminated', ' ', '=', ' ', 'true', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'run', '(', ')', ' ', '{', '\n', '        ', 'while', ' ', '(', '!', 'this', '.', 'isInterrupted', '(', ')', ' ', '&', '&', ' ', '!', 'listeners', '.', 'isEmpty', '(', ')', ')', ' ', '{', '\n', '            ', 'boolean', ' ', 'lastValue', ' ', '=', ' ', 'systemThemeDetector', '.', 'isDark', '(', ')', ';', '\n', '            ', 'if', ' ', '(', 'this', '.', 'lastValue', ' ', '!', '=', ' ', 'lastValue', ')', ' ', '{', '\n', '                ', 'listeners', '.', 'forEach', '(', 'listener', ' ', '-', '>', ' ', 'listener', '.', 'accept', '(', 'lastValue', ')', ')', ';', '\n', '            ', '}', '\n', '\n', '            ', 'this', '.', 'lastValue', ' ', '=', ' ', 'lastValue', ';', '\n', '        ', '}', '\n', '\n', '        ', 'terminated', ' ', '=', ' ', 'true', ';', '\n', '    ', '}', '\n', '<END>']"
 master,985d1f21fbf752c040aec740c4346989a71da9e5,SystemThemeListenerThread.java,uncaughtException,"    public void uncaughtException(Thread t, Throwable e) {
         terminated = true;
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/985d1f21fbf752c040aec740c4346989a71da9e5,"    public void uncaughtException(Thread t, Throwable e) {
         terminated = true;
     }
-","['    ', 'public', ' ', 'void', ' ', 'uncaughtException', '(', 'Thread', ' ', 't', ',', ' ', 'Throwable', ' ', 'e', ')', ' ', '{', '\n', '        ', 'terminated', ' ', '=', ' ', 'true', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'uncaughtException', '(', 'Thread', ' ', 't', ',', ' ', 'Throwable', ' ', 'e', ')', ' ', '{', '\n', '        ', 'terminated', ' ', '=', ' ', 'true', ';', '\n', '    ', '}', '\n', '<END>']"
 master,7c47f8c484bd37e4f1ebb27a7c049d0649e13a9a,SystemThemeListenerThread.java,run,"    public void run() {
         while (!this.isInterrupted() && !listeners.isEmpty()) {
             boolean lastValue = systemUIThemeDetector.isDark();
@@ -249,7 +249,7 @@ master,7c47f8c484bd37e4f1ebb27a7c049d0649e13a9a,SystemThemeListenerThread.java,r
 
         terminated = true;
     }
-","['    ', 'public', ' ', 'void', ' ', 'run', '(', ')', ' ', '{', '\n', '        ', 'while', ' ', '(', '!', 'this', '.', 'isInterrupted', '(', ')', ' ', '&', '&', ' ', '!', 'listeners', '.', 'isEmpty', '(', ')', ')', ' ', '{', '\n', '            ', 'boolean', ' ', 'lastValue', ' ', '=', ' ', 'systemUIThemeDetector', '.', 'isDark', '(', ')', ';', '\n', '            ', 'if', ' ', '(', 'this', '.', 'lastValue', ' ', '!', '=', ' ', 'lastValue', ')', ' ', '{', '\n', '                ', 'listeners', '.', 'forEach', '(', 'listener', ' ', '-', '>', ' ', 'listener', '.', 'accept', '(', 'lastValue', ')', ')', ';', '\n', '            ', '}', '\n', '\n', '            ', 'this', '.', 'lastValue', ' ', '=', ' ', 'lastValue', ';', '\n', '        ', '}', '\n', '\n', '        ', 'terminated', ' ', '=', ' ', 'true', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'run', '(', ')', ' ', '{', '\n', '        ', 'while', ' ', '(', '!', 'this', '.', 'isInterrupted', '(', ')', ' ', '&', '&', ' ', '!', 'listeners', '.', 'isEmpty', '(', ')', ')', ' ', '{', '\n', '            ', 'boolean', ' ', 'lastValue', ' ', '=', ' ', 'systemUIThemeDetector', '.', 'isDark', '(', ')', ';', '\n', '            ', 'if', ' ', '(', 'this', '.', 'lastValue', ' ', '!', '=', ' ', 'lastValue', ')', ' ', '{', '\n', '                ', 'listeners', '.', 'forEach', '(', 'listener', ' ', '-', '>', ' ', 'listener', '.', 'accept', '(', 'lastValue', ')', ')', ';', '\n', '            ', '}', '\n', '\n', '            ', 'this', '.', 'lastValue', ' ', '=', ' ', 'lastValue', ';', '\n', '        ', '}', '\n', '\n', '        ', 'terminated', ' ', '=', ' ', 'true', ';', '\n', '    ', '}', '\n', '<END>']"
 master,7c47f8c484bd37e4f1ebb27a7c049d0649e13a9a,Demo.java,main,"    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println(""Watching system theme change:"");
@@ -263,55 +263,55 @@ master,7c47f8c484bd37e4f1ebb27a7c049d0649e13a9a,Demo.java,main,"    public stati
         detector.registerListener(isDark -> System.out.println(isDark ? ""It's just switched to DARK"" : ""It's just switched to LIGHT""));
         while(true) {
             String line = scanner.nextLine();
-","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'Scanner', ' ', 'scanner', ' ', '=', ' ', 'new', ' ', 'Scanner', '(', 'System', '.', 'in', ')', ';', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'Watching system theme change:', '""', ')', ';', '\n', '        ', 'SystemUIThemeDetector', ' ', 'detector', ' ', '=', ' ', 'SystemUIThemeDetector', '.', 'getDetector', '(', ')', ';', '\n', '        ', 'detector', '.', 'registerListener', '(', 'isDark', ' ', '-', '>', ' ', 'System', '.', 'out', '.', 'println', '(', 'isDark', ' ', '?', ' ', '""', ""It's just switched to DARK"", '""', ' ', ':', ' ', '""', ""It's just switched to LIGHT"", '""', ')', ')', ';', '\n', '        ', 'while', '(', 'true', ')', ' ', '{', '\n', '            ', 'String', ' ', 'line', ' ', '=', ' ', 'scanner', '.', 'nextLine', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'Scanner', ' ', 'scanner', ' ', '=', ' ', 'new', ' ', 'Scanner', '(', 'System', '.', 'in', ')', ';', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'Watching system theme change:', '""', ')', ';', '\n', '        ', 'SystemUIThemeDetector', ' ', 'detector', ' ', '=', ' ', 'SystemUIThemeDetector', '.', 'getDetector', '(', ')', ';', '\n', '        ', 'detector', '.', 'registerListener', '(', 'isDark', ' ', '-', '>', ' ', 'System', '.', 'out', '.', 'println', '(', 'isDark', ' ', '?', ' ', '""', ""It's just switched to DARK"", '""', ' ', ':', ' ', '""', ""It's just switched to LIGHT"", '""', ')', ')', ';', '\n', '        ', 'while', '(', 'true', ')', ' ', '{', '\n', '            ', 'String', ' ', 'line', ' ', '=', ' ', 'scanner', '.', 'nextLine', '(', ')', ';', '\n', '<END>']"
 master,7d5f8db85090424157071e75128e21b0cd6ae889,OsInfo.java,isWindows10OrLater,"    public static boolean isWindows10OrLater() {
         return hasTypeAndVersionOrHigher(PlatformEnum.WINDOWS, ""10"");
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/7d5f8db85090424157071e75128e21b0cd6ae889,"    public static boolean isWindows10OrLater() {
         return hasTypeAndVersionOrHigher(PlatformEnum.WINDOWS, ""10"");
     }
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isWindows10OrLater', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'hasTypeAndVersionOrHigher', '(', 'PlatformEnum', '.', 'WINDOWS', ',', ' ', '""', '10', '""', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isWindows10OrLater', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'hasTypeAndVersionOrHigher', '(', 'PlatformEnum', '.', 'WINDOWS', ',', ' ', '""', '10', '""', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,7d5f8db85090424157071e75128e21b0cd6ae889,OsInfo.java,isLinux,"    public static boolean isLinux() {
         return hasType(PlatformEnum.LINUX);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/7d5f8db85090424157071e75128e21b0cd6ae889,"    public static boolean isLinux() {
         return hasType(PlatformEnum.LINUX);
     }
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isLinux', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'hasType', '(', 'PlatformEnum', '.', 'LINUX', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isLinux', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'hasType', '(', 'PlatformEnum', '.', 'LINUX', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,7d5f8db85090424157071e75128e21b0cd6ae889,OsInfo.java,isMacOsMojaveOrLater,"    public static boolean isMacOsMojaveOrLater() {
         return hasTypeAndVersionOrHigher(PlatformEnum.MACOSX, ""10.14"");
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/7d5f8db85090424157071e75128e21b0cd6ae889,"    public static boolean isMacOsMojaveOrLater() {
         return hasTypeAndVersionOrHigher(PlatformEnum.MACOSX, ""10.14"");
     }
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isMacOsMojaveOrLater', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'hasTypeAndVersionOrHigher', '(', 'PlatformEnum', '.', 'MACOSX', ',', ' ', '""', '10.14', '""', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isMacOsMojaveOrLater', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'hasTypeAndVersionOrHigher', '(', 'PlatformEnum', '.', 'MACOSX', ',', ' ', '""', '10.14', '""', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,7d5f8db85090424157071e75128e21b0cd6ae889,OsInfo.java,hasType,"    public static boolean hasType(PlatformEnum platformType) {
         return OsInfo.platformType.equals(platformType);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/7d5f8db85090424157071e75128e21b0cd6ae889,"    public static boolean hasType(PlatformEnum platformType) {
         return OsInfo.platformType.equals(platformType);
     }
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'hasType', '(', 'PlatformEnum', ' ', 'platformType', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'platformType', '.', 'equals', '(', 'platformType', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'hasType', '(', 'PlatformEnum', ' ', 'platformType', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'platformType', '.', 'equals', '(', 'platformType', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,7d5f8db85090424157071e75128e21b0cd6ae889,OsInfo.java,hasVersionOrHigher,"    public static boolean hasVersionOrHigher(String version) {
         return parseVersion(OsInfo.version) >= parseVersion(version);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/7d5f8db85090424157071e75128e21b0cd6ae889,"    public static boolean hasVersionOrHigher(String version) {
         return parseVersion(OsInfo.version) >= parseVersion(version);
     }
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'hasVersionOrHigher', '(', 'String', ' ', 'version', ')', ' ', '{', '\n', '        ', 'return', ' ', 'parseVersion', '(', 'OsInfo', '.', 'version', ')', ' ', '>', '=', ' ', 'parseVersion', '(', 'version', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'hasVersionOrHigher', '(', 'String', ' ', 'version', ')', ' ', '{', '\n', '        ', 'return', ' ', 'parseVersion', '(', 'OsInfo', '.', 'version', ')', ' ', '>', '=', ' ', 'parseVersion', '(', 'version', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,7d5f8db85090424157071e75128e21b0cd6ae889,OsInfo.java,hasTypeAndVersionOrHigher,"    public static boolean hasTypeAndVersionOrHigher(PlatformEnum platformType, String version) {
         return hasType(platformType) && hasVersionOrHigher(version);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/7d5f8db85090424157071e75128e21b0cd6ae889,"    public static boolean hasTypeAndVersionOrHigher(PlatformEnum platformType, String version) {
         return hasType(platformType) && hasVersionOrHigher(version);
     }
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'hasTypeAndVersionOrHigher', '(', 'PlatformEnum', ' ', 'platformType', ',', ' ', 'String', ' ', 'version', ')', ' ', '{', '\n', '        ', 'return', ' ', 'hasType', '(', 'platformType', ')', ' ', '&', '&', ' ', 'hasVersionOrHigher', '(', 'version', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'hasTypeAndVersionOrHigher', '(', 'PlatformEnum', ' ', 'platformType', ',', ' ', 'String', ' ', 'version', ')', ' ', '{', '\n', '        ', 'return', ' ', 'hasType', '(', 'platformType', ')', ' ', '&', '&', ' ', 'hasVersionOrHigher', '(', 'version', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,7d5f8db85090424157071e75128e21b0cd6ae889,OsInfo.java,parseVersion,"    private static int parseVersion(String version) {
         try {
             return Integer.parseInt(version.replace(""."", """"));",https://www.github.com/dansoftowner/jsystemthemedetector/commit/7d5f8db85090424157071e75128e21b0cd6ae889,"    private static int parseVersion(String version) {
         try {
             return Integer.parseInt(version.replace(""."", """"));
-","['    ', 'private', ' ', 'static', ' ', 'int', ' ', 'parseVersion', '(', 'String', ' ', 'version', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Integer', '.', 'parseInt', '(', 'version', '.', 'replace', '(', '""', '.', '""', ',', ' ', '""', '""', ')', ')', ';', '\n']"
+","['    ', 'private', ' ', 'static', ' ', 'int', ' ', 'parseVersion', '(', 'String', ' ', 'version', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Integer', '.', 'parseInt', '(', 'version', '.', 'replace', '(', '""', '.', '""', ',', ' ', '""', '""', ')', ')', ';', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,LinuxThemeDetector.java,isDarkTheme,"    private boolean isDarkTheme(String gtkTheme) {
         return darkThemeNamePattern.matcher(gtkTheme).matches();
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,"    private boolean isDarkTheme(String gtkTheme) {
         return darkThemeNamePattern.matcher(gtkTheme).matches();
     }
-","['    ', 'private', ' ', 'boolean', ' ', 'isDarkTheme', '(', 'String', ' ', 'gtkTheme', ')', ' ', '{', '\n', '        ', 'return', ' ', 'darkThemeNamePattern', '.', 'matcher', '(', 'gtkTheme', ')', '.', 'matches', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'boolean', ' ', 'isDarkTheme', '(', 'String', ' ', 'gtkTheme', ')', ' ', '{', '\n', '        ', 'return', ' ', 'darkThemeNamePattern', '.', 'matcher', '(', 'gtkTheme', ')', '.', 'matches', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,LinuxThemeDetector.java,registerListener,"    public void registerListener(@NotNull Consumer<Boolean> darkThemeListener) {
         Objects.requireNonNull(darkThemeListener);
         final boolean listenerAdded = listeners.add(darkThemeListener);
@@ -327,7 +327,7 @@ master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,LinuxThemeDetector.java,register
 
         if (singleListener || threadInterrupted) {
             this.detectorThread = new DetectorThread(this);
-","['    ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'Objects', '.', 'requireNonNull', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'listenerAdded', ' ', '=', ' ', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'singleListener', ' ', '=', ' ', 'listenerAdded', ' ', '&', '&', ' ', 'listeners', '.', 'size', '(', ')', ' ', '=', '=', ' ', '1', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'threadInterrupted', ' ', '=', ' ', 'detectorThread', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'detectorThread', '.', 'isInterrupted', '(', ')', ';', '\n', '\n', '        ', 'if', ' ', '(', 'singleListener', ' ', '|', '|', ' ', 'threadInterrupted', ')', ' ', '{', '\n', '            ', 'this', '.', 'detectorThread', ' ', '=', ' ', 'new', ' ', 'DetectorThread', '(', 'this', ')', ';', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'Objects', '.', 'requireNonNull', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'listenerAdded', ' ', '=', ' ', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'singleListener', ' ', '=', ' ', 'listenerAdded', ' ', '&', '&', ' ', 'listeners', '.', 'size', '(', ')', ' ', '=', '=', ' ', '1', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'threadInterrupted', ' ', '=', ' ', 'detectorThread', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'detectorThread', '.', 'isInterrupted', '(', ')', ';', '\n', '\n', '        ', 'if', ' ', '(', 'singleListener', ' ', '|', '|', ' ', 'threadInterrupted', ')', ' ', '{', '\n', '            ', 'this', '.', 'detectorThread', ' ', '=', ' ', 'new', ' ', 'DetectorThread', '(', 'this', ')', ';', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,LinuxThemeDetector.java,removeListener,"    public void removeListener(@Nullable Consumer<Boolean> darkThemeListener) {
         listeners.remove(darkThemeListener);
         if (listeners.isEmpty()) {
@@ -335,19 +335,19 @@ master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,LinuxThemeDetector.java,removeLi
         listeners.remove(darkThemeListener);
         if (listeners.isEmpty()) {
             this.detectorThread.interrupt();
-","['    ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'if', ' ', '(', 'listeners', '.', 'isEmpty', '(', ')', ')', ' ', '{', '\n', '            ', 'this', '.', 'detectorThread', '.', 'interrupt', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'if', ' ', '(', 'listeners', '.', 'isEmpty', '(', ')', ')', ' ', '{', '\n', '            ', 'this', '.', 'detectorThread', '.', 'interrupt', '(', ')', ';', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,LinuxThemeDetector.java,run,"        public void run() {
             try {
                 Runtime runtime = Runtime.getRuntime();",https://www.github.com/dansoftowner/jsystemthemedetector/commit/2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,"        public void run() {
             try {
                 Runtime runtime = Runtime.getRuntime();
-","['        ', 'public', ' ', 'void', ' ', 'run', '(', ')', ' ', '{', '\n', '            ', 'try', ' ', '{', '\n', '                ', 'Runtime', ' ', 'runtime', ' ', '=', ' ', 'Runtime', '.', 'getRuntime', '(', ')', ';', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'run', '(', ')', ' ', '{', '\n', '            ', 'try', ' ', '{', '\n', '                ', 'Runtime', ' ', 'runtime', ' ', '=', ' ', 'Runtime', '.', 'getRuntime', '(', ')', ';', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,MacOSThemeDetector.java,callback,"        public void callback() {
             notifyListeners();
         }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,"        public void callback() {
             notifyListeners();
         }
-","['        ', 'public', ' ', 'void', ' ', 'callback', '(', ')', ' ', '{', '\n', '            ', 'notifyListeners', '(', ')', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'callback', '(', ')', ' ', '{', '\n', '            ', 'notifyListeners', '(', ')', ';', '\n', '        ', '}', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,MacOSThemeDetector.java,initObserver,"    private void initObserver() {
         final Foundation.NSAutoreleasePool pool = new Foundation.NSAutoreleasePool();
         try {
@@ -355,7 +355,7 @@ master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,MacOSThemeDetector.java,initObse
         final Foundation.NSAutoreleasePool pool = new Foundation.NSAutoreleasePool();
         try {
             final ID delegateClass = Foundation.allocateObjcClassPair(Foundation.getObjcClass(""NSObject""), ""NSColorChangesObserver"");
-","['    ', 'private', ' ', 'void', ' ', 'initObserver', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'Foundation', '.', 'NSAutoreleasePool', ' ', 'pool', ' ', '=', ' ', 'new', ' ', 'Foundation', '.', 'NSAutoreleasePool', '(', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'final', ' ', 'ID', ' ', 'delegateClass', ' ', '=', ' ', 'Foundation', '.', 'allocateObjcClassPair', '(', 'Foundation', '.', 'getObjcClass', '(', '""', 'NSObject', '""', ')', ',', ' ', '""', 'NSColorChangesObserver', '""', ')', ';', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'initObserver', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'Foundation', '.', 'NSAutoreleasePool', ' ', 'pool', ' ', '=', ' ', 'new', ' ', 'Foundation', '.', 'NSAutoreleasePool', '(', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'final', ' ', 'ID', ' ', 'delegateClass', ' ', '=', ' ', 'Foundation', '.', 'allocateObjcClassPair', '(', 'Foundation', '.', 'getObjcClass', '(', '""', 'NSObject', '""', ')', ',', ' ', '""', 'NSColorChangesObserver', '""', ')', ';', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,MacOSThemeDetector.java,isDark,"    public boolean isDark() {
         final Foundation.NSAutoreleasePool pool = new Foundation.NSAutoreleasePool();
         try {
@@ -381,31 +381,31 @@ master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,MacOSThemeDetector.java,isDark,"
         }
         return false;
     }
-","['    ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'Foundation', '.', 'NSAutoreleasePool', ' ', 'pool', ' ', '=', ' ', 'new', ' ', 'Foundation', '.', 'NSAutoreleasePool', '(', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'final', ' ', 'ID', ' ', 'userDefaults', ' ', '=', ' ', 'Foundation', '.', 'invoke', '(', '""', 'NSUserDefaults', '""', ',', ' ', '""', 'standardUserDefaults', '""', ')', ';', '\n', '            ', 'final', ' ', 'String', ' ', 'appleInterfaceStyle', ' ', '=', ' ', 'Foundation', '.', 'toStringViaUTF8', '(', 'Foundation', '.', 'invoke', '(', 'userDefaults', ',', ' ', '""', 'objectForKey:', '""', ',', ' ', 'Foundation', '.', 'nsString', '(', '""', 'AppleInterfaceStyle', '""', ')', ')', ')', ';', '\n', '            ', 'return', ' ', 'isDarkTheme', '(', 'appleInterfaceStyle', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'RuntimeException', ' ', 'e', ')', ' ', '{', '\n', '            ', 'logger', '.', 'error', '(', '""', ""Couldn't execute theme name query with the Os"", '""', ',', ' ', 'e', ')', ';', '\n', '        ', '}', ' ', 'finally', ' ', '{', '\n', '            ', 'pool', '.', 'drain', '(', ')', ';', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'false', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'Foundation', '.', 'NSAutoreleasePool', ' ', 'pool', ' ', '=', ' ', 'new', ' ', 'Foundation', '.', 'NSAutoreleasePool', '(', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'final', ' ', 'ID', ' ', 'userDefaults', ' ', '=', ' ', 'Foundation', '.', 'invoke', '(', '""', 'NSUserDefaults', '""', ',', ' ', '""', 'standardUserDefaults', '""', ')', ';', '\n', '            ', 'final', ' ', 'String', ' ', 'appleInterfaceStyle', ' ', '=', ' ', 'Foundation', '.', 'toStringViaUTF8', '(', 'Foundation', '.', 'invoke', '(', 'userDefaults', ',', ' ', '""', 'objectForKey:', '""', ',', ' ', 'Foundation', '.', 'nsString', '(', '""', 'AppleInterfaceStyle', '""', ')', ')', ')', ';', '\n', '            ', 'return', ' ', 'isDarkTheme', '(', 'appleInterfaceStyle', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'RuntimeException', ' ', 'e', ')', ' ', '{', '\n', '            ', 'logger', '.', 'error', '(', '""', ""Couldn't execute theme name query with the Os"", '""', ',', ' ', 'e', ')', ';', '\n', '        ', '}', ' ', 'finally', ' ', '{', '\n', '            ', 'pool', '.', 'drain', '(', ')', ';', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'false', ';', '\n', '    ', '}', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,MacOSThemeDetector.java,isDarkTheme,"    private boolean isDarkTheme(String themeName) {
         return themeNamePattern.matcher(themeName).matches();
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,"    private boolean isDarkTheme(String themeName) {
         return themeNamePattern.matcher(themeName).matches();
     }
-","['    ', 'private', ' ', 'boolean', ' ', 'isDarkTheme', '(', 'String', ' ', 'themeName', ')', ' ', '{', '\n', '        ', 'return', ' ', 'themeNamePattern', '.', 'matcher', '(', 'themeName', ')', '.', 'matches', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'boolean', ' ', 'isDarkTheme', '(', 'String', ' ', 'themeName', ')', ' ', '{', '\n', '        ', 'return', ' ', 'themeNamePattern', '.', 'matcher', '(', 'themeName', ')', '.', 'matches', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,MacOSThemeDetector.java,registerListener,"    public void registerListener(@NotNull Consumer<Boolean> darkThemeListener) {
         listeners.add(darkThemeListener);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,"    public void registerListener(@NotNull Consumer<Boolean> darkThemeListener) {
         listeners.add(darkThemeListener);
     }
-","['    ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,MacOSThemeDetector.java,removeListener,"    public void removeListener(@Nullable Consumer<Boolean> darkThemeListener) {
         listeners.remove(darkThemeListener);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,"    public void removeListener(@Nullable Consumer<Boolean> darkThemeListener) {
         listeners.remove(darkThemeListener);
     }
-","['    ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,MacOSThemeDetector.java,notifyListeners,"    private void notifyListeners() {
         listeners.forEach(listener -> listener.accept(isDark()));
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,"    private void notifyListeners() {
         listeners.forEach(listener -> listener.accept(isDark()));
     }
-","['    ', 'private', ' ', 'void', ' ', 'notifyListeners', '(', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'forEach', '(', 'listener', ' ', '-', '>', ' ', 'listener', '.', 'accept', '(', 'isDark', '(', ')', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'notifyListeners', '(', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'forEach', '(', 'listener', ' ', '-', '>', ' ', 'listener', '.', 'accept', '(', 'isDark', '(', ')', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,OsThemeDetector.java,isDark,"    public abstract boolean isDark();
 
     /**
@@ -460,7 +460,7 @@ master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,OsThemeDetector.java,isDark,"   
         }
     }
 }
-","['    ', 'public', ' ', 'abstract', ' ', 'boolean', ' ', 'isDark', '(', ')', ';', '\n', '\n', '    ', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n']"
+","['    ', 'public', ' ', 'abstract', ' ', 'boolean', ' ', 'isDark', '(', ')', ';', '\n', '\n', '    ', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,OsThemeDetector.java,registerListener,"    public abstract void registerListener(@NotNull Consumer<Boolean> darkThemeListener);
 
     /**
@@ -504,7 +504,7 @@ master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,OsThemeDetector.java,registerLis
         }
     }
 }
-","['    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n']"
+","['    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,OsThemeDetector.java,removeListener,"    public abstract void removeListener(@Nullable Consumer<Boolean> darkThemeListener);
 
 
@@ -540,7 +540,7 @@ master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,OsThemeDetector.java,removeListe
         }
     }
 }
-","['    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n']"
+","['    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,OsThemeDetector.java,registerListener,"        public void registerListener(@NotNull Consumer<Boolean> darkThemeListener) {
         }
 
@@ -556,7 +556,7 @@ master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,OsThemeDetector.java,registerLis
         }
     }
 }
-","['        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,OsThemeDetector.java,removeListener,"        public void removeListener(@Nullable Consumer<Boolean> darkThemeListener) {
         }
     }
@@ -564,19 +564,19 @@ master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,OsThemeDetector.java,removeListe
         }
     }
 }
-","['        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,WindowsThemeDetector.java,isDark,"    public boolean isDark() {
         return Advapi32Util.registryValueExists(WinReg.HKEY_CURRENT_USER, REGISTRY_PATH, REGISTRY_VALUE) &&
                 Advapi32Util.registryGetIntValue(WinReg.HKEY_CURRENT_USER, REGISTRY_PATH, REGISTRY_VALUE) == 0;",https://www.github.com/dansoftowner/jsystemthemedetector/commit/2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,"    public boolean isDark() {
         return Advapi32Util.registryValueExists(WinReg.HKEY_CURRENT_USER, REGISTRY_PATH, REGISTRY_VALUE) &&
                 Advapi32Util.registryGetIntValue(WinReg.HKEY_CURRENT_USER, REGISTRY_PATH, REGISTRY_VALUE) == 0;
-","['    ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'Advapi32Util', '.', 'registryValueExists', '(', 'WinReg', '.', 'HKEY_CURRENT_USER', ',', ' ', 'REGISTRY_PATH', ',', ' ', 'REGISTRY_VALUE', ')', ' ', '&', '&', '\n', '                ', 'Advapi32Util', '.', 'registryGetIntValue', '(', 'WinReg', '.', 'HKEY_CURRENT_USER', ',', ' ', 'REGISTRY_PATH', ',', ' ', 'REGISTRY_VALUE', ')', ' ', '=', '=', ' ', '0', ';', '\n']"
+","['    ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'Advapi32Util', '.', 'registryValueExists', '(', 'WinReg', '.', 'HKEY_CURRENT_USER', ',', ' ', 'REGISTRY_PATH', ',', ' ', 'REGISTRY_VALUE', ')', ' ', '&', '&', '\n', '                ', 'Advapi32Util', '.', 'registryGetIntValue', '(', 'WinReg', '.', 'HKEY_CURRENT_USER', ',', ' ', 'REGISTRY_PATH', ',', ' ', 'REGISTRY_VALUE', ')', ' ', '=', '=', ' ', '0', ';', '\n', '<END>']"
 master,2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,WindowsThemeDetector.java,run,"        public void run() {
             while (!this.isInterrupted()) {
                 boolean currentDetection = themeDetector.isDark();",https://www.github.com/dansoftowner/jsystemthemedetector/commit/2ebeaeedf89c04fc4330d8a0010daa9328dd99d2,"        public void run() {
             while (!this.isInterrupted()) {
                 boolean currentDetection = themeDetector.isDark();
-","['        ', 'public', ' ', 'void', ' ', 'run', '(', ')', ' ', '{', '\n', '            ', 'while', ' ', '(', '!', 'this', '.', 'isInterrupted', '(', ')', ')', ' ', '{', '\n', '                ', 'boolean', ' ', 'currentDetection', ' ', '=', ' ', 'themeDetector', '.', 'isDark', '(', ')', ';', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'run', '(', ')', ' ', '{', '\n', '            ', 'while', ' ', '(', '!', 'this', '.', 'isInterrupted', '(', ')', ')', ' ', '{', '\n', '                ', 'boolean', ' ', 'currentDetection', ' ', '=', ' ', 'themeDetector', '.', 'isDark', '(', ')', ';', '\n', '<END>']"
 master,daa0d527c23a3e35eb1f3c641cd0c7a135c01bc8,OsThemeDetectorDemo.java,main,"    public static void main(String[] args) {
         final OsThemeDetector detector = OsThemeDetector.getDetector();
         System.out.println(detector.isDark());
@@ -594,7 +594,7 @@ master,daa0d527c23a3e35eb1f3c641cd0c7a135c01bc8,OsThemeDetectorDemo.java,main," 
         Scanner scanner = new Scanner(System.in);
         while(!scanner.nextLine().toLowerCase().startsWith(""e""));
     }
-","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'final', ' ', 'OsThemeDetector', ' ', 'detector', ' ', '=', ' ', 'OsThemeDetector', '.', 'getDetector', '(', ')', ';', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', 'detector', '.', 'isDark', '(', ')', ')', ';', '\n', '        ', 'detector', '.', 'registerListener', '(', 'isDark', ' ', '-', '>', ' ', 'System', '.', 'out', '.', 'println', '(', '""', 'OS is dark: ', '""', ' ', '+', ' ', 'isDark', ')', ')', ';', '\n', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'Listening to system ui theme change... (Press E for exit)', '""', ')', ';', '\n', '        ', 'Scanner', ' ', 'scanner', ' ', '=', ' ', 'new', ' ', 'Scanner', '(', 'System', '.', 'in', ')', ';', '\n', '        ', 'while', '(', '!', 'scanner', '.', 'nextLine', '(', ')', '.', 'toLowerCase', '(', ')', '.', 'startsWith', '(', '""', 'e', '""', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'final', ' ', 'OsThemeDetector', ' ', 'detector', ' ', '=', ' ', 'OsThemeDetector', '.', 'getDetector', '(', ')', ';', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', 'detector', '.', 'isDark', '(', ')', ')', ';', '\n', '        ', 'detector', '.', 'registerListener', '(', 'isDark', ' ', '-', '>', ' ', 'System', '.', 'out', '.', 'println', '(', '""', 'OS is dark: ', '""', ' ', '+', ' ', 'isDark', ')', ')', ';', '\n', '\n', '        ', 'System', '.', 'out', '.', 'println', '(', '""', 'Listening to system ui theme change... (Press E for exit)', '""', ')', ';', '\n', '        ', 'Scanner', ' ', 'scanner', ' ', '=', ' ', 'new', ' ', 'Scanner', '(', 'System', '.', 'in', ')', ';', '\n', '        ', 'while', '(', '!', 'scanner', '.', 'nextLine', '(', ')', '.', 'toLowerCase', '(', ')', '.', 'startsWith', '(', '""', 'e', '""', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,ffc87dd857c40f5d05a32b448fdc89383dff72a3,GuiDemo.java,start,"    public void start(Stage stage) {
         StringProperty labelValue = new SimpleStringProperty();
 
@@ -642,7 +642,7 @@ master,ffc87dd857c40f5d05a32b448fdc89383dff72a3,GuiDemo.java,start,"    public v
         darkThemeListener.accept(detector.isDark());
         detector.registerListener(darkThemeListener);
     }
-","['    ', 'public', ' ', 'void', ' ', 'start', '(', 'Stage', ' ', 'stage', ')', ' ', '{', '\n', '        ', 'StringProperty', ' ', 'labelValue', ' ', '=', ' ', 'new', ' ', 'SimpleStringProperty', '(', ')', ';', '\n', '\n', '        ', 'stage', '.', 'setScene', '(', 'new', ' ', 'Scene', '(', 'buildRoot', '(', 'labelValue', ')', ')', ')', ';', '\n', '        ', 'stage', '.', 'setWidth', '(', '800', ')', ';', '\n', '        ', 'stage', '.', 'setHeight', '(', '600', ')', ';', '\n', '        ', 'stage', '.', 'setTitle', '(', '""', 'Dark theme detection', '""', ')', ';', '\n', '        ', 'stage', '.', 'show', '(', ')', ';', '\n', '\n', '        ', 'final', ' ', 'OsThemeDetector', ' ', 'detector', ' ', '=', ' ', 'OsThemeDetector', '.', 'getDetector', '(', ')', ';', '\n', '        ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ' ', '=', ' ', 'isDark', ' ', '-', '>', ' ', '{', '\n', '            ', 'Platform', '.', 'runLater', '(', '(', ')', ' ', '-', '>', ' ', '{', '\n', '                ', 'if', ' ', '(', 'isDark', ')', ' ', '{', '\n', '                    ', 'stage', '.', 'getScene', '(', ')', '.', 'getRoot', '(', ')', '.', 'setStyle', '(', '""', '-fx-base: #000000', '""', ')', ';', '\n', '                    ', 'labelValue', '.', 'set', '(', '""', 'The OS uses DARK THEME', '""', ')', ';', '\n', '                ', '}', ' ', 'else', ' ', '{', '\n', '                    ', 'stage', '.', 'getScene', '(', ')', '.', 'getRoot', '(', ')', '.', 'setStyle', '(', '""', '-fx-base: #d7d7d7', '""', ')', ';', '\n', '                    ', 'labelValue', '.', 'set', '(', '""', 'The OS uses LIGHT THEME', '""', ')', ';', '\n', '                ', '}', '\n', '            ', '}', ')', ';', '\n', '        ', '}', ';', '\n', '        ', 'darkThemeListener', '.', 'accept', '(', 'detector', '.', 'isDark', '(', ')', ')', ';', '\n', '        ', 'detector', '.', 'registerListener', '(', 'darkThemeListener', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'start', '(', 'Stage', ' ', 'stage', ')', ' ', '{', '\n', '        ', 'StringProperty', ' ', 'labelValue', ' ', '=', ' ', 'new', ' ', 'SimpleStringProperty', '(', ')', ';', '\n', '\n', '        ', 'stage', '.', 'setScene', '(', 'new', ' ', 'Scene', '(', 'buildRoot', '(', 'labelValue', ')', ')', ')', ';', '\n', '        ', 'stage', '.', 'setWidth', '(', '800', ')', ';', '\n', '        ', 'stage', '.', 'setHeight', '(', '600', ')', ';', '\n', '        ', 'stage', '.', 'setTitle', '(', '""', 'Dark theme detection', '""', ')', ';', '\n', '        ', 'stage', '.', 'show', '(', ')', ';', '\n', '\n', '        ', 'final', ' ', 'OsThemeDetector', ' ', 'detector', ' ', '=', ' ', 'OsThemeDetector', '.', 'getDetector', '(', ')', ';', '\n', '        ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ' ', '=', ' ', 'isDark', ' ', '-', '>', ' ', '{', '\n', '            ', 'Platform', '.', 'runLater', '(', '(', ')', ' ', '-', '>', ' ', '{', '\n', '                ', 'if', ' ', '(', 'isDark', ')', ' ', '{', '\n', '                    ', 'stage', '.', 'getScene', '(', ')', '.', 'getRoot', '(', ')', '.', 'setStyle', '(', '""', '-fx-base: #000000', '""', ')', ';', '\n', '                    ', 'labelValue', '.', 'set', '(', '""', 'The OS uses DARK THEME', '""', ')', ';', '\n', '                ', '}', ' ', 'else', ' ', '{', '\n', '                    ', 'stage', '.', 'getScene', '(', ')', '.', 'getRoot', '(', ')', '.', 'setStyle', '(', '""', '-fx-base: #d7d7d7', '""', ')', ';', '\n', '                    ', 'labelValue', '.', 'set', '(', '""', 'The OS uses LIGHT THEME', '""', ')', ';', '\n', '                ', '}', '\n', '            ', '}', ')', ';', '\n', '        ', '}', ';', '\n', '        ', 'darkThemeListener', '.', 'accept', '(', 'detector', '.', 'isDark', '(', ')', ')', ';', '\n', '        ', 'detector', '.', 'registerListener', '(', 'darkThemeListener', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,ffc87dd857c40f5d05a32b448fdc89383dff72a3,GuiDemo.java,buildRoot,"    private Parent buildRoot(StringProperty labelValue) {
         Label label = new Label();
         label.textProperty().bind(labelValue);
@@ -654,13 +654,13 @@ master,ffc87dd857c40f5d05a32b448fdc89383dff72a3,GuiDemo.java,buildRoot,"    priv
         label.setFont(Font.font(50));
         return new StackPane(label);
     }
-","['    ', 'private', ' ', 'Parent', ' ', 'buildRoot', '(', 'StringProperty', ' ', 'labelValue', ')', ' ', '{', '\n', '        ', 'Label', ' ', 'label', ' ', '=', ' ', 'new', ' ', 'Label', '(', ')', ';', '\n', '        ', 'label', '.', 'textProperty', '(', ')', '.', 'bind', '(', 'labelValue', ')', ';', '\n', '        ', 'label', '.', 'setFont', '(', 'Font', '.', 'font', '(', '50', ')', ')', ';', '\n', '        ', 'return', ' ', 'new', ' ', 'StackPane', '(', 'label', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'Parent', ' ', 'buildRoot', '(', 'StringProperty', ' ', 'labelValue', ')', ' ', '{', '\n', '        ', 'Label', ' ', 'label', ' ', '=', ' ', 'new', ' ', 'Label', '(', ')', ';', '\n', '        ', 'label', '.', 'textProperty', '(', ')', '.', 'bind', '(', 'labelValue', ')', ';', '\n', '        ', 'label', '.', 'setFont', '(', 'Font', '.', 'font', '(', '50', ')', ')', ';', '\n', '        ', 'return', ' ', 'new', ' ', 'StackPane', '(', 'label', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,ffc87dd857c40f5d05a32b448fdc89383dff72a3,GuiDemo.java,main,"    public static void main(String[] args) {
         launch(args);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/ffc87dd857c40f5d05a32b448fdc89383dff72a3,"    public static void main(String[] args) {
         launch(args);
     }
-","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'launch', '(', 'args', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'void', ' ', 'main', '(', 'String', '[', ']', ' ', 'args', ')', ' ', '{', '\n', '        ', 'launch', '(', 'args', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,acbe277ae1bf4a247d4894fb6d205e1078ecd05b,GuiDemo.java,start,"    public void start(Stage stage) {
         StringProperty labelValue = new SimpleStringProperty();
 
@@ -708,7 +708,7 @@ master,acbe277ae1bf4a247d4894fb6d205e1078ecd05b,GuiDemo.java,start,"    public v
         darkThemeListener.accept(detector.isDark());
         detector.registerListener(darkThemeListener);
     }
-","['    ', 'public', ' ', 'void', ' ', 'start', '(', 'Stage', ' ', 'stage', ')', ' ', '{', '\n', '        ', 'StringProperty', ' ', 'labelValue', ' ', '=', ' ', 'new', ' ', 'SimpleStringProperty', '(', ')', ';', '\n', '\n', '        ', 'stage', '.', 'setScene', '(', 'new', ' ', 'Scene', '(', 'buildRoot', '(', 'labelValue', ')', ')', ')', ';', '\n', '        ', 'stage', '.', 'setWidth', '(', 'WINDOW_WIDTH', ')', ';', '\n', '        ', 'stage', '.', 'setHeight', '(', 'WINDOW_HEIGHT', ')', ';', '\n', '        ', 'stage', '.', 'setTitle', '(', 'WINDOW_TITLE', ')', ';', '\n', '        ', 'stage', '.', 'show', '(', ')', ';', '\n', '\n', '        ', 'final', ' ', 'OsThemeDetector', ' ', 'detector', ' ', '=', ' ', 'OsThemeDetector', '.', 'getDetector', '(', ')', ';', '\n', '        ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ' ', '=', ' ', 'isDark', ' ', '-', '>', ' ', '{', '\n', '            ', 'Platform', '.', 'runLater', '(', '(', ')', ' ', '-', '>', ' ', '{', '\n', '                ', 'if', ' ', '(', 'isDark', ')', ' ', '{', '\n', '                    ', 'stage', '.', 'getScene', '(', ')', '.', 'getRoot', '(', ')', '.', 'setStyle', '(', 'DARK_STYLE', ')', ';', '\n', '                    ', 'labelValue', '.', 'set', '(', 'DARK_THEME_LABEL', ')', ';', '\n', '                ', '}', ' ', 'else', ' ', '{', '\n', '                    ', 'stage', '.', 'getScene', '(', ')', '.', 'getRoot', '(', ')', '.', 'setStyle', '(', 'LIGHT_STYLE', ')', ';', '\n', '                    ', 'labelValue', '.', 'set', '(', 'LIGHT_THEME_LABEL', ')', ';', '\n', '                ', '}', '\n', '            ', '}', ')', ';', '\n', '        ', '}', ';', '\n', '        ', 'darkThemeListener', '.', 'accept', '(', 'detector', '.', 'isDark', '(', ')', ')', ';', '\n', '        ', 'detector', '.', 'registerListener', '(', 'darkThemeListener', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'start', '(', 'Stage', ' ', 'stage', ')', ' ', '{', '\n', '        ', 'StringProperty', ' ', 'labelValue', ' ', '=', ' ', 'new', ' ', 'SimpleStringProperty', '(', ')', ';', '\n', '\n', '        ', 'stage', '.', 'setScene', '(', 'new', ' ', 'Scene', '(', 'buildRoot', '(', 'labelValue', ')', ')', ')', ';', '\n', '        ', 'stage', '.', 'setWidth', '(', 'WINDOW_WIDTH', ')', ';', '\n', '        ', 'stage', '.', 'setHeight', '(', 'WINDOW_HEIGHT', ')', ';', '\n', '        ', 'stage', '.', 'setTitle', '(', 'WINDOW_TITLE', ')', ';', '\n', '        ', 'stage', '.', 'show', '(', ')', ';', '\n', '\n', '        ', 'final', ' ', 'OsThemeDetector', ' ', 'detector', ' ', '=', ' ', 'OsThemeDetector', '.', 'getDetector', '(', ')', ';', '\n', '        ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ' ', '=', ' ', 'isDark', ' ', '-', '>', ' ', '{', '\n', '            ', 'Platform', '.', 'runLater', '(', '(', ')', ' ', '-', '>', ' ', '{', '\n', '                ', 'if', ' ', '(', 'isDark', ')', ' ', '{', '\n', '                    ', 'stage', '.', 'getScene', '(', ')', '.', 'getRoot', '(', ')', '.', 'setStyle', '(', 'DARK_STYLE', ')', ';', '\n', '                    ', 'labelValue', '.', 'set', '(', 'DARK_THEME_LABEL', ')', ';', '\n', '                ', '}', ' ', 'else', ' ', '{', '\n', '                    ', 'stage', '.', 'getScene', '(', ')', '.', 'getRoot', '(', ')', '.', 'setStyle', '(', 'LIGHT_STYLE', ')', ';', '\n', '                    ', 'labelValue', '.', 'set', '(', 'LIGHT_THEME_LABEL', ')', ';', '\n', '                ', '}', '\n', '            ', '}', ')', ';', '\n', '        ', '}', ';', '\n', '        ', 'darkThemeListener', '.', 'accept', '(', 'detector', '.', 'isDark', '(', ')', ')', ';', '\n', '        ', 'detector', '.', 'registerListener', '(', 'darkThemeListener', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,acbe277ae1bf4a247d4894fb6d205e1078ecd05b,GuiDemo.java,buildRoot,"    private Parent buildRoot(StringProperty labelValue) {
         Label label = new Label();
         label.textProperty().bind(labelValue);
@@ -720,7 +720,7 @@ master,acbe277ae1bf4a247d4894fb6d205e1078ecd05b,GuiDemo.java,buildRoot,"    priv
         label.setFont(Font.font(FONT_SIZE));
         return new StackPane(label);
     }
-","['    ', 'private', ' ', 'Parent', ' ', 'buildRoot', '(', 'StringProperty', ' ', 'labelValue', ')', ' ', '{', '\n', '        ', 'Label', ' ', 'label', ' ', '=', ' ', 'new', ' ', 'Label', '(', ')', ';', '\n', '        ', 'label', '.', 'textProperty', '(', ')', '.', 'bind', '(', 'labelValue', ')', ';', '\n', '        ', 'label', '.', 'setFont', '(', 'Font', '.', 'font', '(', 'FONT_SIZE', ')', ')', ';', '\n', '        ', 'return', ' ', 'new', ' ', 'StackPane', '(', 'label', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'Parent', ' ', 'buildRoot', '(', 'StringProperty', ' ', 'labelValue', ')', ' ', '{', '\n', '        ', 'Label', ' ', 'label', ' ', '=', ' ', 'new', ' ', 'Label', '(', ')', ';', '\n', '        ', 'label', '.', 'textProperty', '(', ')', '.', 'bind', '(', 'labelValue', ')', ';', '\n', '        ', 'label', '.', 'setFont', '(', 'Font', '.', 'font', '(', 'FONT_SIZE', ')', ')', ';', '\n', '        ', 'return', ' ', 'new', ' ', 'StackPane', '(', 'label', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,835cc370e61f03ec1adbba39a328750eafb88df5,LinuxThemeDetector.java,registerListener,"    public synchronized void registerListener(@NotNull Consumer<Boolean> darkThemeListener) {
         Objects.requireNonNull(darkThemeListener);
         final boolean listenerAdded = listeners.add(darkThemeListener);
@@ -736,7 +736,7 @@ master,835cc370e61f03ec1adbba39a328750eafb88df5,LinuxThemeDetector.java,register
 
         if (singleListener || threadInterrupted) {
             this.detectorThread = new DetectorThread(this);
-","['    ', 'public', ' ', 'synchronized', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'Objects', '.', 'requireNonNull', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'listenerAdded', ' ', '=', ' ', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'singleListener', ' ', '=', ' ', 'listenerAdded', ' ', '&', '&', ' ', 'listeners', '.', 'size', '(', ')', ' ', '=', '=', ' ', '1', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'threadInterrupted', ' ', '=', ' ', 'detectorThread', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'detectorThread', '.', 'isInterrupted', '(', ')', ';', '\n', '\n', '        ', 'if', ' ', '(', 'singleListener', ' ', '|', '|', ' ', 'threadInterrupted', ')', ' ', '{', '\n', '            ', 'this', '.', 'detectorThread', ' ', '=', ' ', 'new', ' ', 'DetectorThread', '(', 'this', ')', ';', '\n']"
+","['    ', 'public', ' ', 'synchronized', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'Objects', '.', 'requireNonNull', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'listenerAdded', ' ', '=', ' ', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'singleListener', ' ', '=', ' ', 'listenerAdded', ' ', '&', '&', ' ', 'listeners', '.', 'size', '(', ')', ' ', '=', '=', ' ', '1', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'threadInterrupted', ' ', '=', ' ', 'detectorThread', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'detectorThread', '.', 'isInterrupted', '(', ')', ';', '\n', '\n', '        ', 'if', ' ', '(', 'singleListener', ' ', '|', '|', ' ', 'threadInterrupted', ')', ' ', '{', '\n', '            ', 'this', '.', 'detectorThread', ' ', '=', ' ', 'new', ' ', 'DetectorThread', '(', 'this', ')', ';', '\n', '<END>']"
 master,835cc370e61f03ec1adbba39a328750eafb88df5,LinuxThemeDetector.java,removeListener,"    public synchronized void removeListener(@Nullable Consumer<Boolean> darkThemeListener) {
         listeners.remove(darkThemeListener);
         if (listeners.isEmpty()) {
@@ -744,19 +744,19 @@ master,835cc370e61f03ec1adbba39a328750eafb88df5,LinuxThemeDetector.java,removeLi
         listeners.remove(darkThemeListener);
         if (listeners.isEmpty()) {
             this.detectorThread.interrupt();
-","['    ', 'public', ' ', 'synchronized', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'if', ' ', '(', 'listeners', '.', 'isEmpty', '(', ')', ')', ' ', '{', '\n', '            ', 'this', '.', 'detectorThread', '.', 'interrupt', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'synchronized', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'if', ' ', '(', 'listeners', '.', 'isEmpty', '(', ')', ')', ' ', '{', '\n', '            ', 'this', '.', 'detectorThread', '.', 'interrupt', '(', ')', ';', '\n', '<END>']"
 master,835cc370e61f03ec1adbba39a328750eafb88df5,MacOSThemeDetector.java,registerListener,"    public synchronized void registerListener(@NotNull Consumer<Boolean> darkThemeListener) {
         listeners.add(darkThemeListener);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/835cc370e61f03ec1adbba39a328750eafb88df5,"    public synchronized void registerListener(@NotNull Consumer<Boolean> darkThemeListener) {
         listeners.add(darkThemeListener);
     }
-","['    ', 'public', ' ', 'synchronized', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'synchronized', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,835cc370e61f03ec1adbba39a328750eafb88df5,MacOSThemeDetector.java,removeListener,"    public synchronized void removeListener(@Nullable Consumer<Boolean> darkThemeListener) {
         listeners.remove(darkThemeListener);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/835cc370e61f03ec1adbba39a328750eafb88df5,"    public synchronized void removeListener(@Nullable Consumer<Boolean> darkThemeListener) {
         listeners.remove(darkThemeListener);
     }
-","['    ', 'public', ' ', 'synchronized', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'synchronized', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,69c2318b4da9ac5964177f686ad2f5afe28d422d,MacOSThemeDetector.java,notifyListeners,"    private void notifyListeners() {
         final var isDark = isDark();
         listeners.forEach(listener -> listener.accept(isDark));
@@ -764,19 +764,19 @@ master,69c2318b4da9ac5964177f686ad2f5afe28d422d,MacOSThemeDetector.java,notifyLi
         final var isDark = isDark();
         listeners.forEach(listener -> listener.accept(isDark));
     }
-","['    ', 'private', ' ', 'void', ' ', 'notifyListeners', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'var', ' ', 'isDark', ' ', '=', ' ', 'isDark', '(', ')', ';', '\n', '        ', 'listeners', '.', 'forEach', '(', 'listener', ' ', '-', '>', ' ', 'listener', '.', 'accept', '(', 'isDark', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'notifyListeners', '(', ')', ' ', '{', '\n', '        ', 'final', ' ', 'var', ' ', 'isDark', ' ', '=', ' ', 'isDark', '(', ')', ';', '\n', '        ', 'listeners', '.', 'forEach', '(', 'listener', ' ', '-', '>', ' ', 'listener', '.', 'accept', '(', 'isDark', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,bf291cbe49486cb2c9339fba44491f8bbf6c1980,MacOSThemeDetector.java,callback,"        public void callback() {
             notifyListeners(isDark());
         }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/bf291cbe49486cb2c9339fba44491f8bbf6c1980,"        public void callback() {
             notifyListeners(isDark());
         }
-","['        ', 'public', ' ', 'void', ' ', 'callback', '(', ')', ' ', '{', '\n', '            ', 'notifyListeners', '(', 'isDark', '(', ')', ')', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'callback', '(', ')', ' ', '{', '\n', '            ', 'notifyListeners', '(', 'isDark', '(', ')', ')', ';', '\n', '        ', '}', '\n', '<END>']"
 master,bf291cbe49486cb2c9339fba44491f8bbf6c1980,MacOSThemeDetector.java,notifyListeners,"    private void notifyListeners(boolean isDark) {
         listeners.forEach(listener -> listener.accept(isDark));
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/bf291cbe49486cb2c9339fba44491f8bbf6c1980,"    private void notifyListeners(boolean isDark) {
         listeners.forEach(listener -> listener.accept(isDark));
     }
-","['    ', 'private', ' ', 'void', ' ', 'notifyListeners', '(', 'boolean', ' ', 'isDark', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'forEach', '(', 'listener', ' ', '-', '>', ' ', 'listener', '.', 'accept', '(', 'isDark', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'void', ' ', 'notifyListeners', '(', 'boolean', ' ', 'isDark', ')', ' ', '{', '\n', '        ', 'listeners', '.', 'forEach', '(', 'listener', ' ', '-', '>', ' ', 'listener', '.', 'accept', '(', 'isDark', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,059009d71539dd60fc63d256bcd33bde4be0ade2,OsThemeDetector.java,logDetection,"    private static void logDetection(String desktop, Class<? extends OsThemeDetector> detectorClass) {
         logger.debug(""Supported Desktop detected: {}"", desktop);
         logger.debug(""Creating {}..."", detectorClass.getName());
@@ -784,25 +784,25 @@ master,059009d71539dd60fc63d256bcd33bde4be0ade2,OsThemeDetector.java,logDetectio
         logger.debug(""Supported Desktop detected: {}"", desktop);
         logger.debug(""Creating {}..."", detectorClass.getName());
     }
-","['    ', 'private', ' ', 'static', ' ', 'void', ' ', 'logDetection', '(', 'String', ' ', 'desktop', ',', ' ', 'Class', '<', '?', ' ', 'extends', ' ', 'OsThemeDetector', '>', ' ', 'detectorClass', ')', ' ', '{', '\n', '        ', 'logger', '.', 'debug', '(', '""', 'Supported Desktop detected: {}', '""', ',', ' ', 'desktop', ')', ';', '\n', '        ', 'logger', '.', 'debug', '(', '""', 'Creating {}...', '""', ',', ' ', 'detectorClass', '.', 'getName', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'static', ' ', 'void', ' ', 'logDetection', '(', 'String', ' ', 'desktop', ',', ' ', 'Class', '<', '?', ' ', 'extends', ' ', 'OsThemeDetector', '>', ' ', 'detectorClass', ')', ' ', '{', '\n', '        ', 'logger', '.', 'debug', '(', '""', 'Supported Desktop detected: {}', '""', ',', ' ', 'desktop', ')', ';', '\n', '        ', 'logger', '.', 'debug', '(', '""', 'Creating {}...', '""', ',', ' ', 'detectorClass', '.', 'getName', '(', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,059009d71539dd60fc63d256bcd33bde4be0ade2,OsInfo.java,isGnome,"    public static boolean isGnome() {
         return isLinux() && (
                         queryResultContains(""echo $XDG_CURRENT_DESKTOP"", ""gnome"") ||",https://www.github.com/dansoftowner/jsystemthemedetector/commit/059009d71539dd60fc63d256bcd33bde4be0ade2,"    public static boolean isGnome() {
         return isLinux() && (
                         queryResultContains(""echo $XDG_CURRENT_DESKTOP"", ""gnome"") ||
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isGnome', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'isLinux', '(', ')', ' ', '&', '&', ' ', '(', '\n', '                        ', 'queryResultContains', '(', '""', 'echo $XDG_CURRENT_DESKTOP', '""', ',', ' ', '""', 'gnome', '""', ')', ' ', '|', '|', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isGnome', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'isLinux', '(', ')', ' ', '&', '&', ' ', '(', '\n', '                        ', 'queryResultContains', '(', '""', 'echo $XDG_CURRENT_DESKTOP', '""', ',', ' ', '""', 'gnome', '""', ')', ' ', '|', '|', '\n', '<END>']"
 master,059009d71539dd60fc63d256bcd33bde4be0ade2,OsInfo.java,queryResultContains,"    private static boolean queryResultContains(@NotNull String cmd, @NotNull String subResult) {
         return query(cmd).toLowerCase().contains(subResult);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/059009d71539dd60fc63d256bcd33bde4be0ade2,"    private static boolean queryResultContains(@NotNull String cmd, @NotNull String subResult) {
         return query(cmd).toLowerCase().contains(subResult);
     }
-","['    ', 'private', ' ', 'static', ' ', 'boolean', ' ', 'queryResultContains', '(', '@NotNull', ' ', 'String', ' ', 'cmd', ',', ' ', '@NotNull', ' ', 'String', ' ', 'subResult', ')', ' ', '{', '\n', '        ', 'return', ' ', 'query', '(', 'cmd', ')', '.', 'toLowerCase', '(', ')', '.', 'contains', '(', 'subResult', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'static', ' ', 'boolean', ' ', 'queryResultContains', '(', '@NotNull', ' ', 'String', ' ', 'cmd', ',', ' ', '@NotNull', ' ', 'String', ' ', 'subResult', ')', ' ', '{', '\n', '        ', 'return', ' ', 'query', '(', 'cmd', ')', '.', 'toLowerCase', '(', ')', '.', 'contains', '(', 'subResult', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,059009d71539dd60fc63d256bcd33bde4be0ade2,OsInfo.java,query,"    private static String query(@NotNull String cmd) {
         try {
             Process process = Runtime.getRuntime().exec(cmd);",https://www.github.com/dansoftowner/jsystemthemedetector/commit/059009d71539dd60fc63d256bcd33bde4be0ade2,"    private static String query(@NotNull String cmd) {
         try {
             Process process = Runtime.getRuntime().exec(cmd);
-","['    ', 'private', ' ', 'static', ' ', 'String', ' ', 'query', '(', '@NotNull', ' ', 'String', ' ', 'cmd', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'Process', ' ', 'process', ' ', '=', ' ', 'Runtime', '.', 'getRuntime', '(', ')', '.', 'exec', '(', 'cmd', ')', ';', '\n']"
+","['    ', 'private', ' ', 'static', ' ', 'String', ' ', 'query', '(', '@NotNull', ' ', 'String', ' ', 'cmd', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'Process', ' ', 'process', ' ', '=', ' ', 'Runtime', '.', 'getRuntime', '(', ')', '.', 'exec', '(', 'cmd', ')', ';', '\n', '<END>']"
 master,80bbb312050b3ca0abe7df4d273e26a90b373b13,OsThemeDetector.java,isDark,"    public abstract boolean isDark();
 
     /**
@@ -863,7 +863,7 @@ master,80bbb312050b3ca0abe7df4d273e26a90b373b13,OsThemeDetector.java,isDark,"   
         }
     }
 }
-","['    ', 'public', ' ', 'abstract', ' ', 'boolean', ' ', 'isDark', '(', ')', ';', '\n', '\n', '    ', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isSupported', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isMacOsMojaveOrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isGnome', '(', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n']"
+","['    ', 'public', ' ', 'abstract', ' ', 'boolean', ' ', 'isDark', '(', ')', ';', '\n', '\n', '    ', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isSupported', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isMacOsMojaveOrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isGnome', '(', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n', '<END>']"
 master,80bbb312050b3ca0abe7df4d273e26a90b373b13,OsThemeDetector.java,registerListener,"    public abstract void registerListener(@NotNull Consumer<Boolean> darkThemeListener);
 
     /**
@@ -913,7 +913,7 @@ master,80bbb312050b3ca0abe7df4d273e26a90b373b13,OsThemeDetector.java,registerLis
         }
     }
 }
-","['    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isSupported', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isMacOsMojaveOrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isGnome', '(', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n']"
+","['    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isSupported', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isMacOsMojaveOrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isGnome', '(', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n', '<END>']"
 master,80bbb312050b3ca0abe7df4d273e26a90b373b13,OsThemeDetector.java,removeListener,"    public abstract void removeListener(@Nullable Consumer<Boolean> darkThemeListener);
 
     public static boolean isSupported() {
@@ -955,73 +955,73 @@ master,80bbb312050b3ca0abe7df4d273e26a90b373b13,OsThemeDetector.java,removeListe
         }
     }
 }
-","['    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isSupported', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isMacOsMojaveOrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isGnome', '(', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n']"
+","['    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isSupported', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isMacOsMojaveOrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isGnome', '(', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n', '<END>']"
 master,80bbb312050b3ca0abe7df4d273e26a90b373b13,OsThemeDetector.java,isSupported,"    public static boolean isSupported() {
         return OsInfo.isWindows10OrLater() || OsInfo.isMacOsMojaveOrLater() || OsInfo.isGnome();
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/80bbb312050b3ca0abe7df4d273e26a90b373b13,"    public static boolean isSupported() {
         return OsInfo.isWindows10OrLater() || OsInfo.isMacOsMojaveOrLater() || OsInfo.isGnome();
     }
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isSupported', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isMacOsMojaveOrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isGnome', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isSupported', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isMacOsMojaveOrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isGnome', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,bb40a52e8468a46c0d91b5b1b3336fe3f388bca9,MacOSThemeDetector.java,callback,"        public void callback() {
             synchronized (iterateLock) {
                 notifyListeners(isDark());",https://www.github.com/dansoftowner/jsystemthemedetector/commit/bb40a52e8468a46c0d91b5b1b3336fe3f388bca9,"        public void callback() {
             synchronized (iterateLock) {
                 notifyListeners(isDark());
-","['        ', 'public', ' ', 'void', ' ', 'callback', '(', ')', ' ', '{', '\n', '            ', 'synchronized', ' ', '(', 'iterateLock', ')', ' ', '{', '\n', '                ', 'notifyListeners', '(', 'isDark', '(', ')', ')', ';', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'callback', '(', ')', ' ', '{', '\n', '            ', 'synchronized', ' ', '(', 'iterateLock', ')', ' ', '{', '\n', '                ', 'notifyListeners', '(', 'isDark', '(', ')', ')', ';', '\n', '<END>']"
 master,bb40a52e8468a46c0d91b5b1b3336fe3f388bca9,MacOSThemeDetector.java,registerListener,"    public void registerListener(@NotNull Consumer<Boolean> darkThemeListener) {
         synchronized (iterateLock) {
             listeners.add(darkThemeListener);",https://www.github.com/dansoftowner/jsystemthemedetector/commit/bb40a52e8468a46c0d91b5b1b3336fe3f388bca9,"    public void registerListener(@NotNull Consumer<Boolean> darkThemeListener) {
         synchronized (iterateLock) {
             listeners.add(darkThemeListener);
-","['    ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'synchronized', ' ', '(', 'iterateLock', ')', ' ', '{', '\n', '            ', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ';', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'synchronized', ' ', '(', 'iterateLock', ')', ' ', '{', '\n', '            ', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ';', '\n', '<END>']"
 master,bb40a52e8468a46c0d91b5b1b3336fe3f388bca9,MacOSThemeDetector.java,removeListener,"    public void removeListener(@Nullable Consumer<Boolean> darkThemeListener) {
         synchronized (iterateLock) {
             listeners.remove(darkThemeListener);",https://www.github.com/dansoftowner/jsystemthemedetector/commit/bb40a52e8468a46c0d91b5b1b3336fe3f388bca9,"    public void removeListener(@Nullable Consumer<Boolean> darkThemeListener) {
         synchronized (iterateLock) {
             listeners.remove(darkThemeListener);
-","['    ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'synchronized', ' ', '(', 'iterateLock', ')', ' ', '{', '\n', '            ', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'synchronized', ' ', '(', 'iterateLock', ')', ' ', '{', '\n', '            ', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n', '<END>']"
 master,dec4722b70f899f4a764518bbbe30af741258f48,MacOSThemeDetector.java,callback,"        public void callback() {
             synchronized (listeners) {
                 notifyListeners(isDark());",https://www.github.com/dansoftowner/jsystemthemedetector/commit/dec4722b70f899f4a764518bbbe30af741258f48,"        public void callback() {
             synchronized (listeners) {
                 notifyListeners(isDark());
-","['        ', 'public', ' ', 'void', ' ', 'callback', '(', ')', ' ', '{', '\n', '            ', 'synchronized', ' ', '(', 'listeners', ')', ' ', '{', '\n', '                ', 'notifyListeners', '(', 'isDark', '(', ')', ')', ';', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'callback', '(', ')', ' ', '{', '\n', '            ', 'synchronized', ' ', '(', 'listeners', ')', ' ', '{', '\n', '                ', 'notifyListeners', '(', 'isDark', '(', ')', ')', ';', '\n', '<END>']"
 master,dec4722b70f899f4a764518bbbe30af741258f48,MacOSThemeDetector.java,registerListener,"    public void registerListener(@NotNull Consumer<Boolean> darkThemeListener) {
         synchronized (listeners) {
             listeners.add(darkThemeListener);",https://www.github.com/dansoftowner/jsystemthemedetector/commit/dec4722b70f899f4a764518bbbe30af741258f48,"    public void registerListener(@NotNull Consumer<Boolean> darkThemeListener) {
         synchronized (listeners) {
             listeners.add(darkThemeListener);
-","['    ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'synchronized', ' ', '(', 'listeners', ')', ' ', '{', '\n', '            ', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ';', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'synchronized', ' ', '(', 'listeners', ')', ' ', '{', '\n', '            ', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ';', '\n', '<END>']"
 master,dec4722b70f899f4a764518bbbe30af741258f48,MacOSThemeDetector.java,removeListener,"    public void removeListener(@Nullable Consumer<Boolean> darkThemeListener) {
         synchronized (listeners) {
             listeners.remove(darkThemeListener);",https://www.github.com/dansoftowner/jsystemthemedetector/commit/dec4722b70f899f4a764518bbbe30af741258f48,"    public void removeListener(@Nullable Consumer<Boolean> darkThemeListener) {
         synchronized (listeners) {
             listeners.remove(darkThemeListener);
-","['    ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'synchronized', ' ', '(', 'listeners', ')', ' ', '{', '\n', '            ', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'synchronized', ' ', '(', 'listeners', ')', ' ', '{', '\n', '            ', 'listeners', '.', 'remove', '(', 'darkThemeListener', ')', ';', '\n', '<END>']"
 master,d17ccca31ea966bdd8d48b9474d83522b5af30c0,OsInfo.java,isMacOsMojaveOrLater,"    public static boolean isMacOsMojaveOrLater() {
         return hasTypeAndVersionOrHigher(PlatformEnum.MACOS, ""10.14"");
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/d17ccca31ea966bdd8d48b9474d83522b5af30c0,"    public static boolean isMacOsMojaveOrLater() {
         return hasTypeAndVersionOrHigher(PlatformEnum.MACOS, ""10.14"");
     }
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isMacOsMojaveOrLater', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'hasTypeAndVersionOrHigher', '(', 'PlatformEnum', '.', 'MACOS', ',', ' ', '""', '10.14', '""', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isMacOsMojaveOrLater', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'hasTypeAndVersionOrHigher', '(', 'PlatformEnum', '.', 'MACOS', ',', ' ', '""', '10.14', '""', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,d17ccca31ea966bdd8d48b9474d83522b5af30c0,OsInfo.java,isVersionAtLeast,"    public static boolean isVersionAtLeast(String version) {
         return new Version(OsInfo.version).isAtLeast(version);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/d17ccca31ea966bdd8d48b9474d83522b5af30c0,"    public static boolean isVersionAtLeast(String version) {
         return new Version(OsInfo.version).isAtLeast(version);
     }
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isVersionAtLeast', '(', 'String', ' ', 'version', ')', ' ', '{', '\n', '        ', 'return', ' ', 'new', ' ', 'Version', '(', 'OsInfo', '.', 'version', ')', '.', 'isAtLeast', '(', 'version', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isVersionAtLeast', '(', 'String', ' ', 'version', ')', ' ', '{', '\n', '        ', 'return', ' ', 'new', ' ', 'Version', '(', 'OsInfo', '.', 'version', ')', '.', 'isAtLeast', '(', 'version', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,d17ccca31ea966bdd8d48b9474d83522b5af30c0,OsInfo.java,hasTypeAndVersionOrHigher,"    public static boolean hasTypeAndVersionOrHigher(PlatformEnum platformType, String version) {
         return hasType(platformType) && isVersionAtLeast(version);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/d17ccca31ea966bdd8d48b9474d83522b5af30c0,"    public static boolean hasTypeAndVersionOrHigher(PlatformEnum platformType, String version) {
         return hasType(platformType) && isVersionAtLeast(version);
     }
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'hasTypeAndVersionOrHigher', '(', 'PlatformEnum', ' ', 'platformType', ',', ' ', 'String', ' ', 'version', ')', ' ', '{', '\n', '        ', 'return', ' ', 'hasType', '(', 'platformType', ')', ' ', '&', '&', ' ', 'isVersionAtLeast', '(', 'version', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'hasTypeAndVersionOrHigher', '(', 'PlatformEnum', ' ', 'platformType', ',', ' ', 'String', ' ', 'version', ')', ' ', '{', '\n', '        ', 'return', ' ', 'hasType', '(', 'platformType', ')', ' ', '&', '&', ' ', 'isVersionAtLeast', '(', 'version', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,7f7616394b2db8ae1cc6c630a3da72bb6a310a79,MacOSThemeDetector.java,callback,"        public void callback() {
             callbackExecutor.execute(() -> notifyListeners(isDark()));
         }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/7f7616394b2db8ae1cc6c630a3da72bb6a310a79,"        public void callback() {
             callbackExecutor.execute(() -> notifyListeners(isDark()));
         }
-","['        ', 'public', ' ', 'void', ' ', 'callback', '(', ')', ' ', '{', '\n', '            ', 'callbackExecutor', '.', 'execute', '(', '(', ')', ' ', '-', '>', ' ', 'notifyListeners', '(', 'isDark', '(', ')', ')', ')', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'callback', '(', ')', ' ', '{', '\n', '            ', 'callbackExecutor', '.', 'execute', '(', '(', ')', ' ', '-', '>', ' ', 'notifyListeners', '(', 'isDark', '(', ')', ')', ')', ';', '\n', '        ', '}', '\n', '<END>']"
 master,1f97041494c5313edf904e7c2082624bb38df931,WindowsThemeDetector.java,run,"        public void run() {
             WinReg.HKEYByReference hkey = new WinReg.HKEYByReference();
             int err = Advapi32.INSTANCE.RegOpenKeyEx(WinReg.HKEY_CURRENT_USER, REGISTRY_PATH, 0, WinNT.KEY_READ, hkey);
@@ -1077,55 +1077,55 @@ master,1f97041494c5313edf904e7c2082624bb38df931,WindowsThemeDetector.java,run," 
             }
             Advapi32Util.registryCloseKey(hkey.getValue());
         }
-","['        ', 'public', ' ', 'void', ' ', 'run', '(', ')', ' ', '{', '\n', '            ', 'WinReg', '.', 'HKEYByReference', ' ', 'hkey', ' ', '=', ' ', 'new', ' ', 'WinReg', '.', 'HKEYByReference', '(', ')', ';', '\n', '            ', 'int', ' ', 'err', ' ', '=', ' ', 'Advapi32', '.', 'INSTANCE', '.', 'RegOpenKeyEx', '(', 'WinReg', '.', 'HKEY_CURRENT_USER', ',', ' ', 'REGISTRY_PATH', ',', ' ', '0', ',', ' ', 'WinNT', '.', 'KEY_READ', ',', ' ', 'hkey', ')', ';', '\n', '            ', 'if', ' ', '(', 'err', ' ', '!', '=', ' ', 'W32Errors', '.', 'ERROR_SUCCESS', ')', ' ', '{', '\n', '                ', 'throw', ' ', 'new', ' ', 'Win32Exception', '(', 'err', ')', ';', '\n', '            ', '}', '\n', '\n', '            ', 'while', ' ', '(', '!', 'this', '.', 'isInterrupted', '(', ')', ')', ' ', '{', '\n', '                ', 'err', ' ', '=', ' ', 'Advapi32', '.', 'INSTANCE', '.', 'RegNotifyChangeKeyValue', '(', 'hkey', '.', 'getValue', '(', ')', ',', ' ', 'false', ',', ' ', 'WinNT', '.', 'REG_NOTIFY_CHANGE_LAST_SET', ',', ' ', 'null', ',', ' ', 'false', ')', ';', '\n', '                ', 'if', ' ', '(', 'err', ' ', '!', '=', ' ', 'W32Errors', '.', 'ERROR_SUCCESS', ')', ' ', '{', '\n', '                    ', 'throw', ' ', 'new', ' ', 'Win32Exception', '(', 'err', ')', ';', '\n', '                ', '}', '\n', '\n', '                ', 'boolean', ' ', 'currentDetection', ' ', '=', ' ', 'themeDetector', '.', 'isDark', '(', ')', ';', '\n', '                ', 'if', ' ', '(', 'currentDetection', ' ', '!', '=', ' ', 'this', '.', 'lastValue', ')', ' ', '{', '\n', '                    ', 'lastValue', ' ', '=', ' ', 'currentDetection', ';', '\n', '                    ', 'logger', '.', 'debug', '(', '""', 'Theme change detected: dark: {}', '""', ',', ' ', 'currentDetection', ')', ';', '\n', '                    ', 'for', ' ', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'listener', ' ', ':', ' ', 'themeDetector', '.', 'listeners', ')', ' ', '{', '\n', '                        ', 'try', ' ', '{', '\n', '                            ', 'listener', '.', 'accept', '(', 'currentDetection', ')', ';', '\n', '                        ', '}', ' ', 'catch', ' ', '(', 'RuntimeException', ' ', 'e', ')', ' ', '{', '\n', '                            ', 'logger', '.', 'error', '(', '""', 'Caught exception during listener notifying ', '""', ',', ' ', 'e', ')', ';', '\n', '                        ', '}', '\n', '                    ', '}', '\n', '                ', '}', '\n', '            ', '}', '\n', '            ', 'Advapi32Util', '.', 'registryCloseKey', '(', 'hkey', '.', 'getValue', '(', ')', ')', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'void', ' ', 'run', '(', ')', ' ', '{', '\n', '            ', 'WinReg', '.', 'HKEYByReference', ' ', 'hkey', ' ', '=', ' ', 'new', ' ', 'WinReg', '.', 'HKEYByReference', '(', ')', ';', '\n', '            ', 'int', ' ', 'err', ' ', '=', ' ', 'Advapi32', '.', 'INSTANCE', '.', 'RegOpenKeyEx', '(', 'WinReg', '.', 'HKEY_CURRENT_USER', ',', ' ', 'REGISTRY_PATH', ',', ' ', '0', ',', ' ', 'WinNT', '.', 'KEY_READ', ',', ' ', 'hkey', ')', ';', '\n', '            ', 'if', ' ', '(', 'err', ' ', '!', '=', ' ', 'W32Errors', '.', 'ERROR_SUCCESS', ')', ' ', '{', '\n', '                ', 'throw', ' ', 'new', ' ', 'Win32Exception', '(', 'err', ')', ';', '\n', '            ', '}', '\n', '\n', '            ', 'while', ' ', '(', '!', 'this', '.', 'isInterrupted', '(', ')', ')', ' ', '{', '\n', '                ', 'err', ' ', '=', ' ', 'Advapi32', '.', 'INSTANCE', '.', 'RegNotifyChangeKeyValue', '(', 'hkey', '.', 'getValue', '(', ')', ',', ' ', 'false', ',', ' ', 'WinNT', '.', 'REG_NOTIFY_CHANGE_LAST_SET', ',', ' ', 'null', ',', ' ', 'false', ')', ';', '\n', '                ', 'if', ' ', '(', 'err', ' ', '!', '=', ' ', 'W32Errors', '.', 'ERROR_SUCCESS', ')', ' ', '{', '\n', '                    ', 'throw', ' ', 'new', ' ', 'Win32Exception', '(', 'err', ')', ';', '\n', '                ', '}', '\n', '\n', '                ', 'boolean', ' ', 'currentDetection', ' ', '=', ' ', 'themeDetector', '.', 'isDark', '(', ')', ';', '\n', '                ', 'if', ' ', '(', 'currentDetection', ' ', '!', '=', ' ', 'this', '.', 'lastValue', ')', ' ', '{', '\n', '                    ', 'lastValue', ' ', '=', ' ', 'currentDetection', ';', '\n', '                    ', 'logger', '.', 'debug', '(', '""', 'Theme change detected: dark: {}', '""', ',', ' ', 'currentDetection', ')', ';', '\n', '                    ', 'for', ' ', '(', 'Consumer', '<', 'Boolean', '>', ' ', 'listener', ' ', ':', ' ', 'themeDetector', '.', 'listeners', ')', ' ', '{', '\n', '                        ', 'try', ' ', '{', '\n', '                            ', 'listener', '.', 'accept', '(', 'currentDetection', ')', ';', '\n', '                        ', '}', ' ', 'catch', ' ', '(', 'RuntimeException', ' ', 'e', ')', ' ', '{', '\n', '                            ', 'logger', '.', 'error', '(', '""', 'Caught exception during listener notifying ', '""', ',', ' ', 'e', ')', ';', '\n', '                        ', '}', '\n', '                    ', '}', '\n', '                ', '}', '\n', '            ', '}', '\n', '            ', 'Advapi32Util', '.', 'registryCloseKey', '(', 'hkey', '.', 'getValue', '(', ')', ')', ';', '\n', '        ', '}', '\n', '<END>']"
 master,3e71aedede809f1491fa53c45a1331f4e9bd37d6,OsThemeDetector.java,createDetector,"    private static OsThemeDetector createDetector() {
         if (OsInfo.isWindows10OrLater()) {
             logDetection(""Windows 10"", WindowsThemeDetector.class);",https://www.github.com/dansoftowner/jsystemthemedetector/commit/3e71aedede809f1491fa53c45a1331f4e9bd37d6,"    private static OsThemeDetector createDetector() {
         if (OsInfo.isWindows10OrLater()) {
             logDetection(""Windows 10"", WindowsThemeDetector.class);
-","['    ', 'private', ' ', 'static', ' ', 'OsThemeDetector', ' ', 'createDetector', '(', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ')', ' ', '{', '\n', '            ', 'logDetection', '(', '""', 'Windows 10', '""', ',', ' ', 'WindowsThemeDetector', '.', 'class', ')', ';', '\n']"
+","['    ', 'private', ' ', 'static', ' ', 'OsThemeDetector', ' ', 'createDetector', '(', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ')', ' ', '{', '\n', '            ', 'logDetection', '(', '""', 'Windows 10', '""', ',', ' ', 'WindowsThemeDetector', '.', 'class', ')', ';', '\n', '<END>']"
 master,b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,ConcurrentHashSet.java,contains,"    public boolean contains(Object o) {
         return map.containsKey(o);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,"    public boolean contains(Object o) {
         return map.containsKey(o);
     }
-","['    ', 'public', ' ', 'boolean', ' ', 'contains', '(', 'Object', ' ', 'o', ')', ' ', '{', '\n', '        ', 'return', ' ', 'map', '.', 'containsKey', '(', 'o', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'boolean', ' ', 'contains', '(', 'Object', ' ', 'o', ')', ' ', '{', '\n', '        ', 'return', ' ', 'map', '.', 'containsKey', '(', 'o', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,ConcurrentHashSet.java,iterator,"    public Iterator<E> iterator() {
         return map.keySet().iterator();
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,"    public Iterator<E> iterator() {
         return map.keySet().iterator();
     }
-","['    ', 'public', ' ', 'Iterator', '<', 'E', '>', ' ', 'iterator', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'map', '.', 'keySet', '(', ')', '.', 'iterator', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'Iterator', '<', 'E', '>', ' ', 'iterator', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'map', '.', 'keySet', '(', ')', '.', 'iterator', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,ConcurrentHashSet.java,toArray,"    public Object[] toArray() {
         return map.keySet().toArray();
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,"    public Object[] toArray() {
         return map.keySet().toArray();
     }
-","['    ', 'public', ' ', 'Object', '[', ']', ' ', 'toArray', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'map', '.', 'keySet', '(', ')', '.', 'toArray', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'Object', '[', ']', ' ', 'toArray', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'map', '.', 'keySet', '(', ')', '.', 'toArray', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,ConcurrentHashSet.java,toArray,"    public <T> T[] toArray(T[] a) {
         return map.keySet().toArray(a);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,"    public <T> T[] toArray(T[] a) {
         return map.keySet().toArray(a);
     }
-","['    ', 'public', ' ', '<', 'T', '>', ' ', 'T', '[', ']', ' ', 'toArray', '(', 'T', '[', ']', ' ', 'a', ')', ' ', '{', '\n', '        ', 'return', ' ', 'map', '.', 'keySet', '(', ')', '.', 'toArray', '(', 'a', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', '<', 'T', '>', ' ', 'T', '[', ']', ' ', 'toArray', '(', 'T', '[', ']', ' ', 'a', ')', ' ', '{', '\n', '        ', 'return', ' ', 'map', '.', 'keySet', '(', ')', '.', 'toArray', '(', 'a', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,ConcurrentHashSet.java,add,"    public boolean add(E e) {
         return map.put(e, OBJ) == null;
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,"    public boolean add(E e) {
         return map.put(e, OBJ) == null;
     }
-","['    ', 'public', ' ', 'boolean', ' ', 'add', '(', 'E', ' ', 'e', ')', ' ', '{', '\n', '        ', 'return', ' ', 'map', '.', 'put', '(', 'e', ',', ' ', 'OBJ', ')', ' ', '=', '=', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'boolean', ' ', 'add', '(', 'E', ' ', 'e', ')', ' ', '{', '\n', '        ', 'return', ' ', 'map', '.', 'put', '(', 'e', ',', ' ', 'OBJ', ')', ' ', '=', '=', ' ', 'null', ';', '\n', '    ', '}', '\n', '<END>']"
 master,b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,ConcurrentHashSet.java,remove,"    public boolean remove(Object o) {
         return map.remove(o) != null;
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,"    public boolean remove(Object o) {
         return map.remove(o) != null;
     }
-","['    ', 'public', ' ', 'boolean', ' ', 'remove', '(', 'Object', ' ', 'o', ')', ' ', '{', '\n', '        ', 'return', ' ', 'map', '.', 'remove', '(', 'o', ')', ' ', '!', '=', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'boolean', ' ', 'remove', '(', 'Object', ' ', 'o', ')', ' ', '{', '\n', '        ', 'return', ' ', 'map', '.', 'remove', '(', 'o', ')', ' ', '!', '=', ' ', 'null', ';', '\n', '    ', '}', '\n', '<END>']"
 master,b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,ConcurrentHashSet.java,containsAll,"    public boolean containsAll(Collection<?> c) {
         return map.keySet().containsAll(c);
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,"    public boolean containsAll(Collection<?> c) {
         return map.keySet().containsAll(c);
     }
-","['    ', 'public', ' ', 'boolean', ' ', 'containsAll', '(', 'Collection', '<', '?', '>', ' ', 'c', ')', ' ', '{', '\n', '        ', 'return', ' ', 'map', '.', 'keySet', '(', ')', '.', 'containsAll', '(', 'c', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'boolean', ' ', 'containsAll', '(', 'Collection', '<', '?', '>', ' ', 'c', ')', ' ', '{', '\n', '        ', 'return', ' ', 'map', '.', 'keySet', '(', ')', '.', 'containsAll', '(', 'c', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,ConcurrentHashSet.java,addAll,"    public boolean addAll(Collection<? extends E> c) {
         boolean changed = false;
         for (E e: c) {
@@ -1143,19 +1143,19 @@ master,b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,ConcurrentHashSet.java,addAll," 
         }
         return changed;
     }
-","['    ', 'public', ' ', 'boolean', ' ', 'addAll', '(', 'Collection', '<', '?', ' ', 'extends', ' ', 'E', '>', ' ', 'c', ')', ' ', '{', '\n', '        ', 'boolean', ' ', 'changed', ' ', '=', ' ', 'false', ';', '\n', '        ', 'for', ' ', '(', 'E', ' ', 'e', ':', ' ', 'c', ')', ' ', '{', '\n', '            ', 'if', ' ', '(', 'map', '.', 'put', '(', 'e', ',', ' ', 'OBJ', ')', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '                ', 'changed', ' ', '=', ' ', 'true', ';', '\n', '            ', '}', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'changed', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'boolean', ' ', 'addAll', '(', 'Collection', '<', '?', ' ', 'extends', ' ', 'E', '>', ' ', 'c', ')', ' ', '{', '\n', '        ', 'boolean', ' ', 'changed', ' ', '=', ' ', 'false', ';', '\n', '        ', 'for', ' ', '(', 'E', ' ', 'e', ':', ' ', 'c', ')', ' ', '{', '\n', '            ', 'if', ' ', '(', 'map', '.', 'put', '(', 'e', ',', ' ', 'OBJ', ')', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '                ', 'changed', ' ', '=', ' ', 'true', ';', '\n', '            ', '}', '\n', '        ', '}', '\n', '        ', 'return', ' ', 'changed', ';', '\n', '    ', '}', '\n', '<END>']"
 master,b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,ConcurrentHashSet.java,retainAll,"    public boolean retainAll(Collection<?> c) {
         throw new UnsupportedOperationException();
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,"    public boolean retainAll(Collection<?> c) {
         throw new UnsupportedOperationException();
     }
-","['    ', 'public', ' ', 'boolean', ' ', 'retainAll', '(', 'Collection', '<', '?', '>', ' ', 'c', ')', ' ', '{', '\n', '        ', 'throw', ' ', 'new', ' ', 'UnsupportedOperationException', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'boolean', ' ', 'retainAll', '(', 'Collection', '<', '?', '>', ' ', 'c', ')', ' ', '{', '\n', '        ', 'throw', ' ', 'new', ' ', 'UnsupportedOperationException', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,ConcurrentHashSet.java,removeAll,"    public boolean removeAll(Collection<?> c) {
         throw new UnsupportedOperationException();
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/b4be30854b50f2d9129e4e0a232d6c6d44d7dc36,"    public boolean removeAll(Collection<?> c) {
         throw new UnsupportedOperationException();
     }
-","['    ', 'public', ' ', 'boolean', ' ', 'removeAll', '(', 'Collection', '<', '?', '>', ' ', 'c', ')', ' ', '{', '\n', '        ', 'throw', ' ', 'new', ' ', 'UnsupportedOperationException', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'boolean', ' ', 'removeAll', '(', 'Collection', '<', '?', '>', ' ', 'c', ')', ' ', '{', '\n', '        ', 'throw', ' ', 'new', ' ', 'UnsupportedOperationException', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,a5e1e8a8b7d60893451dfb26d37897a1224c8851,GnomeThemeDetector.java,registerListener,"    public synchronized void registerListener(@NotNull Consumer<Boolean> darkThemeListener) {
         Objects.requireNonNull(darkThemeListener);
         final boolean listenerAdded = listeners.add(darkThemeListener);
@@ -1173,7 +1173,7 @@ master,a5e1e8a8b7d60893451dfb26d37897a1224c8851,GnomeThemeDetector.java,register
 
         if (singleListener || threadInterrupted) {
             final DetectorThread newDetectorThread = new DetectorThread(this);
-","['    ', 'public', ' ', 'synchronized', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'Objects', '.', 'requireNonNull', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'listenerAdded', ' ', '=', ' ', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'singleListener', ' ', '=', ' ', 'listenerAdded', ' ', '&', '&', ' ', 'listeners', '.', 'size', '(', ')', ' ', '=', '=', ' ', '1', ';', '\n', '        ', 'final', ' ', 'DetectorThread', ' ', 'currentDetectorThread', ' ', '=', ' ', 'detectorThread', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'threadInterrupted', ' ', '=', ' ', 'currentDetectorThread', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'currentDetectorThread', '.', 'isInterrupted', '(', ')', ';', '\n', '\n', '        ', 'if', ' ', '(', 'singleListener', ' ', '|', '|', ' ', 'threadInterrupted', ')', ' ', '{', '\n', '            ', 'final', ' ', 'DetectorThread', ' ', 'newDetectorThread', ' ', '=', ' ', 'new', ' ', 'DetectorThread', '(', 'this', ')', ';', '\n']"
+","['    ', 'public', ' ', 'synchronized', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', 'Objects', '.', 'requireNonNull', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'listenerAdded', ' ', '=', ' ', 'listeners', '.', 'add', '(', 'darkThemeListener', ')', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'singleListener', ' ', '=', ' ', 'listenerAdded', ' ', '&', '&', ' ', 'listeners', '.', 'size', '(', ')', ' ', '=', '=', ' ', '1', ';', '\n', '        ', 'final', ' ', 'DetectorThread', ' ', 'currentDetectorThread', ' ', '=', ' ', 'detectorThread', ';', '\n', '        ', 'final', ' ', 'boolean', ' ', 'threadInterrupted', ' ', '=', ' ', 'currentDetectorThread', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'currentDetectorThread', '.', 'isInterrupted', '(', ')', ';', '\n', '\n', '        ', 'if', ' ', '(', 'singleListener', ' ', '|', '|', ' ', 'threadInterrupted', ')', ' ', '{', '\n', '            ', 'final', ' ', 'DetectorThread', ' ', 'newDetectorThread', ' ', '=', ' ', 'new', ' ', 'DetectorThread', '(', 'this', ')', ';', '\n', '<END>']"
 master,8f2db06a99dfbbf7fa6d621ecce63a837a8cb48f,OsThemeDetector.java,isDark,"    public abstract boolean isDark();
 
     /**
@@ -1240,7 +1240,7 @@ master,8f2db06a99dfbbf7fa6d621ecce63a837a8cb48f,OsThemeDetector.java,isDark,"   
         }
     }
 }
-","['    ', 'public', ' ', 'abstract', ' ', 'boolean', ' ', 'isDark', '(', ')', ';', '\n', '\n', '    ', '\n', '    ', '@ThreadSafe', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '\n', '    ', '@ThreadSafe', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '@ThreadSafe', '\n', '    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isSupported', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isMacOsMojaveOrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isGnome', '(', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n']"
+","['    ', 'public', ' ', 'abstract', ' ', 'boolean', ' ', 'isDark', '(', ')', ';', '\n', '\n', '    ', '\n', '    ', '@ThreadSafe', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '\n', '    ', '@ThreadSafe', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '@ThreadSafe', '\n', '    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isSupported', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isMacOsMojaveOrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isGnome', '(', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n', '<END>']"
 master,8f2db06a99dfbbf7fa6d621ecce63a837a8cb48f,OsThemeDetector.java,registerListener,"    public abstract void registerListener(@NotNull Consumer<Boolean> darkThemeListener);
 
     /**
@@ -1294,7 +1294,7 @@ master,8f2db06a99dfbbf7fa6d621ecce63a837a8cb48f,OsThemeDetector.java,registerLis
         }
     }
 }
-","['    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '\n', '    ', '@ThreadSafe', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '@ThreadSafe', '\n', '    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isSupported', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isMacOsMojaveOrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isGnome', '(', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n']"
+","['    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '\n', '    ', '@ThreadSafe', '\n', '    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '@ThreadSafe', '\n', '    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isSupported', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isMacOsMojaveOrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isGnome', '(', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n', '<END>']"
 master,8f2db06a99dfbbf7fa6d621ecce63a837a8cb48f,OsThemeDetector.java,removeListener,"    public abstract void removeListener(@Nullable Consumer<Boolean> darkThemeListener);
 
     @ThreadSafe
@@ -1338,10 +1338,10 @@ master,8f2db06a99dfbbf7fa6d621ecce63a837a8cb48f,OsThemeDetector.java,removeListe
         }
     }
 }
-","['    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '@ThreadSafe', '\n', '    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isSupported', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isMacOsMojaveOrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isGnome', '(', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n']"
+","['    ', 'public', ' ', 'abstract', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ';', '\n', '\n', '    ', '@ThreadSafe', '\n', '    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isSupported', '(', ')', ' ', '{', '\n', '        ', 'return', ' ', 'OsInfo', '.', 'isWindows10OrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isMacOsMojaveOrLater', '(', ')', ' ', '|', '|', ' ', 'OsInfo', '.', 'isGnome', '(', ')', ';', '\n', '    ', '}', '\n', '\n', '    ', 'private', ' ', 'static', ' ', 'final', ' ', 'class', ' ', 'EmptyDetector', ' ', 'extends', ' ', 'OsThemeDetector', ' ', '{', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'boolean', ' ', 'isDark', '(', ')', ' ', '{', '\n', '            ', 'return', ' ', 'false', ';', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'registerListener', '(', '@NotNull', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '\n', '        ', '@Override', '\n', '        ', 'public', ' ', 'void', ' ', 'removeListener', '(', '@Nullable', ' ', 'Consumer', '<', 'Boolean', '>', ' ', 'darkThemeListener', ')', ' ', '{', '\n', '        ', '}', '\n', '    ', '}', '\n', '}', '\n', '<END>']"
 master,ad9887be221b157cec281e1e45e0022a89c00349,MacOSThemeDetector.java,isDarkTheme,"    private boolean isDarkTheme(String themeName) {
         return themeName != null && themeNamePattern.matcher(themeName).matches();
     }",https://www.github.com/dansoftowner/jsystemthemedetector/commit/ad9887be221b157cec281e1e45e0022a89c00349,"    private boolean isDarkTheme(String themeName) {
         return themeName != null && themeNamePattern.matcher(themeName).matches();
     }
-","['    ', 'private', ' ', 'boolean', ' ', 'isDarkTheme', '(', 'String', ' ', 'themeName', ')', ' ', '{', '\n', '        ', 'return', ' ', 'themeName', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'themeNamePattern', '.', 'matcher', '(', 'themeName', ')', '.', 'matches', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'private', ' ', 'boolean', ' ', 'isDarkTheme', '(', 'String', ' ', 'themeName', ')', ' ', '{', '\n', '        ', 'return', ' ', 'themeName', ' ', '!', '=', ' ', 'null', ' ', '&', '&', ' ', 'themeNamePattern', '.', 'matcher', '(', 'themeName', ')', '.', 'matches', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"

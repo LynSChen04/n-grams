@@ -6,7 +6,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,MainActivity.java,onCreateOption
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
-","['    ', 'public', ' ', 'boolean', ' ', 'onCreateOptionsMenu', '(', 'Menu', ' ', 'menu', ')', ' ', '{', '\n', '        ', 'getMenuInflater', '(', ')', '.', 'inflate', '(', 'R', '.', 'menu', '.', 'main_menu', ',', ' ', 'menu', ')', ';', '\n', '        ', 'return', ' ', 'super', '.', 'onCreateOptionsMenu', '(', 'menu', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'boolean', ' ', 'onCreateOptionsMenu', '(', 'Menu', ' ', 'menu', ')', ' ', '{', '\n', '        ', 'getMenuInflater', '(', ')', '.', 'inflate', '(', 'R', '.', 'menu', '.', 'main_menu', ',', ' ', 'menu', ')', ';', '\n', '        ', 'return', ' ', 'super', '.', 'onCreateOptionsMenu', '(', 'menu', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,MainActivity.java,sendViaLocalBroadcastManager,"    void sendViaLocalBroadcastManager(ResourcesHolder holder){
         // Sending 'holder' object to another class via LocalBroadcastManager
         LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
@@ -14,7 +14,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,MainActivity.java,sendViaLocalBr
         
         LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
-","['    ', 'void', ' ', 'sendViaLocalBroadcastManager', '(', 'ResourcesHolder', ' ', 'holder', ')', '{', '\n', '        ', '\n', '        ', 'LocalBroadcastManager', '.', 'getInstance', '(', 'this', ')', '.', 'sendBroadcast', '(', 'intent', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'void', ' ', 'sendViaLocalBroadcastManager', '(', 'ResourcesHolder', ' ', 'holder', ')', '{', '\n', '        ', '\n', '        ', 'LocalBroadcastManager', '.', 'getInstance', '(', 'this', ')', '.', 'sendBroadcast', '(', 'intent', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,MainActivity.java,clearHolder,"    void clearHolder(ResourcesHolder holder){
         // If you want to clear everything from 'holder', call clear()
         // This method will returns empty 'holder'
@@ -24,7 +24,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,MainActivity.java,clearHolder," 
         
         holder.clear();
     }
-","['    ', 'void', ' ', 'clearHolder', '(', 'ResourcesHolder', ' ', 'holder', ')', '{', '\n', '        ', '\n', '        ', '\n', '        ', 'holder', '.', 'clear', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'void', ' ', 'clearHolder', '(', 'ResourcesHolder', ' ', 'holder', ')', '{', '\n', '        ', '\n', '        ', '\n', '        ', 'holder', '.', 'clear', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,Receiver.java,onReceive,"    public void onReceive(Context context, Intent intent) {
         Toast.makeText(context, ""ResourceHolder is received. See detail on LogCat."", Toast.LENGTH_SHORT).show();
 
@@ -36,7 +36,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,Receiver.java,onReceive,"    pub
         ResourcesHolder holder = intent.getParcelableExtra(""holder"");
         holder.printAll();
     }
-","['    ', 'public', ' ', 'void', ' ', 'onReceive', '(', 'Context', ' ', 'context', ',', ' ', 'Intent', ' ', 'intent', ')', ' ', '{', '\n', '        ', 'Toast', '.', 'makeText', '(', 'context', ',', ' ', '""', 'ResourceHolder is received. See detail on LogCat.', '""', ',', ' ', 'Toast', '.', 'LENGTH_SHORT', ')', '.', 'show', '(', ')', ';', '\n', '\n', '        ', 'ResourcesHolder', ' ', 'holder', ' ', '=', ' ', 'intent', '.', 'getParcelableExtra', '(', '""', 'holder', '""', ')', ';', '\n', '        ', 'holder', '.', 'printAll', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'onReceive', '(', 'Context', ' ', 'context', ',', ' ', 'Intent', ' ', 'intent', ')', ' ', '{', '\n', '        ', 'Toast', '.', 'makeText', '(', 'context', ',', ' ', '""', 'ResourceHolder is received. See detail on LogCat.', '""', ',', ' ', 'Toast', '.', 'LENGTH_SHORT', ')', '.', 'show', '(', ')', ';', '\n', '\n', '        ', 'ResourcesHolder', ' ', 'holder', ' ', '=', ' ', 'intent', '.', 'getParcelableExtra', '(', '""', 'holder', '""', ')', ';', '\n', '        ', 'holder', '.', 'printAll', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getBoolean,"    public static boolean getBoolean(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getBoolean(getResourceId(""bool"", resName));
@@ -48,7 +48,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getBoolean
         } catch (ClassNotFoundException e) {}
         return false;
     }
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'getBoolean', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getBoolean', '(', 'getResourceId', '(', '""', 'bool', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', 'false', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'getBoolean', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getBoolean', '(', 'getResourceId', '(', '""', 'bool', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', 'false', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getColor,"    public static int getColor(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getColor(getResourceId(""color"", resName));
@@ -60,7 +60,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getColor,"
         } catch (ClassNotFoundException e) {}
         return 0;
     }
-","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getColor', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getColor', '(', 'getResourceId', '(', '""', 'color', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', '0', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getColor', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getColor', '(', 'getResourceId', '(', '""', 'color', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', '0', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getDimension,"    public static float getDimension(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getDimension(getResourceId(""dimen"", resName));
@@ -72,7 +72,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getDimensi
         } catch (ClassNotFoundException e) {}
         return 0;
     }
-","['    ', 'public', ' ', 'static', ' ', 'float', ' ', 'getDimension', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getDimension', '(', 'getResourceId', '(', '""', 'dimen', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', '0', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'float', ' ', 'getDimension', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getDimension', '(', 'getResourceId', '(', '""', 'dimen', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', '0', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getInteger,"    public static int getInteger(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getInteger(getResourceId(""integer"", resName));
@@ -84,7 +84,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getInteger
         } catch (ClassNotFoundException e) {}
         return 0;
     }
-","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getInteger', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getInteger', '(', 'getResourceId', '(', '""', 'integer', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', '0', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getInteger', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getInteger', '(', 'getResourceId', '(', '""', 'integer', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', '0', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getMipmap,"    public static Drawable getMipmap(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getDrawable(getResourceId(""mipmap"", resName));
@@ -96,7 +96,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getMipmap,
         } catch (ClassNotFoundException e) {}
         return null;
     }
-","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getMipmap', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getDrawable', '(', 'getResourceId', '(', '""', 'mipmap', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getMipmap', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getDrawable', '(', 'getResourceId', '(', '""', 'mipmap', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getRaw,"    public static InputStream getRaw(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().openRawResource(getResourceId(""raw"", resName));
@@ -108,7 +108,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getRaw,"  
         } catch (ClassNotFoundException e) {}
         return null;
     }
-","['    ', 'public', ' ', 'static', ' ', 'InputStream', ' ', 'getRaw', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'openRawResource', '(', 'getResourceId', '(', '""', 'raw', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'InputStream', ' ', 'getRaw', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'openRawResource', '(', 'getResourceId', '(', '""', 'raw', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getIntArray,"    public static int[] getIntArray(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getIntArray(getResourceId(""array"", resName));
@@ -120,7 +120,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getIntArra
         } catch (ClassNotFoundException e) {}
         return null;
     }
-","['    ', 'public', ' ', 'static', ' ', 'int', '[', ']', ' ', 'getIntArray', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getIntArray', '(', 'getResourceId', '(', '""', 'array', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'int', '[', ']', ' ', 'getIntArray', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getIntArray', '(', 'getResourceId', '(', '""', 'array', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getString,"    public static String getString(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getString(getResourceId(""string"", resName));
@@ -132,7 +132,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getString,
         } catch (ClassNotFoundException e) {}
         return null;
     }
-","['    ', 'public', ' ', 'static', ' ', 'String', ' ', 'getString', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getString', '(', 'getResourceId', '(', '""', 'string', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'String', ' ', 'getString', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getString', '(', 'getResourceId', '(', '""', 'string', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getXml,"    public static XmlResourceParser getXml(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getXml(getResourceId(""xml"", resName));
@@ -144,13 +144,13 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,getXml,"  
         } catch (ClassNotFoundException e) {}
         return null;
     }
-","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getXml', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getXml', '(', 'getResourceId', '(', '""', 'xml', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getXml', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getXml', '(', 'getResourceId', '(', '""', 'xml', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '        ', '}', ' ', 'catch', ' ', '(', 'ClassNotFoundException', ' ', 'e', ')', ' ', '{', '}', '\n', '        ', 'return', ' ', 'null', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,InternalAccessor.java,errorMessage,"    private static String errorMessage(String type, String resIdName){
         return ""Resource '""+type+""' is not found for '""+resIdName+
                 ""', or this resource currently is not available for API ""+ Build.VERSION.SDK_INT;",https://www.github.com/anggrayudi/android-hidden-api/commit/165fcf585d1ec29d19d86a75f8e3695675ad5735,"    private static String errorMessage(String type, String resIdName){
         return ""Resource '""+type+""' is not found for '""+resIdName+
                 ""', or this resource currently is not available for API ""+ Build.VERSION.SDK_INT;
-","['    ', 'private', ' ', 'static', ' ', 'String', ' ', 'errorMessage', '(', 'String', ' ', 'type', ',', ' ', 'String', ' ', 'resIdName', ')', '{', '\n', '        ', 'return', ' ', '""', ""Resource '"", '""', '+', 'type', '+', '""', ""' is not found for '"", '""', '+', 'resIdName', '+', '\n', '                ', '""', ""', or this resource currently is not available for API "", '""', '+', ' ', 'Build', '.', 'VERSION', '.', 'SDK_INT', ';', '\n']"
+","['    ', 'private', ' ', 'static', ' ', 'String', ' ', 'errorMessage', '(', 'String', ' ', 'type', ',', ' ', 'String', ' ', 'resIdName', ')', '{', '\n', '        ', 'return', ' ', '""', ""Resource '"", '""', '+', 'type', '+', '""', ""' is not found for '"", '""', '+', 'resIdName', '+', '\n', '                ', '""', ""', or this resource currently is not available for API "", '""', '+', ' ', 'Build', '.', 'VERSION', '.', 'SDK_INT', ';', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putResourceId,"    public ResourcesHolder putResourceId(String key, int resId){
         ints.put(""id_"" + key, resId);
         return this;
@@ -158,7 +158,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putResource
         ints.put(""id_"" + key, resId);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putResourceId', '(', 'String', ' ', 'key', ',', ' ', 'int', ' ', 'resId', ')', '{', '\n', '        ', 'ints', '.', 'put', '(', '""', 'id_', '""', ' ', '+', ' ', 'key', ',', ' ', 'resId', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putResourceId', '(', 'String', ' ', 'key', ',', ' ', 'int', ' ', 'resId', ')', '{', '\n', '        ', 'ints', '.', 'put', '(', '""', 'id_', '""', ' ', '+', ' ', 'key', ',', ' ', 'resId', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putAnim,"    public ResourcesHolder putAnim(String key, XmlResourceParser anim){
         xpps.put(""anim_""+key, anim);
         return this;
@@ -166,7 +166,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putAnim,"  
         xpps.put(""anim_""+key, anim);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putAnim', '(', 'String', ' ', 'key', ',', ' ', 'XmlResourceParser', ' ', 'anim', ')', '{', '\n', '        ', 'xpps', '.', 'put', '(', '""', 'anim_', '""', '+', 'key', ',', ' ', 'anim', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putAnim', '(', 'String', ' ', 'key', ',', ' ', 'XmlResourceParser', ' ', 'anim', ')', '{', '\n', '        ', 'xpps', '.', 'put', '(', '""', 'anim_', '""', '+', 'key', ',', ' ', 'anim', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putIntArray,"    public ResourcesHolder putIntArray(String key, int[] array){
         arrayInt.put(key, array);
         return this;
@@ -174,7 +174,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putIntArray
         arrayInt.put(key, array);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putIntArray', '(', 'String', ' ', 'key', ',', ' ', 'int', '[', ']', ' ', 'array', ')', '{', '\n', '        ', 'arrayInt', '.', 'put', '(', 'key', ',', ' ', 'array', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putIntArray', '(', 'String', ' ', 'key', ',', ' ', 'int', '[', ']', ' ', 'array', ')', '{', '\n', '        ', 'arrayInt', '.', 'put', '(', 'key', ',', ' ', 'array', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putStringArray,"    public ResourcesHolder putStringArray(String key, String[] array){
         arrayString.put(key, array);
         return this;
@@ -182,7 +182,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putStringAr
         arrayString.put(key, array);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putStringArray', '(', 'String', ' ', 'key', ',', ' ', 'String', '[', ']', ' ', 'array', ')', '{', '\n', '        ', 'arrayString', '.', 'put', '(', 'key', ',', ' ', 'array', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putStringArray', '(', 'String', ' ', 'key', ',', ' ', 'String', '[', ']', ' ', 'array', ')', '{', '\n', '        ', 'arrayString', '.', 'put', '(', 'key', ',', ' ', 'array', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putBoolean,"    public ResourcesHolder putBoolean(String key, boolean bool){
         bools.put(key, bool);
         return this;
@@ -190,7 +190,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putBoolean,
         bools.put(key, bool);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putBoolean', '(', 'String', ' ', 'key', ',', ' ', 'boolean', ' ', 'bool', ')', '{', '\n', '        ', 'bools', '.', 'put', '(', 'key', ',', ' ', 'bool', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putBoolean', '(', 'String', ' ', 'key', ',', ' ', 'boolean', ' ', 'bool', ')', '{', '\n', '        ', 'bools', '.', 'put', '(', 'key', ',', ' ', 'bool', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putColor,"    public ResourcesHolder putColor(String key, int color){
         ints.put(""color_""+key, color);
         return this;
@@ -198,7 +198,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putColor," 
         ints.put(""color_""+key, color);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putColor', '(', 'String', ' ', 'key', ',', ' ', 'int', ' ', 'color', ')', '{', '\n', '        ', 'ints', '.', 'put', '(', '""', 'color_', '""', '+', 'key', ',', ' ', 'color', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putColor', '(', 'String', ' ', 'key', ',', ' ', 'int', ' ', 'color', ')', '{', '\n', '        ', 'ints', '.', 'put', '(', '""', 'color_', '""', '+', 'key', ',', ' ', 'color', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putDimension,"    public ResourcesHolder putDimension(String key, float dimen){
         floats.put(""dimen_""+key, dimen);
         return this;
@@ -206,7 +206,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putDimensio
         floats.put(""dimen_""+key, dimen);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putDimension', '(', 'String', ' ', 'key', ',', ' ', 'float', ' ', 'dimen', ')', '{', '\n', '        ', 'floats', '.', 'put', '(', '""', 'dimen_', '""', '+', 'key', ',', ' ', 'dimen', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putDimension', '(', 'String', ' ', 'key', ',', ' ', 'float', ' ', 'dimen', ')', '{', '\n', '        ', 'floats', '.', 'put', '(', '""', 'dimen_', '""', '+', 'key', ',', ' ', 'dimen', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putDrawable,"    public ResourcesHolder putDrawable(String key, Drawable drawable){
         drawables.put(""drawable_""+key, drawable);
         return this;
@@ -214,7 +214,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putDrawable
         drawables.put(""drawable_""+key, drawable);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putDrawable', '(', 'String', ' ', 'key', ',', ' ', 'Drawable', ' ', 'drawable', ')', '{', '\n', '        ', 'drawables', '.', 'put', '(', '""', 'drawable_', '""', '+', 'key', ',', ' ', 'drawable', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putDrawable', '(', 'String', ' ', 'key', ',', ' ', 'Drawable', ' ', 'drawable', ')', '{', '\n', '        ', 'drawables', '.', 'put', '(', '""', 'drawable_', '""', '+', 'key', ',', ' ', 'drawable', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putFloat,"    public ResourcesHolder putFloat(String key, float value){
         floats.put(""float_""+key, value);
         return this;
@@ -222,7 +222,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putFloat," 
         floats.put(""float_""+key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putFloat', '(', 'String', ' ', 'key', ',', ' ', 'float', ' ', 'value', ')', '{', '\n', '        ', 'floats', '.', 'put', '(', '""', 'float_', '""', '+', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putFloat', '(', 'String', ' ', 'key', ',', ' ', 'float', ' ', 'value', ')', '{', '\n', '        ', 'floats', '.', 'put', '(', '""', 'float_', '""', '+', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putFraction,"    public ResourcesHolder putFraction(String key, float fraction){
         floats.put(""fraction_""+key, fraction);
         return this;
@@ -230,7 +230,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putFraction
         floats.put(""fraction_""+key, fraction);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putFraction', '(', 'String', ' ', 'key', ',', ' ', 'float', ' ', 'fraction', ')', '{', '\n', '        ', 'floats', '.', 'put', '(', '""', 'fraction_', '""', '+', 'key', ',', ' ', 'fraction', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putFraction', '(', 'String', ' ', 'key', ',', ' ', 'float', ' ', 'fraction', ')', '{', '\n', '        ', 'floats', '.', 'put', '(', '""', 'fraction_', '""', '+', 'key', ',', ' ', 'fraction', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putInt,"    public ResourcesHolder putInt(String key, int value){
         ints.put(""int_""+key, value);
         return this;
@@ -238,7 +238,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putInt,"   
         ints.put(""int_""+key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putInt', '(', 'String', ' ', 'key', ',', ' ', 'int', ' ', 'value', ')', '{', '\n', '        ', 'ints', '.', 'put', '(', '""', 'int_', '""', '+', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putInt', '(', 'String', ' ', 'key', ',', ' ', 'int', ' ', 'value', ')', '{', '\n', '        ', 'ints', '.', 'put', '(', '""', 'int_', '""', '+', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putLayout,"    public ResourcesHolder putLayout(String key, XmlResourceParser layout){
         xpps.put(""layout_""+key, layout);
         return this;
@@ -246,7 +246,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putLayout,"
         xpps.put(""layout_""+key, layout);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putLayout', '(', 'String', ' ', 'key', ',', ' ', 'XmlResourceParser', ' ', 'layout', ')', '{', '\n', '        ', 'xpps', '.', 'put', '(', '""', 'layout_', '""', '+', 'key', ',', ' ', 'layout', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putLayout', '(', 'String', ' ', 'key', ',', ' ', 'XmlResourceParser', ' ', 'layout', ')', '{', '\n', '        ', 'xpps', '.', 'put', '(', '""', 'layout_', '""', '+', 'key', ',', ' ', 'layout', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putMenu,"    public ResourcesHolder putMenu(String key, XmlResourceParser menu){
         xpps.put(""menu_""+key, menu);
         return this;
@@ -254,7 +254,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putMenu,"  
         xpps.put(""menu_""+key, menu);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putMenu', '(', 'String', ' ', 'key', ',', ' ', 'XmlResourceParser', ' ', 'menu', ')', '{', '\n', '        ', 'xpps', '.', 'put', '(', '""', 'menu_', '""', '+', 'key', ',', ' ', 'menu', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putMenu', '(', 'String', ' ', 'key', ',', ' ', 'XmlResourceParser', ' ', 'menu', ')', '{', '\n', '        ', 'xpps', '.', 'put', '(', '""', 'menu_', '""', '+', 'key', ',', ' ', 'menu', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putMipmap,"    public ResourcesHolder putMipmap(String key, Drawable mipmap){
         drawables.put(""mipmap_""+key, mipmap);
         return this;
@@ -262,7 +262,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putMipmap,"
         drawables.put(""mipmap_""+key, mipmap);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putMipmap', '(', 'String', ' ', 'key', ',', ' ', 'Drawable', ' ', 'mipmap', ')', '{', '\n', '        ', 'drawables', '.', 'put', '(', '""', 'mipmap_', '""', '+', 'key', ',', ' ', 'mipmap', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putMipmap', '(', 'String', ' ', 'key', ',', ' ', 'Drawable', ' ', 'mipmap', ')', '{', '\n', '        ', 'drawables', '.', 'put', '(', '""', 'mipmap_', '""', '+', 'key', ',', ' ', 'mipmap', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putRaw,"    public ResourcesHolder putRaw(String key, InputStream raw){
         streams.put(key, raw);
         return this;
@@ -270,7 +270,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putRaw,"   
         streams.put(key, raw);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putRaw', '(', 'String', ' ', 'key', ',', ' ', 'InputStream', ' ', 'raw', ')', '{', '\n', '        ', 'streams', '.', 'put', '(', 'key', ',', ' ', 'raw', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putRaw', '(', 'String', ' ', 'key', ',', ' ', 'InputStream', ' ', 'raw', ')', '{', '\n', '        ', 'streams', '.', 'put', '(', 'key', ',', ' ', 'raw', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putString,"    public ResourcesHolder putString(String key, String string){
         strings.put(key, string);
         return this;
@@ -278,7 +278,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putString,"
         strings.put(key, string);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putString', '(', 'String', ' ', 'key', ',', ' ', 'String', ' ', 'string', ')', '{', '\n', '        ', 'strings', '.', 'put', '(', 'key', ',', ' ', 'string', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putString', '(', 'String', ' ', 'key', ',', ' ', 'String', ' ', 'string', ')', '{', '\n', '        ', 'strings', '.', 'put', '(', 'key', ',', ' ', 'string', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putXml,"    public ResourcesHolder putXml(String key, XmlResourceParser xml){
         xpps.put(""xml_""+key, xml);
         return this;
@@ -286,7 +286,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putXml,"   
         xpps.put(""xml_""+key, xml);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putXml', '(', 'String', ' ', 'key', ',', ' ', 'XmlResourceParser', ' ', 'xml', ')', '{', '\n', '        ', 'xpps', '.', 'put', '(', '""', 'xml_', '""', '+', 'key', ',', ' ', 'xml', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putXml', '(', 'String', ' ', 'key', ',', ' ', 'XmlResourceParser', ' ', 'xml', ')', '{', '\n', '        ', 'xpps', '.', 'put', '(', '""', 'xml_', '""', '+', 'key', ',', ' ', 'xml', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putObject,"    public ResourcesHolder putObject(String key, Object object){
         objects.put(key, object);
         return this;
@@ -294,7 +294,7 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,putObject,"
         objects.put(key, object);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putObject', '(', 'String', ' ', 'key', ',', ' ', 'Object', ' ', 'object', ')', '{', '\n', '        ', 'objects', '.', 'put', '(', 'key', ',', ' ', 'object', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'putObject', '(', 'String', ' ', 'key', ',', ' ', 'Object', ' ', 'object', ')', '{', '\n', '        ', 'objects', '.', 'put', '(', 'key', ',', ' ', 'object', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,clear,"    public void clear(){
         ints.clear();
         xpps.clear();
@@ -318,97 +318,97 @@ master,165fcf585d1ec29d19d86a75f8e3695675ad5735,ResourcesHolder.java,clear,"    
         strings.clear();
         objects.clear();
     }
-","['    ', 'public', ' ', 'void', ' ', 'clear', '(', ')', '{', '\n', '        ', 'ints', '.', 'clear', '(', ')', ';', '\n', '        ', 'xpps', '.', 'clear', '(', ')', ';', '\n', '        ', 'arrayInt', '.', 'clear', '(', ')', ';', '\n', '        ', 'arrayString', '.', 'clear', '(', ')', ';', '\n', '        ', 'bools', '.', 'clear', '(', ')', ';', '\n', '        ', 'drawables', '.', 'clear', '(', ')', ';', '\n', '        ', 'floats', '.', 'clear', '(', ')', ';', '\n', '        ', 'streams', '.', 'clear', '(', ')', ';', '\n', '        ', 'strings', '.', 'clear', '(', ')', ';', '\n', '        ', 'objects', '.', 'clear', '(', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'clear', '(', ')', '{', '\n', '        ', 'ints', '.', 'clear', '(', ')', ';', '\n', '        ', 'xpps', '.', 'clear', '(', ')', ';', '\n', '        ', 'arrayInt', '.', 'clear', '(', ')', ';', '\n', '        ', 'arrayString', '.', 'clear', '(', ')', ';', '\n', '        ', 'bools', '.', 'clear', '(', ')', ';', '\n', '        ', 'drawables', '.', 'clear', '(', ')', ';', '\n', '        ', 'floats', '.', 'clear', '(', ')', ';', '\n', '        ', 'streams', '.', 'clear', '(', ')', ';', '\n', '        ', 'strings', '.', 'clear', '(', ')', ';', '\n', '        ', 'objects', '.', 'clear', '(', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getAnimation,"    public static XmlResourceParser getAnimation(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getAnimation(getResourceId(""anim"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static XmlResourceParser getAnimation(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getAnimation(getResourceId(""anim"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getAnimation', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getAnimation', '(', 'getResourceId', '(', '""', 'anim', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getAnimation', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getAnimation', '(', 'getResourceId', '(', '""', 'anim', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getBoolean,"    public static boolean getBoolean(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getBoolean(getResourceId(""bool"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static boolean getBoolean(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getBoolean(getResourceId(""bool"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'getBoolean', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getBoolean', '(', 'getResourceId', '(', '""', 'bool', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'getBoolean', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getBoolean', '(', 'getResourceId', '(', '""', 'bool', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getColor,"    public static int getColor(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getColor(getResourceId(""color"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static int getColor(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getColor(getResourceId(""color"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getColor', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getColor', '(', 'getResourceId', '(', '""', 'color', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getColor', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getColor', '(', 'getResourceId', '(', '""', 'color', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getDimension,"    public static float getDimension(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getDimension(getResourceId(""dimen"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static float getDimension(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getDimension(getResourceId(""dimen"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'float', ' ', 'getDimension', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getDimension', '(', 'getResourceId', '(', '""', 'dimen', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'float', ' ', 'getDimension', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getDimension', '(', 'getResourceId', '(', '""', 'dimen', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getDrawable,"    public static Drawable getDrawable(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return ContextCompat.getDrawable(context, getResourceId(""drawable"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static Drawable getDrawable(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return ContextCompat.getDrawable(context, getResourceId(""drawable"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getDrawable', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'ContextCompat', '.', 'getDrawable', '(', 'context', ',', ' ', 'getResourceId', '(', '""', 'drawable', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getDrawable', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'ContextCompat', '.', 'getDrawable', '(', 'context', ',', ' ', 'getResourceId', '(', '""', 'drawable', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getFraction,"    public static float getFraction(Context context, @NonNull String resName, int base, int pbase) throws ResourceNotFoundException {
         try {
             return context.getResources().getFraction(getResourceId(""fraction"", resName), base, pbase);",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static float getFraction(Context context, @NonNull String resName, int base, int pbase) throws ResourceNotFoundException {
         try {
             return context.getResources().getFraction(getResourceId(""fraction"", resName), base, pbase);
-","['    ', 'public', ' ', 'static', ' ', 'float', ' ', 'getFraction', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ',', ' ', 'int', ' ', 'base', ',', ' ', 'int', ' ', 'pbase', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getFraction', '(', 'getResourceId', '(', '""', 'fraction', '""', ',', ' ', 'resName', ')', ',', ' ', 'base', ',', ' ', 'pbase', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'float', ' ', 'getFraction', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ',', ' ', 'int', ' ', 'base', ',', ' ', 'int', ' ', 'pbase', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getFraction', '(', 'getResourceId', '(', '""', 'fraction', '""', ',', ' ', 'resName', ')', ',', ' ', 'base', ',', ' ', 'pbase', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getInteger,"    public static int getInteger(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getInteger(getResourceId(""integer"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static int getInteger(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getInteger(getResourceId(""integer"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getInteger', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getInteger', '(', 'getResourceId', '(', '""', 'integer', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getInteger', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getInteger', '(', 'getResourceId', '(', '""', 'integer', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getLayout,"    public static XmlResourceParser getLayout(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getLayout(getResourceId(""layout"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static XmlResourceParser getLayout(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getLayout(getResourceId(""layout"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getLayout', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getLayout', '(', 'getResourceId', '(', '""', 'layout', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getLayout', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getLayout', '(', 'getResourceId', '(', '""', 'layout', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getMenu,"    public static XmlResourceParser getMenu(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getLayout(getResourceId(""menu"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static XmlResourceParser getMenu(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getLayout(getResourceId(""menu"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getMenu', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getLayout', '(', 'getResourceId', '(', '""', 'menu', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getMenu', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getLayout', '(', 'getResourceId', '(', '""', 'menu', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getMipmap,"    public static Drawable getMipmap(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getDrawable(getResourceId(""mipmap"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static Drawable getMipmap(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getDrawable(getResourceId(""mipmap"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getMipmap', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getDrawable', '(', 'getResourceId', '(', '""', 'mipmap', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getMipmap', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getDrawable', '(', 'getResourceId', '(', '""', 'mipmap', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getRaw,"    public static InputStream getRaw(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().openRawResource(getResourceId(""raw"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static InputStream getRaw(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().openRawResource(getResourceId(""raw"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'InputStream', ' ', 'getRaw', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'openRawResource', '(', 'getResourceId', '(', '""', 'raw', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'InputStream', ' ', 'getRaw', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'openRawResource', '(', 'getResourceId', '(', '""', 'raw', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getIntArray,"    public static int[] getIntArray(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getIntArray(getResourceId(""array"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static int[] getIntArray(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getIntArray(getResourceId(""array"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'int', '[', ']', ' ', 'getIntArray', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getIntArray', '(', 'getResourceId', '(', '""', 'array', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'int', '[', ']', ' ', 'getIntArray', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getIntArray', '(', 'getResourceId', '(', '""', 'array', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getStringArray,"    public static String[] getStringArray(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getStringArray(getResourceId(""array"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static String[] getStringArray(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getStringArray(getResourceId(""array"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'String', '[', ']', ' ', 'getStringArray', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getStringArray', '(', 'getResourceId', '(', '""', 'array', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'String', '[', ']', ' ', 'getStringArray', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getStringArray', '(', 'getResourceId', '(', '""', 'array', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getString,"    public static String getString(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getString(getResourceId(""string"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static String getString(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getString(getResourceId(""string"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'String', ' ', 'getString', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getString', '(', 'getResourceId', '(', '""', 'string', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'String', ' ', 'getString', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getString', '(', 'getResourceId', '(', '""', 'string', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,InternalAccessor.java,getXml,"    public static XmlResourceParser getXml(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getXml(getResourceId(""xml"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/101962b74ab597339cd4d7ebfccc11fa3baca7e4,"    public static XmlResourceParser getXml(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getXml(getResourceId(""xml"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getXml', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getXml', '(', 'getResourceId', '(', '""', 'xml', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getXml', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getXml', '(', 'getResourceId', '(', '""', 'xml', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,ResourcesHolder.java,sendBroadcast,"    public void sendBroadcast(Context context, @NonNull String key){
         Intent intent = new Intent(ACTION_SEND_RESOURCES_HOLDER);
         intent.putExtra(key, this);
@@ -418,7 +418,7 @@ master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,ResourcesHolder.java,sendBroadca
         intent.putExtra(key, this);
         context.sendBroadcast(intent);
     }
-","['    ', 'public', ' ', 'void', ' ', 'sendBroadcast', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'key', ')', '{', '\n', '        ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'ACTION_SEND_RESOURCES_HOLDER', ')', ';', '\n', '        ', 'intent', '.', 'putExtra', '(', 'key', ',', ' ', 'this', ')', ';', '\n', '        ', 'context', '.', 'sendBroadcast', '(', 'intent', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'sendBroadcast', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'key', ')', '{', '\n', '        ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'ACTION_SEND_RESOURCES_HOLDER', ')', ';', '\n', '        ', 'intent', '.', 'putExtra', '(', 'key', ',', ' ', 'this', ')', ';', '\n', '        ', 'context', '.', 'sendBroadcast', '(', 'intent', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,ResourcesHolder.java,sendViaLocalBroadcastManager,"    public void sendViaLocalBroadcastManager(Context context, @NonNull String key){
         Intent intent = new Intent(ACTION_SEND_RESOURCES_HOLDER);
         intent.putExtra(key, this);
@@ -428,12 +428,12 @@ master,101962b74ab597339cd4d7ebfccc11fa3baca7e4,ResourcesHolder.java,sendViaLoca
         intent.putExtra(key, this);
         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
     }
-","['    ', 'public', ' ', 'void', ' ', 'sendViaLocalBroadcastManager', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'key', ')', '{', '\n', '        ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'ACTION_SEND_RESOURCES_HOLDER', ')', ';', '\n', '        ', 'intent', '.', 'putExtra', '(', 'key', ',', ' ', 'this', ')', ';', '\n', '        ', 'LocalBroadcastManager', '.', 'getInstance', '(', 'context', ')', '.', 'sendBroadcast', '(', 'intent', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'sendViaLocalBroadcastManager', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'key', ')', '{', '\n', '        ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'ACTION_SEND_RESOURCES_HOLDER', ')', ';', '\n', '        ', 'intent', '.', 'putExtra', '(', 'key', ',', ' ', 'this', ')', ';', '\n', '        ', 'LocalBroadcastManager', '.', 'getInstance', '(', 'context', ')', '.', 'sendBroadcast', '(', 'intent', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,59003b78859d5be500164fd03fed0707a9659497,Receiver.java,onReceive,"    public void onReceive(Context context, Intent intent) {
         Toast.makeText(context, ""ResourceHolder is received. See detail on LogCat."", Toast.LENGTH_SHORT).show();
 ",https://www.github.com/anggrayudi/android-hidden-api/commit/59003b78859d5be500164fd03fed0707a9659497,"    public void onReceive(Context context, Intent intent) {
         Toast.makeText(context, ""ResourceHolder is received. See detail on LogCat."", Toast.LENGTH_SHORT).show();
-","['    ', 'public', ' ', 'void', ' ', 'onReceive', '(', 'Context', ' ', 'context', ',', ' ', 'Intent', ' ', 'intent', ')', ' ', '{', '\n', '        ', 'Toast', '.', 'makeText', '(', 'context', ',', ' ', '""', 'ResourceHolder is received. See detail on LogCat.', '""', ',', ' ', 'Toast', '.', 'LENGTH_SHORT', ')', '.', 'show', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'onReceive', '(', 'Context', ' ', 'context', ',', ' ', 'Intent', ' ', 'intent', ')', ' ', '{', '\n', '        ', 'Toast', '.', 'makeText', '(', 'context', ',', ' ', '""', 'ResourceHolder is received. See detail on LogCat.', '""', ',', ' ', 'Toast', '.', 'LENGTH_SHORT', ')', '.', 'show', '(', ')', ';', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getBoolean,"        public boolean getBoolean(@NonNull String resName) throws ResourceNotFoundException {
             boolean bol = InternalAccessor.getBoolean(context, resName);
             if (saveToResourcesHolder)
@@ -445,7 +445,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getBoolean
                 holder.put(resName, bol);
             return bol;
         }
-","['        ', 'public', ' ', 'boolean', ' ', 'getBoolean', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'boolean', ' ', 'bol', ' ', '=', ' ', 'InternalAccessor', '.', 'getBoolean', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'bol', ')', ';', '\n', '            ', 'return', ' ', 'bol', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'boolean', ' ', 'getBoolean', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'boolean', ' ', 'bol', ' ', '=', ' ', 'InternalAccessor', '.', 'getBoolean', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'bol', ')', ';', '\n', '            ', 'return', ' ', 'bol', ';', '\n', '        ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getColor,"        public int getColor(@NonNull String resName) throws ResourceNotFoundException {
             int color = InternalAccessor.getColor(context, resName);
             if (saveToResourcesHolder)
@@ -457,7 +457,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getColor,"
                 holder.put(resName, color);
             return color;
         }
-","['        ', 'public', ' ', 'int', ' ', 'getColor', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'int', ' ', 'color', ' ', '=', ' ', 'InternalAccessor', '.', 'getColor', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'color', ')', ';', '\n', '            ', 'return', ' ', 'color', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'int', ' ', 'getColor', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'int', ' ', 'color', ' ', '=', ' ', 'InternalAccessor', '.', 'getColor', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'color', ')', ';', '\n', '            ', 'return', ' ', 'color', ';', '\n', '        ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getDimension,"        public float getDimension(@NonNull String resName) throws ResourceNotFoundException {
             float dimens = InternalAccessor.getDimension(context, resName);
             if (saveToResourcesHolder)
@@ -469,7 +469,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getDimensi
                 holder.put(resName, dimens);
             return dimens;
         }
-","['        ', 'public', ' ', 'float', ' ', 'getDimension', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'float', ' ', 'dimens', ' ', '=', ' ', 'InternalAccessor', '.', 'getDimension', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'dimens', ')', ';', '\n', '            ', 'return', ' ', 'dimens', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'float', ' ', 'getDimension', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'float', ' ', 'dimens', ' ', '=', ' ', 'InternalAccessor', '.', 'getDimension', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'dimens', ')', ';', '\n', '            ', 'return', ' ', 'dimens', ';', '\n', '        ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getInteger,"        public int getInteger(@NonNull String resName) throws ResourceNotFoundException {
             int integer = InternalAccessor.getInteger(context, resName);
             if (saveToResourcesHolder)
@@ -481,7 +481,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getInteger
                 holder.put(resName, integer);
             return integer;
         }
-","['        ', 'public', ' ', 'int', ' ', 'getInteger', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'int', ' ', 'integer', ' ', '=', ' ', 'InternalAccessor', '.', 'getInteger', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'integer', ')', ';', '\n', '            ', 'return', ' ', 'integer', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'int', ' ', 'getInteger', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'int', ' ', 'integer', ' ', '=', ' ', 'InternalAccessor', '.', 'getInteger', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'integer', ')', ';', '\n', '            ', 'return', ' ', 'integer', ';', '\n', '        ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getMipmap,"        public Drawable getMipmap(@NonNull String resName) throws ResourceNotFoundException {
             Drawable mipmap = InternalAccessor.getMipmap(context, resName);
             if (saveToResourcesHolder)
@@ -493,7 +493,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getMipmap,
                 holder.put(resName, mipmap);
             return mipmap;
         }
-","['        ', 'public', ' ', 'Drawable', ' ', 'getMipmap', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'Drawable', ' ', 'mipmap', ' ', '=', ' ', 'InternalAccessor', '.', 'getMipmap', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'mipmap', ')', ';', '\n', '            ', 'return', ' ', 'mipmap', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'Drawable', ' ', 'getMipmap', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'Drawable', ' ', 'mipmap', ' ', '=', ' ', 'InternalAccessor', '.', 'getMipmap', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'mipmap', ')', ';', '\n', '            ', 'return', ' ', 'mipmap', ';', '\n', '        ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getRaw,"        public InputStream getRaw(@NonNull String resName) throws ResourceNotFoundException {
             InputStream stream = InternalAccessor.getRaw(context, resName);
             if (saveToResourcesHolder)
@@ -505,7 +505,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getRaw,"  
                 holder.put(resName, stream);
             return stream;
         }
-","['        ', 'public', ' ', 'InputStream', ' ', 'getRaw', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'InputStream', ' ', 'stream', ' ', '=', ' ', 'InternalAccessor', '.', 'getRaw', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'stream', ')', ';', '\n', '            ', 'return', ' ', 'stream', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'InputStream', ' ', 'getRaw', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'InputStream', ' ', 'stream', ' ', '=', ' ', 'InternalAccessor', '.', 'getRaw', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'stream', ')', ';', '\n', '            ', 'return', ' ', 'stream', ';', '\n', '        ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getIntArray,"        public int[] getIntArray(@NonNull String resName) throws ResourceNotFoundException {
             int[] ints = InternalAccessor.getIntArray(context, resName);
             if (saveToResourcesHolder)
@@ -517,7 +517,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getIntArra
                 holder.put(resName, ints);
             return ints;
         }
-","['        ', 'public', ' ', 'int', '[', ']', ' ', 'getIntArray', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'int', '[', ']', ' ', 'ints', ' ', '=', ' ', 'InternalAccessor', '.', 'getIntArray', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'ints', ')', ';', '\n', '            ', 'return', ' ', 'ints', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'int', '[', ']', ' ', 'getIntArray', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'int', '[', ']', ' ', 'ints', ' ', '=', ' ', 'InternalAccessor', '.', 'getIntArray', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'ints', ')', ';', '\n', '            ', 'return', ' ', 'ints', ';', '\n', '        ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getString,"        public String getString(@NonNull String resName) throws ResourceNotFoundException {
             String string = InternalAccessor.getString(context, resName);
             if (saveToResourcesHolder)
@@ -529,7 +529,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,InternalAccessor.java,getString,
                 holder.put(resName, string);
             return string;
         }
-","['        ', 'public', ' ', 'String', ' ', 'getString', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'String', ' ', 'string', ' ', '=', ' ', 'InternalAccessor', '.', 'getString', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'string', ')', ';', '\n', '            ', 'return', ' ', 'string', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'String', ' ', 'getString', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'String', ' ', 'string', ' ', '=', ' ', 'InternalAccessor', '.', 'getString', '(', 'context', ',', ' ', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'string', ')', ';', '\n', '            ', 'return', ' ', 'string', ';', '\n', '        ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, short value){
         mValues.put(key, value);
         return this;
@@ -537,7 +537,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'short', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'short', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, byte value){
         mValues.put(key, value);
         return this;
@@ -545,7 +545,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'byte', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'byte', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, char value){
         mValues.put(key, value);
         return this;
@@ -553,7 +553,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'char', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'char', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, boolean value){
         mValues.put(key, value);
         return this;
@@ -561,7 +561,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'boolean', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'boolean', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, long value){
         mValues.put(key, value);
         return this;
@@ -569,7 +569,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'long', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'long', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, float value){
         mValues.put(key, value);
         return this;
@@ -577,7 +577,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'float', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'float', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, double value){
         mValues.put(key, value);
         return this;
@@ -585,7 +585,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'double', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'double', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, String value){
         mValues.put(key, value);
         return this;
@@ -593,7 +593,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'String', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'String', ' ', 'value', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, Object object){
         mValues.put(key, object);
         return this;
@@ -601,7 +601,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,put,"    pu
         mValues.put(key, object);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'Object', ' ', 'object', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'object', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'Object', ' ', 'object', ')', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'object', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,sort,"    public void sort(Sort sortType){
         TreeMap<String, Object> treeMap = new TreeMap<>();
         treeMap.putAll(mValues);
@@ -619,7 +619,7 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,sort,"    p
         mValues.clear();
         mValues.putAll(treeMap);
     }
-","['    ', 'public', ' ', 'void', ' ', 'sort', '(', 'Sort', ' ', 'sortType', ')', '{', '\n', '        ', 'TreeMap', '<', 'String', ',', ' ', 'Object', '>', ' ', 'treeMap', ' ', '=', ' ', 'new', ' ', 'TreeMap', '<', '>', '(', ')', ';', '\n', '        ', 'treeMap', '.', 'putAll', '(', 'mValues', ')', ';', '\n', '        ', 'if', ' ', '(', 'sortType', ' ', '=', '=', ' ', 'Sort', '.', 'DESCENDING', ')', '{', '\n', '            ', 'treeMap', '.', 'descendingMap', '(', ')', ';', '\n', '        ', '}', '\n', '        ', 'mValues', '.', 'clear', '(', ')', ';', '\n', '        ', 'mValues', '.', 'putAll', '(', 'treeMap', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'sort', '(', 'Sort', ' ', 'sortType', ')', '{', '\n', '        ', 'TreeMap', '<', 'String', ',', ' ', 'Object', '>', ' ', 'treeMap', ' ', '=', ' ', 'new', ' ', 'TreeMap', '<', '>', '(', ')', ';', '\n', '        ', 'treeMap', '.', 'putAll', '(', 'mValues', ')', ';', '\n', '        ', 'if', ' ', '(', 'sortType', ' ', '=', '=', ' ', 'Sort', '.', 'DESCENDING', ')', '{', '\n', '            ', 'treeMap', '.', 'descendingMap', '(', ')', ';', '\n', '        ', '}', '\n', '        ', 'mValues', '.', 'clear', '(', ')', ';', '\n', '        ', 'mValues', '.', 'putAll', '(', 'treeMap', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,isCompatibleCast,"    private boolean isCompatibleCast(String key, Class<?> classToCast){
         Object obj = mValues.get(key);
         try{
@@ -627,193 +627,193 @@ master,8b316cd419857a7156dea525d945ec1fadb30128,ResourcesHolder.java,isCompatibl
         Object obj = mValues.get(key);
         try{
             if (mValues.get(key) instanceof Number && obj == null) {
-","['    ', 'private', ' ', 'boolean', ' ', 'isCompatibleCast', '(', 'String', ' ', 'key', ',', ' ', 'Class', '<', '?', '>', ' ', 'classToCast', ')', '{', '\n', '        ', 'Object', ' ', 'obj', ' ', '=', ' ', 'mValues', '.', 'get', '(', 'key', ')', ';', '\n', '        ', 'try', '{', '\n', '            ', 'if', ' ', '(', 'mValues', '.', 'get', '(', 'key', ')', ' ', 'instanceof', ' ', 'Number', ' ', '&', '&', ' ', 'obj', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n']"
+","['    ', 'private', ' ', 'boolean', ' ', 'isCompatibleCast', '(', 'String', ' ', 'key', ',', ' ', 'Class', '<', '?', '>', ' ', 'classToCast', ')', '{', '\n', '        ', 'Object', ' ', 'obj', ' ', '=', ' ', 'mValues', '.', 'get', '(', 'key', ')', ';', '\n', '        ', 'try', '{', '\n', '            ', 'if', ' ', '(', 'mValues', '.', 'get', '(', 'key', ')', ' ', 'instanceof', ' ', 'Number', ' ', '&', '&', ' ', 'obj', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '<END>']"
 master,60df0cf1e34b402c1d4608966932f3782c942741,InternalAccessor.java,getColor,"    public static int getColor(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return ContextCompat.getColor(context, getResourceId(""color"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/60df0cf1e34b402c1d4608966932f3782c942741,"    public static int getColor(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return ContextCompat.getColor(context, getResourceId(""color"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getColor', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'ContextCompat', '.', 'getColor', '(', 'context', ',', ' ', 'getResourceId', '(', '""', 'color', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getColor', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'ContextCompat', '.', 'getColor', '(', 'context', ',', ' ', 'getResourceId', '(', '""', 'color', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,60df0cf1e34b402c1d4608966932f3782c942741,InternalAccessor.java,getMipmap,"    public static Drawable getMipmap(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return ContextCompat.getDrawable(context, getResourceId(""mipmap"", resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/60df0cf1e34b402c1d4608966932f3782c942741,"    public static Drawable getMipmap(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return ContextCompat.getDrawable(context, getResourceId(""mipmap"", resName));
-","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getMipmap', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'ContextCompat', '.', 'getDrawable', '(', 'context', ',', ' ', 'getResourceId', '(', '""', 'mipmap', '""', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getMipmap', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'ContextCompat', '.', 'getDrawable', '(', 'context', ',', ' ', 'getResourceId', '(', '""', 'mipmap', '""', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,745c491e38e62e55cfef5177f23b46c66d790335,InternalAccessor.java,getAnimation,"    public static XmlResourceParser getAnimation(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getAnimation(getResourceId(ANIM, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/745c491e38e62e55cfef5177f23b46c66d790335,"    public static XmlResourceParser getAnimation(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getAnimation(getResourceId(ANIM, resName));
-","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getAnimation', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getAnimation', '(', 'getResourceId', '(', 'ANIM', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getAnimation', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getAnimation', '(', 'getResourceId', '(', 'ANIM', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,745c491e38e62e55cfef5177f23b46c66d790335,InternalAccessor.java,getColor,"    public static int getColor(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return ContextCompat.getColor(context, getResourceId(COLOR, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/745c491e38e62e55cfef5177f23b46c66d790335,"    public static int getColor(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return ContextCompat.getColor(context, getResourceId(COLOR, resName));
-","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getColor', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'ContextCompat', '.', 'getColor', '(', 'context', ',', ' ', 'getResourceId', '(', 'COLOR', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getColor', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'ContextCompat', '.', 'getColor', '(', 'context', ',', ' ', 'getResourceId', '(', 'COLOR', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,745c491e38e62e55cfef5177f23b46c66d790335,InternalAccessor.java,getDimension,"    public static float getDimension(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getDimension(getResourceId(DIMEN, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/745c491e38e62e55cfef5177f23b46c66d790335,"    public static float getDimension(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getDimension(getResourceId(DIMEN, resName));
-","['    ', 'public', ' ', 'static', ' ', 'float', ' ', 'getDimension', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getDimension', '(', 'getResourceId', '(', 'DIMEN', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'float', ' ', 'getDimension', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getDimension', '(', 'getResourceId', '(', 'DIMEN', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,745c491e38e62e55cfef5177f23b46c66d790335,InternalAccessor.java,getDrawable,"    public static Drawable getDrawable(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return ContextCompat.getDrawable(context, getResourceId(DRAWABLE, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/745c491e38e62e55cfef5177f23b46c66d790335,"    public static Drawable getDrawable(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return ContextCompat.getDrawable(context, getResourceId(DRAWABLE, resName));
-","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getDrawable', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'ContextCompat', '.', 'getDrawable', '(', 'context', ',', ' ', 'getResourceId', '(', 'DRAWABLE', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getDrawable', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'ContextCompat', '.', 'getDrawable', '(', 'context', ',', ' ', 'getResourceId', '(', 'DRAWABLE', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,745c491e38e62e55cfef5177f23b46c66d790335,InternalAccessor.java,getFraction,"    public static float getFraction(Context context, @NonNull String resName, int base, int pbase) throws ResourceNotFoundException {
         try {
             return context.getResources().getFraction(getResourceId(FRACTION, resName), base, pbase);",https://www.github.com/anggrayudi/android-hidden-api/commit/745c491e38e62e55cfef5177f23b46c66d790335,"    public static float getFraction(Context context, @NonNull String resName, int base, int pbase) throws ResourceNotFoundException {
         try {
             return context.getResources().getFraction(getResourceId(FRACTION, resName), base, pbase);
-","['    ', 'public', ' ', 'static', ' ', 'float', ' ', 'getFraction', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ',', ' ', 'int', ' ', 'base', ',', ' ', 'int', ' ', 'pbase', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getFraction', '(', 'getResourceId', '(', 'FRACTION', ',', ' ', 'resName', ')', ',', ' ', 'base', ',', ' ', 'pbase', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'float', ' ', 'getFraction', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ',', ' ', 'int', ' ', 'base', ',', ' ', 'int', ' ', 'pbase', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getFraction', '(', 'getResourceId', '(', 'FRACTION', ',', ' ', 'resName', ')', ',', ' ', 'base', ',', ' ', 'pbase', ')', ';', '\n', '<END>']"
 master,745c491e38e62e55cfef5177f23b46c66d790335,InternalAccessor.java,getInteger,"    public static int getInteger(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getInteger(getResourceId(INTEGER, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/745c491e38e62e55cfef5177f23b46c66d790335,"    public static int getInteger(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getInteger(getResourceId(INTEGER, resName));
-","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getInteger', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getInteger', '(', 'getResourceId', '(', 'INTEGER', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getInteger', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getInteger', '(', 'getResourceId', '(', 'INTEGER', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,745c491e38e62e55cfef5177f23b46c66d790335,InternalAccessor.java,getLayout,"    public static XmlResourceParser getLayout(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getLayout(getResourceId(LAYOUT, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/745c491e38e62e55cfef5177f23b46c66d790335,"    public static XmlResourceParser getLayout(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getLayout(getResourceId(LAYOUT, resName));
-","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getLayout', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getLayout', '(', 'getResourceId', '(', 'LAYOUT', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getLayout', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getLayout', '(', 'getResourceId', '(', 'LAYOUT', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,745c491e38e62e55cfef5177f23b46c66d790335,InternalAccessor.java,getMenu,"    public static XmlResourceParser getMenu(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getLayout(getResourceId(MENU, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/745c491e38e62e55cfef5177f23b46c66d790335,"    public static XmlResourceParser getMenu(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getLayout(getResourceId(MENU, resName));
-","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getMenu', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getLayout', '(', 'getResourceId', '(', 'MENU', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getMenu', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getLayout', '(', 'getResourceId', '(', 'MENU', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,745c491e38e62e55cfef5177f23b46c66d790335,InternalAccessor.java,getMipmap,"    public static Drawable getMipmap(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return ContextCompat.getDrawable(context, getResourceId(MIPMAP, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/745c491e38e62e55cfef5177f23b46c66d790335,"    public static Drawable getMipmap(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return ContextCompat.getDrawable(context, getResourceId(MIPMAP, resName));
-","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getMipmap', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'ContextCompat', '.', 'getDrawable', '(', 'context', ',', ' ', 'getResourceId', '(', 'MIPMAP', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getMipmap', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'ContextCompat', '.', 'getDrawable', '(', 'context', ',', ' ', 'getResourceId', '(', 'MIPMAP', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,745c491e38e62e55cfef5177f23b46c66d790335,InternalAccessor.java,getRaw,"    public static InputStream getRaw(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().openRawResource(getResourceId(RAW, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/745c491e38e62e55cfef5177f23b46c66d790335,"    public static InputStream getRaw(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().openRawResource(getResourceId(RAW, resName));
-","['    ', 'public', ' ', 'static', ' ', 'InputStream', ' ', 'getRaw', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'openRawResource', '(', 'getResourceId', '(', 'RAW', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'InputStream', ' ', 'getRaw', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'openRawResource', '(', 'getResourceId', '(', 'RAW', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,745c491e38e62e55cfef5177f23b46c66d790335,InternalAccessor.java,getString,"    public static String getString(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getString(getResourceId(STRING, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/745c491e38e62e55cfef5177f23b46c66d790335,"    public static String getString(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getString(getResourceId(STRING, resName));
-","['    ', 'public', ' ', 'static', ' ', 'String', ' ', 'getString', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getString', '(', 'getResourceId', '(', 'STRING', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'String', ' ', 'getString', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getString', '(', 'getResourceId', '(', 'STRING', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,745c491e38e62e55cfef5177f23b46c66d790335,InternalAccessor.java,getXml,"    public static XmlResourceParser getXml(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getXml(getResourceId(XML, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/745c491e38e62e55cfef5177f23b46c66d790335,"    public static XmlResourceParser getXml(Context context, @NonNull String resName) throws ResourceNotFoundException {
         try {
             return context.getResources().getXml(getResourceId(XML, resName));
-","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getXml', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getXml', '(', 'getResourceId', '(', 'XML', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getXml', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'context', '.', 'getResources', '(', ')', '.', 'getXml', '(', 'getResourceId', '(', 'XML', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getAnimation,"    public static XmlResourceParser getAnimation(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getAnimation(getResourceId(ANIM, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static XmlResourceParser getAnimation(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getAnimation(getResourceId(ANIM, resName));
-","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getAnimation', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getAnimation', '(', 'getResourceId', '(', 'ANIM', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getAnimation', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getAnimation', '(', 'getResourceId', '(', 'ANIM', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getBoolean,"    public static boolean getBoolean(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getBoolean(getResourceId(BOOL, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static boolean getBoolean(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getBoolean(getResourceId(BOOL, resName));
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'getBoolean', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getBoolean', '(', 'getResourceId', '(', 'BOOL', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'getBoolean', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getBoolean', '(', 'getResourceId', '(', 'BOOL', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getColor,"    public static int getColor(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getColor(getResourceId(COLOR, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static int getColor(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getColor(getResourceId(COLOR, resName));
-","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getColor', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getColor', '(', 'getResourceId', '(', 'COLOR', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getColor', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getColor', '(', 'getResourceId', '(', 'COLOR', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getDimension,"    public static float getDimension(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getDimension(getResourceId(DIMEN, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static float getDimension(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getDimension(getResourceId(DIMEN, resName));
-","['    ', 'public', ' ', 'static', ' ', 'float', ' ', 'getDimension', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getDimension', '(', 'getResourceId', '(', 'DIMEN', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'float', ' ', 'getDimension', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getDimension', '(', 'getResourceId', '(', 'DIMEN', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getDrawable,"    public static Drawable getDrawable(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getDrawable(getResourceId(DRAWABLE, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static Drawable getDrawable(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getDrawable(getResourceId(DRAWABLE, resName));
-","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getDrawable', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getDrawable', '(', 'getResourceId', '(', 'DRAWABLE', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getDrawable', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getDrawable', '(', 'getResourceId', '(', 'DRAWABLE', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getDrawable,"    public static Drawable getDrawable(@NonNull String resName, Resources.Theme theme) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getDrawable(getResourceId(DRAWABLE, resName), theme);",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static Drawable getDrawable(@NonNull String resName, Resources.Theme theme) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getDrawable(getResourceId(DRAWABLE, resName), theme);
-","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getDrawable', '(', '@NonNull', ' ', 'String', ' ', 'resName', ',', ' ', 'Resources', '.', 'Theme', ' ', 'theme', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getDrawable', '(', 'getResourceId', '(', 'DRAWABLE', ',', ' ', 'resName', ')', ',', ' ', 'theme', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getDrawable', '(', '@NonNull', ' ', 'String', ' ', 'resName', ',', ' ', 'Resources', '.', 'Theme', ' ', 'theme', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getDrawable', '(', 'getResourceId', '(', 'DRAWABLE', ',', ' ', 'resName', ')', ',', ' ', 'theme', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getFraction,"    public static float getFraction(@NonNull String resName, int base, int pbase) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getFraction(getResourceId(FRACTION, resName), base, pbase);",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static float getFraction(@NonNull String resName, int base, int pbase) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getFraction(getResourceId(FRACTION, resName), base, pbase);
-","['    ', 'public', ' ', 'static', ' ', 'float', ' ', 'getFraction', '(', '@NonNull', ' ', 'String', ' ', 'resName', ',', ' ', 'int', ' ', 'base', ',', ' ', 'int', ' ', 'pbase', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getFraction', '(', 'getResourceId', '(', 'FRACTION', ',', ' ', 'resName', ')', ',', ' ', 'base', ',', ' ', 'pbase', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'float', ' ', 'getFraction', '(', '@NonNull', ' ', 'String', ' ', 'resName', ',', ' ', 'int', ' ', 'base', ',', ' ', 'int', ' ', 'pbase', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getFraction', '(', 'getResourceId', '(', 'FRACTION', ',', ' ', 'resName', ')', ',', ' ', 'base', ',', ' ', 'pbase', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getInteger,"    public static int getInteger(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getInteger(getResourceId(INTEGER, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static int getInteger(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getInteger(getResourceId(INTEGER, resName));
-","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getInteger', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getInteger', '(', 'getResourceId', '(', 'INTEGER', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'int', ' ', 'getInteger', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getInteger', '(', 'getResourceId', '(', 'INTEGER', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getLayout,"    public static XmlResourceParser getLayout(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getLayout(getResourceId(LAYOUT, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static XmlResourceParser getLayout(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getLayout(getResourceId(LAYOUT, resName));
-","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getLayout', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getLayout', '(', 'getResourceId', '(', 'LAYOUT', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getLayout', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getLayout', '(', 'getResourceId', '(', 'LAYOUT', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getMenu,"    public static XmlResourceParser getMenu(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getLayout(getResourceId(MENU, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static XmlResourceParser getMenu(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getLayout(getResourceId(MENU, resName));
-","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getMenu', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getLayout', '(', 'getResourceId', '(', 'MENU', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getMenu', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getLayout', '(', 'getResourceId', '(', 'MENU', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getMipmap,"    public static Drawable getMipmap(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getDrawable(getResourceId(MIPMAP, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static Drawable getMipmap(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getDrawable(getResourceId(MIPMAP, resName));
-","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getMipmap', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getDrawable', '(', 'getResourceId', '(', 'MIPMAP', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getMipmap', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getDrawable', '(', 'getResourceId', '(', 'MIPMAP', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getMipmap,"    public static Drawable getMipmap(@NonNull String resName, Resources.Theme theme) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getDrawable(getResourceId(MIPMAP, resName), theme);",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static Drawable getMipmap(@NonNull String resName, Resources.Theme theme) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getDrawable(getResourceId(MIPMAP, resName), theme);
-","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getMipmap', '(', '@NonNull', ' ', 'String', ' ', 'resName', ',', ' ', 'Resources', '.', 'Theme', ' ', 'theme', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getDrawable', '(', 'getResourceId', '(', 'MIPMAP', ',', ' ', 'resName', ')', ',', ' ', 'theme', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'Drawable', ' ', 'getMipmap', '(', '@NonNull', ' ', 'String', ' ', 'resName', ',', ' ', 'Resources', '.', 'Theme', ' ', 'theme', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getDrawable', '(', 'getResourceId', '(', 'MIPMAP', ',', ' ', 'resName', ')', ',', ' ', 'theme', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getRaw,"    public static InputStream getRaw(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().openRawResource(getResourceId(RAW, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static InputStream getRaw(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().openRawResource(getResourceId(RAW, resName));
-","['    ', 'public', ' ', 'static', ' ', 'InputStream', ' ', 'getRaw', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'openRawResource', '(', 'getResourceId', '(', 'RAW', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'InputStream', ' ', 'getRaw', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'openRawResource', '(', 'getResourceId', '(', 'RAW', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getIntArray,"    public static int[] getIntArray(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getIntArray(getResourceId(ARRAY, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static int[] getIntArray(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getIntArray(getResourceId(ARRAY, resName));
-","['    ', 'public', ' ', 'static', ' ', 'int', '[', ']', ' ', 'getIntArray', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getIntArray', '(', 'getResourceId', '(', 'ARRAY', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'int', '[', ']', ' ', 'getIntArray', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getIntArray', '(', 'getResourceId', '(', 'ARRAY', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getStringArray,"    public static String[] getStringArray(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getStringArray(getResourceId(ARRAY, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static String[] getStringArray(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getStringArray(getResourceId(ARRAY, resName));
-","['    ', 'public', ' ', 'static', ' ', 'String', '[', ']', ' ', 'getStringArray', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getStringArray', '(', 'getResourceId', '(', 'ARRAY', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'String', '[', ']', ' ', 'getStringArray', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getStringArray', '(', 'getResourceId', '(', 'ARRAY', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getString,"    public static String getString(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getString(getResourceId(STRING, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static String getString(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getString(getResourceId(STRING, resName));
-","['    ', 'public', ' ', 'static', ' ', 'String', ' ', 'getString', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getString', '(', 'getResourceId', '(', 'STRING', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'String', ' ', 'getString', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getString', '(', 'getResourceId', '(', 'STRING', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getXml,"    public static XmlResourceParser getXml(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getXml(getResourceId(XML, resName));",https://www.github.com/anggrayudi/android-hidden-api/commit/f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,"    public static XmlResourceParser getXml(@NonNull String resName) throws ResourceNotFoundException {
         try {
             return Resources.getSystem().getXml(getResourceId(XML, resName));
-","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getXml', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getXml', '(', 'getResourceId', '(', 'XML', ',', ' ', 'resName', ')', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'XmlResourceParser', ' ', 'getXml', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'Resources', '.', 'getSystem', '(', ')', '.', 'getXml', '(', 'getResourceId', '(', 'XML', ',', ' ', 'resName', ')', ')', ';', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getBoolean,"        public boolean getBoolean(@NonNull String resName) throws ResourceNotFoundException {
             boolean bol = InternalAccessor.getBoolean(resName);
             if (saveToResourcesHolder)
@@ -825,7 +825,7 @@ master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getBoolean
                 holder.put(resName, bol);
             return bol;
         }
-","['        ', 'public', ' ', 'boolean', ' ', 'getBoolean', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'boolean', ' ', 'bol', ' ', '=', ' ', 'InternalAccessor', '.', 'getBoolean', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'bol', ')', ';', '\n', '            ', 'return', ' ', 'bol', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'boolean', ' ', 'getBoolean', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'boolean', ' ', 'bol', ' ', '=', ' ', 'InternalAccessor', '.', 'getBoolean', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'bol', ')', ';', '\n', '            ', 'return', ' ', 'bol', ';', '\n', '        ', '}', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getColor,"        public int getColor(@NonNull String resName) throws ResourceNotFoundException {
             int color = InternalAccessor.getColor(resName);
             if (saveToResourcesHolder)
@@ -837,7 +837,7 @@ master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getColor,"
                 holder.put(resName, color);
             return color;
         }
-","['        ', 'public', ' ', 'int', ' ', 'getColor', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'int', ' ', 'color', ' ', '=', ' ', 'InternalAccessor', '.', 'getColor', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'color', ')', ';', '\n', '            ', 'return', ' ', 'color', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'int', ' ', 'getColor', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'int', ' ', 'color', ' ', '=', ' ', 'InternalAccessor', '.', 'getColor', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'color', ')', ';', '\n', '            ', 'return', ' ', 'color', ';', '\n', '        ', '}', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getDimension,"        public float getDimension(@NonNull String resName) throws ResourceNotFoundException {
             float dimens = InternalAccessor.getDimension(resName);
             if (saveToResourcesHolder)
@@ -849,7 +849,7 @@ master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getDimensi
                 holder.put(resName, dimens);
             return dimens;
         }
-","['        ', 'public', ' ', 'float', ' ', 'getDimension', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'float', ' ', 'dimens', ' ', '=', ' ', 'InternalAccessor', '.', 'getDimension', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'dimens', ')', ';', '\n', '            ', 'return', ' ', 'dimens', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'float', ' ', 'getDimension', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'float', ' ', 'dimens', ' ', '=', ' ', 'InternalAccessor', '.', 'getDimension', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'dimens', ')', ';', '\n', '            ', 'return', ' ', 'dimens', ';', '\n', '        ', '}', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getInteger,"        public int getInteger(@NonNull String resName) throws ResourceNotFoundException {
             int integer = InternalAccessor.getInteger(resName);
             if (saveToResourcesHolder)
@@ -861,7 +861,7 @@ master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getInteger
                 holder.put(resName, integer);
             return integer;
         }
-","['        ', 'public', ' ', 'int', ' ', 'getInteger', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'int', ' ', 'integer', ' ', '=', ' ', 'InternalAccessor', '.', 'getInteger', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'integer', ')', ';', '\n', '            ', 'return', ' ', 'integer', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'int', ' ', 'getInteger', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'int', ' ', 'integer', ' ', '=', ' ', 'InternalAccessor', '.', 'getInteger', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'integer', ')', ';', '\n', '            ', 'return', ' ', 'integer', ';', '\n', '        ', '}', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getMenu,"        public XmlResourceParser getMenu(@NonNull String resName) throws ResourceNotFoundException {
             XmlResourceParser menu = InternalAccessor.getMenu(resName);
             if (saveToResourcesHolder)
@@ -873,7 +873,7 @@ master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getMenu," 
                 holder.put(resName, menu);
             return menu;
         }
-","['        ', 'public', ' ', 'XmlResourceParser', ' ', 'getMenu', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'XmlResourceParser', ' ', 'menu', ' ', '=', ' ', 'InternalAccessor', '.', 'getMenu', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'menu', ')', ';', '\n', '            ', 'return', ' ', 'menu', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'XmlResourceParser', ' ', 'getMenu', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'XmlResourceParser', ' ', 'menu', ' ', '=', ' ', 'InternalAccessor', '.', 'getMenu', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'menu', ')', ';', '\n', '            ', 'return', ' ', 'menu', ';', '\n', '        ', '}', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getMipmap,"        public Drawable getMipmap(@NonNull String resName) throws ResourceNotFoundException {
             Drawable mipmap = InternalAccessor.getMipmap(resName);
             if (saveToResourcesHolder)
@@ -885,7 +885,7 @@ master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getMipmap,
                 holder.put(resName, mipmap);
             return mipmap;
         }
-","['        ', 'public', ' ', 'Drawable', ' ', 'getMipmap', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'Drawable', ' ', 'mipmap', ' ', '=', ' ', 'InternalAccessor', '.', 'getMipmap', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'mipmap', ')', ';', '\n', '            ', 'return', ' ', 'mipmap', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'Drawable', ' ', 'getMipmap', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'Drawable', ' ', 'mipmap', ' ', '=', ' ', 'InternalAccessor', '.', 'getMipmap', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'mipmap', ')', ';', '\n', '            ', 'return', ' ', 'mipmap', ';', '\n', '        ', '}', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getRaw,"        public InputStream getRaw(@NonNull String resName) throws ResourceNotFoundException {
             InputStream stream = InternalAccessor.getRaw(resName);
             if (saveToResourcesHolder)
@@ -897,7 +897,7 @@ master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getRaw,"  
                 holder.put(resName, stream);
             return stream;
         }
-","['        ', 'public', ' ', 'InputStream', ' ', 'getRaw', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'InputStream', ' ', 'stream', ' ', '=', ' ', 'InternalAccessor', '.', 'getRaw', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'stream', ')', ';', '\n', '            ', 'return', ' ', 'stream', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'InputStream', ' ', 'getRaw', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'InputStream', ' ', 'stream', ' ', '=', ' ', 'InternalAccessor', '.', 'getRaw', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'stream', ')', ';', '\n', '            ', 'return', ' ', 'stream', ';', '\n', '        ', '}', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getIntArray,"        public int[] getIntArray(@NonNull String resName) throws ResourceNotFoundException {
             int[] ints = InternalAccessor.getIntArray(resName);
             if (saveToResourcesHolder)
@@ -909,7 +909,7 @@ master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getIntArra
                 holder.put(resName, ints);
             return ints;
         }
-","['        ', 'public', ' ', 'int', '[', ']', ' ', 'getIntArray', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'int', '[', ']', ' ', 'ints', ' ', '=', ' ', 'InternalAccessor', '.', 'getIntArray', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'ints', ')', ';', '\n', '            ', 'return', ' ', 'ints', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'int', '[', ']', ' ', 'getIntArray', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'int', '[', ']', ' ', 'ints', ' ', '=', ' ', 'InternalAccessor', '.', 'getIntArray', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'ints', ')', ';', '\n', '            ', 'return', ' ', 'ints', ';', '\n', '        ', '}', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getString,"        public String getString(@NonNull String resName) throws ResourceNotFoundException {
             String string = InternalAccessor.getString(resName);
             if (saveToResourcesHolder)
@@ -921,7 +921,7 @@ master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getString,
                 holder.put(resName, string);
             return string;
         }
-","['        ', 'public', ' ', 'String', ' ', 'getString', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'String', ' ', 'string', ' ', '=', ' ', 'InternalAccessor', '.', 'getString', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'string', ')', ';', '\n', '            ', 'return', ' ', 'string', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'String', ' ', 'getString', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'String', ' ', 'string', ' ', '=', ' ', 'InternalAccessor', '.', 'getString', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'string', ')', ';', '\n', '            ', 'return', ' ', 'string', ';', '\n', '        ', '}', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getXml,"        public XmlResourceParser getXml(@NonNull String resName) throws ResourceNotFoundException {
             XmlResourceParser xml = InternalAccessor.getXml(resName);
             if (saveToResourcesHolder)
@@ -933,7 +933,7 @@ master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,InternalAccessor.java,getXml,"  
                 holder.put(resName, xml);
             return xml;
         }
-","['        ', 'public', ' ', 'XmlResourceParser', ' ', 'getXml', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'XmlResourceParser', ' ', 'xml', ' ', '=', ' ', 'InternalAccessor', '.', 'getXml', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'xml', ')', ';', '\n', '            ', 'return', ' ', 'xml', ';', '\n', '        ', '}', '\n']"
+","['        ', 'public', ' ', 'XmlResourceParser', ' ', 'getXml', '(', '@NonNull', ' ', 'String', ' ', 'resName', ')', ' ', 'throws', ' ', 'ResourceNotFoundException', ' ', '{', '\n', '            ', 'XmlResourceParser', ' ', 'xml', ' ', '=', ' ', 'InternalAccessor', '.', 'getXml', '(', 'resName', ')', ';', '\n', '            ', 'if', ' ', '(', 'saveToResourcesHolder', ')', '\n', '                ', 'holder', '.', 'put', '(', 'resName', ',', ' ', 'xml', ')', ';', '\n', '            ', 'return', ' ', 'xml', ';', '\n', '        ', '}', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,ResourcesHolder.java,sort,"    public void sort(boolean descending){
         TreeMap<String, Object> treeMap = new TreeMap<>();
         treeMap.putAll(mValues);
@@ -951,7 +951,7 @@ master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,ResourcesHolder.java,sort,"    p
         mValues.clear();
         mValues.putAll(treeMap);
     }
-","['    ', 'public', ' ', 'void', ' ', 'sort', '(', 'boolean', ' ', 'descending', ')', '{', '\n', '        ', 'TreeMap', '<', 'String', ',', ' ', 'Object', '>', ' ', 'treeMap', ' ', '=', ' ', 'new', ' ', 'TreeMap', '<', '>', '(', ')', ';', '\n', '        ', 'treeMap', '.', 'putAll', '(', 'mValues', ')', ';', '\n', '        ', 'if', ' ', '(', 'descending', ')', '{', '\n', '            ', 'treeMap', '.', 'descendingMap', '(', ')', ';', '\n', '        ', '}', '\n', '        ', 'mValues', '.', 'clear', '(', ')', ';', '\n', '        ', 'mValues', '.', 'putAll', '(', 'treeMap', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'sort', '(', 'boolean', ' ', 'descending', ')', '{', '\n', '        ', 'TreeMap', '<', 'String', ',', ' ', 'Object', '>', ' ', 'treeMap', ' ', '=', ' ', 'new', ' ', 'TreeMap', '<', '>', '(', ')', ';', '\n', '        ', 'treeMap', '.', 'putAll', '(', 'mValues', ')', ';', '\n', '        ', 'if', ' ', '(', 'descending', ')', '{', '\n', '            ', 'treeMap', '.', 'descendingMap', '(', ')', ';', '\n', '        ', '}', '\n', '        ', 'mValues', '.', 'clear', '(', ')', ';', '\n', '        ', 'mValues', '.', 'putAll', '(', 'treeMap', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,MainActivity.java,onOptionsItemSelected,"    public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home)
             finish();
@@ -961,19 +961,19 @@ master,f51d1c49fdf2db74252470f2193d03ea0b7f5d7c,MainActivity.java,onOptionsItemS
             finish();
         return super.onOptionsItemSelected(item);
     }
-","['    ', 'public', ' ', 'boolean', ' ', 'onOptionsItemSelected', '(', 'MenuItem', ' ', 'item', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'item', '.', 'getItemId', '(', ')', ' ', '=', '=', ' ', 'android', '.', 'R', '.', 'id', '.', 'home', ')', '\n', '            ', 'finish', '(', ')', ';', '\n', '        ', 'return', ' ', 'super', '.', 'onOptionsItemSelected', '(', 'item', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'boolean', ' ', 'onOptionsItemSelected', '(', 'MenuItem', ' ', 'item', ')', ' ', '{', '\n', '        ', 'if', ' ', '(', 'item', '.', 'getItemId', '(', ')', ' ', '=', '=', ' ', 'android', '.', 'R', '.', 'id', '.', 'home', ')', '\n', '            ', 'finish', '(', ')', ';', '\n', '        ', 'return', ' ', 'super', '.', 'onOptionsItemSelected', '(', 'item', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,a3373ba1ee4b520ad624f4b2de702edef2955436,MainActivity.java,onItemClick,"            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == items.size() - 1)
                     parent.getContext().startActivity(new Intent(Intent.ACTION_VIEW)",https://www.github.com/anggrayudi/android-hidden-api/commit/a3373ba1ee4b520ad624f4b2de702edef2955436,"            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == items.size() - 1)
                     parent.getContext().startActivity(new Intent(Intent.ACTION_VIEW)
-","['            ', 'public', ' ', 'void', ' ', 'onItemClick', '(', 'AdapterView', '<', '?', '>', ' ', 'parent', ',', ' ', 'View', ' ', 'view', ',', ' ', 'int', ' ', 'position', ',', ' ', 'long', ' ', 'id', ')', ' ', '{', '\n', '                ', 'if', ' ', '(', 'position', ' ', '=', '=', ' ', 'items', '.', 'size', '(', ')', ' ', '-', ' ', '1', ')', '\n', '                    ', 'parent', '.', 'getContext', '(', ')', '.', 'startActivity', '(', 'new', ' ', 'Intent', '(', 'Intent', '.', 'ACTION_VIEW', ')', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onItemClick', '(', 'AdapterView', '<', '?', '>', ' ', 'parent', ',', ' ', 'View', ' ', 'view', ',', ' ', 'int', ' ', 'position', ',', ' ', 'long', ' ', 'id', ')', ' ', '{', '\n', '                ', 'if', ' ', '(', 'position', ' ', '=', '=', ' ', 'items', '.', 'size', '(', ')', ' ', '-', ' ', '1', ')', '\n', '                    ', 'parent', '.', 'getContext', '(', ')', '.', 'startActivity', '(', 'new', ' ', 'Intent', '(', 'Intent', '.', 'ACTION_VIEW', ')', '\n', '<END>']"
 master,f17db465c112c237a3b65562a113d0aaa40480a9,MainActivity.java,onItemClick,"            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == items.size() - 1)
                     getBaseContext().startActivity(new Intent(Intent.ACTION_VIEW)",https://www.github.com/anggrayudi/android-hidden-api/commit/f17db465c112c237a3b65562a113d0aaa40480a9,"            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == items.size() - 1)
                     getBaseContext().startActivity(new Intent(Intent.ACTION_VIEW)
-","['            ', 'public', ' ', 'void', ' ', 'onItemClick', '(', 'AdapterView', '<', '?', '>', ' ', 'parent', ',', ' ', 'View', ' ', 'view', ',', ' ', 'int', ' ', 'position', ',', ' ', 'long', ' ', 'id', ')', ' ', '{', '\n', '                ', 'if', ' ', '(', 'position', ' ', '=', '=', ' ', 'items', '.', 'size', '(', ')', ' ', '-', ' ', '1', ')', '\n', '                    ', 'getBaseContext', '(', ')', '.', 'startActivity', '(', 'new', ' ', 'Intent', '(', 'Intent', '.', 'ACTION_VIEW', ')', '\n']"
+","['            ', 'public', ' ', 'void', ' ', 'onItemClick', '(', 'AdapterView', '<', '?', '>', ' ', 'parent', ',', ' ', 'View', ' ', 'view', ',', ' ', 'int', ' ', 'position', ',', ' ', 'long', ' ', 'id', ')', ' ', '{', '\n', '                ', 'if', ' ', '(', 'position', ' ', '=', '=', ' ', 'items', '.', 'size', '(', ')', ' ', '-', ' ', '1', ')', '\n', '                    ', 'getBaseContext', '(', ')', '.', 'startActivity', '(', 'new', ' ', 'Intent', '(', 'Intent', '.', 'ACTION_VIEW', ')', '\n', '<END>']"
 master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, short value) {
         mValues.put(key, value);
         return this;
@@ -981,7 +981,7 @@ master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'short', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'short', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, byte value) {
         mValues.put(key, value);
         return this;
@@ -989,7 +989,7 @@ master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'byte', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'byte', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, char value) {
         mValues.put(key, value);
         return this;
@@ -997,7 +997,7 @@ master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'char', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'char', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, boolean value) {
         mValues.put(key, value);
         return this;
@@ -1005,7 +1005,7 @@ master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'boolean', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'boolean', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, int value) {
         mValues.put(key, value);
         return this;
@@ -1013,7 +1013,7 @@ master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'int', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'int', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, long value) {
         mValues.put(key, value);
         return this;
@@ -1021,7 +1021,7 @@ master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'long', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'long', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, float value) {
         mValues.put(key, value);
         return this;
@@ -1029,7 +1029,7 @@ master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'float', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'float', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, double value) {
         mValues.put(key, value);
         return this;
@@ -1037,7 +1037,7 @@ master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'double', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'double', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, String value) {
         mValues.put(key, value);
         return this;
@@ -1045,7 +1045,7 @@ master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    pu
         mValues.put(key, value);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'String', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'String', ' ', 'value', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'value', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    public ResourcesHolder put(String key, Object object) {
         mValues.put(key, object);
         return this;
@@ -1053,7 +1053,7 @@ master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,put,"    pu
         mValues.put(key, object);
         return this;
     }
-","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'Object', ' ', 'object', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'object', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ResourcesHolder', ' ', 'put', '(', 'String', ' ', 'key', ',', ' ', 'Object', ' ', 'object', ')', ' ', '{', '\n', '        ', 'mValues', '.', 'put', '(', 'key', ',', ' ', 'object', ')', ';', '\n', '        ', 'return', ' ', 'this', ';', '\n', '    ', '}', '\n', '<END>']"
 master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,sendBroadcast,"    public void sendBroadcast(Context context, @NonNull String key) {
         Intent intent = new Intent(ACTION_SEND_RESOURCES_HOLDER);
         intent.putExtra(key, this);
@@ -1063,7 +1063,7 @@ master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,sendBroadca
         intent.putExtra(key, this);
         context.sendBroadcast(intent);
     }
-","['    ', 'public', ' ', 'void', ' ', 'sendBroadcast', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'key', ')', ' ', '{', '\n', '        ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'ACTION_SEND_RESOURCES_HOLDER', ')', ';', '\n', '        ', 'intent', '.', 'putExtra', '(', 'key', ',', ' ', 'this', ')', ';', '\n', '        ', 'context', '.', 'sendBroadcast', '(', 'intent', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'sendBroadcast', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'key', ')', ' ', '{', '\n', '        ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'ACTION_SEND_RESOURCES_HOLDER', ')', ';', '\n', '        ', 'intent', '.', 'putExtra', '(', 'key', ',', ' ', 'this', ')', ';', '\n', '        ', 'context', '.', 'sendBroadcast', '(', 'intent', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,sendViaLocalBroadcastManager,"    public void sendViaLocalBroadcastManager(Context context, @NonNull String key) {
         Intent intent = new Intent(ACTION_SEND_RESOURCES_HOLDER);
         intent.putExtra(key, this);
@@ -1073,7 +1073,7 @@ master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,sendViaLoca
         intent.putExtra(key, this);
         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
     }
-","['    ', 'public', ' ', 'void', ' ', 'sendViaLocalBroadcastManager', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'key', ')', ' ', '{', '\n', '        ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'ACTION_SEND_RESOURCES_HOLDER', ')', ';', '\n', '        ', 'intent', '.', 'putExtra', '(', 'key', ',', ' ', 'this', ')', ';', '\n', '        ', 'LocalBroadcastManager', '.', 'getInstance', '(', 'context', ')', '.', 'sendBroadcast', '(', 'intent', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'sendViaLocalBroadcastManager', '(', 'Context', ' ', 'context', ',', ' ', '@NonNull', ' ', 'String', ' ', 'key', ')', ' ', '{', '\n', '        ', 'Intent', ' ', 'intent', ' ', '=', ' ', 'new', ' ', 'Intent', '(', 'ACTION_SEND_RESOURCES_HOLDER', ')', ';', '\n', '        ', 'intent', '.', 'putExtra', '(', 'key', ',', ' ', 'this', ')', ';', '\n', '        ', 'LocalBroadcastManager', '.', 'getInstance', '(', 'context', ')', '.', 'sendBroadcast', '(', 'intent', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,sort,"    public void sort(boolean descending) {
         TreeMap<String, Object> treeMap = new TreeMap<>(mValues);
         if (descending) {
@@ -1089,7 +1089,7 @@ master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,sort,"    p
         mValues.clear();
         mValues.putAll(treeMap);
     }
-","['    ', 'public', ' ', 'void', ' ', 'sort', '(', 'boolean', ' ', 'descending', ')', ' ', '{', '\n', '        ', 'TreeMap', '<', 'String', ',', ' ', 'Object', '>', ' ', 'treeMap', ' ', '=', ' ', 'new', ' ', 'TreeMap', '<', '>', '(', 'mValues', ')', ';', '\n', '        ', 'if', ' ', '(', 'descending', ')', ' ', '{', '\n', '            ', 'treeMap', '.', 'descendingMap', '(', ')', ';', '\n', '        ', '}', '\n', '        ', 'mValues', '.', 'clear', '(', ')', ';', '\n', '        ', 'mValues', '.', 'putAll', '(', 'treeMap', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'void', ' ', 'sort', '(', 'boolean', ' ', 'descending', ')', ' ', '{', '\n', '        ', 'TreeMap', '<', 'String', ',', ' ', 'Object', '>', ' ', 'treeMap', ' ', '=', ' ', 'new', ' ', 'TreeMap', '<', '>', '(', 'mValues', ')', ';', '\n', '        ', 'if', ' ', '(', 'descending', ')', ' ', '{', '\n', '            ', 'treeMap', '.', 'descendingMap', '(', ')', ';', '\n', '        ', '}', '\n', '        ', 'mValues', '.', 'clear', '(', ')', ';', '\n', '        ', 'mValues', '.', 'putAll', '(', 'treeMap', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,isCompatibleCast,"    private boolean isCompatibleCast(String key, Class<?> classToCast) {
         Object obj = mValues.get(key);
         try {
@@ -1097,7 +1097,7 @@ master,94c55cf1d6c6e99390264917a2a8098d27fb52fa,ResourcesHolder.java,isCompatibl
         Object obj = mValues.get(key);
         try {
             if (mValues.get(key) instanceof Number && obj == null) {
-","['    ', 'private', ' ', 'boolean', ' ', 'isCompatibleCast', '(', 'String', ' ', 'key', ',', ' ', 'Class', '<', '?', '>', ' ', 'classToCast', ')', ' ', '{', '\n', '        ', 'Object', ' ', 'obj', ' ', '=', ' ', 'mValues', '.', 'get', '(', 'key', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'if', ' ', '(', 'mValues', '.', 'get', '(', 'key', ')', ' ', 'instanceof', ' ', 'Number', ' ', '&', '&', ' ', 'obj', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n']"
+","['    ', 'private', ' ', 'boolean', ' ', 'isCompatibleCast', '(', 'String', ' ', 'key', ',', ' ', 'Class', '<', '?', '>', ' ', 'classToCast', ')', ' ', '{', '\n', '        ', 'Object', ' ', 'obj', ' ', '=', ' ', 'mValues', '.', 'get', '(', 'key', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'if', ' ', '(', 'mValues', '.', 'get', '(', 'key', ')', ' ', 'instanceof', ' ', 'Number', ' ', '&', '&', ' ', 'obj', ' ', '=', '=', ' ', 'null', ')', ' ', '{', '\n', '<END>']"
 master,a70e808a1501c54e06b38212a332939a3404642f,InternalAccessor.java,isMethodExists,"    public static boolean isMethodExists(String className, String methodName,
                                          Class<?>... parameterTypes) {
         try {
@@ -1105,4 +1105,4 @@ master,a70e808a1501c54e06b38212a332939a3404642f,InternalAccessor.java,isMethodEx
                                          Class<?>... parameterTypes) {
         try {
             Class<?> cls = Class.forName(className);
-","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isMethodExists', '(', 'String', ' ', 'className', ',', ' ', 'String', ' ', 'methodName', ',', '\n', '                                         ', 'Class', '<', '?', '>', '.', '.', '.', ' ', 'parameterTypes', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'Class', '<', '?', '>', ' ', 'cls', ' ', '=', ' ', 'Class', '.', 'forName', '(', 'className', ')', ';', '\n']"
+","['    ', 'public', ' ', 'static', ' ', 'boolean', ' ', 'isMethodExists', '(', 'String', ' ', 'className', ',', ' ', 'String', ' ', 'methodName', ',', '\n', '                                         ', 'Class', '<', '?', '>', '.', '.', '.', ' ', 'parameterTypes', ')', ' ', '{', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'Class', '<', '?', '>', ' ', 'cls', ' ', '=', ' ', 'Class', '.', 'forName', '(', 'className', ')', ';', '\n', '<END>']"

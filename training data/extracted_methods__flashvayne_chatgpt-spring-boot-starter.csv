@@ -4,7 +4,7 @@ master,2af516cd89e00b7a806d7baeb28b869ec05ef329,ChatgptAutoConfiguration.java,ch
     }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/2af516cd89e00b7a806d7baeb28b869ec05ef329,"    public ChatgptService chatgptService(){
         return new DefaultChatgptService(chatgptProperties);
     }
-","['    ', 'public', ' ', 'ChatgptService', ' ', 'chatgptService', '(', ')', '{', '\n', '        ', 'return', ' ', 'new', ' ', 'DefaultChatgptService', '(', 'chatgptProperties', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ChatgptService', ' ', 'chatgptService', '(', ')', '{', '\n', '        ', 'return', ' ', 'new', ' ', 'DefaultChatgptService', '(', 'chatgptProperties', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,2af516cd89e00b7a806d7baeb28b869ec05ef329,ChatgptService.java,sendMessage,"    String sendMessage(String message);
 
     ChatResponse sendChatRequest(ChatRequest request);
@@ -14,13 +14,13 @@ master,2af516cd89e00b7a806d7baeb28b869ec05ef329,ChatgptService.java,sendMessage,
     ChatResponse sendChatRequest(ChatRequest request);
 
 }
-","['    ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ';', '\n', '\n', '    ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'request', ')', ';', '\n', '\n', '}', '\n']"
+","['    ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ';', '\n', '\n', '    ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'request', ')', ';', '\n', '\n', '}', '\n', '<END>']"
 master,2af516cd89e00b7a806d7baeb28b869ec05ef329,ChatgptService.java,sendChatRequest,"    ChatResponse sendChatRequest(ChatRequest request);
 
 }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/2af516cd89e00b7a806d7baeb28b869ec05ef329,"    ChatResponse sendChatRequest(ChatRequest request);
 
 }
-","['    ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'request', ')', ';', '\n', '\n', '}', '\n']"
+","['    ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'request', ')', ';', '\n', '\n', '}', '\n', '<END>']"
 master,2af516cd89e00b7a806d7baeb28b869ec05ef329,DefaultChatgptService.java,sendMessage,"    public String sendMessage(String message) {
         ChatRequest chatRequest = new ChatRequest(chatgptProperties.getModel(), message,
                 chatgptProperties.getMaxTokens(), chatgptProperties.getTemperature(), chatgptProperties.getTopP());
@@ -32,13 +32,13 @@ master,2af516cd89e00b7a806d7baeb28b869ec05ef329,DefaultChatgptService.java,sendM
         ChatResponse chatResponse = this.getResponse(this.buildHttpEntity(chatRequest));
         try {
             return chatResponse.getChoices().get(0).getText();
-","['    ', 'public', ' ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ' ', '{', '\n', '        ', 'ChatRequest', ' ', 'chatRequest', ' ', '=', ' ', 'new', ' ', 'ChatRequest', '(', 'chatgptProperties', '.', 'getModel', '(', ')', ',', ' ', 'message', ',', '\n', '                ', 'chatgptProperties', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'ChatResponse', ' ', 'chatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'chatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getText', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ' ', '{', '\n', '        ', 'ChatRequest', ' ', 'chatRequest', ' ', '=', ' ', 'new', ' ', 'ChatRequest', '(', 'chatgptProperties', '.', 'getModel', '(', ')', ',', ' ', 'message', ',', '\n', '                ', 'chatgptProperties', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'ChatResponse', ' ', 'chatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'chatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getText', '(', ')', ';', '\n', '<END>']"
 master,2af516cd89e00b7a806d7baeb28b869ec05ef329,DefaultChatgptService.java,sendChatRequest,"    public ChatResponse sendChatRequest(ChatRequest chatRequest) {
         return this.getResponse(this.buildHttpEntity(chatRequest));
     }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/2af516cd89e00b7a806d7baeb28b869ec05ef329,"    public ChatResponse sendChatRequest(ChatRequest chatRequest) {
         return this.getResponse(this.buildHttpEntity(chatRequest));
     }
-","['    ', 'public', ' ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'chatRequest', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'chatRequest', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,2af516cd89e00b7a806d7baeb28b869ec05ef329,DefaultChatgptService.java,buildHttpEntity,"    public HttpEntity<ChatRequest> buildHttpEntity(ChatRequest chatRequest) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.parseMediaType(""application/json; charset=UTF-8""));
@@ -50,7 +50,7 @@ master,2af516cd89e00b7a806d7baeb28b869ec05ef329,DefaultChatgptService.java,build
         headers.add(""Authorization"", AUTHORIZATION);
         return new HttpEntity<>(chatRequest, headers);
     }
-","['    ', 'public', ' ', 'HttpEntity', '<', 'ChatRequest', '>', ' ', 'buildHttpEntity', '(', 'ChatRequest', ' ', 'chatRequest', ')', ' ', '{', '\n', '        ', 'HttpHeaders', ' ', 'headers', ' ', '=', ' ', 'new', ' ', 'HttpHeaders', '(', ')', ';', '\n', '        ', 'headers', '.', 'setContentType', '(', 'MediaType', '.', 'parseMediaType', '(', '""', 'application/json; charset=UTF-8', '""', ')', ')', ';', '\n', '        ', 'headers', '.', 'add', '(', '""', 'Authorization', '""', ',', ' ', 'AUTHORIZATION', ')', ';', '\n', '        ', 'return', ' ', 'new', ' ', 'HttpEntity', '<', '>', '(', 'chatRequest', ',', ' ', 'headers', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'HttpEntity', '<', 'ChatRequest', '>', ' ', 'buildHttpEntity', '(', 'ChatRequest', ' ', 'chatRequest', ')', ' ', '{', '\n', '        ', 'HttpHeaders', ' ', 'headers', ' ', '=', ' ', 'new', ' ', 'HttpHeaders', '(', ')', ';', '\n', '        ', 'headers', '.', 'setContentType', '(', 'MediaType', '.', 'parseMediaType', '(', '""', 'application/json; charset=UTF-8', '""', ')', ')', ';', '\n', '        ', 'headers', '.', 'add', '(', '""', 'Authorization', '""', ',', ' ', 'AUTHORIZATION', ')', ';', '\n', '        ', 'return', ' ', 'new', ' ', 'HttpEntity', '<', '>', '(', 'chatRequest', ',', ' ', 'headers', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,1523178d865784ad3a509283f58f19ae29b07130,ChatgptService.java,sendMessage,"    String sendMessage(String message);
 
     ChatResponse sendChatRequest(ChatRequest request);
@@ -66,7 +66,7 @@ master,1523178d865784ad3a509283f58f19ae29b07130,ChatgptService.java,sendMessage,
 
     MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
 }
-","['    ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ';', '\n', '\n', '    ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'request', ')', ';', '\n', '\n', '    ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ';', '\n', '\n', '    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '}', '\n']"
+","['    ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ';', '\n', '\n', '    ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'request', ')', ';', '\n', '\n', '    ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ';', '\n', '\n', '    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '}', '\n', '<END>']"
 master,1523178d865784ad3a509283f58f19ae29b07130,ChatgptService.java,sendChatRequest,"    ChatResponse sendChatRequest(ChatRequest request);
 
     String multiChat(List<MultiChatMessage> messages);
@@ -78,7 +78,7 @@ master,1523178d865784ad3a509283f58f19ae29b07130,ChatgptService.java,sendChatRequ
 
     MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
 }
-","['    ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'request', ')', ';', '\n', '\n', '    ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ';', '\n', '\n', '    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '}', '\n']"
+","['    ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'request', ')', ';', '\n', '\n', '    ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ';', '\n', '\n', '    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '}', '\n', '<END>']"
 master,1523178d865784ad3a509283f58f19ae29b07130,ChatgptService.java,multiChat,"    String multiChat(List<MultiChatMessage> messages);
 
     MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
@@ -86,11 +86,11 @@ master,1523178d865784ad3a509283f58f19ae29b07130,ChatgptService.java,multiChat," 
 
     MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
 }
-","['    ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ';', '\n', '\n', '    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '}', '\n']"
+","['    ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ';', '\n', '\n', '    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '}', '\n', '<END>']"
 master,1523178d865784ad3a509283f58f19ae29b07130,ChatgptService.java,multiChatRequest,"    MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
 }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/1523178d865784ad3a509283f58f19ae29b07130,"    MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
 }
-","['    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '}', '\n']"
+","['    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '}', '\n', '<END>']"
 master,1523178d865784ad3a509283f58f19ae29b07130,DefaultChatgptService.java,sendMessage,"    public String sendMessage(String message) {
         ChatRequest chatRequest = new ChatRequest(chatgptProperties.getModel(), message,
                 chatgptProperties.getMaxTokens(), chatgptProperties.getTemperature(), chatgptProperties.getTopP());
@@ -102,13 +102,13 @@ master,1523178d865784ad3a509283f58f19ae29b07130,DefaultChatgptService.java,sendM
         ChatResponse chatResponse = this.getResponse(this.buildHttpEntity(chatRequest), ChatResponse.class, chatgptProperties.getUrl());
         try {
             return chatResponse.getChoices().get(0).getText();
-","['    ', 'public', ' ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ' ', '{', '\n', '        ', 'ChatRequest', ' ', 'chatRequest', ' ', '=', ' ', 'new', ' ', 'ChatRequest', '(', 'chatgptProperties', '.', 'getModel', '(', ')', ',', ' ', 'message', ',', '\n', '                ', 'chatgptProperties', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'ChatResponse', ' ', 'chatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ',', ' ', 'ChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'chatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getText', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ' ', '{', '\n', '        ', 'ChatRequest', ' ', 'chatRequest', ' ', '=', ' ', 'new', ' ', 'ChatRequest', '(', 'chatgptProperties', '.', 'getModel', '(', ')', ',', ' ', 'message', ',', '\n', '                ', 'chatgptProperties', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'ChatResponse', ' ', 'chatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ',', ' ', 'ChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'chatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getText', '(', ')', ';', '\n', '<END>']"
 master,1523178d865784ad3a509283f58f19ae29b07130,DefaultChatgptService.java,sendChatRequest,"    public ChatResponse sendChatRequest(ChatRequest chatRequest) {
         return this.getResponse(this.buildHttpEntity(chatRequest), ChatResponse.class, chatgptProperties.getUrl());
     }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/1523178d865784ad3a509283f58f19ae29b07130,"    public ChatResponse sendChatRequest(ChatRequest chatRequest) {
         return this.getResponse(this.buildHttpEntity(chatRequest), ChatResponse.class, chatgptProperties.getUrl());
     }
-","['    ', 'public', ' ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'chatRequest', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ',', ' ', 'ChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getUrl', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ChatResponse', ' ', 'sendChatRequest', '(', 'ChatRequest', ' ', 'chatRequest', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ',', ' ', 'ChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getUrl', '(', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,1523178d865784ad3a509283f58f19ae29b07130,DefaultChatgptService.java,multiChat,"    public String multiChat(List<MultiChatMessage> messages) {
         MultiChatRequest multiChatRequest = new MultiChatRequest(chatgptProperties.getMulti().getModel(), messages,
                 chatgptProperties.getMulti().getMaxTokens(), chatgptProperties.getMulti().getTemperature(), chatgptProperties.getMulti().getTopP());
@@ -120,13 +120,13 @@ master,1523178d865784ad3a509283f58f19ae29b07130,DefaultChatgptService.java,multi
         MultiChatResponse multiChatResponse = this.getResponse(this.buildHttpEntity(multiChatRequest), MultiChatResponse.class, chatgptProperties.getMulti().getUrl());
         try {
             return multiChatResponse.getChoices().get(0).getMessage().getContent();
-","['    ', 'public', ' ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ' ', '{', '\n', '        ', 'MultiChatRequest', ' ', 'multiChatRequest', ' ', '=', ' ', 'new', ' ', 'MultiChatRequest', '(', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getModel', '(', ')', ',', ' ', 'messages', ',', '\n', '                ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'MultiChatResponse', ' ', 'multiChatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'multiChatRequest', ')', ',', ' ', 'MultiChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'multiChatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getMessage', '(', ')', '.', 'getContent', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ' ', '{', '\n', '        ', 'MultiChatRequest', ' ', 'multiChatRequest', ' ', '=', ' ', 'new', ' ', 'MultiChatRequest', '(', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getModel', '(', ')', ',', ' ', 'messages', ',', '\n', '                ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'MultiChatResponse', ' ', 'multiChatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'multiChatRequest', ')', ',', ' ', 'MultiChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'multiChatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getMessage', '(', ')', '.', 'getContent', '(', ')', ';', '\n', '<END>']"
 master,1523178d865784ad3a509283f58f19ae29b07130,DefaultChatgptService.java,multiChatRequest,"    public MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest) {
         return this.getResponse(this.buildHttpEntity(multiChatRequest), MultiChatResponse.class, chatgptProperties.getMulti().getUrl());
     }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/1523178d865784ad3a509283f58f19ae29b07130,"    public MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest) {
         return this.getResponse(this.buildHttpEntity(multiChatRequest), MultiChatResponse.class, chatgptProperties.getMulti().getUrl());
     }
-","['    ', 'public', ' ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'multiChatRequest', ')', ',', ' ', 'MultiChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'multiChatRequest', ')', ',', ' ', 'MultiChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,1523178d865784ad3a509283f58f19ae29b07130,DefaultChatgptService.java,buildHttpEntity,"    protected <T> HttpEntity<?> buildHttpEntity(T request) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.parseMediaType(""application/json; charset=UTF-8""));
@@ -138,7 +138,7 @@ master,1523178d865784ad3a509283f58f19ae29b07130,DefaultChatgptService.java,build
         headers.add(""Authorization"", AUTHORIZATION);
         return new HttpEntity<>(request, headers);
     }
-","['    ', 'protected', ' ', '<', 'T', '>', ' ', 'HttpEntity', '<', '?', '>', ' ', 'buildHttpEntity', '(', 'T', ' ', 'request', ')', ' ', '{', '\n', '        ', 'HttpHeaders', ' ', 'headers', ' ', '=', ' ', 'new', ' ', 'HttpHeaders', '(', ')', ';', '\n', '        ', 'headers', '.', 'setContentType', '(', 'MediaType', '.', 'parseMediaType', '(', '""', 'application/json; charset=UTF-8', '""', ')', ')', ';', '\n', '        ', 'headers', '.', 'add', '(', '""', 'Authorization', '""', ',', ' ', 'AUTHORIZATION', ')', ';', '\n', '        ', 'return', ' ', 'new', ' ', 'HttpEntity', '<', '>', '(', 'request', ',', ' ', 'headers', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'protected', ' ', '<', 'T', '>', ' ', 'HttpEntity', '<', '?', '>', ' ', 'buildHttpEntity', '(', 'T', ' ', 'request', ')', ' ', '{', '\n', '        ', 'HttpHeaders', ' ', 'headers', ' ', '=', ' ', 'new', ' ', 'HttpHeaders', '(', ')', ';', '\n', '        ', 'headers', '.', 'setContentType', '(', 'MediaType', '.', 'parseMediaType', '(', '""', 'application/json; charset=UTF-8', '""', ')', ')', ';', '\n', '        ', 'headers', '.', 'add', '(', '""', 'Authorization', '""', ',', ' ', 'AUTHORIZATION', ')', ';', '\n', '        ', 'return', ' ', 'new', ' ', 'HttpEntity', '<', '>', '(', 'request', ',', ' ', 'headers', ')', ';', '\n', '    ', '}', '\n', '<END>']"
 master,47c0552ced2defca25c00cc476dfb2c331a9696e,ChatgptService.java,multiChatRequest,"    MultiChatResponse multiChatRequest(MultiChatRequest multiChatRequest);
 
     /**
@@ -169,7 +169,7 @@ master,47c0552ced2defca25c00cc476dfb2c331a9696e,ChatgptService.java,multiChatReq
     ImageResponse imageGenerateRequest(ImageRequest imageRequest);
 
 }
-","['    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '\n', '    ', '\n', '    ', 'String', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ')', ';', '\n', '\n', '    ', '\n', '    ', 'List', '<', 'String', '>', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ',', ' ', 'Integer', ' ', 'n', ',', ' ', 'ImageSize', ' ', 'size', ',', ' ', 'ImageFormat', ' ', 'format', ')', ';', '\n', '\n', '    ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ';', '\n', '\n', '}', '\n']"
+","['    ', 'MultiChatResponse', ' ', 'multiChatRequest', '(', 'MultiChatRequest', ' ', 'multiChatRequest', ')', ';', '\n', '\n', '    ', '\n', '    ', 'String', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ')', ';', '\n', '\n', '    ', '\n', '    ', 'List', '<', 'String', '>', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ',', ' ', 'Integer', ' ', 'n', ',', ' ', 'ImageSize', ' ', 'size', ',', ' ', 'ImageFormat', ' ', 'format', ')', ';', '\n', '\n', '    ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ';', '\n', '\n', '}', '\n', '<END>']"
 master,47c0552ced2defca25c00cc476dfb2c331a9696e,ChatgptService.java,imageGenerate,"    String imageGenerate(String prompt);
 
     /**
@@ -191,7 +191,7 @@ master,47c0552ced2defca25c00cc476dfb2c331a9696e,ChatgptService.java,imageGenerat
     ImageResponse imageGenerateRequest(ImageRequest imageRequest);
 
 }
-","['    ', 'String', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ')', ';', '\n', '\n', '    ', '\n', '    ', 'List', '<', 'String', '>', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ',', ' ', 'Integer', ' ', 'n', ',', ' ', 'ImageSize', ' ', 'size', ',', ' ', 'ImageFormat', ' ', 'format', ')', ';', '\n', '\n', '    ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ';', '\n', '\n', '}', '\n']"
+","['    ', 'String', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ')', ';', '\n', '\n', '    ', '\n', '    ', 'List', '<', 'String', '>', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ',', ' ', 'Integer', ' ', 'n', ',', ' ', 'ImageSize', ' ', 'size', ',', ' ', 'ImageFormat', ' ', 'format', ')', ';', '\n', '\n', '    ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ';', '\n', '\n', '}', '\n', '<END>']"
 master,47c0552ced2defca25c00cc476dfb2c331a9696e,ChatgptService.java,imageGenerate,"    List<String> imageGenerate(String prompt, Integer n, ImageSize size, ImageFormat format);
 
     ImageResponse imageGenerateRequest(ImageRequest imageRequest);
@@ -201,13 +201,13 @@ master,47c0552ced2defca25c00cc476dfb2c331a9696e,ChatgptService.java,imageGenerat
     ImageResponse imageGenerateRequest(ImageRequest imageRequest);
 
 }
-","['    ', 'List', '<', 'String', '>', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ',', ' ', 'Integer', ' ', 'n', ',', ' ', 'ImageSize', ' ', 'size', ',', ' ', 'ImageFormat', ' ', 'format', ')', ';', '\n', '\n', '    ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ';', '\n', '\n', '}', '\n']"
+","['    ', 'List', '<', 'String', '>', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ',', ' ', 'Integer', ' ', 'n', ',', ' ', 'ImageSize', ' ', 'size', ',', ' ', 'ImageFormat', ' ', 'format', ')', ';', '\n', '\n', '    ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ';', '\n', '\n', '}', '\n', '<END>']"
 master,47c0552ced2defca25c00cc476dfb2c331a9696e,ChatgptService.java,imageGenerateRequest,"    ImageResponse imageGenerateRequest(ImageRequest imageRequest);
 
 }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/47c0552ced2defca25c00cc476dfb2c331a9696e,"    ImageResponse imageGenerateRequest(ImageRequest imageRequest);
 
 }
-","['    ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ';', '\n', '\n', '}', '\n']"
+","['    ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ';', '\n', '\n', '}', '\n', '<END>']"
 master,47c0552ced2defca25c00cc476dfb2c331a9696e,DefaultChatgptService.java,sendMessage,"    public String sendMessage(String message) {
         ChatRequest chatRequest = new ChatRequest(chatgptProperties.getModel(), message, chatgptProperties.getMaxTokens(), chatgptProperties.getTemperature(), chatgptProperties.getTopP());
         ChatResponse chatResponse = this.getResponse(this.buildHttpEntity(chatRequest), ChatResponse.class, chatgptProperties.getUrl());
@@ -217,7 +217,7 @@ master,47c0552ced2defca25c00cc476dfb2c331a9696e,DefaultChatgptService.java,sendM
         ChatResponse chatResponse = this.getResponse(this.buildHttpEntity(chatRequest), ChatResponse.class, chatgptProperties.getUrl());
         try {
             return chatResponse.getChoices().get(0).getText();
-","['    ', 'public', ' ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ' ', '{', '\n', '        ', 'ChatRequest', ' ', 'chatRequest', ' ', '=', ' ', 'new', ' ', 'ChatRequest', '(', 'chatgptProperties', '.', 'getModel', '(', ')', ',', ' ', 'message', ',', ' ', 'chatgptProperties', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'ChatResponse', ' ', 'chatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ',', ' ', 'ChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'chatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getText', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'String', ' ', 'sendMessage', '(', 'String', ' ', 'message', ')', ' ', '{', '\n', '        ', 'ChatRequest', ' ', 'chatRequest', ' ', '=', ' ', 'new', ' ', 'ChatRequest', '(', 'chatgptProperties', '.', 'getModel', '(', ')', ',', ' ', 'message', ',', ' ', 'chatgptProperties', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'ChatResponse', ' ', 'chatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'chatRequest', ')', ',', ' ', 'ChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'chatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getText', '(', ')', ';', '\n', '<END>']"
 master,47c0552ced2defca25c00cc476dfb2c331a9696e,DefaultChatgptService.java,multiChat,"    public String multiChat(List<MultiChatMessage> messages) {
         MultiChatRequest multiChatRequest = new MultiChatRequest(chatgptProperties.getMulti().getModel(), messages, chatgptProperties.getMulti().getMaxTokens(), chatgptProperties.getMulti().getTemperature(), chatgptProperties.getMulti().getTopP());
         MultiChatResponse multiChatResponse = this.getResponse(this.buildHttpEntity(multiChatRequest), MultiChatResponse.class, chatgptProperties.getMulti().getUrl());
@@ -227,7 +227,7 @@ master,47c0552ced2defca25c00cc476dfb2c331a9696e,DefaultChatgptService.java,multi
         MultiChatResponse multiChatResponse = this.getResponse(this.buildHttpEntity(multiChatRequest), MultiChatResponse.class, chatgptProperties.getMulti().getUrl());
         try {
             return multiChatResponse.getChoices().get(0).getMessage().getContent();
-","['    ', 'public', ' ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ' ', '{', '\n', '        ', 'MultiChatRequest', ' ', 'multiChatRequest', ' ', '=', ' ', 'new', ' ', 'MultiChatRequest', '(', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getModel', '(', ')', ',', ' ', 'messages', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'MultiChatResponse', ' ', 'multiChatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'multiChatRequest', ')', ',', ' ', 'MultiChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'multiChatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getMessage', '(', ')', '.', 'getContent', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'String', ' ', 'multiChat', '(', 'List', '<', 'MultiChatMessage', '>', ' ', 'messages', ')', ' ', '{', '\n', '        ', 'MultiChatRequest', ' ', 'multiChatRequest', ' ', '=', ' ', 'new', ' ', 'MultiChatRequest', '(', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getModel', '(', ')', ',', ' ', 'messages', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getMaxTokens', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getTemperature', '(', ')', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getTopP', '(', ')', ')', ';', '\n', '        ', 'MultiChatResponse', ' ', 'multiChatResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'multiChatRequest', ')', ',', ' ', 'MultiChatResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getMulti', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'multiChatResponse', '.', 'getChoices', '(', ')', '.', 'get', '(', '0', ')', '.', 'getMessage', '(', ')', '.', 'getContent', '(', ')', ';', '\n', '<END>']"
 master,47c0552ced2defca25c00cc476dfb2c331a9696e,DefaultChatgptService.java,imageGenerate,"    public String imageGenerate(String prompt) {
         ImageRequest imageRequest = new ImageRequest(prompt, null, null, null, null);
         ImageResponse imageResponse = this.getResponse(this.buildHttpEntity(imageRequest), ImageResponse.class, chatgptProperties.getImage().getUrl());
@@ -237,7 +237,7 @@ master,47c0552ced2defca25c00cc476dfb2c331a9696e,DefaultChatgptService.java,image
         ImageResponse imageResponse = this.getResponse(this.buildHttpEntity(imageRequest), ImageResponse.class, chatgptProperties.getImage().getUrl());
         try {
             return imageResponse.getData().get(0).getUrl();
-","['    ', 'public', ' ', 'String', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ')', ' ', '{', '\n', '        ', 'ImageRequest', ' ', 'imageRequest', ' ', '=', ' ', 'new', ' ', 'ImageRequest', '(', 'prompt', ',', ' ', 'null', ',', ' ', 'null', ',', ' ', 'null', ',', ' ', 'null', ')', ';', '\n', '        ', 'ImageResponse', ' ', 'imageResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'imageRequest', ')', ',', ' ', 'ImageResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getImage', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'imageResponse', '.', 'getData', '(', ')', '.', 'get', '(', '0', ')', '.', 'getUrl', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'String', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ')', ' ', '{', '\n', '        ', 'ImageRequest', ' ', 'imageRequest', ' ', '=', ' ', 'new', ' ', 'ImageRequest', '(', 'prompt', ',', ' ', 'null', ',', ' ', 'null', ',', ' ', 'null', ',', ' ', 'null', ')', ';', '\n', '        ', 'ImageResponse', ' ', 'imageResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'imageRequest', ')', ',', ' ', 'ImageResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getImage', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'return', ' ', 'imageResponse', '.', 'getData', '(', ')', '.', 'get', '(', '0', ')', '.', 'getUrl', '(', ')', ';', '\n', '<END>']"
 master,47c0552ced2defca25c00cc476dfb2c331a9696e,DefaultChatgptService.java,imageGenerate,"    public List<String> imageGenerate(String prompt, Integer n, ImageSize size, ImageFormat format) {
         ImageRequest imageRequest = new ImageRequest(prompt, n, size.getSize(), format.getFormat(), null);
         ImageResponse imageResponse = this.getResponse(this.buildHttpEntity(imageRequest), ImageResponse.class, chatgptProperties.getImage().getUrl());
@@ -247,10 +247,10 @@ master,47c0552ced2defca25c00cc476dfb2c331a9696e,DefaultChatgptService.java,image
         ImageResponse imageResponse = this.getResponse(this.buildHttpEntity(imageRequest), ImageResponse.class, chatgptProperties.getImage().getUrl());
         try {
             List<String> list = new ArrayList<>();
-","['    ', 'public', ' ', 'List', '<', 'String', '>', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ',', ' ', 'Integer', ' ', 'n', ',', ' ', 'ImageSize', ' ', 'size', ',', ' ', 'ImageFormat', ' ', 'format', ')', ' ', '{', '\n', '        ', 'ImageRequest', ' ', 'imageRequest', ' ', '=', ' ', 'new', ' ', 'ImageRequest', '(', 'prompt', ',', ' ', 'n', ',', ' ', 'size', '.', 'getSize', '(', ')', ',', ' ', 'format', '.', 'getFormat', '(', ')', ',', ' ', 'null', ')', ';', '\n', '        ', 'ImageResponse', ' ', 'imageResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'imageRequest', ')', ',', ' ', 'ImageResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getImage', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'List', '<', 'String', '>', ' ', 'list', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', ')', ';', '\n']"
+","['    ', 'public', ' ', 'List', '<', 'String', '>', ' ', 'imageGenerate', '(', 'String', ' ', 'prompt', ',', ' ', 'Integer', ' ', 'n', ',', ' ', 'ImageSize', ' ', 'size', ',', ' ', 'ImageFormat', ' ', 'format', ')', ' ', '{', '\n', '        ', 'ImageRequest', ' ', 'imageRequest', ' ', '=', ' ', 'new', ' ', 'ImageRequest', '(', 'prompt', ',', ' ', 'n', ',', ' ', 'size', '.', 'getSize', '(', ')', ',', ' ', 'format', '.', 'getFormat', '(', ')', ',', ' ', 'null', ')', ';', '\n', '        ', 'ImageResponse', ' ', 'imageResponse', ' ', '=', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'imageRequest', ')', ',', ' ', 'ImageResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getImage', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '        ', 'try', ' ', '{', '\n', '            ', 'List', '<', 'String', '>', ' ', 'list', ' ', '=', ' ', 'new', ' ', 'ArrayList', '<', '>', '(', ')', ';', '\n', '<END>']"
 master,47c0552ced2defca25c00cc476dfb2c331a9696e,DefaultChatgptService.java,imageGenerateRequest,"    public ImageResponse imageGenerateRequest(ImageRequest imageRequest) {
         return this.getResponse(this.buildHttpEntity(imageRequest), ImageResponse.class, chatgptProperties.getImage().getUrl());
     }",https://www.github.com/flashvayne/chatgpt-spring-boot-starter/commit/47c0552ced2defca25c00cc476dfb2c331a9696e,"    public ImageResponse imageGenerateRequest(ImageRequest imageRequest) {
         return this.getResponse(this.buildHttpEntity(imageRequest), ImageResponse.class, chatgptProperties.getImage().getUrl());
     }
-","['    ', 'public', ' ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'imageRequest', ')', ',', ' ', 'ImageResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getImage', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '    ', '}', '\n']"
+","['    ', 'public', ' ', 'ImageResponse', ' ', 'imageGenerateRequest', '(', 'ImageRequest', ' ', 'imageRequest', ')', ' ', '{', '\n', '        ', 'return', ' ', 'this', '.', 'getResponse', '(', 'this', '.', 'buildHttpEntity', '(', 'imageRequest', ')', ',', ' ', 'ImageResponse', '.', 'class', ',', ' ', 'chatgptProperties', '.', 'getImage', '(', ')', '.', 'getUrl', '(', ')', ')', ';', '\n', '    ', '}', '\n', '<END>']"
