@@ -39,82 +39,57 @@ import math
 
 
 
+import pandas as pd
 
-
-#Evaluation method: 
-
-def next_word(data, n_prior_words):
+def next_word(n_gram_series, n_prior_words):
     """
-    Predicts the next word given n preceding words.
+    Predicts the next word given n preceding words from a Pandas Series.
 
     Args:
-        data (dict): The n-gram model data.
-        n_prior_words (list): The preceding words.
+        n_gram_series (pd.Series): A Series where:
+            - Index = n-gram tuple (words).
+            - Values = Probability or frequency of the next word.
+        n_prior_words (list): The preceding words (n-1 words).
 
     Returns:
-        str: The predicted next word.
+        str or None: The predicted next word based on the probabilities.
     """
-    key = tuple(n_prior_words)
-    if key in data:
-        return max(data[key], key=data[key].get)
+    key = tuple(n_prior_words)  # Convert list to tuple to match the Series index
+    
+    # Look up the probability of the next word in the Series
+    candidates = n_gram_series[n_gram_series.index.str.startswith(str(key))]
+
+    if not candidates.empty:
+        # Select the next word with the highest probability/frequency
+        next_word = candidates.idxmax()  # Get the index with the max value
+        return next_word[-1]  # Return the actual next word
     else:
         return None
 
-def accuracy(test_data, probabilities):
+
+
+
+def perplexity(n_gram_series):
     """
-    Calculate the accuracy of the n-gram model.
+    Calculate the perplexity of the n-gram model using a Pandas Series of probabilities .
 
     Args:
-        test_data (list): The test data.
-        probabilities (dict): The n-gram model probabilities.
+        n_gram_series (pd.Series): A Series where:
+            - Index = n-gram tuple (words).
+            - Values = Probability of the n-gram occurring.
+        test_sentences (list): List of test sentences (strings).
 
-    Returns:
-        float: The accuracy of the model.
-    """
-    correct_predictions = 0
-    total_predictions = 0
-
-    for method in test_data:
-        words = method.split()
-        for i in range(len(words) - 1):
-            n_prior_words = words[:i+1]
-            predicted_word = next_word(probabilities, n_prior_words)
-            if predicted_word == words[i+1]:
-                correct_predictions += 1
-            total_predictions += 1
-
-    return (correct_predictions / total_predictions) * 100
-    
-def perplexity(test_data, probabilities):
-    """
-    Calculate the perplexity of the n-gram model.
-    
-    Args:
-        test_data (list): The test data.
-        probabilities (dict): The n-gram model probabilities.
-    
     Returns:
         float: The perplexity of the model.
     """
     log_prob_sum = 0
     total_predictions = 0
-        
-    for method in test_data:
-        words = method.split()
-        for i in range(len(words) - 1):
-            n_prior_words = words[:i+1]
-            key = tuple(n_prior_words)
-            next_word = words[i+1]
-            if key in probabilities and next_word in probabilities[key]:
-                prob = probabilities[key][next_word]
-            else:
-                prob = 1e-6  # Smoothing for unseen words
-            log_prob_sum += math.log(prob)
-            total_predictions += 1
-    
+
+    if total_predictions == 0:
+        return float('inf')  # Avoid division by zero
+
     avg_log_prob = log_prob_sum / total_predictions
-    perplexity = math.exp(-avg_log_prob)
-    return perplexity
+    return np.exp(-avg_log_prob)
 
 
 # main code 
