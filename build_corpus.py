@@ -176,8 +176,8 @@ def add_tokens_to_csv_files(directory):
                 print(f"Error processing file {filepath}: {e}")
 
 # Example usage
-input_txt_file = 'methods.txt'
-output_csv_file = 'methods.csv'
+input_txt_file = 'training.txt'
+output_csv_file = 'data/training.csv'
 process_methods_from_txt(input_txt_file, output_csv_file)
 
 folder_path = 'data/'
