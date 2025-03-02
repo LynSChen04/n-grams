@@ -12,8 +12,6 @@ from pygments.lexers.jvm import JavaLexer
 from pygments.lexers import get_lexer_by_name
 from pygments.token import Token
 from collections import Counter
-from nltk.translate.bleu_score import sentence_bleu
-from nltk import ngrams
 
 df_res = pd.read_csv('results.csv')
 

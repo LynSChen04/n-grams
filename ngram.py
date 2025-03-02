@@ -1,6 +1,8 @@
-#N-grams pseudocode (creation of probability model)
+import os
+import pandas as pd
+from nltk.translate.bleu_score import sentence_bleu
+from nltk import ngrams
 
-#creating the n-gram model (pseudocode for just n)
 
 train_dir = os.fsencode("training data/")
 
