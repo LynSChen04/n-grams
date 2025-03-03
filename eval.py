@@ -49,7 +49,7 @@ def perplexity(n_gram_series):
         n_gram_series (pd.Series): A Series where:
             - Index = n-gram tuple (words).
             - Values = Probability of the n-gram occurring.
-        test_sentences (list): List of test sentences (strings).
+        test_method (list): List of test methods (list).
 
     Returns:
         float: The perplexity of the model.

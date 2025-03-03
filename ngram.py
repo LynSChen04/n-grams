@@ -1,8 +1,6 @@
 import os
 import pandas as pd
-from nltk.translate.bleu_score import sentence_bleu
 from nltk import ngrams
-
 
 train_dir = os.fsencode("training data/")
 ngram = pd.Series
@@ -18,79 +16,29 @@ def build_ngram(n):
     print(ngram)
     return ngram
 
-build_ngram(3)
-
 def next_word(n_gram_series, n_prior_words):
-    """
-    Predicts the next word given n preceding words from a Pandas Series.
-
-    Args:
-        n_gram_series (pd.Series): A Series where:
-            - Index = n-gram tuple (words).
-            - Values = Probability or frequency of the next word.
-        n_prior_words (list): The preceding words (n-1 words).
-
-    Returns:
-        str or None: The predicted next word based on the probabilities.
-    """
-    key = tuple(n_prior_words)  # Convert list to tuple to match the Series index
-    
-    # Look up the probability of the next word in the Series
-    candidates = n_gram_series[n_gram_series.index.str.startswith(str(key))]
-
+    key = tuple(n_prior_words)
+    candidates = n_gram_series[n_gram_series.index.map(lambda x: x[:len(key)] == key)]
     if not candidates.empty:
-        # Select the next word with the highest probability/frequency
-        next_word = candidates.idxmax()  # Get the index with the max value
-        return next_word[-1]  # Return the actual next word
+        next_ngram = candidates.idxmax()
+        print(next_ngram)
+        return next_ngram[-1]
     else:
         return None
 
-#ngram = pd.Series(ngrams(corpus, N)).valueCounts()
-
-#build a n-gram model using the ngram - may use lambda method?
-
-#build a dictionary from ngram
-#in the dictionary count the number of repeated occurrences of #token 1 - token n-1, and for each repetition add one to #dictionary entry dictionary[token 1 - token n-1][token n]
-#transform the dictionary of raw counts / frequencies to #probabilities by:
-#	for token 1 to token n-1 in dictionary:
-#		occurrences = sum of dictionary[token 1 to token n-1]
-#		values
-#		for token n in dictionary[token 1 to token n-1]:
-#			dictionary[token 1 to n-1][token n] /=
-#occurrences
-
-#function for predicting the next token
-#predict_token(token 1 - token n - 1):
-#	next_token = dictionary[token 1 - token n-1]
-#	if next_token is maximum value from the different entries
-#above:
-#	return next_token
-#else find maximum value and return
-#else end prediction or return “no prediction available”
-
-
-
-
-
-#Evaluation method: 
-
-def finish_method(data, n_prior_words):
+def finish_method(data: pd.Series, n_prior_words, max_iterations=100):
     method = list(n_prior_words)
-    while method[-1] != "":
-        next_word = predict_token(data, method)
-        method.append(next_word)
-    return method #returns as a list
-
-#predicts the next word given n preceding words. Outputs #expected next word
-
-def accuracy(data, n_val):
-    accuracy = []
-    for i in data["evaluation methods"]: #assuming i is a list of tokens for that method
-        predicted_method = finish_method(data, i[:n_val])
-        actual_method = i
-        blue_score = sentence_bleu([actual_method], predicted_method)
-        accuracy.append(blue_score)
-        return sum(accuracy)/len
+    iterations = 0
+    while iterations < max_iterations:
+        next_word_pred = next_word(data, method[-len(n_prior_words):])
+        if next_word_pred is None:
+            break
+        if next_word_pred == "<end>":
+            method.append(next_word_pred)
+            break
+        method.append(next_word_pred)
+        iterations += 1
+    return method
 
 #using assigned training data (dictionary), test the accuracy of the n-gram #model, returns accuracy as value out of 100
 
@@ -104,3 +52,50 @@ def accuracy(data, n_val):
 
 
 #use general code to produce accuracy of 1-k n-grams, and pick #the one with the best accuracy. 
+ngram_data = {
+    ('the', 'quick'): 0.5,
+    ('quick', 'brown'): 0.4,
+    ('brown', 'fox'): 0.7,
+    ('fox', 'jumps'): 0.6,
+    ('jumps', 'over'): 0.8,
+    ('over', 'the'): 0.3,
+    ('the', 'lazy'): 0.5,
+    ('lazy', 'dog'): 0.9,
+    ('dog', '<end>'): 1.0
+}
+
+# Convert it to a Pandas Series
+n_gram_series = pd.Series(ngram_data)
+
+ngram_data = {
+    ('the', 'quick'): 0.5,
+    ('quick', 'brown'): 0.4,
+    ('brown', 'fox'): 0.7,
+    ('fox', 'jumps'): 0.6,
+    ('jumps', 'over'): 0.8,
+    ('over', 'a'): 0.3,
+    ('a', 'lazy'): 0.2,
+    ('lazy', 'dog'): 0.9,
+    ('dog', '<end>'): 1.0
+}
+
+n_gram_series = pd.Series(ngram_data)
+n_prior_words = ['the']
+predicted_sequence = finish_method(n_gram_series, n_prior_words)
+print(predicted_sequence)
+
+
+trigram_data = {
+    ('I', 'love', 'python'): 0.4,
+    ('love', 'python', 'programming'): 0.6,
+    ('python', 'programming', 'in'): 0.8,
+    ('programming', 'in', 'a'): 0.5,
+    ('in', 'a', 'fun'): 0.7,
+    ('a', 'fun', 'way'): 0.9,
+    ('fun', 'way', '<end>'): 1.0
+}
+
+trigram_series = pd.Series(trigram_data)
+n_prior_words_trigram = ['I', 'love']
+predicted_sequence_trigram = finish_method(trigram_series, n_prior_words_trigram)
+print("Trigram test:", predicted_sequence_trigram)
