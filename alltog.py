@@ -125,57 +125,58 @@ def extract_methods(folder_path):
 
 def build_ngram(n, train_dir):
     print(f"Building {n}-gram model...")
-    n=n+1
+    n = n + 1
     ngram_counts = defaultdict(int)
     total_ngrams = 0
+
     for tokens in train_dir:
         if len(tokens) < n:
             continue
         for ngram_tuple in ngrams(tokens, n):
             ngram_counts[ngram_tuple] += 1
             total_ngrams += 1
+
     if total_ngrams == 0:
         print("Warning: No n-grams found in the training data.")
-        return pd.Series()
-    print(f"Total {n}-grams: {total_ngrams}")
-    return pd.Series({ngram: count / total_ngrams for ngram, count in ngram_counts.items()})
+        return {}
 
-def perplexity(n_gram_model, test_dir, n):
+    print(f"Total {n}-grams: {total_ngrams}")
+    
+    # Convert to dictionary instead of Pandas Series
+    return {ngram: count / total_ngrams for ngram, count in ngram_counts.items()}
+
+
+from collections import defaultdict
+
+def perplexity(ngram_probs, test_data, n, alpha=1):
     print("Calculating perplexity...")
 
-    # Prepare training data from the test sentences
-    tokenized_text = [list(map(str.lower, nltk.tokenize.word_tokenize(sent))) for sent in test_dir]
-    train_data, padded_vocab = padded_everygram_pipeline(n, tokenized_text)
-
-    # Initialize MLE model and fit it with the training data
-    model = MLE(n)
-    model.fit(train_data, padded_vocab)
-
+    # Count total unique n-grams to compute Laplace smoothing
+    vocab_size = len(ngram_probs) + 1  # +1 for unseen n-grams
     total_log_prob = 0
     total_tokens = 0
 
-    # Compute the log-probabilities of n-grams in the test data
-    for tokens in tokenized_text:
+    for tokens in test_data:
         log_prob_sum = 0
-        padded_tokens = list(nltk.ngrams(tokens, n, pad_left=True, pad_right=True, left_pad_symbol="<s>", right_pad_symbol="</s>"))
-        for ngram in padded_tokens:
-            word_prob = model.score(ngram[-1], ngram[:-1])  # score the last word based on context
-            if word_prob > 0:
-                log_prob_sum += np.log(word_prob)
-            else:
-                log_prob_sum += np.log(1e-10)  # Small value to avoid log(0)
-                
+        for ngram in ngrams(tokens, n, pad_left=True, pad_right=True, left_pad_symbol="<s>", right_pad_symbol="</s>"):
+            count = ngram_probs.get(ngram, 0)  # Get count, default to 0
+            print(count)
+            smoothed_prob = (count + alpha) / (sum(ngram_probs.values()) + alpha * vocab_size)  # Laplace smoothing
+            
+            log_prob_sum += np.log(smoothed_prob)
+
         total_log_prob += log_prob_sum
         total_tokens += len(tokens)
 
-    # Calculate perplexity
     if total_tokens == 0:
         return float('inf')
 
     avg_log_prob = total_log_prob / total_tokens
-    result = np.exp(-avg_log_prob)  # Exponentiate the negative average log-probability
+    result = np.exp(-avg_log_prob)
     print(f"Perplexity: {result}")
     return result
+
+
 
 """# --- Run Processing ---
 folder_path = "data/"
