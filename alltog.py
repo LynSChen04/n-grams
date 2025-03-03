@@ -8,7 +8,11 @@ from pygments.lexers.jvm import JavaLexer
 from pygments.lexers import get_lexer_by_name
 from pygments.token import Token
 from nltk.util import ngrams
-
+import nltk
+from nltk.lm import MLE
+from nltk.lm.preprocessing import padded_everygram_pipeline
+from nltk.lm import Vocabulary
+import numpy as np
 # Initialize Java lexer
 lexer = JavaLexer()
 
@@ -102,7 +106,7 @@ def extract_methods(folder_path):
     method_series = pd.Series([])
     files_processed = 0
     for filename in os.listdir(folder_path):
-        if files_processed >= 25:
+        if files_processed >= 5:
             break
         if filename.endswith(".csv"):
             file_path = os.path.join(folder_path, filename)
@@ -138,29 +142,45 @@ def build_ngram(n, train_dir):
 
 def perplexity(n_gram_model, test_dir, n):
     print("Calculating perplexity...")
+
+    # Prepare training data from the test sentences
+    tokenized_text = [list(map(str.lower, nltk.tokenize.word_tokenize(sent))) for sent in test_dir]
+    train_data, padded_vocab = padded_everygram_pipeline(n, tokenized_text)
+
+    # Initialize MLE model and fit it with the training data
+    model = MLE(n)
+    model.fit(train_data, padded_vocab)
+
     total_log_prob = 0
     total_tokens = 0
-    for tokens in test_dir:
-        if len(tokens) < n:
-            continue
+
+    # Compute the log-probabilities of n-grams in the test data
+    for tokens in tokenized_text:
         log_prob_sum = 0
-        for i in range(n - 1, len(tokens)):
-            ngram_tuple = tuple(tokens[i - (n - 1): i + 1])
-            word_prob = n_gram_model.get(ngram_tuple, 1e-5)
-            log_prob_sum += np.log(word_prob)
+        padded_tokens = list(nltk.ngrams(tokens, n, pad_left=True, pad_right=True, left_pad_symbol="<s>", right_pad_symbol="</s>"))
+        for ngram in padded_tokens:
+            word_prob = model.score(ngram[-1], ngram[:-1])  # score the last word based on context
+            if word_prob > 0:
+                log_prob_sum += np.log(word_prob)
+            else:
+                log_prob_sum += np.log(1e-10)  # Small value to avoid log(0)
+                
         total_log_prob += log_prob_sum
-        total_tokens += (len(tokens) - (n - 1))
+        total_tokens += len(tokens)
+
+    # Calculate perplexity
     if total_tokens == 0:
         return float('inf')
+
     avg_log_prob = total_log_prob / total_tokens
-    result = np.exp(-avg_log_prob)
+    result = np.exp(-avg_log_prob)  # Exponentiate the negative average log-probability
     print(f"Perplexity: {result}")
     return result
 
 """# --- Run Processing ---
 folder_path = "data/"
 process_files_in_folder(folder_path)"""
-n = 7  # Bigram model
+n = 3  # Bigram model
 train_data = extract_methods("training data")
 test_data = extract_methods("testing data")
 
