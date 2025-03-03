@@ -62,7 +62,7 @@ def remove_comments_from_dataframe(df, method_column, language="java"):
 
 # --- Tokenization ---
 def tokenize_code(code):
-    tokens = [t[1] for t in lexer.get_tokens(code)]
+    tokens = [t[1] for t in lexer.get_tokens(code) if t[0] != Token.Text and t[1] != ' ']
     tokens.append("<END>")
     return tokens
 
@@ -71,32 +71,38 @@ def process_files_in_folder(folder_path):
     for filename in os.listdir(folder_path):
         if filename.endswith(".csv"):
             file_path = os.path.join(folder_path, filename)
-            data = pd.read_csv(file_path)
+            print(f"Processing file: {filename}")  # Print the filename being processed
+            
+            try:
+                data = pd.read_csv(file_path)
+                
+                if "Method Code" not in data.columns:
+                    print(f"Skipping {filename} - Missing 'Method Code' column")
+                    continue  # Skip this file if the column is missing
+                
+                # Apply preprocessing steps
+                data = remove_duplicates(data)
+                data = filter_ascii_methods(data)
+                data = remove_outliers(data)
+                data = remove_boilerplate_methods(data)
+                data = remove_comments_from_dataframe(data, 'Method Code', 'java')
 
-            if "Method Code" not in data.columns:
-                print(f"Skipping {filename} - Missing 'Method Code' column")
-                continue  # Skip this file
+                # Tokenize methods
+                if "Method Code No Comments" in data.columns:
+                    data["Tokens"] = data["Method Code No Comments"].apply(tokenize_code)
 
-            # Apply preprocessing steps
-            data = remove_duplicates(data)
-            data = filter_ascii_methods(data)
-            data = remove_outliers(data)
-            data = remove_boilerplate_methods(data)
-            data = remove_comments_from_dataframe(data, 'Method Code', 'java')
-
-            # Tokenize methods
-            if "Method Code No Comments" in data.columns:
-                data["Tokens"] = data["Method Code No Comments"].apply(tokenize_code)
-
-            # Save back to CSV
-            data.to_csv(file_path, index=False)
+                # Save back to CSV
+                data.to_csv(file_path, index=False)
+                
+            except Exception as e:
+                print(f"Error processing {filename}: {e}")  # Print the error if it occurs
 
 def extract_methods(folder_path):
     print("Extracting methods from files...")
     method_series = pd.Series([])
     files_processed = 0
     for filename in os.listdir(folder_path):
-        if files_processed >= 2:
+        if files_processed >= 25:
             break
         if filename.endswith(".csv"):
             file_path = os.path.join(folder_path, filename)
@@ -115,10 +121,10 @@ def extract_methods(folder_path):
 
 def build_ngram(n, train_dir):
     print(f"Building {n}-gram model...")
-    method_series = extract_methods(train_dir)
+    n=n+1
     ngram_counts = defaultdict(int)
     total_ngrams = 0
-    for tokens in method_series:
+    for tokens in train_dir:
         if len(tokens) < n:
             continue
         for ngram_tuple in ngrams(tokens, n):
@@ -132,10 +138,9 @@ def build_ngram(n, train_dir):
 
 def perplexity(n_gram_model, test_dir, n):
     print("Calculating perplexity...")
-    method_series = extract_methods(test_dir)
     total_log_prob = 0
     total_tokens = 0
-    for tokens in method_series:
+    for tokens in test_dir:
         if len(tokens) < n:
             continue
         log_prob_sum = 0
@@ -152,27 +157,27 @@ def perplexity(n_gram_model, test_dir, n):
     print(f"Perplexity: {result}")
     return result
 
-# --- Run Processing ---
+"""# --- Run Processing ---
 folder_path = "data/"
-process_files_in_folder(folder_path)
-n = 2  # Bigram model
-train_dir = "training data"  # Folder containing training CSV files
-test_dir = "testing data"  # Folder containing test CSV files
+process_files_in_folder(folder_path)"""
+n = 7  # Bigram model
+train_data = extract_methods("training data")
+test_data = extract_methods("testing data")
 
-# Step 1: Process the training and test data
+"""# Step 1: Process the training and test data
 print("Processing training data...")
-process_files_in_folder(train_dir)
+process_files_in_folder("training data")
 
 print("Processing test data...")
-process_files_in_folder(test_dir)
+process_files_in_folder("testing data")"""
 
 # Step 2: Build the n-gram model
 print("Building bigram model...")
-bigram_model = build_ngram(n, train_dir)
-
+ngram_model = build_ngram(n, train_data)
+print(ngram_model)
 # Step 3: Compute perplexity
 print("Calculating perplexity of the bigram model...")
-bigram_perplexity = perplexity(bigram_model, test_dir, n)
+bigram_perplexity = perplexity(ngram_model, test_data, n)
 
 # Step 4: Print results
 print(f"Bigram Model Perplexity: {bigram_perplexity}")
