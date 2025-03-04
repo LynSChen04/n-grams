@@ -1,101 +1,161 @@
 import os
+import re
+import ast
+import numpy as np
 import pandas as pd
-from nltk import ngrams
+from collections import defaultdict
+from pygments.lexers.jvm import JavaLexer
+from pygments.lexers import get_lexer_by_name
+from pygments.token import Token
+from nltk.util import ngrams
+from nltk.lm import MLE
+from nltk.lm.preprocessing import padded_everygram_pipeline
+from nltk.lm import Vocabulary
+import numpy as np
 
-train_dir = os.fsencode("training data/")
-ngram = pd.Series
+# Initialize Java lexer
+lexer = JavaLexer()
 
-def build_ngram(n):
-    for file in os.listdir(train_dir):
-        file_name = os.fsdecode(file)
-        if file_name.endswith(".csv"):
-            file_df = pd.read_csv("./training data/"+file_name)
-            
-            ngram.add(pd.Series(ngrams(file_df, n)).valueCounts())
+# --- Method Preprocessing Functions ---
 
-    print(ngram)
-    return ngram
+def remove_duplicates(data):
+    print("Removing duplicate methods...")
+    before = len(data)
+    data = data.drop_duplicates(subset="Method Code", keep='first')
+    print(f"Removed {before - len(data)} duplicates.")
+    return data
 
-def next_word(n_gram_series, n_prior_words):
-    key = tuple(n_prior_words)
-    candidates = n_gram_series[n_gram_series.index.map(lambda x: x[:len(key)] == key)]
-    if not candidates.empty:
-        next_ngram = candidates.idxmax()
-        print(next_ngram)
-        return next_ngram[-1]
-    else:
-        return None
+def filter_ascii_methods(data):
+    print("Filtering non-ASCII methods...")
+    before = len(data)
+    data = data[data['Method Code'].apply(lambda x: all(ord(char) < 128 for char in x))]
+    print(f"Removed {before - len(data)} non-ASCII methods.")
+    return data
 
-def finish_method(data: pd.Series, n_prior_words, max_iterations=100):
-    method = list(n_prior_words)
-    iterations = 0
-    while iterations < max_iterations:
-        next_word_pred = next_word(data, method[-len(n_prior_words):])
-        if next_word_pred is None:
+def remove_outliers(data, lower_percentile=5, upper_percentile=95):
+    print("Removing outlier methods...")
+    method_lengths = data['Method Code'].apply(len)
+    lower_bound = method_lengths.quantile(lower_percentile / 100)
+    upper_bound = method_lengths.quantile(upper_percentile / 100)
+    before = len(data)
+    data = data[(method_lengths >= lower_bound) & (method_lengths <= upper_bound)]
+    print(f"Removed {before - len(data)} outliers.")
+    return data
+
+def remove_boilerplate_methods(data):
+    print("Removing boilerplate methods...")
+    boilerplate_patterns = [
+        r"\bset[A-Z][a-zA-Z0-9_]*\(.*\)\s*{",
+        r"\bget[A-Z][a-zA-Z0-9_]*\(.*\)\s*{"
+    ]
+    boilerplate_regex = re.compile("|".join(boilerplate_patterns))
+    before = len(data)
+    data = data[~data['Method Code'].apply(lambda x: bool(boilerplate_regex.search(x)))]
+    print(f"Removed {before - len(data)} boilerplate methods.")
+    return data
+
+def remove_comments_from_dataframe(df, method_column, language="java"):
+    print("Removing comments from methods...")
+    def remove_comments(code):
+        lexer = get_lexer_by_name(language)
+        tokens = lexer.get_tokens(code)
+        return ''.join(token[1] for token in tokens if not (lambda t: t[0] in Token.Comment)(token))
+    df["Method Code No Comments"] = df[method_column].apply(remove_comments)
+    print("Finished removing comments.")
+    return df
+
+# --- Tokenization ---
+
+def tokenize_code(code):
+    tokens = [t[1] for t in lexer.get_tokens(code) if t[0] != Token.Text and t[1] != ' ']
+    tokens.append("<END>")
+    return tokens
+
+def process_files_in_folder(folder_path):
+    """Preprocess Java methods in CSV files."""
+    for filename in os.listdir(folder_path):
+        if filename.endswith(".csv"):
+            file_path = os.path.join(folder_path, filename)
+            print(f"Processing file: {filename}")  # Print the filename being processed
+            try:
+                data = pd.read_csv(file_path)
+                if "Method Code" not in data.columns:
+                    print(f"Skipping {filename} - Missing 'Method Code' column")
+                    continue  # Skip this file if the column is missing
+                # Apply preprocessing steps
+                data = remove_duplicates(data)
+                data = filter_ascii_methods(data)
+                data = remove_outliers(data)
+                data = remove_boilerplate_methods(data)
+                data = remove_comments_from_dataframe(data, 'Method Code', 'java')
+                # Tokenize methods
+                if "Method Code No Comments" in data.columns:
+                    data["Tokens"] = data["Method Code No Comments"].apply(tokenize_code)
+                # Save back to CSV
+                data.to_csv(file_path, index=False)
+            except Exception as e:
+                print(f"Error processing {filename}: {e}")  # Print the error if it occurs
+
+def extract_methods(folder_path):
+    print("Extracting methods from files...")
+    method_series = pd.Series([])
+    files_processed = 0
+    for filename in os.listdir(folder_path):
+        if files_processed >= 25 and folder_path == "testing data":
             break
-        if next_word_pred == "<end>":
-            method.append(next_word_pred)
+        if files_processed >= 50 and folder_path == "training data":
             break
-        method.append(next_word_pred)
-        iterations += 1
-    return method
+        if filename.endswith(".csv"):
+            file_path = os.path.join(folder_path, filename)
+            df = pd.read_csv(file_path)
+            print(f"Extracting from: {filename}")
+            if "Tokens" in df.columns:
+                for tokens in df["Tokens"]:
+                    try:
+                        token_list = ast.literal_eval(tokens)
+                        method_series = pd.concat([method_series, pd.Series([token_list])], ignore_index=True)
+                    except (ValueError, SyntaxError):
+                        continue
+            files_processed += 1
+    print("Finished extracting methods.")
+    return method_series
 
-#using assigned training data (dictionary), test the accuracy of the n-gram #model, returns accuracy as value out of 100
+def build_ngram(n, train_dir):
+    print(f"Building {n}-gram model...")
+    n = n + 1
+    ngram_counts = defaultdict(int)
+    total_ngrams = 0
+    for tokens in train_dir:
+        if len(tokens) < n:
+            continue
+        for ngram_tuple in ngrams(tokens, n):
+            ngram_counts[ngram_tuple] += 1
+            total_ngrams += 1
+    if total_ngrams == 0:
+        print("Warning: No n-grams found in the training data.")
+        return {}
+    print(f"Total {n}-grams: {total_ngrams}")
+    return {ngram: count for ngram, count in ngram_counts.items()}
 
-
-#main code 
-
-#intake a corpus from a txt file on the command line
-#preprocess the method and make it ready for training
-#for n = 1-10, train each possible n-gram model
-#keep only the most accurate model, 
-
-
-#use general code to produce accuracy of 1-k n-grams, and pick #the one with the best accuracy. 
-ngram_data = {
-    ('the', 'quick'): 0.5,
-    ('quick', 'brown'): 0.4,
-    ('brown', 'fox'): 0.7,
-    ('fox', 'jumps'): 0.6,
-    ('jumps', 'over'): 0.8,
-    ('over', 'the'): 0.3,
-    ('the', 'lazy'): 0.5,
-    ('lazy', 'dog'): 0.9,
-    ('dog', '<end>'): 1.0
-}
-
-# Convert it to a Pandas Series
-n_gram_series = pd.Series(ngram_data)
-
-ngram_data = {
-    ('the', 'quick'): 0.5,
-    ('quick', 'brown'): 0.4,
-    ('brown', 'fox'): 0.7,
-    ('fox', 'jumps'): 0.6,
-    ('jumps', 'over'): 0.8,
-    ('over', 'a'): 0.3,
-    ('a', 'lazy'): 0.2,
-    ('lazy', 'dog'): 0.9,
-    ('dog', '<end>'): 1.0
-}
-
-n_gram_series = pd.Series(ngram_data)
-n_prior_words = ['the']
-predicted_sequence = finish_method(n_gram_series, n_prior_words)
-print(predicted_sequence)
-
-
-trigram_data = {
-    ('I', 'love', 'python'): 0.4,
-    ('love', 'python', 'programming'): 0.6,
-    ('python', 'programming', 'in'): 0.8,
-    ('programming', 'in', 'a'): 0.5,
-    ('in', 'a', 'fun'): 0.7,
-    ('a', 'fun', 'way'): 0.9,
-    ('fun', 'way', '<end>'): 1.0
-}
-
-trigram_series = pd.Series(trigram_data)
-n_prior_words_trigram = ['I', 'love']
-predicted_sequence_trigram = finish_method(trigram_series, n_prior_words_trigram)
-print("Trigram test:", predicted_sequence_trigram)
+def perplexity(ngram_counts, test_data, n, alpha=0.01):  # Start with lower alpha
+    print("Calculating perplexity...")
+    n = n + 1
+    total_ngrams = sum(ngram_counts.values())
+    vocab_size = len(ngram_counts) + 1  # +1 for unseen n-grams
+    total_log_prob = 0
+    total_tokens = 0
+    for tokens in test_data:
+        log_prob_sum = 0
+        for ngram in ngrams(tokens, n, pad_left=True, pad_right=True, left_pad_symbol="<s>", right_pad_symbol="</s>"):
+            count = ngram_counts.get(ngram, 0)
+            smoothed_prob = (count + alpha) / (total_ngrams + alpha * vocab_size)
+            smoothed_prob = max(smoothed_prob, 1e-10)  # Prevent too small values
+            log_prob_sum += np.log(smoothed_prob)
+        total_log_prob += log_prob_sum
+        total_tokens += len(tokens)
+    if total_tokens == 0:
+        return float('inf')
+    avg_log_prob = total_log_prob / total_tokens
+    result = np.exp(-avg_log_prob)
+    print(f"Perplexity: {result}")
+    return result
