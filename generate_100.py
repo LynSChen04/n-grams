@@ -106,7 +106,9 @@ def extract_methods(folder_path):
     method_series = pd.Series([])
     files_processed = 0
     for filename in os.listdir(folder_path):
-        if files_processed >= 5:
+        if files_processed >= 25 and folder_path == "testing data":
+            break
+        if files_processed >= 50 and folder_path == "training data":
             break
         if filename.endswith(".csv"):
             file_path = os.path.join(folder_path, filename)
@@ -143,26 +145,31 @@ def build_ngram(n, train_dir):
     print(f"Total {n}-grams: {total_ngrams}")
     
     # Convert to dictionary instead of Pandas Series
-    return {ngram: count / total_ngrams for ngram, count in ngram_counts.items()}
+    
+    return {ngram: count for ngram, count in ngram_counts.items()}
 
 
 from collections import defaultdict
-import json
 
-def perplexity(ngram_probs, test_data, n, alpha=1):
+def perplexity(ngram_counts, test_data, n, alpha=0.01):  # Start with lower alpha
     print("Calculating perplexity...")
-
-    # Count total unique n-grams to compute Laplace smoothing
-    vocab_size = len(ngram_probs) + 1  # +1 for unseen n-grams
+    n = n + 1
+    total_ngrams = sum(ngram_counts.values())
+    vocab_size = len(ngram_counts) + 1  # +1 for unseen n-grams
     total_log_prob = 0
     total_tokens = 0
 
     for tokens in test_data:
         log_prob_sum = 0
         for ngram in ngrams(tokens, n, pad_left=True, pad_right=True, left_pad_symbol="<s>", right_pad_symbol="</s>"):
-            count = ngram_probs.get(ngram, 0)  # Get count, default to 0
-            print(count)
-            smoothed_prob = (count + alpha) / (sum(ngram_probs.values()) + alpha * vocab_size)  # Laplace smoothing
+            # Get count for this n-gram, default to 0 if unseen
+            count = ngram_counts.get(ngram, 0)
+            
+            # Calculate probability of the n-gram with smoothing
+            smoothed_prob = (count + alpha) / (total_ngrams + alpha * vocab_size)
+            
+            # Ensure the probability is between 0 and a very small value
+            smoothed_prob = max(smoothed_prob, 1e-10)  # Prevent too small values
             
             log_prob_sum += np.log(smoothed_prob)
 
@@ -182,7 +189,7 @@ def perplexity(ngram_probs, test_data, n, alpha=1):
 """# --- Run Processing ---
 folder_path = "data/"
 process_files_in_folder(folder_path)"""
-n = 3  # Bigram model
+n = 1  # Bigram model
 train_data = extract_methods("training data")
 test_data = extract_methods("testing data")
 
