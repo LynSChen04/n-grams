@@ -190,7 +190,7 @@ def perplexity(ngram_counts, test_data, n, alpha=0.01):  # Start with lower alph
 """# --- Run Processing ---
 folder_path = "data/"
 process_files_in_folder(folder_path)"""
-n = 1  # Bigram model
+n = 2  # Bigram model
 train_data = extract_methods("training data")
 #test_data = extract_methods("sample_tests")
 
@@ -231,10 +231,11 @@ def predict_tokens(file_name, n, ngram_model):
             predicted_tokens = []
 
             while len(predicted_tokens) < 100:
-                next_token_probs = {k[-1]: v for k, v in ngram_model.items() if k[:-1] == current_ngram}
-                if not next_token_probs:
+                next_token_counts = {k[-1]: v for k, v in ngram_model.items() if k[:-1] == current_ngram}
+                total_count = sum(next_token_counts.values())
+                if not next_token_counts:
                     break
-
+                next_token_probs = {token: count / total_count for token, count in next_token_counts.items()}
                 next_token = max(next_token_probs, key=next_token_probs.get)
                 predicted_tokens.append((next_token, next_token_probs[next_token]))
 
