@@ -47,16 +47,23 @@ When you're finished, use the following command to deactivate the virtual enviro
 ## **3. Set up Data**
 
 To ensure that the model can be trained on preprocessed tokenized Java code, you need to run the `build_corpus.py` script.
+
 For preprocessing:
+
 Line **181** is where you would put the name of your txt file.
+
 Line **182** is where you want the converted output (csv) to be saved.
+
 Line **186** then requires the folder path to the created csv file.
+
 For tokenization:
+
 Line **188** is where you would put the directory containing your csv files.
 
 ## **4. Run Model**
 
 To set the value of `n`, open `ngram.py` with your preferred text editor. On line **217**, edit the value of the variable `n`. Save and quit. The default value for `n` is 2.
+
 To select the corpus to train the model on, put the directory with your csv files in the "training data" on line **220**.
 
 To train, test, and evaluate the n-gram model, simply run the following:
