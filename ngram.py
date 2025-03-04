@@ -159,3 +159,73 @@ def perplexity(ngram_counts, test_data, n, alpha=0.01):  # Start with lower alph
     result = np.exp(-avg_log_prob)
     print(f"Perplexity: {result}")
     return result
+"""# --- Run Processing ---
+
+
+folder_path = "data/"
+
+
+process_files_in_folder(folder_path)"""
+
+
+n = 2 # Bigram model
+
+
+train_data = extract_methods("training data")
+
+
+test_data = extract_methods("testing data")
+
+
+
+
+
+"""# Step 1: Process the training and test data
+
+
+print("Processing training data...")
+
+
+process_files_in_folder("training data")
+
+
+
+
+
+print("Processing test data...")
+
+
+process_files_in_folder("testing data")"""
+
+
+
+
+
+# Step 2: Build the n-gram model
+
+
+print("Building bigram model...")
+
+
+ngram_model = build_ngram(n, train_data)
+
+
+print(ngram_model)
+
+
+# Step 3: Compute perplexity
+
+
+print("Calculating perplexity of the bigram model...")
+
+
+bigram_perplexity = perplexity(ngram_model, test_data, n)
+
+
+
+
+
+# Step 4: Print results
+
+
+print(f"Bigram Model Perplexity: {bigram_perplexity}")
