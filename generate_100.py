@@ -191,7 +191,7 @@ def perplexity(ngram_counts, test_data, n, alpha=0.01):  # Start with lower alph
 folder_path = "data/"
 process_files_in_folder(folder_path)"""
 n = 2  # Bigram model
-train_data = extract_methods("data/")
+train_data = extract_methods("testing data")
 
 """# Step 1: Process the training and test data
 print("Processing training data...")
@@ -247,10 +247,10 @@ def predict_tokens(file_name, n, ngram_model):
 
             predictions[index] = predicted_tokens
 
-        with open(f"results_teacher_model.json", "w") as json_file:
+        with open(f"results_students_model.json", "w") as json_file:
             json.dump(predictions, json_file, indent=4)
 
-        print(f"Predictions saved to results_teacher_model.json")
+        print(f"Predictions saved to results_students_model.json")
 
     except Exception as e:
         print(f"Error predicting tokens for {file_name}: {e}")
