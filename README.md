@@ -1,66 +1,49 @@
-# GenAI for Software Development (Ngram)
+# GenAI for Software Development Assignment 1
+Lynelle Chen, Ben Tremblay, Rowan Miller
 
 * [1 Introduction](#1-introduction)  
-* [2 Getting Started](#2-getting-started)  
-  * [2.1 Preparations](#21-preparations)  
-  * [2.2 Install Packages](#22-install-packages)  
-  * [2.3 Run N-gram](#23-run-n-gram)  
-* [3 Report](#3-report)  
+* [2 Setup](#2-setup)
+* [3 Run Model](#3-run-model)
+* [4 Report](#4-report)
 
----
+## **1. Introduction**  
+We have developed a model to automatically complete a Java method given a starting set of code tokens. Our model uses the n-gram method to predict the next token in a sequence given (n - 1) preceding tokens. It is trained on a corpus of public GitHub repositories and stores the frequency of all sequences of n consecutive tokens. When predicting the next token in a sequence, it chooses the one with the highest probability in the training corpus. Our model was evaluated by being asked to automatically complete a method given only its first (n - 1) tokens.
 
-# **1. Introduction**  
-This project explores **code completion in Java**, leveraging **N-gram language modeling**. The N-gram model predicts the next token in a sequence by learning the probability distributions of token occurrences in training data. The model selects the most probable token based on learned patterns, making it a fundamental technique in natural language processing and software engineering automation.  
+## **2. Setup**  
+This project is implemented in **Python 3** and is compatible with **macOS, Linux, and Windows**.  
 
----
-
-# **2. Getting Started**  
-
-This project is implemented in **Python 3.9+** and is compatible with **macOS, Linux, and Windows**.  
-
-## **2.1 Preparations**  
-
-(1) Clone the repository to your workspace:  
+Clone the repository to your workspace:  
 ```shell
-~ $ git clone https://github.com/your-repository/your-project.git
-
+~ $ git clone https://github.com/rvmiller0/n-grams.git
+```
 (2) Navigate into the repository:
-
-~ $ cd your-project
-~/your-project $
-
-(3) Set up a virtual environment and activate it:
+```shell
+~ $ cd n-grams
+~/n-grams $
+```
+(3) Set up a virtual environment and activate it (optional):
 
 For macOS/Linux:
-
-~/your-project $ python -m venv ./venv/
-~/your-project $ source venv/bin/activate
-(venv) ~/your-project $ 
-
-
-To deactivate the virtual environment, use the command:
-
-(venv) $ deactivate
+```shell
+~/n-grams $ python -m venv ./venv/
+~/n-grams $ source venv/bin/activate
+(venv) ~/n-grams $ 
 ```
 
-## **2.2 Install Packages**
-
 Install the required dependencies:
+`pip install -r requirements.txt`
 
-(venv) ~/your-project $ pip install -r requirements.txt
+When you're finished, use the following command to deactivate the virtual environment:
+`(venv) $ deactivate`
 
-## **2.3 Run N-gram**
+## **3. Run Model**
+To set the value of `n`, open `ngram.py` with your preferred text editor. On line **LINE**, edit the value of the variable `n`. Save and quit. The default value for `n` is 6.
 
-(1) Run N-gram Demo
+To train, test, and evaluate the n-gram model, simply run the following:
 
-The script takes a corpus of Java methods as input and automatically identifies the best-performing model based on a specific N-value. It then evaluates the selected model on the test set extracted according to the assignment specifications.
-Since the training corpus differs from both the instructor-provided dataset and our own dataset, we store the results in a file named results_provided_model.[json/csv/txt] to distinguish them accordingly.
+`python ngram.py`
 
-(venv) ~/your-project $ python ngram.py corpus.txt
+The files `results_student_model.json` and `results_teacher_model.json` will be generated. These will display the results of the model's evaluation on two reserved datasets.
 
-
-## 3. Report
-
-The assignment report is available in the file Assignment_Report.pdf.
-
-
+## 4. Report
+Our overall report is available in the file Assignment_Report.pdf.
