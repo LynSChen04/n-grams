@@ -192,7 +192,7 @@ folder_path = "data/"
 process_files_in_folder(folder_path)"""
 n = 1  # Bigram model
 train_data = extract_methods("training data")
-test_data = extract_methods("testing data")
+#test_data = extract_methods("sample_tests")
 
 """# Step 1: Process the training and test data
 print("Processing training data...")
@@ -206,11 +206,11 @@ print("Building bigram model...")
 ngram_model = build_ngram(n, train_data)
 print(ngram_model)
 # Step 3: Compute perplexity
-print("Calculating perplexity of the bigram model...")
-bigram_perplexity = perplexity(ngram_model, test_data, n)
+#print("Calculating perplexity of the bigram model...")
+#bigram_perplexity = perplexity(ngram_model, test_data, n)
 
 # Step 4: Print results
-print(f"Bigram Model Perplexity: {bigram_perplexity}")
+#print(f"Bigram Model Perplexity: {bigram_perplexity}")
 
 def predict_tokens(file_name, n, ngram_model):
     print(f"Predicting tokens for file: {file_name}")
@@ -253,4 +253,4 @@ def predict_tokens(file_name, n, ngram_model):
         print(f"Error predicting tokens for {file_name}: {e}")
 
 # Example usage
-predict_tokens("testing data/test_file.csv", n, ngram_model)
+predict_tokens("sample_tests/test_selection.csv", n, ngram_model)
