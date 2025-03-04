@@ -191,8 +191,7 @@ def perplexity(ngram_counts, test_data, n, alpha=0.01):  # Start with lower alph
 folder_path = "data/"
 process_files_in_folder(folder_path)"""
 n = 2  # Bigram model
-train_data = extract_methods("data")
-#test_data = extract_methods("sample_tests")
+train_data = extract_methods("data/")
 
 """# Step 1: Process the training and test data
 print("Processing training data...")
@@ -212,7 +211,7 @@ print(ngram_model)
 # Step 4: Print results
 #print(f"Bigram Model Perplexity: {bigram_perplexity}")
 
-def predict_tokens_student(file_name, n, ngram_model):
+def predict_tokens(file_name, n, ngram_model):
     print(f"Predicting tokens for file: {file_name}")
     predictions = {}
 
@@ -234,49 +233,7 @@ def predict_tokens_student(file_name, n, ngram_model):
                 next_token_counts = {k[-1]: v for k, v in ngram_model.items() if k[:-1] == current_ngram}
                 total_count = sum(next_token_counts.values())
                 if not next_token_counts:
-                    break
-                next_token_probs = {token: count / total_count for token, count in next_token_counts.items()}
-                next_token = max(next_token_probs, key=next_token_probs.get)
-
-                element = (next_token, next_token_probs[next_token])
-                predicted_tokens.append(element)
-
-                current_ngram = current_ngram[1:] + (next_token,)
-                if next_token == "<END>":
-                    break
-
-            predictions[index] = predicted_tokens
-
-        with open(f"results_student_model.json", "w") as json_file:
-            json.dump(predictions, json_file, indent=4)
-
-        print(f"Predictions saved to results_student_model.json")
-
-    except Exception as e:
-        print(f"Error predicting tokens for {file_name}: {e}")
-
-def predict_tokens_teacher(file_name, n, ngram_model):
-    print(f"Predicting tokens for file: {file_name}")
-    predictions = {}
-
-    try:
-        data = pd.read_csv(file_name, header=None)
-        if data.empty:
-            print(f"Skipping {file_name} - No data found")
-            return
-
-        for index, row in data.iterrows():
-            tokens = ast.literal_eval(row[0])
-            if len(tokens) < n:
-                continue
-
-            current_ngram = tuple(tokens[:n])
-            predicted_tokens = []
-
-            while len(predicted_tokens) < 100:
-                next_token_counts = {k[-1]: v for k, v in ngram_model.items() if k[:-1] == current_ngram}
-                total_count = sum(next_token_counts.values())
-                if not next_token_counts:
+                    print(f"No next tokens found for n-gram: {current_ngram}")
                     break
                 next_token_probs = {token: count / total_count for token, count in next_token_counts.items()}
                 next_token = max(next_token_probs, key=next_token_probs.get)
@@ -300,4 +257,4 @@ def predict_tokens_teacher(file_name, n, ngram_model):
 
 # Example usage
 #predict_tokens_student("sample_tests/test_selection.csv", n, ngram_model)
-predict_tokens_teacher("sample_tests/test_selection.csv", n, ngram_model)
+predict_tokens("sample_tests/test_selection.csv", n, ngram_model)
