@@ -13,6 +13,7 @@ from nltk.lm import MLE
 from nltk.lm.preprocessing import padded_everygram_pipeline
 from nltk.lm import Vocabulary
 import numpy as np
+import json
 # Initialize Java lexer
 lexer = JavaLexer()
 
