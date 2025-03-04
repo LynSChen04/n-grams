@@ -12,6 +12,7 @@ from nltk.lm import MLE
 from nltk.lm.preprocessing import padded_everygram_pipeline
 from nltk.lm import Vocabulary
 import numpy as np
+import json
 
 # Initialize Java lexer
 lexer = JavaLexer()
@@ -159,6 +160,51 @@ def perplexity(ngram_counts, test_data, n, alpha=0.01):  # Start with lower alph
     result = np.exp(-avg_log_prob)
     print(f"Perplexity: {result}")
     return result
+
+def predict_tokens(file_name, n, ngram_model):
+    print(f"Predicting tokens for file: {file_name}")
+    predictions = {}
+
+    try:
+        data = pd.read_csv(file_name)
+        if "Tokens" not in data.columns:
+            print(f"Skipping {file_name} - Missing 'Tokens' column")
+            return
+
+        for index, row in data.iterrows():
+            tokens = ast.literal_eval(row["Tokens"])
+            if len(tokens) < n:
+                continue
+
+            current_ngram = tuple(tokens[:n])
+            predicted_tokens = []
+
+            while len(predicted_tokens) < 100:
+                next_token_counts = {k[-1]: v for k, v in ngram_model.items() if k[:-1] == current_ngram}
+                total_count = sum(next_token_counts.values())
+                if not next_token_counts:
+                    print(f"No next tokens found for n-gram: {current_ngram}")
+                    break
+                next_token_probs = {token: count / total_count for token, count in next_token_counts.items()}
+                next_token = max(next_token_probs, key=next_token_probs.get)
+
+                element = (next_token, next_token_probs[next_token])
+                predicted_tokens.append(element)
+
+                current_ngram = current_ngram[1:] + (next_token,)
+                if next_token == "<END>":
+                    break
+
+            predictions[index] = predicted_tokens
+
+        with open(f"results.json", "w") as json_file:
+            json.dump(predictions, json_file, indent=4)
+
+        print(f"Predictions saved to results.json")
+
+    except Exception as e:
+        print(f"Error predicting tokens for {file_name}: {e}")
+
 """# --- Run Processing ---
 
 
@@ -229,3 +275,8 @@ bigram_perplexity = perplexity(ngram_model, test_data, n)
 
 
 print(f"Bigram Model Perplexity: {bigram_perplexity}")
+
+
+# Step 5: Predict tokens (Use N-gram model)
+
+predict_tokens("sample_tests/test_selection", n, ngram_model)
